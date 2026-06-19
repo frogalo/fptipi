@@ -17,9 +17,14 @@ import FloatingNav from './components/FloatingNav';
 import Home from './pages/Home';
 
 export default function App() {
+  const basename = import.meta.env.BASE_URL.endsWith('/') && import.meta.env.BASE_URL !== '/'
+    ? import.meta.env.BASE_URL.slice(0, -1)
+    : import.meta.env.BASE_URL;
+
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <Routes>
+
         <Route path="/" element={<Home />} />
         <Route path="/teoria/1" element={<Teoria1 />} />
         <Route path="/teoria/13" element={<Teoria13 />} />

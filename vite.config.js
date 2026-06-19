@@ -2,9 +2,9 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   root: 'src',
-  base: './',
+  base: mode === 'production' ? '/fptipi/' : '/',
   plugins: [
     react({
       babel: {
@@ -19,4 +19,5 @@ export default defineConfig({
     outDir: '../dist',
     emptyOutDir: true,
   }
-})
+}))
+

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import rys_5_5 from '../../assets/rys_5_5.png';
 
 export default function Zadania3() {
 
@@ -40,7 +41,7 @@ export default function Zadania3() {
 <p className="mb-[11px] text-red font-semibold"><b>Zadanie:</b> Korzystając z wykresów zamieszczonych na Rys. 5.5, oblicz wielkości charakteryzujące wykres oczkowy.</p>
 
 <figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]">
-  <img src="../../assets/rys_5_5.png" alt="Wykres oczkowy z zaznaczonymi parametrami"/>
+  <img src={rys_5_5} alt="Wykres oczkowy z zaznaczonymi parametrami"/>
   <figcaption className="font-mono text-[11px] text-[#555] mt-2 text-left">Rys. 5.5: Wykres oczkowy (eye-diagram) z naniesionymi liniami pomocniczymi do odczytu poziomów napięć i czasów.</figcaption>
 </figure>
 

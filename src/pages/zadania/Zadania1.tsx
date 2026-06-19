@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import rys_3_9 from '../../assets/rys_3_9.png';
 
 export default function Zadania1() {
 
@@ -187,7 +188,7 @@ export default function Zadania1() {
 
 <h3 className="text-base text-amber-soft font-semibold mt-5 mb-2 font-mono tracking-wide">Odczyt z wykresu (Rys. 3.9):</h3>
 <figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]">
-  <img src="../../assets/rys_3_9.png" alt="Wykres tłumienia atmosferycznego w funkcji częstotliwości"/>
+  <img src={rys_3_9} alt="Wykres tłumienia atmosferycznego w funkcji częstotliwości"/>
   <figcaption className="font-mono text-[11px] text-[#555] mt-2 text-left">Rys. 3.9: Tłumienie atmosferyczne dla fal EM. Na częstotliwości 60 GHz widoczny jest potężny rezonans absorpcyjny tlenu \(O_2\).</figcaption>
 </figure>
 

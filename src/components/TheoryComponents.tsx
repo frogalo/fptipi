@@ -1,0 +1,109 @@
+import React from 'react';
+
+interface PageHeaderProps {
+  subtitle: string;
+  title: string;
+  description: string;
+}
+
+export function PageHeader({ subtitle, title, description }: PageHeaderProps) {
+  return (
+    <header className="mb-6 border border-line bg-gradient-to-br from-panel to-ink2 rounded-[14px] px-6 py-[22px]">
+      <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-amber">
+        {subtitle}
+      </div>
+      <h1 className="text-[27px] font-semibold mt-1.5 mb-1">{title}</h1>
+      <div className="text-muted text-[14.5px]">{description}</div>
+    </header>
+  );
+}
+
+interface QuestionSectionProps {
+  id: string;
+  number: string | number;
+  title: string;
+  source?: string;
+  isTier1?: boolean;
+  children: React.ReactNode;
+}
+
+export function QuestionSection({
+  id,
+  number,
+  title,
+  source,
+  isTier1 = false,
+  children,
+}: QuestionSectionProps) {
+  return (
+    <section className="border border-line bg-panel rounded-[14px] px-[26px] py-6 mb-[26px]" id={id}>
+      <div className="flex items-baseline gap-3 border-b border-line pb-3 mb-4">
+        <span
+          className={`font-mono font-bold text-ink rounded-lg px-2.5 py-[2px] text-[14px] whitespace-nowrap ${
+            isTier1 ? 'bg-green' : 'bg-amber'
+          }`}
+        >
+          {number}
+        </span>
+        <h2 className="text-[20.5px] font-semibold leading-tight">{title}</h2>
+        {source && (
+          <span className="font-mono text-[11px] text-muted ml-auto whitespace-nowrap">
+            {source}
+          </span>
+        )}
+      </div>
+      {children}
+    </section>
+  );
+}
+
+interface TaskSectionProps {
+  id: string;
+  number: string;
+  title: string;
+  badge?: string;
+  children: React.ReactNode;
+}
+
+export function TaskSection({
+  id,
+  number,
+  title,
+  badge,
+  children,
+}: TaskSectionProps) {
+  return (
+    <section className="border border-line bg-panel rounded-[14px] px-[26px] py-6 mb-[26px]" id={id}>
+      <div className="flex items-baseline gap-3 border-b border-line pb-3 mb-4">
+        <span className="font-mono font-bold text-ink bg-amber rounded-lg px-2.5 py-[2px] text-[14px] whitespace-nowrap">
+          {number}
+        </span>
+        <h2 className="text-[20.5px] font-semibold leading-tight">{title}</h2>
+        {badge && (
+          <span className="font-mono text-[11px] text-muted ml-auto whitespace-nowrap">
+            <span className="t1 font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-[1px] text-[12px] whitespace-nowrap">
+              {badge}
+            </span>
+          </span>
+        )}
+      </div>
+      {children}
+    </section>
+  );
+}
+
+interface BlockFormulaProps {
+  tex: string;
+  tag?: string;
+  color?: string;
+}
+
+export function BlockFormula({ tex, tag, color = 'amber' }: BlockFormulaProps) {
+  const borderColorClass = color === 'blue' ? 'border-l-blue' : 'border-l-amber';
+  return (
+    <div className={`bg-ink2 border border-line border-l-[3px] ${borderColorClass} rounded-lg px-4 py-2.5 my-3 overflow-x-auto`}>
+      {tag && <span className="tag">{tag}</span>}
+      {`\\[${tex}\\]`}
+    </div>
+  );
+}

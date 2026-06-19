@@ -371,7 +371,7 @@ export default function TeoriaSciaga() {
 
 <div className="border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
 <div className="flex items-baseline gap-2 mb-2"><span className="t1 font-mono font-bold text-ink bg-green rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">10</span><span className="font-semibold text-[15.5px] leading-tight text-white">Dyspersja we włóknach</span></div>
-<div className="space-y-3 mb-3 text-muted text-[15.5px] leading-relaxed">
+<div className="space-y-3 mb-3 text-txt text-[15.5px] leading-relaxed">
   <div>Dyspersja = zależność parametrów ośrodka od częstotliwości → <b>rozmycie czasowe impulsów → ogranicza szybkość transmisji</b> („0" może być odczytane jako „1").</div>
   <div><b>Modowa</b> — TYLKO wielomodowe; mody mają różne prędkości.</div>
   <Concept title="Dyspersja modowa (poszerzenie impulsu)">
@@ -437,7 +437,7 @@ export default function TeoriaSciaga() {
 
 <div className="border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
 <div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">13</span><span className="font-semibold text-[15.5px] leading-tight text-white">Mierzenie jakości modulacji</span></div>
-<div className="space-y-3 mb-3 text-muted text-[15.5px] leading-relaxed">
+<div className="space-y-3 mb-3 text-txt text-[15.5px] leading-relaxed">
   <div><b>Wykres oczkowy</b> — nałożone wszystkie kombinacje bitów; parametry: <b>amplituda</b> (Vmax−Vmin, odporność na zakłócenia), <b>wysokość oka</b> (V′max−V′min, szacowanie szumów), <b>szerokość oka</b> (czas bezpiecznego próbkowania), <b>przecięcie</b> (próg decyzyjny), <b>nachylenie / czas narastania</b> \(C_&#123;NS&#125;=1&#123;,&#125;25\cdot T_&#123;20-80&#125;\), <b>zniekształcenie czasowe ΔT</b> (jitter), <b>współczynnik ekstynkcji</b>.</div>
   <div>Rozwartość oka oraz margines szumowy:</div>
   <Concept title="Rozwartość wykresu oczkowego (Eye Opening Ratio)">
@@ -460,7 +460,7 @@ export default function TeoriaSciaga() {
 
 <div className="border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
 <div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">14</span><span className="font-semibold text-[15.5px] leading-tight text-white">Multipleksacja i zastosowania</span></div>
-<div className="space-y-2 mb-3 text-muted text-[15.5px] leading-relaxed">
+<div className="space-y-2 mb-3 text-txt text-[15.5px] leading-relaxed">
   <div><b>Multipleksacja (zwielokrotnienie) = równoczesne przesyłanie wielu sygnałów przez jeden kanał transmisyjny.</b></div>
   <div><b>TDM/OTDM</b> — podział czasowy (sygnały cyfrowe); <b>FDM</b> — podział częstotliwości (różne nośne); <b>SCM</b> — podnośne mikrofalowe (analogowe sieci CATV); <b>CDMA</b> — kodowanie sygnałów.</div>
   <div><b>WDM</b> — podział długości fali (duży odstęp nośnych, GHz); <b>DWDM</b> — gęsty: 3. okno podzielone na nośne od <b>193,1 THz co 200/100/50/25 GHz</b>; dalej <b>DFDM</b>.</div>
@@ -502,7 +502,7 @@ export default function TeoriaSciaga() {
 
 <div className="border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
 <div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">16</span><span className="font-semibold text-[15.5px] leading-tight text-white">Półprzewodniki samoistne i domieszkowane</span></div>
-<div className="space-y-2 mb-3 text-muted text-[15.5px] leading-relaxed">
+<div className="space-y-2 mb-3 text-txt text-[15.5px] leading-relaxed">
   <div>Przewodnictwo <b>10⁻⁹–10³ Ω⁻¹cm⁻¹</b>, silnie zależne od domieszkowania, temperatury, napromieniowania; przerwa energetyczna umownie <b>0–3 eV</b>; przewodnictwo <b>elektronowe &gt; jonowe</b>.</div>
   <div><b>Samoistne:</b> doskonała struktura (bez domieszek i defektów); <b>n = p = nᵢ</b>; generacja par elektron–dziura z temperaturą; <b>duża rezystywność</b>; nᵢ <b>rośnie z T, maleje z E_g</b>.</div>
   <div><b>Typ n:</b> domieszka <b>donorowa (oddaje elektron)</b>, V grupa (dla Si: <b>fosfor</b>); poziom donorowy <b>przy dnie pasma przewodnictwa</b>.</div>
@@ -538,7 +538,7 @@ export default function TeoriaSciaga() {
 
 <div className="border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
 <div className="flex items-baseline gap-2 mb-2"><span className="t1 font-mono font-bold text-ink bg-green rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">18</span><span className="font-semibold text-[15.5px] leading-tight text-white">Koncentracja — nierównowaga</span></div>
-<div className="space-y-2 mb-3 text-muted text-[15.5px] leading-relaxed">
+<div className="space-y-2 mb-3 text-txt text-[15.5px] leading-relaxed">
   <div>Zakłócenie: <b>pole zewnętrzne (światło, RTG) lub przepływ prądu</b>; ogólnie <b>np ≠ nᵢ²</b>: np &gt; nᵢ² → <b>iniekcja (wstrzykiwanie)</b>, np &lt; nᵢ² → <b>ekstrakcja (wyciąganie)</b>.</div>
   <div><b>Generacja/rekombinacja bezpośrednia:</b> potrzeba <b>energii &gt; E_g</b> (cieplna — mało prawdopodobne, świetlna — praktycznie zawsze); rekombinacja wydziela energię: <b>Si, Ge → ciepło; GaAs → światło</b>. Szybkość rekombinacji ~ n·p.</div>
   <div><b>Pośrednia:</b> dwa etapy przez <b>centrum g-r</b> → większe prawdopodobieństwo, <b>szybsza generacja/rekombinacja, krótszy czas życia</b>; <b>pułapkowanie</b> = przetrzymanie nośnika w centrum bez rekombinacji.</div>
@@ -565,7 +565,7 @@ export default function TeoriaSciaga() {
 
 <div className="md:col-span-2 border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
 <div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">20</span><span className="font-semibold text-[15.5px] leading-tight text-white">Złącze p–n · polaryzacja zaporowa i przewodzenia</span></div>
-<div className="space-y-2 mb-3 text-muted text-[15.5px] leading-relaxed">
+<div className="space-y-2 mb-3 text-txt text-[15.5px] leading-relaxed">
   <div>Po zetknięciu: <b>dyfuzja</b> elektronów n→p i dziur p→n → <b>warstwa zaporowa</b> (= dipolowa = ładunku przestrzennego = zubożona) → pole przeciwdziałające dyfuzji → <b>napięcie dyfuzyjne (bariera potencjału)</b> → <b>prąd unoszenia mniejszościowych</b> przeciwny do <b>prądu dyfuzji większościowych</b>. <b>Równowaga: suma prądów = 0</b> (dyfuzja = unoszenie osobno dla e i dziur).</div>
 </div>
 <table className="w-full border-collapse my-3 text-[15.5px]">
@@ -585,7 +585,7 @@ export default function TeoriaSciaga() {
 
 <div className="border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
 <div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">21</span><span className="font-semibold text-[15.5px] leading-tight text-white">Parametry pamięci półprzewodnikowych</span></div>
-<div className="space-y-2 mb-3 text-muted text-[15.5px] leading-relaxed">
+<div className="space-y-2 mb-3 text-txt text-[15.5px] leading-relaxed">
   <div><b>Podstawowe: pojemność</b> (liczba jednostek pamięci), <b>organizacja pamięci, czas dostępu</b> (lokalizacja bajtu).</div>
   <div><b>Technologiczne: czas odczytu i zapisu, szybkość transmismi danych.</b></div>
   <div>Cechy: technologia układów scalonych, <b>krótki czas dostępu, znaczna pojemność, znikomy pobór mocy, brak elementów mechanicznych</b> (jednorodny dostęp); SSD — skrócenie czasu dostępu do <b>1000×</b>.</div>
@@ -613,7 +613,7 @@ export default function TeoriaSciaga() {
 
 <div className="border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
 <div className="flex items-baseline gap-2 mb-2"><span className="t1 font-mono font-bold text-ink bg-green rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">23</span><span className="font-semibold text-[15.5px] leading-tight text-white">Tranzystory polowe</span></div>
-<div className="space-y-2 mb-3 text-muted text-[15.5px] leading-relaxed">
+<div className="space-y-2 mb-3 text-txt text-[15.5px] leading-relaxed">
   <div><b>FET = JFET (złączowe) + IGFET (izolowana bramka, np. MOSFET)</b>; elektrody: <b>źródło S, bramka G, dren D</b> (odpowiedniki: emiter, baza, kolektor); <b>sterowanie polem elektrycznym bramki</b>.</div>
   <div><b>JFET:</b> 3 warstwy, 2 złącza p–n; napięcie zaporowe poszerza obszar bez nośników → <b>rośnie opór kanału</b>.</div>
   <div><b>MOSFET:</b> bramka napylona na <b>izolatorze</b> (tlenek, nawet 5 atomów grubości) → <b>przez bramkę nie płynie żaden prąd</b>. U_GS=0 → <b>„zatkanie"</b>; U_GS&gt;0 → <b>warstwa inwersyjna</b> z elektronów swowodnych → przewodzenie; <b>U_DS=U_GS → kanał zanika przy drenie → nasycenie I_D</b>.</div>
@@ -624,7 +624,7 @@ export default function TeoriaSciaga() {
 
 <div className="border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
 <div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">24</span><span className="font-semibold text-[15.5px] leading-tight text-white">Pamięć Flash</span></div>
-<div className="space-y-2 mb-3 text-muted text-[15.5px] leading-relaxed">
+<div className="space-y-2 mb-3 text-txt text-[15.5px] leading-relaxed">
   <div><b>EEPROM:</b> kasowalna i programowalna <b>elektrycznie</b>; komórka = <b>1 tranzystor MNOS</b>; <b>20–40 V</b> na bramkę → ładunek w warstwie <b>azotku krzemu</b> = <b>logiczne 0</b>; odwrócenie polaryzacji = kasowanie = <b>logiczna 1</b>.</div>
   <div><b>Flash EEPROM (błyskowa):</b> kasowanie/zapis <b>wielu komórek naraz w jednej sekwencji</b>, bez UV; <b>10 000–100 000 cykli</b>; elektrony na <b>bramce pływającej trzymają stan latami</b>; prąd tylko przy przełączaniu.</div>
   <div><b>NOR</b> — dostęp bezpośredni do każdej komórki, ale wolny zapis/kasowanie; <b>NAND</b> — szybszy zapis, większa gęstość, 10× trwalszy, lepszy koszt/pojemność, ale <b>dostęp sekwencyjny</b> (karty SD/MMC/MS/xD, USB).</div>
@@ -634,7 +634,7 @@ export default function TeoriaSciaga() {
 
 <div className="border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
 <div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">25</span><span className="font-semibold text-[15.5px] leading-tight text-white">Dyski optyczne — zapis i odczyt</span></div>
-<div className="space-y-2 mb-3 text-muted text-[15.5px] leading-relaxed">
+<div className="space-y-2 mb-3 text-txt text-[15.5px] leading-relaxed">
   <div><b>Budowa CD-R:</b> poliwęglan (<b>n=1,55</b>; 1,2 mm) → warstwa odbijająca (<b>Al/Au/Ag</b>) → lakier ochronny 30 μm; <b>pity</b> (wgłębienia) i <b>landy</b> w spiralnej ścieżce (szer. 0,6 μm, odchylenie 0,3 μm / 22,05 kHz steruje obrotami, odstęp 1,6 μm).</div>
   <div><b>Zapis (CD-RW, zmiana fazy):</b> stop <b>Ag–In–Sb2–Te</b>; laser topi (<b>500–700°C</b>) → <b>struktura amorficzna (zapis, słabo odbija)</b>; wyżarzanie <b>&gt;200°C → krystaliczna (kasowanie, mocno odbija)</b>; moce: <b>15 mW zapis / ≤3 mW odczyt</b>; ~<b>1000 cykli</b>; warstwy dielektryczne odprowadzają ciepło.</div>
   <div><b>Odczyt:</b> laser GaAlAs <b>780 nm</b> (w poliwęglanie ~500 nm); <b>pit głęboki na λ/4 ≈ 125 nm → fale od pitu i landu w przeciwfazie → interferencyjne wygaszenie</b>; wiązka 800 μm → <b>1,7 μm</b> na warstwie (kurz niewidoczny); <b>zmiana poziomu = „1", brak zmiany = „0"</b>; v liniowa <b>1,25 m/s</b> = const → obroty zmienne 500–200 obr/min.</div>
@@ -644,7 +644,7 @@ export default function TeoriaSciaga() {
 
 <div className="border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
 <div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">26</span><span className="font-semibold text-[15.5px] leading-tight text-white">Dyski magneto-optyczne</span></div>
-<div className="space-y-2 mb-3 text-muted text-[15.5px] leading-relaxed">
+<div className="space-y-2 mb-3 text-txt text-[15.5px] leading-relaxed">
   <div>Jak CD-RW, ale <b>warstwa nagrywana magnetyczna (100 nm)</b>: krystality jednodomenowe, domeny <b>prostopadłe do powierzchni płyty</b>.</div>
   <div><b>Zmiana domen wymaga podgrzania do temperatury Curie 150–180°C</b> (powyżej — zanik ustawienia dipoli) <b>+ pola magnetycznego głowicy</b> — jednocześnie.</div>
   <div><b>OMM</b> — stałe pole magnetyczne, <b>laser moduluje temperaturę</b> (przemagnesowują się tylko cząstki oświetlone; po ochłodzeniu zachowują zwrot → trwały zapis); <b>MFMM</b> — stała moc lasera, <b>modulowana wartość pola</b> (pole decyduje, które domeny się przeorientują).</div>
@@ -655,7 +655,7 @@ export default function TeoriaSciaga() {
 
 <div className="border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
 <div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">27</span><span className="font-semibold text-[15.5px] leading-tight text-white">Dyski magnetyczne — zapis/odczyt</span></div>
-<div className="space-y-2 mb-3 text-muted text-[15.5px] leading-relaxed">
+<div className="space-y-2 mb-3 text-txt text-[15.5px] leading-relaxed">
   <div><b>Dia-/para-/ferromagnetyki</b> — tylko <b>ferromagnetyki</b> (namagnesowanie spontaniczne, duża przenikalność: stopy, ferryty, tlenki Fe/Cr) w nośnikach; <b>domeny magnetyczne</b> = elementarne pola podlegające przemagnesowaniu.</div>
   <div><b>Pętla histerezy B(H)</b>: do zapisu cyfrowego materiał <b>magnetycznie twardy</b>; temperatura Curie = utrata magnetyzmu; rozmagnesowanie przez siły międzydomenowe → okresowe przegrywanie danych.</div>
   <div className="text-green font-semibold">ZAPIS: strumień elektromagnetyczny przez głowicę → zmiana kierunku namagnesowania. ODCZYT: zmienne pole indukuje prąd w cewce głowicy. Logiczna „1" = przejście do przeciwnego namagnesowania.</div>
@@ -666,7 +666,7 @@ export default function TeoriaSciaga() {
 
 <div className="border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
 <div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">28</span><span className="font-semibold text-[15.5px] leading-tight text-white">Magnetorezystancja</span></div>
-<div className="space-y-2 mb-3 text-muted text-[15.5px] leading-relaxed">
+<div className="space-y-2 mb-3 text-txt text-[15.5px] leading-relaxed">
   <div><b>Zjawisko Gaussa (magnetoopór): zmiana rezystywności metali i półprzewodników pod wpływem zewnętrznego pola magnetycznego.</b> Mechanizm: <b>tor cząstki zakrzywia się → dłuższa droga → mniejszy prąd (większy opór)</b>.</div>
   <div><b>GMR (gigantyczna):</b> <b>znaczna zmiana oporu układu wielowarstwowego — warstwy ferromagnetyczne przedzielone przewodzącymi nieferromagnetycznymi</b>; pole zewnętrzne <b>zmienia względną orientację momentów magnetycznych warstw</b> → zmiana magnetooporu o <b>kilkadziesiąt % już przy słabych polach</b>; czuły na temperaturę.</div>
   <div><b>Głowica (zawór spinowy):</b> <b>miękki ferromagnetyk (magnetyzacja równoległa do nośnika) + twardy (prostopadła)</b>; nad ścianką <b>N–N</b> magnetyzacja miękkiego staje się prostopadła → opór rośnie (prąd maleje); nad <b>S–S</b> — orientacja przeciwna → prąd rośnie.</div>
@@ -755,7 +755,7 @@ export default function TeoriaSciaga() {
 
 <div className="border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
 <div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">P</span><span className="font-semibold text-[15.5px] leading-tight text-white">Projekt — szybkie fakty (pyt. 30)</span></div>
-<div className="space-y-2 mb-3 text-muted text-[15.5px] leading-relaxed">
+<div className="space-y-2 mb-3 text-txt text-[15.5px] leading-relaxed">
   <div>Łącze <b>Tarnów–Nowy Sącz, 89 km, λ = 1550 nm (3. okno)</b>, włókno SMF TeraLight + kompensacja <b>DCF38 vs FDCF-050</b>; budżety mocy dla 1/5/10 Gbit/s.</div>
   <div className="text-red font-semibold">Częstotliwość — umieć wyliczyć przy tablicy: f = c/λ = 3×10⁸ / 1,55×10⁻⁶ ≈ 1,94×10¹⁴ Hz (≈194 THz).</div>
   <div>Margines projektowy: <b>3–6 dB</b>; SMF: niskie α, dodatnie D; DCF: wysokie α, <b>ujemne D</b>; DCF jako „puszka" — nie wlicza się do długości łącza.</div>
