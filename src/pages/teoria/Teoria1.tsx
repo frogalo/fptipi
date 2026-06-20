@@ -97,7 +97,7 @@ export default function Teoria1() {
   source="str. 11–13"
 >
 
-<p className="mb-[11px]">Pomiędzy wektorami \(\vec{E}\), \(\vec{H}\), \(\vec{D}\), \(\vec{B}\) i \(\vec{j}\) zachodzą zależności, które określane są jako <b>równania materiałowe</b>:</p>
+<p className="mb-[11px]">Pomiędzy wektorami \(\vec&#123;E&#125;\), \(\vec&#123;H&#125;\), \(\vec&#123;D&#125;\), \(\vec&#123;B&#125;\) i \(\vec&#123;j&#125;\) zachodzą zależności, które określane są jako <b>równania materiałowe</b>:</p>
 <BlockFormula tag="(2.2.1)" tex={String.raw`\vec{D}=\varepsilon_0\varepsilon_r\cdot\vec{E}`} />
 <BlockFormula tag="(2.2.2)" tex={String.raw`\vec{B}=\mu_0\mu_r\cdot\vec{H}`} />
 <BlockFormula tag="(2.2.3)" tex={String.raw`\vec{j}=\sigma\vec{E}`} />
@@ -117,7 +117,7 @@ export default function Teoria1() {
 
 <h3 className="text-base text-amber-soft font-semibold mt-5 mb-2 font-mono tracking-wide">Prędkość światła i prędkość propagacji</h3>
 <BlockFormula tag="(2.2.4)" tex={String.raw`c=\frac{1}{\sqrt{\varepsilon_0\cdot\mu_0}}\approx 3\cdot 10^8\;\left[\frac{m}{s}\right]`} />
-<p className="mb-[11px] text-[14px] text-muted -mt-1 mb-[14px]">gdzie \(\varepsilon_0=\frac{10^{-9}}{36\pi}\,[\frac{F}{m}]\); \(\mu_0=4\pi\cdot 10^{-7}\,[\frac{H}{m}]\).</p>
+<p className="mb-[11px] text-[14px] text-muted -mt-1 mb-[14px]">gdzie \(\varepsilon_0=\frac&#123;10^&#123;-9&#125;&#125;&#123;36\pi&#125;\,[\frac&#123;F&#125;&#123;m&#125;]\); \(\mu_0=4\pi\cdot 10^&#123;-7&#125;\,[\frac&#123;H&#125;&#123;m&#125;]\).</p>
 <p className="mb-[11px]">Dla dowolnego ośrodka materialnego prędkość propagacji \(v_p\) jest <b>mniejsza</b> niż prędkość rozchodzenia się światła w próżni:</p>
 <BlockFormula tag="(2.2.5)–(2.2.7)" tex={String.raw`v_p=\frac{1}{\sqrt{\varepsilon_0\mu_0}\cdot\sqrt{\varepsilon_r\mu_r}}=\frac{c}{\sqrt{\varepsilon_r\mu_r}},\qquad n=\sqrt{\varepsilon_r\cdot\mu_r}\;\Rightarrow\; v_p=\frac{c}{n}`} />
 
@@ -129,7 +129,7 @@ export default function Teoria1() {
 <p className="mb-[11px]">Zachowanie się fali opisuje <b>współczynnik propagacji</b> \(\gamma=\alpha+j\beta\) (2.3.3), gdzie \(\alpha\) — stała tłumienia, \(\beta\) — stała fazowa zależna od ośrodka. Impedancja falowa charakteryzująca ośrodek: \(Z_f=\frac&#123;E_T&#125;&#123;H_T&#125;=\sqrt&#123;\frac&#123;j\omega\mu&#125;&#123;\sigma+j\omega\varepsilon&#125;&#125;\) (2.3.4). <b>Prędkość fazowa</b> (prędkość płaszczyzny stałej fazy): \(v_f=\frac&#123;\omega&#125;&#123;\beta&#125;\) (2.3.5), dla próżni \(v_f=c=\frac&#123;1&#125;&#123;\sqrt&#123;\varepsilon_0\mu_0&#125;&#125;\) (2.3.6); <b>prędkość grupowa</b> (prędkość poruszania się obwiedni): \(v_g=\frac&#123;\partial\omega&#125;&#123;\partial\beta&#125;\) (2.3.7).</p>
 <p className="mb-[11px]">Rozwiązania równań Maxwella mają różną postać w zależności od warunków brzegowych; istnieje nieskończenie wiele <b>modów</b> (mod — charakterystyczny rozkład pola elektromagnetycznego). Oprócz fali TEM istnieje: fala typu <b>TM</b> (zwana też E): \(E_z\neq 0,\ H_z=0\) — pole magnetyczne leży w płaszczyźnie prostopadłej do kierunku propagacji; fala typu <b>TE</b> (zwana też H): \(H_z\neq 0,\ E_z=0\) — pole elektryczne leży w płaszczyźnie prostopadłej do kierunku propagacji; oraz fala typu <b>EH</b>: \(E_z\neq 0,\ H_z\neq 0\).</p>
 </div>
-</section>
+</QuestionSection>
 
 
 <section className="border border-line bg-panel rounded-[14px] px-[26px] py-6 mb-[26px]" id="q3">
