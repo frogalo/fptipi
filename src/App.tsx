@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import Teoria1 from './pages/teoria/Teoria1';
-import Teoria13 from './pages/teoria/Teoria13';
-import Teoria16 from './pages/teoria/Teoria16';
-import Teoria21 from './pages/teoria/Teoria21';
-import Teoria7 from './pages/teoria/Teoria7';
+import TeoriaFalaPropagacja from './pages/teoria/TeoriaFalaPropagacja';
+import TeoriaModulacja from './pages/teoria/TeoriaModulacja';
+import TeoriaPolprzewodniki from './pages/teoria/TeoriaPolprzewodniki';
+import TeoriaPamieciNosniki from './pages/teoria/TeoriaPamieciNosniki';
+import TeoriaSwiatlowody from './pages/teoria/TeoriaSwiatlowody';
 import TeoriaSciaga from './pages/teoria/TeoriaSciaga';
 import WizualizacjeElementypolprzewodnikowe from './pages/wizualizacje/WizualizacjeElementypolprzewodnikowe';
 import WizualizacjeFaleem from './pages/wizualizacje/WizualizacjeFaleem';
@@ -26,11 +26,11 @@ export default function App() {
       <Routes>
 
         <Route path="/" element={<Home />} />
-        <Route path="/teoria/1" element={<Teoria1 />} />
-        <Route path="/teoria/13" element={<Teoria13 />} />
-        <Route path="/teoria/16" element={<Teoria16 />} />
-        <Route path="/teoria/21" element={<Teoria21 />} />
-        <Route path="/teoria/7" element={<Teoria7 />} />
+        <Route path="/teoria/fala-propagacja" element={<TeoriaFalaPropagacja />} />
+        <Route path="/teoria/modulacja" element={<TeoriaModulacja />} />
+        <Route path="/teoria/polprzewodniki" element={<TeoriaPolprzewodniki />} />
+        <Route path="/teoria/pamieci-nosniki" element={<TeoriaPamieciNosniki />} />
+        <Route path="/teoria/swiatlowody" element={<TeoriaSwiatlowody />} />
         <Route path="/teoria/sciaga" element={<TeoriaSciaga />} />
         <Route path="/wizualizacje/elementy_polprzewodnikowe" element={<WizualizacjeElementypolprzewodnikowe />} />
         <Route path="/wizualizacje/fale_em" element={<WizualizacjeFaleem />} />

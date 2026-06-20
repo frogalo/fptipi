@@ -95,7 +95,7 @@ export default function TeoriaSciaga() {
   <Symbol symbol={String.raw`D_{n1}, D_{n2}`} desc="normalne składowe indukcji elektrycznej w ośrodkach 1 i 2" />
   <Symbol symbol={String.raw`\rho_s`} desc="powierzchniowa gęstość ładunku swobodnego na granicy" />
   <Explanation>
-    <b>Ciągłość styczna E i skok normalny D</b>: Składowa styczna natężenia pola elektrycznego jest zawsze ciągła {"(\\(E_{t1}=E_{t2}\\))"}, co wynika z zachowawczego charakteru pola. Składowa normalna indukcji elektrycznej posiada skok {"(\\(D_{n2}-D_{n1}=\\rho_s\\))"} o wartość gęstości ładunku powierzchniowego \(\rho_s\) na granicy.
+    <b>Ciągłość styczna E i skok normalny D</b>: Składowa styczna natężenia pola elektrycznego jest zawsze ciągła {"({String.raw`\(E_{t1}=E_{t2}\)`})"}, co wynika z zachowawczego charakteru pola. Składowa normalna indukcji elektrycznej posiada skok {"({String.raw`\(D_{n2}-D_{n1}=\\rho_s\)`})"} o wartość gęstości ładunku powierzchniowego {String.raw`\(\rho_s\)`} na granicy.
   </Explanation>
 </Concept>
 
@@ -105,7 +105,7 @@ export default function TeoriaSciaga() {
   <Symbol symbol={String.raw`B_{n1}, B_{n2}`} desc="normalne składowe indukcji magnetycznej w ośrodkach 1 i 2" />
   <Symbol symbol={String.raw`J_s`} desc="gęstość liniowa prądu powierzchniowego na granicy" />
   <Explanation>
-    <b>Skok styczny H i ciągłość normalna B</b>: Składowa styczna natężenia pola magnetycznego ulega skokowi o wartość gęstości prądu powierzchniowego {"(\\(|H_{t2}-H_{t1}|=|J_s|\\))"}, więc jest ciągła tylko przy braku tego prądu {"(\\(J_s=0\\))"}. Składowa normalna indukcji magnetycznej jest zawsze ciągła {"(\\(B_{n1}=B_{n2}\\))"}, co wynika z bezźródłowości pola magnetycznego.
+    <b>Skok styczny H i ciągłość normalna B</b>: Składowa styczna natężenia pola magnetycznego ulega skokowi o wartość gęstości prądu powierzchniowego {"({String.raw`\(|H_{t2}-H_{t1}|=|J_s|\)`})"}, więc jest ciągła tylko przy braku tego prądu {"({String.raw`\(J_s=0\)`})"}. Składowa normalna indukcji magnetycznej jest zawsze ciągła {"({String.raw`\(B_{n1}=B_{n2}\)`})"}, co wynika z bezźródłowości pola magnetycznego.
   </Explanation>
 </Concept>
 
@@ -138,8 +138,8 @@ export default function TeoriaSciaga() {
   <Formula tex={String.raw`n=\sqrt{\varepsilon_r\mu_r}\qquad v_p=\frac{c}{n}`} />
   <Symbol symbol={String.raw`n`} desc="współczynnik załamania światła ośrodka" />
   <Symbol symbol={String.raw`v_p`} desc="prędkość fazowa fali elektromagnetycznej w ośrodku" />
-  <Symbol symbol={String.raw`c`} desc="prędkość światła w próżni (\(\approx 3\cdot 10^8\,\mathrm{m/s}\))" />
-  <Explanation><b>Prędkość fazowa</b>: prędkość rozchodzenia się fazy fali w ośrodku o współczynniku załamania \(n\); jest ona zawsze mniejsza niż prędkość światła w próżni.</Explanation>
+  <Symbol symbol={String.raw`c`} desc="prędkość światła w próżni ({String.raw`\(\approx 3\cdot 10^8\,\mathrm{m/s}\)`})" />
+  <Explanation><b>Prędkość fazowa</b>: prędkość rozchodzenia się fazy fali w ośrodku o współczynniku załamania {String.raw`\(n\)`}; jest ona zawsze mniejsza niż prędkość światła w próżni.</Explanation>
 </Concept>
 
 <Concept title="Impedancja falowa próżni">
@@ -150,12 +150,12 @@ export default function TeoriaSciaga() {
 
 <Concept title="Parametry materiałowe i rodzaje ośrodków">
   <Explanation>
-    <b>Parametry materiałowe</b>: przenikalność elektryczna \(\varepsilon\) (dielektryki), przenikalność magnetyczna \(\mu\) (magnetyki) oraz przewodnictwo właściwe \(\sigma\) (konduktywność).
+    <b>Parametry materiałowe</b>: przenikalność elektryczna {String.raw`\(\varepsilon\)`} (dielektryki), przenikalność magnetyczna {String.raw`\(\mu\)`} (magnetyki) oraz przewodnictwo właściwe {String.raw`\(\sigma\)`} (konduktywność).
   </Explanation>
   <Explanation>
     <b>Rodzaje ośrodków</b>:
     <br />• <b>Liniowy</b> — parametry nie zależą od natężeń pól;
-    <br />• <b>Bezstratny</b> — \(\sigma = 0\) (tylko próżnia);
+    <br />• <b>Bezstratny</b> — {String.raw`\(\sigma = 0\)`} (tylko próżnia);
     <br />• <b>Jednorodny</b> — parametry nie zależą od współrzędnych;
     <br />• <b>Dyspersyjny</b> — parametry zależą od <b>częstotliwości</b>;
     <br />• <b>Izotropowy</b> — parametry nie zależą od <b>kierunku pól</b> (anizotropowy — zależą).
@@ -171,10 +171,10 @@ export default function TeoriaSciaga() {
   <Symbol symbol={String.raw`\omega`} desc="pulsacja kołowa fali" />
   <Symbol symbol={String.raw`v_f, v_g`} desc="prędkość fazowa oraz prędkość grupowa fali" />
   <Explanation>
-    Inne typy fal: <b>TM</b> (\(E_z\neq0\)), <b>TE</b> (\(H_z\neq0\)), <b>EH</b> (oba ≠ 0).
+    Inne typy fal: <b>TM</b> ({String.raw`\(E_z\neq0\)`}), <b>TE</b> ({String.raw`\(H_z\neq0\)`}), <b>EH</b> (oba ≠ 0).
   </Explanation>
   <Explanation>
-    \(\gamma\) — współczynnik propagacji, \(v_f\) — prędkość fazowa, \(v_g\) — prędkość grupowa.
+    {String.raw`\(\gamma\)`} — współczynnik propagacji, {String.raw`\(v_f\)`} — prędkość fazowa, {String.raw`\(v_g\)`} — prędkość grupowa.
   </Explanation>
 </Concept>
 </div>
@@ -192,7 +192,7 @@ export default function TeoriaSciaga() {
     <b>Odbicie</b>: zmiana kierunku rozchodzenia się fali na granicy dwóch ośrodków; fala pozostaje w ośrodku wyjściowym.
   </Explanation>
   <Explanation>
-    <b>Załamanie (refrakcja)</b>: zmiana kierunku rozchodzenia się fali przy przejściu do innego ośrodka z powodu zmiany prędkości fali; zmienia się długość fali \(\lambda\), a jej częstotliwość pozostaje bez zmian.
+    <b>Załamanie (refrakcja)</b>: zmiana kierunku rozchodzenia się fali przy przejściu do innego ośrodka z powodu zmiany prędkości fali; zmienia się długość fali {String.raw`\(\lambda\)`}, a jej częstotliwość pozostaje bez zmian.
   </Explanation>
   <Explanation>
     <b>Dyfrakcja (ugięcie)</b>: zjawisko zmiany kierunku rozchodzenia się fali na szczelinach i przeszkodach porównywalnych z długością fali; wyjaśnia je <b>zasada Huygensa</b> (każdy punkt czoła fali staje się źródłem nowej fali kulistej).
@@ -266,10 +266,10 @@ export default function TeoriaSciaga() {
 <Concept title="Horyzont radiowy (zasięg bezpośredniej widoczności)">
   <Formula tex={String.raw`d_0=\sqrt{2R_Z}\,(\sqrt{H_N}+\sqrt{H_O})`} />
   <Symbol symbol={String.raw`d_0`} desc="graniczny zasięg bezpośredniej widoczności" />
-  <Symbol symbol={String.raw`R_Z`} desc="promień kuli ziemskiej (\(\approx 6400\,\mathrm{km}\))" />
+  <Symbol symbol={String.raw`R_Z`} desc="promień kuli ziemskiej ({String.raw`\(\approx 6400\,\mathrm{km}\)`})" />
   <Symbol symbol={String.raw`H_N`} desc="wysokość anteny nadawczej" />
   <Symbol symbol={String.raw`H_O`} desc="wysokość anteny odbiorczej" />
-  <Explanation><b>Horyzont radiowy</b>: maksymalny zasięg bezpośredniej widoczności uwzględniający zakrzywienie Ziemi (gdzie średni promień Ziemi {"\\(R_Z \\approx 6400\\ \\mathrm{km}\\)"}) dla danych wysokości anten.</Explanation>
+  <Explanation><b>Horyzont radiowy</b>: maksymalny zasięg bezpośredniej widoczności uwzględniający zakrzywienie Ziemi (gdzie średni promień Ziemi {"{String.raw`\(R_Z \\approx 6400\\ \\mathrm{km}\)`}"}) dla danych wysokości anten.</Explanation>
 </Concept>
 
 <Concept title="Model transmisji Friisa (gęstość mocy, natężenie pola i moc odbierana)">
@@ -286,7 +286,7 @@ export default function TeoriaSciaga() {
   <Symbol symbol={String.raw`P_O`} desc="moc odbierana przez antenę odbiorczą" />
   <Symbol symbol={String.raw`G_O`} desc="zysk kierunkowy anteny odbiorczej" />
   <Symbol symbol={String.raw`\lambda`} desc="długość fali elektromagnetycznej" />
-  <Explanation><b>Model Friisa</b>: gęstość mocy w przestrzeni maleje proporcjonalnie do kwadratu odległości (\(1/R^2\)), natężenie pola maleje jako \(1/R\), a moc odbierana zależy też od zysków anten i kwadratu długości fali.</Explanation>
+  <Explanation><b>Model Friisa</b>: gęstość mocy w przestrzeni maleje proporcjonalnie do kwadratu odległości ({String.raw`\(1/R^2\)`}), natężenie pola maleje jako {String.raw`\(1/R\)`}, a moc odbierana zależy też od zysków anten i kwadratu długości fali.</Explanation>
 </Concept>
 
 <Concept title="Bilans łącza radiowego w decybelach">
@@ -304,9 +304,9 @@ export default function TeoriaSciaga() {
 
   <Formula tex={String.raw`R_1=\tfrac12\sqrt{\lambda D}\quad (\text{dla } d_1=d_2)`} />
   <Symbol symbol={String.raw`R_1`} desc="promień pierwszej strefy Fresnela w połowie trasy" />
-  <Symbol symbol={String.raw`D`} desc="całkowita odległość między antenami (\(D=d_1+d_2\))" />
+  <Symbol symbol={String.raw`D`} desc="całkowita odległość między antenami ({String.raw`\(D=d_1+d_2\)`})" />
   <Explanation><b>Strefy Fresnela</b>: elipsoidalne obszary wokół linii bezpośredniej widoczności; przeszkody wnikające w pierwszą strefę Fresnela powodują ugięcie fali i dodatkowe straty mocy.</Explanation>
-  <Explanation><b>Kluczowe wnioski</b>: natężenie pola \(E\) maleje jako \(1/R\), gęstość mocy jako \(1/R^2\). Pierwsza strefa Fresnela musi być wolna od przeszkód. Przed projektem radiolinii wymagany jest projekt hipsometryczny terenu.</Explanation>
+  <Explanation><b>Kluczowe wnioski</b>: natężenie pola {String.raw`\(E\)`} maleje jako {String.raw`\(1/R\)`}, gęstość mocy jako {String.raw`\(1/R^2\)`}. Pierwsza strefa Fresnela musi być wolna od przeszkód. Przed projektem radiolinii wymagany jest projekt hipsometryczny terenu.</Explanation>
 </Concept>
 </div>
 
@@ -321,10 +321,10 @@ export default function TeoriaSciaga() {
 
 <Concept title="Konstrukcja i domieszkowanie światłowodu">
   <Explanation>
-    <b>Zasada działania i warunek propagacji</b>: światłowód to cylindryczny falowód dielektryczny wykonany ze szkła kwarcowego. Warunkiem koniecznym do uwięzienia i prowadzenia światła w rdzeniu jest wyższy współczynnik załamania rdzenia niż płaszcza {"(\(n_1 > n_2\))"} oraz całkowite wewnętrzne odbicie (kąt padania światła na granicę rdzeń-płaszcz musi być większy od kąta granicznego).
+    <b>Zasada działania i warunek propagacji</b>: światłowód to cylindryczny falowód dielektryczny wykonany ze szkła kwarcowego. Warunkiem koniecznym do uwięzienia i prowadzenia światła w rdzeniu jest wyższy współczynnik załamania rdzenia niż płaszcza {"({String.raw`\(n_1 > n_2\)`})"} oraz całkowite wewnętrzne odbicie (kąt padania światła na granicę rdzeń-płaszcz musi być większy od kąta granicznego).
   </Explanation>
   <Explanation>
-    <b>Współczynnik załamania i domieszkowanie</b>: typowa wartość \(n\) wynosi od 1,44 do 1,48. Odpowiednią różnicę współczynników załamania uzyskuje się przez domieszkowanie krzemionki (np. dodanie \(GeO_2\), fosforu, glinu lub chloru zwiększa \(n\); dodanie boru lub fluoru zmniejsza \(n\)).
+    <b>Współczynnik załamania i domieszkowanie</b>: typowa wartość {String.raw`\(n\)`} wynosi od 1,44 do 1,48. Odpowiednią różnicę współczynników załamania uzyskuje się przez domieszkowanie krzemionki (np. dodanie {String.raw`\(GeO_2\)`}, fosforu, glinu lub chloru zwiększa {String.raw`\(n\)`}; dodanie boru lub fluoru zmniejsza {String.raw`\(n\)`}).
   </Explanation>
   <Explanation>
     <b>Profil współczynnika załamania</b>: skokowy (skokowa zmiana na granicy rdzeń-płaszcz) lub gradientowy (płynne przejście) decyduje o właściwościach transmisyjnych i liczbie prowadzonych modów.
@@ -347,8 +347,8 @@ export default function TeoriaSciaga() {
   <Symbol symbol={String.raw`a`} desc="promień rdzenia światłowodu" />
   <Symbol symbol={String.raw`\lambda_0`} desc="długość fali światła w próżni" />
   <Symbol symbol={String.raw`M`} desc="liczba prowadzonych modów we włóknie" />
-  <Explanation><b>Parametry modowe</b>: częstotliwość znormalizowana \(V\) decyduje o liczbie prowadzonych modów \(M\). Przy \(V &lt; 2{','}405\) światłowód staje się jednomodowy.</Explanation>
-  <Explanation><b>Światłowód jednomodowy vs wielomodowy</b>: gdy {"\(V < 2,405\)"}, we włóknie rozchodzi się tylko jeden mod podstawowy \(HE_{11}\) (rdzeń ok. 9 \(\mu\)m). W przeciwnym wypadku światłowód jest wielomodowy (rdzeń ok. 50 lub 62,5 \(\mu\)m).</Explanation>
+  <Explanation><b>Parametry modowe</b>: częstotliwość znormalizowana {String.raw`\(V\)`} decyduje o liczbie prowadzonych modów {String.raw`\(M\)`}. Przy {String.raw`\(V &lt; 2{','}405\)`} światłowód staje się jednomodowy.</Explanation>
+  <Explanation><b>Światłowód jednomodowy vs wielomodowy</b>: gdy {"{String.raw`\(V < 2,405\)`}"}, we włóknie rozchodzi się tylko jeden mod podstawowy {String.raw`\(HE_{11}\)`} (rdzeń ok. 9 {String.raw`\(\mu\)`}m). W przeciwnym wypadku światłowód jest wielomodowy (rdzeń ok. 50 lub 62,5 {String.raw`\(\mu\)`}m).</Explanation>
   <Explanation><b>Mody i profil załamania</b>: mody (TE, TM, HE, EH) mają różne rozkłady pola i prędkości grupowe. Profil gradientowy (paraboliczny) prowadzi około dwukrotnie mniejszą liczbę modów niż profil skokowy.</Explanation>
 </Concept>
 </div>
@@ -362,10 +362,10 @@ export default function TeoriaSciaga() {
   <Symbol symbol={String.raw`L`} desc="długość światłowodu w kilometrach" />
   <Symbol symbol={String.raw`P(0)`} desc="moc optyczna wprowadzona na wejściu" />
   <Symbol symbol={String.raw`P(L)`} desc="moc optyczna na wyjściu światłowodu" />
-  <Explanation><b>Tłumienie jednostkowe \(\alpha\)</b>: strata mocy optycznej na jednostkę długości włókna, wyrażana w dB/km. Zależy silnie od długości fali (najniższa w 3. oknie, 1550 nm).</Explanation>
+  <Explanation><b>Tłumienie jednostkowe {String.raw`\(\alpha\)`}</b>: strata mocy optycznej na jednostkę długości włókna, wyrażana w dB/km. Zależy silnie od długości fali (najniższa w 3. oknie, 1550 nm).</Explanation>
   <Explanation><b>Wpływ tłumienia</b>: tłumienie zmniejsza moc sygnału optycznego, ale nie wpływa na kształt impulsów. Kompensowane jest przez wzmacniacze optyczne EDFA lub Ramana.</Explanation>
-  <Explanation><b>Przyczyny tłumienia</b>: absorpcja (rezonanse UV/IR, zanieczyszczenia jonami \(OH^-\) i metali), rozproszenie Rayleigha (spowodowane fluktuacjami gęstości szkła, maleje jako \(1/\lambda^4\)), Mie (niedoskonałości strukturalne) oraz zjawiska nieliniowe (Ramana i Brillouina).</Explanation>
-  <Explanation><b>Okna transmisyjne</b>: I okno (ok. 850 nm, wysokie tłumienie, systemy wielomodowe, tanie), II okno (ok. 1300 nm, zerowa dyspersja chromatyczna), III okno (ok. 1550 nm, najniższe tłumienie {"\(< 0,2\ \mathrm{dB/km}\)"}).</Explanation>
+  <Explanation><b>Przyczyny tłumienia</b>: absorpcja (rezonanse UV/IR, zanieczyszczenia jonami {String.raw`\(OH^-\)`} i metali), rozproszenie Rayleigha (spowodowane fluktuacjami gęstości szkła, maleje jako {String.raw`\(1/\lambda^4\)`}), Mie (niedoskonałości strukturalne) oraz zjawiska nieliniowe (Ramana i Brillouina).</Explanation>
+  <Explanation><b>Okna transmisyjne</b>: I okno (ok. 850 nm, wysokie tłumienie, systemy wielomodowe, tanie), II okno (ok. 1300 nm, zerowa dyspersja chromatyczna), III okno (ok. 1550 nm, najniższe tłumienie {"{String.raw`\(< 0,2\ \mathrm{dB/km}\)`}"}).</Explanation>
 </Concept>
 </div>
 
@@ -423,7 +423,7 @@ export default function TeoriaSciaga() {
 <Concept title="Czułość odbiornika optycznego (limit kwantowy)">
   <Formula tex={String.raw`P_R[\mathrm{dBm}]=10\log\frac{n_0 h f B_0}{10^{-3}}`} />
   <Symbol symbol={String.raw`n_0`} desc="minimalna liczba fotonów na bit (do poprawnego odbioru)" />
-  <Symbol symbol={String.raw`h`} desc="stała Plancka (\(\approx 6{,}62\cdot 10^{-34}\,\mathrm{J\cdot s}\))" />
+  <Symbol symbol={String.raw`h`} desc="stała Plancka ({String.raw`\(\approx 6{,}62\cdot 10^{-34}\,\mathrm{J\cdot s}\)`})" />
   <Symbol symbol={String.raw`f`} desc="częstotliwość fali świetlnej" />
   <Symbol symbol={String.raw`B_0`} desc="przepływność bitowa sygnału (szerokość pasma odbiornika)" />
   <Explanation><b>Czułość odbiornika (limit kwantowy)</b>: najniższa moc wejściowa fotodetektora niezbędna do uzyskania pożądanej stopy błędu (BER); fizycznym limitem jest minimalna liczba fotonów na bit (teoretycznie ~10, praktycznie 200–1000).</Explanation>
@@ -438,7 +438,7 @@ export default function TeoriaSciaga() {
 <div className="border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
 <div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">13</span><span className="font-semibold text-[15.5px] leading-tight text-white">Mierzenie jakości modulacji</span></div>
 <div className="space-y-3 mb-3 text-txt text-[15.5px] leading-relaxed">
-  <div><b>Wykres oczkowy</b> — nałożone wszystkie kombinacje bitów; parametry: <b>amplituda</b> (Vmax−Vmin, odporność na zakłócenia), <b>wysokość oka</b> (V′max−V′min, szacowanie szumów), <b>szerokość oka</b> (czas bezpiecznego próbkowania), <b>przecięcie</b> (próg decyzyjny), <b>nachylenie / czas narastania</b> \(C_&#123;NS&#125;=1&#123;,&#125;25\cdot T_&#123;20-80&#125;\), <b>zniekształcenie czasowe ΔT</b> (jitter), <b>współczynnik ekstynkcji</b>.</div>
+  <div><b>Wykres oczkowy</b> — nałożone wszystkie kombinacje bitów; parametry: <b>amplituda</b> (Vmax−Vmin, odporność na zakłócenia), <b>wysokość oka</b> (V′max−V′min, szacowanie szumów), <b>szerokość oka</b> (czas bezpiecznego próbkowania), <b>przecięcie</b> (próg decyzyjny), <b>nachylenie / czas narastania</b> {String.raw`\(C_{NS}=1{,}25\cdot T_{20-80}\)`}, <b>zniekształcenie czasowe ΔT</b> (jitter), <b>współczynnik ekstynkcji</b>.</div>
   <div>Rozwartość oka oraz margines szumowy:</div>
   <Concept title="Rozwartość wykresu oczkowego (Eye Opening Ratio)">
     <Formula tex={String.raw`R_0=\frac{V'_{max}-V'_{min}}{V_{max}-V_{min}}`} />
@@ -454,7 +454,7 @@ export default function TeoriaSciaga() {
     <Explanation><b>Margines szumowy (NM)</b>: określa odporność odbiornika na zakłócenia; wyraża stosunek poziomu napięcia dla logicznej jedynki do zniekształconego szczytu oka.</Explanation>
   </Concept>
   <div><b>BER</b> — bitowa stopa błędu (poziom błędnie zdekodowanych bitów).</div>
-  <div><b>Efektywność widmowa</b> \(\Gamma=R_b/B\) [bit/s/Hz].</div>
+  <div><b>Efektywność widmowa</b> {String.raw`\(\Gamma=R_b/B\)`} [bit/s/Hz].</div>
 </div>
 </div>
 
@@ -485,7 +485,7 @@ export default function TeoriaSciaga() {
   <Formula tex={String.raw`L=\frac{N^2(N-1)}{2}`} />
   <Symbol symbol={String.raw`L`} desc="maksymalna liczba powstałych fal wtórnych (produktów nieliniowych)" />
   <Symbol symbol={String.raw`N`} desc="liczba transmitowanych nośnych (kanałów)" />
-  <Explanation><b>Wzrost kombinatoryczny FWM</b>: pokazuje, jak lawinowo rośnie liczba pasożytniczych fal wraz z dodawaniem kolejnych nośnych \(N\) w systemach DWDM.</Explanation>
+  <Explanation><b>Wzrost kombinatoryczny FWM</b>: pokazuje, jak lawinowo rośnie liczba pasożytniczych fal wraz z dodawaniem kolejnych nośnych {String.raw`\(N\)`} w systemach DWDM.</Explanation>
 </Concept>
 <div className="space-y-2 mt-3 text-muted text-[15.5px] leading-relaxed">
   <div><b>Zjawisko nieliniowe 3. rzędu</b>: przy transmisji fal o różnych długościach <b>interferencja generuje kolejne fale</b>; moc fal wtórnych <b>rośnie kosztem podstawowych</b> → <b>tłumienie i przesłuchy</b>, wzrost BER.</div>
@@ -517,9 +517,9 @@ export default function TeoriaSciaga() {
   <Formula tex={String.raw`f_n(E)=\frac{1}{1+e^{(E-E_F)/kT}}`} />
   <Symbol symbol={String.raw`f_n(E)`} desc="prawdopodobieństwo zajęcia stanu o energii E przez elektron" />
   <Symbol symbol={String.raw`E_F`} desc="poziom (energia) Fermiego" />
-  <Symbol symbol={String.raw`k`} desc="stała Boltzmanna (\(\approx 1{,}38\cdot 10^{-23}\,\mathrm{J/K}\))" />
+  <Symbol symbol={String.raw`k`} desc="stała Boltzmanna ({String.raw`\(\approx 1{,}38\cdot 10^{-23}\,\mathrm{J/K}\)`})" />
   <Symbol symbol={String.raw`T`} desc="temperatura bezwzględna" />
-  <Explanation><b>Rozkład Fermiego–Diraca</b>: określa prawdopodobieństwo zajęcia poziomu energetycznego przez elektron w danej temperaturze; dla stanów energetycznych oddalonych o \(\ge 2kT\) od poziomu Fermiego rozkład ten dąży do klasycznego rozkładu Maxwella-Boltzmanna.</Explanation>
+  <Explanation><b>Rozkład Fermiego–Diraca</b>: określa prawdopodobieństwo zajęcia poziomu energetycznego przez elektron w danej temperaturze; dla stanów energetycznych oddalonych o {String.raw`\(\ge 2kT\)`} od poziomu Fermiego rozkład ten dąży do klasycznego rozkładu Maxwella-Boltzmanna.</Explanation>
 </Concept>
 
 <Concept title="Koncentracja nośników w stanie równowagi termodynamicznej">
@@ -527,7 +527,7 @@ export default function TeoriaSciaga() {
   <Symbol symbol={String.raw`n, p`} desc="koncentracja elektronów / dziur" />
   <Symbol symbol={String.raw`N_c, N_v`} desc="efektywna gęstość stanów w paśmie przewodnictwa / walencyjnym" />
   <Symbol symbol={String.raw`E_c, E_v`} desc="energia dna pasma przewodnictwa / stropu pasma walencyjnego" />
-  <Explanation><b>Koncentracja nośników w równowadze</b>: zależy wykładniczo od położenia poziomu Fermiego \(E_F\) względem krawędzi pasm. W stanie równowagi termodynamicznej iloczyn \(n \cdot p = n_i^2\) jest stały w danej temperaturze, niezależnie od stopnia domieszkowania.</Explanation>
+  <Explanation><b>Koncentracja nośników w równowadze</b>: zależy wykładniczo od położenia poziomu Fermiego {String.raw`\(E_F\)`} względem krawędzi pasm. W stanie równowagi termodynamicznej iloczyn {String.raw`\(n \cdot p = n_i^2\)`} jest stały w danej temperaturze, niezależnie od stopnia domieszkowania.</Explanation>
 </Concept>
 <div className="space-y-2 mt-3 text-muted text-[15.5px] leading-relaxed">
   <div><b>Poziom Fermiego: prawdopodobieństwo obsadzenia = 0,5.</b> Samoistny — <b>środek przerwy</b>; typ n — <b>bliżej pasma przewodnictwa</b>; typ p — <b>bliżej pasma walencyjnego</b>.</div>
@@ -551,7 +551,7 @@ export default function TeoriaSciaga() {
 <Concept title="Przewodnictwo właściwe (konduktywność) półprzewodnika">
   <Formula tex={String.raw`\sigma=|e|\,(n\mu_e+p\mu_h)`} />
   <Symbol symbol={String.raw`\sigma`} desc="przewodnictwo właściwe (konduktywność)" />
-  <Symbol symbol={String.raw`e`} desc="ładunek elementarny elektronu (\(\approx 1{,}6\cdot 10^{-19}\,\mathrm{C}\))" />
+  <Symbol symbol={String.raw`e`} desc="ładunek elementarny elektronu ({String.raw`\(\approx 1{,}6\cdot 10^{-19}\,\mathrm{C}\)`})" />
   <Symbol symbol={String.raw`\mu_e, \mu_h`} desc="ruchliwość elektronów oraz dziur" />
   <Explanation><b>Przewodnictwo właściwe</b>: określa zdolność półprzewodnika do przewodzenia prądu elektrycznego pod wpływem pola dryfowego; zależy zarówno od koncentracji, jak i ruchliwości obu rodzajów nośników ładunku (elektronów i dziur).</Explanation>
 </Concept>
@@ -601,7 +601,7 @@ export default function TeoriaSciaga() {
   <Symbol symbol={String.raw`I_C`} desc="prąd kolektora" />
   <Symbol symbol={String.raw`I_B`} desc="prąd bazy" />
   <Symbol symbol={String.raw`\beta`} desc="współczynnik wzmocnienia prądowego w konfiguracji wspólnego emitera" />
-  <Explanation><b>Wzmocnienie prądowe BJT</b>: prąd emitera jest sumą prądów bazy i kolektora; współczynnik wzmocnienia prądowego \(\beta\) określa stosunek prądu kolektora do prądu bazy (typowo rzędu 100, od kilkunastu do kilkuset).</Explanation>
+  <Explanation><b>Wzmocnienie prądowe BJT</b>: prąd emitera jest sumą prądów bazy i kolektora; współczynnik wzmocnienia prądowego {String.raw`\(\beta\)`} określa stosunek prądu kolektora do prądu bazy (typowo rzędu 100, od kilkunastu do kilkuset).</Explanation>
 </Concept>
 <div className="space-y-2 mt-3 text-muted text-[15.5px] leading-relaxed">
   <div><b>Dwa przeciwnie połączone złącza ze wspólną warstwą</b>; elektrody: <b>baza B, emiter E, kolektor C</b>; E i C ten sam typ, <b>baza przeciwny</b>; konfiguracje <b>n–p–n i p–n–p</b>. Emiter <b>dostarcza</b> nośniki do bazy, kolektor je <b>zbiera</b>.</div>
@@ -709,7 +709,7 @@ export default function TeoriaSciaga() {
 
   <Formula tex={String.raw`V < 2{,}405\quad (\text{jednomodowy HE}_{11})`} />
   <Symbol symbol={String.raw`V`} desc="warunek pracy jednomodowej światłowodu (HE11)" />
-  <Explanation><b>Liczba modów światłowodu</b>: częstotliwość znormalizowana \(V\) decyduje o liczbie prowadzonych modów \(M\). Przy {"\\(V < 2,405\\)"} światłowód prowadzi tylko mod podstawowy HE11 (jest jednomodowy).</Explanation>
+  <Explanation><b>Liczba modów światłowodu</b>: częstotliwość znormalizowana {String.raw`\(V\)`} decyduje o liczbie prowadzonych modów {String.raw`\(M\)`}. Przy {"{String.raw`\(V < 2,405\)`}"} światłowód prowadzi tylko mod podstawowy HE11 (jest jednomodowy).</Explanation>
 </Concept>
 
 <Concept title="Dyspersja modowa we włóknach">
