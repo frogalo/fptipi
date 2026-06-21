@@ -2,12 +2,14 @@ import React from 'react';
 
 interface FormulaProps {
   tex: string;
+  tag?: string;
 }
 
-export function Formula({ tex }: FormulaProps) {
+export function Formula({ tex, tag }: FormulaProps) {
   return (
-    <div className="block bg-ink2 border border-line border-l-2 border-l-amber rounded-md px-3 py-2 my-2 text-[15.5px] overflow-x-auto font-sans">
-      {`\\(${tex}\\)`}
+    <div className="block bg-ink2 border border-line border-l-[3px] border-l-amber rounded-md px-3 py-2 my-2 text-[15.5px] overflow-x-auto font-sans relative">
+      {tag && <span className="tag absolute top-2 right-3 text-xs text-muted font-mono">{tag}</span>}
+      {`\\[${tex}\\]`}
     </div>
   );
 }
@@ -39,7 +41,7 @@ export function Symbol({ symbol, desc }: SymbolProps) {
 }
 
 interface ConceptProps {
-  title?: string;
+  title?: React.ReactNode;
   children: React.ReactNode;
 }
 
@@ -58,3 +60,30 @@ export function Concept({ title, children }: ConceptProps) {
   );
 }
 
+interface ConclusionProps {
+  title?: string;
+  children: React.ReactNode;
+}
+
+export function Conclusion({ title = "Wnioski", children }: ConclusionProps) {
+  return (
+    <div className="rounded-[10px] px-4 py-[14px] my-[14px] border border-line bg-green-dim/10 border-green-dim">
+      <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">{title}</span>
+      <div className="text-[15px]">{children}</div>
+    </div>
+  );
+}
+
+interface BookAdditionProps {
+  title: string;
+  children: React.ReactNode;
+}
+
+export function BookAddition({ title, children }: BookAdditionProps) {
+  return (
+    <div className="rounded-[10px] px-4 py-[14px] my-[14px] border border-line bg-blue/10 border-[#34465f]">
+      <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">{title}</span>
+      <div className="text-[15px]">{children}</div>
+    </div>
+  );
+}

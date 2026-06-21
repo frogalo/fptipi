@@ -88,7 +88,7 @@ export default function Home() {
 
       {/* ===== Ściąga ===== */}
       <div className="mt-7 mb-3 font-mono text-[13px] tracking-[0.14em] uppercase text-amber border-b border-line pb-1.5 flex items-center gap-2">
-        <em className="not-italic text-lg">⚡</em> Ściąga — szybka powtórka
+        Ściąga — szybka powtórka
       </div>
       <ul className="list-none m-0 p-0">
         <li className="border border-line bg-panel rounded-xl mb-2.5 transition-all duration-200 hover:border-amber hover:translate-x-1">
@@ -102,7 +102,7 @@ export default function Home() {
 
       {/* ===== Odpowiedzi egzaminacyjne ===== */}
       <div className="mt-7 mb-3 font-mono text-[13px] tracking-[0.14em] uppercase text-amber border-b border-line pb-1.5 flex items-center gap-2">
-        <em className="not-italic text-lg">📖</em> Wzorcowe odpowiedzi egzaminacyjne
+       Wzorcowe odpowiedzi egzaminacyjne
       </div>
       <div className="flex flex-col gap-4">
         {parts.map((part) => (
@@ -132,7 +132,7 @@ export default function Home() {
 
       {/* ===== Zadania obliczeniowe ===== */}
       <div className="mt-7 mb-3 font-mono text-[13px] tracking-[0.14em] uppercase text-amber border-b border-line pb-1.5 flex items-center gap-2">
-        <em className="not-italic text-lg">🧮</em> Zadania obliczeniowe z rozwiązaniami
+        Zadania obliczeniowe z rozwiązaniami
       </div>
       <ul className="list-none m-0 p-0">
         <li className="border border-line bg-panel rounded-xl mb-2.5 transition-all duration-200 hover:border-amber hover:translate-x-1">
@@ -160,7 +160,7 @@ export default function Home() {
 
       {/* ===== Wizualizacje ===== */}
       <div className="mt-7 mb-3 font-mono text-[13px] tracking-[0.14em] uppercase text-amber border-b border-line pb-1.5 flex items-center gap-2">
-        <em className="not-italic text-lg">🎨</em> Wizualizacje interaktywne
+        Wizualizacje interaktywne
       </div>
       <ul className="list-none m-0 p-0">
         <li className="border border-line bg-panel rounded-xl mb-2.5 transition-all duration-200 hover:border-amber hover:translate-x-1">

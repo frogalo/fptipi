@@ -347,7 +347,7 @@ export default function TeoriaSciaga() {
   <Symbol symbol={String.raw`a`} desc="promień rdzenia światłowodu" />
   <Symbol symbol={String.raw`\lambda_0`} desc="długość fali światła w próżni" />
   <Symbol symbol={String.raw`M`} desc="liczba prowadzonych modów we włóknie" />
-  <Explanation><b>Parametry modowe</b>: częstotliwość znormalizowana {String.raw`\(V\)`} decyduje o liczbie prowadzonych modów {String.raw`\(M\)`}. Przy {String.raw`\(V &lt; 2{','}405\)`} światłowód staje się jednomodowy.</Explanation>
+  <Explanation><b>Parametry modowe</b>: częstotliwość znormalizowana {String.raw`\(V\)`} decyduje o liczbie prowadzonych modów {String.raw`\(M\)`}. Przy {String.raw`\(V < 2{','}405\)`} światłowód staje się jednomodowy.</Explanation>
   <Explanation><b>Światłowód jednomodowy vs wielomodowy</b>: gdy {"{String.raw`\(V < 2,405\)`}"}, we włóknie rozchodzi się tylko jeden mod podstawowy {String.raw`\(HE_{11}\)`} (rdzeń ok. 9 {String.raw`\(\mu\)`}m). W przeciwnym wypadku światłowód jest wielomodowy (rdzeń ok. 50 lub 62,5 {String.raw`\(\mu\)`}m).</Explanation>
   <Explanation><b>Mody i profil załamania</b>: mody (TE, TM, HE, EH) mają różne rozkłady pola i prędkości grupowe. Profil gradientowy (paraboliczny) prowadzi około dwukrotnie mniejszą liczbę modów niż profil skokowy.</Explanation>
 </Concept>

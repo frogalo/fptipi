@@ -105,7 +105,7 @@
      Floating Navigation Menu
      ============================================================ */
   .floating-nav {
-    @apply fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3;
+    @apply fixed top-6 right-6 z-50 flex flex-col items-end gap-3;
   }
   .floating-nav-toggle {
     @apply w-[50px] h-[50px] rounded-full bg-amber text-ink border-none shadow-[0_4px_12px_rgba(244,165,42,0.4)] cursor-pointer flex justify-center items-center transition-all duration-300;
@@ -128,6 +128,47 @@
   .floating-nav-link:hover {
     @apply bg-line text-amber;
   }
+
+  /* Search bar / overlay specific classes */
+  .search-overlay-backdrop {
+    @apply fixed inset-0 bg-ink/80 backdrop-blur-md z-100 flex items-start justify-center pt-[12vh] px-4 transition-opacity duration-300;
+  }
+  .search-container-box {
+    @apply bg-panel border border-line rounded-2xl w-full max-w-[650px] shadow-2xl overflow-hidden flex flex-col max-h-[75vh] transition-all duration-300;
+    animation: search-fade-in 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  @keyframes search-fade-in {
+    from {
+      opacity: 0;
+      transform: scale(0.96) translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+  .search-result-item {
+    @apply flex flex-col gap-1 p-3.5 rounded-xl border border-transparent hover:border-line hover:bg-ink2/50 transition-all duration-150 cursor-pointer;
+  }
+  .search-result-item:hover {
+    @apply translate-x-1;
+  }
+  .search-result-badge {
+    @apply font-mono font-bold text-ink bg-amber rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wider whitespace-nowrap inline-block;
+  }
+  .search-result-title {
+    @apply font-semibold text-white text-[15px] leading-snug;
+  }
+  .search-result-snippet {
+    @apply text-muted text-[13px] leading-relaxed;
+  }
+  .search-result-context {
+    @apply font-mono text-[11px] text-amber/80 flex items-center gap-1.5 mt-1;
+  }
+  .search-result-highlight {
+    @apply bg-amber/25 text-amber-soft font-medium rounded-sm px-0.5;
+  }
+
 
   .viz-card,
   .data-panel,
@@ -1241,7 +1282,333 @@
   50% { opacity: 1; transform: translateY(8px); }
 }
 
+/* ============================================================
+   Interactive Modal for Visualizations
+   ============================================================ */
+.interactive-modal-container {
+  @apply relative inline-flex items-center justify-center ml-2 align-middle;
+}
+
+.interactive-cube-btn {
+  @apply bg-panel border border-line rounded-md text-muted cursor-pointer transition-all duration-300 flex items-center justify-center p-1.5;
+}
+
+.interactive-cube-btn:hover {
+  @apply border-amber text-amber scale-110 shadow-[0_0_12px_rgba(244,165,42,0.4)];
+}
+
+.interactive-cube-btn.sticky-active {
+  @apply border-amber text-amber shadow-[0_0_12px_rgba(244,165,42,0.4)];
+}
+
+.interactive-modal-popup {
+  @apply absolute z-50 left-full top-1/2 -translate-y-1/2 ml-3 bg-panel2 border border-line rounded-[14px] shadow-[0_12px_32px_rgba(0,0,0,0.8)] opacity-0 pointer-events-none scale-95 transition-all duration-300;
+  width: 260px;
+}
+
+.interactive-modal-popup.show {
+  @apply opacity-100 pointer-events-auto scale-100;
+}
+
+.modal-title {
+  @apply font-mono text-[11px] text-amber tracking-[0.14em] uppercase border-b border-line px-4 py-2 bg-panel;
+  border-radius: 14px 14px 0 0;
+}
+
+.modal-content-area {
+  @apply p-4;
+}
+
+.modal-sticky-indicator {
+  @apply font-mono text-[9px] text-muted text-center py-1.5 border-t border-line bg-ink;
+  border-radius: 0 0 14px 14px;
+}
+
+/* ============================================================
+   Maxwell Visualizations
+   ============================================================ */
+.maxwell-viz-container {
+  @apply flex flex-col items-center justify-center gap-3;
+}
+
+.viz-caption {
+  @apply font-mono text-[11px] text-center text-muted mt-2;
+}
+
+.faraday-scene, .ampere-scene, .gauss-e-scene, .gauss-m-scene {
+  @apply relative w-[180px] h-[120px] rounded-[10px] border border-line bg-ink2 flex items-center justify-center overflow-hidden;
+}
+
+/* Faraday */
+.b-field-group {
+  @apply absolute flex gap-4 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+}
+.b-arrow {
+  @apply w-1.5 h-10 bg-amber rounded-sm relative;
+  animation: b-pulse 2s ease-in-out infinite alternate;
+}
+.b-arrow::after {
+  content: "";
+  @apply absolute -top-1.5 left-1/2 -translate-x-1/2 border-[4px] border-transparent border-b-amber;
+}
+.e-loop {
+  @apply absolute w-[80px] h-[80px] rounded-full border-2 border-green border-dashed;
+  animation: rotate-loop 3s linear infinite;
+}
+
+@keyframes b-pulse {
+  0% { transform: scaleY(0.5); opacity: 0.5; }
+  100% { transform: scaleY(1.5); opacity: 1; }
+}
+@keyframes rotate-loop {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Ampere */
+.wire {
+  @apply absolute w-1.5 h-[140px] bg-blue;
+}
+.current-electron {
+  @apply absolute w-1.5 h-1.5 bg-white rounded-full left-0;
+  animation: current-flow 1.5s linear infinite;
+}
+.current-electron:nth-child(1) { animation-delay: 0s; }
+.current-electron:nth-child(2) { animation-delay: 0.5s; }
+.current-electron:nth-child(3) { animation-delay: 1.0s; }
+.b-loop {
+  @apply absolute w-[100px] h-[40px] rounded-[50%] border-2 border-amber;
+  transform: perspective(200px) rotateX(60deg);
+}
+.b-loop::before {
+  content: "";
+  @apply absolute w-2 h-2 bg-amber rounded-full top-1/2 -right-1 -translate-y-1/2;
+}
+
+@keyframes current-flow {
+  0% { top: 100%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: -10%; opacity: 0; }
+}
+
+/* Gauss E */
+.point-charge {
+  @apply w-8 h-8 rounded-full bg-[rgba(91,227,154,0.2)] border border-green text-green flex items-center justify-center font-bold text-lg z-10;
+}
+.e-radial-lines {
+  @apply absolute inset-0 flex items-center justify-center;
+  animation: pulse-charge 2s infinite alternate;
+}
+.e-rad {
+  @apply absolute w-12 h-0.5 bg-green origin-left;
+  left: 50%;
+}
+.e-rad.l1 { transform: rotate(0deg) translateX(16px); }
+.e-rad.l2 { transform: rotate(45deg) translateX(16px); }
+.e-rad.l3 { transform: rotate(90deg) translateX(16px); }
+.e-rad.l4 { transform: rotate(135deg) translateX(16px); }
+.e-rad.l5 { transform: rotate(180deg) translateX(16px); }
+.e-rad.l6 { transform: rotate(225deg) translateX(16px); }
+.e-rad.l7 { transform: rotate(270deg) translateX(16px); }
+.e-rad.l8 { transform: rotate(315deg) translateX(16px); }
+
+@keyframes pulse-charge {
+  0% { filter: drop-shadow(0 0 4px var(--color-green)); }
+  100% { filter: drop-shadow(0 0 12px var(--color-green)); transform: scale(1.05); }
+}
+
+/* Gauss M */
+.magnet-bar {
+  @apply relative w-16 h-6 flex z-10;
+}
+.pole {
+  @apply flex-1 flex items-center justify-center font-bold text-[10px] text-white;
+}
+.pole.n { @apply bg-red rounded-l-sm; }
+.pole.s { @apply bg-blue rounded-r-sm; }
+
+.m-dipole-lines {
+  @apply absolute inset-0 flex items-center justify-center;
+}
+.m-curve {
+  @apply absolute w-24 h-12 border-2 border-amber rounded-[50%];
+  animation: b-lines-move 2s linear infinite;
+}
+.m-curve.top {
+  top: 10px;
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+}
+.m-curve.bottom {
+  bottom: 10px;
+  clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+}
+
+@keyframes b-lines-move {
+  0% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+  100% { opacity: 0.6; transform: scale(1); }
+}
+
 @keyframes trap-charge {
   0% { opacity: 0; transform: translateY(-20px); }
   45%, 100% { opacity: 1; transform: translateY(48px); }
+}
+
+/* ============================================================
+   Interactive Modal for Visualizations
+   ============================================================ */
+.interactive-modal-container {
+  @apply relative inline-flex items-center justify-center ml-2 align-middle;
+}
+
+.interactive-cube-btn {
+  @apply bg-panel border border-line rounded-md text-muted cursor-pointer transition-all duration-300 flex items-center justify-center p-1.5;
+}
+
+.interactive-cube-btn:hover {
+  @apply border-amber text-amber scale-110 shadow-[0_0_12px_rgba(244,165,42,0.4)];
+}
+
+.interactive-cube-btn.sticky-active {
+  @apply border-amber text-amber shadow-[0_0_12px_rgba(244,165,42,0.4)];
+}
+
+.interactive-modal-popup {
+  @apply absolute z-50 left-full top-1/2 -translate-y-1/2 ml-3 bg-panel2 border border-line rounded-[14px] shadow-[0_12px_32px_rgba(0,0,0,0.8)] opacity-0 pointer-events-none scale-95 transition-all duration-300;
+  width: 260px;
+}
+
+.interactive-modal-popup.show {
+  @apply opacity-100 pointer-events-auto scale-100;
+}
+
+.modal-title {
+  @apply font-mono text-[11px] text-amber tracking-[0.14em] uppercase border-b border-line px-4 py-2 bg-panel;
+  border-radius: 14px 14px 0 0;
+}
+
+.modal-content-area {
+  @apply p-4;
+}
+
+.modal-sticky-indicator {
+  @apply font-mono text-[9px] text-muted text-center py-1.5 border-t border-line bg-ink;
+  border-radius: 0 0 14px 14px;
+}
+
+/* ============================================================
+   Maxwell Visualizations
+   ============================================================ */
+.maxwell-viz-container {
+  @apply flex flex-col items-center justify-center gap-3;
+}
+
+.viz-caption {
+  @apply font-mono text-[11px] text-center text-muted mt-2;
+}
+
+.faraday-scene, .ampere-scene, .gauss-e-scene, .gauss-m-scene {
+  @apply relative w-[180px] h-[120px] rounded-[10px] border border-line bg-ink2 flex items-center justify-center overflow-hidden;
+}
+
+/* Faraday */
+.b-field-group {
+  @apply absolute flex gap-4 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+}
+.b-arrow {
+  @apply w-1.5 h-10 bg-amber rounded-sm relative;
+  animation: b-pulse 2s ease-in-out infinite alternate;
+}
+.b-arrow::after {
+  content: "";
+  @apply absolute -top-1.5 left-1/2 -translate-x-1/2 border-[4px] border-transparent border-b-amber;
+}
+.e-loop {
+  @apply absolute w-[80px] h-[80px] rounded-full border-2 border-green border-dashed;
+  animation: rotate-loop 3s linear infinite;
+}
+
+@keyframes b-pulse {
+  0% { transform: scaleY(0.5); opacity: 0.5; }
+  100% { transform: scaleY(1.5); opacity: 1; }
+}
+@keyframes rotate-loop {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Ampere */
+.wire {
+  @apply absolute w-1.5 h-[140px] bg-blue;
+}
+.current-electron {
+  @apply absolute w-1.5 h-1.5 bg-white rounded-full left-0;
+  animation: current-flow 1.5s linear infinite;
+}
+.current-electron:nth-child(1) { animation-delay: 0s; }
+.current-electron:nth-child(2) { animation-delay: 0.5s; }
+.current-electron:nth-child(3) { animation-delay: 1.0s; }
+.b-loop {
+  @apply absolute w-[100px] h-[40px] rounded-[50%] border-2 border-amber;
+  transform: perspective(200px) rotateX(60deg);
+}
+.b-loop::before {
+  content: "";
+  @apply absolute w-2 h-2 bg-amber rounded-full top-1/2 -right-1 -translate-y-1/2;
+}
+
+@keyframes current-flow {
+  0% { top: 100%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: -10%; opacity: 0; }
+}
+
+/* Gauss E */
+.point-charge {
+  @apply w-8 h-8 rounded-full bg-[rgba(91,227,154,0.2)] border border-green text-green flex items-center justify-center font-bold text-lg z-10;
+}
+.e-radial-lines {
+  @apply absolute inset-0 flex items-center justify-center;
+  animation: pulse-charge 2s infinite alternate;
+}
+.e-rad {
+  @apply absolute w-12 h-0.5 bg-green origin-left;
+  left: 50%;
+}
+.e-rad.l1 { transform: rotate(0deg) translateX(16px); }
+.e-rad.l2 { transform: rotate(45deg) translateX(16px); }
+.e-rad.l3 { transform: rotate(90deg) translateX(16px); }
+.e-rad.l4 { transform: rotate(135deg) translateX(16px); }
+.e-rad.l5 { transform: rotate(180deg) translateX(16px); }
+.e-rad.l6 { transform: rotate(225deg) translateX(16px); }
+.e-rad.l7 { transform: rotate(270deg) translateX(16px); }
+.e-rad.l8 { transform: rotate(315deg) translateX(16px); }
+
+@keyframes pulse-charge {
+  0% { filter: drop-shadow(0 0 4px var(--color-green)); }
+  100% { filter: drop-shadow(0 0 12px var(--color-green)); transform: scale(1.05); }
+}
+
+/* Gauss M */
+.magnet-bar {
+  @apply relative w-16 h-6 flex z-10;
+}
+.pole {
+  @apply flex-1 flex items-center justify-center font-bold text-[10px] text-white;
+}
+.pole.n { @apply bg-red rounded-l-sm; }
+.pole.s { @apply bg-blue rounded-r-sm; }
+
+.m-dipole-lines {
+  @apply absolute inset-0 flex items-center justify-center;
+}
+.m-lines-anim {
+  animation: b-lines-pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes b-lines-pulse {
+  0% { opacity: 0.5; }
+  100% { opacity: 1; filter: drop-shadow(0 0 4px var(--color-amber)); }
 }

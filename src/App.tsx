@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
 import TeoriaFalaPropagacja from './pages/teoria/TeoriaFalaPropagacja';
 import TeoriaModulacja from './pages/teoria/TeoriaModulacja';
 import TeoriaPolprzewodniki from './pages/teoria/TeoriaPolprzewodniki';
@@ -16,6 +16,25 @@ import Zadania3 from './pages/zadania/Zadania3';
 import FloatingNav from './components/FloatingNav';
 import Home from './pages/Home';
 
+function ScrollToHashElement() {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const id = hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        const timer = setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 150);
+        return () => clearTimeout(timer);
+      }
+    }
+  }, [hash]);
+
+  return null;
+}
+
 export default function App() {
   const basename = import.meta.env.BASE_URL.endsWith('/') && import.meta.env.BASE_URL !== '/'
     ? import.meta.env.BASE_URL.slice(0, -1)
@@ -23,6 +42,7 @@ export default function App() {
 
   return (
     <BrowserRouter basename={basename}>
+      <ScrollToHashElement />
       <Routes>
 
         <Route path="/" element={<Home />} />
@@ -44,3 +64,4 @@ export default function App() {
     </BrowserRouter>
   );
 }
+
