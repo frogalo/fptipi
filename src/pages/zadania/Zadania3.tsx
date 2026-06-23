@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import rys_5_5 from '../../assets/rys_5_5.png';
+import Footer from '../../components/Footer';
 
 export default function Zadania3() {
 
@@ -304,7 +305,7 @@ export default function Zadania3() {
 </div>
 </section>
 
-<footer className="text-center text-muted font-mono text-[11px] mt-9">FPTiTI · Zadania obliczeniowe cz. 3 · powtórka przed egzaminem · powodzenia! 💪</footer>
+<Footer>FPTiTI · Zadania obliczeniowe cz. 3 · powtórka przed egzaminem · powodzenia! 💪</Footer>
 </div>
     
 

@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
+import Footer from '../../components/Footer';
 
 type BandType = 'intrinsic' | 'n-type' | 'p-type';
 
@@ -247,6 +248,7 @@ export default function WizualizacjeElementypolprzewodnikowe() {
           </div>
         </section>
       </div>
+      <Footer>FPTiTI · Wizualizacje interaktywne · Fizyka Półprzewodników</Footer>
     </div>
   );
 }

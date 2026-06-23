@@ -9,6 +9,7 @@ import TeoriaPolprzewodniki_img_8 from '../../assets/TeoriaPolprzewodniki_img_8.
 import React, { useEffect } from 'react';
 import { PageHeader, QuestionSection, BlockFormula } from '../../components/TheoryComponents';
 import { Concept, Formula, Symbol, Explanation, Conclusion, BookAddition } from '../../components/MathBlocks';
+import Footer from '../../components/Footer';
 
 export default function Teoria16() {
 
@@ -298,7 +299,7 @@ export default function Teoria16() {
 </BookAddition>
 </QuestionSection>
 
-<footer className="text-center text-muted font-mono text-[11px] mt-9">FPTiTI · odpowiedzi cz. 4/5 (pytania 16–20) · źródło: A. Szymańska, „Fizyczne podstawy transmisji i przechowywania informacji”, luty 2026 · egzamin 13.06</footer>
+<Footer>FPTiTI · odpowiedzi cz. 4/5 (pytania 16–20) · źródło: A. Szymańska, „Fizyczne podstawy transmisji i przechowywania informacji”, luty 2026 · egzamin 13.06</Footer>
 </div>
     
 

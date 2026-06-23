@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
+import Footer from '../components/Footer';
 import examsData from '../data/examsData.json';
 import { Tip } from '../components/MathBlocks';
 import egzamin_2026_L_B from '../assets/egzamin_2026_L_B.png';
@@ -663,6 +664,7 @@ export default function Egzaminy() {
       ) : (
         renderEmptyState()
       )}
+      <Footer>FPTiTI · Archiwum egzaminów · powodzenia! 💪</Footer>
     </div>
   );
 }

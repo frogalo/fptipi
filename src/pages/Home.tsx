@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/favicon.png';
+import Footer from '../components/Footer';
 
 export default function Home() {
   const parts = [
@@ -212,7 +213,7 @@ export default function Home() {
         </li>
       </ul>
 
-      <footer className="text-center text-muted font-mono text-[11px] mt-9">FPTiTI · Materiały egzaminacyjne · wg A. Szymańskiej · powodzenia 💪</footer>
+      <Footer>FPTiTI · Materiały egzaminacyjne · wg A. Szymańskiej · powodzenia 💪</Footer>
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import Footer from '../../components/Footer';
 
 export default function WizualizacjeTechnikaswiatlowodowa() {
 
@@ -55,7 +56,7 @@ export default function WizualizacjeTechnikaswiatlowodowa() {
         <div className="viz-legend-item"><div className="viz-dot" style={{ "background": "var(--pulse-color)", "boxShadow": "0 0 10px var(--pulse-color)" }}></div> Mod Osiowy (Krótka trasa)</div>
         <div className="viz-legend-item"><div className="viz-dot" style={{ "background": "var(--pulse-slow)", "boxShadow": "0 0 10px var(--pulse-slow)" }}></div> Mod Wyższego Rzędu (Długa trasa)</div>
     </div>
-
+    <Footer>FPTiTI · Wizualizacje interaktywne · Dyspersja Modowa</Footer>
 </div>
     
 

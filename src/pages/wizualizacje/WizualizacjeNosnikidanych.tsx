@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import Footer from '../../components/Footer';
 
 export default function WizualizacjeNosnikidanych() {
 
@@ -58,7 +59,7 @@ export default function WizualizacjeNosnikidanych() {
         <p className="desc mb-[11px]" style={{ "marginTop": "3rem" }}>Odczyt realizowany jest m.in. przez głowice wykorzystujące efekt <strong>Gigantycznej Magnetorezystancji (GMR)</strong> - opór elektryczny głowicy zależy od kierunku namagnesowania mijanej domeny.</p>
     </div>
 </div>
-
+<Footer>FPTiTI · Wizualizacje interaktywne · Pamięć Optyczna i Magnetyczna</Footer>
 </div>
     
 

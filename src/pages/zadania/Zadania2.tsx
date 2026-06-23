@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import Footer from '../../components/Footer';
 
 export default function Zadania2() {
 
@@ -399,7 +400,7 @@ export default function Zadania2() {
 </div>
 </section>
 
-<footer className="text-center text-muted font-mono text-[11px] mt-9">FPTiTI · Zadania obliczeniowe cz. 2 · powtórka przed egzaminem · powodzenia! 💪</footer>
+<Footer>FPTiTI · Zadania obliczeniowe cz. 2 · powtórka przed egzaminem · powodzenia! 💪</Footer>
 </div>
     
 

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Formula, Explanation, Symbol, Concept } from '../../components/MathBlocks';
+import Footer from '../../components/Footer';
 
 export default function TeoriaSciaga() {
 
@@ -765,7 +766,7 @@ export default function TeoriaSciaga() {
 
 </div>
 
-<footer className="text-center text-muted font-mono text-[12px] mt-9">FPTiTI · ŚCIĄGA 28 pytań · kondensat odpowiedzi cz. 1–5 wg A. Szymańskiej · powodzenia 13.06 💪</footer>
+<Footer>FPTiTI · ŚCIĄGA 28 pytań · kondensat odpowiedzi cz. 1–5 wg A. Szymańskiej · powodzenia 13.06 💪</Footer>
 </div>
     
 

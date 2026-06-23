@@ -23,6 +23,7 @@ import TeoriaPamieciNosniki_img_22 from '../../assets/TeoriaPamieciNosniki_img_2
 import React, { useEffect } from 'react';
 import { PageHeader, QuestionSection, BlockFormula } from '../../components/TheoryComponents';
 import { Concept, Formula, Symbol, Explanation, Conclusion, BookAddition } from '../../components/MathBlocks';
+import Footer from '../../components/Footer';
 
 export default function Teoria21() {
 
@@ -387,7 +388,7 @@ export default function Teoria21() {
 </Conclusion>
 </QuestionSection>
 
-<footer className="text-center text-muted font-mono text-[11px] mt-9">FPTiTI · odpowiedzi cz. 5/5 (pytania 21–28) · źródło: A. Szymańska, „Fizyczne podstawy transmisji i przechowywania informacji", luty 2026 · egzamin 13.06</footer>
+<Footer>FPTiTI · odpowiedzi cz. 5/5 (pytania 21–28) · źródło: A. Szymańska, „Fizyczne podstawy transmisji i przechowywania informacji", luty 2026 · egzamin 13.06</Footer>
 </div>
     
 

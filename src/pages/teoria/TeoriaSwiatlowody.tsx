@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { BlockFormula } from '../../components/TheoryComponents';
 import { Symbol } from '../../components/MathBlocks';
+import Footer from '../../components/Footer';
 
 export default function Teoria7() {
 
@@ -421,7 +422,7 @@ export default function Teoria7() {
 </div>
 </section>
 
-<footer className="text-center text-muted font-mono text-[11px] mt-9">FPTiTI · odpowiedzi cz. 2/5 (pytania 7–12 + warunki brzegowe) · źródło: A. Szymańska, „Fizyczne podstawy transmisji i przechowywania informacji”, luty 2026 · egzamin 13.06</footer>
+<Footer>FPTiTI · odpowiedzi cz. 2/5 (pytania 7–12 + warunki brzegowe) · źródło: A. Szymańska, „Fizyczne podstawy transmisji i przechowywania informacji”, luty 2026 · egzamin 13.06</Footer>
 </div>
     
 

@@ -8,6 +8,7 @@ import TeoriaModulacja_img_7 from '../../assets/TeoriaModulacja_img_7.png';
 import React, { useEffect } from 'react';
 import { PageHeader, QuestionSection, BlockFormula } from '../../components/TheoryComponents';
 import { Concept, Formula, Symbol, Explanation, Conclusion, BookAddition } from '../../components/MathBlocks';
+import Footer from '../../components/Footer';
 
 export default function Teoria13() {
 
@@ -209,7 +210,7 @@ gdzie {String.raw`\(T_{20-80}\)`} — czas narastania sygnału od 20% do 80% jeg
 </BookAddition>
 </QuestionSection>
 
-<footer className="text-center text-muted font-mono text-[11px] mt-9">FPTiTI · odpowiedzi cz. 3/5 (pytania 13–15) · źródło: A. Szymańska, „Fizyczne podstawy transmisji i przechowywania informacji”, luty 2026 · egzamin 13.06</footer>
+<Footer>FPTiTI · odpowiedzi cz. 3/5 (pytania 13–15) · źródło: A. Szymańska, „Fizyczne podstawy transmisji i przechowywania informacji”, luty 2026 · egzamin 13.06</Footer>
 </div>
     
 

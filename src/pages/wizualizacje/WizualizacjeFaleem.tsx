@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import Footer from '../../components/Footer';
 
 export default function WizualizacjeFaleem() {
 
@@ -57,6 +58,7 @@ export default function WizualizacjeFaleem() {
             </div>
             <div className="tower right"></div>
         </div>
+        <Footer>FPTiTI · Wizualizacje interaktywne · Równania Maxwella i Propagacja</Footer>
     </div>
     
 
