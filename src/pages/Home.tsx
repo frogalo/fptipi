@@ -82,7 +82,7 @@ export default function Home() {
   return (
     <div className="max-w-[880px] mx-auto px-4 py-7 pb-20">
       <header className="mb-6 border border-line bg-linear-to-br from-panel to-ink2 rounded-[14px] px-6 py-[22px] flex flex-col sm:flex-row items-start sm:items-center gap-5">
-        <img src={logo} alt="FPTiTI Logo" className="w-[60px] h-[60px] rounded-xl object-contain border border-line bg-ink/50 p-1 shadow-md shrink-0" />
+        {/* <img src={logo} alt="FPTiTI Logo" className="w-[60px] h-[60px] rounded-xl object-contain border border-line bg-ink/50 p-1 shadow-md shrink-0" /> */}
         <div>
           <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-amber">FPTiTI · Fizyczne Podstawy Technologii i Teleinformatyki</div>
           <h1 className="text-[27px] font-semibold mt-1.5 mb-1">Spis treści — materiały do egzaminu</h1>
