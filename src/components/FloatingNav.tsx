@@ -66,6 +66,43 @@ export default function FloatingNav() {
             Ściąga Egzaminacyjna
           </Link>
 
+          <Link to="/egzaminy" className="floating-nav-link" onClick={() => setIsOpen(false)}>
+            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+            Baza Egzaminów
+          </Link>
+
+          <div className="h-px bg-line my-1"></div>
+
+          <Link to="/zadania/1" className="floating-nav-link" onClick={() => setIsOpen(false)}>
+            <span className="font-mono text-[10px] bg-amber/20 text-amber border border-amber/30 px-1 rounded mr-1">Zad.1</span>
+            Zadania: Fale & Propagacja
+          </Link>
+
+          <Link to="/zadania/2" className="floating-nav-link" onClick={() => setIsOpen(false)}>
+            <span className="font-mono text-[10px] bg-amber/20 text-amber border border-amber/30 px-1 rounded mr-1">Zad.2</span>
+            Zadania: Światłowody
+          </Link>
+
+          <Link to="/zadania/3" className="floating-nav-link" onClick={() => setIsOpen(false)}>
+            <span className="font-mono text-[10px] bg-amber/20 text-amber border border-amber/30 px-1 rounded mr-1">Zad.3</span>
+            Zadania: Modulacja
+          </Link>
+
+          <div className="h-px bg-line my-1"></div>
+
+          <Link to="/wizualizacje/fale_em" className="floating-nav-link" onClick={() => setIsOpen(false)}>
+            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+              <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+            </svg>
+            Wizualizacje Interaktywne
+          </Link>
         </div>
       </div>
 

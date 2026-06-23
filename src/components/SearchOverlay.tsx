@@ -104,7 +104,8 @@ export default function SearchOverlay({ onClose }: SearchOverlayProps) {
     navigate(targetPath);
     
     // Force scroll if on the same page
-    if (window.location.pathname === item.route && item.anchor) {
+    const currentPath = window.location.pathname + window.location.search;
+    if (currentPath === item.route && item.anchor) {
       const element = document.getElementById(item.anchor);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -257,6 +258,8 @@ export default function SearchOverlay({ onClose }: SearchOverlayProps) {
                           <span className="search-result-badge bg-blue/30 border border-blue/40 text-blue font-mono">Podręcznik</span>
                         ) : item.type === 'section' ? (
                           <span className="search-result-badge bg-violet/30 border border-violet/40 text-violet font-mono">Zadanie {item.number}</span>
+                        ) : item.type === 'exam_task' ? (
+                          <span className="search-result-badge bg-amber/30 border border-amber/40 text-amber font-mono">Egzamin</span>
                         ) : (
                           <span className="search-result-badge bg-line text-muted">Strona</span>
                         )}

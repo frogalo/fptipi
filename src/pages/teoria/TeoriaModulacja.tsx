@@ -57,6 +57,7 @@ export default function Teoria13() {
   number="13"
   title="Wymień i opisz sposoby mierzenia jakości zastosowanej modulacji."
   source="str. 38–41"
+  examBadge={{ label: "2026 Lato 1 B", route: "/egzaminy?year=2026&term=L1&group=B#task-2" }}
 >
 
 <p className="mb-[11px]">Do mierzenia jakości zastosowanej modulacji służą między innymi metody takie jak <b>bitowa stopa błędu — BER</b> (ang. Bit Error Rate), <b>wykres oczkowy</b> czy <b>efektywność widmowa</b>.</p>
@@ -125,6 +126,7 @@ gdzie {String.raw`\(T_{20-80}\)`} — czas narastania sygnału od 20% do 80% jeg
   number="14"
   title="Co to jest multipleksacja i jakie są jej zastosowania."
   source="str. 41–43"
+  examBadge={{ label: "2025 Zima 1 A1", route: "/egzaminy?year=2025&term=Z1&group=A1#task-1" }}
 >
 
 <p className="mb-[11px]">Kanały, którymi są transmitowane dane, znajdują się w ograniczonym paśmie częstotliwości. Korzystnym jest przeniesienie widma w zakres fal o wyższych częstotliwościach, co <b>zwiększa zasięg łącza</b>. Automatycznie <b>zmniejsza się wartość mocy nadajnika i rozmiar anteny</b>. <b>Równoczesne przesyłanie wielu sygnałów przez jeden kanał transmisyjny jest możliwe dzięki zastosowaniu zwielokrotnienia, czyli multipleksacji.</b></p>

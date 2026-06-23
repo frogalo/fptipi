@@ -12,6 +12,7 @@ import TeoriaFalaPropagacja_img_11 from '../../assets/TeoriaFalaPropagacja_img_1
 import TeoriaFalaPropagacja_img_12 from '../../assets/TeoriaFalaPropagacja_img_12.png';
 import TeoriaFalaPropagacja_img_13 from '../../assets/TeoriaFalaPropagacja_img_13.png';
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { PageHeader, QuestionSection, BlockFormula } from '../../components/TheoryComponents';
 import { Concept, Formula, Symbol, Explanation, Conclusion, BookAddition } from '../../components/MathBlocks';
 
@@ -50,6 +51,7 @@ export default function Teoria1() {
   number="1"
   title="Napisz i omów równania Maxwella oraz napisz wnioski, które z nich wynikają."
   source="str. 9–11, 14"
+  examBadge={{ label: "2026 Lato 1 A1", route: "/egzaminy?year=2026&term=L1&group=A1#task-2" }}
 >
 
 <p className="mb-[11px]">Podstawowymi zależnościami, od których rozpoczyna się jakiekolwiek rozważania na temat propagacji fal, są <b>równania Maxwella</b>. Nazwano je od nazwiska uczonego Jamesa Clerka Maxwella, który sformułował je i zebrał w integralną całość, korzystając z wiedzy innych uczonych, takich jak Michael Faraday, Carl Gauss i Andre Ampère. Równania przedstawiają <b>zależności pomiędzy zmianami pola elektrycznego i pola magnetycznego w czasie i przestrzeni</b>. Na tych czterech równaniach oparte jest działanie wszelkich systemów radio- i telekomunikacyjnych (telefonia komórkowa, radio, telewizja naziemna i satelitarna, nawigacja, radiolokacja).</p>
@@ -193,12 +195,31 @@ export default function Teoria1() {
 </QuestionSection>
 
 
-<QuestionSection
-  id="q3"
-  number="3"
-  title="Opisz zjawiska falowe (załamanie, odbicie, dyfrakcja, interferencja)."
-  source="str. 15–17"
+<div className="relative mb-[26px]" id="q3">
+<Link
+  to="/egzaminy?year=2025&term=L1&group=B#task-3"
+  className="absolute -top-3 right-[132px] z-10 font-mono text-[10.5px] text-amber bg-ink border border-amber/30 px-2.5 py-[3px] rounded-full whitespace-nowrap no-underline hover:bg-amber/15 hover:border-amber transition-all flex items-center gap-1.5 shadow-[0_2px_8px_rgba(0,0,0,0.3)]"
+  title="Pytanie było na egzaminie — kliknij aby przejść"
 >
+  <span>☀️</span>
+  <span>2025 Lato 1 B</span>
+  <svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" strokeWidth="2.5" fill="none" className="opacity-60">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</Link>
+<Link
+  to="/egzaminy?year=2026&term=L1&group=A1#task-3"
+  className="absolute -top-3 right-4 z-10 font-mono text-[10.5px] text-amber bg-ink border border-amber/30 px-2.5 py-[3px] rounded-full whitespace-nowrap no-underline hover:bg-amber/15 hover:border-amber transition-all flex items-center gap-1.5 shadow-[0_2px_8px_rgba(0,0,0,0.3)]"
+  title="Pytanie było na egzaminie — kliknij aby przejść"
+>
+  <span>☀️</span>
+  <span>2026 Lato 1 A1</span>
+  <svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" strokeWidth="2.5" fill="none" className="opacity-60">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</Link>
+<section className="border border-line bg-panel rounded-[14px] px-[26px] py-6">
+<div className="flex items-baseline gap-3 border-b border-line pb-3 mb-4"><span className="font-mono font-bold text-ink bg-amber rounded-lg px-2.5 py-[2px] text-[14px] whitespace-nowrap">3</span><h2 className="text-[20.5px] font-semibold leading-tight">Opisz zjawiska falowe (załamanie, odbicie, dyfrakcja, interferencja).</h2><span className="font-mono text-[11px] text-muted ml-auto whitespace-nowrap">str. 15–17</span></div>
 
 <p className="mb-[11px]">W idealnym przypadku fale propagujące się nie mogą oddziaływać między sobą, powinny rozchodzić się w wolnej przestrzeni bez żadnych ograniczeń. Przez pojęcie <b>wolnej przestrzeni</b> rozumiemy <b>ośrodek jednorodny</b>. W rzeczywistości tak nie jest — podczas transmisji mamy do czynienia z <b>odbiciem, załamaniem (refrakcją), ugięciem (dyfrakcją) i nakładaniem się fal (interferencją)</b>.</p>
 
@@ -246,7 +267,8 @@ export default function Teoria1() {
 <div className="rounded-[10px] px-4 py-[14px] my-[14px] border border-line bg-red/10 border-[#7d3a3a]"><span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">Uwaga — pułapka z opracowania</span>
 <p className="mb-[11px]">W opracowaniu studenckim wzór na kąt krytyczny bywa zapisany odwrotnie, jako {String.raw`\(\arcsin\frac{n_1}{n_2}\)`} — to <b>błąd</b>. Poprawna wersja podręcznikowa to {String.raw`\(\theta_C=\arcsin\frac{n_2}{n_1}\)`} (ponieważ {String.raw`\(n_1>n_2\)`}, argument arcsin musi być ≤&nbsp;1).</p>
 </div>
-</QuestionSection>
+</section>
+</div>
 
 
 <QuestionSection
@@ -254,6 +276,7 @@ export default function Teoria1() {
   number="4"
   title="Omów fale powierzchniowe, troposferyczne i jonosferyczne."
   source="str. 17–19"
+  examBadge={{ label: "2026 Lato 1 B", route: "/egzaminy?year=2026&term=L1&group=B#task-3" }}
 >
 
 <p className="mb-[11px]">Fale ze względu na sposób propagacji możemy podzielić na: <b>fale powierzchniowe, fale troposferyczne i fale jonosferyczne</b>.</p>

@@ -87,3 +87,17 @@ export function BookAddition({ title, children }: BookAdditionProps) {
     </div>
   );
 }
+
+interface TipProps {
+  children: React.ReactNode;
+}
+
+export function Tip({ children }: TipProps) {
+  return (
+    <div className="rounded-[10px] px-4 py-[14px] my-[14px] border border-amber/30 bg-amber/10">
+      <span className="font-mono text-[11px] tracking-[0.14em] uppercase text-amber block mb-2">⭐ Podpowiedź / Wskazówka</span>
+      <div className="text-[14.5px] text-muted leading-relaxed">{children}</div>
+    </div>
+  );
+}
+

@@ -224,6 +224,45 @@ for (const page of PAGES) {
   }
 }
 
+
+// 6. Index Exams from examsData.json
+const examsPath = path.resolve('src/data/examsData.json');
+if (fs.existsSync(examsPath)) {
+  const examsContent = JSON.parse(fs.readFileSync(examsPath, 'utf-8'));
+  for (const year in examsContent) {
+    const yearData = examsContent[year];
+    for (const term in yearData) {
+      const termData = yearData[term];
+      for (const group in termData) {
+        const groupData = termData[group];
+        if (groupData && groupData.tasks) {
+          let termName = 'Wrzesień';
+          if (term === 'Z1') termName = 'Zima 1';
+          else if (term === 'Z2') termName = 'Zima 2';
+          else if (term === 'L1') termName = 'Lato 1';
+          else if (term === 'L2') termName = 'Lato 2';
+          else if (term === 'Z') termName = 'Zima';
+          else if (term === 'L') termName = 'Lato';
+          const groupTitle = `Egzamin ${year} (${termName}) — Grupa ${group}`;
+          
+          groupData.tasks.forEach((task) => {
+            searchIndex.push({
+              type: 'exam_task',
+              title: `Zadanie ${task.number}: ${task.question.slice(0, 75)}...`,
+              number: task.number.toString(),
+              content: cleanText(task.question) + ' ' + cleanText(task.solution) + (task.tip ? ' ' + cleanText(task.tip) : ''),
+              route: `/egzaminy?year=${year}&term=${term}&group=${group}`,
+              anchor: `task-${task.number}`,
+              pageTitle: groupTitle,
+              category: 'Egzaminy'
+            });
+          });
+        }
+      }
+    }
+  }
+}
+
 // Ensure the target assets directory exists
 const targetDir = path.resolve('src/assets');
 if (!fs.existsSync(targetDir)) {
@@ -233,3 +272,4 @@ if (!fs.existsSync(targetDir)) {
 const targetPath = path.join(targetDir, 'search-index.json');
 fs.writeFileSync(targetPath, JSON.stringify(searchIndex, null, 2), 'utf-8');
 console.log(`Successfully generated search index with ${searchIndex.length} items at: ${targetPath}`);
+

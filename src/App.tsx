@@ -15,6 +15,7 @@ import Zadania2 from './pages/zadania/Zadania2';
 import Zadania3 from './pages/zadania/Zadania3';
 import FloatingNav from './components/FloatingNav';
 import Home from './pages/Home';
+import Egzaminy from './pages/Egzaminy';
 
 function ScrollToHashElement() {
   const { hash } = useLocation();
@@ -52,6 +53,7 @@ export default function App() {
         <Route path="/teoria/pamieci-nosniki" element={<TeoriaPamieciNosniki />} />
         <Route path="/teoria/swiatlowody" element={<TeoriaSwiatlowody />} />
         <Route path="/teoria/sciaga" element={<TeoriaSciaga />} />
+        <Route path="/egzaminy" element={<Egzaminy />} />
         <Route path="/wizualizacje/elementy_polprzewodnikowe" element={<WizualizacjeElementypolprzewodnikowe />} />
         <Route path="/wizualizacje/fale_em" element={<WizualizacjeFaleem />} />
         <Route path="/wizualizacje/nosniki_danych" element={<WizualizacjeNosnikidanych />} />
@@ -64,4 +66,5 @@ export default function App() {
     </BrowserRouter>
   );
 }
+
 

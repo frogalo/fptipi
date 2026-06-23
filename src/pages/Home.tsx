@@ -100,6 +100,21 @@ export default function Home() {
         </li>
       </ul>
 
+      {/* ===== Archiwum Egzaminów ===== */}
+      <div className="mt-7 mb-3 font-mono text-[13px] tracking-[0.14em] uppercase text-amber border-b border-line pb-1.5 flex items-center gap-2">
+        Baza egzaminów z ubiegłych lat
+      </div>
+      <ul className="list-none m-0 p-0">
+        <li className="border border-line bg-panel rounded-xl mb-2.5 transition-all duration-200 hover:border-amber hover:translate-x-1">
+          <Link to="/egzaminy" className="flex items-baseline gap-3 px-[18px] py-[14px] no-underline text-txt">
+            <span className="font-mono font-bold text-ink bg-green rounded-md px-2 py-px text-[12px] whitespace-nowrap shrink-0">egz</span>
+            <span className="font-semibold text-[15px] text-white">Archiwum egzaminów (2024 – 2026)</span>
+            <span className="text-[13px] text-muted ml-auto font-mono whitespace-nowrap">rozwiązania & wskazówki</span>
+          </Link>
+        </li>
+      </ul>
+
+
       {/* ===== Odpowiedzi egzaminacyjne ===== */}
       <div className="mt-7 mb-3 font-mono text-[13px] tracking-[0.14em] uppercase text-amber border-b border-line pb-1.5 flex items-center gap-2">
        Wzorcowe odpowiedzi egzaminacyjne

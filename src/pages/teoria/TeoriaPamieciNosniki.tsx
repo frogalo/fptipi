@@ -109,6 +109,7 @@ export default function Teoria21() {
   number="22"
   title="Omów budowę i zasadę działania tranzystorów bipolarnych."
   source="str. 57–59"
+  examBadge={{ label: "2026 Lato 1 B", route: "/egzaminy?year=2026&term=L1&group=B#task-1" }}
 >
 
 <h3 className="text-base text-amber-soft font-semibold mt-5 mb-2 font-mono tracking-wide">Budowa</h3>
@@ -144,6 +145,7 @@ export default function Teoria21() {
   number="23"
   title="Omów budowę i zasadę działania tranzystorów polowych."
   source="str. 59–63"
+  examBadge={{ label: "2025 Lato 1 B", route: "/egzaminy?year=2025&term=L1&group=B#task-1" }}
 >
 
 <h3 className="text-base text-amber-soft font-semibold mt-5 mb-2 font-mono tracking-wide">Podział i budowa</h3>
@@ -174,7 +176,7 @@ export default function Teoria21() {
 
 <h3 className="text-base text-amber-soft font-semibold mt-5 mb-2 font-mono tracking-wide">Porównanie tranzystorów bipolarnych i polowych (Tabela 7.1)</h3>
 <table className="w-full border-collapse my-3 text-[14.5px]">
-<tbody><tr><th className="border border-line px-2.5 py-1.5 text-left font-mono text-[11.5px] text-amber-soft bg-ink2 tracking-[0.05em]">Rodzaj tranzystora</th><th className="border border-line px-2.5 py-1.5 text-left font-mono text-[11.5px] text-amber-soft bg-ink2 tracking-[0.05em]">BIPOLARNY</th><th className="border border-line px-2.5 py-1.5 text-left font-mono text-[11.5px] text-amber-soft bg-ink2 tracking-[0.05em]">POLOWY</th></tr>
+<tbody><tr><th className="border border-line px-2.5 py-1.5 text-left font-mono text-[11.5px] text-amber-soft bg-ink2 tracking-wider">Rodzaj tranzystora</th><th className="border border-line px-2.5 py-1.5 text-left font-mono text-[11.5px] text-amber-soft bg-ink2 tracking-wider">BIPOLARNY</th><th className="border border-line px-2.5 py-1.5 text-left font-mono text-[11.5px] text-amber-soft bg-ink2 tracking-wider">POLOWY</th></tr>
 <tr><td className="border border-line px-2.5 py-1.5 text-left">Konstrukcja</td><td className="border border-line px-2.5 py-1.5 text-left">emiter, baza, kolektor;<br/>budowa asymetryczna</td><td className="border border-line px-2.5 py-1.5 text-left">źródło, bramka, dren;<br/>budowa asymetryczna</td></tr>
 <tr><td className="border border-line px-2.5 py-1.5 text-left">Rodzaj sterowania</td><td className="border border-line px-2.5 py-1.5 text-left"><b>prądowe</b></td><td className="border border-line px-2.5 py-1.5 text-left"><b>napięciowe</b></td></tr>
 <tr><td className="border border-line px-2.5 py-1.5 text-left">Transkonduktancja</td><td className="border border-line px-2.5 py-1.5 text-left">nie zależy od parametrów jego struktury, 1000&nbsp;mA/V</td><td className="border border-line px-2.5 py-1.5 text-left">zależy od rozmiarów geometrycznych struktury, przenikalności elektrycznej warstwy dielektryka i ruchliwości nośników, 5&nbsp;mA/V; bardzo duża impedancja wejściowa; kwadratowy przebieg charakterystyki przejściowej</td></tr>
@@ -204,7 +206,7 @@ export default function Teoria21() {
 <h3 className="text-base text-amber-soft font-semibold mt-5 mb-2 font-mono tracking-wide">Struktury NOR i NAND</h3>
 <p className="mb-[11px]"><b>Wyróżniamy dwie struktury pamięci: Flash typu NOR lub Flash typu NAND</b>, ze względu na wykorzystanie odpowiednich funktorów NOR i NAND.</p>
 <table className="w-full border-collapse my-3 text-[14.5px]">
-<tbody><tr><th className="border border-line px-2.5 py-1.5 text-left font-mono text-[11.5px] text-amber-soft bg-ink2 tracking-[0.05em]"></th><th className="border border-line px-2.5 py-1.5 text-left font-mono text-[11.5px] text-amber-soft bg-ink2 tracking-[0.05em]">Flash NOR</th><th className="border border-line px-2.5 py-1.5 text-left font-mono text-[11.5px] text-amber-soft bg-ink2 tracking-[0.05em]">Flash NAND</th></tr>
+<tbody><tr><th className="border border-line px-2.5 py-1.5 text-left font-mono text-[11.5px] text-amber-soft bg-ink2 tracking-wider"></th><th className="border border-line px-2.5 py-1.5 text-left font-mono text-[11.5px] text-amber-soft bg-ink2 tracking-wider">Flash NOR</th><th className="border border-line px-2.5 py-1.5 text-left font-mono text-[11.5px] text-amber-soft bg-ink2 tracking-wider">Flash NAND</th></tr>
 <tr><td className="border border-line px-2.5 py-1.5 text-left">Dostęp do komórek</td><td className="border border-line px-2.5 py-1.5 text-left"><b>bezpośredni dostęp do każdej komórki</b></td><td className="border border-line px-2.5 py-1.5 text-left"><b>sekwencyjny dostęp do danych (wada)</b></td></tr>
 <tr><td className="border border-line px-2.5 py-1.5 text-left">Czas zapisu i kasowania</td><td className="border border-line px-2.5 py-1.5 text-left">stosunkowo <b>długi</b> — nie stosuje się, gdy wymagane są częste aktualizacje</td><td className="border border-line px-2.5 py-1.5 text-left"><b>krótszy</b></td></tr>
 <tr><td className="border border-line px-2.5 py-1.5 text-left">Gęstość upakowania danych</td><td className="border border-line px-2.5 py-1.5 text-left">mniejsza</td><td className="border border-line px-2.5 py-1.5 text-left"><b>większa</b></td></tr>
@@ -233,6 +235,7 @@ export default function Teoria21() {
   number="25"
   title="Omów jeden ze sposobów odtwarzania i zapisu informacji na dyskach optycznych."
   source="str. 66–74"
+  examBadge={{ label: "2025 Zima 1 A1", route: "/egzaminy?year=2025&term=Z1&group=A1#task-2" }}
 >
 
 <h3 className="text-base text-amber-soft font-semibold mt-5 mb-2 font-mono tracking-wide">Budowa płyty CD–R</h3>
@@ -273,7 +276,7 @@ export default function Teoria21() {
 
 <h3 className="text-base text-amber-soft font-semibold mt-5 mb-2 font-mono tracking-wide">Porównanie CD i DVD (możliwe pytanie dodatkowe)</h3>
 <table className="w-full border-collapse my-3 text-[14.5px]">
-<tbody><tr><th className="border border-line px-2.5 py-1.5 text-left font-mono text-[11.5px] text-amber-soft bg-ink2 tracking-[0.05em]">Parametr</th><th className="border border-line px-2.5 py-1.5 text-left font-mono text-[11.5px] text-amber-soft bg-ink2 tracking-[0.05em]">CD</th><th className="border border-line px-2.5 py-1.5 text-left font-mono text-[11.5px] text-amber-soft bg-ink2 tracking-[0.05em]">DVD</th></tr>
+<tbody><tr><th className="border border-line px-2.5 py-1.5 text-left font-mono text-[11.5px] text-amber-soft bg-ink2 tracking-wider">Parametr</th><th className="border border-line px-2.5 py-1.5 text-left font-mono text-[11.5px] text-amber-soft bg-ink2 tracking-wider">CD</th><th className="border border-line px-2.5 py-1.5 text-left font-mono text-[11.5px] text-amber-soft bg-ink2 tracking-wider">DVD</th></tr>
 <tr><td className="border border-line px-2.5 py-1.5 text-left">Głębokość najmniejszych zagłębień</td><td className="border border-line px-2.5 py-1.5 text-left">0,83 μm</td><td className="border border-line px-2.5 py-1.5 text-left"><b>0,4 μm (dwukrotnie mniejsze)</b></td></tr>
 <tr><td className="border border-line px-2.5 py-1.5 text-left">Odległość ścieżek</td><td className="border border-line px-2.5 py-1.5 text-left">1,6 μm</td><td className="border border-line px-2.5 py-1.5 text-left"><b>0,74 μm</b></td></tr>
 <tr><td className="border border-line px-2.5 py-1.5 text-left">Długość spirali zapisu</td><td className="border border-line px-2.5 py-1.5 text-left">—</td><td className="border border-line px-2.5 py-1.5 text-left"><b>ponad 11 km — ponad dwa razy dłuższa niż na CD</b></td></tr>
@@ -333,7 +336,7 @@ export default function Teoria21() {
 </ul>
 <p className="mb-[11px]">W procesie produkcji na taśmę lub krążek nakładane są mikromagnesy stanowiące tzw. <b>domeny magnetyczne — elementarne pola podlegające przemagnesowaniom, czyli zapisowi informacji</b>. Pusty nośnik stanowi jedynie <b>zbiór chaotycznie rozmieszczonych domen magnetycznych</b>. <b>Proces magnesowania i przemagnesowywania substancji ferromagnetycznych opisuje pętla histerezy, pokazująca zmiany indukcji magnetycznej w funkcji natężenia pola magnetycznego.</b> Dla zapisów cyfrowych stosuje się <b>materiał magnetycznie twardy (trudno przemagnesowywany)</b>; materiał <b>magnetycznie miękki</b> jest łatwo przemagnesowywany.</p>
 <figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={TeoriaPamieciNosniki_img_18} alt="Pętla histerezy magnetycznej" style={{ "maxWidth": "380px" }}/><figcaption className="font-mono text-[11px] text-[#555] mt-2 text-left">Rysunek 9.1. Pętla histerezy magnetycznej dla materiałów magnetycznie miękkich (linia zielona) i twardych (linia czerwona).</figcaption></figure>
-<div className="rounded-[10px] px-4 py-[14px] my-[14px] border border-line bg-red/10 border-[#7d3a3a]"><span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">Temperatura Curie i rozmagnesowanie</span>
+<div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-red/10 border-[#7d3a3a]"><span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">Temperatura Curie i rozmagnesowanie</span>
 <p className="mb-[11px]"><b>Wraz ze wzrostem temperatury zmniejsza się stopień twardości materiału, w wyniku czego wzrasta podatność nośnika na przemagnesowanie i rozmagnesowanie. Punktem krytycznym jest podgrzanie nośnika do temperatury Curie, przy której materiał traci zdolności do magnesowania.</b> Nośniki magnetyczne powinny pracować i być przechowywane w możliwie niskich temperaturach, należy też unikać silnych zewnętrznych pól. W nośnikach zachodzi <b>proces rozmagnesowywania powodowany oddziaływaniem sił międzydomenowych</b> — wskazane jest <b>okresowe przegrywanie danych celem ponownego namagnesowania nośnika</b>.</p>
 </div>
 
