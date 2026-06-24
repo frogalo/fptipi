@@ -114,7 +114,7 @@ export default function Teoria16() {
   number="17"
   title="Koncentracja nośników w stanie równowagi termodynamicznej."
   source="str. 48–50"
-  examBadge={{ label: "2026 Lato 1 A1", route: "/egzaminy?year=2026&term=L1&group=A1#task-1" }}
+  examBadge={{ label: "2026 Lato 1 A", route: "/egzaminy?year=2026&term=L1&group=A#task-1" }}
 >
 
 <p className="mb-[11px]"><b>W stanie równowagi termodynamicznej półprzewodniki mają ustaloną temperaturę i nie działają na nie żadne zewnętrzne czynniki.</b> Koncentracja elektronów i dziur zależy od <b>koncentracji dozwolonych poziomów energetycznych i prawdopodobieństwa ich obsadzenia</b>:</p>
@@ -201,7 +201,10 @@ export default function Teoria16() {
   number="18"
   title="Koncentracja nośników w stanie nierównowagi termodynamicznej."
   source="str. 51–53"
-  examBadge={{ label: "2026 Lato 1 A1", route: "/egzaminy?year=2026&term=L1&group=A1#task-1" }}
+  examBadges={[
+    { label: "2026 Lato 1 A", route: "/egzaminy?year=2026&term=L1&group=A#task-1" },
+    { label: "2018 Zima 1 A", route: "/egzaminy?year=2018&term=Z1&group=A#task-3" }
+  ]}
 >
 
 <p className="mb-[11px]"><b>Stan równowagi termodynamicznej może być zakłócony poprzez działanie zewnętrznego pola (promieniowanie świetlne, promieniowanie X) lub poprzez dostarczenie lub usunięcie pewnej liczby nośników wskutek przepływu prądu (np. w złączu p–n).</b> Ogólnie stan nierównowagi:</p>

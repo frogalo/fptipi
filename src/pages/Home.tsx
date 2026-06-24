@@ -85,11 +85,14 @@ export default function Home() {
   const availableExams: { year: number; term: string; group: string; termName: string }[] = [];
   
   const termNames: Record<string, string> = {
-    'Z': 'Zima',
-    'L': 'Lato'
+    'Z1': 'Zima 1',
+    'Z2': 'Zima 2',
+    'L1': 'Lato 1',
+    'L2': 'Lato 2',
+    'Wrzesien': 'Wrzesień'
   };
 
-  const termOrder: Record<string, number> = { 'Z': 1, 'L': 2 };
+  const termOrder: Record<string, number> = { 'Z1': 1, 'Z2': 2, 'L1': 3, 'L2': 4, 'Wrzesien': 5 };
 
   Object.entries(examsData).forEach(([yearStr, yearContent]) => {
     const year = parseInt(yearStr);

@@ -31,8 +31,25 @@ interface QuestionSectionProps {
   source?: string;
   isTier1?: boolean;
   examBadge?: ExamBadgeInfo;
+  examBadges?: ExamBadgeInfo[];
   children: React.ReactNode;
 }
+
+const getBadgeIcon = (label: string, route: string): string => {
+  const lowerLabel = label.toLowerCase();
+  const lowerRoute = route.toLowerCase();
+  
+  if (lowerLabel.includes('zima') || lowerRoute.includes('term=z')) {
+    return '❄️';
+  }
+  if (lowerLabel.includes('wrzesień') || lowerLabel.includes('wrzesien') || lowerRoute.includes('term=w') || lowerRoute.includes('term=p')) {
+    return '🍁';
+  }
+  if (lowerLabel.includes('lato') || lowerRoute.includes('term=l')) {
+    return '☀️';
+  }
+  return '☀️';
+};
 
 export function QuestionSection({
   id,
@@ -41,17 +58,36 @@ export function QuestionSection({
   source,
   isTier1 = false,
   examBadge,
+  examBadges,
   children,
 }: QuestionSectionProps) {
   return (
     <div className="relative mb-[26px]" id={id}>
-      {examBadge && (
+      {examBadges && examBadges.length > 0 && (
+        <div className="absolute -top-3 right-4 z-10 flex flex-wrap gap-1.5 justify-end">
+          {examBadges.map((badge, idx) => (
+            <Link
+              key={idx}
+              to={badge.route}
+              className="font-mono text-[10.5px] text-amber bg-ink border border-amber/30 px-2.5 py-[3px] rounded-full whitespace-nowrap no-underline hover:bg-amber/15 hover:border-amber transition-all flex items-center gap-1.5 shadow-[0_2px_8px_rgba(0,0,0,0.3)]"
+              title={`Pytanie było na egzaminie — kliknij aby przejść`}
+            >
+              <span>{getBadgeIcon(badge.label, badge.route)}</span>
+              <span>{badge.label}</span>
+              <svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" strokeWidth="2.5" fill="none" className="opacity-60">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </Link>
+          ))}
+        </div>
+      )}
+      {!examBadges && examBadge && (
         <Link
           to={examBadge.route}
           className="absolute -top-3 right-4 z-10 font-mono text-[10.5px] text-amber bg-ink border border-amber/30 px-2.5 py-[3px] rounded-full whitespace-nowrap no-underline hover:bg-amber/15 hover:border-amber transition-all flex items-center gap-1.5 shadow-[0_2px_8px_rgba(0,0,0,0.3)]"
           title={`Pytanie było na egzaminie — kliknij aby przejść`}
         >
-          <span>☀️</span>
+          <span>{getBadgeIcon(examBadge.label, examBadge.route)}</span>
           <span>{examBadge.label}</span>
           <svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" strokeWidth="2.5" fill="none" className="opacity-60">
             <polyline points="9 18 15 12 9 6"></polyline>

@@ -44,50 +44,96 @@ interface RelatedLink {
 }
 
 const RELATED_LINKS: Record<string, RelatedLink[]> = {
-  // 2026 Lato I (L1) Grupa A
-  '2026_L_A_1': [
+  // 2026 Lato Grupa A
+  '2026_L1_A_1': [
     { label: 'Pyt. 17 · Stan równowagi termodynamicznej', route: '/teoria/polprzewodniki#q17' },
     { label: 'Pyt. 18 · Stan nierównowagi termodynamicznej', route: '/teoria/polprzewodniki#q18' }
   ],
-  '2026_L_A_2': [
+  '2026_L1_A_2': [
     { label: 'Pyt. 1 · Równania Maxwella', route: '/teoria/fala-propagacja#q1' }
   ],
-  '2026_L_A_3': [
+  '2026_L1_A_3': [
     { label: 'Pyt. 3 · Zjawiska falowe (odbicie, załamanie, dyfrakcja, interferencja)', route: '/teoria/fala-propagacja#q3' },
     { label: 'Pyt. 12 · Budżet łącza telekomunikacyjnego', route: '/teoria/swiatlowody#q12' }
   ],
-  // 2026 Lato I (L1) Grupa B
-  '2026_L_B_1': [
+  // 2026 Lato Grupa B
+  '2026_L1_B_1': [
     { label: 'Pyt. 22 · Tranzystory bipolarne', route: '/teoria/pamieci-nosniki#q22' }
   ],
-  '2026_L_B_2': [
+  '2026_L1_B_2': [
     { label: 'Pyt. 13 · Jakość modulacji (BER, oczko, Γ)', route: '/teoria/modulacja#q13' }
   ],
-  '2026_L_B_3': [
+  '2026_L1_B_3': [
     { label: 'Pyt. 4 · Fale powierzchniowe, troposferyczne, jonosferyczne', route: '/teoria/fala-propagacja#q4' },
     { label: 'Pyt. 12 · Budżet łącza telekomunikacyjnego', route: '/teoria/swiatlowody#q12' }
   ],
-  // 2025 Lato I (L1) Grupa B
-  '2025_L_B_1': [
+  // 2025 Lato Grupa B
+  '2025_L1_B_1': [
     { label: 'Pyt. 23 · Tranzystory polowe', route: '/teoria/pamieci-nosniki#q23' }
   ],
-  '2025_L_B_2': [
+  '2025_L1_B_2': [
     { label: 'Pyt. 12 · Budżet łącza telekomunikacyjnego', route: '/teoria/swiatlowody#q12' }
   ],
-  '2025_L_B_3': [
+  '2025_L1_B_3': [
     { label: 'Pyt. 3 · Zjawiska falowe (odbicie, załamanie, dyfrakcja, interferencja)', route: '/teoria/fala-propagacja#q3' },
     { label: 'Pyt. 12 · Budżet łącza telekomunikacyjnego', route: '/teoria/swiatlowody#q12' }
   ],
-  // 2025 Zima I (Z1) Grupa A
-  '2025_Z_A1_1': [
+  // 2025 Zima Grupa A
+  '2025_Z1_A_1': [
     { label: 'Pyt. 14 · Multipleksacja i zastosowania', route: '/teoria/modulacja#q14' }
   ],
-  '2025_Z_A1_2': [
+  '2025_Z1_A_2': [
     { label: 'Pyt. 25 · Zapis i odtwarzanie na dyskach optycznych', route: '/teoria/pamieci-nosniki#q25' }
   ],
-  '2025_Z_A1_3': [
+  '2025_Z1_A_3': [
     { label: 'Pyt. 8 · Światłowody jedno- i wielomodowe', route: '/teoria/swiatlowody#q8' },
     { label: 'Pyt. 9 · Okna transmisyjne', route: '/teoria/swiatlowody#q9' },
+    { label: 'Pyt. 10 · Dyspersja w światłowodach', route: '/teoria/swiatlowody#q10' }
+  ],
+  // 2025 Wrzesień Grupa A
+  '2025_Wrzesien_A_1': [
+    { label: 'Pyt. 28 · Magnetorezystancja', route: '/teoria/pamieci-nosniki#q28' },
+    { label: 'Pyt. 12 · Budżet łącza telekomunikacyjnego', route: '/teoria/swiatlowody#q12' }
+  ],
+  '2025_Wrzesien_A_2': [
+    { label: 'Pyt. 1 · Równania Maxwella', route: '/teoria/fala-propagacja#q1' }
+  ],
+  '2025_Wrzesien_A_3': [
+    { label: 'Pyt. 22 · Tranzystory bipolarne', route: '/teoria/pamieci-nosniki#q22' }
+  ],
+  // 2018 Zima Grupa A
+  '2018_Z1_A_1': [
+    { label: 'Pyt. 22 · Tranzystory bipolarne', route: '/teoria/pamieci-nosniki#q22' }
+  ],
+  '2018_Z1_A_2': [
+    { label: 'Pyt. 8 · Światłowody jedno- i wielomodowe', route: '/teoria/swiatlowody#q8' }
+  ],
+  '2018_Z1_A_3': [
+    { label: 'Pyt. 18 · Stan nierównowagi termodynamicznej', route: '/teoria/polprzewodniki#q18' }
+  ],
+  // 2018 Zima Grupa B
+  '2018_Z1_B_1': [
+    { label: 'Pyt. 23 · Tranzystory polowe', route: '/teoria/pamieci-nosniki#q23' }
+  ],
+  '2018_Z1_B_2': [
+    { label: 'Pyt. 6 · Zasięg anteny nadawczej', route: '/teoria/fala-propagacja#q6' }
+  ],
+  '2018_Z1_B_3': [
+    { label: 'Pyt. 13 · Jakość modulacji (BER, oczko, Γ)', route: '/teoria/modulacja#q13' }
+  ],
+  // 2018 Lato Grupa A
+  '2018_L1_A_1': [
+    { label: 'Pyt. 5 · Czynniki atmosferyczne', route: '/teoria/fala-propagacja#q5' }
+  ],
+  '2018_L1_A_2': [
+    { label: 'Pyt. 22 · Tranzystory bipolarne', route: '/teoria/pamieci-nosniki#q22' }
+  ],
+  // 2018 Lato Grupa B
+  '2018_L1_B_1': [
+    { label: 'Pyt. 1 · Równania Maxwella', route: '/teoria/fala-propagacja#q1' },
+    { label: '★ · Warunki brzegowe', route: '/teoria/swiatlowody#qwb' }
+  ],
+  '2018_L1_B_2': [
     { label: 'Pyt. 10 · Dyspersja w światłowodach', route: '/teoria/swiatlowody#q10' }
   ]
 };
@@ -95,7 +141,7 @@ const RELATED_LINKS: Record<string, RelatedLink[]> = {
 // Mapping of task keys to their diagrams using the actual textbook assets
 const TASK_CHARTS: Record<string, React.ReactNode> = {
   // 2026 Lato I (L1) Grupa A
-  '2026_L_A_1': (
+  '2026_L1_A_1': (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
       <figure className="text-center bg-white rounded-[10px] p-[14px] border border-line">
         <img src={TeoriaPolprzewodniki_img_2} alt="Rysunek 6.2. Rozkład Fermiego-Diraca" className="mx-auto max-h-[180px] object-contain" />
@@ -123,7 +169,7 @@ const TASK_CHARTS: Record<string, React.ReactNode> = {
       </figure>
     </div>
   ),
-  '2026_L_A_3': (
+  '2026_L1_A_3': (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
       <figure className="text-center bg-white rounded-[10px] p-[14px] border border-line">
         <img src={TeoriaFalaPropagacja_img_2} alt="Rysunek 3.1. Odbicie fali" className="mx-auto max-h-[180px] object-contain" />
@@ -152,7 +198,7 @@ const TASK_CHARTS: Record<string, React.ReactNode> = {
     </div>
   ),
   // 2026 Lato I (L1) Grupa B
-  '2026_L_B_1': (
+  '2026_L1_B_1': (
     <>
       <figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]">
         <img src={TeoriaPamieciNosniki_img_2} alt="Charakterystyka potencjału w złączu p-n-p" className="mx-auto max-h-[300px] object-contain" />
@@ -168,7 +214,7 @@ const TASK_CHARTS: Record<string, React.ReactNode> = {
       </figure>
     </>
   ),
-  '2026_L_B_2': (
+  '2026_L1_B_2': (
     <figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]">
       <img src={TeoriaModulacja_img_1} alt="Wykres oczkowy" className="mx-auto max-h-[300px] object-contain" />
       <figcaption className="font-mono text-[11px] text-muted mt-2 text-left">
@@ -177,7 +223,7 @@ const TASK_CHARTS: Record<string, React.ReactNode> = {
     </figure>
   ),
   // 2025 Lato I (L1) Grupa B
-  '2025_L_B_1': (
+  '2025_L1_B_1': (
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
         <figure className="text-center bg-white rounded-[10px] p-[14px] border border-line">
@@ -213,7 +259,7 @@ const TASK_CHARTS: Record<string, React.ReactNode> = {
       </figure>
     </>
   ),
-  '2025_L_B_3': (
+  '2025_L1_B_3': (
     <>
       <figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]">
         <img src={TeoriaFalaPropagacja_img_4} alt="Schemat doświadczenia Younga" className="mx-auto max-h-[220px] object-contain" />
@@ -238,12 +284,15 @@ export default function Egzaminy() {
   const groupParam = searchParams.get('group');
 
   const selectedYear = yearParam ? parseInt(yearParam) : 2026;
-  const selectedTerm = termParam || 'L';
+  const selectedTerm = termParam || 'L1';
 
   const years = [2018, 2024, 2025, 2026];
   const terms = [
-    { id: 'Z', name: 'Zima' },
-    { id: 'L', name: 'Lato' }
+    { id: 'Z1', name: 'Zima 1' },
+    { id: 'Z2', name: 'Zima 2' },
+    { id: 'L1', name: 'Lato 1' },
+    { id: 'L2', name: 'Lato 2' },
+    { id: 'Wrzesien', name: 'Wrzesień' }
   ];
 
   // Helper functions to check if exams are available (have tasks)
@@ -492,6 +541,14 @@ export default function Egzaminy() {
     });
   };
 
+  const termNameMap: Record<string, string> = {
+    'Z1': 'Zimowej (sesja 1)',
+    'Z2': 'Zimowej (sesja 2)',
+    'L1': 'Letniej (sesja 1)',
+    'L2': 'Letniej (sesja 2)',
+    'Wrzesien': 'Wrześniowej'
+  };
+
   const renderEmptyState = () => (
     <div className="border border-line border-dashed rounded-[14px] p-10 text-center text-muted bg-panel/30 my-6">
       <svg viewBox="0 0 24 24" width="40" height="40" stroke="currentColor" strokeWidth="1.5" fill="none" className="mx-auto mb-3.5 text-line">
@@ -501,14 +558,14 @@ export default function Egzaminy() {
       </svg>
       <h3 className="text-white font-semibold text-lg mb-1">Brak danych dla wybranego terminu</h3>
       <p className="text-[14.5px] max-w-[420px] mx-auto text-muted-more">
-        Brak arkusza i rozwiązań w bazie dla roku <strong>{selectedYear}</strong>, sesji <strong>{selectedTerm === 'Z' ? 'Zimowej' : selectedTerm === 'L' ? 'Letniej' : 'Wrześniowej'}</strong>, <strong>Grupy {selectedGroup}</strong>.
+        Brak arkusza i rozwiązań w bazie dla roku <strong>{selectedYear}</strong>, sesji <strong>{termNameMap[selectedTerm] || 'Nieznanej'}</strong>, <strong>Grupy {selectedGroup}</strong>.
       </p>
       <div className="mt-5 flex justify-center gap-3">
         <button
-          onClick={() => updateParams(2026, 'L', 'B')}
+          onClick={() => updateParams(2026, 'L1', 'B')}
           className="font-mono text-[11.5px] bg-amber text-ink px-4 py-2 rounded-lg font-semibold hover:bg-amber-soft transition-colors cursor-pointer border-none"
         >
-          Pokaż egzamin z 2026 (Lato, Grupa B)
+          Pokaż egzamin z 2026 (Lato 1, Grupa B)
         </button>
       </div>
     </div>
