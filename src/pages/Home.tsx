@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/favicon.png';
 import Footer from '../components/Footer';
+import examsData from '../data/examsData.json';
 
 export default function Home() {
   const parts = [
@@ -80,6 +81,44 @@ export default function Home() {
     }
   ];
 
+  // Extract available exams dynamically
+  const availableExams: { year: number; term: string; group: string; termName: string }[] = [];
+  
+  const termNames: Record<string, string> = {
+    'Z': 'Zima',
+    'L': 'Lato'
+  };
+
+  const termOrder: Record<string, number> = { 'Z': 1, 'L': 2 };
+
+  Object.entries(examsData).forEach(([yearStr, yearContent]) => {
+    const year = parseInt(yearStr);
+    if (!yearContent) return;
+    Object.entries(yearContent).forEach(([term, termContent]) => {
+      if (!termContent) return;
+      Object.entries(termContent).forEach(([group, groupContent]) => {
+        const tasks = (groupContent as any)?.tasks;
+        if (tasks && tasks.length > 0) {
+          availableExams.push({
+            year,
+            term,
+            group,
+            termName: termNames[term] || term
+          });
+        }
+      });
+    });
+  });
+
+  // Sort: Year descending, Term order ascending, Group name ascending
+  availableExams.sort((a, b) => {
+    if (b.year !== a.year) return b.year - a.year;
+    const orderA = termOrder[a.term] || 99;
+    const orderB = termOrder[b.term] || 99;
+    if (orderA !== orderB) return orderA - orderB;
+    return a.group.localeCompare(b.group);
+  });
+
   return (
     <div className="max-w-[880px] mx-auto px-4 py-7 pb-20">
       <header className="mb-6 border border-line bg-linear-to-br from-panel to-ink2 rounded-[14px] px-6 py-[22px] flex flex-col sm:flex-row items-start sm:items-center gap-5">
@@ -109,15 +148,31 @@ export default function Home() {
       <div className="mt-7 mb-3 font-mono text-[13px] tracking-[0.14em] uppercase text-amber border-b border-line pb-1.5 flex items-center gap-2">
         Baza egzaminów z ubiegłych lat
       </div>
-      <ul className="list-none m-0 p-0">
-        <li className="border border-line bg-panel rounded-xl mb-2.5 transition-all duration-200 hover:border-amber hover:translate-x-1">
+      <ul className="list-none m-0 p-0 mb-3">
+        <li className="border border-line bg-panel rounded-xl transition-all duration-200 hover:border-amber hover:translate-x-1">
           <Link to="/egzaminy" className="flex items-baseline gap-3 px-[18px] py-[14px] no-underline text-txt">
             <span className="font-mono font-bold text-ink bg-green rounded-md px-2 py-px text-[12px] whitespace-nowrap shrink-0">egz</span>
-            <span className="font-semibold text-[15px] text-white">Archiwum egzaminów (2024 – 2026)</span>
+            <span className="font-semibold text-[15px] text-white">Archiwum egzaminów (2018 – 2026)</span>
             <span className="text-[13px] text-muted ml-auto font-mono whitespace-nowrap">rozwiązania & wskazówki</span>
           </Link>
         </li>
       </ul>
+
+      {/* Szybki dostęp do konkretnych arkuszy */}
+      <div className="border border-line bg-panel rounded-xl p-[18px] mb-6">
+        <span className="block font-mono text-[11px] uppercase tracking-wider text-muted mb-3">Szybki wybór konkretnego arkusza:</span>
+        <div className="flex flex-wrap gap-2">
+          {availableExams.map((exam, idx) => (
+            <Link
+              key={idx}
+              to={`/egzaminy?year=${exam.year}&term=${exam.term}&group=${exam.group}`}
+              className="font-mono text-[11.5px] no-underline bg-ink2/60 border border-line text-amber-soft px-3 py-2 rounded-lg hover:border-amber hover:bg-amber/10 hover:text-white transition-all cursor-pointer shadow-sm"
+            >
+              {exam.year} {exam.termName} ({exam.group})
+            </Link>
+          ))}
+        </div>
+      </div>
 
 
       {/* ===== Odpowiedzi egzaminacyjne ===== */}

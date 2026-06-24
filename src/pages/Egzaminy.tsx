@@ -44,48 +44,48 @@ interface RelatedLink {
 }
 
 const RELATED_LINKS: Record<string, RelatedLink[]> = {
-  // 2026 Lato I (L1) Grupa A1
-  '2026_L1_A1_1': [
+  // 2026 Lato I (L1) Grupa A
+  '2026_L_A_1': [
     { label: 'Pyt. 17 · Stan równowagi termodynamicznej', route: '/teoria/polprzewodniki#q17' },
     { label: 'Pyt. 18 · Stan nierównowagi termodynamicznej', route: '/teoria/polprzewodniki#q18' }
   ],
-  '2026_L1_A1_2': [
+  '2026_L_A_2': [
     { label: 'Pyt. 1 · Równania Maxwella', route: '/teoria/fala-propagacja#q1' }
   ],
-  '2026_L1_A1_3': [
+  '2026_L_A_3': [
     { label: 'Pyt. 3 · Zjawiska falowe (odbicie, załamanie, dyfrakcja, interferencja)', route: '/teoria/fala-propagacja#q3' },
     { label: 'Pyt. 12 · Budżet łącza telekomunikacyjnego', route: '/teoria/swiatlowody#q12' }
   ],
   // 2026 Lato I (L1) Grupa B
-  '2026_L1_B_1': [
+  '2026_L_B_1': [
     { label: 'Pyt. 22 · Tranzystory bipolarne', route: '/teoria/pamieci-nosniki#q22' }
   ],
-  '2026_L1_B_2': [
+  '2026_L_B_2': [
     { label: 'Pyt. 13 · Jakość modulacji (BER, oczko, Γ)', route: '/teoria/modulacja#q13' }
   ],
-  '2026_L1_B_3': [
+  '2026_L_B_3': [
     { label: 'Pyt. 4 · Fale powierzchniowe, troposferyczne, jonosferyczne', route: '/teoria/fala-propagacja#q4' },
     { label: 'Pyt. 12 · Budżet łącza telekomunikacyjnego', route: '/teoria/swiatlowody#q12' }
   ],
   // 2025 Lato I (L1) Grupa B
-  '2025_L1_B_1': [
+  '2025_L_B_1': [
     { label: 'Pyt. 23 · Tranzystory polowe', route: '/teoria/pamieci-nosniki#q23' }
   ],
-  '2025_L1_B_2': [
+  '2025_L_B_2': [
     { label: 'Pyt. 12 · Budżet łącza telekomunikacyjnego', route: '/teoria/swiatlowody#q12' }
   ],
-  '2025_L1_B_3': [
+  '2025_L_B_3': [
     { label: 'Pyt. 3 · Zjawiska falowe (odbicie, załamanie, dyfrakcja, interferencja)', route: '/teoria/fala-propagacja#q3' },
     { label: 'Pyt. 12 · Budżet łącza telekomunikacyjnego', route: '/teoria/swiatlowody#q12' }
   ],
-  // 2025 Zima I (Z1) Grupa A1
-  '2025_Z1_A1_1': [
+  // 2025 Zima I (Z1) Grupa A
+  '2025_Z_A1_1': [
     { label: 'Pyt. 14 · Multipleksacja i zastosowania', route: '/teoria/modulacja#q14' }
   ],
-  '2025_Z1_A1_2': [
+  '2025_Z_A1_2': [
     { label: 'Pyt. 25 · Zapis i odtwarzanie na dyskach optycznych', route: '/teoria/pamieci-nosniki#q25' }
   ],
-  '2025_Z1_A1_3': [
+  '2025_Z_A1_3': [
     { label: 'Pyt. 8 · Światłowody jedno- i wielomodowe', route: '/teoria/swiatlowody#q8' },
     { label: 'Pyt. 9 · Okna transmisyjne', route: '/teoria/swiatlowody#q9' },
     { label: 'Pyt. 10 · Dyspersja w światłowodach', route: '/teoria/swiatlowody#q10' }
@@ -94,8 +94,8 @@ const RELATED_LINKS: Record<string, RelatedLink[]> = {
 
 // Mapping of task keys to their diagrams using the actual textbook assets
 const TASK_CHARTS: Record<string, React.ReactNode> = {
-  // 2026 Lato I (L1) Grupa A1
-  '2026_L1_A1_1': (
+  // 2026 Lato I (L1) Grupa A
+  '2026_L_A_1': (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
       <figure className="text-center bg-white rounded-[10px] p-[14px] border border-line">
         <img src={TeoriaPolprzewodniki_img_2} alt="Rysunek 6.2. Rozkład Fermiego-Diraca" className="mx-auto max-h-[180px] object-contain" />
@@ -123,7 +123,7 @@ const TASK_CHARTS: Record<string, React.ReactNode> = {
       </figure>
     </div>
   ),
-  '2026_L1_A1_3': (
+  '2026_L_A_3': (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
       <figure className="text-center bg-white rounded-[10px] p-[14px] border border-line">
         <img src={TeoriaFalaPropagacja_img_2} alt="Rysunek 3.1. Odbicie fali" className="mx-auto max-h-[180px] object-contain" />
@@ -152,7 +152,7 @@ const TASK_CHARTS: Record<string, React.ReactNode> = {
     </div>
   ),
   // 2026 Lato I (L1) Grupa B
-  '2026_L1_B_1': (
+  '2026_L_B_1': (
     <>
       <figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]">
         <img src={TeoriaPamieciNosniki_img_2} alt="Charakterystyka potencjału w złączu p-n-p" className="mx-auto max-h-[300px] object-contain" />
@@ -168,7 +168,7 @@ const TASK_CHARTS: Record<string, React.ReactNode> = {
       </figure>
     </>
   ),
-  '2026_L1_B_2': (
+  '2026_L_B_2': (
     <figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]">
       <img src={TeoriaModulacja_img_1} alt="Wykres oczkowy" className="mx-auto max-h-[300px] object-contain" />
       <figcaption className="font-mono text-[11px] text-muted mt-2 text-left">
@@ -177,7 +177,7 @@ const TASK_CHARTS: Record<string, React.ReactNode> = {
     </figure>
   ),
   // 2025 Lato I (L1) Grupa B
-  '2025_L1_B_1': (
+  '2025_L_B_1': (
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
         <figure className="text-center bg-white rounded-[10px] p-[14px] border border-line">
@@ -213,7 +213,7 @@ const TASK_CHARTS: Record<string, React.ReactNode> = {
       </figure>
     </>
   ),
-  '2025_L1_B_3': (
+  '2025_L_B_3': (
     <>
       <figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]">
         <img src={TeoriaFalaPropagacja_img_4} alt="Schemat doświadczenia Younga" className="mx-auto max-h-[220px] object-contain" />
@@ -238,16 +238,40 @@ export default function Egzaminy() {
   const groupParam = searchParams.get('group');
 
   const selectedYear = yearParam ? parseInt(yearParam) : 2026;
-  const selectedTerm = termParam || 'L1';
+  const selectedTerm = termParam || 'L';
 
-  const years = [2026, 2025, 2024];
+  const years = [2018, 2024, 2025, 2026];
   const terms = [
-    { id: 'Z1', name: 'Zima 1' },
-    { id: 'Z2', name: 'Zima 2' },
-    { id: 'L1', name: 'Lato 1' },
-    { id: 'L2', name: 'Lato 2' },
-    { id: 'W', name: 'Wrzesień' }
+    { id: 'Z', name: 'Zima' },
+    { id: 'L', name: 'Lato' }
   ];
+
+  // Helper functions to check if exams are available (have tasks)
+  const isYearAvailable = (year: number) => {
+    const yData = (examsData as any)[year];
+    if (!yData) return false;
+    return Object.values(yData).some((tData: any) => 
+      tData && Object.values(tData).some((gData: any) => 
+        gData && gData.tasks && gData.tasks.length > 0
+      )
+    );
+  };
+
+  const isTermAvailable = (year: number, termId: string) => {
+    const yData = (examsData as any)[year];
+    const tData = yData ? yData[termId] : null;
+    if (!tData) return false;
+    return Object.values(tData).some((gData: any) => 
+      gData && gData.tasks && gData.tasks.length > 0
+    );
+  };
+
+  const isGroupAvailable = (year: number, termId: string, groupName: string) => {
+    const yData = (examsData as any)[year];
+    const tData = yData ? yData[termId] : null;
+    const gData = tData ? tData[groupName] : null;
+    return !!(gData && gData.tasks && gData.tasks.length > 0);
+  };
 
   // Fetch active group data from DB
   const yearData = (examsData as any)[selectedYear];
@@ -500,66 +524,76 @@ export default function Egzaminy() {
       </header>
 
       {/* Selector Filters */}
-      <div className="border border-line bg-panel rounded-[14px] p-5 mb-6 flex flex-col gap-4">
+      <div className="border border-line bg-panel rounded-[14px] p-5 mb-6 flex flex-col gap-5">
         {/* Year Selector */}
         <div>
           <span className="block font-mono text-[10.5px] uppercase tracking-wider text-muted mb-2">Rok akademicki</span>
-          <div className="flex gap-2.5">
-            {years.map((y) => (
-              <button
-                key={y}
-                onClick={() => updateParams(y, selectedTerm, selectedGroup)}
-                className={`font-mono text-[12.5px] px-4 py-1.5 rounded-lg border cursor-pointer transition-all ${
-                  selectedYear === y
-                    ? 'bg-amber border-amber text-ink font-bold shadow-[0_2px_8px_rgba(244,165,42,0.3)]'
-                    : 'border-line text-txt hover:border-amber hover:text-white bg-ink2/30'
-                }`}
-              >
-                {y}
-              </button>
-            ))}
+          <div className="flex flex-wrap gap-2.5">
+            {years.map((y) => {
+              const available = isYearAvailable(y);
+              return (
+                <button
+                  key={y}
+                  onClick={() => updateParams(y, selectedTerm, selectedGroup)}
+                  className={`font-mono text-[12.5px] px-4 py-2 rounded-lg border cursor-pointer transition-all flex items-center gap-1.5 whitespace-nowrap ${
+                    selectedYear === y
+                      ? 'bg-amber border-amber text-ink font-bold shadow-[0_2px_8px_rgba(244,165,42,0.3)]'
+                      : 'border-line text-txt hover:border-amber hover:text-white bg-ink2/30'
+                  }`}
+                >
+                  <span className={available ? "text-green" : "text-muted"}>●</span>
+                  {y}
+                </button>
+              );
+            })}
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {/* Term Selector */}
-          <div>
-            <span className="block font-mono text-[10.5px] uppercase tracking-wider text-muted mb-2">Termin / Sesja</span>
-            <div className="flex gap-2">
-              {terms.map((t) => (
+        {/* Term Selector */}
+        <div>
+          <span className="block font-mono text-[10.5px] uppercase tracking-wider text-muted mb-2">Termin / Sesja</span>
+          <div className="flex flex-wrap gap-2">
+            {terms.map((t) => {
+              const available = isTermAvailable(selectedYear, t.id);
+              return (
                 <button
                   key={t.id}
                   onClick={() => updateParams(selectedYear, t.id, selectedGroup)}
-                  className={`font-mono text-[12.5px] px-3.5 py-1.5 rounded-lg border cursor-pointer transition-all flex-1 text-center ${
+                  className={`font-mono text-[12.5px] px-4 py-2 rounded-lg border cursor-pointer transition-all flex items-center justify-center gap-1.5 whitespace-nowrap ${
                     selectedTerm === t.id
                       ? 'bg-amber border-amber text-ink font-bold shadow-[0_2px_8px_rgba(244,165,42,0.3)]'
                       : 'border-line text-txt hover:border-amber hover:text-white bg-ink2/30'
                   }`}
                 >
+                  <span className={available ? "text-green" : "text-muted"}>●</span>
                   {t.name}
                 </button>
-              ))}
-            </div>
+              );
+            })}
           </div>
+        </div>
 
-          {/* Group Selector */}
-          <div>
-            <span className="block font-mono text-[10.5px] uppercase tracking-wider text-muted mb-2">Grupa</span>
-            <div className="flex gap-2">
-              {groups.map((g) => (
+        {/* Group Selector */}
+        <div>
+          <span className="block font-mono text-[10.5px] uppercase tracking-wider text-muted mb-2">Grupa</span>
+          <div className="flex flex-wrap gap-2">
+            {groups.map((g) => {
+              const available = isGroupAvailable(selectedYear, selectedTerm, g);
+              return (
                 <button
                   key={g}
                   onClick={() => updateParams(selectedYear, selectedTerm, g)}
-                  className={`font-mono text-[12.5px] px-4 py-1.5 rounded-lg border cursor-pointer transition-all flex-1 text-center ${
+                  className={`font-mono text-[12.5px] px-4 py-2 rounded-lg border cursor-pointer transition-all flex-1 md:flex-initial text-center flex items-center justify-center gap-1.5 whitespace-nowrap ${
                     selectedGroup === g
                       ? 'bg-amber border-amber text-ink font-bold shadow-[0_2px_8px_rgba(244,165,42,0.3)]'
                       : 'border-line text-txt hover:border-amber hover:text-white bg-ink2/30'
                   }`}
                 >
+                  <span className={available ? "text-green" : "text-muted"}>●</span>
                   Grupa {g}
                 </button>
-              ))}
-            </div>
+              );
+            })}
           </div>
         </div>
       </div>

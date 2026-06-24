@@ -1,7 +1,7 @@
 {
   "2024": {},
   "2025": {
-    "Z1": {
+    "Z": {
       "A": {
         "image": "2025_Z_A1",
         "tasks": [
@@ -26,7 +26,7 @@
         ]
       }
     },
-    "L1": {
+    "L": {
       "B": {
         "image": "2025_L_B",
         "tasks": [
@@ -53,7 +53,7 @@
     }
   },
   "2026": {
-    "L1": {
+    "L": {
       "B": {
         "image": "2026_L_B",
         "tasks": [
@@ -77,7 +77,7 @@
           }
         ]
       },
-      "A1": {
+      "A": {
         "image": "2026_L_A1",
         "tasks": [
           {
@@ -97,6 +97,92 @@
             "question": "a) Zjawiska falowe, gdzie/jakie zaobserwowano podczas kursu, które są związane z częstotliwością, które z mocą.\nb) Budżet mocy dla czterech częstotliwości na symbolach, później podstawić wartości, co z tego wynika.",
             "solution": "Część a) – Zjawiska falowe i ich powiązania:\n\n- **Odbicie**: Zachodzi, gdy fala trafia na barierę lub zmianę ośrodków i wraca. *W kursie:* Odpowiada za zjawisko Całkowitego Wewnętrznego Odbicia w rdzeniu światłowodu (główne zjawisko transmisji), stosowane również przy odczycie z płyt CD/DVD (odbicie od pitu i landu) oraz przy propagacji dalekosiężnych fal jonosferycznych.\n- **Załamanie (Refrakcja)**: Zmiana kierunku (ugięcie wiązki) spowodowane zmianą prędkości fali po przejściu do innego ośrodka. *W kursie:* Rozkład modów w światłowodzie gradientowym (fala zawraca do osi rdzenia płynnym ugięciem), powiększanie horyzontu dla fal troposferycznych.\n- **Dyfrakcja (Ugięcie)**: Zdolność fal do omijania przeszkód o wymiarach zbliżonych do długości fali. *W kursie:* Propagacja dalego zasięgu nad krzywizną Ziemi i wzgórzami, strefy Fresnela decydujące o widoczności radiowej i tłumieniu przeszkód (mocno zależne od **częstotliwości** – im niższa częstotliwość fali radiowej, tym sprawniej zagląda za przeszkodę).\n- **Interferencja**: Nakładanie się fal spójnych. *W kursie:* W układach WDM/DWDM powoduje powstawanie prążków **FWM (mieszania czterofalowego)**. FWM jest krytycznie zależne od **mocy** (duża moc silnie wzbudza nieliniowości) oraz **częstotliwości** (równy, bliski odstęp między częstotliwościami potęguje problem interferencji).\n\n---\n\nCzęść b) – Budżet mocy łącza WDM (symbolicznie i wnioski):\n\nKroki budowania budżetu na symbolach:\n1. Obliczenie długości włókna kompensującego z warunku zerowej dyspersji chromatycznej toru:\n\\[L_{SMF} \\cdot D_{SMF} + L_{DCF} \\cdot D_{DCF} = 0 \\implies L_{DCF} = -L_{SMF} \\frac{D_{SMF}}{D_{DCF}}\\]\n2. Zapisanie ogólnego równania na moc docierającą do odbiornika (\\(P_R\\)), uwzględniając moc nadajnika (\\(P_T\\)), tłumienności na odcinek (\\(\\alpha\\)) oraz sumę dodatkowych strat i marginesu (oznaczmy jako \\(L_{z/s/m}\\)):\n\\[P_R = P_T - \\alpha_{SMF} L_{SMF} - \\alpha_{DCF} L_{DCF} - L_{z/s/m}\\]\n3. Wyznaczenie symbolicznego wzoru na długość całego łącza \\(L_{SMF}\\):\n\\[L_{SMF} = \\frac{P_T - P_R - L_{z/s/m}}{\\alpha_{SMF} - \\alpha_{DCF} \\frac{D_{SMF}}{D_{DCF}}}\\]\n\n*(W miejsce powyższych zmiennych należy wstawić konkretne wartości liczbowe przypisane w treści zadania egzaminacyjnego do obliczenia ostatecznego dystansu).* \n\n**Wnioski dla układu na czterech częstotliwościach:**\nZastosowanie 4 kanałów laserowych sugeruje system zwielokrotnienia DWDM. Dominującym negatywnym zjawiskiem w takim systemie będzie mieszanie czterofalowe (FWM). Zgodnie ze wzorem dla \\(N=4\\) kanałów, powstanie gigantyczna liczba fal pasożytniczych wynosząca \\(N_{FWM} = N^2(N-1)/2 = 16 \\cdot 3 / 2 = 24\\). Fale te będą pożywiać się pierwotną mocą laserów (zmniejszając jakość i budżet mocy), co pociąga za sobą spadek stosunku sygnału do szumu (OSNR). Rozwiązaniem problemu byłoby zastosowanie włókien typu NZDSF (niezerowa dyspersja) zamiast wprowadzania perfekcyjnej i pełnej kompensacji na \\(0\\ \\mathrm{ps/(nm\\cdot km)}\\), ponieważ brak przesunięć dyspersyjnych promuje skrajną interferencję.",
             "tip": "Zawsze podkreślaj, że prążki FWM niszczą system podwójnie: odbierają moc użytecznym kanałom transmisyjnym i nakładają się na sąsiednie kanały jako szum uniemożliwiający dekodowanie."
+          }
+        ]
+      }
+    }
+  },
+  "2018": {
+    "Z": {
+      "A": {
+        "image": "2018_Z_A1",
+        "tasks": [
+          {
+            "number": 1,
+            "question": "Omów budowę i zasadę działania tranzystorów bipolarnych.",
+            "solution": "Budowa:\nTranzystor bipolarny składa się z dwóch bardzo blisko położonych złączy półprzewodnikowych układających się w strukturę **p-n** oraz **n-p**. Ma on trzy elektrody:\n- **Baza (B)** (z ang. base) – cienka warstwa środkowa.\n- **Emiter (E)** (z ang. emitter) – silnie domieszkowana warstwa dostarczająca nośniki mniejszościowe do bazy.\n- **Kolektor (C)** (z ang. collector) – warstwa zbierająca nośniki wstrzykiwane z emitera do bazy.\nMożliwe są dwie konfiguracje: **n-p-n** oraz **p-n-p**.\n\nZasada działania (na przykładzie p-n-p):\nW stanie bez polaryzacji zewnętrznej dziury z emitera nie przenikają do kolektora z powodu barier potencjału. Jeżeli przyłożymy napięcie \\(U_{BE}\\) pomiędzy bazę a emiter (zmniejszające barierę w kierunku przewodzenia), dziury z emitera dostają się do bazy. Ze względu na fakt, że baza jest bardzo cienka, większość z nich przedostaje się przez złącze baza-kolektor do kolektora, tworząc prąd kolektora \\(I_C\\). Do zewnętrznego źródła wypływa z bazy jedynie niewielki prąd \\(I_B\\) konieczny do zrównoważenia procesów rekombinacji.\nDla prądów zachodzi zależność: \\(I_E = I_C + I_B\\).\nWspółczynnik wzmocnienia prądowego określa się wzorem: \\(\\beta = \\frac{I_C}{I_B}\\). W ten sposób tranzystor pozwala na sterowanie dużym prądem kolektora za pomocą małego prądu bazy.",
+            "tip": "Pamiętaj, że tranzystor bipolarny jest elementem sterowanym PRĄDEM (prądem bazy), w przeciwieństwie do polarnych sterowanych napięciem."
+          },
+          {
+            "number": 2,
+            "question": "Światłowody jedno– i wielomodowe, od czego zależy liczba modów, rodzaje modów i ich wzbudzanie.",
+            "solution": "Liczba modów:\nLiczba modów mogących propagować się w światłowodzie zależy bezpośrednio od znormalizowanej częstotliwości (parametru \\(V\\)), wyrażonej wzorem:\n\\[V = \\frac{2\\pi a}{\\lambda} \\sqrt{n_1^2 - n_2^2}\\]\ngdzie: \\(a\\) – promień rdzenia, \\(\\lambda\\) – długość fali światła, \\(n_1, n_2\\) – współczynniki załamania rdzenia i płaszcza. Światłowód jest jednomodowy, gdy warunek narzuca \\(V < 2,405\\). Gdy wartość \\(V\\) jest większa, staje się wielomodowy, a liczba modów rośnie proporcjonalnie do \\(V^2\\).\n\nRodzaje modów:\n1. **Mody prowadzone (rdzeniowe)** – całkowicie uwięzione w rdzeniu w wyniku zjawiska całkowitego wewnętrznego odbicia, służą do transmisji.\n2. **Mody płaszcza** – przedostają się do płaszcza, zazwyczaj są bardzo silnie tłumione i szybko zanikają.\n3. **Mody promieniowania** – tracone bezpowrotnie, wypromieniowywane na zewnątrz struktury.\n\nWzbudzanie modów:\nAby prawidłowo wzbudzić mody prowadzone w rdzeniu, światło wpadające ze źródła musi trafić w tzw. stożek akceptacji. Kąt padania promienia świetlnego na płaskie czoło światłowodu nie może być większy niż graniczny kąt akceptacji, opisywany przez Aperturę Numeryczną (\\(NA = \\sqrt{n_1^2 - n_2^2}\\)). Światło podane pod większym kątem ucieknie w płaszcz jako mody promieniowania.",
+            "tip": "Wzbudzanie można sobie wyobrazić jako trafienie światłem lasera prosto do rury – jeśli poświecisz pod zbyt dużym skosem, światło zamiast lecieć środkiem, przebije od razu jej ściankę i zgaśnie."
+          },
+          {
+            "number": 3,
+            "question": "Koncentracja nośników w stanie nierównowagi termodynamicznej.",
+            "solution": "Stan nierównowagi termodynamicznej występuje w półprzewodniku, gdy z zewnątrz dostarczymy mu dodatkową energię (np. oświetlimy materiał fotonami prądu, podłączymy napięcie do złącza p-n). Dochodzi wtedy do zachwiania naturalnego bilansu pomiędzy elektronami i dziurami.\n\nDwa główne zjawiska:\n- **Iniekcja**: Wstrzyknięcie lub wygenerowanie nadmiarowych nośników. Występuje np. pod wpływem światła lasera lub po spolaryzowaniu złącza p-n w kierunku przewodzenia. Koncentracja nośników staje się wyższa niż w równowadze.\n- **Ekstrakcja**: Wyssanie (usunięcie) nośników, co prowadzi do ich spadku poniżej poziomu równowagi (np. w złączu p-n spolaryzowanym zaporowo – tworzy się strefa zubożona).\n\nReakcja układu:\nNadmiarowe nośniki wygenerowane podczas iniekcji nie utrzymują się w nieskończoność. Układ dąży do powrotu do równowagi, a nośniki ulegają rekombinacji (bezpośredniej lub pośredniej). Szybkość wymierania nadmiaru ładunków po ustaniu bodźca określana jest przez parametr nazywany czasem życia nośników (\\(\\tau\\)).",
+            "tip": "W stanie nierównowagi pękają zasady termodynamiki statystycznej dla jednego poziomu Fermiego. Półprzewodnik musi posiłkować się dwoma quasi-poziomami Fermiego (osobno dla elektronów, osobno dla dziur)."
+          }
+        ]
+      },
+      "B": {
+        "image": "2018_Z_B1",
+        "tasks": [
+          {
+            "number": 1,
+            "question": "Omów budowę i zasadę działania tranzystorów polowych.",
+            "solution": "Budowa:\nTranzystory polowe (FET - Field-Effect Transistor) są elementami unipolarnymi (prąd płynie z wykorzystaniem jednego typu nośników – elektronów albo dziur). Składają się z trzech elektrod:\n- **Źródło (S - Source)**\n- **Dren (D - Drain)**\n- **Bramka (G - Gate)**\nNajbardziej rozpowszechnioną konstrukcją jest MOSFET. Struktura ta posiada tzw. kanał łączący źródło z drenem, natomiast bramka jest odizolowana od tego kanału cienką warstwą dielektryka (najczęściej tlenku krzemu SiO2).\n\nZasada działania:\nZasada działania polega na sterowaniu szerokością oraz przewodnictwem kanału za pomocą pola elektrycznego wytwarzanego przez napięcie przyłożone do bramki (\\(U_{GS}\\)). Jeżeli w tranzystorze MOSFET z kanałem wzbogacanym przyłożymy odpowiednie napięcie, przyciągnie ono pod izolator bramki nośniki, tworząc warstwę inwersyjną – udrażniając kanał, którym popłynie prąd drenu (\\(I_D\\)). Oznacza to, że tranzystor polowy sterowany jest czysto **napięciowo** i pobiera na wejściu niemal zerowy prąd statyczny.",
+            "tip": "Największą zaletą układów MOSFET jest ich nieskończenie wielka rezystancja wejściowa (bramki) i brak poboru prądu w stanie ustalonym, dlatego dzisiejsze procesory są oparte właśnie na nich."
+          },
+          {
+            "number": 2,
+            "question": "W jaki sposób określa się zasięg anteny nadawczej? + zadanie Wyznacz promień pierwszej i drugiej strefy Fresnela (f = 2412 MHz, D = 200 m, d = 100 m).",
+            "solution": "Określanie zasięgu anteny nadawczej:\nZasięg zależy od dwóch głównych aspektów:\n1. **Zasięg optyczny/geometryczny**: Dla propagacji fal troposferycznych ograniczeniem jest krzywizna Ziemi. Określa to horyzont radiowy (LoS - Line of Sight) wyznaczany z uwzględnieniem refrakcji jako: \\(d_0 = \\sqrt{2R_z}(\\sqrt{h_N} + \\sqrt{h_O})\\), gdzie \\(h_N\\) i \\(h_O\\) to wysokości anten.\n2. **Zasięg energetyczny**: Nawet jeśli anteny się 'widzą', sygnał ulega tłumieniu przestrzennemu (Free Space Loss). Maksymalny zasięg wyznaczany jest na podstawie budżetu łącza (Moc nadajnika + Zysk anten - Tłumienie musi być większe niż czułość odbiornika).\n\nRozwiązanie zadania – Strefy Fresnela:\nDane: \\(f = 2412\\ \\mathrm{MHz}\\), \\(D = 200\\ \\mathrm{m}\\), \\(d_1 = 100\\ \\mathrm{m}\\) (odległość przeszkody od nadajnika), więc od odbiornika \\(d_2 = D - d_1 = 100\\ \\mathrm{m}\\).\n1. Obliczamy długość fali \\(\\lambda\\):\n\\[\\lambda = \\frac{c}{f} = \\frac{3 \\cdot 10^8}{2412 \\cdot 10^6} = \\frac{300}{2412} \\approx 0,1244\\ \\mathrm{m}\\]\n2. Wzór na promień n-tej strefy Fresnela w danym punkcie:\n\\[r_n = \\sqrt{\\frac{n \\cdot \\lambda \\cdot d_1 \\cdot d_2}{D}}\\]\n3. Promień pierwszej strefy (\\(n=1\\)):\n\\[r_1 = \\sqrt{\\frac{1 \\cdot 0,1244 \\cdot 100 \\cdot 100}{200}} = \\sqrt{\\frac{1244}{200}} = \\sqrt{6,22} \\approx 2,49\\ \\mathrm{m}\\]\n4. Promień drugiej strefy (\\(n=2\\)):\n\\[r_2 = \\sqrt{\\frac{2 \\cdot 0,1244 \\cdot 100 \\cdot 100}{200}} = \\sqrt{12,44} \\approx 3,53\\ \\mathrm{m}\\]\n\nOdpowiedź: Promień pierwszej strefy Fresnela wynosi ok. 2,49 m, a drugiej 3,53 m.",
+            "tip": "Wzór na strefę Fresnela działa w metrach – pamiętaj, by przekonwertować częstotliwość z MHz na Hz, by uzyskać poprawną długość fali."
+          },
+          {
+            "number": 3,
+            "question": "Wymień i opisz sposoby mierzenia jakości zastosowanej modulacji.",
+            "solution": "Jakość modulacji ocenia się w celu sprawdzenia poprawności oraz stabilności transmitowanego sygnału w stosunku do zakłóceń.\n\nSposoby pomiaru:\n1. **Bitowa stopa błędu (BER - Bit Error Rate)**: Najbardziej wprost. Wyraża stosunek ilości odebranych bitów z przekłamaniem do liczby wszystkich wyemitowanych bitów (\\(BER = (p_0 + p_1)/2\\)). Dobre łącze ma \\(BER < 10^{-9}\\) lub \\(10^{-12}\\).\n2. **Wykres oczkowy (Eye diagram)**: To nałożenie na oscyloskopie wielu stanów zmodulowanych bitów jeden na drugim. Powstały kształt przypomina otwarte oko. Im większe rozwarcie 'oka', tym modulacja jest bardziej odporna na szumy. Z wykresu odczytamy: margines szumu, maksymalne opóźnienia i zniekształcenia fazowe (jitter).\n3. **Efektywność widmowa (\\(\\Gamma\\))**: Stosunek osiąganej prędkości binarnej transmisji do szerokości wymeganego pasma częstotliwości (jednostka: bit/s/Hz). Mówi nam, jak \"oszczędnie\" dana modulacja zarządza cennym pasmem.\n4. **EVM (Error Vector Magnitude)**: Miara błędu wektora między idealnym symbolem odniesienia w konstelacji a faktycznie odebranym symbolem z szumem (np. w modulacjach QAM).",
+            "tip": "Wykres oczkowy to diagnoza fizyczna (widzisz zły przebieg napięcia), a BER to ostateczna diagnoza logiczna (widzisz, że odebrałeś zły bit)."
+          }
+        ]
+      }
+    },
+    "L": {
+      "A": {
+        "image": "2018_L_A1",
+        "tasks": [
+          {
+            "number": 1,
+            "question": "Omów wpływ czynników atmosferycznych i innych zanieczyszczeń na propagację fali.",
+            "solution": "Atmosfera ma kluczowy wpływ na to, jak skutecznie rozchodzi się fala w przestrzeni otwartej.\n\nCzynniki tłumiące (pochłanianie i rozpraszanie):\n- **Gazy atmosferyczne**: Cząsteczki tlenu (O2) i pary wodnej (H2O) charakteryzują się rezonansowym pochłanianiem pewnych częstotliwości (np. para wodna silnie tłumi dla ≈22 GHz). Powoduje to powstawanie silnych pasm pochłaniania i pozostawienie tylko pewnych \"okien\" dla łączności.\n- **Hydrometeory (deszcz, śnieg, grad, mgła)**: Powodują silne zjawisko rozpraszania, szczególnie Rayleigha i Mie (gdy krople wody mają rozmiar zbliżony do długości fali). Najbardziej cierpi na to łączność wysokich częstotliwości (pasma milimetrowe oraz systemy optyczne, takie jak FSO).\n\nZjawiska ugięcia i warunki zmienne:\n- **Refrakcja troposferyczna**: Wraz z wysokością zmienia się temperatura, gęstość i ciśnienie powietrza, co prowadzi do zakrzywiania (ugięcia) promienia radiowego. Zwykle fala ugina się ku Ziemi, zwiększając horyzont, jednak inwersja temperatury może doprowadzić do utraty sygnału lub powstania duktów (fala wędruje jak w światłowodzie tysiące kilometrów).\n- **Stan Jonosfery**: Promieniowanie jonizujące (Słońce) silnie wpływa na jonosferę. Fale krótkie (ok. 3-30 MHz) odbijają się od naładowanych warstw jonosfery, jednak zdolność ta zmienia się drastycznie między dniem a nocą oraz w cyklach słonecznych.\n- **Zanieczyszczenia stałe (smog, dym)**: Mają pomijalny wpływ na klasyczne fale radiowe (UHF), ale w bardzo dużej gęstości potrafią blokować widoczność łączy optycznych w podczerwieni (FSO).",
+            "tip": "Aby ułatwić odpowiedź podziel to w głowie na trzy warstwy: Gazy (tłumią przez rezonans atomów), Woda/Mgła (rozpraszają fizycznie falę) i Temperatura (zmienia gęstość i zakrzywia tor fali)."
+          },
+          {
+            "number": 2,
+            "question": "Omów budowę i zasadę działania tranzystorów bipolarnych.",
+            "solution": "Budowa:\nTranzystor bipolarny składa się z dwóch bardzo blisko położonych złączy półprzewodnikowych układających się w strukturę **p-n** oraz **n-p**. Ma on trzy elektrody:\n- **Baza (B)** (z ang. base) – warstwa środkowa, musi być skrajnie cienka.\n- **Emiter (E)** (z ang. emitter) – warstwa bardzo mocno domieszkowana, której celem jest wstrzykiwanie nośników (elektronów w n-p-n) do bazy.\n- **Kolektor (C)** (z ang. collector) – warstwa szeroka, odbierająca nośniki ze spadzistej bariery bazy.\nTranzystor wykorzystuje przepływ dwóch rodzajów ładunków (dziury i elektrony stąd słowo bipolarny).\n\nZasada działania (dla n-p-n):\nStandardowym trybem pracy jest polaryzacja złącza B-E w kierunku przewodzenia, a C-B w zaporowym. Otwarcie pierwszej zapory (przyłożenie napięcia ułatwiającego, na bazę prąd \\(I_B\\)) powoduje potężne wstrzyknięcie elektronów z Emitera. Baza jest tak cienka i słabo naładowana swoimi głównymi nośnikami, że tylko drobny ułamek elektronów \"zdąży\" w niej zrekombinować. Przytłaczająca większość przelatuje na drugą stronę i wpada w pole złącza kolektora (działającego jak zjeżdżalnia/odkurzacz dla tych nośników), tworząc wysoki prąd \\(I_C\\). Dzięki temu manipulując bardzo cienkim prądem wejściowym do bazy, uzyskujemy olbrzymi proporkcjonalnie i potężny prąd na wyjściu kolektora, co pozwala tranzystorowi realizować funkcję klucza lub wzmacniacza sygnału.",
+            "tip": "Skoncentruj się na \"grubości bazy\". To to czyni z tego złącza tranzystor, a nie dwie sklejone do siebie, niezależne zwykłe diody. Cały fenomen polega na tym, że ładunki po prostu przenikają przez nią z rozpędu."
+          }
+        ]
+      },
+      "B": {
+        "image": "2018_L_B1",
+        "tasks": [
+          {
+            "number": 1,
+            "question": "Napisz i omów Równania Maxwella. Podaj warunki brzegowe dla pól na granicy ośrodków. W szczególności omów przypadek na granicy przewodnik–dielektryk.",
+            "solution": "Równania Maxwella:\n1. **Prawo Faradaya** (\\(\\nabla \\times \\vec{E} = -\\frac{\\partial \\vec{B}}{\\partial t}\\)): Zmienne w czasie pole magnetyczne wytwarza wirowe pole elektryczne.\n2. **Prawo Ampere'a rozszerzone** (\\(\\nabla \\times \\vec{H} = \\vec{j} + \\frac{\\partial \\vec{D}}{\\partial t}\\)): Przepływający prąd oraz zmienne pole elektryczne stanowią źródło rotacyjnego pola magnetycznego.\n3. **Prawo Gaussa dla elektryczności** (\\(\\nabla \\cdot \\vec{D} = \\rho\\)): Ładunki elektryczne są źródłem lub ujściem linii pola elektrycznego.\n4. **Prawo Gaussa dla magnetyzmu** (\\(\\nabla \\cdot \\vec{B} = 0\\)): Pole magnetyczne nie ma źródła (monopole magnetyczne nie istnieją, linie pola zawsze są pętlami).\n\nWarunki brzegowe dla dowolnych pól na granicy dwóch ośrodków dielektrycznych:\n- Składowa **styczna** natężenia pola elektrycznego przechodzi w sposób ciągły (\\(E_{1t} = E_{2t}\\)).\n- Składowa **normalna** (prostopadła) indukcji elektrycznej jest ciągła (\\(D_{1n} = D_{2n}\\)), o ile na granicy nie ma swobodnego ładunku powierzchniowego.\n- Składowa **styczna** natężenia pola magnetycznego jest ciągła (\\(H_{1t} = H_{2t}\\)), o ile nie płynie powierzchniowy prąd.\n- Składowa **normalna** indukcji magnetycznej jest zawsze ciągła (\\(B_{1n} = B_{2n}\\)).\n\nPrzypadek specjalny (granica przewodnik idealny – dielektryk):\nWewnątrz idealnego przewodnika nie istnieje żadne pole elektromagnetyczne (\\(E=0\\), \\(B=0\\)). Konsekwencją tego na granicy jest to, że:\n1. Składowa styczna pola elektrycznego w dielektryku wynosi zero (\\(E_t = 0\\)). Linie pola E wnikają do przewodnika pod kątem prostym.\n2. Składowa normalna pola magnetycznego wynosi zero (\\(B_n = 0\\)). Pole magnetyczne ślizga się wzdłuż powierzchni, będąc do niej wyłącznie równoległym.\n3. Na powłoce gromadzą się ładunki powierzchniowe uwarunkowane wektorem (\\(D_n = \\rho_s\\)) oraz wzbudzone prądy powierzchniowe (\\(H_t = J_s\\)).",
+            "tip": "Warto pamiętać na chłopski rozum: w izolatorach pola falują w poprzek granicy, a przy idealnym metalu (przewodniku) fala uderzając odbija się – pole elektryczne ma węzeł na samej granicy i lgnie do niej ładunkiem."
+          },
+          {
+            "number": 2,
+            "question": "Omów zjawisko dyspersji we włóknach światłowodowych.",
+            "solution": "Dyspersja to zjawisko destrukcyjne w optyce. Polega ono na poszerzaniu (rozmywaniu się) impulsów świetlnych w czasie, w miarę ich podróży wzdłuż światłowodu. Ponieważ jedynki stają się coraz szersze, przy dalekiej podróży zlewają się ze sobą, wywołując Intersymboliczną Interferencję (ISI). Dyspersja definiuje maksymalny limit przepustowości i zasięgu światłowodu.\n\nGłówne rodzaje dyspersji:\n\n1. **Dyspersja modowa**: Występuje TYLKO w światłowodach wielomodowych. Ponieważ promienie świetlne mogą podróżować przez rdzeń pod różnymi kątami (tworząc osobne mody), promienie odbijające się często od ścianek pokonują dłuższą odległość geometryczną i docierają do celu później, niż najkrótszy promień osiowy. Rozwiązaniem tego problemu jest budowa światłowodu o profilu gradientowym (który wyrównuje czasy fal), a eliminacją – zastosowanie światłowodu jednomodowego (SMF).\n\n2. **Dyspersja chromatyczna**: Zjawisko związane z faktem, że żadne źródło światła nie jest idealnie jednokolorowe (monochromatyczne), ale składa się z wiązki fal o różnej długości (określone szerokością widmową). Dzieli się na:\n- *Materiałową*: Szkło ma lekko inny współczynnik załamania dla innych długości światła. Dlatego czerwone i niebieskie fragmenty impulsu poruszają się z inną prędkością fazową w tym samym rdzeniu.\n- *Falowodową*: Wraz ze zmianą częstotliwości zmienia się promień plamki modowej (ilość fali wystającej do szybszego płaszcza). Dyspersję tę można modelować przez zmianę parametrów geometrycznych (np. kable DCF i przesunięcie punktu zerowej dyspersji dla pasma 1550 nm).\n\n3. **Polaryzacyjna dyspersja modowa (PMD)**: Wynika z faktu, że włókno nigdy nie jest idealnie cylindryczne (dwójłomność wywołana naprężeniami mechanicznymi kabla). Impuls ulega zniekształceniom dla odrębnych, ortogonalnych składowych polaryzacji. Psuje transmisję przy najbardziej zaawansowanych, rekordowych prędkościach wieleset Gigabitów na sekundę.",
+            "tip": "Mówiąc o dyspersji modowej – pomyśl o wyścigu po bieżni, mod osiowy biegnie po pierwszym, najkrótszym torze. Dyspersja chromatyczna – różne kolory (np. w tęczy) inaczej odbijają się w pryzmacie materiału."
           }
         ]
       }
