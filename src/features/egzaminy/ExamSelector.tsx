@@ -5,6 +5,11 @@ interface Term {
   name: string;
 }
 
+interface Exam {
+  term: string;
+  group: string;
+}
+
 interface ExamSelectorProps {
   years: number[];
   terms: Term[];
@@ -12,8 +17,8 @@ interface ExamSelectorProps {
   selectedYear: number;
   selectedTerm: string;
   selectedGroup: string;
-  isYearAvailable: (year: number) => boolean;
-  isTermAvailable: (year: number, termId: string) => boolean;
+  getYearExams: (year: number) => Exam[];
+  getTermExams: (year: number, termId: string) => Exam[];
   isGroupAvailable: (year: number, termId: string, group: string) => boolean;
   onSelect: (year: number, term: string, group: string) => void;
 }
@@ -25,8 +30,8 @@ export default function ExamSelector({
   selectedYear,
   selectedTerm,
   selectedGroup,
-  isYearAvailable,
-  isTermAvailable,
+  getYearExams,
+  getTermExams,
   isGroupAvailable,
   onSelect,
 }: ExamSelectorProps) {
@@ -34,6 +39,13 @@ export default function ExamSelector({
     'bg-amber border-amber text-ink font-bold shadow-[0_2px_8px_rgba(244,165,42,0.3)]';
   const inactiveBtn =
     'border-line text-txt hover:border-amber hover:text-white bg-ink2/30';
+
+  const getTermColorClass = (termId: string) => {
+    if (termId.startsWith('Z')) return 'text-blue';
+    if (termId.startsWith('L')) return 'text-white';
+    if (termId === 'Wrzesien') return 'text-red';
+    return 'text-muted';
+  };
 
   return (
     <div className="border border-line bg-panel rounded-[14px] p-5 mb-6 flex flex-col gap-5">
@@ -44,7 +56,7 @@ export default function ExamSelector({
         </span>
         <div className="flex flex-wrap gap-2.5">
           {years.map((y) => {
-            const available = isYearAvailable(y);
+            const yearExams = getYearExams(y);
             return (
               <button
                 key={y}
@@ -53,7 +65,15 @@ export default function ExamSelector({
                   selectedYear === y ? activeBtn : inactiveBtn
                 }`}
               >
-                <span className={available ? 'text-green' : 'text-muted'}>●</span>
+                <span className="inline-flex gap-0.5">
+                  {yearExams.length > 0 ? (
+                    yearExams.map((exam, i) => (
+                      <span key={i} className={getTermColorClass(exam.term)}>●</span>
+                    ))
+                  ) : (
+                    <span className="text-muted">●</span>
+                  )}
+                </span>
                 {y}
               </button>
             );
@@ -68,7 +88,8 @@ export default function ExamSelector({
         </span>
         <div className="flex flex-wrap gap-2">
           {terms.map((t) => {
-            const available = isTermAvailable(selectedYear, t.id);
+            const termExams = getTermExams(selectedYear, t.id);
+            if (termExams.length === 0) return null;
             return (
               <button
                 key={t.id}
@@ -77,7 +98,11 @@ export default function ExamSelector({
                   selectedTerm === t.id ? activeBtn : inactiveBtn
                 }`}
               >
-                <span className={available ? 'text-green' : 'text-muted'}>●</span>
+                <span className="inline-flex gap-0.5">
+                  {termExams.map((exam, i) => (
+                    <span key={i} className={getTermColorClass(exam.term)}>●</span>
+                  ))}
+                </span>
                 {t.name}
               </button>
             );
@@ -101,7 +126,7 @@ export default function ExamSelector({
                   selectedGroup === g ? activeBtn : inactiveBtn
                 }`}
               >
-                <span className={available ? 'text-green' : 'text-muted'}>●</span>
+                <span className={available ? getTermColorClass(selectedTerm) : 'text-muted'}>●</span>
                 Grupa {g}
               </button>
             );

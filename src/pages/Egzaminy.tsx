@@ -48,9 +48,6 @@ export default function Egzaminy() {
   const termParam = searchParams.get('term');
   const groupParam = searchParams.get('group');
 
-  const selectedYear = yearParam ? parseInt(yearParam) : 2026;
-  const selectedTerm = termParam || 'L1';
-  
   const [mathJaxLoading, setMathJaxLoading] = useState(true);
   const [groupData, setGroupData] = useState<any>(null);
   const [loadingData, setLoadingData] = useState(false);
@@ -61,6 +58,35 @@ export default function Egzaminy() {
   const isTermAvailable = (year: number, termId: string) => availableExams.some(e => e.year === year && e.term === termId);
   const isGroupAvailable = (year: number, termId: string, groupName: string) => availableExams.some(e => e.year === year && e.term === termId && e.group === groupName);
 
+  const getYearExams = (year: number) => {
+    const termOrder = ['Z1', 'Z2', 'L1', 'L2', 'Wrzesien'];
+    return availableExams
+      .filter(e => e.year === year)
+      .sort((a, b) => {
+        const indexA = termOrder.indexOf(a.term);
+        const indexB = termOrder.indexOf(b.term);
+        const termDiff = indexA - indexB;
+        if (termDiff !== 0) return termDiff;
+        return a.group.localeCompare(b.group);
+      });
+  };
+
+  const getTermExams = (year: number, termId: string) => {
+    return availableExams
+      .filter(e => e.year === year && e.term === termId)
+      .sort((a, b) => a.group.localeCompare(b.group));
+  };
+
+  const selectedYear = yearParam ? parseInt(yearParam) : 2026;
+
+  const availableTermsForSelectedYear = useMemo(() => {
+    return terms.filter(t => isTermAvailable(selectedYear, t.id)).map(t => t.id);
+  }, [selectedYear]);
+
+  const selectedTerm = termParam && availableTermsForSelectedYear.includes(termParam)
+    ? termParam
+    : (availableTermsForSelectedYear[0] || 'L1');
+
   const groups = useMemo(() => {
     return Array.from(new Set(availableExams.filter(e => e.year === selectedYear && e.term === selectedTerm).map(e => e.group))).sort();
   }, [selectedYear, selectedTerm]);
@@ -68,7 +94,26 @@ export default function Egzaminy() {
   const selectedGroup = groupParam && groups.includes(groupParam) ? groupParam : (groups[0] || 'B');
 
   const updateParams = (y: number, t: string, g: string) => {
-    setSearchParams({ year: y.toString(), term: t, group: g });
+    let targetTerm = t;
+    if (!isTermAvailable(y, targetTerm)) {
+      const firstAvailableTerm = terms.find(term => isTermAvailable(y, term.id));
+      if (firstAvailableTerm) {
+        targetTerm = firstAvailableTerm.id;
+      }
+    }
+
+    let targetGroup = g;
+    const availableGroupsForTarget = Array.from(
+      new Set(availableExams.filter(e => e.year === y && e.term === targetTerm).map(e => e.group))
+    ).sort();
+    
+    if (!availableGroupsForTarget.includes(targetGroup)) {
+      if (availableGroupsForTarget.length > 0) {
+        targetGroup = availableGroupsForTarget[0];
+      }
+    }
+
+    setSearchParams({ year: y.toString(), term: targetTerm, group: targetGroup });
   };
 
   useEffect(() => {
@@ -148,8 +193,8 @@ export default function Egzaminy() {
         selectedYear={selectedYear}
         selectedTerm={selectedTerm}
         selectedGroup={selectedGroup}
-        isYearAvailable={isYearAvailable}
-        isTermAvailable={isTermAvailable}
+        getYearExams={getYearExams}
+        getTermExams={getTermExams}
         isGroupAvailable={isGroupAvailable}
         onSelect={updateParams}
       />
@@ -158,7 +203,7 @@ export default function Egzaminy() {
         <div className="flex flex-col gap-6">
           {groupData.image && assetModules[`/src/assets/${groupData.image}`] && (
             <div className="border border-line bg-ink2 rounded-[14px] p-4 flex flex-col items-center">
-              <span className="font-mono text-[11px] tracking-wider text-muted mb-3 uppercase">Oryginalny arkusz egzaminacyjny</span>
+              <span className="font-mono text-[11px] tracking-wider text-muted mb-3 uppercase">Oryginalny arkusz egzaminacyjny / Źródło</span>
               <LazyImage
                 src={assetModules[`/src/assets/${groupData.image}`]}
                 alt={`Arkusz ${selectedYear} termin ${selectedTerm} grupa ${selectedGroup}`}

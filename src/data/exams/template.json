@@ -1,0 +1,24 @@
+{
+  "image": "exam_filename_in_assets.png",
+  "tasks": [
+    {
+      "number": 1,
+      "question": "Treść pytania egzaminacyjnego (Question text).",
+      "solution": "Szczegółowe rozwiązanie zadania z obsługą Markdown oraz wzorów MathJax.\n\nFormuły matematyczne wewnątrz linii piszemy jako: \\\\( E = mc^2 \\\\)\nFormuły w bloku (wyśrodkowane) piszemy jako:\n\n\\\\[ \\\\nabla \\\\times \\\\vec{E} = -\\\\frac{\\\\partial \\\\vec{B}}{\\\\partial t} \\\\]\n\n*(Pamiętaj, aby ukośniki wsteczne (backslashes) w ciągach znaków JSON były podwójnie uciekane (escaped) jako \\\\\\\\)*",
+      "tip": "Wskazówka dla studenta jak łatwiej zapamiętać lub rozwiązać zadanie.",
+      "relatedLinks": [
+        {
+          "label": "Tytuł linku odsyłającego (np. Pyt. 1 · Nazwa Zagadnienia)",
+          "route": "/teoria/fala-propagacja#q1"
+        }
+      ],
+      "charts": [
+        {
+          "image": "nazwa_pliku_wykresu_w_assets.png",
+          "alt": "Tekst alternatywny dla rysunku",
+          "caption": "Podpis pod rysunkiem/wykresem"
+        }
+      ]
+    }
+  ]
+}

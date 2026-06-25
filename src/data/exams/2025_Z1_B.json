@@ -1,0 +1,63 @@
+{
+  "image": "2025_Z_B1.png",
+  "tasks": [
+    {
+      "number": 1,
+      "question": "Omów budowę i zasadę działania tranzystorów bipolarnych (pamiętaj o charakterystykach, wykresach).",
+      "solution": "**Budowa tranzystora bipolarnego:**\nTranzystor bipolarny zbudowany jest z trzech warstw półprzewodnika o naprzemiennym typie przewodnictwa, tworzących strukturę **p-n-p** lub **n-p-n**. Posiada trzy elektrody wyprowadzone z poszczególnych warstw:\n- **Emiter (E)**: warstwa skrajna, bardzo silnie domieszkowana, której zadaniem jest emisja (wstrzykiwanie) nośników do bazy.\n- **Baza (B)**: warstwa środkowa, która jest **niezwykle cienka** i słabo domieszkowana. Służy do sterowania przepływem nośników.\n- **Kolektor (C)**: druga warstwa skrajna, stosunkowo szeroka i średnio domieszkowana, zbierająca nośniki przelatujące przez bazę.\n\n**Zasada działania (na przykładzie n-p-n):**\nAby tranzystor przewodził prąd, złącze baza-emiter (B-E) polaryzuje się w kierunku przewodzenia (napięcie włączające), a złącze baza-kolektor (B-C) w kierunku zaporowym. Otwarcie bariery B-E powoduje masowy wtrysk elektronów z emitera do bazy. Ponieważ baza jest bardzo cienka, większość z tych elektronów nie zdąży zrekombinować z tamtejszymi dziurami, tylko \"z rozpędu\" dyfunduje do krawędzi złącza kolektora. Tam, silne pole elektryczne polaryzacji zaporowej natychmiast wychwytuje te elektrony, tworząc bardzo duży prąd kolektora. Dzięki temu, operując znikomym prądem wejściowym bazy (\\\\( I_B \\\\)), kontrolujemy ogromny prąd wyjściowy kolektora (\\\\( I_C \\\\)).\n\n**Podstawowe wzory:**\n\\\\[ I_E = I_B + I_C \\\\]\n\\\\[ \\\\beta = \\\\frac{I_C}{I_B} \\\\]\ngdzie \\\\( \\\\beta \\\\) to współczynnik wzmocnienia prądowego.\n\n**Charakterystyki i wykresy:**\nNajważniejsza jest **charakterystyka wyjściowa**, czyli rodzina krzywych zależności prądu kolektora (\\\\( I_C \\\\)) od napięcia kolektor-emiter (\\\\( U_{CE} \\\\)) dla różnych, stałych prądów bazy (\\\\( I_B \\\\)).\nNa wykresie wyróżniamy obszary:\n1. **Nasycenia** (stromy początek wykresu) – szybki wzrost prądu, mały spadek napięcia.\n2. **Aktywny** (poziome wypłaszczenie krzywych) – prąd \\\\( I_C \\\\) zależy już tylko od prądu \\\\( I_B \\\\), a dalsze podnoszenie \\\\( U_{CE} \\\\) nie zwiększa zauważalnie przepływu.",
+      "tip": "Pamiętaj o kluczowej różnicy: tranzystor bipolarny sterowany jest prądem bazy, natomiast tranzystor polowy (np. MOSFET) sterowany jest napięciem bramki.",
+      "relatedLinks": [
+        {
+          "label": "Pyt. 22 · Tranzystory bipolarne",
+          "route": "/teoria/pamieci-nosniki#q22"
+        }
+      ],
+      "charts": [
+        {
+          "image": "TeoriaPamieciNosniki_img_1.jpeg",
+          "alt": "Symbole graficzne i diodowe schematy zastępcze tranzystora",
+          "caption": "Rysunek 7.1. Symbole graficzne i diodowe schematy zastępcze a) tranzystor n–p–n i b) p–n–p."
+        },
+        {
+          "image": "TeoriaPamieciNosniki_img_3.jpeg",
+          "alt": "Charakterystyka prądowo-napięciowa tranzystora",
+          "caption": "Rysunek 7.3. Charakterystyka prądowo–napięciowa tranzystora."
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "question": "Dyspersja (definicja), jej rodzaje (opisz + wzory + wykresy) i jej kompensacja (wymień metody i je opisz + wzory). Porównaj wszystkie znane Ci metody kompensacji dyspersji. Jakie rodzaje dyspersji występowały w projektowanym łączu i jakie metody kompensacji zastosowano?",
+      "solution": "**Definicja Dyspersji:**\nDyspersja to fizyczne zjawisko polegające na rozmywaniu (poszerzaniu się) impulsów świetlnych w czasie, w miarę jak przemieszczają się one wzdłuż włókna światłowodowego. Poszerzone impulsy zaczynają na siebie nachodzić, wywołując Interferencję Międzysymbolową (ISI), która ogranicza maksymalną odległość i szybkość bezbłędnej transmisji sygnału.\n\n**Rodzaje dyspersji:**\n1. **Dyspersja modowa**: Występuje w światłowodach wielomodowych. Promienie światła (mody) wchodzące do rdzenia pod różnymi kątami pokonują fizycznie różne odległości. Mody osiowe docierają do celu najszybciej, a te odbijające się od ścianek – najwolniej.\n\\\\[ \\\\Delta t_{mod} \\\\approx \\\\frac{L}{c \\\\cdot n_1} \\\\Delta \\\\]\n2. **Dyspersja chromatyczna**: Występuje w światłowodach jednomodowych i wielomodowych. Związana z faktem, że światło z nadajnika nigdy nie jest idealnie jednokolorowe (składa się z paczki różnej długości fal \\\\( \\\\Delta \\\\lambda \\\\)). Składa się na nią dyspersja **materiałowa** (współczynnik załamania szkła zależy od długości fali) oraz **falowodowa** (różne długości fal inaczej wnikają w płaszcz światłowodu).\n\\\\[ \\\\Delta t_{chrom} = D \\\\cdot L \\\\cdot \\\\Delta \\\\lambda \\\\]\n3. **Polaryzacyjna Dyspersja Modowa (PMD)**: Wynika z faktu, że rdzeń włókna rzadko bywa idealnie okrągły (asymetria). Dwie prostopadłe składowe wektora polaryzacji światła podróżują z lekko innymi prędkościami.\n\\\\[ \\\\Delta t_{PMD} = D_{PMD} \\\\cdot \\\\sqrt{L} \\\\]\n\n**Metody kompensacji dyspersji i ich porównanie:**\n1. **Włókno kompensujące DCF (Dispersion Compensating Fiber)**: Zastosowanie kawałka włókna ze skrajnie wysokim, **ujemnym** współczynnikiem dyspersji (np. -80 ps/nm/km), co odwraca efekty zwykłego światłowodu SMF (+16 ps/nm/km). Jest niezawodne i w pełni pasywne, ale wprowadza ogromne dodatkowe tłumienie sygnału.\n\\\\[ D_{SMF} L_{SMF} + D_{DCF} L_{DCF} = 0 \\\\]\n2. **Siatki Bragga (Chirped FBG)**: Struktura wewnątrz krótkiego światłowodu przypominająca wielowarstwowe lustro. Szybsze fale świetlne odbijają się dopiero na jego końcu (pokonując dłuższą drogę), a wolniejsze zaraz na początku, co precyzyjnie wyrównuje czasy ich przelotu. Posiada znacznie mniejsze tłumienie wtrąceniowe niż DCF.\n3. **Elektroniczna kompensacja (EDC)**: Dokonywana całkowicie po stronie elektrycznej, w układach DSP odbiornika. Algorytmy cyfrowo odwracają rozmycie impulsu. \"Darmowa\" w budżecie optycznym łącza, ale wymaga zaawansowanych i drogich procesorów dla bardzo dużych prędkości.\n\n**W projektowanym łączu (na laboratorium/projekcie):**\nDominowała **dyspersja chromatyczna**, z uwagi na transmisję w III oknie telekomunikacyjnym (1550 nm) z wykorzystaniem światłowodów standardowych (SMF). Najczęstszą metodą kompensacji narzuconą w projekcie budżetu łącza było użycie zwojów **włókna DCF**, obliczanych ze wzoru bilansowego dla osiągnięcia całkowitej dyspersji równej 0.",
+      "tip": "Wzór zbilansowania dyspersji \\\\( D_{SMF} L_{SMF} + D_{DCF} L_{DCF} = 0 \\\\) jest jednym z absolutnie najważniejszych równań przy projektowaniu budżetu fizycznego światłowodu. Pozwala wyznaczyć wymaganą długość szpuli kompensacyjnej.",
+      "relatedLinks": [
+        {
+          "label": "Pyt. 10 · Dyspersja we włóknach",
+          "route": "/teoria/swiatlowody#q10"
+        },
+        {
+          "label": "Pyt. 11 · Kompensacja dyspersji",
+          "route": "/teoria/swiatlowody#q11"
+        }
+      ],
+      "charts": []
+    },
+    {
+      "number": 3,
+      "question": "3. a) Omów zjawisko mieszania czterofalowego, czy zjawisko to występowało w projektowanym łączu, odpowiedź uzasadnij.\n1. b) W łączu światłowodowym zastosowano lasery przestrajalne w zakresie od 1500 nm do 1550 nm o mocy 40 mW każdy. Odstęp między kanałami wynosi 25 GHz. Wyznacz maksymalną ilość kanałów w tym łączu. Jaka będzie całkowita przepływność tego łącza, jeżeli przepływność w każdym z kanałów wynosi 100 Mb/s? Co możesz powiedzieć na temat tego łącza? Wymień zjawiska, które tu dominuja przeanalizuj podane parametry. Czy zmiana mocy wpłynie na działanie łącza?",
+      "solution": "**Ad a) Mieszanie Czterofalowe (FWM - Four Wave Mixing)**\nTo wysoce destrukcyjne zjawisko nieliniowe występujące głównie w systemach WDM/DWDM. Polega na tym, że bardzo blisko położone w paśmie, silne fale optyczne (kanały) oddziałują ze sobą w rdzeniu światłowodu i „mieszają się”, rodząc nową, pasożytniczą falę nazywaną prążkiem FWM (np. \\\\( f_{FWM} = f_1 + f_2 - f_3 \\\\)). Fale te wysysają moc z użytecznych nośnych i celują bezbłędnie w częstotliwości innych użytecznych kanałów, generując drastyczny spadek stosunku sygnału do szumu (OSNR).\n*Uzasadnienie do projektu:* Zjawisko to najprawdopodobniej mocno występowało w łączu projektowanym (szczególnie typu DWDM), z uwagi na małe odstępy międzykanałowe, dużą wprowadzoną moc optyczną i próby całkowitego zbilansowania dyspersji do wartości zerowej (bliska zeru dyspersja doskonale synchronizuje fazę fal, potęgując zjawisko FWM).\n\n**Ad b) Zadanie obliczeniowe - Łącze światłowodowe**\n*Dane:* \\\\( \\\\lambda_{min} = 1500 \\\\text{ nm} \\\\), \\\\( \\\\lambda_{max} = 1550 \\\\text{ nm} \\\\), Moc = \\\\( 40 \\\\text{ mW} \\\\), Odstęp \\\\( \\\\Delta f_{odst} = 25 \\\\text{ GHz} \\\\), Przepływność jednostkowa \\\\( R_{kan} = 100 \\\\text{ Mb/s} \\\\).\n\n1. **Wyznaczenie maksymalnej ilości kanałów:**\nZamieniamy długości fal granicznych na częstotliwości:\n\\\\[ f_{max} = \\\\frac{c}{\\\\lambda_{min}} = \\\\frac{3 \\\\cdot 10^8 \\\\text{ m/s}}{1500 \\\\cdot 10^{-9} \\\\text{ m}} = 200 \\\\text{ THz} \\\\]\n\\\\[ f_{min} = \\\\frac{c}{\\\\lambda_{max}} = \\\\frac{3 \\\\cdot 10^8 \\\\text{ m/s}}{1550 \\\\cdot 10^{-9} \\\\text{ m}} \\\\approx 193,548 \\\\text{ THz} \\\\]\nSzerokość całego pasma dostępnego w częstotliwości:\n\\\\[ \\\\Delta f = 200 \\\\text{ THz} - 193,548 \\\\text{ THz} = 6,452 \\\\text{ THz} = 6452 \\\\text{ GHz} \\\\]\nMaksymalna liczba zmieszczonych kanałów \\\\( N \\\\):\n\\\\[ N_{max} = \\\\left\\\\lfloor \\\\frac{\\\\Delta f}{\\\\Delta f_{odst}} \\\\right\\\\rfloor + 1 = \\\\left\\\\lfloor \\\\frac{6452}{25} \\\\right\\\\rfloor + 1 = 258 + 1 = 259 \\\\text{ kanałów} \\\\]\n\n2. **Całkowita przepływność łącza:**\n\\\\[ C_{total} = N_{max} \\\\cdot R_{kan} = 259 \\\\cdot 100 \\\\text{ Mb/s} = 25900 \\\\text{ Mb/s} = 25,9 \\\\text{ Gb/s} \\\\]\n\n3. **Analiza łącza i zjawisk w nim dominujących:**\nJest to niezwykle gęsto upakowane łącze optyczne w standardzie ultra-gęstego WDM (odstęp rzędu 25 GHz to ścisk falowy). Pomimo dużej przepustowości falowej, zastosowano tam bardzo archaiczny i wolny standard jednostkowy (tylko 100 Mb/s na prążek). Gigantyczna wartość mocy pojedynczego lasera (40 mW \\\\( \\\\approx \\\\) +16 dBm) złączona z odstępami 25 GHz poskutkuje drastycznym pojawieniem się wszystkich patologii światłowodowych. \nDominować będą zjawiska nieliniowe:\n- **Mieszanie Czterofalowe (FWM)** – krytyczne, pasożytnicze prążki.\n- **Samo-modulacja Fazy (SPM)** i **Skrośna Modulacja Fazy (XPM)**.\n- Zjawiska rozproszeniowe (np. wymuszone rozpraszanie Brillouina SBS i Ramana SRS).\n\n**Czy zmiana mocy wpłynie na działanie łącza?**\nTak, w stopniu absolutnym. **Zmniejszenie mocy nadajników** (np. do bezpiecznego limitu 2-5 mW) spowoduje diametralne stłumienie zjawisk nieliniowych i usunięcie widmowych pasożytów FWM, poprawiając poprawność sygnałów. Trzeba jednak uważać, by z mocą nie zejść zbyt nisko – zbytnie stłumienie wywoła spadek mocy poniżej czułości odbiornika fotodiody, niszcząc OSNR i czyniąc sygnał niemożliwym do odkodowania.",
+      "tip": "Moc 40 mW to w decybelach (dBm) aż ok. +16 dBm. Typowe i czyste łącza pracują w okolicach 0 do 5 dBm (czyli od 1 mW do ok. 3 mW). Wykraczanie poza 10 mW w WDM to pewność wystąpienia nieliniowości.",
+      "relatedLinks": [
+        {
+          "label": "Pyt. 12 · Budżet łącza telekomunikacyjnego (WDM/FWM)",
+          "route": "/teoria/swiatlowody#q12"
+        },
+        {
+          "label": "Ćwicz. 5.5.4 · System DWDM i FWM",
+          "route": "/zadania/3#t4"
+        }
+      ],
+      "charts": []
+    }
+  ]
+}
