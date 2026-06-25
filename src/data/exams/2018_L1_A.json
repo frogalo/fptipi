@@ -1,0 +1,29 @@
+{
+  "image": "2018_L_A1.png",
+  "tasks": [
+    {
+      "number": 1,
+      "question": "Omów wpływ czynników atmosferycznych i innych zanieczyszczeń na propagację fali.",
+      "solution": "Atmosfera ma kluczowy wpływ na to, jak skutecznie rozchodzi się fala w przestrzeni otwartej.\n\nCzynniki tłumiące (pochłanianie i rozpraszanie):\n- **Gazy atmosferyczne**: Cząsteczki tlenu (O2) i pary wodnej (H2O) charakteryzują się rezonansowym pochłanianiem pewnych częstotliwości (np. para wodna silnie tłumi dla ≈22 GHz). Powoduje to powstawanie silnych pasm pochłaniania i pozostawienie tylko pewnych \"okien\" dla łączności.\n- **Hydrometeory (deszcz, śnieg, grad, mgła)**: Powodują silne zjawisko rozpraszania, szczególnie Rayleigha i Mie (gdy krople wody mają rozmiar zbliżony do długości fali). Najbardziej cierpi na to łączność wysokich częstotliwości (pasma milimetrowe oraz systemy optyczne, takie jak FSO).\n\nZjawiska ugięcia i warunki zmienne:\n- **Refrakcja troposferyczna**: Wraz z wysokością zmienia się temperatura, gęstość i ciśnienie powietrza, co prowadzi do zakrzywiania (ugięcia) promienia radiowego. Zwykle fala ugina się ku Ziemi, zwiększając horyzont, jednak inwersja temperatury może doprowadzić do utraty sygnału lub powstania duktów (fala wędruje jak w światłowodzie tysiące kilometrów).\n- **Stan Jonosfery**: Promieniowanie jonizujące (Słońce) silnie wpływa na jonosferę. Fale krótkie (ok. 3-30 MHz) odbijają się od naładowanych warstw jonosfery, jednak zdolność ta zmienia się drastycznie między dniem a nocą oraz w cyklach słonecznych.\n- **Zanieczyszczenia stałe (smog, dym)**: Mają pomijalny wpływ na klasyczne fale radiowe (UHF), ale w bardzo dużej gęstości potrafią blokować widoczność łączy optycznych w podczerwieni (FSO).",
+      "tip": "Aby ułatwić odpowiedź podziel to w głowie na trzy warstwy: Gazy (tłumią przez rezonans atomów), Woda/Mgła (rozpraszają fizycznie falę) i Temperatura (zmienia gęstość i zakrzywia tor fali).",
+      "relatedLinks": [
+        {
+          "label": "Pyt. 5 · Czynniki atmosferyczne",
+          "route": "/teoria/fala-propagacja#q5"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "question": "Omów budowę i zasadę działania tranzystorów bipolarnych.",
+      "solution": "Budowa:\nTranzystor bipolarny składa się z dwóch bardzo blisko położonych złączy półprzewodnikowych układających się w strukturę **p-n** oraz **n-p**. Ma on trzy elektrody:\n- **Baza (B)** (z ang. base) – warstwa środkowa, musi być skrajnie cienka.\n- **Emiter (E)** (z ang. emitter) – warstwa bardzo mocno domieszkowana, której celem jest wstrzykiwanie nośników (elektronów w n-p-n) do bazy.\n- **Kolektor (C)** (z ang. collector) – warstwa szeroka, odbierająca nośniki ze spadzistej bariery bazy.\nTranzystor wykorzystuje przepływ dwóch rodzajów ładunków (dziury i elektrony stąd słowo bipolarny).\n\nZasada działania (dla n-p-n):\nStandardowym trybem pracy jest polaryzacja złącza B-E w kierunku przewodzenia, a C-B w zaporowym. Otwarcie pierwszej zapory (przyłożenie napięcia ułatwiającego, na bazę prąd \\(I_B\\)) powoduje potężne wstrzyknięcie elektronów z Emitera. Baza jest tak cienka i słabo naładowana swoimi głównymi nośnikami, że tylko drobny ułamek elektronów \"zdąży\" w niej zrekombinować. Przytłaczająca większość przelatuje na drugą stronę i wpada w pole złącza kolektora (działającego jak zjeżdżalnia/odkurzacz dla tych nośników), tworząc wysoki prąd \\(I_C\\). Dzięki temu manipulując bardzo cienkim prądem wejściowym do bazy, uzyskujemy olbrzymi proporkcjonalnie i potężny prąd na wyjściu kolektora, co pozwala tranzystorowi realizować funkcję klucza lub wzmacniacza sygnału.",
+      "tip": "Skoncentruj się na \"grubości bazy\". To to czyni z tego złącza tranzystor, a nie dwie sklejone do siebie, niezależne zwykłe diody. Cały fenomen polega na tym, że ładunki po prostu przenikają przez nią z rozpędu.",
+      "relatedLinks": [
+        {
+          "label": "Pyt. 22 · Tranzystory bipolarne",
+          "route": "/teoria/pamieci-nosniki#q22"
+        }
+      ]
+    }
+  ]
+}

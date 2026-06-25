@@ -1,0 +1,93 @@
+{
+  "image": "egzamin_2026_L_A1.png",
+  "tasks": [
+    {
+      "number": 1,
+      "question": "Omów nośniki w stanie równowagi i nierównowagi termodynamicznej.",
+      "solution": "Stan równowagi termodynamicznej:\nJest to naturalny stan półprzewodnika, gdy nie działają na niego żadne zewnętrzne czynniki zaburzające (takie jak oświetlenie, pole elektryczne czy dodatkowe ogrzewanie). W półprzewodniku samoistnym liczba swobodnych elektronów (n) jest dokładnie równa liczbie dziur (p) i zależy wyłącznie od temperatury. Szansę znalezienia nośnika ładunku na danym poziomie energetycznym opisuje funkcja rozkładu prawdopodobieństwa Fermiego-Diraca, a kluczowym parametrem jest poziom Fermiego (\\(E_F\\)) – poziom o prawdopodobieństwie obsadzenia dokładnie 0,5. W czystym krzemie koncentracja mocno rośnie wraz ze wzrostem temperatury.\n\nStan nierównowagi termodynamicznej:\nWystępuje, gdy z zewnątrz dostarczymy energię (np. oświetlimy materiał fotonami, podłączymy napięcie do złącza p-n). Dochodzi wtedy do zachwiania bilansu:\n- **Iniekcja**: wstrzyknięcie nadmiarowych nośników (koncentracja przekracza stan równowagi, np. pod wpływem światła lasera lub w kierunku przewodzenia złącza).\n- **Ekstrakcja**: usunięcie nośników, co prowadzi do ich spadku (np. w złączu spolaryzowanym zaporowo).\nNadmiarowe nośniki nieustannie ulegają generacji oraz rekombinacji (bezpośredniej lub pośredniej przez specjalne centra w paśmie zabronionym), aby docelowo z powrotem osiągnąć stan równowagi. Czas, w jakim po wyłączeniu czynnika nadmiarowa ilość nośników spada o czynnik 'e', nazywa się czasem życia nośników.",
+      "tip": "Pamiętaj o dwóch przeciwstawnych słowach-kluczach w stanie nierównowagi: iniekcja (dodanie) oraz ekstrakcja (usunięcie) nośników ładunku.",
+      "relatedLinks": [
+        {
+          "label": "Pyt. 17 · Stan równowagi termodynamicznej",
+          "route": "/teoria/polprzewodniki#q17"
+        },
+        {
+          "label": "Pyt. 18 · Stan nierównowagi termodynamicznej",
+          "route": "/teoria/polprzewodniki#q18"
+        }
+      ],
+      "charts": [
+        {
+          "image": "TeoriaPolprzewodniki_img_2.png",
+          "alt": "Rysunek 6.2. Rozkład Fermiego-Diraca",
+          "caption": "Rysunek 6.2. Rozkład Fermiego–Diraca dla półprzewodnika a) samoistnego, b) typu n i c) typu p."
+        },
+        {
+          "image": "TeoriaPolprzewodniki_img_3.png",
+          "alt": "Rysunek 6.3. Zależność koncentracji nośników w funkcji temperatury",
+          "caption": "Rysunek 6.3. Zależność koncentracji nośników w funkcji temperatury dla krzemu typu n."
+        },
+        {
+          "image": "TeoriaPolprzewodniki_img_4.png",
+          "alt": "Rysunek 6.5. Model generacji i rekombinacji bezpośredniej",
+          "caption": "Rysunek 6.5. Model generacji i rekombinacji bezpośredniej w półprzewodniku."
+        },
+        {
+          "image": "TeoriaPolprzewodniki_img_5.png",
+          "alt": "Rysunek 6.6. Model generacji i rekombinacji pośredniej",
+          "caption": "Rysunek 6.6. Model generacji i rekombinacji pośredniej w półprzewodniku."
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "question": "Maxwell (wzory, jednostki, opis, co z tego wynika).",
+      "solution": "Równania Maxwella stanowią fundament elektromagnetyzmu i łączą zachowanie prądu, ładunków, pola elektrycznego oraz magnetycznego.\n\n1. **Prawo Faradaya (dla indukcji elektromagnetycznej)**:\n\\[\\nabla \\times \\vec{E} = -\\frac{\\partial \\vec{B}}{\\partial t}\\]\n**Opis i jednostki:** Zmienne w czasie pole magnetyczne (\\(\\vec{B}\\) – wektor indukcji magnetycznej, \\[Vs/m^2\\] lub Tesla) wytwarza wirowe pole elektryczne (\\(\\vec{E}\\) – natężenie pola, \\[V/m\\]). Znak minus to reguła Lenza (pole przeciwdziała zmianie).\n\n2. **Prawo Ampere'a rozszerzone przez Maxwella**:\n\\[\\nabla \\times \\vec{H} = \\vec{j} + \\frac{\\partial \\vec{D}}{\\partial t}\\]\n**Opis i jednostki:** Wirowe pole magnetyczne (\\(\\vec{H}\\) – natężenie pola, \\[A/m\\]) jest generowane przez przepływający prąd przewodzenia (\\(\\vec{j}\\) – gęstość prądu, \\[A/m^2\\]) oraz przez zmienne w czasie pole elektryczne (prąd przesunięcia związany ze zmianą \\(\\vec{D}\\) – indukcji elektrycznej, \\[As/m^2\\]).\n\n3. **Prawo Gaussa dla elektryczności**:\n\\[\\nabla \\cdot \\vec{D} = \\rho\\]\n**Opis i jednostki:** Pole elektryczne ma charakter źródłowy. Jego źródłem są ładunki elektryczne o gęstości objętościowej (\\(\\rho\\) w \\[C/m^3\\]). Linie sił pola wychodzą z ładunków dodatnich i zbiegają do ujemnych (dywergencja \\(\\neq 0\\)).\n\n4. **Prawo Gaussa dla magnetyzmu**:\n\\[\\nabla \\cdot \\vec{B} = 0\\]\n**Opis i jednostki:** Pole magnetyczne jest zawsze bezźródłowe. Oznacza to, że nie istnieją pojedyncze ładunki (monopole) magnetyczne. Linie tego pola to zawsze zamknięte krzywe (pętle).\n\n**Co z tego wynika?**\nZ równań Maxwella wynika kluczowy wniosek dla telekomunikacji: zmiany pola elektrycznego i magnetycznego nawzajem się indukują. To sprzężenie pozwala na oderwanie się fali od źródła i jej samodzielną propagację w przestrzeni w postaci **fali elektromagnetycznej** pędzącej z prędkością światła.",
+      "tip": "Wzory mogą być zapisane w postaci różniczkowej (z operatorem nabla / rotacji) tak jak powyżej. Uważaj na znaki pochodnych czasowych (często robiony błąd to wpisywanie tam delty z przyrostu).",
+      "relatedLinks": [
+        {
+          "label": "Pyt. 1 · Równania Maxwella",
+          "route": "/teoria/fala-propagacja#q1"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "question": "a) Zjawiska falowe, gdzie/jakie zaobserwowano podczas kursu, które są związane z częstotliwością, które z mocą.\nb) Budżet mocy dla czterech częstotliwości na symbolach, później podstawić wartości, co z tego wynika.",
+      "solution": "Część a) – Zjawiska falowe i ich powiązania:\n\n- **Odbicie**: Zachodzi, gdy fala trafia na barierę lub zmianę ośrodków i wraca. *W kursie:* Odpowiada za zjawisko Całkowitego Wewnętrznego Odbicia w rdzeniu światłowodu (główne zjawisko transmisji), stosowane również przy odczycie z płyt CD/DVD (odbicie od pitu i landu) oraz przy propagacji dalekosiężnych fal jonosferycznych.\n- **Załamanie (Refrakcja)**: Zmiana kierunku (ugięcie wiązki) spowodowane zmianą prędkości fali po przejściu do innego ośrodka. *W kursie:* Rozkład modów w światłowodzie gradientowym (fala zawraca do osi rdzenia płynnym ugięciem), powiększanie horyzontu dla fal troposferycznych.\n- **Dyfrakcja (Ugięcie)**: Zdolność fal do omijania przeszkód o wymiarach zbliżonych do długości fali. *W kursie:* Propagacja dalego zasięgu nad krzywizną Ziemi i wzgórzami, strefy Fresnela decydujące o widoczności radiowej i tłumieniu przeszkód (mocno zależne od **częstotliwości** – im niższa częstotliwość fali radiowej, tym sprawniej zagląda za przeszkodę).\n- **Interferencja**: Nakładanie się fal spójnych. *W kursie:* W układach WDM/DWDM powoduje powstawanie prążków **FWM (mieszania czterofalowego)**. FWM jest krytycznie zależne od **mocy** (duża moc silnie wzbudza nieliniowości) oraz **częstotliwości** (równy, bliski odstęp między częstotliwościami potęguje problem interferencji).\n\n---\n\nCzęść b) – Budżet mocy łącza WDM (symbolicznie i wnioski):\n\nKroki budowania budżetu na symbolach:\n1. Obliczenie długości włókna kompensującego z warunku zerowej dyspersji chromatycznej toru:\n\\[L_{SMF} \\cdot D_{SMF} + L_{DCF} \\cdot D_{DCF} = 0 \\implies L_{DCF} = -L_{SMF} \\frac{D_{SMF}}{D_{DCF}}\\]\n2. Zapisanie ogólnego równania na moc docierającą do odbiornika (\\(P_R\\)), uwzględniając moc nadajnika (\\(P_T\\)), tłumienności na odcinek (\\(\\alpha\\)) oraz sumę dodatkowych strat i marginesu (oznaczmy jako \\(L_{z/s/m}\\)):\n\\[P_R = P_T - \\alpha_{SMF} L_{SMF} - \\alpha_{DCF} L_{DCF} - L_{z/s/m}\\]\n3. Wyznaczenie symbolicznego wzoru na długość całego łącza \\(L_{SMF}\\):\n\\[L_{SMF} = \\frac{P_T - P_R - L_{z/s/m}}{\\alpha_{SMF} - \\alpha_{DCF} \\frac{D_{SMF}}{D_{DCF}}}\\]\n\n*(W miejsce powyższych zmiennych należy wstawić konkretne wartości liczbowe przypisane w treści zadania egzaminacyjnego do obliczenia ostatecznego dystansu).* \n\n**Wnioski dla układu na czterech częstotliwościach:**\nZastosowanie 4 kanałów laserowych sugeruje system zwielokrotnienia DWDM. Dominującym negatywnym zjawiskiem w takim systemie będzie mieszanie czterofalowe (FWM). Zgodnie ze wzorem dla \\(N=4\\) kanałów, powstanie gigantyczna liczba fal pasożytniczych wynosząca \\(N_{FWM} = N^2(N-1)/2 = 16 \\cdot 3 / 2 = 24\\). Fale te będą pożywiać się pierwotną mocą laserów (zmniejszając jakość i budżet mocy), co pociąga za sobą spadek stosunku sygnału do szumu (OSNR). Rozwiązaniem problemu byłoby zastosowanie włókien typu NZDSF (niezerowa dyspersja) zamiast wprowadzania perfekcyjnej i pełnej kompensacji na \\(0\\ \\mathrm{ps/(nm\\cdot km)}\\), ponieważ brak przesunięć dyspersyjnych promuje skrajną interferencję.",
+      "tip": "Zawsze podkreślaj, że prążki FWM niszczą system podwójnie: odbierają moc użytecznym kanałom transmisyjnym i nakładają się na sąsiednie kanały jako szum uniemożliwiający dekodowanie.",
+      "relatedLinks": [
+        {
+          "label": "Pyt. 3 · Zjawiska falowe (odbicie, załamanie, dyfrakcja, interferencja)",
+          "route": "/teoria/fala-propagacja#q3"
+        },
+        {
+          "label": "Pyt. 12 · Budżet łącza telekomunikacyjnego",
+          "route": "/teoria/swiatlowody#q12"
+        }
+      ],
+      "charts": [
+        {
+          "image": "TeoriaFalaPropagacja_img_2.png",
+          "alt": "Rysunek 3.1. Odbicie fali",
+          "caption": "Rysunek 3.1. Odbicie fali na granicy dwóch ośrodków."
+        },
+        {
+          "image": "TeoriaFalaPropagacja_img_3.png",
+          "alt": "Rysunek 3.2. Załamanie fali",
+          "caption": "Rysunek 3.2. Załamanie fali na granicy dwóch ośrodków."
+        },
+        {
+          "image": "TeoriaFalaPropagacja_img_4.png",
+          "alt": "Rysunek 3.3. Schemat doświadczenia Younga",
+          "caption": "Rysunek 3.3. Schemat doświadczenia Younga."
+        },
+        {
+          "image": "TeoriaFalaPropagacja_img_5.png",
+          "alt": "Rysunek 3.4. Ilustracja interferencji",
+          "caption": "Rysunek 3.4. Ilustracja interferencji w doświadczeniu Younga dla dwóch różnych odległości pomiędzy szczelinami: a) mniejszej, b) większej."
+        }
+      ]
+    }
+  ]
+}

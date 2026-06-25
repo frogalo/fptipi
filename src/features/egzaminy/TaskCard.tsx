@@ -2,10 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Tip } from '@/components/MathBlocks';
 import { renderContent } from './examRenderContent';
+import LazyImage from '@/components/LazyImage';
 
 export interface RelatedLink {
   label: string;
   route: string;
+}
+
+export interface Chart {
+  image: string;
+  alt: string;
+  caption: string;
+  maxWidth?: string;
 }
 
 export interface Task {
@@ -13,15 +21,19 @@ export interface Task {
   question: string;
   solution: string;
   tip?: string;
+  relatedLinks?: RelatedLink[];
+  charts?: Chart[];
 }
 
 interface TaskCardProps {
   task: Task;
-  relatedLinks: RelatedLink[];
-  charts?: React.ReactNode;
+  assetModules: Record<string, string>;
 }
 
-export default function TaskCard({ task, relatedLinks, charts }: TaskCardProps) {
+export default function TaskCard({ task, assetModules }: TaskCardProps) {
+  const relatedLinks = task.relatedLinks || [];
+  const charts = task.charts || [];
+
   return (
     <section
       id={`task-${task.number}`}
@@ -83,15 +95,36 @@ export default function TaskCard({ task, relatedLinks, charts }: TaskCardProps) 
       </div>
 
       {/* Rysunki pomocnicze */}
-      {charts && (
+      {charts.length > 0 && (
         <div className="mt-5">
           <h3 className="text-[14px] font-mono text-amber uppercase tracking-wider mb-3">
             Rysunki pomocnicze:
           </h3>
-          {charts}
+          <div className={`grid grid-cols-1 ${charts.length > 1 ? 'md:grid-cols-2' : ''} gap-4 my-4`}>
+            {charts.map((chart, idx) => {
+              const imageSrc = assetModules[`/src/assets/${chart.image}`];
+              return (
+                <figure
+                  key={idx}
+                  className="text-center bg-white rounded-[10px] p-[14px] border border-line mx-auto w-full"
+                  style={chart.maxWidth ? { maxWidth: chart.maxWidth } : undefined}
+                >
+                  <LazyImage
+                    src={imageSrc}
+                    alt={chart.alt}
+                    className="mx-auto max-h-[300px] object-contain"
+                    wrapperClassName="w-full min-h-[100px]"
+                  />
+                  <figcaption
+                    className="font-mono text-[11px] text-muted mt-2 text-left"
+                    dangerouslySetInnerHTML={{ __html: chart.caption.replace(/U<sub>(.+?)<\/sub>/g, 'U<sub>$1</sub>') }}
+                  />
+                </figure>
+              );
+            })}
+          </div>
         </div>
       )}
     </section>
   );
 }
-

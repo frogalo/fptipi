@@ -1,0 +1,41 @@
+{
+  "image": "2018_Z_B1.png",
+  "tasks": [
+    {
+      "number": 1,
+      "question": "Omów budowę i zasadę działania tranzystorów polowych.",
+      "solution": "Budowa:\nTranzystory polowe (FET - Field-Effect Transistor) są elementami unipolarnymi (prąd płynie z wykorzystaniem jednego typu nośników – elektronów albo dziur). Składają się z trzech elektrod:\n- **Źródło (S - Source)**\n- **Dren (D - Drain)**\n- **Bramka (G - Gate)**\nNajbardziej rozpowszechnioną konstrukcją jest MOSFET. Struktura ta posiada tzw. kanał łączący źródło z drenem, natomiast bramka jest odizolowana od tego kanału cienką warstwą dielektryka (najczęściej tlenku krzemu SiO2).\n\nZasada działania:\nZasada działania polega na sterowaniu szerokością oraz przewodnictwem kanału za pomocą pola elektrycznego wytwarzanego przez napięcie przyłożone do bramki (\\(U_{GS}\\)). Jeżeli w tranzystorze MOSFET z kanałem wzbogacanym przyłożymy odpowiednie napięcie, przyciągnie ono pod izolator bramki nośniki, tworząc warstwę inwersyjną – udrażniając kanał, którym popłynie prąd drenu (\\(I_D\\)). Oznacza to, że tranzystor polowy sterowany jest czysto **napięciowo** i pobiera na wejściu niemal zerowy prąd statyczny.",
+      "tip": "Największą zaletą układów MOSFET jest ich nieskończenie wielka rezystancja wejściowa (bramki) i brak poboru prądu w stanie ustalonym, dlatego dzisiejsze procesory są oparte właśnie na nich.",
+      "relatedLinks": [
+        {
+          "label": "Pyt. 23 · Tranzystory polowe",
+          "route": "/teoria/pamieci-nosniki#q23"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "question": "W jaki sposób określa się zasięg anteny nadawczej? + zadanie Wyznacz promień pierwszej i drugiej strefy Fresnela (f = 2412 MHz, D = 200 m, d = 100 m).",
+      "solution": "Określanie zasięgu anteny nadawczej:\nZasięg zależy od dwóch głównych aspektów:\n1. **Zasięg optyczny/geometryczny**: Dla propagacji fal troposferycznych ograniczeniem jest krzywizna Ziemi. Określa to horyzont radiowy (LoS - Line of Sight) wyznaczany z uwzględnieniem refrakcji jako: \\(d_0 = \\sqrt{2R_z}(\\sqrt{h_N} + \\sqrt{h_O})\\), gdzie \\(h_N\\) i \\(h_O\\) to wysokości anten.\n2. **Zasięg energetyczny**: Nawet jeśli anteny się 'widzą', sygnał ulega tłumieniu przestrzennemu (Free Space Loss). Maksymalny zasięg wyznaczany jest na podstawie budżetu łącza (Moc nadajnika + Zysk anten - Tłumienie musi być większe niż czułość odbiornika).\n\nRozwiązanie zadania – Strefy Fresnela:\nDane: \\(f = 2412\\ \\mathrm{MHz}\\), \\(D = 200\\ \\mathrm{m}\\), \\(d_1 = 100\\ \\mathrm{m}\\) (odległość przeszkody od nadajnika), więc od odbiornika \\(d_2 = D - d_1 = 100\\ \\mathrm{m}\\).\n1. Obliczamy długość fali \\(\\lambda\\):\n\\[\\lambda = \\frac{c}{f} = \\frac{3 \\cdot 10^8}{2412 \\cdot 10^6} = \\frac{300}{2412} \\approx 0,1244\\ \\mathrm{m}\\]\n2. Wzór na promień n-tej strefy Fresnela w danym punkcie:\n\\[r_n = \\sqrt{\\frac{n \\cdot \\lambda \\cdot d_1 \\cdot d_2}{D}}\\]\n3. Promień pierwszej strefy (\\(n=1\\)):\n\\[r_1 = \\sqrt{\\frac{1 \\cdot 0,1244 \\cdot 100 \\cdot 100}{200}} = \\sqrt{\\frac{1244}{200}} = \\sqrt{6,22} \\approx 2,49\\ \\mathrm{m}\\]\n4. Promień drugiej strefy (\\(n=2\\)):\n\\[r_2 = \\sqrt{\\frac{2 \\cdot 0,1244 \\cdot 100 \\cdot 100}{200}} = \\sqrt{12,44} \\approx 3,53\\ \\mathrm{m}\\]\n\nOdpowiedź: Promień pierwszej strefy Fresnela wynosi ok. 2,49 m, a drugiej 3,53 m.",
+      "tip": "Wzór na strefę Fresnela działa w metrach – pamiętaj, by przekonwertować częstotliwość z MHz na Hz, by uzyskać poprawną długość fali.",
+      "relatedLinks": [
+        {
+          "label": "Pyt. 6 · Zasięg anteny nadawczej",
+          "route": "/teoria/fala-propagacja#q6"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "question": "Wymień i opisz sposoby mierzenia jakości zastosowanej modulacji.",
+      "solution": "Jakość modulacji ocenia się w celu sprawdzenia poprawności oraz stabilności transmitowanego sygnału w stosunku do zakłóceń.\n\nSposoby pomiaru:\n1. **Bitowa stopa błędu (BER - Bit Error Rate)**: Najbardziej wprost. Wyraża stosunek ilości odebranych bitów z przekłamaniem do liczby wszystkich wyemitowanych bitów (\\(BER = (p_0 + p_1)/2\\)). Dobre łącze ma \\(BER < 10^{-9}\\) lub \\(10^{-12}\\).\n2. **Wykres oczkowy (Eye diagram)**: To nałożenie na oscyloskopie wielu stanów zmodulowanych bitów jeden na drugim. Powstały kształt przypomina otwarte oko. Im większe rozwarcie 'oka', tym modulacja jest bardziej odporna na szumy. Z wykresu odczytamy: margines szumu, maksymalne opóźnienia i zniekształcenia fazowe (jitter).\n3. **Efektywność widmowa (\\(\\Gamma\\))**: Stosunek osiąganej prędkości binarnej transmisji do szerokości wymeganego pasma częstotliwości (jednostka: bit/s/Hz). Mówi nam, jak \"oszczędnie\" dana modulacja zarządza cennym pasmem.\n4. **EVM (Error Vector Magnitude)**: Miara błędu wektora między idealnym symbolem odniesienia w konstelacji a faktycznie odebranym symbolem z szumem (np. w modulacjach QAM).",
+      "tip": "Wykres oczkowy to diagnoza fizyczna (widzisz zły przebieg napięcia), a BER to ostateczna diagnoza logiczna (widzisz, że odebrałeś zły bit).",
+      "relatedLinks": [
+        {
+          "label": "Pyt. 13 · Jakość modulacji (BER, oczko, Γ)",
+          "route": "/teoria/modulacja#q13"
+        }
+      ]
+    }
+  ]
+}

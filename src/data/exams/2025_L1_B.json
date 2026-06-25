@@ -1,0 +1,87 @@
+{
+  "image": "egzamin_2025_L_B.png",
+  "tasks": [
+    {
+      "number": 1,
+      "question": "Omów budowę i zasadę działania tranzystorów polowych (pamiętaj o charakterystykach, wykresach). Gdzie mają one przewagę nad tranzystorami bipolarnymi? Co powiesz o ilości stosowanych tranzystorów w jednym układzie scalonym? Jakie pierwiastki wykorzystuje się przy produkcji tranzystorów.",
+      "solution": "Budowa i zasada działania:\nTranzystory polowe (FET - Field-Effect Transistor) składają się z trzech głównych elektrod: **źródła (S - Source)**, **drenu (D - Drain)** oraz **bramki (G - Gate)**. W przeciwieństwie do tranzystorów bipolarnych, są to elementy unipolarne, co oznacza, że prąd płynie w nich z wykorzystaniem tylko jednego typu nośników (elektronów lub dziur) przez tzw. kanał przewodzący. Zasada działania polega na sterowaniu szerokością i przewodnictwem tego kanału (a tym samym prądem płynącym między źródłem a drenem) za pomocą pola elektrycznego wytwarzanego przez napięcie przyłożone do bramki. Najpopularniejszą odmianą jest MOSFET, w którym bramka jest odizolowana od kanału cienką warstwą dielektryka (np. tlenku krzemu).\n\nCharakterystyki i wykresy:\n- **Charakterystyka wyjściowa (prądowo-napięciowa)**: Przedstawia zależność prądu drenu \\(I_D\\) od napięcia dren-źródło \\(U_{DS}\\) dla różnych wartości napięcia bramka-źródło \\(U_{GS}\\). Wyróżnia się na niej dwa główne obszary: obszar liniowy (omowy), gdzie tranzystor zachowuje się jak rezystor sterowany napięciem, oraz obszar nasycenia, gdzie prąd drenu staje się niemal stały niezależnie od dalszego wzrostu \\(U_{DS}\\).\n- **Charakterystyka przejściowa**: Pokazuje zależność prądu drenu \\(I_D\\) od napięcia sterującego bramki \\(U_{GS}\\). Prąd zaczyna płynąć dopiero po przekroczeniu pewnego napięcia progowego \\(U_T\\).\n\nPrzewaga nad tranzystorami bipolarnymi:\nGłówną zaletą tranzystorów polowych (szczególnie MOSFET) jest ogromna rezystancja wejściowa, co oznacza, że sterowanie nimi nie wymaga praktycznie żadnego prądu (sterowanie napięciowe). Prowadzi to do znacznie mniejszego zużycia energii i strat cieplnych w stanie statycznym. Ponadto zajmują mniej miejsca na płytce krzemowej i są łatwiejsze w miniaturyzacji (co jest kluczowe w technologii CMOS).\n\nIlość w jednym układzie scalonym:\nDzięki niesamowitemu postępowi w miniaturyzacji (węzły technologiczne rzędu 3 nm), w nowoczesnym, pojedynczym układzie scalonym (np. głównym procesorze CPU lub układzie graficznym GPU) znajdują się obecnie dziesiątki miliardów tranzystorów (nawet powyżej 80 miliardów).\n\nWykorzystywane pierwiastki:\nDo produkcji używa się materiałów półprzewodnikowych, przede wszystkim krzemu (**Si**), ale też germanu (**Ge**) czy arsenku galu (**GaAs**). Jako domieszek (donorów i akceptorów) używa się pierwiastków z grup III i V, takich jak bor (**B**), fosfor (**P**), arsen (**As**) czy antymon (**Sb**).",
+      "tip": "Pamiętaj, że kluczową różnicą do zapamiętania jest to, że tranzystor bipolarny sterowany jest prądem bazy, a tranzystor polowy sterowany jest napięciem bramki.",
+      "relatedLinks": [
+        {
+          "label": "Pyt. 23 · Tranzystory polowe",
+          "route": "/teoria/pamieci-nosniki#q23"
+        }
+      ],
+      "charts": [
+        {
+          "image": "TeoriaPamieciNosniki_img_4.jpeg",
+          "alt": "Rysunek 7.4. Przekrój MOSFET (polaryzacja zerowa)",
+          "caption": "Rysunek 7.4. Przekrój tranzystora MOSFET, gdy polaryzacja bramki i drenu jest zerowa."
+        },
+        {
+          "image": "TeoriaPamieciNosniki_img_5.jpeg",
+          "alt": "Rysunek 7.5. Przekrój MOSFET (polaryzacja bramki dodatnia)",
+          "caption": "Rysunek 7.5. Przekrój tranzystora MOSFET, gdy polaryzacja bramki jest dodatnia a drenu zerowa."
+        },
+        {
+          "image": "TeoriaPamieciNosniki_img_6.jpeg",
+          "alt": "Rysunek 7.6. Przekrój MOSFET (polaryzacja bramki i drenu dodatnia)",
+          "caption": "Rysunek 7.6. Przekrój tranzystora MOSFET, gdy polaryzacja bramki i drenu jest dodatnia."
+        },
+        {
+          "image": "TeoriaPamieciNosniki_img_7.jpeg",
+          "alt": "Rysunek 7.7. Przekrój MOSFET (UDS = UGS)",
+          "caption": "Rysunek 7.7. Przekrój tranzystora MOSFET gdy polaryzacja bramki i drenu jest dodatnia UDS = UGS."
+        },
+        {
+          "image": "TeoriaPamieciNosniki_img_8.jpeg",
+          "alt": "Rysunek 7.8. Charakterystyka wyjściowa MOSFET",
+          "caption": "Rysunek 7.8. Charakterystyka wyjściowa tranzystora MOSFET.",
+          "maxWidth": "680px"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "question": "Budżet łącza telekomunikacyjnego - wyjaśnij co to jest i po co to się tworzy. Co wchodzi w skład budżetu dla łącza optycznego - omów te parametry. W jakich jednostkach się go określa i dlaczego w takich.",
+      "solution": "Czym jest budżet łącza i po co się go tworzy:\nBudżet łącza (ang. link budget) to całościowe, analityczne zestawienie wszystkich zysków i strat mocy sygnału w torze transmisyjnym – od momentu wyjścia z nadajnika aż do wejścia do odbiornika. Tworzy się go na etapie planowania i projektowania sieci, aby upewnić się, że po przejściu przez wszystkie tłumiące elementy linii, sygnał dotrze do celu z mocą wystarczającą do bezbłędnej detekcji (czyli przekroczy próg czułości odbiornika), ale jednocześnie go nie uszkodzi (nie przekroczy mocy przesterowania).\n\nSkładniki budżetu dla łącza optycznego:\n1. **Moc nadajnika (\\(P_T\\))**: Początkowa moc optyczna wysyłana do włókna przez źródło światła (np. laser).\n2. **Tłumienie światłowodu (\\(\\alpha \\cdot L\\))**: Tłumienie samej trasy z powodu właściwości włókna (absorpcji, rozpraszania). Jest to iloczyn długości odcinka i współczynnika tłumienia dla danej długości fali.\n3. **Straty na złączach i spawach**: Tłumienie w miejscach łączenia poszczególnych odcinków światłowodów. Spawy termiczne generują znikome straty, złącza wtykowe zauważalnie większe.\n4. **Straty na elementach biernych**: Dodatkowe tłumienie wprowadzane przez komponenty takie jak splittery, multipleksery WDM czy cyrkulatory.\n5. **Margines systemu**: Zapas wprowadzany do równania projektowego (np. 2-3 dB), aby zapewnić działanie łącza mimo starzenia się elementów (np. spadek mocy lasera z upływem lat) czy nieprzewidzianych napraw w przyszłości.\n6. **Czułość odbiornika (\\(P_R\\))**: Parametr docelowy. Minimalny poziom sygnału światła, jaki fotodioda musi odebrać, by zachować wymaganą poprawność informacji (BER).\n\nJednostki:\nBudżet łącza operuje na **decybelach (dB)** dla parametrów wyrażających zyski, straty i tłumienie, oraz na **decybelach odniesionych do miliwata (dBm)** do precyzyjnego określania poziomów mocy nadajników i odbiorników. Wynika to stąd, że w nośnikach sygnału moc spada wykładniczo wraz z przebytą drogą. Przejście na skalę logarytmiczną pozwala inżynierom zastąpić trudne, kaskadowe mnożenie i dzielenie liniowych współczynników znacznie prostszym i bezpieczniejszym dodawaniem oraz odejmowaniem.",
+      "tip": "Podstawowe równanie budżetu łącza to prosta algebra: Moc na końcu = Moc na początku - (Suma wszystkich strat powiększona o margines). Upewnij się zawsze, czy końcowa moc jest wyższa lub równa czułości systemu.",
+      "relatedLinks": [
+        {
+          "label": "Pyt. 12 · Budżet łącza telekomunikacyjnego",
+          "route": "/teoria/swiatlowody#q12"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "question": "a) Opisz zjawiska falowe: dyfrakcja i interferencja (co to, kiedy zachodzi i jakie są ewentualne warunki powstania)\nb) Do dyspozycji masz 8 laserów odpowiednio o częstotliwościach od 192,1 THz do 192,8 THz z odstępem 100 GHz. Korzystając z budżetu mocy oblicz jego maksymalny zasięg. Moc każdego lasera wynosi P= 50 mW. Światłowód SMF ma współczynnik tłumienia αSMF = 0,25 dB/km i współczynnik dyspersji DSMF = 18 ps/km-nm, natomiast światłowód kompensujący ma współczynnik tłumienia αDCF = 0,5 dB/km i współczynnik dyspersji DDCF <= -80 ps/km-nm. Straty na złączach i spawach wnoszą 3 dB, margines 2 dB. Minimalna moc jak musi dotrzeć do odbiornika, żeby łącze działało poprawnie to PR=-18 dBm. Należy skompensować dyspersję. Przepustowość w jednym kanale wynosi 10 Gb/s. Wynik podaj używając tylko symboli a dopiero później podstaw dane i wykonaj obliczenia. Pamiętaj, że światłowód DCF nie wpływa na długość łącza (wzrasta tylko droga optyczna). Co możesz powiedzieć n temat tego łącza i podanych w zadaniu wszystkich wartościach. Jakie zjawiska wystąpią w tym łączu, tylko wymień - nie opisuj.",
+      "solution": "Część a – Dyfrakcja i interferencja:\n\n- **Dyfrakcja (ugięcie)**: Zjawisko uginania się i zmiany kierunku rozchodzenia się fali na krawędziach przeszkód lub po przejściu przez otwór. Wskutek tego fala wnika w przestrzeń, która geometrycznie stanowiłaby cień. Warunek powstania: Zjawisko zachodzi zauważalnie tylko wtedy, gdy rozmiary przeszkody lub szczeliny są bliskie długości fali padającej (\\(d \\approx \\lambda\\)).\n- **Interferencja**: Zjawisko nakładania się dwóch lub więcej fal, prowadzące do powstania nowego, przestrzennego rozkładu amplitudy fal (wzmocnienia, czyli interferencji konstruktywnej lub wygaszenia, czyli interferencji destruktywnej). Warunek powstania: Fale muszą być spójne (koherentne), co oznacza, że muszą mieć tę samą częstotliwość, zgodną płaszczyznę drgań wektora elektrycznego oraz stałą w czasie różnicę faz.\n\n---\n\nCzęść b – Wzory symboliczne:\n\nDługość niezbędnego włókna kompensującego wyznaczamy z warunku całkowitej kompensacji dyspersji:\n\\[D_{SMF} \\cdot L_{SMF} + D_{DCF} \\cdot L_{DCF} = 0\\]\nStąd:\n\\[L_{DCF} = -L_{SMF} \\frac{D_{SMF}}{D_{DCF}}\\]\nZapisujemy pełne równanie bilansu mocy uwzględniając straty dodatkowe (złącza/spawy \\(L_Z\\) oraz margines \\(M\\)), dla uproszczenia \\(L_{dod} = L_Z + M\\):\n\\[P_R = P_T - \\alpha_{SMF} \\cdot L_{SMF} - \\alpha_{DCF} \\cdot L_{DCF} - L_{dod}\\]\nPodstawiając wyliczone wcześniej \\(L_{DCF}\\):\n\\[P_R = P_T - L_{dod} - \\alpha_{SMF} \\cdot L_{SMF} - \\alpha_{DCF} \\cdot \\left(-L_{SMF} \\frac{D_{SMF}}{D_{DCF}}\\right)\\]\n\\[P_R = P_T - L_{dod} - L_{SMF} \\left(\\alpha_{SMF} - \\alpha_{DCF} \\frac{D_{SMF}}{D_{DCF}}\\right)\\]\nPrzekształcamy równanie, aby wyznaczyć fizyczną długość drogi transmisji \\(L_{SMF}\\):\n\\[L_{SMF} = \\frac{P_T - P_R - L_{dod}}{\\alpha_{SMF} - \\alpha_{DCF} \\frac{D_{SMF}}{D_{DCF}}}\\]\n\n---\n\nCzęść b – Podstawienie danych i obliczenia:\n\nMoc wpuszczana do kanału: \\(P_T = 50\\ \\mathrm{mW} = 10 \\cdot \\log_{10}(50)\\ \\mathrm{dBm} \\approx 17\\ \\mathrm{dBm}\\).\nSuma strat dodatkowych: \\(L_{dod} = 3\\ \\mathrm{dB} + 2\\ \\mathrm{dB} = 5\\ \\mathrm{dB}\\).\nDane z zadania: \\(P_R = -18\\ \\mathrm{dBm}\\), \\(\\alpha_{SMF} = 0,25\\ \\mathrm{dB/km}\\), \\(D_{SMF} = 18\\ \\mathrm{ps/(nm \\cdot km)}\\), \\(\\alpha_{DCF} = 0,5\\ \\mathrm{dB/km}\\).\nAby maksymalizować zasięg bierzemy docelową wartość tolerancji dla włókna kompensującego: \\(D_{DCF} = -80\\ \\mathrm{ps/(nm \\cdot km)}\\).\n\nObliczenia:\n\\[L_{SMF} = \\frac{17 - (-18) - 5}{0,25 - 0,5 \\cdot \\left(\\frac{18}{-80}\\right)} = \\frac{35 - 5}{0,25 - 0,5 \\cdot (-0,225)}\\]\n\\[L_{SMF} = \\frac{30}{0,25 + 0,1125} = \\frac{30}{0,3625} \\approx 82,76\\ \\mathrm{km}\\]\n\n---\n\nWnioski i zjawiska:\n\nKomentarz: System składa się z 8 laserów oddalonych o 100 GHz (ok. 0.8 nm), co wpisuje go idealnie w klasyfikację DWDM. Transmisja zachodzi w III oknie światłowodowym (pasmo około 1550 nm, co wynika z częstotliwości ≈192 THz). Mamy tu do czynienia z bardzo mocnymi sygnałami optycznymi (50 mW), co przy gęstym upakowaniu z pewnością zrodzi problemy związane z degradacją sygnału i wymusi zaawansowane procedury cyfrowej kontroli (FEC). Skompensowanie dużej dyspersji chromatycznej na dystansie ≈83 km wymaga włókna DCF, które samo w sobie \"zjada\" dużo bezcennego budżetu mocy, stając się kompromisem między jakością impulsu a ostatecznym dystansem.\n\nZjawiska w łączu:\n- Tłumienie\n- Dyspersja chromatyczna\n- Mieszanie czterofalowe (FWM - silnie obciążające przy systemie DWDM)\n- Samomodulacja fazy (SPM)\n- Skrośna modulacja fazy (XPM)\n- Wymuszone rozpraszanie Ramana (SRS)\n- Wymuszone rozpraszanie Brillouina (SBS)",
+      "tip": "Uważaj przy konwersji mW na dBm - 50 mW łatwo zapamiętać jako około 17 dBm, w odróżnieniu od 40 mW = 16 dBm. Mieszanie czterofalowe (FWM) to kluczowe zjawisko dla blisko ustawionych kanałów optycznych WDM.",
+      "relatedLinks": [
+        {
+          "label": "Pyt. 3 · Zjawiska falowe (odbicie, załamanie, dyfrakcja, interferencja)",
+          "route": "/teoria/fala-propagacja#q3"
+        },
+        {
+          "label": "Pyt. 12 · Budżet łącza telekomunikacyjnego",
+          "route": "/teoria/swiatlowody#q12"
+        }
+      ],
+      "charts": [
+        {
+          "image": "TeoriaFalaPropagacja_img_4.png",
+          "alt": "Schemat doświadczenia Younga",
+          "caption": "Rysunek 3.3. Schemat doświadczenia Younga.",
+          "maxWidth": "680px"
+        },
+        {
+          "image": "TeoriaFalaPropagacja_img_5.png",
+          "alt": "Ilustracja interferencji w doświadczeniu Younga",
+          "caption": "Rysunek 3.4. Ilustracja interferencji w doświadczeniu Younga dla dwóch różnych odległości pomiędzy szczelinami: a) mniejszej, b) większej.",
+          "maxWidth": "680px"
+        }
+      ]
+    }
+  ]
+}

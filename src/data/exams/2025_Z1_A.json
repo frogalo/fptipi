@@ -1,0 +1,49 @@
+{
+  "image": "egzamin_2025_Z_A1.png",
+  "tasks": [
+    {
+      "number": 1,
+      "question": "Co to jest multipleksacja. wymień rodzaje i je opisz. do czego służy. podaj problemy które występują w łączach DWDM (wyjaśnij skrót) i jak można je ograniczyć?",
+      "solution": "Co to jest multipleksacja i do czego służy:\nMultipleksacja (zwielokrotnienie) to równoczesne przesyłanie wielu niezależnych sygnałów (kanałów) przez jedno wspólne medium transmisyjne (np. jeden fizyczny światłowód lub wolną przestrzeń). Jej głównym celem jest drastyczne zwiększenie pojemności i przepływności łącza bez konieczności kładzenia nowych, kosztownych kabli, a także współdzielenie zasobów przez wielu użytkowników.\n\nRodzaje multipleksacji:\n- **TDM (Time-Division Multiplexing) - podział czasowy**: Każdy nadajnik dostaje swój ułamek sekundy (tzw. slot czasowy) na nadanie porcji danych (w optyce nosi nazwę OTDM).\n- **FDM (Frequency-Division Multiplexing) - podział częstotliwościowy**: Każdy sygnał jest wysyłany na innej częstotliwości fali nośnej.\n- **WDM (Wavelength-Division Multiplexing) - podział falowy**: Optyczny odpowiednik FDM. Każdy kanał to światło o innym kolorze (innej długości fali), lecące w tym samym szkle.\n\nProblemy w łączach DWDM (Dense Wavelength Division Multiplexing):\n**DWDM (Gęste Zwielokrotnienie Falowe)** to system, w którym odstępy między kanałami (kolorami światła) są ekstremalnie małe (np. 50 GHz lub 100 GHz wokół częstotliwości 193 THz w III oknie).\nGłównym problemem są zjawiska nieliniowe, a zwłaszcza **FWM (Mieszanie Czterofalowe - Four Wave Mixing)**. Kiedy w światłowodzie płynie duża moc i kanały są bardzo blisko siebie, fale optyczne potrafią \"zderzyć się\" i wygenerować nową, pasożytniczą falę (\\(\\nu_{FWM} = \\nu_1 + \\nu_2 - \\nu_3\\)). Może ona trafić dokładnie w miejsce użytecznego kanału, powodując zakłócenia, spadek OSNR i wzrost błędów BER.\n\nJak ograniczyć FWM:\n1. Zmniejszyć moc nadajników.\n2. Zwiększyć odstęp między kanałami (przejście w stronę tańszego, luźniejszego CWDM).\n3. Zastosować nierównomierne rozmieszczenie kanałów (aby nowo powstałe \"duchy\" omijały pasma użyteczne).\n4. Zastosować światłowód o niezerowej dyspersji (np. NZ-DSF) – dyspersja powoduje różne prędkości fal, przez co trudniej im się fazowo zsynchronizować do stworzenia FWM.",
+      "tip": "Multipleksację łatwo zapamiętać na przykładzie autostrady (medium) i carpoolingu – zamiast wysyłać pięć aut z jednym kierowcą (5 kabli), pakujemy 5 osób do jednego busa (1 kabel z wieloma kanałami).",
+      "relatedLinks": [
+        {
+          "label": "Pyt. 14 · Multipleksacja i zastosowania",
+          "route": "/teoria/modulacja#q14"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "question": "A) Omów jeden ze sposobów odtwarzania i zapisu informacji na dyskach optycznych",
+      "solution": "Zasada działania dysków wielokrotnego zapisu (np. CD-RW):\nZapis informacji nie polega tu na fizycznym wypalaniu dziur (jak w zwykłym CD-R), lecz na odwracalnej zmianie struktury materiału w warstwie nagrywanej (tzw. materiał fazowo-zmienny, stop Ag-In-Sb-Te). Sygnał kodowany jest poprzez różnice w odbiciu światła: zmiana stanu to \"1\", brak zmiany to \"0\".\n\n- **Zapis (Tworzenie \"Pitu\")**: Laser dużej mocy podgrzewa punkt na dysku do temperatury topnienia (500-700°C). Bardzo szybkie ochłodzenie tego punktu sprawia, że materiał zastyga w fazę amorficzną. Faza ta rozprasza światło (ma niski współczynnik odbicia).\n- **Kasowanie (Tworzenie \"Landu\")**: Laser o średniej mocy podgrzewa obszar do ok. 200°C (wyżarzanie). Powolniejsze stygnięcie pozwala atomom ułożyć się w regularną sieć – materiał wraca do fazy krystalicznej, która doskonale odbija światło (zachowuje się jak lustro).\n- **Odczyt**: Laser o bardzo małej mocy (która nic nie topi) skanuje ścieżkę. Odbite światło z obszaru krystalicznego (land) i z obszaru amorficznego (pit) trafia na fotodiodę. Głębokość pitu jest z reguły tak dobrana (\\(h = \\lambda/4 \\approx 125\\ \\mathrm{nm}\\)), by fala odbita z dna i z powierzchni wracała w przeciwfazie, wywołując destruktywną interferencję, co wzmacnia kontrast odczytu dla układu cyfrowego.",
+      "tip": "Zwróć uwagę, że w dyskach wielokrotnego zapisu struktura nie jest fizycznie \"dziurawiona\" – to tylko żonglowanie stanem skupienia stopu z krystalicznego (lustro) na amorficzny (mat).",
+      "relatedLinks": [
+        {
+          "label": "Pyt. 25 · Zapis i odtwarzanie na dyskach optycznych",
+          "route": "/teoria/pamieci-nosniki#q25"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "question": "B) Jak zmieni się szerokość impulsów i ilość modów propagujących w światłowodzie a) jednomodowym, b) wielomodowym... jeżeli zmieni się profil ze skokowego na gradientowy. Zmiana parametrów, podanie wymiarów i okien telekomunikacyjnych.",
+      "solution": "Kluczem do analizy modów i dyspersji jest parametr znormalizowany V:\n\\[V = \\frac{2\\pi a}{\\lambda} \\sqrt{n_1^2 - n_2^2}\\]\ngdzie \\(a\\) to promień rdzenia, \\(\\lambda\\) to długość fali, a \\(n_1\\) i \\(n_2\\) to współczynniki załamania rdzenia i płaszcza.\n\n1. Wpływ zmiany profilu ze skokowego na gradientowy:\n- **W światłowodzie jednomodowym (SMF)**: Ilość modów nie ulegnie zmianie (nadal pozostanie 1 mod, gdyż warunek dla SMF to \\(V < 2,405\\)). Szerokość impulsu również nie ulegnie istotnej zmianie, ponieważ nie występuje tu dyspersja modowa.\n- **W światłowodzie wielomodowym (MMF)**: Ilość prowadzonych modów drastycznie spadnie o połowę (we włóknie skokowym \\(M_{skok} \\approx \\frac{V^2}{2}\\), w gradientowym \\(M_{grad} \\approx \\frac{V^2}{4}\\)). Szerokość impulsu znacząco zmaleje, ponieważ profil gradientowy kompensuje różnice w czasie przelotu (światło na obrzeżach biegnie szybciej w rzadszym ośrodku), co minimalizuje gubienie kształtu (dyspersję modową).\n\n2. Zmiana parametrów nadajnika:\n- **Inna częstotliwość (\\(f\\))**: Zmiana częstotliwości to zmiana długości fali (\\(\\lambda = c/f\\)). Ponieważ \\(\\lambda\\) jest w mianowniku wzoru na \\(V\\), to np. wyższa częstotliwość (krótsza fala) zwiększy wartość \\(V\\), co wpłynie na pobudzenie większej ilości modów i wygeneruje inną dyspersję.\n- **Inna moc (\\(P_T\\))**: Dyspersja i ilość modów nie ulegną zmianie, ponieważ wynikają one z fizycznej geometrii (\\(a, n_1, n_2\\)) i częstotliwości, a nie od wpompowanej mocy świetlnej.\n\n3. Przykładowe parametry światłowodów (szkło kwarcowe):\n- **Współczynniki**: Rdzeń \\(n_1 \\approx 1,46\\), płaszcz \\(n_2 \\approx 1,44\\) (zawsze \\(n_1 > n_2\\)).\n- **Jednomodowy (SMF)**: Rdzeń \\(2a \\approx 9\\ \\mathrm{\\mu m}\\) (promień \\(a \\approx 4,5\\ \\mathrm{\\mu m}\\)), Płaszcz = \\(125\\ \\mathrm{\\mu m}\\).\n- **Wielomodowy (MMF)**: Rdzeń \\(2a = 50\\ \\mathrm{\\mu m}\\) lub \\(62,5\\ \\mathrm{\\mu m}\\), Płaszcz = \\(125\\ \\mathrm{\\mu m}\\).\n\n4. Okna telekomunikacyjne i przybliżone częstotliwości (z relacji \\(f = c/\\lambda\\)):\n- **I okno** (\\(\\approx 850\\ \\mathrm{nm}\\)): częstotliwość ok. 353 THz\n- **II okno** (\\(\\approx 1300\\ \\mathrm{nm}\\)): częstotliwość ok. 230 THz\n- **III okno** (\\(\\approx 1550\\ \\mathrm{nm}\\)): częstotliwość ok. 193 THz",
+      "tip": "Aby łatwo zrozumieć światłowód gradientowy wyobraź sobie gęsty syrop na środku i wodę po bokach – mody, które muszą nadrabiać drogę odbijając się od ścianek (wędrujące wodą), poruszają się fizycznie szybciej i docierają na metę w tym samym czasie, co mod centralny spowalniany w syropie.",
+      "relatedLinks": [
+        {
+          "label": "Pyt. 8 · Światłowody jedno- i wielomodowe",
+          "route": "/teoria/swiatlowody#q8"
+        },
+        {
+          "label": "Pyt. 9 · Okna transmisyjne",
+          "route": "/teoria/swiatlowody#q9"
+        },
+        {
+          "label": "Pyt. 10 · Dyspersja w światłowodach",
+          "route": "/teoria/swiatlowody#q10"
+        }
+      ]
+    }
+  ]
+}
