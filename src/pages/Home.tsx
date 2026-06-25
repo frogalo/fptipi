@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/favicon.png';
 import Footer from '../components/Footer';
-import examsData from '../data/examsData.json';
+import examsData from '@/lib/examsData.json';
 
 export default function Home() {
   const parts = [

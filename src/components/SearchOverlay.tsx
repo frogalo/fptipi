@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import searchData from '../assets/search-index.json';
+import searchData from '@/lib/searchIndex.json';
 
 interface SearchItem {
   type: string;

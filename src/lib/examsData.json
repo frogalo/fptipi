@@ -1,7 +1,7 @@
 {
   "2024": {},
   "2025": {
-    "Z": {
+    "Z1": {
       "A": {
         "image": "2025_Z_A1",
         "tasks": [
@@ -26,7 +26,7 @@
         ]
       }
     },
-    "L": {
+    "L1": {
       "B": {
         "image": "2025_L_B",
         "tasks": [
@@ -50,10 +50,51 @@
           }
         ]
       }
+    },
+    "Wrzesien": {
+      "A": {
+        "image": "2025_Wrzesien_A",
+        "tasks": [
+          {
+            "number": 1,
+            "question": "1A. Napisz definicję magnetorezystancji i podaj przykład jej zastosowania (wraz z opisem). 1B. Moc nadajnika wynosi 7 dBm... Oblicz maksymalny zasięg tego łącza.",
+            "solution": "Część 1A – Magnetorezystancja:\n**Definicja:** Magnetorezystancja to zjawisko fizyczne polegające na zmianie rezystancji (oporu elektrycznego) materiału w odpowiedzi na przyłożone do niego zewnętrzne pole magnetyczne.\n**Przykład zastosowania (Głowice odczytu dysków twardych HDD):** Wykorzystują one tzw. gigantyczną magnetorezystancję (GMR). Głowica zbudowana jest z cienkich, naprzemiennych warstw ferromagnetycznych oddzielonych warstwą niemagnetyczną. Jedna z warstw (tzw. twarda) ma stały, zablokowany kierunek namagnesowania, a druga (tzw. miękka) płynnie zmienia swoje namagnesowanie pod wpływem słabego pola magnetycznego uciekającego z talerza dysku. Kiedy kierunki namagnesowania w obu warstwach są zgodne, prąd płynie swobodnie (niski opór). Gdy pole z dysku obróci namagnesowanie warstwy miękkiej tak, by było przeciwne do twardej, opór gwałtownie wzrasta. Elektronika odczytuje te skoki prądu i dekoduje je jako ciąg logicznych zer i jedynek.\n\n---\n\nCzęść 1B – Budżet łącza:\n**Krok 1: Wyznaczenie mocy w mW i wyliczenie czułości:**\nMoc nadajnika wynosi \\(P_T = 7\\ \\mathrm{dBm}\\). Odpowiada to potędze z równania decybelowego: \\(7 = 10 \\cdot \\log_{10}(P_{mW})\\), skąd \\(P_{mW} = 10^{0,7} \\approx 5\\ \\mathrm{mW}\\). \nMoc odbiornika (\\(P_R\\)) ma być 16 razy mniejsza niż nadajnika w skali liniowej. Zatem \\(P_{R(mW)} = \\frac{5}{16} = 0,3125\\ \\mathrm{mW}\\).\nPrzeliczając z powrotem na dBm: \\(P_R = 10 \\cdot \\log_{10}(0,3125) \\approx -5\\ \\mathrm{dBm}\\). \n*(Alternatywnie: 16-krotny spadek mocy liniowo to spadek o \\(10 \\cdot \\log_{10}(16) \\approx 12\\ \\mathrm{dB}\\). Zatem \\(P_R = P_T - 12\\ \\mathrm{dB} = -5\\ \\mathrm{dBm}\\))*.\n\n**Krok 2: Wzory symboliczne i obliczenia**\nWarunek kompensacji dyspersji to zbilansowanie zjawiska do zera:\n\\[L_{SMF} \\cdot D_{SMF} + L_{DCF} \\cdot D_{DCF} = 0 \\implies L_{DCF} = -L_{SMF} \\frac{D_{SMF}}{D_{DCF}}\\]\nRównanie budżetu mocy (pomijając swapy i marginesy):\n\\[P_R = P_T - L_Z - \\alpha_{SMF} L_{SMF} - \\alpha_{DCF} L_{DCF}\\]\nPodstawiając wyznaczone wcześniej \\(L_{DCF}\\) do budżetu i przekształcając do obliczenia \\(L_{SMF}\\) (naszego rzeczywistego zasięgu), otrzymujemy docelowy wzór symboliczny:\n\\[L_{SMF} = \\frac{P_T - P_R - L_Z}{\\alpha_{SMF} - \\alpha_{DCF} \\frac{D_{SMF}}{D_{DCF}}}\\]\n\nPodstawienie wartości liczbowych:\nDane: \\(P_T = 7\\ \\mathrm{dBm}\\), \\(P_R = -5\\ \\mathrm{dBm}\\), \\(L_Z = 2\\ \\mathrm{dB}\\) (łącznie oba złącza), \\(\\alpha_{SMF} = 0,2\\ \\mathrm{dB/km}\\), \\(\\alpha_{DCF} = 0,5\\ \\mathrm{dB/km}\\), \\(D_{SMF} = 10\\), \\(D_{DCF} = -100\\).\n\\[L_{SMF} = \\frac{7 - (-5) - 2}{0,2 - 0,5 \\left(\\frac{10}{-100}\\right)} = \\frac{12 - 2}{0,2 - 0,5 \\cdot (-0,1)} = \\frac{10}{0,25} = 40\\ \\mathrm{km}\\]\nDługość światłowodu DCF potrzebna w skrzynce: \\(L_{DCF} = -40 \\cdot (10/-100) = 4\\ \\mathrm{km}\\).\n\n**Wnioski i komentarz do wyników:**\nZasięg tego łącza wyniesie fizycznie **40 km** w terenie (nie dolicza się ułożonego w pętli 4 km szpuli kompensacyjnej światłowodu DCF, która jedynie wydłuża drogę optyczną prądu do 44 km, opóźniając sygnał). Wynikający z obliczeń dystans 40 km to bardzo krótki zasięg jak na tak silny laser (+7 dBm / 5 mW). Winowajcą jest niezwykle słaba wartość czułości odbiornika podana w poleceniu (-5 dBm). Prawdziwe telekomunikacyjne odbiorniki są w stanie bezpiecznie rejestrować sygnał dla wartości rzędu -20 dBm do -30 dBm, co zwiększyłoby ten zasięg kilkukrotnie.\n\n**Opis Rysunków (Zrób je samodzielnie na egzaminie):**\n- **Schemat:** Narysuj prostokąt Tx (Nadajnik), linię wchodzącą w kółeczko (złącze optyczne), pofalowaną długą linię oznaczoną SMF, znów kółeczko (drugie złącze optyczne w stacji wzmacniakowej), zwiniętą pętlę (kabel kompensacyjny DCF) i wpięcie do prostokąta Rx (Odbiornika).\n- **Wykres:** Narysuj oś X (Odległość km) i Y (Moc dBm). Zaczynasz kropkę na (0km, 7dBm). Przyjmując straty po 1 dB na każdym złączu rysujesz szybki próg pionowy w dół do 6dBm. Potem prosta o niewielkim opadaniu, aż dotrzesz do (40km, -2dBm). W tym miejscu kolejny próg pionowy złącza do -3dBm. Ostatnia prosta przez 4 km opada bardziej stromo (bo światłowód DCF ma 0.5dB/km), aż osiągnie -5dBm na mecie.",
+            "tip": "Spadek mocy o \"X razy\" w jednostkach liniowych wymusza przeliczenie tego ułamka w decybele poprzez 10*log10(1/X) - ułatwi Ci to logarytmowanie i wygeneruje poprawną wartość ujemną od razu (np. spadek 16-krotny to około -12 dB dołączone do budżetu)."
+          },
+          {
+            "number": 2,
+            "question": "Podaj i omów równania Maxwella. Wyjaśnij użyte symbole i podaj jednostki.",
+            "solution": "Równania Maxwella opisują nierozerwalną relację i wspólną naturę pola elektrycznego i magnetycznego, tłumacząc ich zachowanie w czasie i przestrzeni.\n\n1. **Prawo Faradaya (dla indukcji elektromagnetycznej)**:\n\\[\\nabla \\times \\vec{E} = -\\frac{\\partial \\vec{B}}{\\partial t}\\]\n**Omówienie:** Zmieniające się w czasie pole magnetyczne wytwarza wirowe pole elektryczne. Znak minus wynika z reguły Lenza (powstałe pole próbuje przeciwstawić się przyczynie swoich zmian).\n\n2. **Prawo Ampere'a (rozszerzone przez Maxwella)**:\n\\[\\nabla \\times \\vec{H} = \\vec{j} + \\frac{\\partial \\vec{D}}{\\partial t}\\]\n**Omówienie:** Źródłem wirowego pola magnetycznego jest przepływający prąd (ruch ładunków) oraz prąd przesunięcia (czyli sam fakt zmiany w czasie pola elektrycznego, nawet w próżni).\n\n3. **Prawo Gaussa dla elektryczności**:\n\\[\\nabla \\cdot \\vec{D} = \\rho\\]\n**Omówienie:** Polu elektrycznemu dają początek ładunki punktowe. Pole to jest źródłowe - ma swój twardy początek i koniec (dywergencja większa lub mniejsza od zera). Linie sił rozchodzą się od ładunku dodatniego do ujemnego.\n\n4. **Prawo Gaussa dla magnetyzmu**:\n\\[\\nabla \\cdot \\vec{B} = 0\\]\n**Omówienie:** Pole magnetyczne w naturze nie ma źródeł (dywergencja = 0). Nie istnieją \"monopole magnetyczne\" (np. samotny biegun N). Linie pola to pętle – zawsze muszą być zamknięte, przechodząc z N do S, by uformować cykl wewnątrz materiału.\n\n**Symbole i jednostki (Bardzo ważne na egzaminie!):**\n- \\(\\vec{E}\\) – natężenie pola elektrycznego \\[V/m\\]\n- \\(\\vec{H}\\) – natężenie pola magnetycznego \\[A/m\\]\n- \\(\\vec{B}\\) – indukcja magnetyczna \\[T\\] (Tesla) lub \\[Vs/m^2\\]\n- \\(\\vec{D}\\) – indukcja elektryczna \\[C/m^2\\] lub \\[As/m^2\\]\n- \\(\\vec{j}\\) – gęstość prądu przewodzenia \\[A/m^2\\]\n- \\(\\rho\\) – (ro) gęstość objętościowa ładunku elektrycznego \\[C/m^3\\]\n- \\(\\nabla \\times\\) – operator rotacji (tworzenie wiru/pętli)\n- \\(\\nabla \\cdot\\) – operator dywergencji (wskazuje na źródło odpływu fali)",
+            "tip": "Naucz się jednostek na skojarzeniach. Pole ELEKTRYCZNE zawsze jest silne i grozi mu Napięcie [V], dlatego ma V/m. Pole MAGNETYCZNE zależy od płynącego drutem Prądu [A], więc ma A/m."
+          },
+          {
+            "number": 3,
+            "question": "Omów budowę i zasadę działania tranzystorów bipolarnych. Podaj wzory, charakterystyki i rysunki.",
+            "solution": "Budowa:\nTranzystor bipolarny buduje się z krzemu na wskutek połączenia złącz o przeciwnych typach przewodnictwa. W efekcie powstaje trójwarstwowa „kanapka” struktury, np. p-n-p lub n-p-n. Trzy warstwy uformowane są w 3 elektrody:\n- **Baza (B)** – środkowa, bardzo cienka i delikatnie domieszkowana warstwa.\n- **Emiter (E)** – bardzo silnie domieszkowana elektroda wyjściowa, służąca jako wyrzutnia elektronów lub dziur w stronę bazy.\n- **Kolektor (C)** – masywna warstwa o szerokim złączu, docelowy odbiornik \"wstrzykniętych\" nośników.\n\nZasada działania (dla n-p-n):\nAby wprawić złącze w działanie (aktywny tryb wzmacniacza), złącze baza-emiter polaryzujemy w kierunku przewodzenia (mały opór), a baza-kolektor w kierunku zaporowym (duży opór). Otwarcie bariery pierwszej (podanie niewielkiego napięcia/prądu na Bazę) pozwala rozpędzonym elektronom wlać się z emitera wgłąb Bazy. Ze względu na to, że Baza jest ekstremalnie fizycznie cienka i brakuje w niej odpowiedniej liczby \"dziur\" do zrekombinowania elektronów w neutralne atomy - większość elektronów z rozpędu przenika na drugą stronę na wskroś, i wpada w głąb strefy Kolektora, będąc silnie wciągana przez jego napięcie zaporowe. Dzięki temu wygenerowaliśmy potężny prąd między Emiterem a Kolektorem, wyzwolony za pomocą maleńkiego sygnału uderzającego w Bazę.\n\nWzory:\n- Bilans prądów: \\(I_E = I_C + I_B\\)\n- Współczynnik wzmocnienia prądowego: \\(\\beta = \\frac{I_C}{I_B}\\)\n\nCharakterystyki (do narysowania na egzaminie):\n1. **Wykres potencjału / bariery:** Przy n-p-n jest to kształt przypominający wzniesienie po lewej i wielką dziurę po prawej. Emiter rzuca ładunkami z pagórka, muszą one wpaść przez płaski blat, jakim jest Baza, by potoczyć się do przepaści potencjału Kolektora.\n2. **Charakterystyki wyjściowe (rodzina krzywych \\(I_C = f(U_{CE})\\)):** Wykres posiadający Oś Y (Prąd \\(I_C\\)) i Oś X (Napięcie \\(U_{CE}\\)). Składa się z wielu odrębnych, płaskich, ale równoległych linii prądu - każda jedna reprezentuje inną wartość podanego prądu bazy \\(I_B\\). Napięcie \\(U_{CE}\\) nie modyfikuje wysokości tego prądu w stanie pracy ciągłej.",
+            "tip": "Podczas rysowania charakterystyki - linie prądu po krótkim czasie wznoszenia wchodzą w tzw. obszar nasycenia (są całkiem poziome dla reszty osi odciętych, napięcie \\(U_{CE}\\) nie dodaje mocy prądu złącza, bo limit określa wąskie gardło prądu sterującego z Bazy)."
+          }
+        ]
+      }
     }
   },
   "2026": {
-    "L": {
+    "Z1": {
+      "A": {
+        "tasks": []
+      },
+      "B": {
+        "tasks": []
+      }
+    },
+    "Z2": {
+      "A": {
+        "tasks": []
+      },
+      "B": {
+        "tasks": []
+      }
+    },
+    "L1": {
       "B": {
         "image": "2026_L_B",
         "tasks": [
@@ -100,10 +141,26 @@
           }
         ]
       }
+    },
+    "L2": {
+      "A": {
+        "tasks": []
+      },
+      "B": {
+        "tasks": []
+      }
+    },
+    "Wrzesien": {
+      "A": {
+        "tasks": []
+      },
+      "B": {
+        "tasks": []
+      }
     }
   },
   "2018": {
-    "Z": {
+    "Z1": {
       "A": {
         "image": "2018_Z_A1",
         "tasks": [
@@ -151,7 +208,7 @@
         ]
       }
     },
-    "L": {
+    "L1": {
       "A": {
         "image": "2018_L_A1",
         "tasks": [
