@@ -16,7 +16,7 @@
         {
           "image": "nazwa_pliku_wykresu_w_assets.png",
           "alt": "Tekst alternatywny dla rysunku",
-          "caption": "Podpis pod rysunkiem/wykresem"
+          "caption": "Podpis pod rysunkiem/wykresem."
         }
       ]
     }
