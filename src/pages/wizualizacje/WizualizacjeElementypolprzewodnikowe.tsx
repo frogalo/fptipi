@@ -57,7 +57,7 @@ export default function WizualizacjeElementypolprzewodnikowe() {
 
   return (
     <div className="max-w-[880px] mx-auto" style={{ maxWidth: '900px' }}>
-      <header style={{ marginTop: '15px' }} className="mb-6 border border-line bg-gradient-to-br from-panel to-ink2 rounded-[14px] px-6 py-[22px]">
+      <header style={{ marginTop: '15px' }} className="mb-6 border border-line bg-linear-to-br from-panel to-ink2 rounded-[14px] px-6 py-[22px]">
         <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-amber">FPTiTI · wizualizacja interaktywna</div>
         <h1 className="text-[27px] font-semibold mt-1.5 mb-1">Fizyka Półprzewodników</h1>
         <div className="text-muted text-[14.5px]">Interaktywne diagramy ilustrujące złącze P-N, tranzystory, pasma energetyczne i pamięci półprzewodnikowe.</div>

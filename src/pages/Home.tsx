@@ -2,7 +2,40 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/favicon.png';
 import Footer from '../components/Footer';
-import examsData from '@/lib/examsData.json';
+const examModules = import.meta.glob('@/data/exams/*.json');
+const termNames: Record<string, string> = {
+  'Z1': 'Zima 1',
+  'Z2': 'Zima 2',
+  'L1': 'Lato 1',
+  'L2': 'Lato 2',
+  'Wrzesien': 'Wrzesień'
+};
+const termOrder: Record<string, number> = { 'Z1': 1, 'Z2': 2, 'L1': 3, 'L2': 4, 'Wrzesien': 5 };
+
+const availableExams = Object.keys(examModules).map((path) => {
+  const match = path.match(/\/(\d+)_([A-Za-z0-9]+)_([A-Za-z0-9]+)\.json$/);
+  if (match) {
+    const year = parseInt(match[1]);
+    const term = match[2];
+    const group = match[3];
+    return {
+      year,
+      term,
+      group,
+      termName: termNames[term] || term
+    };
+  }
+  return null;
+}).filter(Boolean) as { year: number; term: string; group: string; termName: string }[];
+
+// Sort: Year descending, Term order ascending, Group name ascending
+availableExams.sort((a, b) => {
+  if (b.year !== a.year) return b.year - a.year;
+  const orderA = termOrder[a.term] || 99;
+  const orderB = termOrder[b.term] || 99;
+  if (orderA !== orderB) return orderA - orderB;
+  return a.group.localeCompare(b.group);
+});
 
 export default function Home() {
   const parts = [
@@ -80,47 +113,6 @@ export default function Home() {
       ]
     }
   ];
-
-  // Extract available exams dynamically
-  const availableExams: { year: number; term: string; group: string; termName: string }[] = [];
-  
-  const termNames: Record<string, string> = {
-    'Z1': 'Zima 1',
-    'Z2': 'Zima 2',
-    'L1': 'Lato 1',
-    'L2': 'Lato 2',
-    'Wrzesien': 'Wrzesień'
-  };
-
-  const termOrder: Record<string, number> = { 'Z1': 1, 'Z2': 2, 'L1': 3, 'L2': 4, 'Wrzesien': 5 };
-
-  Object.entries(examsData).forEach(([yearStr, yearContent]) => {
-    const year = parseInt(yearStr);
-    if (!yearContent) return;
-    Object.entries(yearContent).forEach(([term, termContent]) => {
-      if (!termContent) return;
-      Object.entries(termContent).forEach(([group, groupContent]) => {
-        const tasks = (groupContent as any)?.tasks;
-        if (tasks && tasks.length > 0) {
-          availableExams.push({
-            year,
-            term,
-            group,
-            termName: termNames[term] || term
-          });
-        }
-      });
-    });
-  });
-
-  // Sort: Year descending, Term order ascending, Group name ascending
-  availableExams.sort((a, b) => {
-    if (b.year !== a.year) return b.year - a.year;
-    const orderA = termOrder[a.term] || 99;
-    const orderB = termOrder[b.term] || 99;
-    if (orderA !== orderB) return orderA - orderB;
-    return a.group.localeCompare(b.group);
-  });
 
   return (
     <div className="max-w-[880px] mx-auto px-4 py-7 pb-20">

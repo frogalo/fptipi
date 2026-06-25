@@ -67,7 +67,7 @@ interface ConclusionProps {
 
 export function Conclusion({ title = "Wnioski", children }: ConclusionProps) {
   return (
-    <div className="rounded-[10px] px-4 py-[14px] my-[14px] border border-line bg-green-dim/10 border-green-dim">
+ <div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-green-dim/10 border-green-dim">
       <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">{title}</span>
       <div className="text-[15px]">{children}</div>
     </div>
@@ -81,7 +81,7 @@ interface BookAdditionProps {
 
 export function BookAddition({ title, children }: BookAdditionProps) {
   return (
-    <div className="rounded-[10px] px-4 py-[14px] my-[14px] border border-line bg-blue/10 border-[#34465f]">
+ <div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-blue/10 border-[#34465f]">
       <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">{title}</span>
       <div className="text-[15px]">{children}</div>
     </div>

@@ -16,7 +16,7 @@ export default function WizualizacjeNosnikidanych() {
       
 <div className="max-w-[880px] mx-auto" style={{ "maxWidth": "1100px" }}>
 
-<header className="mb-6 border border-line bg-gradient-to-br from-panel to-ink2 rounded-[14px] px-6 py-[22px]">
+<header className="mb-6 border border-line bg-linear-to-br from-panel to-ink2 rounded-[14px] px-6 py-[22px]">
   <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-amber">FPTiTI · wizualizacja interaktywna</div>
   <h1 className="text-[27px] font-semibold mt-1.5 mb-1">Nośniki Danych — pamięć optyczna i magnetyczna</h1>
   <div className="text-muted text-[14.5px]">Interaktywne diagramy zapisu i odczytu danych</div>

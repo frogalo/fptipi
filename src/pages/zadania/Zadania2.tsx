@@ -16,7 +16,7 @@ export default function Zadania2() {
       
 <div className="max-w-[880px] mx-auto">
 
-<header className="mb-6 border border-line bg-gradient-to-br from-panel to-ink2 rounded-[14px] px-6 py-[22px]">
+<header className="mb-6 border border-line bg-linear-to-br from-panel to-ink2 rounded-[14px] px-6 py-[22px]">
   <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-amber">FPTiTI · zadania obliczeniowe · część 2 / 3</div>
   <h1 className="text-[27px] font-semibold mt-1.5 mb-1">Rozdział 4: Technika światłowodowa</h1>
   <div className="text-muted text-[14.5px]">Zadania z rozwiązaniami krok po kroku · na podstawie podręcznika A. Szymańskiej</div>
@@ -36,7 +36,7 @@ export default function Zadania2() {
 <div className="flex items-baseline gap-3 border-b border-line pb-3 mb-4">
   <span className="font-mono font-bold text-ink bg-amber rounded-lg px-2.5 py-[2px] text-[14px] whitespace-nowrap">4.6.1</span>
   <h2 className="text-[20.5px] font-semibold leading-tight">Liczba modów w światłowodzie o profilu skokowym</h2>
-  <span className="font-mono text-[11px] text-muted ml-auto whitespace-nowrap"><span className="t1 font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-[1px] text-[12px] whitespace-nowrap">P1</span></span>
+  <span className="font-mono text-[11px] text-muted ml-auto whitespace-nowrap"><span className="t1 font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[12px] whitespace-nowrap">P1</span></span>
 </div>
 
 <p className="mb-[11px] text-red font-semibold"><b>Zadanie:</b> Wyznacz liczbę modów propagujących się w światłowodzie o profilu skokowym, znając następujące parametry: średnica rdzenia \(2a = 50\ \mathrm&#123;\mu m&#125;\), współczynnik załamania rdzenia \(n_1 = 1&#123;,&#125;46\), współczynnik załamania płaszcza \(n_2 = 1&#123;,&#125;44\), długość fali \(\lambda = 1300\ \mathrm&#123;nm&#125;\).</p>
@@ -77,7 +77,7 @@ export default function Zadania2() {
   </li>
 </ol>
 
-<div className="rounded-[10px] px-4 py-[14px] my-[14px] border border-line bg-green-dim/10 border-green-dim">
+<div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-green-dim/10 border-green-dim">
   <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">Odpowiedź</span>
   <p className="mb-[11px]">Liczba modów propagujących się w tym światłowodzie wynosi **ok. 423**.</p>
 </div>
@@ -88,7 +88,7 @@ export default function Zadania2() {
 <div className="flex items-baseline gap-3 border-b border-line pb-3 mb-4">
   <span className="font-mono font-bold text-ink bg-amber rounded-lg px-2.5 py-[2px] text-[14px] whitespace-nowrap">4.6.2</span>
   <h2 className="text-[20.5px] font-semibold leading-tight">Szerokość impulsu po propagacji na L = 10 km</h2>
-  <span className="font-mono text-[11px] text-muted ml-auto whitespace-nowrap"><span className="t1 font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-[1px] text-[12px] whitespace-nowrap">P1</span></span>
+  <span className="font-mono text-[11px] text-muted ml-auto whitespace-nowrap"><span className="t1 font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[12px] whitespace-nowrap">P1</span></span>
 </div>
 
 <p className="mb-[11px] text-red font-semibold"><b>Zadanie:</b> Wyznacz szerokość impulsu po propagacji na odległość \(L = 10\ \mathrm&#123;km&#125;\) (poszerzenie impulsu na skutek dyspersji międzymodowej), znając współczynnik załamania rdzenia i płaszcza światłowodu \(n_1 = 1&#123;,&#125;46\), \(n_2 = 1&#123;,&#125;44\).</p>
@@ -127,7 +127,7 @@ export default function Zadania2() {
 <h4>Dla profilu gradientowego:</h4>
 \[\sigma_\tau \approx \frac&#123;10\ 000 \cdot (1&#123;,&#125;46 - 1&#123;,&#125;44)^2&#125;&#123;2 \cdot 3 \cdot 10^8 \cdot 1&#123;,&#125;46&#125; = \frac&#123;10\ 000 \cdot 0&#123;,&#125;0004&#125;&#123;8&#123;,&#125;76 \cdot 10^8&#125; = \frac&#123;4&#125;&#123;8&#123;,&#125;76 \cdot 10^8&#125; \approx 4&#123;,&#125;57 \cdot 10^&#123;-9&#125;\ \mathrm&#123;s&#125; = 4&#123;,&#125;57\ \mathrm&#123;ns&#125;\]
 
-<div className="rounded-[10px] px-4 py-[14px] my-[14px] border border-line bg-red/10 border-[#7d3a3a]">
+<div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-red/10 border-[#7d3a3a]">
   <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">⚠️ Korekta jednostki w notatkach studentów</span>
   <p className="mb-[11px]">W studenckich opracowaniach odręcznych dla profilu skokowego pojawia się błędny zapis: <code>0,6 um (mikrometry) albo 600nm</code>. Jest to podwójny błąd:</p>
   <ol>
@@ -136,7 +136,7 @@ export default function Zadania2() {
   </ol>
 </div>
 
-<div className="rounded-[10px] px-4 py-[14px] my-[14px] border border-line bg-green-dim/10 border-green-dim">
+<div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-green-dim/10 border-green-dim">
   <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">Odpowiedź</span>
   <ul className="mb-3 ml-5 list-disc">
     <li className="mb-1.5">Dla światłowodu wielomodowego o **profilu skokowym** poszerzenie impulsu wynosi **ok. 667 ns** (wersja uproszczona w notatkach: ok. 600-666 ns).</li>
@@ -151,7 +151,7 @@ export default function Zadania2() {
 <div className="flex items-baseline gap-3 border-b border-line pb-3 mb-4">
   <span className="font-mono font-bold text-ink bg-amber rounded-lg px-2.5 py-[2px] text-[14px] whitespace-nowrap">4.6.3</span>
   <h2 className="text-[20.5px] font-semibold leading-tight">Maksymalna długość łącza optycznego (budżet mocy)</h2>
-  <span className="font-mono text-[11px] text-muted ml-auto whitespace-nowrap"><span className="t1 font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-[1px] text-[12px] whitespace-nowrap">P1</span> <span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-[1px] text-[12px] whitespace-nowrap" style={{ "background": "var(--red)" }}>DC</span></span>
+  <span className="font-mono text-[11px] text-muted ml-auto whitespace-nowrap"><span className="t1 font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[12px] whitespace-nowrap">P1</span> <span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[12px] whitespace-nowrap" style={{ "background": "var(--red)" }}>DC</span></span>
 </div>
 
 <p className="mb-[11px] text-red font-semibold"><b>Zadanie:</b> Wyznacz maksymalną długość łącza optycznego znając moc nadajnika \(P_S\), czułość odbiornika \(P_R\) i współczynnik tłumienia włókna \(\alpha\). Pomiń straty na połączeniach.</p>
@@ -167,7 +167,7 @@ export default function Zadania2() {
 <p className="mb-[11px]">Wyznaczamy maksymalną długość \(L\):</p>
 \[\alpha \cdot L \le P_S - P_R \implies L \le \frac&#123;P_S - P_R&#125;&#123;\alpha&#125;\]
 
-<div className="rounded-[10px] px-4 py-[14px] my-[14px] border border-line bg-green-dim/10 border-green-dim">
+<div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-green-dim/10 border-green-dim">
   <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">Odpowiedź</span>
   <p className="mb-[11px]">Maksymalna długość łącza optycznego wynosi:</p>
   <div className="bg-ink2 border border-line border-l-[3px] border-l-amber rounded-lg px-4 py-2.5 my-3 overflow-x-auto">
@@ -182,12 +182,12 @@ export default function Zadania2() {
 <div className="flex items-baseline gap-3 border-b border-line pb-3 mb-4">
   <span className="font-mono font-bold text-ink bg-amber rounded-lg px-2.5 py-[2px] text-[14px] whitespace-nowrap">4.6.4</span>
   <h2 className="text-[20.5px] font-semibold leading-tight">Profil skokowy vs gradientowy: szerokość impulsu i liczba modów</h2>
-  <span className="font-mono text-[11px] text-muted ml-auto whitespace-nowrap"><span className="t1 font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-[1px] text-[12px] whitespace-nowrap">P1</span> <span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-[1px] text-[12px] whitespace-nowrap" style={{ "background": "var(--red)" }}>DC</span></span>
+  <span className="font-mono text-[11px] text-muted ml-auto whitespace-nowrap"><span className="t1 font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[12px] whitespace-nowrap">P1</span> <span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[12px] whitespace-nowrap" style={{ "background": "var(--red)" }}>DC</span></span>
 </div>
 
 <p className="mb-[11px] text-red font-semibold"><b>Zadanie:</b> Jak zmieni się szerokość impulsów i ilość modów propagujących się w światłowodzie: a) jednomodowym, b) wielomodowym, jeżeli zmieni się profil współczynnika załamania ze skokowego na gradientowy? Czy wartości te ulegną zmianie, jeżeli użyjemy nadajnika: a) o innej długości fali, b) o innej mocy? Uzasadnij odpowiedź.</p>
 
-<div className="rounded-[10px] px-4 py-[14px] my-[14px] border border-line bg-blue/10 border-[#34465f]">
+<div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-blue/10 border-[#34465f]">
   <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">Analiza dla poszczególnych rodzajów światłowodów</span>
   <h4>1. Światłowód jednomodowy (SMF)</h4>
   <ul className="mb-3 ml-5 list-disc">
@@ -210,9 +210,9 @@ export default function Zadania2() {
 <h3 className="text-base text-amber-soft font-semibold mt-5 mb-2 font-mono tracking-wide">Wpływ parametrów nadajnika:</h3>
 <table className="w-full border-collapse my-3 text-[14.5px]">
   <tbody><tr>
-    <th className="border border-line px-2.5 py-1.5 text-left font-mono text-[11.5px] text-amber-soft bg-ink2 tracking-[0.05em]">Zmienna czynnika zewnętrznego</th>
-    <th className="border border-line px-2.5 py-1.5 text-left font-mono text-[11.5px] text-amber-soft bg-ink2 tracking-[0.05em]">Wpływ na szerokość impulsu \(\sigma_\tau\) (dysp. międzymodowa)</th>
-    <th className="border border-line px-2.5 py-1.5 text-left font-mono text-[11.5px] text-amber-soft bg-ink2 tracking-[0.05em]">Wpływ na liczbę modów \(M\)</th>
+    <th className="border border-line px-2.5 py-1.5 text-left font-mono text-[11.5px] text-amber-soft bg-ink2 tracking-wider">Zmienna czynnika zewnętrznego</th>
+    <th className="border border-line px-2.5 py-1.5 text-left font-mono text-[11.5px] text-amber-soft bg-ink2 tracking-wider">Wpływ na szerokość impulsu \(\sigma_\tau\) (dysp. międzymodowa)</th>
+    <th className="border border-line px-2.5 py-1.5 text-left font-mono text-[11.5px] text-amber-soft bg-ink2 tracking-wider">Wpływ na liczbę modów \(M\)</th>
   </tr>
   <tr>
     <td className="border border-line px-2.5 py-1.5 text-left"><b>Inna moc lasera (\(P_S\))</b></td>
@@ -226,7 +226,7 @@ export default function Zadania2() {
   </tr>
 </tbody></table>
 
-<div className="rounded-[10px] px-4 py-[14px] my-[14px] border border-line bg-red/10 border-[#7d3a3a]">
+<div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-red/10 border-[#7d3a3a]">
   <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">⚠️ Pułapka Egzaminacyjna (DC)</span>
   <p className="mb-[11px]">Trzeba wyraźnie napisać, że pojęcia profilu skokowego i gradientowego **dotyczą wyłącznie światłowodów wielomodowych**. W jednomodowym zmiana profilu nie zmienia szerokości impulsu (w kontekście dyspersji międzymodowej) ani liczby modów (zawsze wynosi 1).</p>
 </div>
@@ -237,7 +237,7 @@ export default function Zadania2() {
 <div className="flex items-baseline gap-3 border-b border-line pb-3 mb-4">
   <span className="font-mono font-bold text-ink bg-amber rounded-lg px-2.5 py-[2px] text-[14px] whitespace-nowrap">4.6.5</span>
   <h2 className="text-[20.5px] font-semibold leading-tight">Minimalna moc lasera dla L = 150 km (III okno)</h2>
-  <span className="font-mono text-[11px] text-muted ml-auto whitespace-nowrap"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-[1px] text-[12px] whitespace-nowrap">P1</span></span>
+  <span className="font-mono text-[11px] text-muted ml-auto whitespace-nowrap"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[12px] whitespace-nowrap">P1</span></span>
 </div>
 
 <p className="mb-[11px] text-red font-semibold"><b>Zadanie:</b> Wyznacz minimalną moc lasera, która pozwoli na przesłanie sygnału na odległość \(150\ \mathrm&#123;km&#125;\). Obliczenia wykonaj dla łącza telekomunikacyjnego pracującego w trzecim oknie telekomunikacyjnym (\(\alpha_&#123;SMF&#125; = 0&#123;,&#125;2\ \mathrm&#123;dB/km&#125;\), \(D_&#123;SMF&#125; = 16\ \mathrm&#123;ps/(nm \cdot km)&#125;\)). Do kompensacji dyspersji użyj:
@@ -290,7 +290,7 @@ export default function Zadania2() {
 \[P_&#123;S, 2&#125; \ge -30\ \mathrm&#123;dBm&#125; + 3\ \mathrm&#123;dB&#125; + 46&#123;,&#125;84\ \mathrm&#123;dB&#125; = +19&#123;,&#125;84\ \mathrm&#123;dBm&#125;\]
 <p className="mb-[11px]">Przeliczając na miliwaty: \(P_&#123;S, 2&#125; \ge 10^&#123;1&#123;,&#125;984&#125; \approx 96&#123;,&#125;4\ \mathrm&#123;mW&#125;\).</p>
 
-<div className="rounded-[10px] px-4 py-[14px] my-[14px] border border-line bg-green-dim/10 border-green-dim">
+<div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-green-dim/10 border-green-dim">
   <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">Porównanie Wariantów</span>
   <ul className="mb-3 ml-5 list-disc">
     <li className="mb-1.5"><b>Wariant z siatką Bragga:</b> Wymaga mocy lasera min. **+6 dBm (ok. 4 mW)**. Jest to bardzo ekonomiczny wariant pod względem budżetu mocy.</li>
@@ -304,7 +304,7 @@ export default function Zadania2() {
 <div className="flex items-baseline gap-3 border-b border-line pb-3 mb-4">
   <span className="font-mono font-bold text-ink bg-amber rounded-lg px-2.5 py-[2px] text-[14px] whitespace-nowrap">4.6.6</span>
   <h2 className="text-[20.5px] font-semibold leading-tight">Minimalna czułość odbiornika dla zadanej liczby fotonów na bit</h2>
-  <span className="font-mono text-[11px] text-muted ml-auto whitespace-nowrap"><span className="t1 font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-[1px] text-[12px] whitespace-nowrap">P1</span></span>
+  <span className="font-mono text-[11px] text-muted ml-auto whitespace-nowrap"><span className="t1 font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[12px] whitespace-nowrap">P1</span></span>
 </div>
 
 <p className="mb-[11px] text-red font-semibold"><b>Zadanie:</b> Oblicz jaka musi być minimalna czułość odbiornika, aby sygnał został prawidłowo odczytany. Załóż, że liczba fotonów przypadających na jeden bit wynosi: a) 10, b) 100, c) 1000. Przepływność łącza wynosi \(B_0 = 10\ \mathrm&#123;Gb/s&#125;\) (rozważ również wersję dla \(B_0 = 1\ \mathrm&#123;Gb/s&#125;\)). Obliczenia wykonaj dla częstotliwości fali \(f = 193&#123;,&#125;4\ \mathrm&#123;THz&#125;\) (trzecie okno).</p>
@@ -371,14 +371,14 @@ export default function Zadania2() {
   </li>
 </ol>
 
-<div className="rounded-[10px] px-4 py-[14px] my-[14px] border border-line bg-green-dim/10 border-green-dim">
+<div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-green-dim/10 border-green-dim">
   <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">Podsumowanie Czułości</span>
   <p className="mb-[11px]">W zależności od przepływności minimalna czułość odbiornika wynosi:</p>
   <table className="w-full border-collapse my-3 text-[14.5px]">
     <tbody><tr>
-      <th className="border border-line px-2.5 py-1.5 text-left font-mono text-[11.5px] text-amber-soft bg-ink2 tracking-[0.05em]">Liczba fotonów na bit (\(n_0\))</th>
-      <th className="border border-line px-2.5 py-1.5 text-left font-mono text-[11.5px] text-amber-soft bg-ink2 tracking-[0.05em]">Dla \(B_0 = 1\ \mathrm&#123;Gb/s&#125;\)</th>
-      <th className="border border-line px-2.5 py-1.5 text-left font-mono text-[11.5px] text-amber-soft bg-ink2 tracking-[0.05em]">Dla \(B_0 = 10\ \mathrm&#123;Gb/s&#125;\)</th>
+      <th className="border border-line px-2.5 py-1.5 text-left font-mono text-[11.5px] text-amber-soft bg-ink2 tracking-wider">Liczba fotonów na bit (\(n_0\))</th>
+      <th className="border border-line px-2.5 py-1.5 text-left font-mono text-[11.5px] text-amber-soft bg-ink2 tracking-wider">Dla \(B_0 = 1\ \mathrm&#123;Gb/s&#125;\)</th>
+      <th className="border border-line px-2.5 py-1.5 text-left font-mono text-[11.5px] text-amber-soft bg-ink2 tracking-wider">Dla \(B_0 = 10\ \mathrm&#123;Gb/s&#125;\)</th>
     </tr>
     <tr className="text-green">
       <td className="border border-line px-2.5 py-1.5 text-left"><b>10 fotonów</b> (limit kwantowy)</td>

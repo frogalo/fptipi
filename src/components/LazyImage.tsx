@@ -12,7 +12,7 @@ export default function LazyImage({ wrapperClassName = '', className = '', ...im
     <div className={`relative inline-flex items-center justify-center ${wrapperClassName}`}>
       {!loaded && (
         <div className="absolute inset-0 flex items-center justify-center">
-          <Radio size="sm" color="#f4a52a" speed={0.4} glow />
+          <Radio size="sm" color="#f43f5e" speed={0.4} glow />
         </div>
       )}
       <img

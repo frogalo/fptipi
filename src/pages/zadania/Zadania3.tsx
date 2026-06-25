@@ -17,7 +17,7 @@ export default function Zadania3() {
       
 <div className="max-w-[880px] mx-auto">
 
-<header className="mb-6 border border-line bg-gradient-to-br from-panel to-ink2 rounded-[14px] px-6 py-[22px]">
+<header className="mb-6 border border-line bg-linear-to-br from-panel to-ink2 rounded-[14px] px-6 py-[22px]">
   <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-amber">FPTiTI · zadania obliczeniowe · część 3 / 3</div>
   <h1 className="text-[27px] font-semibold mt-1.5 mb-1">Rozdział 5: Modulacja i multipleksacja</h1>
   <div className="text-muted text-[14.5px]">Zadania z rozwiązaniami krok po kroku · na podstawie podręcznika A. Szymańskiej</div>
@@ -36,7 +36,7 @@ export default function Zadania3() {
 <div className="flex items-baseline gap-3 border-b border-line pb-3 mb-4">
   <span className="font-mono font-bold text-ink bg-amber rounded-lg px-2.5 py-[2px] text-[14px] whitespace-nowrap">5.5.1</span>
   <h2 className="text-[20.5px] font-semibold leading-tight">Parametry wykresu oczkowego na podstawie Rys. 5.5</h2>
-  <span className="font-mono text-[11px] text-muted ml-auto whitespace-nowrap"><span className="t1 font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-[1px] text-[12px] whitespace-nowrap">P1</span></span>
+  <span className="font-mono text-[11px] text-muted ml-auto whitespace-nowrap"><span className="t1 font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[12px] whitespace-nowrap">P1</span></span>
 </div>
 
 <p className="mb-[11px] text-red font-semibold"><b>Zadanie:</b> Korzystając z wykresów zamieszczonych na Rys. 5.5, oblicz wielkości charakteryzujące wykres oczkowy.</p>
@@ -94,7 +94,7 @@ export default function Zadania3() {
   </li>
 </ol>
 
-<div className="rounded-[10px] px-4 py-[14px] my-[14px] border border-line bg-red/10 border-[#7d3a3a]">
+<div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-red/10 border-[#7d3a3a]">
   <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">⚠️ Błędy w studenckich notatkach</span>
   <ol>
     <li className="mb-1.5">W notatkach studentów jednostka nanosekundy [ns] z osi czasu została błędnie przepisana jako **milisekundy [ms]** (np. szerokość oka zapisano jako \(0&#123;,&#125;09\ \mathrm&#123;ms&#125;\)). Przy prędkościach rzędu Gb/s jednostki milisekundowe są fizycznie niemożliwe. Poprawna jednostka to **ns** (a dla czasów narastania **ps**).</li>
@@ -102,7 +102,7 @@ export default function Zadania3() {
   </ol>
 </div>
 
-<div className="rounded-[10px] px-4 py-[14px] my-[14px] border border-line bg-green-dim/10 border-green-dim">
+<div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-green-dim/10 border-green-dim">
   <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">Podsumowanie Jakości Modulacji</span>
   <p className="mb-[11px]">Na podstawie wykresu oczkowego:</p>
   <ul className="mb-3 ml-5 list-disc">
@@ -118,7 +118,7 @@ export default function Zadania3() {
 <div className="flex items-baseline gap-3 border-b border-line pb-3 mb-4">
   <span className="font-mono font-bold text-ink bg-amber rounded-lg px-2.5 py-[2px] text-[14px] whitespace-nowrap">5.5.2</span>
   <h2 className="text-[20.5px] font-semibold leading-tight">Efektywność widmowa</h2>
-  <span className="font-mono text-[11px] text-muted ml-auto whitespace-nowrap"><span className="t1 font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-[1px] text-[12px] whitespace-nowrap">P1</span></span>
+  <span className="font-mono text-[11px] text-muted ml-auto whitespace-nowrap"><span className="t1 font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[12px] whitespace-nowrap">P1</span></span>
 </div>
 
 <p className="mb-[11px] text-red font-semibold"><b>Zadanie:</b> Wyznacz efektywność widmową wiedząc, że szybkość transmisji wynosi \(10\ \mathrm&#123;Gbit/s&#125;\), a szerokość pasma zajmowanego przez sygnał wynosi \(1\ \mathrm&#123;GHz&#125;\).</p>
@@ -138,7 +138,7 @@ export default function Zadania3() {
 <h3 className="text-base text-amber-soft font-semibold mt-5 mb-2 font-mono tracking-wide">Obliczenia:</h3>
 \[\Gamma = \frac&#123;10 \cdot 10^9\ \mathrm&#123;bit/s&#125;&#125;&#123;1 \cdot 10^9\ \mathrm&#123;Hz&#125;&#125; = \mathbf&#123;10\ \mathrm&#123;\frac&#123;bit/s&#125;&#123;Hz&#125;&#125;&#125;\]
 
-<div className="rounded-[10px] px-4 py-[14px] my-[14px] border border-line bg-green-dim/10 border-green-dim">
+<div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-green-dim/10 border-green-dim">
   <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">Odpowiedź</span>
   <p className="mb-[11px]">Efektywność widmowa tego łącza wynosi **10 (bit/s)/Hz**.</p>
 </div>
@@ -149,7 +149,7 @@ export default function Zadania3() {
 <div className="flex items-baseline gap-3 border-b border-line pb-3 mb-4">
   <span className="font-mono font-bold text-ink bg-amber rounded-lg px-2.5 py-[2px] text-[14px] whitespace-nowrap">5.5.3</span>
   <h2 className="text-[20.5px] font-semibold leading-tight">Maksymalna szybkość transmisji z efektywności widmowej</h2>
-  <span className="font-mono text-[11px] text-muted ml-auto whitespace-nowrap"><span className="t1 font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-[1px] text-[12px] whitespace-nowrap">P1</span></span>
+  <span className="font-mono text-[11px] text-muted ml-auto whitespace-nowrap"><span className="t1 font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[12px] whitespace-nowrap">P1</span></span>
 </div>
 
 <p className="mb-[11px] text-red font-semibold"><b>Zadanie:</b> Maksymalna efektywność widmowa wynosi \(14\ \mathrm&#123;bit/s/Hz&#125;\), szerokość pasma zajmowanego przez sygnał to \(714\ \mathrm&#123;MHz&#125;\). Wyznacz maksymalną szybkość transmisji w tym łączu.</p>
@@ -166,7 +166,7 @@ export default function Zadania3() {
 <h3 className="text-base text-amber-soft font-semibold mt-5 mb-2 font-mono tracking-wide">Obliczenia:</h3>
 \[R_b = 14\ \mathrm&#123;\frac&#123;bit/s&#125;&#123;Hz&#125;&#125; \cdot 714 \cdot 10^6\ \mathrm&#123;Hz&#125; = 9\ 996 \cdot 10^6\ \mathrm&#123;bit/s&#125; = 9&#123;,&#125;996\ \mathrm&#123;Gbit/s&#125; \approx \mathbf&#123;10\ \mathrm&#123;Gbit/s&#125;&#125;\]
 
-<div className="rounded-[10px] px-4 py-[14px] my-[14px] border border-line bg-green-dim/10 border-green-dim">
+<div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-green-dim/10 border-green-dim">
   <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">Odpowiedź</span>
   <p className="mb-[11px]">Maksymalna szybkość transmisji w tym łączu wynosi **ok. 10 Gbit/s** (dokładnie 9,996 Gbit/s).</p>
 </div>
@@ -177,7 +177,7 @@ export default function Zadania3() {
 <div className="flex items-baseline gap-3 border-b border-line pb-3 mb-4">
   <span className="font-mono font-bold text-ink bg-amber rounded-lg px-2.5 py-[2px] text-[14px] whitespace-nowrap">5.5.4</span>
   <h2 className="text-[20.5px] font-semibold leading-tight">Maksymalna liczba kanałów WDM i całkowita przepływność</h2>
-  <span className="font-mono text-[11px] text-muted ml-auto whitespace-nowrap"><span className="t1 font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-[1px] text-[12px] whitespace-nowrap">P1</span> <span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-[1px] text-[12px] whitespace-nowrap" style={{ "background": "var(--red)" }}>DC</span></span>
+  <span className="font-mono text-[11px] text-muted ml-auto whitespace-nowrap"><span className="t1 font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[12px] whitespace-nowrap">P1</span> <span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[12px] whitespace-nowrap" style={{ "background": "var(--red)" }}>DC</span></span>
 </div>
 
 <p className="mb-[11px] text-red font-semibold"><b>Zadanie:</b> W łączu światłowodowym zastosowano lasery przestrajalne w zakresie od \(1480\ \mathrm&#123;nm&#125;\) do \(1580\ \mathrm&#123;nm&#125;\) o mocy \(10\ \mathrm&#123;mW&#125;\) każdy. Odstęp między kanałami wynosi \(50\ \mathrm&#123;GHz&#125;\). Wyznacz maksymalną ilość kanałów w tym łączu. Jaka będzie całkowita przepływność tego łącza, jeżeli przepływność w każdym z kanałów wynosi \(100\ \mathrm&#123;Gb/s&#125;\)? Co możesz powiedzieć na temat tego łącza? Wymień zjawiska, które tu dominują, przeanalizuj podane parametry. Czy zmiana mocy wpłynie na działanie łącza?</p>
@@ -210,7 +210,7 @@ export default function Zadania3() {
   </li>
 </ol>
 
-<div className="rounded-[10px] px-4 py-[14px] my-[14px] border border-line bg-green-dim/10 border-green-dim">
+<div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-green-dim/10 border-green-dim">
   <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">Analiza Łącza i Wpływ Mocy</span>
   <ul className="mb-3 ml-5 list-disc">
     <li className="mb-1.5"><b>Zakres pracy:</b> Łącze obejmuje bardzo szeroki zakres widmowy (1480–1580 nm), co wykracza poza standardowe okno C (1530-1565 nm) i wchodzi w okno L oraz S. Jest to system **DWDM (Dense Wavelength Division Multiplexing)**.</li>
@@ -226,7 +226,7 @@ export default function Zadania3() {
 <div className="flex items-baseline gap-3 border-b border-line pb-3 mb-4">
   <span className="font-mono font-bold text-ink bg-amber rounded-lg px-2.5 py-[2px] text-[14px] whitespace-nowrap">5.5.5</span>
   <h2 className="text-[20.5px] font-semibold leading-tight">Liczba fal z mieszania czterofalowego (FWM) dla 2, 4 i 8 kanałów</h2>
-  <span className="font-mono text-[11px] text-muted ml-auto whitespace-nowrap"><span className="t1 font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-[1px] text-[12px] whitespace-nowrap">P1</span> <span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-[1px] text-[12px] whitespace-nowrap" style={{ "background": "var(--red)" }}>DC</span></span>
+  <span className="font-mono text-[11px] text-muted ml-auto whitespace-nowrap"><span className="t1 font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[12px] whitespace-nowrap">P1</span> <span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[12px] whitespace-nowrap" style={{ "background": "var(--red)" }}>DC</span></span>
 </div>
 
 <p className="mb-[11px] text-red font-semibold"><b>Zadanie:</b> Oblicz liczbę fal powstałych w wyniku zjawiska mieszania czterofalowego dla 2, 4 i 8 kanałów. Naszkicuj wykres przedstawiający liczbę nowopowstałych fal w zależności od ilości kanałów.</p>
@@ -257,7 +257,7 @@ export default function Zadania3() {
 
 <table className="w-full border-collapse my-3 text-[14.5px]">
   <tbody><tr>
-    <th className="border border-line px-2.5 py-1.5 text-left font-mono text-[11.5px] text-amber-soft bg-ink2 tracking-[0.05em]">Liczba kanałów (\(N\))</th>
+    <th className="border border-line px-2.5 py-1.5 text-left font-mono text-[11.5px] text-amber-soft bg-ink2 tracking-wider">Liczba kanałów (\(N\))</th>
     <td className="border border-line px-2.5 py-1.5 text-left">2</td>
     <td className="border border-line px-2.5 py-1.5 text-left">3</td>
     <td className="border border-line px-2.5 py-1.5 text-left">4</td>
@@ -267,7 +267,7 @@ export default function Zadania3() {
     <td className="border border-line px-2.5 py-1.5 text-left">8</td>
   </tr>
   <tr>
-    <th className="border border-line px-2.5 py-1.5 text-left font-mono text-[11.5px] text-amber-soft bg-ink2 tracking-[0.05em]">Liczba fal FWM (\(L\))</th>
+    <th className="border border-line px-2.5 py-1.5 text-left font-mono text-[11.5px] text-amber-soft bg-ink2 tracking-wider">Liczba fal FWM (\(L\))</th>
     <td className="border border-line px-2.5 py-1.5 text-left text-green"><b>2</b></td>
     <td className="border border-line px-2.5 py-1.5 text-left">9</td>
     <td className="border border-line px-2.5 py-1.5 text-left text-green"><b>24</b></td>
@@ -278,7 +278,7 @@ export default function Zadania3() {
   </tr>
 </tbody></table>
 
-<div className="rounded-[10px] px-4 py-[14px] my-[14px] border border-line bg-blue/10 border-[#34465f]">
+<div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-blue/10 border-[#34465f]">
   <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">Wykres zależności liczby fal FWM od liczby kanałów</span>
   <div style={{ "fontFamily": "var(--mono)", "fontSize": "12px", "color": "var(--muted)", "textAlign": "center", "background": "var(--ink2)", "padding": "15px", "borderRadius": "8px", "border": "1px solid var(--line)" }}>
     <pre style={{ "lineHeight": "1.2", "fontSize": "11px" }}> Liczba fal FWM (L)
@@ -299,7 +299,7 @@ export default function Zadania3() {
   </div>
 </div>
 
-<div className="rounded-[10px] px-4 py-[14px] my-[14px] border border-line bg-red/10 border-[#7d3a3a]">
+<div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-red/10 border-[#7d3a3a]">
   <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">⚠️ Pułapka Egzaminacyjna (DC)</span>
   <p className="mb-[11px]">Prowadząca może zapytać, co w praktyce oznacza ta zależność. Ponieważ dla \(N = 8\) mamy już aż 224 fale pasożytnicze, w systemach o równej siatce kanałów (równych odstępach) produkty FWM trafiają **dokładnie w częstotliwości sygnałów użytecznych**. Blokuje to możliwość poprawnego odbioru. Rozwiązaniem jest stosowanie nierównomiernego odstępu między kanałami lub światłowodów o niezerowej dyspersji chromatycznej (np. G.655 / NZ-DSF), co niszczy warunek synchronizmu fazowego fali i gasi FWM.</p>
 </div>

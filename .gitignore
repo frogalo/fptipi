@@ -9,4 +9,4 @@ Thumbs.db
 .antigravityignore
 .gemini
 scratch/*
-scratch/generate-search-index.js
+/scratch/*

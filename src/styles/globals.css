@@ -89,7 +89,7 @@
     @apply flex items-baseline gap-3 px-[18px] py-[14px] no-underline text-txt;
   }
   .toc-num {
-    @apply font-mono font-bold text-ink bg-amber rounded-md px-2 py-[1px] text-[12px] whitespace-nowrap shrink-0;
+    @apply font-mono font-bold text-ink bg-amber rounded-md px-2 py-px text-[12px] whitespace-nowrap shrink-0;
   }
   .toc-num.green {
     @apply bg-green;
@@ -1349,7 +1349,7 @@
 }
 .b-arrow::after {
   content: "";
-  @apply absolute -top-1.5 left-1/2 -translate-x-1/2 border-[4px] border-transparent border-b-amber;
+  @apply absolute -top-1.5 left-1/2 -translate-x-1/2 border-4 border-transparent border-b-amber;
 }
 .e-loop {
   @apply absolute w-[80px] h-[80px] rounded-full border-2 border-green border-dashed;
@@ -1522,7 +1522,7 @@
 }
 .b-arrow::after {
   content: "";
-  @apply absolute -top-1.5 left-1/2 -translate-x-1/2 border-[4px] border-transparent border-b-amber;
+  @apply absolute -top-1.5 left-1/2 -translate-x-1/2 border-4 border-transparent border-b-amber;
 }
 .e-loop {
   @apply absolute w-[80px] h-[80px] rounded-full border-2 border-green border-dashed;

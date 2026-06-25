@@ -17,7 +17,7 @@ export default function Zadania1() {
       
 <div className="max-w-[880px] mx-auto">
 
-<header className="mb-6 border border-line bg-gradient-to-br from-panel to-ink2 rounded-[14px] px-6 py-[22px]">
+<header className="mb-6 border border-line bg-linear-to-br from-panel to-ink2 rounded-[14px] px-6 py-[22px]">
   <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-amber">FPTiTI · zadania obliczeniowe · część 1 / 3</div>
   <h1 className="text-[27px] font-semibold mt-1.5 mb-1">Rozdział 3: Propagacja i zjawiska falowe</h1>
   <div className="text-muted text-[14.5px]">Zadania z rozwiązaniami krok po kroku · na podstawie podręcznika A. Szymańskiej</div>
@@ -35,7 +35,7 @@ export default function Zadania1() {
 <div className="flex items-baseline gap-3 border-b border-line pb-3 mb-4">
   <span className="font-mono font-bold text-ink bg-amber rounded-lg px-2.5 py-[2px] text-[14px] whitespace-nowrap">3.5.1</span>
   <h2 className="text-[20.5px] font-semibold leading-tight">Graniczna odległość bezpośredniej widoczności (troposfera)</h2>
-  <span className="font-mono text-[11px] text-muted ml-auto whitespace-nowrap"><span className="t1 font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-[1px] text-[12px] whitespace-nowrap">P1</span></span>
+  <span className="font-mono text-[11px] text-muted ml-auto whitespace-nowrap"><span className="t1 font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[12px] whitespace-nowrap">P1</span></span>
 </div>
 
 <p className="mb-[11px] text-red font-semibold"><b>Zadanie:</b> Znając wysokość anten \(H_N = 25\ \mathrm&#123;m&#125;\) oraz \(H_O = 49\ \mathrm&#123;m&#125;\), wyznacz graniczną odległość bezpośredniej widoczności pomiędzy nadajnikiem a odbiornikiem dla fali propagującej się w troposferze.</p>
@@ -70,7 +70,7 @@ export default function Zadania1() {
   </li>
 </ol>
 
-<div className="rounded-[10px] px-4 py-[14px] my-[14px] border border-line bg-green-dim/10 border-green-dim">
+<div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-green-dim/10 border-green-dim">
   <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">Odpowiedź i Wnioski</span>
   <p className="mb-[11px]">Graniczna odległość bezpośredniej widoczności (horyzont radiowy) dla tych anten wynosi <b>ok. 43 000 m (42,8 km)</b>.</p>
 </div>
@@ -81,7 +81,7 @@ export default function Zadania1() {
 <div className="flex items-baseline gap-3 border-b border-line pb-3 mb-4">
   <span className="font-mono font-bold text-ink bg-amber rounded-lg px-2.5 py-[2px] text-[14px] whitespace-nowrap">3.5.2</span>
   <h2 className="text-[20.5px] font-semibold leading-tight">Natężenie pola elektrycznego przy znanej gęstości mocy</h2>
-  <span className="font-mono text-[11px] text-muted ml-auto whitespace-nowrap"><span className="t1 font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-[1px] text-[12px] whitespace-nowrap">P1</span></span>
+  <span className="font-mono text-[11px] text-muted ml-auto whitespace-nowrap"><span className="t1 font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[12px] whitespace-nowrap">P1</span></span>
 </div>
 
 <p className="mb-[11px] text-red font-semibold"><b>Zadanie:</b> Wyznacz natężenie pola elektrycznego sygnału docierającego do odbiornika wiedząc, że odległość między antenami wynosi \(R\), a powierzchniowa gęstość mocy anteny nadawczej wynosi \(S\).</p>
@@ -113,7 +113,7 @@ export default function Zadania1() {
 <p className="mb-[11px]">Wyciągamy czynnik \(16\) przed pierwiastek (\(240 = 16 \cdot 15\)):</p>
 \[E = \sqrt&#123;16 \cdot 15\pi S&#125; = 4\sqrt&#123;15\pi S&#125;\]
 
-<div className="rounded-[10px] px-4 py-[14px] my-[14px] border border-line bg-green-dim/10 border-green-dim">
+<div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-green-dim/10 border-green-dim">
   <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">Wniosek Końcowy</span>
   <p className="mb-[11px]">Wzór na natężenie pola elektrycznego przy znanej gęstości mocy \(S\) i odległości \(R\) ma postać:</p>
   <div className="bg-ink2 border border-line border-l-[3px] border-l-amber rounded-lg px-4 py-2.5 my-3 overflow-x-auto">
@@ -128,7 +128,7 @@ export default function Zadania1() {
 <div className="flex items-baseline gap-3 border-b border-line pb-3 mb-4">
   <span className="font-mono font-bold text-ink bg-amber rounded-lg px-2.5 py-[2px] text-[14px] whitespace-nowrap">3.5.3</span>
   <h2 className="text-[20.5px] font-semibold leading-tight">Promień 1. i 2. strefy Fresnela</h2>
-  <span className="font-mono text-[11px] text-muted ml-auto whitespace-nowrap"><span className="t1 font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-[1px] text-[12px] whitespace-nowrap">P1</span></span>
+  <span className="font-mono text-[11px] text-muted ml-auto whitespace-nowrap"><span className="t1 font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[12px] whitespace-nowrap">P1</span></span>
 </div>
 
 <p className="mb-[11px] text-red font-semibold"><b>Zadanie:</b> Wyznacz promień pierwszej i drugiej strefy Fresnela, znając częstotliwość fali \(f = 2412\ \mathrm&#123;MHz&#125;\), odległość między nadajnikiem a odbiornikiem \(D = 200\ \mathrm&#123;m&#125;\) oraz odległość przeszkody od nadajnika \(d = 50\ \mathrm&#123;m&#125;\).</p>
@@ -161,7 +161,7 @@ export default function Zadania1() {
   </li>
 </ol>
 
-<div className="rounded-[10px] px-4 py-[14px] my-[14px] border border-line bg-green-dim/10 border-green-dim">
+<div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-green-dim/10 border-green-dim">
   <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">Odpowiedź</span>
   <p className="mb-[11px]">Promień pierwszej strefy Fresnela wynosi <b>ok. 2,16 m</b>, a drugiej <b>ok. 3,05 m</b>.</p>
 </div>
@@ -172,7 +172,7 @@ export default function Zadania1() {
 <div className="flex items-baseline gap-3 border-b border-line pb-3 mb-4">
   <span className="font-mono font-bold text-ink bg-amber rounded-lg px-2.5 py-[2px] text-[14px] whitespace-nowrap">3.5.4</span>
   <h2 className="text-[20.5px] font-semibold leading-tight">Tłumienie atmosferyczne dla \(\lambda = 0,5\ \mathrm&#123;cm&#125;\)</h2>
-  <span className="font-mono text-[11px] text-muted ml-auto whitespace-nowrap"><span className="t1 font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-[1px] text-[12px] whitespace-nowrap">P1</span> <span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-[1px] text-[12px] whitespace-nowrap" style={{ "background": "var(--red)" }}>DC</span></span>
+  <span className="font-mono text-[11px] text-muted ml-auto whitespace-nowrap"><span className="t1 font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[12px] whitespace-nowrap">P1</span> <span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[12px] whitespace-nowrap" style={{ "background": "var(--red)" }}>DC</span></span>
 </div>
 
 <p className="mb-[11px] text-red font-semibold"><b>Zadanie:</b> Odległość pomiędzy nadajnikiem i odbiornikiem wynosi \(1500\ \mathrm&#123;m&#125;\). Moc nadajnika wynosi \(10\ \mathrm&#123;mW&#125;\) (\(10\ \mathrm&#123;dBm&#125;\)), długość fali wynosi \(0&#123;,&#125;5\ \mathrm&#123;cm&#125;\). O ile \(\mathrm&#123;dB&#125;\) zostanie stłumiony sygnał na tej drodze? Potrzebne dane odczytaj z Rys. 3.9. Rozpatrz dwa przypadki dla: a) \(0\ \mathrm&#123;m&#125;\) n.p.m. i b) \(4\ \mathrm&#123;km&#125;\) n.p.m. Ile razy zmniejszy się moc sygnału w obydwu przypadkach? Jaki czynnik ma tu decydujący wpływ na wartość tłumienia?</p>
@@ -223,12 +223,12 @@ export default function Zadania1() {
   </li>
 </ul>
 
-<div className="rounded-[10px] px-4 py-[14px] my-[14px] border border-line bg-red/10 border-[#7d3a3a]">
+<div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-red/10 border-[#7d3a3a]">
   <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">⚠️ Pułapka Egzaminacyjna (DC)</span>
   <p className="mb-[11px]">Prowadząca bardzo pilnuje, aby poprawnie wskazać czynnik tłumiący dla danej częstotliwości. Dla częstotliwości <b>60 GHz</b> decydującym czynnikiem jest **rezonans absorpcyjny cząsteczek tlenu (\(O_2\))**. Nie wolno pomylić go z rezonansem pary wodnej (\(H_2O\)), który występuje przy innych częstotliwościach (np. ok. 22 GHz oraz 183 GHz).</p>
 </div>
 
-<div className="rounded-[10px] px-4 py-[14px] my-[14px] border border-line bg-green-dim/10 border-green-dim">
+<div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-green-dim/10 border-green-dim">
   <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">Podsumowanie i Wnioski</span>
   <ul className="mb-3 ml-5 list-disc">
     <li className="mb-1.5">Na poziomie morza sygnał zostanie stłumiony o <b>18 dB</b>, co oznacza, że jego moc zmniejszy się **ok. 64 razy**.</li>
