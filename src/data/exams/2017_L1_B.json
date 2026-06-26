@@ -1,0 +1,44 @@
+{
+  "image": "2017_Z12_L12.png",
+  "tasks": [
+    {
+      "number": 1,
+      "question": "Co to jest multipleksacja i jej zastosowania.",
+      "solution": "Multipleksacja to proces łączenia wielu niezależnych sygnałów transmisyjnych (kanałów) w jeden wspólny sygnał zespolony, który przesyłany jest przez jedno medium transmisyjne (np. jeden kabel, jedno włókno światłowodowe, jeden kanał radiowy). Po stronie odbiorczej zachodzi proces odwrotny – demultipleksacja, która rozdziela sygnał z powrotem na składowe.\n\n**Główne rodzaje multipleksacji:**\n- **FDM (Frequency Division Multiplexing)** - podział w dziedzinie częstotliwości. Używany w radiu i tradycyjnej telewizji.\n- **TDM (Time Division Multiplexing)** - podział w dziedzinie czasu (szczeliny czasowe dla różnych sygnałów). Używany w klasycznej telefonii cyfrowej.\n- **WDM / DWDM (Wavelength Division Multiplexing)** - zwielokrotnienie z podziałem długości fali świetlnej. Standard w łączach światłowodowych.\n\n**Zastosowania:**\nMultipleksację stosuje się w celu optymalizacji kosztów i maksymalnego wykorzystania przepustowości łącza. Zamiast budować tysiące fizycznych linii kablowych, wysyła się tysiące niezależnych strumieni danych wewnątrz jednego fizycznego nośnika.",
+      "tip": "Pomyśl o multipleksacji jak o autostradzie – z wieloma pasami ruchu (kanałami), gdzie różnymi pasami mogą poruszać się różne samochody (informacje) z wykorzystaniem tej samej drogi.",
+      "relatedLinks": [
+        {
+          "label": "Pyt. 16 · Multipleksacja",
+          "route": "/teoria/modulacja#q16"
+        }
+      ],
+      "charts": []
+    },
+    {
+      "number": 2,
+      "question": "Omów zjawisko dyspersji we włóknach światłowodowych.",
+      "solution": "Dyspersja to zjawisko poszerzania się impulsu świetlnego w dziedzinie czasu podczas jego propagacji w światłowodzie. Wynika to z faktu, że różne składowe impulsu docierają do odbiornika w różnym czasie. Gdy impulsy zbytnio się poszerzą, mogą nakładać się na siebie (zjawisko ISI - Intersymbol Interference), co uniemożliwia poprawne rozróżnienie bitów i ogranicza przepustowość.\n\n**Rodzaje dyspersji:**\n1. **Dyspersja modowa**: Występuje w światłowodach wielomodowych. Wynika z różnych dróg (modów), jakie pokonują promienie świetlne w rdzeniu. Eliminowana poprzez stosowanie światłowodów jednomodowych.\n2. **Dyspersja chromatyczna**: Złożona z dyspersji materiałowej (współczynnik załamania zależy od długości fali) i falowodowej (zależność rozkładu pola modu od długości fali). Powoduje, że różne barwy światła płyną z różną prędkością.\n3. **Dyspersja polaryzacyjna modowa (PMD)**: Wynika z asymetrii geometrycznej rdzenia i naprężeń. Dwie prostopadłe składowe polaryzacyjne modu podstawowego propagują się z nieznacznie różną prędkością.",
+      "tip": "Kolejność znaczenia w nowoczesnych systemach telekomunikacyjnych: Najpierw eliminuje się modową (przechodząc na SMF), następnie kompensuje się chromatyczną (włóknami DCF), a na koniec zmaga się z PMD przy bardzo wysokich przepustowościach.",
+      "relatedLinks": [
+        {
+          "label": "Pyt. 12 · Dyspersja w światłowodach",
+          "route": "/teoria/swiatlowody#q12"
+        }
+      ],
+      "charts": []
+    },
+    {
+      "number": 3,
+      "question": "Podaj warunki brzegowe dla pól elektrycznego i magnetycznego na granicy ośrodków. W szczególności omów przypadek na granicy przewodnik-dielektryk.",
+      "solution": "Warunki brzegowe definiują przejście wektorów pola EM przez granicę ośrodków.\n\n1. **Składowe styczne** natężenia pola elektrycznego i magnetycznego:\n\n\\[ E_{1t} = E_{2t} \\]\n\\[ H_{1t} = H_{2t} + J_s \\]\n\ngdzie \\( J_s \\) to gęstość prądu powierzchniowego. W przypadku braku tych prądów, składowe styczne \\( H \\) również są ciągłe.\n\n2. **Składowe normalne** indukcji elektrycznej i magnetycznej:\n\n\\[ D_{1n} - D_{2n} = \\sigma_s \\]\n\\[ B_{1n} = B_{2n} \\]\n\ngdzie \\( \\sigma_s \\) to gęstość powierzchniowa ładunku.\n\n**Na granicy idealnego przewodnika i dielektryka:**\nWe wnętrzu przewodnika pole elektryczne nie istnieje (ładunki swobodne całkowicie niwelują to pole). Dlatego na jego granicy od strony dielektryka pole \\( E_{t} = 0 \\), co oznacza, że cały wektor pola elektrycznego musi być skierowany prostopadle do powierzchni (tylko składowa normalna może być niezerowa i jest proporcjonalna do ładunku na powierzchni). Zmienne w czasie pole magnetyczne również nie wnika w idealny przewodnik z powodu efektu naskórkowości.",
+      "tip": "Zawsze rysuj sobie granicę ośrodków i rozkładaj wektory na wektor równoległy (styczny) i prostopadły (normalny).",
+      "relatedLinks": [
+        {
+          "label": "Pyt. 3 · Warunki brzegowe",
+          "route": "/teoria/elektrodynamika#q3"
+        }
+      ],
+      "charts": []
+    }
+  ]
+}

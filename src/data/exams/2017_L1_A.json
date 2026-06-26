@@ -1,0 +1,44 @@
+{
+  "image": "2017_Z12_L12.png",
+  "tasks": [
+    {
+      "number": 1,
+      "question": "Wymień i opisz sposoby mierzenia jakości zastosowanej modulacji.",
+      "solution": "Jakość modulacji ocenia się w celu weryfikacji poprawności i stabilności transmisji. Główne sposoby to:\n\n1. **Bitowa stopa błędu (BER - Bit Error Rate)**: Stosunek liczby błędnie przesłanych bitów do całkowitej liczby bitów. Definiuje się to również jako prawdopodobieństwo przekłamania:\n\n\\[ BER = \\frac{p_0 + p_1}{2} \\]\n\nStandardem w łączach telekomunikacyjnych jest np. \\( BER < 10^{-12} \\).\n\n2. **Wykres oczkowy (Eye diagram)**: Reprezentacja wizualna nałożonych na siebie wszystkich możliwych sekwencji bitów. Kluczowe parametry to rozwartość (margines szumowy) oraz szerokość (czas na bezpieczne próbkowanie). Im większe \"oko\", tym sygnał ma lepszą jakość.\n\n3. **Efektywność widmowa (\\(\\Gamma\\))**: Wskazuje ilość bitów przesyłanych w jednostce czasu przez 1 Hz pasma:\n\n\\[ \\Gamma = \\frac{R_b}{B} \\mathrm{[bit/s/Hz]} \\]\n\ngdzie \\( R_b \\) to szybkość transmisji, a \\( B \\) to szerokość pasma.",
+      "tip": "BER ocenia warstwę logiczną, wykres oczkowy warstwę fizyczną, a efektywność widmowa ekonomię wykorzystania pasma.",
+      "relatedLinks": [
+        {
+          "label": "Pyt. 13 · Jakość modulacji",
+          "route": "/teoria/modulacja#q13"
+        }
+      ],
+      "charts": []
+    },
+    {
+      "number": 2,
+      "question": "Omów zjawisko tłumienia we włóknach światłowodowych.",
+      "solution": "Tłumienie to zjawisko spadku mocy sygnału optycznego w miarę jego propagacji we włóknie światłowodowym. Wyraża się je w dB/km. Główne przyczyny tłumienia to:\n\n1. **Rozpraszanie Rayleigha**: Spowodowane mikroskopijnymi fluktuacjami gęstości materiału i współczynnika załamania światła powstalymi podczas krzepnięcia szkła. Zależy odwrotnie proporcjonalnie od czwartej potęgi długości fali (\\( \\lambda^{-4} \\)).\n\n2. **Absorpcja materiałowa**: Pochłanianie energii fotonów przez atomy materiału (szkła kwarcowego) oraz domieszki (np. jony metali przejściowych, rodniki OH-). Tworzy tzw. piki absorpcyjne, co determinuje powstawanie okien telekomunikacyjnych.\n\n3. **Straty na zgięciach (makrozgięcia i mikrozgięcia)**: Promieniowanie energii poza rdzeń, gdy promień krzywizny zgięcia włókna jest zbyt mały, przez co naruszony zostaje warunek całkowitego wewnętrznego odbicia.",
+      "tip": "Pamiętaj o okienkach telekomunikacyjnych: to właśnie minimalne wartości tłumienia (ok. 1310 nm i 1550 nm) wyznaczają obszary pracy światłowodów.",
+      "relatedLinks": [
+        {
+          "label": "Pyt. 11 · Tłumienie w światłowodach",
+          "route": "/teoria/swiatlowody#q11"
+        }
+      ],
+      "charts": []
+    },
+    {
+      "number": 3,
+      "question": "Podaj warunki brzegowe dla pól elektrycznego i magnetycznego na granicy ośrodków. W szczególności omów przypadek na granicy przewodnik-dielektryk.",
+      "solution": "Warunki brzegowe określają zachowanie wektorów pola elektromagnetycznego na granicy dwóch różnych ośrodków materialnych:\n\n1. **Składowe styczne** natężenia pola elektrycznego \\( \\vec{E} \\) i natężenia pola magnetycznego \\( \\vec{H} \\) są ciągłe, jeżeli na granicy nie płyną prądy powierzchniowe:\n\n\\[ E_{1t} = E_{2t} \\quad \\text{oraz} \\quad H_{1t} = H_{2t} \\]\n\n2. **Składowe normalne** indukcji elektrycznej \\( \\vec{D} \\) oraz indukcji magnetycznej \\( \\vec{B} \\) zachowują się następująco:\n\n\\[ D_{1n} - D_{2n} = \\sigma_s \\quad \\text{(ciągłe przy braku ładunków powierzchniowych)} \\]\n\\[ B_{1n} = B_{2n} \\quad \\text{(zawsze ciągłe, brak monopoli magnetycznych)} \\]\n\n**Przypadek granicy przewodnik-dielektryk:**\nWewnątrz idealnego przewodnika pole elektryczne jest zerowe (\\( E = 0 \\)). Z warunku ciągłości składowych stycznych wynika, że na granicy przewodnik-dielektryk składowa styczna pola elektrycznego w dielektryku też musi być zerowa:\n\n\\[ E_{t} = 0 \\]\n\nOznacza to, że wektor pola elektrycznego musi być prostopadły do powierzchni idealnego przewodnika. Z kolei zmienne pole magnetyczne nie wnika do wnętrza idealnego przewodnika.",
+      "tip": "Dla zapamiętania: E styczne = 0 przy metalu, bo elektrony swobodne natychmiast by się przemieściły wyrównując potencjał.",
+      "relatedLinks": [
+        {
+          "label": "Pyt. 3 · Warunki brzegowe pól",
+          "route": "/teoria/elektrodynamika#q3"
+        }
+      ],
+      "charts": []
+    }
+  ]
+}

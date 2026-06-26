@@ -1,0 +1,44 @@
+{
+  "image": "2017_Z12_L12.png",
+  "tasks": [
+    {
+      "number": 1,
+      "question": "Omów budowę i zasadę działania tranzystorów polowych.",
+      "solution": "Tranzystory polowe (FET - Field Effect Transistor) sterują prądem za pomocą pola elektrycznego. Składają się z trzech głównych elektrod: **Źródła (Source - S)**, **Drenu (Drain - D)** oraz **Bramki (Gate - G)**.\n\n**Budowa (np. MOSFET):**\nPosiadają podłoże półprzewodnikowe, w którym uformowane są obszary źródła i drenu (np. silnie domieszkowane obszary n+ w podłożu typu p dla kanału n). Bramka znajduje się nad obszarem między źródłem a drenem, odizolowana od podłoża bardzo cienką warstwą dielektryka (zazwyczaj dwutlenku krzemu, SiO2).\n\n**Zasada działania (na przykładzie n-MOSFET z kanałem wzbogacanym):**\nW stanie bez zasilania bramki, pomiędzy źródłem a drenem nie płynie prąd, ponieważ tworzą one dwie przeciwstawnie spolaryzowane diody. Po przyłożeniu dodatniego napięcia do bramki (\\( U_{GS} > U_T \\)), pole elektryczne przyciąga elektrony mniejszościowe z podłoża pod powierzchnię dielektryka, tworząc warstwę inwersyjną – czyli przewodzący **kanał n**. Im wyższe napięcie bramki, tym kanał staje się głębszy i opór między źródłem a drenem maleje, co pozwala na przepływ prądu \\( I_D \\) sterowanego napięciem \\( U_{DS} \\).\n\nCechą charakterystyczną FET jest bardzo duża impedancja wejściowa (prąd bramki jest niemal zerowy, sterowanie następuje wyłącznie napięciem).",
+      "tip": "Zauważ, że w tranzystorach polowych, w odróżnieniu od bipolarnych, nośnikami uczestniczącymi w transporcie prądu w kanale jest tylko jeden typ nośników (elektrony w kanale n, dziury w kanale p), stąd nazwa tranzystory unipolarne.",
+      "relatedLinks": [
+        {
+          "label": "Pyt. 23 · Tranzystory polowe",
+          "route": "/teoria/pamieci-nosniki#q23"
+        }
+      ],
+      "charts": []
+    },
+    {
+      "number": 2,
+      "question": "Warunki propagacji we włóknie światłowodowym.",
+      "solution": "Zjawisko propagacji światła wewnątrz światłowodu opiera się na **całkowitym wewnętrznym odbiciu**. Aby miało ono miejsce, muszą być spełnione konkretne warunki:\n\n1. **Współczynniki załamania**: Współczynnik załamania światła w rdzeniu (\\( n_1 \\)) must być nieznacznie większy niż w płaszczu (\\( n_2 \\)): \\( n_1 > n_2 \\).\n2. **Kąt krytyczny**: Promień światła musi padać na granicę rdzeń-płaszcz pod kątem (mierzonym od normalnej) większym niż kąt krytyczny, zdefiniowanym z prawa Snella jako:\n\n\\[ \\theta_c = \\arcsin\\left(\\frac{n_2}{n_1}\\right) \\]\n\n3. **Apertura numeryczna (NA)**: Promień świetlny wprowadzany do światłowodu must znajdować się w określonym stożku akceptacji. Kąt połowy tego stożka (\\( \\theta_a \\)) wyznacza aperturę numeryczną:\n\n\\[ NA = \\sin(\\theta_a) = \\sqrt{n_1^2 - n_2^2} \\]\n\nŚwiatło wpadające pod kątami większymi niż kąt akceptacji, przenika do płaszcza i jest tracone.",
+      "tip": "Zapamiętaj aperturę numeryczną jako \"kąt chwytania\" światłowodu - decyduje z jakiej szerokości kątowej dozwolone jest wpuszczenie światła by pozostało uwięzione w rdzeniu.",
+      "relatedLinks": [
+        {
+          "label": "Pyt. 8 · Warunki propagacji",
+          "route": "/teoria/swiatlowody#q8"
+        }
+      ],
+      "charts": []
+    },
+    {
+      "number": 3,
+      "question": "Koncentracja nośników w stanie równowagi termodynamicznej.",
+      "solution": "Stan równowagi termodynamicznej występuje w półprzewodniku, gdy nie działają na niego żadne zewnętrzne czynniki zaburzające (brak zewnętrznego pola elektrycznego, oświetlenia, itp.), a rozkład nośników wynika wyłącznie z temperatury i statystyki Fermiego-Diraca.\n\nDla półprzewodnika samoistnego w równowadze liczba elektronów w paśmie przewodnictwa (\\( n_i \\)) jest równa liczbie dziur w paśmie walencyjnym (\\( p_i \\)):\n\n\\[ n_i = p_i \\]\n\nPrawo działania mas mówi, że w każdej temperaturze dla danego materiału iloczyn koncentracji elektronów (\\( n_0 \\)) i dziur (\\( p_0 \\)) w stanie równowagi jest stały i wynosi kwadrat koncentracji samoistnej:\n\n\\[ n_0 \\cdot p_0 = n_i^2 \\]\n\nW przypadku półprzewodników domieszkowanych:\n- W typie N (donorowym): \\( n_0 \\approx N_D \\) (koncentracja domieszek donorowych), a liczba nośników mniejszościowych (dziur) wynosi \\( p_0 = \\frac{n_i^2}{N_D} \\).\n- W typie P (akceptorowym): \\( p_0 \\approx N_A \\) (koncentracja domieszek akceptorowych), a liczba elektronów wynosi \\( n_0 = \\frac{n_i^2}{N_A} \\).",
+      "tip": "Prawo działania mas (iloczyn n i p jest stały) to fundamentalny klucz do określania mniejszościowych nośników ładunku.",
+      "relatedLinks": [
+        {
+          "label": "Pyt. 18 · Równowaga termodynamiczna",
+          "route": "/teoria/polprzewodniki#q18"
+        }
+      ],
+      "charts": []
+    }
+  ]
+}

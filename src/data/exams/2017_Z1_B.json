@@ -1,0 +1,44 @@
+{
+  "image": "2017_Z12_L12.png",
+  "tasks": [
+    {
+      "number": 1,
+      "question": "Omów budowę i zasadę działania tranzystorów bipolarnych.",
+      "solution": "Tranzystor bipolarny to element składający się z trzech naprzemiennych warstw półprzewodnika o różnym typie przewodnictwa, tworzących strukturę **NPN** lub **PNP**. Posiada trzy elektrody: **Emiter (E)**, **Baza (B)** i **Kolektor (C)**. Baza jest bardzo cienka względem pozostałych obszarów.\n\n**Zasada działania (na przykładzie NPN):**\nAby tranzystor przewodził w obszarze aktywnym, złącze Baza-Emiter musi być spolaryzowane w kierunku przewodzenia, a złącze Kolektor-Baza w kierunku zaporowym. Napięcie przyłożone do bazy i emitera obniża barierę potencjału, co powoduje silne wstrzykiwanie elektronów (nośników większościowych emitera) do obszaru bazy. Z racji tego, że baza jest niezwykle cienka i słabo domieszkowana, zaledwie ułamek z tych elektronów rekombinuje w bazie, tworząc niewielki prąd bazy \\( I_B \\).\n\nZdecydowana większość elektronów dociera do obszaru zubożonego złącza baza-kolektor, gdzie są natychmiast wychwytywane i przyspieszane przez silne pole elektryczne, co stanowi duży prąd kolektora \\( I_C \\). Prowadzi to do podstawowej zależności:\n\n\\[ I_C = \\beta \\cdot I_B \\]\n\ngdzie \\( \\beta \\) to współczynnik wzmocnienia prądowego tranzystora. Tranzystor pozwala zatem małym prądem bazy sterować dużym prądem w obwodzie kolektora.",
+      "tip": "Słowo 'bipolarny' pochodzi z faktu, że w transporcie prądu udział biorą jednocześnie dwa rodzaje nośników: mniejszościowe w bazie i większościowe z emitera.",
+      "relatedLinks": [
+        {
+          "label": "Pyt. 22 · Tranzystory bipolarne",
+          "route": "/teoria/pamieci-nosniki#q22"
+        }
+      ],
+      "charts": []
+    },
+    {
+      "number": 2,
+      "question": "Warunki dyspersji we włóknie światłowodowym.",
+      "solution": "Zjawisko dyspersji we włóknach powoduje spłaszczenie i poszerzenie impulsu w czasie. Zależy ono od kilku warunków i parametrów włókna:\n\n1. **Dyspersja modowa**: Zachodzi pod warunkiem propagacji wielomodowej (dla włókien ze skokowym lub gradientowym współczynnikiem załamania o dużej średnicy rdzenia). Osiąga zero, gdy światłowód spełnia warunek propagacji jednomodowej (promień znormalizowany \\( V < 2,405 \\)).\n2. **Dyspersja materiałowa**: Uzależniona od materiału (szkła kwarcowego). W standardowych światłowodach zeruje się naturalnie w okolicach długości fali 1310 nm. Dla innych długości fali (np. 1550 nm) przyjmuje znaczne wartości.\n3. **Dyspersja falowodowa**: Zależy od geometrii rdzenia światłowodu i rozkładu pola modu we włóknie. Ma znak przeciwny do dyspersji materiałowej wokół 1310 nm. Odpowiednio kształtując profil współczynnika załamania płaszcza i rdzenia można zmodyfikować tę dyspersję do uzyskania światłowodów o przesuniętej dyspersji (NZDSF), gdzie całkowita dyspersja chromatyczna zeruje się dla 1550 nm.\n\nWłókno jest pozbawione degradującego poszerzania impulsów, gdy współczynnik sumarycznej dyspersji chromatycznej D oraz PMD bliskie są 0.",
+      "tip": "W światłowodach z kompensacją dyspersji w oknie 1550 nm unika się jednak dokładnego 0 dyspersji chromatycznej, gdyż promuje to powstawanie wysoce szkodliwych zjawisk nieliniowych np. FWM.",
+      "relatedLinks": [
+        {
+          "label": "Pyt. 12 · Dyspersja - warunki",
+          "route": "/teoria/swiatlowody#q12"
+        }
+      ],
+      "charts": []
+    },
+    {
+      "number": 3,
+      "question": "Koncentracja nośników w stanie nierównowagi termodynamicznej.",
+      "solution": "Stan nierównowagi termodynamicznej występuje, gdy struktura półprzewodnika jest poddana działaniu zewnętrznych czynników (np. naświetlanie światłem o energii fotonu większej od szerokości przerwy zabronionej, działanie silnego pola elektrycznego, czy iniekcja nośników na złączu). Powoduje to generację **nadmiarowych nośników ładunku** (\\( \\Delta n \\) i \\( \\Delta p \\)).\n\nW stanie nierównowagi całkowita koncentracja elektronów (\\( n \\)) i dziur (\\( p \\)) wynosi:\n\n\\[ n = n_0 + \\Delta n \\]\n\\[ p = p_0 + \\Delta p \\]\n\ngdzie \\( n_0 \\) i \\( p_0 \\) to koncentracje zrównoważone (cieplne).\n\nW tej sytuacji **przestaje obowiązywać równanie działania mas**, tzn. iloczyn \\[ n \\cdot p \\neq n_i^2 \\]\nAby opisać taki stan, wprowadza się pojęcie **quasi-poziomów Fermiego**. Jeden wspólny poziom Fermiego zostaje rozszczepiony na osobny dla elektronów (\\( E_{Fn} \\)) i dziur (\\( E_{Fp} \\)).\nPo wyłączeniu czynnika zaburzającego (np. oświetlenia), nośniki nadmiarowe rekombinują w czasie, wracając z powrotem do koncentracji w równowadze termodynamicznej.",
+      "tip": "Kiedy liczy się koncentrację po oświetleniu układu, liczymy nośniki z równowagi + to co wstrzyknięto/wygenerowano i sprawdzamy czas ich życia przed rekombinacją.",
+      "relatedLinks": [
+        {
+          "label": "Pyt. 19 · Stan nierównowagi",
+          "route": "/teoria/polprzewodniki#q19"
+        }
+      ],
+      "charts": []
+    }
+  ]
+}
