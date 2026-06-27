@@ -2,6 +2,185 @@ import React, { useEffect } from 'react';
 import rys_5_5 from '../../assets/rys_5_5.png';
 import Footer from '../../components/Footer';
 
+function FwmChart() {
+  const data = [
+    { n: 2, l: 2 },
+    { n: 3, l: 9 },
+    { n: 4, l: 24 },
+    { n: 5, l: 50 },
+    { n: 6, l: 90 },
+    { n: 7, l: 147 },
+    { n: 8, l: 224 },
+  ];
+
+  const width = 600;
+  const height = 300;
+  const padding = { top: 30, right: 130, bottom: 40, left: 60 };
+
+  const minN = 0;
+  const maxN = 8;
+  const minL = 0;
+  const maxL = 250;
+
+  const getX = (n: number) => padding.left + ((n - minN) / (maxN - minN)) * (width - padding.left - padding.right);
+  const getY = (l: number) => height - padding.bottom - ((l - minL) / (maxL - minL)) * (height - padding.top - padding.bottom);
+
+  const gridL = [0, 50, 100, 150, 200, 250];
+  const gridN = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+
+  let d = "";
+  data.forEach((pt, i) => {
+    const x = getX(pt.n);
+    const y = getY(pt.l);
+    if (i === 0) d += `M ${x} ${y}`;
+    else d += ` L ${x} ${y}`;
+  });
+
+  return (
+    <div className="w-full overflow-x-auto bg-ink2 border border-line rounded-lg p-4 select-none">
+      <svg viewBox={`0 0 ${width} ${height}`} className="w-full min-w-[500px] h-auto block overflow-visible">
+        {/* Grids */}
+        {gridL.map((val) => (
+          <g key={`grid-y-${val}`}>
+            <line
+              x1={getX(minN)}
+              y1={getY(val)}
+              x2={getX(maxN)}
+              y2={getY(val)}
+              stroke="var(--line, rgba(255,255,255,0.08))"
+              strokeDasharray="4 4"
+            />
+            <text
+              x={getX(minN) - 10}
+              y={getY(val) + 4}
+              textAnchor="end"
+              className="fill-muted font-mono text-[11px]"
+            >
+              {val}
+            </text>
+          </g>
+        ))}
+
+        {gridN.map((val) => (
+          <g key={`grid-x-${val}`}>
+            <line
+              x1={getX(val)}
+              y1={getY(minL)}
+              x2={getX(val)}
+              y2={getY(maxL)}
+              stroke="var(--line, rgba(255,255,255,0.08))"
+              strokeDasharray="4 4"
+            />
+            <text
+              x={getX(val)}
+              y={height - padding.bottom + 18}
+              textAnchor="middle"
+              className="fill-muted font-mono text-[11px]"
+            >
+              {val}
+            </text>
+          </g>
+        ))}
+
+        {/* Axes */}
+        <line
+          x1={getX(minN)}
+          y1={getY(minL)}
+          x2={getX(maxN) + 20}
+          y2={getY(minL)}
+          stroke="var(--muted, #666)"
+          strokeWidth="1.5"
+          markerEnd="url(#arrow)"
+        />
+        <line
+          x1={getX(minN)}
+          y1={getY(minL)}
+          x2={getX(minN)}
+          y2={getY(maxL) - 15}
+          stroke="var(--muted, #666)"
+          strokeWidth="1.5"
+          markerEnd="url(#arrow)"
+        />
+
+        {/* Axis Labels */}
+        <text
+          x={getX(maxN) + 30}
+          y={getY(minL) + 4}
+          textAnchor="start"
+          className="fill-amber-soft font-semibold text-[11.5px] font-mono"
+        >
+          N (Liczba kanałów)
+        </text>
+        <text
+          x={getX(minN)}
+          y={getY(maxL) - 22}
+          textAnchor="middle"
+          className="fill-amber-soft font-semibold text-[11.5px] font-mono"
+        >
+          L (Liczba fal FWM)
+        </text>
+
+        {/* Definitions for arrow markers */}
+        <defs>
+          <marker
+            id="arrow"
+            viewBox="0 0 10 10"
+            refX="6"
+            refY="5"
+            markerWidth="6"
+            markerHeight="6"
+            orient="auto-start-reverse"
+          >
+            <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="var(--muted, #666)" />
+          </marker>
+        </defs>
+
+        {/* The Line */}
+        <path
+          d={d}
+          fill="none"
+          stroke="var(--amber, #f59e0b)"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+
+        {/* Data Points */}
+        {data.map((pt, idx) => {
+          const cx = getX(pt.n);
+          const cy = getY(pt.l);
+          return (
+            <g key={`pt-${idx}`} className="group cursor-pointer">
+              <circle
+                cx={cx}
+                cy={cy}
+                r="5"
+                className="fill-amber stroke-panel"
+                strokeWidth="2"
+              />
+              <circle
+                cx={cx}
+                cy={cy}
+                r="10"
+                className="fill-amber/20 opacity-0 group-hover:opacity-100 transition-opacity"
+              />
+              {/* Tooltip-like label */}
+              <text
+                x={cx + 8}
+                y={cy - 4}
+                textAnchor="start"
+                className="fill-green font-mono text-[10.5px] font-bold"
+              >
+                {pt.l}
+              </text>
+            </g>
+          );
+        })}
+      </svg>
+    </div>
+  );
+}
+
 export default function Zadania3() {
 
   useEffect(() => {
@@ -280,23 +459,7 @@ export default function Zadania3() {
 
 <div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-blue/10 border-[#34465f]">
   <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">Wykres zależności liczby fal FWM od liczby kanałów</span>
-  <div style={{ "fontFamily": "var(--mono)", "fontSize": "12px", "color": "var(--muted)", "textAlign": "center", "background": "var(--ink2)", "padding": "15px", "borderRadius": "8px", "border": "1px solid var(--line)" }}>
-    <pre style={{ "lineHeight": "1.2", "fontSize": "11px" }}> Liczba fal FWM (L)
-   ^
-250|                                                     * (8, 224)
-   |
-200|
-   |
-150|                                               *
-   |
-100|                                         *
-   |
- 50|                                   *
-   |                             * (4, 24)
-  0+-------------------------------------------------------&gt;
-   0     1     2     3     4     5     6     7     8    Liczba kanałów (N)
-    </pre>
-  </div>
+  <FwmChart />
 </div>
 
 <div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-red/10 border-[#7d3a3a]">

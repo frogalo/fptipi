@@ -41,24 +41,27 @@ Projekt został zbudowany przy użyciu **React**, **Vite**, **TypeScript** oraz 
 Fizyka/
 ├── dist/                   # Zbudowane pliki produkcyjne (generowane automatycznie)
 ├── node_modules/           # Zależności projektu
-├── src/                    # Folder źródłowy aplikacji (ustawiony jako root w Vite)
+├── src/                    # Folder źródłowy aplikacji
 │   ├── assets/             # Statyczne zasoby (obrazy, wykresy z podręcznika)
-│   ├── components/         # Komponenty wielokrotnego użytku
-│   │   ├── FloatingNav.tsx     # Pływające menu nawigacyjne
-│   │   ├── Footer.tsx          # Stopka strony ze stopą błędów / zgłoszeniami PR
-│   │   ├── MathBlocks.tsx      # Komponenty do renderowania pojęć matematycznych (wzory, objaśnienia)
-│   │   ├── SearchOverlay.tsx   # Wyszukiwarka pytań i haseł
-│   │   └── TheoryComponents.tsx# Nagłówki i sekcje teorii
-│   ├── data/               # Pliki danych JSON (np. baza egzaminów examsData.json)
-│   ├── pages/              # Widoki (strony) aplikacji odpowiadające trasom
-│   │   ├── teoria/         # Odpowiedzi podzielone na części (1–5) oraz Ściąga
-│   │   ├── wizualizacje/   # Interaktywne animacje zjawisk fizycznych i nośników
-│   │   ├── zadania/        # Trzy części zadań obliczeniowych z rozwiązaniami
-│   │   ├── Egzaminy.tsx    # Baza pytań i arkuszy z ubiegłych lat (2024-2026)
+│   ├── components/         # Globalne komponenty wielokrotnego użytku (np. FloatingNav, SearchOverlay, Footer, MosfetSimulator)
+│   ├── data/               # Folder z danymi (katalog `exams` z plikami JSON dla arkuszy)
+│   ├── features/           # Moduły funkcjonalne specyficzne dla obszarów aplikacji
+│   │   ├── egzaminy/       # Obsługa renderowania zadań, selektorów i stanów pustych dla egzaminów
+│   │   └── wizualizacje/   # Moduły wizualizacyjne (np. równania Maxwella)
+│   ├── hooks/              # Własne hooki Reacta (np. usePageSections)
+│   ├── lib/                # Biblioteki narzędziowe i statyczne bazy indeksowe (np. searchIndex.json)
+│   ├── pages/              # Widoki stron aplikacji
+│   │   ├── teoria/         # Odpowiedzi podzielone tematycznie oraz ściąga powtórkowa
+│   │   ├── wizualizacje/   # Interaktywne ekrany wizualizacyjne i symulatory
+│   │   ├── zadania/        # Zadania obliczeniowe podzielone na części
+│   │   ├── Egzaminy.tsx    # Ekran główny bazy egzaminacyjnej
 │   │   └── Home.tsx        # Strona główna ze spisem treści
-│   ├── App.tsx             # Główny komponent konfigurujący routing (React Router)
-│   ├── index.html          # Główny plik HTML (entry point)
-│   └── main.tsx            # Inicjalizacja Reacta i renderowanie aplikacji
+│   ├── router/             # Konfiguracja tras React Router (routes.tsx)
+│   ├── styles/             # Globalne pliki stylów (globals.css)
+│   ├── App.tsx             # Główny komponent wejściowy aplikacji
+│   ├── main.tsx            # Inicjalizacja Reacta i renderowanie aplikacji
+│   └── vite-env.d.ts       # Deklaracje typów Vite
+├── index.html              # Główny plik HTML (entry point)
 ├── package.json            # Konfiguracja skryptów i zależności NPM
 ├── tsconfig.json           # Konfiguracja TypeScript
 ├── tailwind.config.js      # Konfiguracja stylów TailwindCSS
@@ -70,9 +73,13 @@ Fizyka/
 ## Udział w projekcie
 
 Znalazłeś błąd w odpowiedziach lub zadaniach obliczeniowych? Chcesz dodać nowe rozwiązania egzaminów?
-1. Sklonuj repozytorium.
-2. Wprowadź poprawki.
-3. Utwórz **Pull Request** na GitHubie do repozytorium [frogalo/fptipi](https://github.com/frogalo/fptipi).
+
+Możesz zgłosić błąd na dwa sposoby:
+1. **Utwórz zgłoszenie błędu (Issue)** bezpośrednio w repozytorium GitHub [frogalo/fptipi](https://github.com/frogalo/fptipi) — jest to najszybsza i najwygodniejsza metoda, jeśli nie chcesz samodzielnie modyfikować kodu.
+2. **Prześlij Pull Request**:
+   - Sklonuj repozytorium.
+   - Wprowadź poprawki w kodzie lub plikach danych.
+   - Utwórz **Pull Request** na GitHubie do repozytorium [frogalo/fptipi](https://github.com/frogalo/fptipi).
 
 ---
 
