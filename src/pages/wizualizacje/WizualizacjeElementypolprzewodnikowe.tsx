@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import Footer from '../../components/Footer';
+import MosfetSimulator from '../../components/MosfetSimulator';
 
 type BandType = 'intrinsic' | 'n-type' | 'p-type';
 
@@ -186,68 +187,7 @@ export default function WizualizacjeElementypolprzewodnikowe() {
           <div className="barrier-text">{bjtActive ? 'Wąska Bariera' : 'Bariera Potencjału'}</div>
         </div>
       </div>
-
-      <div className="extra-viz-grid">
-        <section className="extra-viz-card fermi-viz">
-          <h3>5. Rozkład Fermiego-Diraca</h3>
-          <p>Punkt przecięcia przy \(E_F\) oznacza prawdopodobieństwo obsadzenia równe 0,5.</p>
-          <div className="fermi-plot">
-            <div className="fermi-axis-x"></div>
-            <div className="fermi-axis-y"></div>
-            <div className="fermi-curve"></div>
-            <div className="fermi-ef"></div>
-            <span className="fermi-label f-top">f(E)</span>
-            <span className="fermi-label f-half">0,5</span>
-            <span className="fermi-label f-ef">E_F</span>
-          </div>
-        </section>
-
-        <section className="extra-viz-card photon-viz">
-          <h3>6. Fotogeneracja par e-h</h3>
-          <p>Foton o energii większej od \(E_g\) przenosi elektron do pasma przewodnictwa i zostawia dziurę w paśmie walencyjnym.</p>
-          <div className="photon-stage">
-            <div className="photon-band top">Ec</div>
-            <div className="photon-gap">hν ≥ Eg</div>
-            <div className="photon-band bottom">Ev</div>
-            <div className="photon-beam"></div>
-            <div className="jump-electron"></div>
-            <div className="jump-hole"></div>
-          </div>
-        </section>
-
-        <section className="extra-viz-card dram-viz">
-          <h3>7. Komórka DRAM: 1T + 1C</h3>
-          <p>Bit jest ładunkiem kondensatora. Kondensator przecieka, dlatego DRAM wymaga cyklicznego odświeżania.</p>
-          <div className="dram-stage">
-            <div className="word-line">WL</div>
-            <div className="bit-line">BL</div>
-            <div className="dram-gate"></div>
-            <div className="dram-channel-line"></div>
-            <div className="capacitor">
-              <span></span>
-              <span></span>
-            </div>
-            <div className="charge-dots">
-              {Array.from({ length: 9 }, (_, index) => <i key={index}></i>)}
-            </div>
-            <div className="refresh-pulse">refresh</div>
-          </div>
-        </section>
-
-        <section className="extra-viz-card eeprom-viz">
-          <h3>8. EEPROM / MNOS</h3>
-          <p>Impuls 20-40 V na bramce umieszcza ładunek w warstwie azotku krzemu. Zmienia to próg przewodzenia komórki.</p>
-          <div className="eeprom-stage">
-            <div className="eeprom-gate">G</div>
-            <div className="eeprom-nitride">ładunek w azotku</div>
-            <div className="eeprom-body"></div>
-            <div className="eeprom-source">S</div>
-            <div className="eeprom-drain">D</div>
-            <div className="eeprom-pulse">20-40 V</div>
-            {Array.from({ length: 8 }, (_, index) => <i key={index}></i>)}
-          </div>
-        </section>
-      </div>
+      <MosfetSimulator />
       <Footer>FPTiTI · Wizualizacje interaktywne · Fizyka Półprzewodników</Footer>
     </div>
   );
