@@ -79,7 +79,7 @@ export default function Zadania2() {
 
 <div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-green-dim/10 border-green-dim">
   <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">Odpowiedź</span>
-  <p className="mb-[11px]">Liczba modów propagujących się w tym światłowodzie wynosi **ok. 423**.</p>
+  <p className="mb-[11px]">Liczba modów propagujących się w tym światłowodzie wynosi <b>ok. 423</b>.</p>
 </div>
 </section>
 
@@ -131,17 +131,17 @@ export default function Zadania2() {
   <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">⚠️ Korekta jednostki w notatkach studentów</span>
   <p className="mb-[11px]">W studenckich opracowaniach odręcznych dla profilu skokowego pojawia się błędny zapis: <code>0,6 um (mikrometry) albo 600nm</code>. Jest to podwójny błąd:</p>
   <ol>
-    <li className="mb-1.5">Dyspersja międzymodowa opisuje **poszerzenie czasowe** impulsu, więc jej wynik musi być wyrażony w jednostkach czasu: **sekundach [s]**, a nie długości [m]. Odręczny zapis "nm/um" powstał przez mylne rozwinięcie skrótu "ns" (nanosekundy) jako "nm" (nanometry).</li>
-    <li className="mb-1.5">Dokładna wartość obliczeniowa to **667 ns** (lub \(0&#123;,&#125;67\ \mu\mathrm&#123;s&#125;\)), a nie 600.</li>
+    <li className="mb-1.5">Dyspersja międzymodowa opisuje <b>poszerzenie czasowe</b> impulsu, więc jej wynik musi być wyrażony w jednostkach czasu: <b>sekundach [s]</b>, a nie długości [m]. Odręczny zapis "nm/um" powstał przez mylne rozwinięcie skrótu "ns" (nanosekundy) jako "nm" (nanometry).</li>
+    <li className="mb-1.5">Dokładna wartość obliczeniowa to <b>667 ns</b> (lub \(0&#123;,&#125;67\ \mu\mathrm&#123;s&#125;\)), a nie 600.</li>
   </ol>
 </div>
 
 <div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-green-dim/10 border-green-dim">
   <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">Odpowiedź</span>
   <ul className="mb-3 ml-5 list-disc">
-    <li className="mb-1.5">Dla światłowodu wielomodowego o **profilu skokowym** poszerzenie impulsu wynosi **ok. 667 ns** (wersja uproszczona w notatkach: ok. 600-666 ns).</li>
-    <li className="mb-1.5">Dla światłowodu wielomodowego o **profilu gradientowym** poszerzenie wynosi **ok. 4,57 ns** (wersja uproszczona w notatkach: ok. 4 ns).</li>
-    <li className="mb-1.5">W przypadku światłowodu **jednomodowego** dyspersja międzymodowa nie występuje (\(\sigma_\tau = 0\)).</li>
+    <li className="mb-1.5">Dla światłowodu wielomodowego o <b>profilu skokowym</b> poszerzenie impulsu wynosi <b>ok. 667 ns</b> (wersja uproszczona w notatkach: ok. 600-666 ns).</li>
+    <li className="mb-1.5">Dla światłowodu wielomodowego o <b>profilu gradientowym</b> poszerzenie wynosi <b>ok. 4,57 ns</b> (wersja uproszczona w notatkach: ok. 4 ns).</li>
+    <li className="mb-1.5">W przypadku światłowodu <b>jednomodowego</b> dyspersja międzymodowa nie występuje (\(\sigma_\tau = 0\)).</li>
   </ul>
 </div>
 </section>
@@ -191,17 +191,17 @@ export default function Zadania2() {
   <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">Analiza dla poszczególnych rodzajów światłowodów</span>
   <h4>1. Światłowód jednomodowy (SMF)</h4>
   <ul className="mb-3 ml-5 list-disc">
-    <li className="mb-1.5"><b>Szerokość impulsu:</b> **Nie zmieni się**. W światłowodzie jednomodowym nie występuje dyspersja międzymodowa (propaguje się tylko jeden mod podstawowy \(HE_&#123;11&#125;\)). Zmiana profilu rdzenia nie wpływa na ten mechanizm.</li>
-    <li className="mb-1.5"><b>Liczba modów:</b> **Nie zmieni się**. Pozostaje równa 1, dopóki spełniony jest warunek jednomodowości (\(V &lt; 2&#123;,&#125;405\)).</li>
+    <li className="mb-1.5"><b>Szerokość impulsu:</b> <b>Nie zmieni się</b>. W światłowodzie jednomodowym nie występuje dyspersja międzymodowa (propaguje się tylko jeden mod podstawowy \(HE_&#123;11&#125;\)). Zmiana profilu rdzenia nie wpływa na ten mechanizm.</li>
+    <li className="mb-1.5"><b>Liczba modów:</b> <b>Nie zmieni się</b>. Pozostaje równa 1, dopóki spełniony jest warunek jednomodowości (\(V &lt; 2&#123;,&#125;405\)).</li>
   </ul>
 
   <h4>2. Światłowód wielomodowy (MMF)</h4>
   <ul className="mb-3 ml-5 list-disc">
-    <li className="mb-1.5"><b>Szerokość impulsu:</b> **Ulegnie drastycznemu zmniejszeniu** (impuls ulegnie skróceniu / mniejszemu poszerzeniu). Szerokość impulsu zmienia się z wartości:
+    <li className="mb-1.5"><b>Szerokość impulsu:</b> <b>Ulegnie drastycznemu zmniejszeniu</b> (impuls ulegnie skróceniu / mniejszemu poszerzeniu). Szerokość impulsu zmienia się z wartości:
       \[\sigma_&#123;\tau,\mathrm&#123;skok&#125;&#125; \approx \frac&#123;L&#125;&#123;c_1&#125; \Delta \quad \text&#123;na&#125; \quad \sigma_&#123;\tau,\mathrm&#123;grad&#125;&#125; \approx \frac&#123;L&#125;&#123;2c_1&#125; \Delta^2\]
       Ponieważ \(\Delta \ll 1\) (typowo ok. 1-2%), to \(\Delta^2 \ll \Delta\), co powoduje skrócenie czasu rozmycia o około dwa rzędy wielkości. Wynika to z faktu, że w profilu gradientowym mody biegnące dłuższą drogą (dalej od osi rdzenia) poruszają się w obszarze o mniejszym współczynniku załamania, czyli z większą prędkością, co wyrównuje czasy ich dotarcia.
     </li>
-    <li className="mb-1.5"><b>Liczba modów:</b> **Zmniejszy się o połowę**. Liczba modów zmienia się z:
+    <li className="mb-1.5"><b>Liczba modów:</b> <b>Zmniejszy się o połowę</b>. Liczba modów zmienia się z:
       \[M_&#123;\mathrm&#123;skok&#125;&#125; \approx \frac&#123;V^2&#125;&#123;2&#125; \quad \text&#123;na&#125; \quad M_&#123;\mathrm&#123;grad&#125;&#125; \approx \frac&#123;V^2&#125;&#123;4&#125;\]
     </li>
   </ul>
@@ -222,13 +222,13 @@ export default function Zadania2() {
   <tr>
     <td className="border border-line px-2.5 py-1.5 text-left"><b>Inna długość fali (\(\lambda\))</b></td>
     <td className="border border-line px-2.5 py-1.5 text-left"><b>Brak wpływu.</b> Długość fali nie wpływa bezpośrednio na dyspersję międzymodową (nie występuje we wzorze na \(\sigma_\tau\)). *Uwaga: Wpłynie to na dyspersję chromatyczną, ale nie międzymodową.*</td>
-    <td className="border border-line px-2.5 py-1.5 text-left"><b>Wpłynie znacząco.</b> Liczba modów zależy od parametru \(V\), w którym \(\lambda\) jest w mianowniku (\(V \propto 1/\lambda\)). Z tego wynika, że \(M \propto 1/\lambda^2\) — **wraz ze wzrostem długości fali liczba modów maleje kwadratowo**.</td>
+    <td className="border border-line px-2.5 py-1.5 text-left"><b>Wpłynie znacząco.</b> Liczba modów zależy od parametru \(V\), w którym \(\lambda\) jest w mianowniku (\(V \propto 1/\lambda\)). Z tego wynika, że \(M \propto 1/\lambda^2\) — <b>wraz ze wzrostem długości fali liczba modów maleje kwadratowo</b>.</td>
   </tr>
 </tbody></table>
 
 <div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-red/10 border-[#7d3a3a]">
   <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">⚠️ Pułapka Egzaminacyjna (DC)</span>
-  <p className="mb-[11px]">Trzeba wyraźnie napisać, że pojęcia profilu skokowego i gradientowego **dotyczą wyłącznie światłowodów wielomodowych**. W jednomodowym zmiana profilu nie zmienia szerokości impulsu (w kontekście dyspersji międzymodowej) ani liczby modów (zawsze wynosi 1).</p>
+  <p className="mb-[11px]">Trzeba wyraźnie napisać, że pojęcia profilu skokowego i gradientowego <b>dotyczą wyłącznie światłowodów wielomodowych</b>. W jednomodowym zmiana profilu nie zmienia szerokości impulsu (w kontekście dyspersji międzymodowej) ani liczby modów (zawsze wynosi 1).</p>
 </div>
 </section>
 
@@ -293,8 +293,8 @@ export default function Zadania2() {
 <div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-green-dim/10 border-green-dim">
   <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">Porównanie Wariantów</span>
   <ul className="mb-3 ml-5 list-disc">
-    <li className="mb-1.5"><b>Wariant z siatką Bragga:</b> Wymaga mocy lasera min. **+6 dBm (ok. 4 mW)**. Jest to bardzo ekonomiczny wariant pod względem budżetu mocy.</li>
-    <li className="mb-1.5"><b>Wariant z włóknem DCF:</b> Wymaga mocy lasera aż **+19,84 dBm (ok. 96,4 mW)** ze względu na tłumienie ponad 63 km kompensatora. Taka moc zbliża się do progu zjawisk nieliniowych (np. FWM), co w praktyce wymagałoby zastosowania wzmacniaczy optycznych (np. EDFA) w środku linii zamiast zwiększania mocy samego lasera nadawczego.</li>
+    <li className="mb-1.5"><b>Wariant z siatką Bragga:</b> Wymaga mocy lasera min. <b>+6 dBm (ok. 4 mW)</b>. Jest to bardzo ekonomiczny wariant pod względem budżetu mocy.</li>
+    <li className="mb-1.5"><b>Wariant z włóknem DCF:</b> Wymaga mocy lasera aż <b>+19,84 dBm (ok. 96,4 mW)</b> ze względu na tłumienie ponad 63 km kompensatora. Taka moc zbliża się do progu zjawisk nieliniowych (np. FWM), co w praktyce wymagałoby zastosowania wzmacniaczy optycznych (np. EDFA) w środku linii zamiast zwiększania mocy samego lasera nadawczego.</li>
   </ul>
 </div>
 </section>

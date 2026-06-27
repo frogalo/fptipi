@@ -225,14 +225,14 @@ export default function Zadania1() {
 
 <div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-red/10 border-[#7d3a3a]">
   <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">⚠️ Pułapka Egzaminacyjna (DC)</span>
-  <p className="mb-[11px]">Prowadząca bardzo pilnuje, aby poprawnie wskazać czynnik tłumiący dla danej częstotliwości. Dla częstotliwości <b>60 GHz</b> decydującym czynnikiem jest **rezonans absorpcyjny cząsteczek tlenu (\(O_2\))**. Nie wolno pomylić go z rezonansem pary wodnej (\(H_2O\)), który występuje przy innych częstotliwościach (np. ok. 22 GHz oraz 183 GHz).</p>
+  <p className="mb-[11px]">Prowadząca bardzo pilnuje, aby poprawnie wskazać czynnik tłumiący dla danej częstotliwości. Dla częstotliwości <b>60 GHz</b> decydującym czynnikiem jest <b>rezonans absorpcyjny cząsteczek tlenu (\(O_2\))</b>. Nie wolno pomylić go z rezonansem pary wodnej (\(H_2O\)), który występuje przy innych częstotliwościach (np. ok. 22 GHz oraz 183 GHz).</p>
 </div>
 
 <div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-green-dim/10 border-green-dim">
   <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">Podsumowanie i Wnioski</span>
   <ul className="mb-3 ml-5 list-disc">
-    <li className="mb-1.5">Na poziomie morza sygnał zostanie stłumiony o <b>18 dB</b>, co oznacza, że jego moc zmniejszy się **ok. 64 razy**.</li>
-    <li className="mb-1.5">Na wysokości 4 km n.p.m. sygnał zostanie stłumiony o zaledwie <b>3 dB</b>, co oznacza, że jego moc zmniejszy się **2 razy**.</li>
+    <li className="mb-1.5">Na poziomie morza sygnał zostanie stłumiony o <b>18 dB</b>, co oznacza, że jego moc zmniejszy się <b>ok. 64 razy</b>.</li>
+    <li className="mb-1.5">Na wysokości 4 km n.p.m. sygnał zostanie stłumiony o zaledwie <b>3 dB</b>, co oznacza, że jego moc zmniejszy się <b>2 razy</b>.</li>
     <li className="mb-1.5">Decydujący wpływ na tak wysokie tłumienie przy 60 GHz ma <b>absorpcja molekularna tlenu (\(O_2\))</b>. Różnica między przypadkiem (a) i (b) wynika z faktu, że wraz ze wzrostem wysokości gęstość powietrza (a więc i stężenie tlenu) drastycznie maleje.</li>
   </ul>
 </div>

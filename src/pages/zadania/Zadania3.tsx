@@ -97,8 +97,8 @@ export default function Zadania3() {
 <div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-red/10 border-[#7d3a3a]">
   <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">⚠️ Błędy w studenckich notatkach</span>
   <ol>
-    <li className="mb-1.5">W notatkach studentów jednostka nanosekundy [ns] z osi czasu została błędnie przepisana jako **milisekundy [ms]** (np. szerokość oka zapisano jako \(0&#123;,&#125;09\ \mathrm&#123;ms&#125;\)). Przy prędkościach rzędu Gb/s jednostki milisekundowe są fizycznie niemożliwe. Poprawna jednostka to **ns** (a dla czasów narastania **ps**).</li>
-    <li className="mb-1.5">Obliczenie współczynnika ekstynkcji w notatkach wynosiło błędnie: <code>5.5 / 0.1e-5 = 5500000</code>. Autor zapomniał doliczyć czynnik \(10^&#123;-5&#125;\) w liczniku. Poziom wysoki to \(5&#123;,&#125;5 \cdot 10^&#123;-5&#125;\), a nie \(5&#123;,&#125;5\). Ich stosunek to prawidłowo **55**.</li>
+    <li className="mb-1.5">W notatkach studentów jednostka nanosekundy [ns] z osi czasu została błędnie przepisana jako <b>milisekundy [ms]</b> (np. szerokość oka zapisano jako \(0&#123;,&#125;09\ \mathrm&#123;ms&#125;\)). Przy prędkościach rzędu Gb/s jednostki milisekundowe są fizycznie niemożliwe. Poprawna jednostka to <b>ns</b> (a dla czasów narastania <b>ps</b>).</li>
+    <li className="mb-1.5">Obliczenie współczynnika ekstynkcji w notatkach wynosiło błędnie: <code>5.5 / 0.1e-5 = 5500000</code>. Autor zapomniał doliczyć czynnik \(10^&#123;-5&#125;\) w liczniku. Poziom wysoki to \(5&#123;,&#125;5 \cdot 10^&#123;-5&#125;\), a nie \(5&#123;,&#125;5\). Ich stosunek to prawidłowo <b>55</b>.</li>
   </ol>
 </div>
 
@@ -106,9 +106,9 @@ export default function Zadania3() {
   <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">Podsumowanie Jakości Modulacji</span>
   <p className="mb-[11px]">Na podstawie wykresu oczkowego:</p>
   <ul className="mb-3 ml-5 list-disc">
-    <li className="mb-1.5">Wykres jest **szeroko otwarty** w poziomie (szerokość 90 ps przy czasie bitu 200 ps), co oznacza dobrą odporność na przesunięcia fazowe (jitter).</li>
-    <li className="mb-1.5">Rozwartość pionowa wynosi **69%**, a margines szumowy **52%**, co gwarantuje wysoką odporność na zakłócenia amplitudy (szumy).</li>
-    <li className="mb-1.5">Współczynnik ekstynkcji wynosi **55** (ok. 17,4 dB), co jest poprawną wartością dla nadajników laserowych (standardowo &gt; 10-20).</li>
+    <li className="mb-1.5">Wykres jest <b>szeroko otwarty</b> w poziomie (szerokość 90 ps przy czasie bitu 200 ps), co oznacza dobrą odporność na przesunięcia fazowe (jitter).</li>
+    <li className="mb-1.5">Rozwartość pionowa wynosi <b>69%</b>, a margines szumowy <b>52%</b>, co gwarantuje wysoką odporność na zakłócenia amplitudy (szumy).</li>
+    <li className="mb-1.5">Współczynnik ekstynkcji wynosi <b>55</b> (ok. 17,4 dB), co jest poprawną wartością dla nadajników laserowych (standardowo &gt; 10-20).</li>
   </ul>
 </div>
 </section>
@@ -140,7 +140,7 @@ export default function Zadania3() {
 
 <div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-green-dim/10 border-green-dim">
   <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">Odpowiedź</span>
-  <p className="mb-[11px]">Efektywność widmowa tego łącza wynosi **10 (bit/s)/Hz**.</p>
+  <p className="mb-[11px]">Efektywność widmowa tego łącza wynosi <b>10 (bit/s)/Hz</b>.</p>
 </div>
 </section>
 
@@ -168,7 +168,7 @@ export default function Zadania3() {
 
 <div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-green-dim/10 border-green-dim">
   <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">Odpowiedź</span>
-  <p className="mb-[11px]">Maksymalna szybkość transmisji w tym łączu wynosi **ok. 10 Gbit/s** (dokładnie 9,996 Gbit/s).</p>
+  <p className="mb-[11px]">Maksymalna szybkość transmisji w tym łączu wynosi <b>ok. 10 Gbit/s</b> (dokładnie 9,996 Gbit/s).</p>
 </div>
 </section>
 
@@ -213,9 +213,9 @@ export default function Zadania3() {
 <div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-green-dim/10 border-green-dim">
   <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">Analiza Łącza i Wpływ Mocy</span>
   <ul className="mb-3 ml-5 list-disc">
-    <li className="mb-1.5"><b>Zakres pracy:</b> Łącze obejmuje bardzo szeroki zakres widmowy (1480–1580 nm), co wykracza poza standardowe okno C (1530-1565 nm) i wchodzi w okno L oraz S. Jest to system **DWDM (Dense Wavelength Division Multiplexing)**.</li>
-    <li className="mb-1.5"><b>Dominujące zjawisko:</b> Z powodu bardzo małego odstępu międzykanałowego (\(50\ \mathrm&#123;GHz&#125;\)) oraz olbrzymiej liczby kanałów (ponad 250), dominującym zagrożeniem nieliniowym jest **mieszanie czterofalowe (FWM – Four Wave Mixing)**. Generuje ono fale pasożytnicze, które nakładają się na istniejące kanały i pogarszają stosunek sygnał/szum (OSNR).</li>
-    <li className="mb-1.5"><b>Ocena mocy laserów:</b> Moc laserów na poziomie **10 mW** (10 dBm) jest wartością optymalną — wystarczająco wysoką do pokonania tłumienia światłowodu, ale na tyle niską, że zjawiska nieliniowe (FWM) nie niszczą całkowicie transmisji.</li>
+    <li className="mb-1.5"><b>Zakres pracy:</b> Łącze obejmuje bardzo szeroki zakres widmowy (1480–1580 nm), co wykracza poza standardowe okno C (1530-1565 nm) i wchodzi w okno L oraz S. Jest to system <b>DWDM (Dense Wavelength Division Multiplexing)</b>.</li>
+    <li className="mb-1.5"><b>Dominujące zjawisko:</b> Z powodu bardzo małego odstępu międzykanałowego (\(50\ \mathrm&#123;GHz&#125;\)) oraz olbrzymiej liczby kanałów (ponad 250), dominującym zagrożeniem nieliniowym jest <b>mieszanie czterofalowe (FWM – Four Wave Mixing)</b>. Generuje ono fale pasożytnicze, które nakładają się na istniejące kanały i pogarszają stosunek sygnał/szum (OSNR).</li>
+    <li className="mb-1.5"><b>Ocena mocy laserów:</b> Moc laserów na poziomie <b>10 mW</b> (10 dBm) jest wartością optymalną — wystarczająco wysoką do pokonania tłumienia światłowodu, ale na tyle niską, że zjawiska nieliniowe (FWM) nie niszczą całkowicie transmisji.</li>
     <li className="mb-1.5"><b>Wpływ zmiany mocy:</b> Zwiększenie mocy laserów (np. do 20-50 mW) drastycznie zwiększyłoby wydajność generacji FWM, co doprowadziłoby do drastycznego wzrostu bitowej stopy błędów (BER) i zakłócenia pracy łącza. Z kolei spadek mocy ograniczyłby FWM, ale zmniejszyłby zasięg łącza ze względu na tłumienie (budżet mocy).</li>
   </ul>
 </div>
@@ -301,7 +301,7 @@ export default function Zadania3() {
 
 <div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-red/10 border-[#7d3a3a]">
   <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">⚠️ Pułapka Egzaminacyjna (DC)</span>
-  <p className="mb-[11px]">Prowadząca może zapytać, co w praktyce oznacza ta zależność. Ponieważ dla \(N = 8\) mamy już aż 224 fale pasożytnicze, w systemach o równej siatce kanałów (równych odstępach) produkty FWM trafiają **dokładnie w częstotliwości sygnałów użytecznych**. Blokuje to możliwość poprawnego odbioru. Rozwiązaniem jest stosowanie nierównomiernego odstępu między kanałami lub światłowodów o niezerowej dyspersji chromatycznej (np. G.655 / NZ-DSF), co niszczy warunek synchronizmu fazowego fali i gasi FWM.</p>
+  <p className="mb-[11px]">Prowadząca może zapytać, co w praktyce oznacza ta zależność. Ponieważ dla \(N = 8\) mamy już aż 224 fale pasożytnicze, w systemach o równej siatce kanałów (równych odstępach) produkty FWM trafiają <b>dokładnie w częstotliwości sygnałów użytecznych</b>. Blokuje to możliwość poprawnego odbioru. Rozwiązaniem jest stosowanie nierównomiernego odstępu między kanałami lub światłowodów o niezerowej dyspersji chromatycznej (np. G.655 / NZ-DSF), co niszczy warunek synchronizmu fazowego fali i gasi FWM.</p>
 </div>
 </section>
 
