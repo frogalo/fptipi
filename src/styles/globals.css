@@ -105,10 +105,16 @@
      Floating Navigation Menu
      ============================================================ */
   .floating-nav {
-    @apply fixed top-6 right-6 z-50 flex flex-col items-end gap-3;
+    @apply fixed top-6 right-6 z-50 flex flex-col items-end gap-3 pointer-events-none;
+    max-width: min(240px, calc(100vw - 3rem));
+  }
+  .floating-nav-controls,
+  .floating-nav-menu,
+  .floating-nav-sections {
+    @apply pointer-events-auto;
   }
   .floating-nav-toggle {
-    @apply w-[50px] h-[50px] rounded-full bg-amber text-ink border-none shadow-[0_4px_12px_rgba(244,165,42,0.4)] cursor-pointer flex justify-center items-center transition-all duration-300;
+    @apply w-[50px] h-[50px] rounded-full bg-amber text-ink border-none shadow-[0_4px_12px_rgba(244,165,42,0.4)] cursor-pointer flex justify-center items-center transition-all duration-300 no-underline shrink-0;
   }
   .floating-nav-toggle:hover {
     @apply scale-105 bg-amber-soft;
@@ -127,6 +133,28 @@
   }
   .floating-nav-link:hover {
     @apply bg-line text-amber;
+  }
+  .floating-nav-sections {
+    @apply hidden md:flex flex-col items-stretch gap-1 w-full max-h-[min(60vh,520px)] overflow-y-auto overflow-x-hidden pr-0.5;
+    scrollbar-width: thin;
+    scrollbar-color: var(--line) transparent;
+  }
+  .floating-nav-sections::-webkit-scrollbar {
+    width: 4px;
+  }
+  .floating-nav-sections::-webkit-scrollbar-thumb {
+    background: var(--line);
+    border-radius: 4px;
+  }
+  .floating-nav-section-link {
+    @apply block font-mono text-[11px] leading-snug text-muted no-underline border border-line/70 bg-panel/95 backdrop-blur-sm px-2.5 py-1.5 rounded-lg transition-colors truncate text-right;
+    max-width: 100%;
+  }
+  .floating-nav-section-link:hover {
+    @apply border-amber/50 text-amber-soft bg-ink2/80;
+  }
+  .floating-nav-section-link.active {
+    @apply border-amber text-amber bg-amber/10;
   }
 
   /* Search bar / overlay specific classes */

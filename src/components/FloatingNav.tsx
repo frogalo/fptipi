@@ -1,11 +1,23 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import SearchOverlay from './SearchOverlay';
+import { usePageSections, useActiveSection } from '@/hooks/usePageSections';
+
+const HomeIcon = () => (
+  <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+  </svg>
+);
 
 export default function FloatingNav() {
   const [isOpen, setIsOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
+  const { pathname } = useLocation();
+  const sections = usePageSections();
+  const sectionIds = useMemo(() => sections.map((s) => s.id), [sections]);
+  const activeSectionId = useActiveSection(sectionIds);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -17,12 +29,24 @@ export default function FloatingNav() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
+
   return (
     <>
       <div ref={navRef} className="floating-nav">
-        <div className="flex gap-2.5">
-          {/* Search Toggle Button */}
-          <button 
+        <div className="floating-nav-controls flex gap-2.5">
+          <Link
+            to="/"
+            className="floating-nav-toggle flex items-center justify-center"
+            aria-label="Spis treści"
+            title="Spis treści"
+          >
+            <HomeIcon />
+          </Link>
+
+          <button
             className="floating-nav-toggle flex items-center justify-center"
             onClick={() => setIsSearchOpen(true)}
             aria-label="Szukaj"
@@ -34,8 +58,7 @@ export default function FloatingNav() {
             </svg>
           </button>
 
-          {/* Menu Toggle Button */}
-          <button 
+          <button
             className={`floating-nav-toggle ${isOpen ? 'active' : ''}`}
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Menu"
@@ -48,17 +71,23 @@ export default function FloatingNav() {
             </svg>
           </button>
         </div>
-        
-        {/* Navigation Dropdown Menu */}
+
+        {sections.length > 0 && (
+          <nav className="floating-nav-sections" aria-label="Sekcje na tej stronie">
+            {sections.map((section) => (
+              <a
+                key={section.id}
+                href={`#${section.id}`}
+                className={`floating-nav-section-link${activeSectionId === section.id ? ' active' : ''}`}
+                title={section.fullLabel}
+              >
+                {section.label}
+              </a>
+            ))}
+          </nav>
+        )}
+
         <div className={`floating-nav-menu ${isOpen ? 'open' : ''}`}>
-          <Link to="/" className="floating-nav-link" onClick={() => setIsOpen(false)}>
-            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" strokeWidth="2" fill="none">
-              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-              <polyline points="9 22 9 12 15 12 15 22"></polyline>
-            </svg>
-            Spis Treści
-          </Link>
-          
           <Link to="/teoria/sciaga" className="floating-nav-link" onClick={() => setIsOpen(false)}>
             <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
               <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
@@ -106,11 +135,9 @@ export default function FloatingNav() {
         </div>
       </div>
 
-      {/* Floating Search Overlay Modal */}
       {isSearchOpen && (
         <SearchOverlay onClose={() => setIsSearchOpen(false)} />
       )}
     </>
   );
 }
-
