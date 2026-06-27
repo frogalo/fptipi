@@ -65,9 +65,53 @@ export default function Zadania2() {
 <ol>
   <li className="mb-1.5">Obliczamy kontrast współczynników załamania (aperturę numeryczną \(NA = \sqrt&#123;n_1^2 - n_2^2&#125;\)):
     \[NA = \sqrt&#123;1&#123;,&#125;46^2 - 1&#123;,&#125;44^2&#125; = \sqrt&#123;2&#123;,&#125;1316 - 2&#123;,&#125;0736&#125; = \sqrt&#123;0&#123;,&#125;058&#125; \approx 0&#123;,&#125;2408\]
+    
+    <div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-red/10 border-[#7d3a3a]">
+      <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-1">Pomoc Obliczeniowa</span>
+      <p className="mb-2 text-sm font-semibold">Szacowanie pierwiastka \(\sqrt&#123;0&#123;,&#125;058&#125;\) bez kalkulatora:</p>
+      <ul className="mb-1 ml-5 list-disc text-sm">
+        <li className="mb-1.5"><b>Zamiana na postać łatwiejszą do pierwiastkowania:</b>
+          \[\sqrt&#123;0&#123;,&#125;058&#125; = \sqrt&#123;\frac&#123;5&#123;,&#125;8&#125;&#123;100&#125;&#125; = \frac&#123;\sqrt&#123;5&#123;,&#125;8&#125;&#125;&#123;10&#125;\]
+        </li>
+        <li className="mb-1.5"><b>Szacowanie \(\sqrt&#123;5&#123;,&#125;8&#125;\) za pomocą bliskich kwadratów:</b>
+          Pamiętamy, że \(2^2 = 4\) oraz \(3^2 = 9\). Sprawdzamy wartości bliższe naszej liczbie:
+          <span className="block mt-1">
+            - \(2&#123;,&#125;4^2 = 5&#123;,&#125;76\) (bardzo blisko \(5&#123;,&#125;8\)!)
+          </span>
+          <span className="block mt-1">
+            - \(2&#123;,&#125;5^2 = 6&#123;,&#125;25\)
+          </span>
+          Przyjmujemy zatem \(\sqrt&#123;5&#123;,&#125;8&#125; \approx 2&#123;,&#125;41\).
+        </li>
+        <li className="mb-1.5"><b>Ostateczny wynik:</b>
+          \[\frac&#123;2&#123;,&#125;41&#125;&#123;10&#125; \approx 0&#123;,&#125;241\]
+        </li>
+      </ul>
+    </div>
   </li>
   <li className="mb-1.5">Obliczamy parametr \(V\):
     \[V = \frac&#123;2\pi \cdot 25 \cdot 10^&#123;-6&#125;&#125;&#123;1&#123;,&#125;3 \cdot 10^&#123;-6&#125;&#125; \cdot 0&#123;,&#125;2408 \approx 38&#123;,&#125;46 \cdot 0&#123;,&#125;2408 \approx 9&#123;,&#125;26\pi \approx 29&#123;,&#125;09\]
+    
+    <div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-red/10 border-[#7d3a3a]">
+      <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-1">Pomoc Obliczeniowa</span>
+      <p className="mb-2 text-sm font-semibold">Szacowanie dzielenia i mnożenia dla parametru \(V\):</p>
+      <ul className="mb-1 ml-5 list-disc text-sm">
+        <li className="mb-1.5"><b>Uproszczenie ułamka z potęgami:</b>
+          Skracamy \(10^&#123;-6&#125;\): \(\frac&#123;2\pi \cdot 25&#125;&#123;1&#123;,&#125;3&#125; = \frac&#123;50\pi&#125;&#123;1&#123;,&#125;3&#125; = \frac&#123;500&#125;&#123;13&#125;\pi\).
+        </li>
+        <li className="mb-1.5"><b>Szybkie dzielenie \(\frac&#123;500&#125;&#123;13&#125;\):</b>
+          Wiemy, że \(13 \cdot 40 = 520\). Odejmując \(13\) i resztę, łatwo zauważyć, że \(500 = 13 \cdot 38 + 6\). Daje to w przybliżeniu \(\approx 38&#123;,&#125;5\).
+        </li>
+        <li className="mb-1.5"><b>Mnożenie przez \(0&#123;,&#125;2408 \approx 0&#123;,&#125;24\):</b>
+          Mnożymy \(38&#123;,&#125;5 \cdot 0&#123;,&#125;24\):
+          \[38&#123;,&#125;5 \cdot 24 = (38&#123;,&#125;5 \cdot 2) \cdot 12 = 77 \cdot 12 = 924 \implies 38&#123;,&#125;5 \cdot 0&#123;,&#125;24 = 9&#123;,&#125;24\]
+          Dzięki temu szybko otrzymujemy współczynnik przed \(\pi\) równy ok. \(9&#123;,&#125;24\) (dokładna wartość to \(9&#123;,&#125;26\)).
+        </li>
+        <li className="mb-1.5"><b>Mnożenie przez \(\pi \approx 3&#123;,&#125;14\):</b>
+          \[9&#123;,&#125;24 \cdot 3&#123;,&#125;14 \approx 9&#123;,&#125;24 \cdot 3 + 9 \cdot 0&#123;,&#125;14 = 27&#123;,&#125;72 + 1&#123;,&#125;26 = 28&#123;,&#125;98 \approx 29\]
+        </li>
+      </ul>
+    </div>
   </li>
   <li className="mb-1.5">Podnosimy parametr \(V\) do kwadratu:
     \[V^2 \approx 29&#123;,&#125;09^2 \approx 846&#123;,&#125;2\]
@@ -104,8 +148,41 @@ export default function Zadania2() {
 <p className="mb-[11px]">Prędkość światła w rdzeniu światłowodu (\(c_1\)):</p>
 \[c_1 = \frac&#123;c&#125;&#123;n_1&#125; \approx \frac&#123;3 \cdot 10^8&#125;&#123;1&#123;,&#125;46&#125; \approx 2&#123;,&#125;055 \cdot 10^8\ \mathrm&#123;m/s&#125;\]
 
+<div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-red/10 border-[#7d3a3a]">
+  <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-1">Pomoc Obliczeniowa</span>
+  <p className="mb-2 text-sm font-semibold">Szacowanie prędkości światła w rdzeniu \(c_1\):</p>
+  <ul className="mb-1 ml-5 list-disc text-sm">
+    <li className="mb-1.5">
+      <b>Metoda w pamięci (ułamki zwykłe):</b> Zamieniamy na ułamek zwykły:
+      \[\frac&#123;3&#125;&#123;1&#123;,&#125;46&#125; = \frac&#123;300&#125;&#123;146&#125; = \frac&#123;150&#125;&#123;73&#125; = \frac&#123;146 + 4&#125;&#123;73&#125; = 2 + \frac&#123;4&#125;&#123;73&#125;\]
+      Zaokrąglając mianownik do łatwej liczby: \(\frac&#123;4&#125;&#123;73&#125; \approx \frac&#123;4&#125;&#123;72&#125; = \frac&#123;1&#125;&#123;18&#125;\). Ponieważ \(\frac&#123;1&#125;&#123;9&#125; = 0&#123;,&#125;111\dots\), to jego połowa \(\frac&#123;1&#125;&#123;18&#125; \approx 0&#123;,&#125;055\). Otrzymujemy szacunek \(2&#123;,&#125;055\), czyli:
+      \[c_1 \approx 2&#123;,&#125;055 \cdot 10^8\ \mathrm&#123;m/s&#125;\]
+    </li>
+  </ul>
+</div>
+
 <p className="mb-[11px]">Względna różnica współczynników załamania (\(\Delta\)):</p>
 \[\Delta = \frac&#123;n_1 - n_2&#125;&#123;n_1&#125; = \frac&#123;1&#123;,&#125;46 - 1&#123;,&#125;44&#125;&#123;1&#123;,&#125;46&#125; \approx 0&#123;,&#125;0137\]
+
+<div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-red/10 border-[#7d3a3a]">
+  <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-1">Pomoc Obliczeniowa</span>
+  <p className="mb-2 text-sm font-semibold">Szacowanie względnej różnicy współczynników załamania \(\Delta\):</p>
+  <ul className="mb-1 ml-5 list-disc text-sm">
+    <li className="mb-1.5">
+      <b>Szybkie dzielenie pisemne w pamięci (\(\frac&#123;1&#125;&#123;73&#125;\)):</b>
+      Zamieniamy na \(\frac&#123;2&#125;&#123;146&#125; = \frac&#123;1&#125;&#123;73&#125;\). Wykonujemy uproszczone dzielenie:
+      <span className="block mt-1">
+        - Liczba \(73\) mieści się w sto 1 raz (\(100 - 73 = 27\)) \(\to\) mamy \(0&#123;,&#125;01\).
+      </span>
+      <span className="block mt-1">
+        - W dopisanej reszcie \(270\) mieści się 3 razy (\(3 \cdot 73 = 219\); reszta \(51\)) \(\to\) mamy \(0&#123;,&#125;013\).
+      </span>
+      <span className="block mt-1">
+        - W dopisanej reszcie \(510\) mieści się niemal dokładnie 7 razy (\(7 \cdot 73 = 511\), co daje błąd zaledwie o 1!) \(\to\) ostatecznie \(\Delta \approx 0&#123;,&#125;0137\).
+      </span>
+    </li>
+  </ul>
+</div>
 
 <h4>1) Profil skokowy:</h4>
 <div className="bg-ink2 border border-line border-l-[3px] border-l-amber rounded-lg px-4 py-2.5 my-3 overflow-x-auto">
@@ -119,13 +196,34 @@ export default function Zadania2() {
   \[\sigma_\tau \approx \frac&#123;L&#125;&#123;2c_1&#125;\Delta^2 = \frac&#123;L (n_1 - n_2)^2&#125;&#123;2c \cdot n_1&#125;\]
 </div>
 
+<div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-red/10 border-[#7d3a3a]">
+  <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-1">Pomoc Obliczeniowa</span>
+  <p className="mb-2 text-sm font-semibold">Sprytne upraszczanie wzorów (klucz do sukcesu):</p>
+  <p className="text-sm mb-2">Nie podstawiaj zaokrąglonych wartości pośrednich (\(c_1\) i \(\Delta\)) do wzoru. Rozpisz wzór końcowy symbolicznie przed podstawieniem liczb:</p>
+  <ul className="mb-1 ml-5 list-disc text-sm">
+    <li className="mb-1.5">
+      <b>Dla profilu skokowego:</b>
+      \[\sigma_\tau \approx \frac&#123;L&#125;&#123;c_1&#125;\Delta = \frac&#123;L&#125;&#123;\frac&#123;c&#125;&#123;n_1&#125;&#125; \cdot \frac&#123;n_1 - n_2&#125;&#123;n_1&#125; = \frac&#123;L(n_1 - n_2)&#125;&#123;c&#125;\]
+      Współczynnik \(n_1\) skraca się całkowicie! Dzielenie przez \(c = 3 \cdot 10^8\) staje się trywialne.
+    </li>
+  </ul>
+</div>
+
 <h3 className="text-base text-amber-soft font-semibold mt-5 mb-2 font-mono tracking-wide">Obliczenia krok po kroku:</h3>
 
 <h4>Dla profilu skokowego:</h4>
-\[\sigma_\tau \approx \frac&#123;10\ 000 \cdot (1&#123;,&#125;46 - 1&#123;,&#125;44)&#125;&#123;3 \cdot 10^8&#125; = \frac&#123;10\ 000 \cdot 0&#123;,&#125;02&#125;&#123;3 \cdot 10^8&#125; = \frac&#123;200&#125;&#123;3 \cdot 10^8&#125; \approx 6&#123;,&#125;67 \cdot 10^&#123;-7&#125;\ \mathrm&#123;s&#125; = 667\ \mathrm&#123;ns&#125;\]
+<h5 className="text-[14px] text-amber-soft font-semibold mt-2 mb-1">Sposób 1 (uproszczony – zalecany na egzamin):</h5>
+\[\sigma_\tau \approx \frac&#123;L(n_1 - n_2)&#125;&#123;c&#125; = \frac&#123;10\ 000 \cdot (1&#123;,&#125;46 - 1&#123;,&#125;44)&#125;&#123;3 \cdot 10^8&#125; = \frac&#123;10\ 000 \cdot 0&#123;,&#125;02&#125;&#123;3 \cdot 10^8&#125; = \frac&#123;200&#125;&#123;3 \cdot 10^8&#125; \approx 6&#123;,&#125;67 \cdot 10^&#123;-7&#125;\ \mathrm&#123;s&#125; = 667\ \mathrm&#123;ns&#125;\]
+
+<h5 className="text-[14px] text-amber-soft font-semibold mt-3 mb-1">Sposób 2 (klasyczny – przez wartości pośrednie \(c_1\) i \(\Delta\)):</h5>
+\[\sigma_\tau \approx \frac&#123;L&#125;&#123;c_1&#125;\Delta \approx \frac&#123;10\ 000&#125;&#123;2&#123;,&#125;055 \cdot 10^8&#125; \cdot 0&#123;,&#125;0137 \approx 4&#123;,&#125;866 \cdot 10^&#123;-5&#125; \cdot 0&#123;,&#125;0137 \approx 6&#123;,&#125;67 \cdot 10^&#123;-7&#125;\ \mathrm&#123;s&#125; = 667\ \mathrm&#123;ns&#125;\]
 
 <h4>Dla profilu gradientowego:</h4>
-\[\sigma_\tau \approx \frac&#123;10\ 000 \cdot (1&#123;,&#125;46 - 1&#123;,&#125;44)^2&#125;&#123;2 \cdot 3 \cdot 10^8 \cdot 1&#123;,&#125;46&#125; = \frac&#123;10\ 000 \cdot 0&#123;,&#125;0004&#125;&#123;8&#123;,&#125;76 \cdot 10^8&#125; = \frac&#123;4&#125;&#123;8&#123;,&#125;76 \cdot 10^8&#125; \approx 4&#123;,&#125;57 \cdot 10^&#123;-9&#125;\ \mathrm&#123;s&#125; = 4&#123;,&#125;57\ \mathrm&#123;ns&#125;\]
+<h5 className="text-[14px] text-amber-soft font-semibold mt-2 mb-1">Sposób 1 (uproszczony – zalecany na egzamin):</h5>
+\[\sigma_\tau \approx \frac&#123;L(n_1 - n_2)^2&#125;&#123;2c \cdot n_1&#125; = \frac&#123;10\ 000 \cdot (1&#123;,&#125;46 - 1&#123;,&#125;44)^2&#125;&#123;2 \cdot 3 \cdot 10^8 \cdot 1&#123;,&#125;46&#125; = \frac&#123;10\ 000 \cdot 0&#123;,&#125;0004&#125;&#123;8&#123;,&#125;76 \cdot 10^8&#125; \approx 4&#123;,&#125;57 \cdot 10^&#123;-9&#125;\ \mathrm&#123;s&#125; = 4&#123;,&#125;57\ \mathrm&#123;ns&#125;\]
+
+<h5 className="text-[14px] text-amber-soft font-semibold mt-3 mb-1">Sposób 2 (klasyczny – przez wartości pośrednie \(c_1\) i \(\Delta\)):</h5>
+\[\sigma_\tau \approx \frac&#123;L&#125;&#123;2c_1&#125;\Delta^2 \approx \frac&#123;10\ 000&#125;&#123;2 \cdot 2&#123;,&#125;055 \cdot 10^8&#125; \cdot (0&#123;,&#125;0137)^2 \approx 2&#123;,&#125;433 \cdot 10^&#123;-5&#125; \cdot 0&#123;,&#125;0001877 \approx 4&#123;,&#125;57 \cdot 10^&#123;-9&#125;\ \mathrm&#123;s&#125; = 4&#123;,&#125;57\ \mathrm&#123;ns&#125;\]
 
 <div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-red/10 border-[#7d3a3a]">
   <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">⚠️ Korekta jednostki w notatkach studentów</span>
@@ -139,8 +237,8 @@ export default function Zadania2() {
 <div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-green-dim/10 border-green-dim">
   <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">Odpowiedź</span>
   <ul className="mb-3 ml-5 list-disc">
-    <li className="mb-1.5">Dla światłowodu wielomodowego o <b>profilu skokowym</b> poszerzenie impulsu wynosi <b>ok. 667 ns</b> (wersja uproszczona w notatkach: ok. 600-666 ns).</li>
-    <li className="mb-1.5">Dla światłowodu wielomodowego o <b>profilu gradientowym</b> poszerzenie wynosi <b>ok. 4,57 ns</b> (wersja uproszczona w notatkach: ok. 4 ns).</li>
+    <li className="mb-1.5">Dla światłowodu wielomodowego o <b>profilu skokowym</b> poszerzenie impulsu wynosi <b>ok. 667 ns</b> </li>
+    <li className="mb-1.5">Dla światłowodu wielomodowego o <b>profilu gradientowym</b> poszerzenie wynosi <b>ok. 4,57 ns</b> .</li>
     <li className="mb-1.5">W przypadku światłowodu <b>jednomodowego</b> dyspersja międzymodowa nie występuje (\(\sigma_\tau = 0\)).</li>
   </ul>
 </div>

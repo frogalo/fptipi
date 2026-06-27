@@ -70,6 +70,25 @@ export default function Zadania1() {
   </li>
 </ol>
 
+<div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-red/10 border-[#7d3a3a]">
+  <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">Pomoc Obliczeniowa</span>
+  <p className="mb-[11px]">Jak szybko oszacować \(\sqrt&#123;12\ 742\ 000&#125;\) na egzaminie bez użycia kalkulatora naukowego?</p>
+  <ol className="mb-3 ml-5 list-decimal text-sm">
+    <li className="mb-1.5"><b>Wyciągamy potęgę 10 przed pierwiastek:</b>
+      \[\sqrt&#123;12\ 742\ 000&#125; = \sqrt&#123;12&#123;,&#125;742 \cdot 10^6&#125; = \sqrt&#123;12&#123;,&#125;742&#125; \cdot 10^3 = \sqrt&#123;12&#123;,&#125;742&#125; \cdot 1000\]
+    </li>
+    <li className="mb-1.5"><b>Szacujemy pierwiastek z liczby \(12&#123;,&#125;742\):</b>
+      <span className="block mt-1">
+        Pamiętając podstawowe kwadraty: \(3&#123;,&#125;5^2 = 12&#123;,&#125;25\) oraz \(3&#123;,&#125;6^2 = 12&#123;,&#125;96\). Liczba \(12&#123;,&#125;742\) leży wewnątrz tego przedziału, nieco bliżej \(12&#123;,&#125;96\). Szacujemy pierwiastek jako ok. \(3&#123;,&#125;57\).
+      </span>
+    </li>
+    <li className="mb-1.5"><b>Mnożymy przez 1000:</b>
+      \[3&#123;,&#125;57 \cdot 1000 = 3570\]
+      Otrzymany wynik jest niemal identyczny z wartością dokładną (\(3569&#123;,&#125;59\)) – błąd wynosi mniej niż 0,01%, co w zupełności wystarcza do rozwiązania zadania.
+    </li>
+  </ol>
+</div>
+
 <div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-green-dim/10 border-green-dim">
   <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">Odpowiedź i Wnioski</span>
   <p className="mb-[11px]">Graniczna odległość bezpośredniej widoczności (horyzont radiowy) dla tych anten wynosi <b>ok. 43 000 m (42,8 km)</b>.</p>
