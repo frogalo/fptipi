@@ -36,19 +36,55 @@ const MosfetSimulator = () => {
 
   return (
     <>
+      <style>{`
+        @keyframes mosfetElectronFlow {
+          0%   { transform: translate(320px, 152px); opacity: 0; }
+          10%  { opacity: 1; }
+          90%  { opacity: 1; }
+          100% { transform: translate(480px, 152px); opacity: 0; }
+        }
+        .mosfet-electron {
+          fill: var(--color-red);
+          animation: mosfetElectronFlow linear infinite;
+        }
+      `}</style>
       <div className="diagram-title" style={{ marginTop: '3rem' }}>5. Tranzystor MOSFET (Kanał N) – Symulator</div>
       <p className="viz-intro mb-[11px]" style={{ marginBottom: '1rem', fontSize: '0.9rem' }}>
         Przesuwaj suwak <strong>U<sub>GS</sub></strong> aby utworzyć kanał (minimum {UT}V). Następnie zwiększaj <strong>U<sub>DS</sub></strong>, aby wywołać przepływ prądu w obwodzie i zaświecić diodę LED.
       </p>
 
-      <div className="mosfet-controls">
-        <label htmlFor="ugs-slider">Napięcie U<sub>GS</sub>: <span>{ugs.toFixed(1)}</span> V</label>
-        <input type="range" id="ugs-slider" min="0" max="5" step="0.1" value={ugs} onChange={(e) => setUgs(Number(e.target.value))} />
-        <label htmlFor="uds-slider" style={{ marginTop: '8px' }}>Napięcie U<sub>DS</sub>: <span>{uds.toFixed(1)}</span> V</label>
-        <input type="range" id="uds-slider" min="0" max="5" step="0.1" value={uds} onChange={(e) => setUds(Number(e.target.value))} />
+      {/* Control panel using Tailwind CSS styled classes to match NPN style */}
+      <div className="border border-line bg-panel rounded-[14px] px-4 py-3 mb-3">
+        <label htmlFor="ugs-slider" className="block font-mono text-[13px] text-amber mb-2">
+          Napięcie U<sub>GS</sub>: <span className="font-semibold text-white">{ugs.toFixed(1)}</span> V
+        </label>
+        <input 
+          type="range" 
+          id="ugs-slider" 
+          min="0" 
+          max="5" 
+          step="0.1" 
+          value={ugs} 
+          onChange={(e) => setUgs(Number(e.target.value))} 
+          className="w-full accent-amber"
+        />
+        <label htmlFor="uds-slider" className="block font-mono text-[13px] text-amber mb-2 mt-4">
+          Napięcie U<sub>DS</sub>: <span className="font-semibold text-white">{uds.toFixed(1)}</span> V
+        </label>
+        <input 
+          type="range" 
+          id="uds-slider" 
+          min="0" 
+          max="5" 
+          step="0.1" 
+          value={uds} 
+          onChange={(e) => setUds(Number(e.target.value))} 
+          className="w-full accent-amber"
+        />
       </div>
 
-      <div className="mosfet-svg-wrapper">
+      {/* SVG Container using Tailwind CSS styled classes */}
+      <div className="w-full overflow-visible border border-line bg-panel rounded-[14px] p-2">
         <svg viewBox="0 0 800 350" width="100%" height="100%">
           {/* Gate wires */}
           <polyline points="320,125 150,125 150,220" fill="none" stroke="var(--color-muted)" strokeWidth="3" />
@@ -86,7 +122,7 @@ const MosfetSimulator = () => {
             </radialGradient>
           </defs>
           <g transform="translate(650, 190)">
-            {/* Outer halo – large soft glow */}
+            {/* Outer halo */}
             {id > 0 && (
               <circle
                 cx="0" cy="0"
@@ -95,7 +131,7 @@ const MosfetSimulator = () => {
                 style={{ transition: 'all 0.25s ease' }}
               />
             )}
-            {/* Bloom layer – blurred amber circle */}
+            {/* Bloom layer */}
             {id > 0 && (
               <circle
                 cx="0" cy="0" r="20"
@@ -181,14 +217,14 @@ const MosfetSimulator = () => {
         </svg>
       </div>
 
-      {/* Status panel */}
-      <div className="mosfet-status-panel">
-        <strong>Stan pracy: {mode}</strong> <br/>
+      {/* Status panel using Tailwind CSS styled classes */}
+      <div className="border border-line bg-panel rounded-[14px] px-4 py-3 mt-3 text-muted text-[14.5px] leading-relaxed">
+        <strong className="block font-mono text-[13px] text-amber mb-2">Stan pracy: {mode}</strong>
         {ugs < UT && "Napięcie bramki jest niższe niż napięcie progowe (1V). Brak warstwy inwersyjnej (kanału). Tranzystor jest zatkany i obwód jest otwarty."}
         {ugs >= UT && uds === 0 && "Pole elektryczne z bramki przyciągnęło elektrony i utworzyło kanał przewodzący. Brak napięcia drenu sprawia jednak, że prąd nie płynie."}
         {ugs >= UT && uds > 0 && uds < vOv && "Kanał istnieje, a napięcie UDS wymusza przepływ elektronów. Prąd rośnie proporcjonalnie do wzrostu napięcia drenu. Dioda świeci."}
         {ugs >= UT && uds > 0 && uds >= vOv && "Nastąpiło przewężenie (pinch-off) kanału przy drenie z powodu lokalnego spadku różnicy potencjałów. Prąd drenu nasycił się i osiągnął swoją maksymalną wartość dla danego napięcia bramki."}
-        <div style={{ marginTop: '8px' }}>
+        <div className="mt-2 font-mono text-[12px] text-amber">
           Wyliczony prąd I<sub>D</sub>: ~{(id * 10).toFixed(1)} mA
         </div>
       </div>
