@@ -33,12 +33,34 @@ function saveProgress(progress: UserProgress) {
   }
 }
 
+/** Deterministic Mulberry32 Fisher-Yates shuffle to keep quiz order stable across renders */
+function shuffleArray<T>(array: T[], seed: number): T[] {
+  if (!seed) return array;
+  const result = [...array];
+  let s = seed;
+  const random = () => {
+    s |= 0;
+    s = (s + 0x6d2b79f5) | 0;
+    let t = Math.imul(s ^ (s >>> 15), 1 | s);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+
+  for (let i = result.length - 1; i > 0; i--) {
+    const j = Math.floor(random() * (i + 1));
+    [result[i], result[j]] = [result[j], result[i]];
+  }
+  return result;
+}
+
 export default function Nauka() {
   const [mode, setMode] = useState<Mode>('flashcards');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [onlyTier1, setOnlyTier1] = useState<boolean>(false);
   const [onlyReview, setOnlyReview] = useState<boolean>(false);
+  const [activeReviewIds, setActiveReviewIds] = useState<string[]>(() => loadProgress().reviewIds);
   const [isShuffled, setIsShuffled] = useState<boolean>(false);
+  const [shuffleSeed, setShuffleSeed] = useState<number>(0);
   const [searchQuery, setSearchQuery] = useState<string>('');
 
   const [progress, setProgress] = useState<UserProgress>(loadProgress);
@@ -64,7 +86,7 @@ export default function Nauka() {
     typesetMathJax();
   }, []);
 
-  // Filtered list
+  // Filtered list with deterministic shuffle that never scrambles mid-question
   const filteredQuestions = useMemo(() => {
     let list = [...QUIZ_QUESTIONS];
 
@@ -75,7 +97,7 @@ export default function Nauka() {
       list = list.filter((q) => q.tier === 'tier1');
     }
     if (onlyReview) {
-      list = list.filter((q) => progress.reviewIds.includes(q.id));
+      list = list.filter((q) => activeReviewIds.includes(q.id));
     }
     if (searchQuery.trim() && mode === 'browse') {
       const q = searchQuery.toLowerCase();
@@ -87,15 +109,14 @@ export default function Nauka() {
           item.options.some((opt) => opt.toLowerCase().includes(q))
       );
     }
-    if (isShuffled) {
-      // Deterministic shuffle using id seed or random copy
-      list = [...list].sort(() => 0.5 - Math.random());
+    if (isShuffled && shuffleSeed) {
+      list = shuffleArray(list, shuffleSeed);
     }
 
     return list;
-  }, [selectedCategory, onlyTier1, onlyReview, isShuffled, searchQuery, mode, progress.reviewIds]);
+  }, [selectedCategory, onlyTier1, onlyReview, activeReviewIds, isShuffled, shuffleSeed, searchQuery, mode]);
 
-  // Reset indices when filtered list changes
+  // Reset indices when filtered list configuration changes
   useEffect(() => {
     setCardIndex(0);
     setIsFlipped(false);
@@ -106,12 +127,45 @@ export default function Nauka() {
     setIs5050Used(false);
     setHintLevel(0);
     setQuizFinished(false);
-  }, [selectedCategory, onlyTier1, onlyReview, isShuffled]);
+  }, [selectedCategory, onlyTier1, onlyReview, isShuffled, shuffleSeed]);
 
   // Typeset math when changing card or quiz question
   useEffect(() => {
     triggerMathJax();
   }, [cardIndex, isFlipped, quizIndex, mode, isAnswerSubmitted, filteredQuestions, triggerMathJax]);
+
+  const toggleShuffle = () => {
+    setIsShuffled((prev) => {
+      const next = !prev;
+      setShuffleSeed(next ? Math.floor(Math.random() * 1000000) + 1 : 0);
+      return next;
+    });
+  };
+
+  const reshuffle = () => {
+    if (!isShuffled) {
+      setIsShuffled(true);
+    }
+    setShuffleSeed(Math.floor(Math.random() * 1000000) + 1);
+    setQuizIndex(0);
+    setCardIndex(0);
+    setSelectedOption(null);
+    setIsAnswerSubmitted(false);
+    setEliminatedOptions([]);
+    setIs5050Used(false);
+    setHintLevel(0);
+    setQuizFinished(false);
+  };
+
+  const toggleOnlyReview = () => {
+    setOnlyReview((prev) => {
+      const next = !prev;
+      if (next) {
+        setActiveReviewIds(progress.reviewIds);
+      }
+      return next;
+    });
+  };
 
   // Current items
   const currentCard = filteredQuestions[cardIndex];
@@ -411,8 +465,8 @@ export default function Nauka() {
             </button>
 
             <button
-              onClick={() => setOnlyReview((prev) => !prev)}
-              className={`px-3 py-1.5 rounded-lg text-[12px] font-mono transition-all border flex items-center gap-1.5 ${
+              onClick={toggleOnlyReview}
+              className={`px-3 py-1.5 rounded-lg text-[12px] font-mono transition-all border flex items-center gap-1.5 cursor-pointer ${
                 onlyReview
                   ? 'bg-red/20 text-red border-red/50 font-bold'
                   : 'bg-ink2 border-line text-muted hover:text-txt'
@@ -421,17 +475,28 @@ export default function Nauka() {
               Do powtórki ({reviewCount})
             </button>
 
-            <button
-              onClick={() => setIsShuffled((prev) => !prev)}
-              className={`px-3 py-1.5 rounded-lg text-[12px] font-mono transition-all border flex items-center gap-1.5 ${
-                isShuffled
-                  ? 'bg-blue/20 text-blue border-blue/50 font-bold'
-                  : 'bg-ink2 border-line text-muted hover:text-txt'
-              }`}
-              title="Losowa kolejność pytań"
-            >
-              Losowo
-            </button>
+            <div className="flex items-center gap-1">
+              <button
+                onClick={toggleShuffle}
+                className={`px-3 py-1.5 rounded-lg text-[12px] font-mono transition-all border flex items-center gap-1.5 cursor-pointer ${
+                  isShuffled
+                    ? 'bg-blue/20 text-blue border-blue/50 font-bold'
+                    : 'bg-ink2 border-line text-muted hover:text-txt'
+                }`}
+                title="Włącz lub wyłącz losową kolejność pytań"
+              >
+                {isShuffled ? 'Losowo (aktywne)' : 'Losowo'}
+              </button>
+              {isShuffled && (
+                <button
+                  onClick={reshuffle}
+                  className="px-2 py-1.5 rounded-lg text-[11px] font-mono transition-all border bg-blue/15 text-blue border-blue/40 hover:bg-blue/25 cursor-pointer"
+                  title="Przetasuj pytania ponownie"
+                >
+                  Przetasuj
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </div>
