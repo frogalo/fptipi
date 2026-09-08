@@ -304,7 +304,11 @@ export default function Teoria1() {
   number="5"
   title="Omów wpływ czynników atmosferycznych i innych „zanieczyszczeń” na propagację fali."
   source="str. 18–19"
-  examBadge={{ label: "2018 Lato 1 A", route: "/egzaminy?year=2018&term=L1&group=A#task-1" }}
+  examBadges={[
+    { label: "2026 Lato 2 A (Zad. 1b)", route: "/egzaminy?year=2026&term=L2&group=A#task-1" },
+    { label: "2026 Lato 2 B (Zad. 1b)", route: "/egzaminy?year=2026&term=L2&group=B#task-1" },
+    { label: "2018 Lato 1 A", route: "/egzaminy?year=2018&term=L1&group=A#task-1" }
+  ]}
 >
 
 <p className="mb-[11px]">Propagacja fal w troposferze jest <b>mocno uzależniona od zjawisk meteorologicznych</b>. Fale radiowe w zależności od ich występowania mogą być <b>tłumione lub/i rozpraszane</b>. Na skalę zjawiska w znacznym stopniu wpływa <b>długość fali</b>. Poza tym w obszarze propagacji mogą zachodzić zjawiska pasożytnicze — w tym przypadku dominującym jest <b>zjawisko refrakcji</b>.</p>
@@ -413,7 +417,7 @@ export default function Teoria1() {
 </BookAddition>
 </QuestionSection>
 
-<Footer>FPTiTI · odpowiedzi cz. 1/5 (pytania 1–6) · źródło: A. Szymańska, „Fizyczne podstawy transmisji i przechowywania informacji”, luty 2026 · egzamin 13.06</Footer>
+<Footer>Odpowiedzi cz. 1/5 (pytania 1–6) · Fala elektromagnetyczna i propagacja</Footer>
 </div>
     
 

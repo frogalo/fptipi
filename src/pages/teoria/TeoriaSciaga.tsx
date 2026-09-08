@@ -26,7 +26,7 @@ export default function TeoriaSciaga() {
 <header className="mb-6 border border-line bg-linear-to-br from-panel to-ink2 rounded-[14px] px-6 py-[22px]">
   <div className="font-mono text-[12px] tracking-[0.18em] uppercase text-amber">FPTiTI · ŚCIĄGA — keypointy wszystkich 28 pytań</div>
   <h1 className="text-[29px] font-semibold mt-1.5 mb-1">Powtórka błyskawiczna przed egzaminem</h1>
-  <div className="text-muted text-[15.5px]">Skondensowane z wzorcowe odpowiedzi cz. 1–5 · wg podręcznika A. Szymańskiej · egzamin 13.06</div>
+  <div className="text-muted text-[15.5px]">Skondensowane z wzorcowe odpowiedzi cz. 1–5 · wg podręcznika A. Szymańskiej </div>
   <div className="flex gap-[14px] flex-wrap mt-2 font-mono text-[11.5px] text-muted">
     <span><span className="inline-block w-[18px] text-center font-bold text-ink bg-green rounded-[4px] mr-1 text-[11px] px-1 py-0.5">N</span> tło zielone = TIER 1 (pewniak — musi siedzieć na 100%)</span>
     <span><span className="inline-block w-[18px] text-center font-bold text-ink bg-amber rounded-[4px] mr-1 text-[11px] px-1 py-0.5">N</span> tło żółte = pozostałe pytania</span>
@@ -34,11 +34,135 @@ export default function TeoriaSciaga() {
 </header>
 
 
+<div className="my-[26px] mb-2.5 font-mono text-[13px] tracking-[0.16em] uppercase text-amber border-b border-line pb-1.5">Blok 0 · Wstęp: wielkości, jednostki i reguły kciuka (str. 1–3)</div>
+<div className="grid grid-cols-1 md:grid-cols-2 gap-[14px]">
+
+<div className="border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
+  <div className="flex items-baseline gap-2 mb-2"><span className="t1 font-mono font-bold text-ink bg-green rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">0</span><span className="font-semibold text-[15.5px] leading-tight text-txt">Fundamentalna intuicja fizyczna i operatory</span></div>
+  <div className="space-y-2 mb-3 text-txt text-[15px] leading-relaxed">
+    <div>• <b>Złota zasada polowa</b>: <b>Natężenie pola ({String.raw`\(\vec{E}, \vec{H}\)`}) to ŹRÓDŁO</b>, a <b>Indukcja pola ({String.raw`\(\vec{D}, \vec{B}\)`}) to EFEKT</b> (reakcja danego ośrodka materialnego na pole).</div>
+    <div>• <b>Brak monopoli magnetycznych</b>: magnes ZAWSZE posiada parę biegunów N i S; pole {String.raw`\(\vec{B}\)`} jest bezźródłowe ({String.raw`\(\nabla\cdot\vec{B}=0\)`}), a jego linie są zawsze zamknięte.</div>
+    <div>• <b>Sprzężenie falowe EM</b>: zmieniające się pole elektryczne tworzy wirowe pole magnetyczne; zmieniające się pole magnetyczne tworzy wirowe pole elektryczne.</div>
+    <div>• <b>Operator rotacji {String.raw`\(\nabla\times\)`}</b>: opisuje, <b>jak bardzo pole wiruje</b> wokół danego punktu przestrzeni.</div>
+    <div>• <b>Operator dywergencji {String.raw`\(\nabla\cdot\)`}</b>: opisuje, <b>jak bardzo pole rozbiega się</b> z danego punktu: dodatnia ({String.raw`\(>0\)`}) = źródło (wypływa), ujemna ({String.raw`\(<0\)`}) = ujście (wpływa), zerowa ({String.raw`\(=0\)`}) = pole bezźródłowe.</div>
+    <div>• <b>Tłumienie fali</b> = <b>absorpcja</b> (cząsteczki ośrodka pochłaniają energię fali) + <b>rozproszenie</b> (cząsteczki rozpraszają falę w innych kierunkach).</div>
+    <div>• <b>Antena izotropowa</b>: hipotetyczne źródło punktowe promieniujące idealnie jednakowo we wszystkich kierunkach przestrzeni ({String.raw`\(G=1,\ 0\,\mathrm{dBi}\)`}).</div>
+  </div>
+</div>
+
+<div className="border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
+  <div className="flex items-baseline gap-2 mb-2"><span className="t1 font-mono font-bold text-ink bg-green rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">★</span><span className="font-semibold text-[15.5px] leading-tight text-txt">Wartości do zapamiętania przed wejściem na salę</span></div>
+  <div className="grid grid-cols-2 gap-2 mb-3 font-mono text-[13.5px]">
+    <div className="p-2.5 rounded-lg bg-ink2 border border-line">
+      <div className="text-amber font-bold text-[14px]">+3 dB → ×2</div>
+      <div className="text-muted text-[12px] mt-0.5">moc rośnie dwukrotnie</div>
+    </div>
+    <div className="p-2.5 rounded-lg bg-ink2 border border-line">
+      <div className="text-amber font-bold text-[14px]">-3 dB → ÷2</div>
+      <div className="text-muted text-[12px] mt-0.5">moc spada o połowę</div>
+    </div>
+    <div className="p-2.5 rounded-lg bg-ink2 border border-line">
+      <div className="text-green font-bold text-[14px]">0 dBm = 1 mW</div>
+      <div className="text-muted text-[12px] mt-0.5">poziom odniesienia mocy</div>
+    </div>
+    <div className="p-2.5 rounded-lg bg-ink2 border border-line">
+      <div className="text-green font-bold text-[14px]">10 dBm = 10 mW</div>
+      <div className="text-muted text-[12px] mt-0.5">+10 dB to 10× wzrost mocy</div>
+    </div>
+    <div className="p-2.5 rounded-lg bg-ink2 border border-line">
+      <div className="text-txt font-bold text-[13px]">c = 3·10⁸ m/s</div>
+      <div className="text-muted text-[12px] mt-0.5">prędkość światła w próżni</div>
+    </div>
+    <div className="p-2.5 rounded-lg bg-ink2 border border-line">
+      <div className="text-txt font-bold text-[13px]">R_Z = 6400 km</div>
+      <div className="text-muted text-[12px] mt-0.5">promień Ziemi = 6,4·10⁶ m</div>
+    </div>
+    <div className="p-2.5 rounded-lg bg-ink2 border border-line">
+      <div className="text-txt font-bold text-[13px]">π ≈ 3,14</div>
+      <div className="text-muted text-[12px] mt-0.5">stała koła</div>
+    </div>
+    <div className="p-2.5 rounded-lg bg-ink2 border border-line">
+      <div className="text-txt font-bold text-[13px]">e ≈ 2,72</div>
+      <div className="text-muted text-[12px] mt-0.5">podstawa logarytmu naturalnego</div>
+    </div>
+  </div>
+</div>
+
+<div className="border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
+  <div className="flex items-baseline gap-2 mb-2"><span className="t1 font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">SI</span><span className="font-semibold text-[15.5px] leading-tight text-txt">Tabela oznaczeń i jednostek pól EM</span></div>
+  <table className="w-full border-collapse my-1 text-[13.5px]">
+    <thead>
+      <tr className="bg-ink2 text-amber font-mono text-[12px]">
+        <th className="border border-line p-1.5 text-left">Wielkość</th>
+        <th className="border border-line p-1.5 text-center">Elektryczne</th>
+        <th className="border border-line p-1.5 text-center">Magnetyczne</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td className="border border-line p-1.5 font-semibold">Natężenie pola</td>
+        <td className="border border-line p-1.5 text-center font-mono">{String.raw`\(\vec{E}\)`} <span className="text-amber-soft">[V/m]</span></td>
+        <td className="border border-line p-1.5 text-center font-mono">{String.raw`\(\vec{H}\)`} <span className="text-amber-soft">[A/m]</span></td>
+      </tr>
+      <tr>
+        <td className="border border-line p-1.5 font-semibold">Indukcja pola</td>
+        <td className="border border-line p-1.5 text-center font-mono">{String.raw`\(\vec{D}\)`} <span className="text-amber-soft">[As/m²]</span></td>
+        <td className="border border-line p-1.5 text-center font-mono">{String.raw`\(\vec{B}\)`} <span className="text-amber-soft">[Vs/m²]</span></td>
+      </tr>
+      <tr>
+        <td className="border border-line p-1.5 font-semibold">Gęstość prądu {String.raw`\(\vec{j}\)`}</td>
+        <td colSpan={2} className="border border-line p-1.5 text-center font-mono">{String.raw`\(\vec{j}\)`} <span className="text-amber-soft">[A/m²]</span></td>
+      </tr>
+      <tr>
+        <td className="border border-line p-1.5 font-semibold">Konduktywność {String.raw`\(\sigma\)`}</td>
+        <td colSpan={2} className="border border-line p-1.5 text-center font-mono">{String.raw`\(\sigma\)`} <span className="text-amber-soft">[1/(Ω·m) = S/m]</span></td>
+      </tr>
+      <tr>
+        <td className="border border-line p-1.5 font-semibold">Gęstość ładunku {String.raw`\(\rho\)`}</td>
+        <td colSpan={2} className="border border-line p-1.5 text-center font-mono">{String.raw`\(\rho\)`} <span className="text-amber-soft">[C/m³]</span></td>
+      </tr>
+      <tr>
+        <td className="border border-line p-1.5 font-semibold">Przenikalność próżni</td>
+        <td className="border border-line p-1.5 text-center font-mono">{String.raw`\(\varepsilon_0\)`} <span className="text-amber-soft">[A²s⁴/(m³kg) = F/m]</span></td>
+        <td className="border border-line p-1.5 text-center font-mono">{String.raw`\(\mu_0\)`} <span className="text-amber-soft">[Vs/(Am) = H/m]</span></td>
+      </tr>
+      <tr>
+        <td className="border border-line p-1.5 font-semibold">Względna przenikalność</td>
+        <td className="border border-line p-1.5 text-center font-mono">{String.raw`\(\varepsilon_r\)`} (osłabia pole E)</td>
+        <td className="border border-line p-1.5 text-center font-mono">{String.raw`\(\mu_r\)`} (wzmacnia pole B)</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div className="border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
+  <div className="flex items-baseline gap-2 mb-2"><span className="t1 font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">10ⁿ</span><span className="font-semibold text-[15.5px] leading-tight text-txt">Przedrostki wielokrotności i podwielokrotności SI</span></div>
+  <div className="grid grid-cols-2 gap-x-3 gap-y-1 text-[13px] font-mono">
+    <div className="flex justify-between border-b border-line/60 py-0.5"><span>10⁻¹⁵ = femto</span><span className="text-amber font-bold">f</span></div>
+    <div className="flex justify-between border-b border-line/60 py-0.5"><span>10¹ = deka</span><span className="text-amber font-bold">da</span></div>
+    <div className="flex justify-between border-b border-line/60 py-0.5"><span>10⁻¹² = piko</span><span className="text-amber font-bold">p</span></div>
+    <div className="flex justify-between border-b border-line/60 py-0.5"><span>10² = hekto</span><span className="text-amber font-bold">h</span></div>
+    <div className="flex justify-between border-b border-line/60 py-0.5"><span>10⁻⁹ = nano</span><span className="text-amber font-bold">n</span></div>
+    <div className="flex justify-between border-b border-line/60 py-0.5"><span>10³ = kilo</span><span className="text-amber font-bold">k</span></div>
+    <div className="flex justify-between border-b border-line/60 py-0.5"><span>10⁻⁶ = mikro</span><span className="text-amber font-bold">μ</span></div>
+    <div className="flex justify-between border-b border-line/60 py-0.5"><span>10⁶ = mega</span><span className="text-amber font-bold">M</span></div>
+    <div className="flex justify-between border-b border-line/60 py-0.5"><span>10⁻³ = mili</span><span className="text-amber font-bold">m</span></div>
+    <div className="flex justify-between border-b border-line/60 py-0.5"><span>10⁹ = giga</span><span className="text-amber font-bold">G</span></div>
+    <div className="flex justify-between border-b border-line/60 py-0.5"><span>10⁻² = centy</span><span className="text-amber font-bold">c</span></div>
+    <div className="flex justify-between border-b border-line/60 py-0.5"><span>10¹² = tera</span><span className="text-amber font-bold">T</span></div>
+    <div className="flex justify-between border-b border-line/60 py-0.5"><span>10⁻¹ = decy</span><span className="text-amber font-bold">d</span></div>
+    <div className="flex justify-between border-b border-line/60 py-0.5"><span>10¹⁵ = peta</span><span className="text-amber font-bold">P</span></div>
+  </div>
+</div>
+
+</div>
+
+
 <div className="my-[26px] mb-2.5 font-mono text-[13px] tracking-[0.16em] uppercase text-amber border-b border-line pb-1.5">Blok 1 · Fala elektromagnetyczna (rozdz. 2)</div>
 <div className="grid grid-cols-1 md:grid-cols-2 gap-[14px]">
 
 <div className="md:col-span-2 border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
-<div className="flex items-baseline gap-2 mb-2"><span className="t1 font-mono font-bold text-ink bg-green rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">1</span><span className="font-semibold text-[15.5px] leading-tight text-white">Równania Maxwella + wnioski</span></div>
+<div className="flex items-baseline gap-2 mb-2"><span className="t1 font-mono font-bold text-ink bg-green rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">1</span><span className="font-semibold text-[15.5px] leading-tight text-txt">Równania Maxwella + wnioski</span></div>
 
 <Concept title="Prawo indukcji Faradaya (I równanie Maxwella)">
   <Formula tex={String.raw`\nabla\times\vec E=-\frac{\partial\vec B}{\partial t}`} />
@@ -89,7 +213,7 @@ export default function TeoriaSciaga() {
 </div>
 
 <div className="md:col-span-2 border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
-<div className="flex items-baseline gap-2 mb-2"><span className="t1 font-mono font-bold text-ink bg-green rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">+</span><span className="font-semibold text-[15.5px] leading-tight text-white">Warunki brzegowe na granicy ośrodków</span></div>
+<div className="flex items-baseline gap-2 mb-2"><span className="t1 font-mono font-bold text-ink bg-green rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">+</span><span className="font-semibold text-[15.5px] leading-tight text-txt">Warunki brzegowe na granicy ośrodków</span></div>
 <Concept title="Granica dielektryków — pole elektryczne">
   <Formula tex={String.raw`E_{t1}=E_{t2}\qquad D_{n2}-D_{n1}=\rho_s`} />
   <Symbol symbol={String.raw`E_{t1}, E_{t2}`} desc="styczne składowe natężenia pola elektrycznego w ośrodkach 1 i 2" />
@@ -122,7 +246,7 @@ export default function TeoriaSciaga() {
 </div>
 
 <div className="md:col-span-2 border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
-<div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">2</span><span className="font-semibold text-[15.5px] leading-tight text-white">Równania materiałowe i rodzaje ośrodków</span></div>
+<div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">2</span><span className="font-semibold text-[15.5px] leading-tight text-txt">Równania materiałowe i rodzaje ośrodków</span></div>
 
 <Concept title="Równania materiałowe (zależności polowe)">
   <Formula tex={String.raw`\vec D=\varepsilon_0\varepsilon_r\vec E\qquad \vec B=\mu_0\mu_r\vec H\qquad \vec j=\sigma\vec E`} />
@@ -186,7 +310,7 @@ export default function TeoriaSciaga() {
 <div className="grid grid-cols-1 md:grid-cols-2 gap-[14px]">
 
 <div className="border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
-<div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">3</span><span className="font-semibold text-[15.5px] leading-tight text-white">Zjawiska falowe</span></div>
+<div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">3</span><span className="font-semibold text-[15.5px] leading-tight text-txt">Zjawiska falowe</span></div>
 
 <Concept title="Podstawowe zjawiska falowe (odbicie, załamanie, dyfrakcja)">
   <Explanation>
@@ -229,7 +353,7 @@ export default function TeoriaSciaga() {
 </div>
 
 <div className="border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
-<div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">4</span><span className="font-semibold text-[15.5px] leading-tight text-white">Fale powierzchniowe / troposferyczne / jonosferyczne</span></div>
+<div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">4</span><span className="font-semibold text-[15.5px] leading-tight text-txt">Fale powierzchniowe / troposferyczne / jonosferyczne</span></div>
 <Concept title="Propagacja fal w różnych warstwach (powierzchniowe, troposferyczne, jonosferyczne)">
   <Explanation>
     <b>Fale powierzchniowe</b>: rozchodzą się wzdłuż powierzchni Ziemi. Zapewniają dobry zasięg tam, gdzie Ziemię można uznać za płaską; ich tłumienie i zasięg silnie zależą od częstotliwości (maleją wraz ze wzrostem częstotliwości), a także od ugięcia fali (dyfrakcji) wzdłuż krzywizny Ziemi.
@@ -244,7 +368,7 @@ export default function TeoriaSciaga() {
 </div>
 
 <div className="border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
-<div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">5</span><span className="font-semibold text-[15.5px] leading-tight text-white">Czynniki atmosferyczne a propagacja</span></div>
+<div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">5</span><span className="font-semibold text-[15.5px] leading-tight text-txt">Czynniki atmosferyczne a propagacja</span></div>
 <Concept title="Wpływ warunków atmosferycznych i dobowych">
   <Explanation>
     <b>Tłumienie w troposferze</b>: wywołane jest przez opady atmosferyczne (deszcz, śnieg — powodują największe straty), mgłę, absorpcja molekularna (rezonanse pary wodnej H₂O i tlenu O₂) oraz rozproszenie na cząsteczkach (pyły, dymy).
@@ -262,7 +386,7 @@ export default function TeoriaSciaga() {
 </div>
 
 <div className="border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
-<div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">6</span><span className="font-semibold text-[15.5px] leading-tight text-white">Zasięg anteny nadawczej</span></div>
+<div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">6</span><span className="font-semibold text-[15.5px] leading-tight text-txt">Zasięg anteny nadawczej</span></div>
 
 <Concept title="Horyzont radiowy (zasięg bezpośredniej widoczności)">
   <Formula tex={String.raw`d_0=\sqrt{2R_Z}\,(\sqrt{H_N}+\sqrt{H_O})`} />
@@ -318,7 +442,7 @@ export default function TeoriaSciaga() {
 <div className="grid grid-cols-1 md:grid-cols-2 gap-[14px]">
 
 <div className="border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
-<div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">7</span><span className="font-semibold text-[15.5px] leading-tight text-white">Warunki propagacji we włóknie</span></div>
+<div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">7</span><span className="font-semibold text-[15.5px] leading-tight text-txt">Warunki propagacji we włóknie</span></div>
 
 <Concept title="Konstrukcja i domieszkowanie światłowodu">
   <Explanation>
@@ -341,7 +465,7 @@ export default function TeoriaSciaga() {
 </div>
 
 <div className="border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
-<div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">8</span><span className="font-semibold text-[15.5px] leading-tight text-white">Światłowody jedno-/wielomodowe, mody</span></div>
+<div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">8</span><span className="font-semibold text-[15.5px] leading-tight text-txt">Światłowody jedno-/wielomodowe, mody</span></div>
 <Concept title="Częstotliwość znormalizowana i liczba modów">
   <Formula tex={String.raw`V=\frac{2\pi a}{\lambda_0}\sqrt{n_1^2-n_2^2}\qquad M\approx\frac{V^2}{2}\text{ (skokowy)},\quad M\approx\frac{V^2}{4}\text{ (gradientowy)}`} />
   <Symbol symbol={String.raw`V`} desc="częstotliwość znormalizowana światłowodu" />
@@ -355,7 +479,7 @@ export default function TeoriaSciaga() {
 </div>
 
 <div className="border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
-<div className="flex items-baseline gap-2 mb-2"><span className="t1 font-mono font-bold text-ink bg-green rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">9</span><span className="font-semibold text-[15.5px] leading-tight text-white">Tłumienie we włóknach</span></div>
+<div className="flex items-baseline gap-2 mb-2"><span className="t1 font-mono font-bold text-ink bg-green rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">9</span><span className="font-semibold text-[15.5px] leading-tight text-txt">Tłumienie we włóknach</span></div>
 <Concept title="Tłumienie jednostkowe światłowodu">
   <Formula tex={String.raw`\alpha_{\text{dB/km}}=\frac{A_{\text{dB}}}{L},\quad A_{\text{dB}}=10\log_{10}\frac{P(0)}{P(L)}`} />
   <Symbol symbol={String.raw`\alpha_{dB/km}`} desc="jednostkowe tłumienie światłowodu w dB/km" />
@@ -371,7 +495,7 @@ export default function TeoriaSciaga() {
 </div>
 
 <div className="border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
-<div className="flex items-baseline gap-2 mb-2"><span className="t1 font-mono font-bold text-ink bg-green rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">10</span><span className="font-semibold text-[15.5px] leading-tight text-white">Dyspersja we włóknach</span></div>
+<div className="flex items-baseline gap-2 mb-2"><span className="t1 font-mono font-bold text-ink bg-green rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">10</span><span className="font-semibold text-[15.5px] leading-tight text-txt">Dyspersja we włóknach</span></div>
 <div className="space-y-3 mb-3 text-txt text-[15.5px] leading-relaxed">
   <div>Dyspersja = zależność parametrów ośrodka od częstotliwości → <b>rozmycie czasowe impulsów → ogranicza szybkość transmisji</b> („0" może być odczytane jako „1").</div>
   <div><b>Modowa</b> — TYLKO wielomodowe; mody mają różne prędkości.</div>
@@ -394,7 +518,7 @@ export default function TeoriaSciaga() {
 </div>
 
 <div className="border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
-<div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">11</span><span className="font-semibold text-[15.5px] leading-tight text-white">Kompensacja dyspersji</span></div>
+<div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">11</span><span className="font-semibold text-[15.5px] leading-tight text-txt">Kompensacja dyspersji</span></div>
 <Concept title="Warunek kompensacji dyspersji chromatycznej">
   <Formula tex={String.raw`L_{DCF}=-\frac{L_{SMF}\cdot D_{SMF}}{D_{DCF}}\qquad D=-L_{SMF}\cdot D_{SMF}\ (\text{moduł DCM / siatka Bragga})`} />
   <Symbol symbol={String.raw`L_{SMF}, L_{DCF}`} desc="długości światłowodu jednomodowego (SMF) i kompensującego (DCF)" />
@@ -410,7 +534,7 @@ export default function TeoriaSciaga() {
 </div>
 
 <div className="border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
-<div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">12</span><span className="font-semibold text-[15.5px] leading-tight text-white">Budżet łącza telekomunikacyjnego</span></div>
+<div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">12</span><span className="font-semibold text-[15.5px] leading-tight text-txt">Budżet łącza telekomunikacyjnego</span></div>
 <Concept title="Budżet mocy optycznej (bilans łącza)">
   <Formula tex={String.raw`P_S-P_C-\alpha_{SMF}L_{SMF}-\alpha_{DCF}L_{DCF}\ \geq\ P_R+P_m`} />
   <Symbol symbol={String.raw`P_S`} desc="optymistyczna moc nadajnika optycznego" />
@@ -437,7 +561,7 @@ export default function TeoriaSciaga() {
 </div>
 
 <div className="border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
-<div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">13</span><span className="font-semibold text-[15.5px] leading-tight text-white">Mierzenie jakości modulacji</span></div>
+<div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">13</span><span className="font-semibold text-[15.5px] leading-tight text-txt">Mierzenie jakości modulacji</span></div>
 <div className="space-y-3 mb-3 text-txt text-[15.5px] leading-relaxed">
   <div><b>Wykres oczkowy</b> — nałożone wszystkie kombinacje bitów; parametry: <b>amplituda</b> (Vmax−Vmin, odporność na zakłócenia), <b>wysokość oka</b> (V′max−V′min, szacowanie szumów), <b>szerokość oka</b> (czas bezpiecznego próbkowania), <b>przecięcie</b> (próg decyzyjny), <b>nachylenie / czas narastania</b> {String.raw`\(C_{NS}=1{,}25\cdot T_{20-80}\)`}, <b>zniekształcenie czasowe ΔT</b> (jitter), <b>współczynnik ekstynkcji</b>.</div>
   <div>Rozwartość oka oraz margines szumowy:</div>
@@ -460,7 +584,7 @@ export default function TeoriaSciaga() {
 </div>
 
 <div className="border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
-<div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">14</span><span className="font-semibold text-[15.5px] leading-tight text-white">Multipleksacja i zastosowania</span></div>
+<div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">14</span><span className="font-semibold text-[15.5px] leading-tight text-txt">Multipleksacja i zastosowania</span></div>
 <div className="space-y-2 mb-3 text-txt text-[15.5px] leading-relaxed">
   <div><b>Multipleksacja (zwielokrotnienie) = równoczesne przesyłanie wielu sygnałów przez jeden kanał transmisyjny.</b></div>
   <div><b>TDM/OTDM</b> — podział czasowy (sygnały cyfrowe); <b>FDM</b> — podział częstotliwości (różne nośne); <b>SCM</b> — podnośne mikrofalowe (analogowe sieci CATV); <b>CDMA</b> — kodowanie sygnałów.</div>
@@ -470,7 +594,7 @@ export default function TeoriaSciaga() {
 </div>
 
 <div className="md:col-span-2 border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
-<div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">15</span><span className="font-semibold text-[15.5px] leading-tight text-white">Mieszanie czterofalowe (FWM)</span></div>
+<div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">15</span><span className="font-semibold text-[15.5px] leading-tight text-txt">Mieszanie czterofalowe (FWM)</span></div>
 
 <Concept title="Częstotliwości fal wtórnych w mieszaniu czterofalowym (FWM)">
   <Formula tex={String.raw`f_{ijk}=f_i+f_j-f_k\quad (i,j\neq k)`} />
@@ -502,7 +626,7 @@ export default function TeoriaSciaga() {
 <div className="grid grid-cols-1 md:grid-cols-2 gap-[14px]">
 
 <div className="border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
-<div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">16</span><span className="font-semibold text-[15.5px] leading-tight text-white">Półprzewodniki samoistne i domieszkowane</span></div>
+<div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">16</span><span className="font-semibold text-[15.5px] leading-tight text-txt">Półprzewodniki samoistne i domieszkowane</span></div>
 <div className="space-y-2 mb-3 text-txt text-[15.5px] leading-relaxed">
   <div>Przewodnictwo <b>10⁻⁹–10³ Ω⁻¹cm⁻¹</b>, silnie zależne od domieszkowania, temperatury, napromieniowania; przerwa energetyczna umownie <b>0–3 eV</b>; przewodnictwo <b>elektronowe &gt; jonowe</b>.</div>
   <div><b>Samoistne:</b> doskonała struktura (bez domieszek i defektów); <b>n = p = nᵢ</b>; generacja par elektron–dziura z temperaturą; <b>duża rezystywność</b>; nᵢ <b>rośnie z T, maleje z E_g</b>.</div>
@@ -513,7 +637,7 @@ export default function TeoriaSciaga() {
 </div>
 
 <div className="border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
-<div className="flex items-baseline gap-2 mb-2"><span className="t1 font-mono font-bold text-ink bg-green rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">17</span><span className="font-semibold text-[15.5px] leading-tight text-white">Koncentracja — równowaga termodynamiczna</span></div>
+<div className="flex items-baseline gap-2 mb-2"><span className="t1 font-mono font-bold text-ink bg-green rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">17</span><span className="font-semibold text-[15.5px] leading-tight text-txt">Koncentracja — równowaga termodynamiczna</span></div>
 <Concept title="Rozkład Fermiego–Diraca (prawdopodobieństwo obsadzenia stanu)">
   <Formula tex={String.raw`f_n(E)=\frac{1}{1+e^{(E-E_F)/kT}}`} />
   <Symbol symbol={String.raw`f_n(E)`} desc="prawdopodobieństwo zajęcia stanu o energii E przez elektron" />
@@ -538,7 +662,7 @@ export default function TeoriaSciaga() {
 </div>
 
 <div className="border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
-<div className="flex items-baseline gap-2 mb-2"><span className="t1 font-mono font-bold text-ink bg-green rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">18</span><span className="font-semibold text-[15.5px] leading-tight text-white">Koncentracja — nierównowaga</span></div>
+<div className="flex items-baseline gap-2 mb-2"><span className="t1 font-mono font-bold text-ink bg-green rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">18</span><span className="font-semibold text-[15.5px] leading-tight text-txt">Koncentracja — nierównowaga</span></div>
 <div className="space-y-2 mb-3 text-txt text-[15.5px] leading-relaxed">
   <div>Zakłócenie: <b>pole zewnętrzne (światło, RTG) lub przepływ prądu</b>; ogólnie <b>np ≠ nᵢ²</b>: np &gt; nᵢ² → <b>iniekcja (wstrzykiwanie)</b>, np &lt; nᵢ² → <b>ekstrakcja (wyciąganie)</b>.</div>
   <div><b>Generacja/rekombinacja bezpośrednia:</b> potrzeba <b>energii &gt; E_g</b> (cieplna — mało prawdopodobne, świetlna — praktycznie zawsze); rekombinacja wydziela energię: <b>Si, Ge → ciepło; GaAs → światło</b>. Szybkość rekombinacji ~ n·p.</div>
@@ -548,7 +672,7 @@ export default function TeoriaSciaga() {
 </div>
 
 <div className="border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
-<div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">19</span><span className="font-semibold text-[15.5px] leading-tight text-white">Transport nośników</span></div>
+<div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">19</span><span className="font-semibold text-[15.5px] leading-tight text-txt">Transport nośników</span></div>
 <Concept title="Przewodnictwo właściwe (konduktywność) półprzewodnika">
   <Formula tex={String.raw`\sigma=|e|\,(n\mu_e+p\mu_h)`} />
   <Symbol symbol={String.raw`\sigma`} desc="przewodnictwo właściwe (konduktywność)" />
@@ -565,7 +689,7 @@ export default function TeoriaSciaga() {
 </div>
 
 <div className="md:col-span-2 border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
-<div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">20</span><span className="font-semibold text-[15.5px] leading-tight text-white">Złącze p–n · polaryzacja zaporowa i przewodzenia</span></div>
+<div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">20</span><span className="font-semibold text-[15.5px] leading-tight text-txt">Złącze p–n · polaryzacja zaporowa i przewodzenia</span></div>
 <div className="space-y-2 mb-3 text-txt text-[15.5px] leading-relaxed">
   <div>Po zetknięciu: <b>dyfuzja</b> elektronów n→p i dziur p→n → <b>warstwa zaporowa</b> (= dipolowa = ładunku przestrzennego = zubożona) → pole przeciwdziałające dyfuzji → <b>napięcie dyfuzyjne (bariera potencjału)</b> → <b>prąd unoszenia mniejszościowych</b> przeciwny do <b>prądu dyfuzji większościowych</b>. <b>Równowaga: suma prądów = 0</b> (dyfuzja = unoszenie osobno dla e i dziur).</div>
 </div>
@@ -585,7 +709,7 @@ export default function TeoriaSciaga() {
 <div className="grid grid-cols-1 md:grid-cols-2 gap-[14px]">
 
 <div className="border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
-<div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">21</span><span className="font-semibold text-[15.5px] leading-tight text-white">Parametry pamięci półprzewodnikowych</span></div>
+<div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">21</span><span className="font-semibold text-[15.5px] leading-tight text-txt">Parametry pamięci półprzewodnikowych</span></div>
 <div className="space-y-2 mb-3 text-txt text-[15.5px] leading-relaxed">
   <div><b>Podstawowe: pojemność</b> (liczba jednostek pamięci), <b>organizacja pamięci, czas dostępu</b> (lokalizacja bajtu).</div>
   <div><b>Technologiczne: czas odczytu i zapisu, szybkość transmismi danych.</b></div>
@@ -595,7 +719,7 @@ export default function TeoriaSciaga() {
 </div>
 
 <div className="border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
-<div className="flex items-baseline gap-2 mb-2"><span className="t1 font-mono font-bold text-ink bg-green rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">22</span><span className="font-semibold text-[15.5px] leading-tight text-white">Tranzystory bipolarne</span></div>
+<div className="flex items-baseline gap-2 mb-2"><span className="t1 font-mono font-bold text-ink bg-green rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">22</span><span className="font-semibold text-[15.5px] leading-tight text-txt">Tranzystory bipolarne</span></div>
 <Concept title="Zależności prądowe w tranzystorze bipolarnym (BJT)">
   <Formula tex={String.raw`I_E=I_C+I_B\qquad \beta=\frac{I_C}{I_B}\approx 100`} />
   <Symbol symbol={String.raw`I_E`} desc="prąd emitera" />
@@ -613,18 +737,54 @@ export default function TeoriaSciaga() {
 </div>
 
 <div className="border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
-<div className="flex items-baseline gap-2 mb-2"><span className="t1 font-mono font-bold text-ink bg-green rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">23</span><span className="font-semibold text-[15.5px] leading-tight text-white">Tranzystory polowe</span></div>
+<div className="flex items-baseline gap-2 mb-2"><span className="t1 font-mono font-bold text-ink bg-green rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">23</span><span className="font-semibold text-[15.5px] leading-tight text-txt">Tranzystory polowe</span></div>
 <div className="space-y-2 mb-3 text-txt text-[15.5px] leading-relaxed">
   <div><b>FET = JFET (złączowe) + IGFET (izolowana bramka, np. MOSFET)</b>; elektrody: <b>źródło S, bramka G, dren D</b> (odpowiedniki: emiter, baza, kolektor); <b>sterowanie polem elektrycznym bramki</b>.</div>
   <div><b>JFET:</b> 3 warstwy, 2 złącza p–n; napięcie zaporowe poszerza obszar bez nośników → <b>rośnie opór kanału</b>.</div>
-  <div><b>MOSFET:</b> bramka napylona na <b>izolatorze</b> (tlenek, nawet 5 atomów grubości) → <b>przez bramkę nie płynie żaden prąd</b>. U_GS=0 → <b>„zatkanie"</b>; U_GS&gt;0 → <b>warstwa inwersyjna</b> z elektronów swowodnych → przewodzenie; <b>U_DS=U_GS → kanał zanika przy drenie → nasycenie I_D</b>.</div>
-  <div>Obszary pracy: <b>nienasycenia</b> (I_D ~ U_DS, prawo Ohma) i <b>nasycenia</b> (I_D = const); zawsze I_D = f(U_GS).</div>
-  <div><b>Sterowanie NAPIĘCIOWE, zasilanie tylko przy przełączaniu</b>, b. duża impedancja wejściowa. Extra: <b>3D Tri-gate</b> (Intel 2012) — bramki z 3 stron, prawo Moore'a.</div>
+  <div><b>MOSFET:</b> bramka napylona na <b>izolatorze</b> (tlenek, nawet 5 atomów grubości) → <b>przez bramkę nie płynie prąd</b>.</div>
+  <div><b>4 stany polaryzacji MOSFET:</b>
+    <br />1. {String.raw`\(U_{GS}=0, U_{DS}=0\)`} → tranzystor zatkany (brak nośników między S i D).
+    <br />2. {String.raw`\(U_{GS}>0, U_{DS}=0\)`} → pole bramki indukuje <b>warstwę inwersyjną (kanał n)</b>.
+    <br />3. {String.raw`\(U_{GS}>0, U_{DS}>0\)`} → prąd drenu {String.raw`\(I_D\)`} płynie (obszar nienasycenia, kanał zwęża się ku drenowi).
+    <br />4. {String.raw`\(U_{DS} \ge U_{GS}-U_{th}\)`} → odcięcie kanału przy drenie (pinch-off) → <b>obszar nasycenia</b> ({String.raw`\(I_D=\text{const}\)`}).
+  </div>
+  <table className="w-full border-collapse my-2 text-[13px]">
+    <thead>
+      <tr className="bg-ink2 text-amber font-mono text-[11.5px]">
+        <th className="border border-line p-1 text-left">Parametr</th>
+        <th className="border border-line p-1 text-left">Bipolarny (BJT)</th>
+        <th className="border border-line p-1 text-left">Polowy (FET / MOS)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td className="border border-line p-1 font-semibold">Sterowanie</td>
+        <td className="border border-line p-1"><b>Prądowe</b> ({String.raw`\(I_B\)`})</td>
+        <td className="border border-line p-1"><b>Napięciowe</b> ({String.raw`\(U_{GS}\)`})</td>
+      </tr>
+      <tr>
+        <td className="border border-line p-1 font-semibold">Transkonduktancja</td>
+        <td className="border border-line p-1">B. wysoka (~1000 mA/V, stała)</td>
+        <td className="border border-line p-1">Niska (~5 mA/V, zależy od geometrii)</td>
+      </tr>
+      <tr>
+        <td className="border border-line p-1 font-semibold">Impedancja wejściowa</td>
+        <td className="border border-line p-1">Niska / średnia</td>
+        <td className="border border-line p-1">Bardzo duża ({String.raw`\(10^{12}-10^{14}\,\Omega\)`})</td>
+      </tr>
+      <tr>
+        <td className="border border-line p-1 font-semibold">Pobór prądu wejścia</td>
+        <td className="border border-line p-1">Ciągły prąd bazy</td>
+        <td className="border border-line p-1">Tylko przy przełączaniu</td>
+      </tr>
+    </tbody>
+  </table>
+  <div><b>Sterowanie NAPIĘCIOWE, zasilanie tylko przy przełączaniu</b>. Extra: <b>3D Tri-gate</b> (Intel 2012) — bramki z 3 stron, prawo Moore'a.</div>
 </div>
 </div>
 
 <div className="border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
-<div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">24</span><span className="font-semibold text-[15.5px] leading-tight text-white">Pamięć Flash</span></div>
+<div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">24</span><span className="font-semibold text-[15.5px] leading-tight text-txt">Pamięć Flash</span></div>
 <div className="space-y-2 mb-3 text-txt text-[15.5px] leading-relaxed">
   <div><b>EEPROM:</b> kasowalna i programowalna <b>elektrycznie</b>; komórka = <b>1 tranzystor MNOS</b>; <b>20–40 V</b> na bramkę → ładunek w warstwie <b>azotku krzemu</b> = <b>logiczne 0</b>; odwrócenie polaryzacji = kasowanie = <b>logiczna 1</b>.</div>
   <div><b>Flash EEPROM (błyskowa):</b> kasowanie/zapis <b>wielu komórek naraz w jednej sekwencji</b>, bez UV; <b>10 000–100 000 cykli</b>; elektrony na <b>bramce pływającej trzymają stan latami</b>; prąd tylko przy przełączaniu.</div>
@@ -634,7 +794,7 @@ export default function TeoriaSciaga() {
 </div>
 
 <div className="border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
-<div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">25</span><span className="font-semibold text-[15.5px] leading-tight text-white">Dyski optyczne — zapis i odczyt</span></div>
+<div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">25</span><span className="font-semibold text-[15.5px] leading-tight text-txt">Dyski optyczne — zapis i odczyt</span></div>
 <div className="space-y-2 mb-3 text-txt text-[15.5px] leading-relaxed">
   <div><b>Budowa CD-R:</b> poliwęglan (<b>n=1,55</b>; 1,2 mm) → warstwa odbijająca (<b>Al/Au/Ag</b>) → lakier ochronny 30 μm; <b>pity</b> (wgłębienia) i <b>landy</b> w spiralnej ścieżce (szer. 0,6 μm, odchylenie 0,3 μm / 22,05 kHz steruje obrotami, odstęp 1,6 μm).</div>
   <div><b>Zapis (CD-RW, zmiana fazy):</b> stop <b>Ag–In–Sb2–Te</b>; laser topi (<b>500–700°C</b>) → <b>struktura amorficzna (zapis, słabo odbija)</b>; wyżarzanie <b>&gt;200°C → krystaliczna (kasowanie, mocno odbija)</b>; moce: <b>15 mW zapis / ≤3 mW odczyt</b>; ~<b>1000 cykli</b>; warstwy dielektryczne odprowadzają ciepło.</div>
@@ -644,7 +804,7 @@ export default function TeoriaSciaga() {
 </div>
 
 <div className="border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
-<div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">26</span><span className="font-semibold text-[15.5px] leading-tight text-white">Dyski magneto-optyczne</span></div>
+<div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">26</span><span className="font-semibold text-[15.5px] leading-tight text-txt">Dyski magneto-optyczne</span></div>
 <div className="space-y-2 mb-3 text-txt text-[15.5px] leading-relaxed">
   <div>Jak CD-RW, ale <b>warstwa nagrywana magnetyczna (100 nm)</b>: krystality jednodomenowe, domeny <b>prostopadłe do powierzchni płyty</b>.</div>
   <div><b>Zmiana domen wymaga podgrzania do temperatury Curie 150–180°C</b> (powyżej — zanik ustawienia dipoli) <b>+ pola magnetycznego głowicy</b> — jednocześnie.</div>
@@ -655,7 +815,7 @@ export default function TeoriaSciaga() {
 </div>
 
 <div className="border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
-<div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">27</span><span className="font-semibold text-[15.5px] leading-tight text-white">Dyski magnetyczne — zapis/odczyt</span></div>
+<div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">27</span><span className="font-semibold text-[15.5px] leading-tight text-txt">Dyski magnetyczne — zapis/odczyt</span></div>
 <div className="space-y-2 mb-3 text-txt text-[15.5px] leading-relaxed">
   <div><b>Dia-/para-/ferromagnetyki</b> — tylko <b>ferromagnetyki</b> (namagnesowanie spontaniczne, duża przenikalność: stopy, ferryty, tlenki Fe/Cr) w nośnikach; <b>domeny magnetyczne</b> = elementarne pola podlegające przemagnesowaniu.</div>
   <div><b>Pętla histerezy B(H)</b>: do zapisu cyfrowego materiał <b>magnetycznie twardy</b>; temperatura Curie = utrata magnetyzmu; rozmagnesowanie przez siły międzydomenowe → okresowe przegrywanie danych.</div>
@@ -666,7 +826,7 @@ export default function TeoriaSciaga() {
 </div>
 
 <div className="border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
-<div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">28</span><span className="font-semibold text-[15.5px] leading-tight text-white">Magnetorezystancja</span></div>
+<div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">28</span><span className="font-semibold text-[15.5px] leading-tight text-txt">Magnetorezystancja</span></div>
 <div className="space-y-2 mb-3 text-txt text-[15.5px] leading-relaxed">
   <div><b>Zjawisko Gaussa (magnetoopór): zmiana rezystywności metali i półprzewodników pod wpływem zewnętrznego pola magnetycznego.</b> Mechanizm: <b>tor cząstki zakrzywia się → dłuższa droga → mniejszy prąd (większy opór)</b>.</div>
   <div><b>GMR (gigantyczna):</b> <b>znaczna zmiana oporu układu wielowarstwowego — warstwy ferromagnetyczne przedzielone przewodzącymi nieferromagnetycznymi</b>; pole zewnętrzne <b>zmienia względną orientację momentów magnetycznych warstw</b> → zmiana magnetooporu o <b>kilkadziesiąt % już przy słabych polach</b>; czuły na temperaturę.</div>
@@ -682,7 +842,7 @@ export default function TeoriaSciaga() {
 <div className="grid grid-cols-1 md:grid-cols-2 gap-[14px]">
 
 <div className="border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
-<div className="flex items-baseline gap-2 mb-2"><span className="t1 font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">Σ</span><span className="font-semibold text-[15.5px] leading-tight text-white">Wzory, które MUSZĄ siedzieć (zadanie!)</span></div>
+<div className="flex items-baseline gap-2 mb-2"><span className="t1 font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">Σ</span><span className="font-semibold text-[15.5px] leading-tight text-txt">Wzory, które MUSZĄ siedzieć (zadanie!)</span></div>
 <Concept title="Strefy Fresnela (widoczność)">
   <Formula tex={String.raw`R_n=\sqrt{\frac{n\lambda d_1 d_2}{d_1+d_2}}`} />
   <Symbol symbol={String.raw`R_n`} desc="promień n-tej strefy Fresnela" />
@@ -755,7 +915,7 @@ export default function TeoriaSciaga() {
 </div>
 
 <div className="border border-line bg-panel rounded-xl px-4 py-[14px] text-[16.5px]">
-<div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">P</span><span className="font-semibold text-[15.5px] leading-tight text-white">Projekt — szybkie fakty (pyt. 30)</span></div>
+<div className="flex items-baseline gap-2 mb-2"><span className="font-mono font-bold text-ink bg-amber rounded-md px-[7px] py-px text-[13px] whitespace-nowrap">P</span><span className="font-semibold text-[15.5px] leading-tight text-txt">Projekt — szybkie fakty (pyt. 30)</span></div>
 <div className="space-y-2 mb-3 text-txt text-[15.5px] leading-relaxed">
   <div>Łącze <b>Tarnów–Nowy Sącz, 89 km, λ = 1550 nm (3. okno)</b>, włókno SMF TeraLight + kompensacja <b>DCF38 vs FDCF-050</b>; budżety mocy dla 1/5/10 Gbit/s.</div>
   <div className="text-red font-semibold">Częstotliwość — umieć wyliczyć przy tablicy: f = c/λ = 3×10⁸ / 1,55×10⁻⁶ ≈ 1,94×10¹⁴ Hz (≈194 THz).</div>
@@ -766,7 +926,7 @@ export default function TeoriaSciaga() {
 
 </div>
 
-<Footer>FPTiTI · ŚCIĄGA 28 pytań · kondensat odpowiedzi cz. 1–5 wg A. Szymańskiej · powodzenia 13.06 💪</Footer>
+<Footer>Ściąga egzaminacyjna · 28 pytań w pigułce (wzory, prawa i wykresy)</Footer>
 </div>
     
 

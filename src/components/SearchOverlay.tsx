@@ -200,14 +200,14 @@ export default function SearchOverlay({ onClose }: SearchOverlayProps) {
           <input
             ref={inputRef}
             type="text"
-            className="w-full bg-transparent border-none text-white text-[16px] placeholder-muted outline-none font-sans"
+            className="w-full bg-transparent border-none text-txt text-[16px] placeholder-muted outline-none font-sans"
             placeholder="Szukaj wzorów, haseł, pytań lub symboli..."
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
           <button 
             onClick={onClose} 
-            className="text-muted hover:text-white transition-colors cursor-pointer border border-line bg-ink2 hover:bg-line px-2 py-1 rounded text-[11px] font-mono shrink-0"
+            className="text-muted hover:text-txt transition-colors cursor-pointer border border-line bg-ink2 hover:bg-line px-2 py-1 rounded text-[11px] font-mono shrink-0"
           >
             ESC
           </button>

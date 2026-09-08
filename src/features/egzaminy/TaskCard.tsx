@@ -44,7 +44,7 @@ export default function TaskCard({ task, assetModules }: TaskCardProps) {
         <span className="font-mono font-bold text-ink bg-amber rounded-lg px-2.5 py-[2px] text-[14px] whitespace-nowrap">
           Zadanie {task.number}
         </span>
-        <h2 className="text-[19px] font-semibold leading-tight text-white">Treść zadania</h2>
+        <h2 className="text-[19px] font-semibold leading-tight text-txt">Treść zadania</h2>
       </div>
 
       {/* Task Question text */}
@@ -91,7 +91,9 @@ export default function TaskCard({ task, assetModules }: TaskCardProps) {
         <h3 className="text-[14px] font-mono text-amber uppercase tracking-wider mb-3">
           Wzorcowe rozwiązanie:
         </h3>
-        <div className="solution-content font-serif">{renderContent(task.solution)}</div>
+        <div className="solution-content font-sans text-txt leading-relaxed">
+          {renderContent(task.solution)}
+        </div>
       </div>
 
       {/* Rysunki pomocnicze */}

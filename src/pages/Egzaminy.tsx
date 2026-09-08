@@ -201,17 +201,35 @@ export default function Egzaminy() {
 
       {groupData && groupData.tasks && groupData.tasks.length > 0 ? (
         <div className="flex flex-col gap-6">
-          {groupData.image && assetModules[`/src/assets/${groupData.image}`] && (
-            <div className="border border-line bg-ink2 rounded-[14px] p-4 flex flex-col items-center">
-              <span className="font-mono text-[11px] tracking-wider text-muted mb-3 uppercase">Oryginalny arkusz egzaminacyjny / Źródło</span>
-              <LazyImage
-                src={assetModules[`/src/assets/${groupData.image}`]}
-                alt={`Arkusz ${selectedYear} termin ${selectedTerm} grupa ${selectedGroup}`}
-                className="max-h-[380px] w-auto max-w-full rounded-lg border border-line shadow-md hover:scale-[1.01] transition-transform duration-300 object-contain"
-                wrapperClassName="w-full justify-center min-h-[120px]"
-              />
-            </div>
-          )}
+          {(() => {
+            const rawImages: string[] = groupData.images || (groupData.image ? [groupData.image] : []);
+            const validImages = rawImages.filter((img: string) => Boolean(assetModules[`/src/assets/${img}`]));
+            if (validImages.length === 0) return null;
+            return (
+              <div className="border border-line bg-ink2 rounded-[14px] p-4 flex flex-col items-center">
+                <span className="font-mono text-[11px] tracking-wider text-muted mb-3 uppercase">
+                  Oryginalny arkusz egzaminacyjny / Źródło {validImages.length > 1 ? `(${validImages.length} strony)` : ''}
+                </span>
+                <div className={`w-full grid gap-4 ${validImages.length > 1 ? 'grid-cols-1 md:grid-cols-2' : 'grid-cols-1'} justify-items-center`}>
+                  {validImages.map((img: string, idx: number) => (
+                    <div key={idx} className="w-full flex flex-col items-center">
+                      <LazyImage
+                        src={assetModules[`/src/assets/${img}`]}
+                        alt={`Arkusz ${selectedYear} termin ${selectedTerm} grupa ${selectedGroup} - strona ${idx + 1}`}
+                        className="max-h-[380px] w-auto max-w-full rounded-lg border border-line shadow-md hover:scale-[1.01] transition-transform duration-300 object-contain"
+                        wrapperClassName="w-full justify-center min-h-[120px]"
+                      />
+                      {validImages.length > 1 && (
+                        <span className="font-mono text-[11px] text-muted mt-2">
+                          {idx === 0 ? 'Strona 1: Treść pytań' : 'Strona 2: Załącznik z wykresem ITU-R P.676-13'}
+                        </span>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            );
+          })()}
 
           <div className="flex flex-wrap items-center gap-2 font-mono text-[11.5px] text-muted">
             <span>Zadania:</span>

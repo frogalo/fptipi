@@ -41,6 +41,44 @@
     --violet-dim: var(--color-violet-dim);
     --mono: var(--font-mono);
     --serif: var(--font-serif);
+    color-scheme: dark;
+  }
+
+  html.light,
+  [data-theme="light"] {
+    --color-ink: #f8fafc;
+    --color-ink2: #f1f5f9;
+    --color-panel: #ffffff;
+    --color-panel2: #f8fafc;
+    --color-line: #e2e8f0;
+    --color-txt: #0f172a;
+    --color-muted: #64748b;
+    --color-amber: #d97706;
+    --color-amber-soft: #b45309;
+    --color-green: #059669;
+    --color-green-dim: #047857;
+    --color-red: #dc2626;
+    --color-blue: #2563eb;
+    --color-violet: #7c3aed;
+    --color-violet-dim: #6d28d9;
+
+    --ink: var(--color-ink);
+    --ink2: var(--color-ink2);
+    --panel: var(--color-panel);
+    --panel2: var(--color-panel2);
+    --line: var(--color-line);
+    --txt: var(--color-txt);
+    --muted: var(--color-muted);
+    --amber: var(--color-amber);
+    --amber-soft: var(--color-amber-soft);
+    --green: var(--color-green);
+    --green-dim: var(--color-green-dim);
+    --red: var(--color-red);
+    --blue: var(--color-blue);
+    --violet: var(--color-violet);
+    --violet-dim: var(--color-violet-dim);
+
+    color-scheme: light;
   }
 
   html {
@@ -53,6 +91,7 @@
       linear-gradient(90deg, rgba(244,165,42,.035) 1px, transparent 1px);
     background-size: 38px 38px;
   }
+
   mjx-container {
     display: inline-block !important;
     vertical-align: middle;
@@ -64,6 +103,66 @@
   mjx-container svg {
     display: inline !important;
   }
+}
+
+/* ============================================================
+   Light Theme Unlayered Overrides & Contrast Enforcements
+   ============================================================ */
+html.light body,
+[data-theme="light"] body {
+  background-image:
+    linear-gradient(rgba(217,119,6,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(217,119,6,.04) 1px, transparent 1px);
+}
+
+/* Force dark readable text for titles and text in light mode */
+html.light .text-white,
+[data-theme="light"] .text-white,
+html.light .text-slate-200,
+[data-theme="light"] .text-slate-200 {
+  color: #0f172a !important;
+}
+
+html.light .hover\:text-white:hover,
+[data-theme="light"] .hover\:text-white:hover,
+html.light .group:hover .group-hover\:text-white,
+[data-theme="light"] .group:hover .group-hover\:text-white {
+  color: #0f172a !important;
+}
+
+/* Maintain white text on elements with dark or colored backgrounds */
+html.light .pole,
+[data-theme="light"] .pole,
+html.light [class*="bg-black"],
+[data-theme="light"] [class*="bg-black"],
+html.light [class*="bg-black"] .text-white,
+[data-theme="light"] [class*="bg-black"] .text-white,
+html.light [class*="bg-black"] [class*="text-white"],
+[data-theme="light"] [class*="bg-black"] [class*="text-white"] {
+  color: #ffffff !important;
+}
+
+/* Badges with text-ink should maintain dark contrast on colored backgrounds */
+html.light .text-ink,
+[data-theme="light"] .text-ink {
+  color: #0b0d12 !important;
+}
+
+/* Light theme search overlay backdrop */
+html.light .search-overlay-backdrop,
+[data-theme="light"] .search-overlay-backdrop {
+  background-color: rgba(15, 23, 42, 0.45);
+}
+
+/* Floating navigation light enhancements */
+html.light .floating-nav-item:hover,
+[data-theme="light"] .floating-nav-item:hover {
+  background-color: #f1f5f9;
+}
+html.light .floating-nav-section-link:hover,
+[data-theme="light"] .floating-nav-section-link:hover {
+  background-color: #f1f5f9;
+  border-color: #d97706;
 }
 
 @layer components {
@@ -95,7 +194,7 @@
     @apply bg-green;
   }
   .toc-title {
-    @apply font-semibold text-[15px] text-white;
+    @apply font-semibold text-[15px] text-txt;
   }
   .toc-desc {
     @apply text-[13px] text-muted ml-auto font-mono whitespace-nowrap;
@@ -185,7 +284,7 @@
     @apply font-mono font-bold text-ink bg-amber rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wider whitespace-nowrap inline-block;
   }
   .search-result-title {
-    @apply font-semibold text-white text-[15px] leading-snug;
+    @apply font-semibold text-txt text-[15px] leading-snug;
   }
   .search-result-snippet {
     @apply text-muted text-[13px] leading-relaxed;

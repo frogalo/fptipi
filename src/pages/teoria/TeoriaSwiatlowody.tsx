@@ -55,9 +55,14 @@ export default function Teoria7() {
 
 <div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-green-dim/10 border-green-dim"><span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">Warunki propagacji — esencja odpowiedzi</span>
 <ul className="mb-3 ml-5 list-disc">
-<li className="mb-1.5">budowa: rdzeń o współczynniku {String.raw`\(n_1\)`} otoczony płaszczem o {String.raw`\(n_2\)`}, przy czym <b>{String.raw`\(n_1>n_2\)`}</b>;</li>
-<li className="mb-1.5">fala musi padać na granicę rdzeń–płaszcz pod kątem <b>większym niż kąt graniczny</b> {String.raw`\(\theta_c=\arcsin\frac{n_2}{n_1}\)`} — wtedy zachodzi <b>całkowite wewnętrzne odbicie</b>;</li>
-<li className="mb-1.5">fala propaguje się wzdłuż światłowodu <b>w formie modów</b> (liczba modów zależy od parametru {String.raw`\(V\)`} — patrz pytanie 8); dla {String.raw`\(V<2{,}405\)`} propaguje się tylko mod podstawowy {String.raw`\(HE_{11}\)`}.</li>
+<li className="mb-1.5"><b>Budowa:</b> światłowód składa się z <b>rdzenia i płaszcza</b>; rdzeń musi mieć wyższy współczynnik załamania niż płaszcz: <b>{String.raw`\(n_1>n_2\)`}</b>.</li>
+<li className="mb-1.5"><b>Współczynniki załamania szkła kwarcowego:</b> wynoszą typowo <b>od 1,44 do 1,48</b>, a różnica między rdzeniem a płaszczem jest niewielka i wynosi typowo <b>do 1%</b> (od 0,001 do 0,01).</li>
+<li className="mb-1.5"><b>Domieszkowanie kwarcu:</b>
+  <br />• Aby <b>zwiększyć</b> współczynnik załamania (rdzeń), stosuje się domieszkę <b>ditlenku germanu ({String.raw`\(\mathrm{GeO}_2\)`})</b> lub <b>chloru ({String.raw`\(\mathrm{Cl}\)`})</b>.
+  <br />• Aby <b>zmniejszyć</b> współczynnik załamania (płaszcz), stosuje się domieszkę <b>boru ({String.raw`\(\mathrm{B}\)`})</b> lub <b>fluoru ({String.raw`\(\mathrm{F}\)`})</b>.
+</li>
+<li className="mb-1.5"><b>Warunek kątowy:</b> promień musi padać na granicę rdzeń–płaszcz pod kątem <b>większym niż kąt graniczny</b> {String.raw`\(\theta_c=\arcsin\frac{n_2}{n_1}\)`} — zachodzi wtedy <b>całkowite wewnętrzne odbicie</b>, promieniowanie nie ucieka do płaszcza i propaguje się wzdłuż osi rdzenia.</li>
+<li className="mb-1.5"><b>Warunek falowy (mody):</b> fala propaguje się wzdłuż światłowodu <b>w formie modów</b>; dla częstotliwości znormalizowanej {String.raw`\(V<2{,}405\)`} propaguje się wyłącznie mod podstawowy {String.raw`\(HE_{11}\)`} (światłowód jednomodowy).</li>
 </ul>
 </div>
 
@@ -185,6 +190,7 @@ export default function Teoria7() {
   title="Dyspersja we włóknach światłowodowych."
   source="str. 27–30"
   examBadges={[
+    { label: '2026 Lato 2 B (Zad. 2)', route: '/egzaminy?year=2026&term=L2&group=B#task-2' },
     { label: '2025 Zima 1 A (Zad. 3)', route: '/egzaminy?year=2025&term=Z1&group=A#task-3' },
     { label: '2018 Lato 1 B (Zad. 2)', route: '/egzaminy?year=2018&term=L1&group=B#task-2' }
   ]}
@@ -296,6 +302,7 @@ export default function Teoria7() {
   title="Budżet łącza telekomunikacyjnego. Omówić wszystkie zmienne i ich wartości."
   source="str. 31–33"
   examBadges={[
+    { label: '2026 Lato 2 A (Zad. 2)', route: '/egzaminy?year=2026&term=L2&group=A#task-2' },
     { label: '2026 Lato 1 A (Zad. 3)', route: '/egzaminy?year=2026&term=L1&group=A#task-3' },
     { label: '2026 Lato 1 B (Zad. 3)', route: '/egzaminy?year=2026&term=L1&group=B#task-3' },
     { label: '2025 Lato 1 B (Zad. 2)', route: '/egzaminy?year=2025&term=L1&group=B#task-2' },
@@ -385,7 +392,7 @@ export default function Teoria7() {
 </div>
 </QuestionSection>
 
-<Footer>FPTiTI · odpowiedzi cz. 2/5 (pytania 7–12 + warunki brzegowe) · źródło: A. Szymańska, „Fizyczne podstawy transmisji i przechowywania informacji”, luty 2026 · egzamin 13.06</Footer>
+<Footer>Odpowiedzi cz. 2/5 (pytania 7–12 + warunki brzegowe) · Światłowody i bilans łącza</Footer>
 </div>
     
 

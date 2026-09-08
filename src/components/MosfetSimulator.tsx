@@ -56,7 +56,7 @@ const MosfetSimulator = () => {
       {/* Control panel using Tailwind CSS styled classes to match NPN style */}
       <div className="border border-line bg-panel rounded-[14px] px-4 py-3 mb-3">
         <label htmlFor="ugs-slider" className="block font-mono text-[13px] text-amber mb-2">
-          Napięcie U<sub>GS</sub>: <span className="font-semibold text-white">{ugs.toFixed(1)}</span> V
+          Napięcie U<sub>GS</sub>: <span className="font-semibold text-txt">{ugs.toFixed(1)}</span> V
         </label>
         <input 
           type="range" 
@@ -69,7 +69,7 @@ const MosfetSimulator = () => {
           className="w-full accent-amber"
         />
         <label htmlFor="uds-slider" className="block font-mono text-[13px] text-amber mb-2 mt-4">
-          Napięcie U<sub>DS</sub>: <span className="font-semibold text-white">{uds.toFixed(1)}</span> V
+          Napięcie U<sub>DS</sub>: <span className="font-semibold text-txt">{uds.toFixed(1)}</span> V
         </label>
         <input 
           type="range" 

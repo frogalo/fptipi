@@ -111,6 +111,7 @@ export default function Teoria21() {
   title="Omów budowę i zasadę działania tranzystorów bipolarnych."
   source="str. 57–59"
   examBadges={[
+    { label: "2026 Lato 2 B (Zad. 3)", route: "/egzaminy?year=2026&term=L2&group=B#task-3" },
     { label: "2026 Lato 1 B", route: "/egzaminy?year=2026&term=L1&group=B#task-1" },
     { label: "2025 Wrzesień A (Zad. 3)", route: "/egzaminy?year=2025&term=Wrzesien&group=A#task-3" },
     { label: "2018 Zima 1 A", route: "/egzaminy?year=2018&term=Z1&group=A#task-1" },
@@ -244,7 +245,11 @@ export default function Teoria21() {
   number="25"
   title="Omów jeden ze sposobów odtwarzania i zapisu informacji na dyskach optycznych."
   source="str. 66–74"
-  examBadge={{ label: "2025 Zima 1 A", route: "/egzaminy?year=2025&term=Z1&group=A#task-2" }}
+  examBadges={[
+    { label: "2026 Lato 2 A (Zad. 1a)", route: "/egzaminy?year=2026&term=L2&group=A#task-1" },
+    { label: "2026 Lato 2 B (Zad. 1)", route: "/egzaminy?year=2026&term=L2&group=B#task-1" },
+    { label: "2025 Zima 1 A", route: "/egzaminy?year=2025&term=Z1&group=A#task-2" }
+  ]}
 >
 
 <h3 className="text-base text-amber-soft font-semibold mt-5 mb-2 font-mono tracking-wide">Budowa płyty CD–R</h3>
@@ -397,7 +402,7 @@ export default function Teoria21() {
 </Conclusion>
 </QuestionSection>
 
-<Footer>FPTiTI · odpowiedzi cz. 5/5 (pytania 21–28) · źródło: A. Szymańska, „Fizyczne podstawy transmisji i przechowywania informacji", luty 2026 · egzamin 13.06</Footer>
+<Footer>Odpowiedzi cz. 5/5 (pytania 21–28) · Pamięci i nośniki danych (półprzewodnikowe, optyczne, magnetyczne)</Footer>
 </div>
     
 

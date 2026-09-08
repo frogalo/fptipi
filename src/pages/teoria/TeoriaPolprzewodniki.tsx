@@ -114,7 +114,10 @@ export default function Teoria16() {
   number="17"
   title="Koncentracja nośników w stanie równowagi termodynamicznej."
   source="str. 48–50"
-  examBadge={{ label: "2026 Lato 1 A", route: "/egzaminy?year=2026&term=L1&group=A#task-1" }}
+  examBadges={[
+    { label: "2026 Lato 2 A (Zad. 3)", route: "/egzaminy?year=2026&term=L2&group=A#task-3" },
+    { label: "2026 Lato 1 A", route: "/egzaminy?year=2026&term=L1&group=A#task-1" }
+  ]}
 >
 
 <p className="mb-[11px]"><b>W stanie równowagi termodynamicznej półprzewodniki mają ustaloną temperaturę i nie działają na nie żadne zewnętrzne czynniki.</b> Koncentracja elektronów i dziur zależy od <b>koncentracji dozwolonych poziomów energetycznych i prawdopodobieństwa ich obsadzenia</b>:</p>
@@ -202,6 +205,7 @@ export default function Teoria16() {
   title="Koncentracja nośników w stanie nierównowagi termodynamicznej."
   source="str. 51–53"
   examBadges={[
+    { label: "2026 Lato 2 A (Zad. 3)", route: "/egzaminy?year=2026&term=L2&group=A#task-3" },
     { label: "2026 Lato 1 A", route: "/egzaminy?year=2026&term=L1&group=A#task-1" },
     { label: "2018 Zima 1 A", route: "/egzaminy?year=2018&term=Z1&group=A#task-3" }
   ]}
@@ -302,7 +306,7 @@ export default function Teoria16() {
 </BookAddition>
 </QuestionSection>
 
-<Footer>FPTiTI · odpowiedzi cz. 4/5 (pytania 16–20) · źródło: A. Szymańska, „Fizyczne podstawy transmisji i przechowywania informacji”, luty 2026 · egzamin 13.06</Footer>
+<Footer>Odpowiedzi cz. 4/5 (pytania 16–20) · Fizyka półprzewodników i złącze p–n</Footer>
 </div>
     
 

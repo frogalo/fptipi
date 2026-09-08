@@ -10,7 +10,30 @@ const HomeIcon = () => (
   </svg>
 );
 
+const SunIcon = () => (
+  <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" strokeWidth="2.3" fill="none" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="5"></circle>
+    <line x1="12" y1="1" x2="12" y2="3"></line>
+    <line x1="12" y1="21" x2="12" y2="23"></line>
+    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+    <line x1="1" y1="12" x2="3" y2="12"></line>
+    <line x1="21" y1="12" x2="23" y2="12"></line>
+    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+  </svg>
+);
+
+const MoonIcon = () => (
+  <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" strokeWidth="2.3" fill="none" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+  </svg>
+);
+
+import { useTheme } from '@/context/ThemeContext';
+
 export default function FloatingNav() {
+  const { theme, toggleTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
@@ -59,6 +82,15 @@ export default function FloatingNav() {
           </button>
 
           <button
+            className="floating-nav-toggle flex items-center justify-center"
+            onClick={toggleTheme}
+            aria-label={theme === 'light' ? 'Włącz tryb ciemny' : 'Włącz tryb jasny'}
+            title={theme === 'light' ? 'Przełącz na tryb ciemny' : 'Przełącz na tryb jasny'}
+          >
+            {theme === 'light' ? <MoonIcon /> : <SunIcon />}
+          </button>
+
+          <button
             className={`floating-nav-toggle ${isOpen ? 'active' : ''}`}
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Menu"
@@ -89,49 +121,55 @@ export default function FloatingNav() {
 
         <div className={`floating-nav-menu ${isOpen ? 'open' : ''}`}>
           <Link to="/teoria/sciaga" className="floating-nav-link" onClick={() => setIsOpen(false)}>
-            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
-              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-            </svg>
-            Ściąga Egzaminacyjna
+            <span className="font-mono text-[10px] bg-amber/20 text-amber border border-amber/30 px-1 rounded mr-1">TEZY</span>
+            Opracowanie tez (Ściąga)
           </Link>
 
           <Link to="/egzaminy" className="floating-nav-link" onClick={() => setIsOpen(false)}>
-            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-              <polyline points="14 2 14 8 20 8"></polyline>
-              <line x1="16" y1="13" x2="8" y2="13"></line>
-              <line x1="16" y1="17" x2="8" y2="17"></line>
-              <polyline points="10 9 9 9 8 9"></polyline>
-            </svg>
-            Baza Egzaminów
+            <span className="font-mono text-[10px] bg-amber/20 text-amber border border-amber/30 px-1 rounded mr-1">ARK</span>
+            Baza arkuszy egzaminacyjnych
           </Link>
 
           <div className="h-px bg-line my-1"></div>
 
           <Link to="/zadania/1" className="floating-nav-link" onClick={() => setIsOpen(false)}>
-            <span className="font-mono text-[10px] bg-amber/20 text-amber border border-amber/30 px-1 rounded mr-1">Zad.1</span>
-            Zadania: Fale & Propagacja
+            <span className="font-mono text-[10px] bg-ink2 text-muted border border-line px-1 rounded mr-1">R3</span>
+            Zadania: Fale i propagacja
           </Link>
 
           <Link to="/zadania/2" className="floating-nav-link" onClick={() => setIsOpen(false)}>
-            <span className="font-mono text-[10px] bg-amber/20 text-amber border border-amber/30 px-1 rounded mr-1">Zad.2</span>
-            Zadania: Światłowody
+            <span className="font-mono text-[10px] bg-ink2 text-muted border border-line px-1 rounded mr-1">R4</span>
+            Zadania: Falowody optyczne
           </Link>
 
           <Link to="/zadania/3" className="floating-nav-link" onClick={() => setIsOpen(false)}>
-            <span className="font-mono text-[10px] bg-amber/20 text-amber border border-amber/30 px-1 rounded mr-1">Zad.3</span>
-            Zadania: Modulacja
+            <span className="font-mono text-[10px] bg-ink2 text-muted border border-line px-1 rounded mr-1">R5</span>
+            Zadania: Modulacja i pasmo
           </Link>
 
           <div className="h-px bg-line my-1"></div>
 
           <Link to="/wizualizacje/fale_em" className="floating-nav-link" onClick={() => setIsOpen(false)}>
-            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
-              <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
-            </svg>
-            Wizualizacje Interaktywne
+            <span className="font-mono text-[10px] bg-ink2 text-muted border border-line px-1 rounded mr-1">MOD</span>
+            Modele i aplety numeryczne
           </Link>
+
+          <div className="h-px bg-line my-1"></div>
+
+          <button
+            type="button"
+            onClick={() => {
+              toggleTheme();
+              setIsOpen(false);
+            }}
+            className="floating-nav-link text-left w-full cursor-pointer flex items-center justify-between"
+          >
+            <div className="flex items-center">
+              <span className="font-mono text-[10px] bg-amber/20 text-amber border border-amber/30 px-1 rounded mr-1">MOTYW</span>
+              <span>{theme === 'light' ? 'Włącz tryb ciemny' : 'Włącz tryb jasny'}</span>
+            </div>
+            <span>{theme === 'light' ? '🌙' : '☀️'}</span>
+          </button>
         </div>
       </div>
 

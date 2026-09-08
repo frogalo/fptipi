@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import PageLoader from '@/components/PageLoader';
 
 const Home = lazy(() => import('@/pages/Home'));
@@ -19,9 +19,11 @@ const Zadania2 = lazy(() => import('@/pages/zadania/Zadania2'));
 const Zadania3 = lazy(() => import('@/pages/zadania/Zadania3'));
 
 export default function AppRoutes() {
+  const location = useLocation();
+
   return (
     <Suspense fallback={<PageLoader />}>
-      <Routes>
+      <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
         <Route path="/teoria/fala-propagacja" element={<TeoriaFalaPropagacja />} />
         <Route path="/teoria/modulacja" element={<TeoriaModulacja />} />

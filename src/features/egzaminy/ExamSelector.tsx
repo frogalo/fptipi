@@ -38,11 +38,11 @@ export default function ExamSelector({
   const activeBtn =
     'bg-amber border-amber text-ink font-bold shadow-[0_2px_8px_rgba(244,165,42,0.3)]';
   const inactiveBtn =
-    'border-line text-txt hover:border-amber hover:text-white bg-ink2/30';
+    'border-line text-txt hover:border-amber hover:text-amber bg-ink2/30';
 
   const getTermColorClass = (termId: string) => {
     if (termId.startsWith('Z')) return 'text-blue';
-    if (termId.startsWith('L')) return 'text-white';
+    if (termId.startsWith('L')) return 'text-txt';
     if (termId === 'Wrzesien') return 'text-red';
     return 'text-muted';
   };

@@ -213,7 +213,7 @@ gdzie {String.raw`\(T_{20-80}\)`} — czas narastania sygnału od 20% do 80% jeg
 </BookAddition>
 </QuestionSection>
 
-<Footer>FPTiTI · odpowiedzi cz. 3/5 (pytania 13–15) · źródło: A. Szymańska, „Fizyczne podstawy transmisji i przechowywania informacji”, luty 2026 · egzamin 13.06</Footer>
+<Footer>Odpowiedzi cz. 3/5 (pytania 13–15) · Modulacja, jakość transmisji i multipleksacja</Footer>
 </div>
     
 

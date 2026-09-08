@@ -30,7 +30,7 @@ export default function ExamEmptyState({
         <line x1="12" y1="8" x2="12" y2="12"></line>
         <line x1="12" y1="16" x2="12.01" y2="16"></line>
       </svg>
-      <h3 className="text-white font-semibold text-lg mb-1">
+      <h3 className="text-txt font-semibold text-lg mb-1">
         Brak danych dla wybranego terminu
       </h3>
       <p className="text-[14.5px] max-w-[420px] mx-auto text-muted-more">
