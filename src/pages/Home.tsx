@@ -303,7 +303,7 @@ export default function Home() {
       {/* ============================================================
           1. HEADER GŁÓWNY
           ============================================================ */}
-      <header className="mb-8 border border-line bg-linear-to-br from-panel to-ink2 rounded-[16px] px-6 sm:px-8 py-7 shadow-lg shadow-black/20">
+      <header className="mb-8 border border-line bg-linear-to-br from-panel to-ink2 rounded-2xl px-6 sm:px-8 py-7 shadow-lg shadow-black/20">
         <div className="font-mono text-xs sm:text-[13px] tracking-[0.2em] uppercase text-amber font-medium">
           FPTiTI · Fizyczne Podstawy Technologii i Teleinformatyki
         </div>
@@ -315,7 +315,13 @@ export default function Home() {
         </div>
 
         {/* Pasek szybkiego przejścia do sekcji */}
-        <nav className="flex flex-wrap gap-2.5 mt-5 pt-4 border-t border-line/60">
+        <nav className="flex flex-wrap gap-2.5 mt-5 pt-4 border-t border-line/60 items-center">
+          <Link
+            to="/nauka"
+            className="font-mono text-xs sm:text-sm px-4 py-2 rounded-full cursor-pointer transition-all duration-300 bg-amber text-ink font-bold hover:brightness-110 shadow-[0_0_15px_rgba(245,158,11,0.35)] flex items-center"
+          >
+            <span>Fiszki & Test ABCD</span>
+          </Link>
           <button
             onClick={handleNavClick('archiwum', 'archiwum')}
             className={`font-mono text-xs sm:text-sm px-4 py-2 rounded-full cursor-pointer transition-all duration-300 ${
@@ -374,12 +380,39 @@ export default function Home() {
           ============================================================ */}
       <section id="baza-egzaminow" className="mb-12 scroll-mt-6">
         <div className="font-mono text-sm sm:text-[15px] tracking-[0.14em] uppercase text-amber border-b border-line pb-2 mb-4 flex items-center justify-between">
-          <span className="font-bold">Przygotowanie do egzaminu — ściąga i archiwum arkuszy</span>
+          <span className="font-bold">Przygotowanie do egzaminu — nauka, ściąga i archiwum</span>
           <span className="text-xs sm:text-sm text-muted font-normal">Lata 2017 – 2026</span>
         </div>
 
-        {/* Dwie karty obok siebie: Ściąga oraz Wejście do Archiwum */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-5">
+        {/* Trzy karty: Centrum Nauki, Ściąga oraz Wejście do Archiwum */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-5">
+          
+          {/* Karta Centrum Nauki (NOWOŚĆ) */}
+          <div className="rounded-2xl p-5 sm:p-6 flex flex-col justify-between transition-all duration-300 border-2 border-amber/70 bg-linear-to-br from-panel to-ink2 hover:border-amber shadow-lg shadow-amber/5 hover:scale-[1.01]">
+            <div>
+              <div className="flex items-center justify-between gap-2 mb-2">
+                <span className="font-mono font-bold text-ink bg-amber rounded-md px-2.5 py-1 text-xs uppercase tracking-wider">
+                  Nowość
+                </span>
+                <span className="font-mono text-xs text-green font-bold">Fiszki & Test</span>
+              </div>
+              <h2 className="text-lg sm:text-xl font-bold text-txt mb-2 leading-snug">
+                Fiszki i Test ABCD
+              </h2>
+              <p className="text-sm sm:text-[15px] text-muted leading-relaxed mb-4">
+                Interaktywny system sprawdzania wiedzy: obracane karty 3D, quiz wyboru z realistycznymi pułapkami, kołem 50:50 i natychmiastowym wyjaśnieniem.
+              </p>
+            </div>
+            <div className="pt-3 border-t border-line/50 flex items-center justify-between">
+              <span className="text-xs text-amber font-mono">Baza 60+ zagadnień</span>
+              <Link
+                to="/nauka"
+                className="font-mono text-xs sm:text-sm bg-amber text-ink px-3 py-1.5 rounded-lg font-bold hover:brightness-110 flex items-center gap-1 transition-all"
+              >
+                Uruchom test &rarr;
+              </Link>
+            </div>
+          </div>
           
           {/* Karta Ściągi */}
           <div

@@ -17,6 +17,7 @@ const WizualizacjeTechnikaswiatlowodowa = lazy(() => import('@/pages/wizualizacj
 const Zadania1 = lazy(() => import('@/pages/zadania/Zadania1'));
 const Zadania2 = lazy(() => import('@/pages/zadania/Zadania2'));
 const Zadania3 = lazy(() => import('@/pages/zadania/Zadania3'));
+const Nauka = lazy(() => import('@/pages/Nauka'));
 
 export default function AppRoutes() {
   const location = useLocation();
@@ -25,6 +26,7 @@ export default function AppRoutes() {
     <Suspense fallback={<PageLoader />}>
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
+        <Route path="/nauka" element={<Nauka />} />
         <Route path="/teoria/fala-propagacja" element={<TeoriaFalaPropagacja />} />
         <Route path="/teoria/modulacja" element={<TeoriaModulacja />} />
         <Route path="/teoria/polprzewodniki" element={<TeoriaPolprzewodniki />} />

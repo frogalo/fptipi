@@ -120,6 +120,11 @@ export default function FloatingNav() {
         )}
 
         <div className={`floating-nav-menu ${isOpen ? 'open' : ''}`}>
+          <Link to="/nauka" className="floating-nav-link text-amber font-semibold" onClick={() => setIsOpen(false)}>
+            <span className="font-mono text-[10px] bg-amber text-ink font-bold px-1 rounded mr-1">QUIZ</span>
+            Fiszki & Test ABCD
+          </Link>
+
           <Link to="/teoria/sciaga" className="floating-nav-link" onClick={() => setIsOpen(false)}>
             <span className="font-mono text-[10px] bg-amber/20 text-amber border border-amber/30 px-1 rounded mr-1">TEZY</span>
             Opracowanie tez (Ściąga)
