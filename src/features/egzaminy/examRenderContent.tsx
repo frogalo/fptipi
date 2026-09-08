@@ -23,6 +23,21 @@ export function renderInline(text: string): React.ReactNode[] {
   });
 }
 
+interface ListItem {
+  content: string;
+  formula?: string;
+}
+
+interface ListRootItem extends ListItem {
+  subItems?: ListItem[];
+}
+
+interface ListState {
+  type: 'ul' | 'ol';
+  start?: number;
+  items: ListRootItem[];
+}
+
 /**
  * Converts a plain-text solution string into a rich, highly legible React node tree.
  * Line-by-line block parser with zero emojis and comfortable typography.
@@ -34,12 +49,9 @@ export function renderContent(text: string): React.ReactNode {
   const elements: React.ReactNode[] = [];
 
   let currentParagraph: string[] = [];
-  let currentList: {
-    type: 'ul' | 'ol';
-    start?: number;
-    items: { content: string; formula?: string }[];
-  } | null = null;
+  let currentList: ListState | null = null;
   let currentCallout: string[] = [];
+  let currentTable: string[][] = [];
 
   const flushParagraph = (key: string) => {
     if (currentParagraph.length > 0) {
@@ -55,29 +67,133 @@ export function renderContent(text: string): React.ReactNode {
     }
   };
 
+  const flushTable = (key: string) => {
+    if (currentTable.length > 0) {
+      const headerRow = currentTable[0];
+      let bodyRows = currentTable.slice(1);
+      if (bodyRows.length > 0 && bodyRows[0].every(cell => /^[:\s-]+$/.test(cell))) {
+        bodyRows = bodyRows.slice(1);
+      }
+
+      elements.push(
+        <div key={key} className="my-5 overflow-x-auto rounded-xl border border-line bg-panel2/50 shadow-sm">
+          <table className="w-full text-left border-collapse text-[14px]">
+            <thead>
+              <tr className="border-b border-line bg-ink2/90">
+                {headerRow.map((cell, cIdx) => (
+                  <th
+                    key={cIdx}
+                    className="py-3 px-4 font-mono text-[12.5px] font-bold uppercase tracking-wider text-amber border-r border-line/40 last:border-r-0"
+                  >
+                    {renderInline(cell)}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-line/40 font-sans">
+              {bodyRows.map((row, rIdx) => (
+                <tr key={rIdx} className="hover:bg-amber/5 transition-colors">
+                  {row.map((cell, cIdx) => (
+                    <td
+                      key={cIdx}
+                      className="py-2.5 px-4 text-txt leading-relaxed border-r border-line/30 last:border-r-0"
+                    >
+                      {renderInline(cell)}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
+      currentTable = [];
+    }
+  };
+
   const flushList = (key: string) => {
     if (currentList) {
-      const items = currentList.items.map((item, iIdx) => (
-        <li key={iIdx} className="leading-relaxed">
-          <span>{renderInline(item.content)}</span>
-          {item.formula && (
-            <div className="my-2.5 py-2 px-3 bg-ink2/80 rounded-lg border border-line text-center overflow-x-auto text-[15px]">
-              {renderInline(item.formula)}
-            </div>
-          )}
-        </li>
-      ));
-
       if (currentList.type === 'ol') {
         elements.push(
-          <ol key={key} start={currentList.start} className="list-decimal pl-6 space-y-2 mb-4 text-[15px] text-txt font-sans">
-            {items}
+          <ol key={key} className="space-y-3 mb-5 text-[15px] text-txt font-sans">
+            {currentList.items.map((item, iIdx) => {
+              const num = (currentList?.start ?? 1) + iIdx;
+              return (
+                <li key={iIdx} className="leading-relaxed">
+                  <div className="flex items-start gap-2.5">
+                    <span className="font-mono text-[12px] font-bold text-amber bg-ink2 px-2 py-0.5 rounded-md border border-line shrink-0 mt-px select-none">
+                      {num}.
+                    </span>
+                    <div className="flex-1 min-w-0">
+                      <span className="text-txt">{renderInline(item.content)}</span>
+                      {item.formula && (
+                        <div className="my-2.5 py-2 px-3 bg-ink2/80 rounded-lg border border-line text-center overflow-x-auto text-[15px]">
+                          {renderInline(item.formula)}
+                        </div>
+                      )}
+                      {item.subItems && item.subItems.length > 0 && (
+                        <ul className="mt-2.5 ml-1 pl-3.5 border-l-2 border-line/70 space-y-2 text-[14px]">
+                          {item.subItems.map((sub, sIdx) => (
+                            <li key={sIdx} className="leading-relaxed">
+                              <div className="flex items-start gap-2">
+                                <span className="text-amber-soft/80 font-mono text-[13px] mt-px select-none shrink-0 font-bold">–</span>
+                                <div className="flex-1 min-w-0 text-txt/90">
+                                  <span>{renderInline(sub.content)}</span>
+                                  {sub.formula && (
+                                    <div className="my-2 py-1.5 px-2.5 bg-ink2/80 rounded-lg border border-line text-center overflow-x-auto text-[14px]">
+                                      {renderInline(sub.formula)}
+                                    </div>
+                                  )}
+                                </div>
+                              </div>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  </div>
+                </li>
+              );
+            })}
           </ol>
         );
       } else {
         elements.push(
-          <ul key={key} className="list-disc pl-6 space-y-2 mb-4 text-[15px] text-txt font-sans">
-            {items}
+          <ul key={key} className="space-y-3 mb-5 text-[15px] text-txt font-sans">
+            {currentList.items.map((item, iIdx) => (
+              <li key={iIdx} className="leading-relaxed">
+                <div className="flex items-start gap-2.5">
+                  <span className="inline-block w-2 h-2 rounded-full bg-amber/90 mt-[7.5px] shrink-0 shadow-sm shadow-amber/30" />
+                  <div className="flex-1 min-w-0">
+                    <span className="text-txt">{renderInline(item.content)}</span>
+                    {item.formula && (
+                      <div className="my-2.5 py-2 px-3 bg-ink2/80 rounded-lg border border-line text-center overflow-x-auto text-[15px]">
+                        {renderInline(item.formula)}
+                      </div>
+                    )}
+                    {item.subItems && item.subItems.length > 0 && (
+                      <ul className="mt-2.5 ml-1 pl-3.5 border-l-2 border-line/70 space-y-2 text-[14px]">
+                        {item.subItems.map((sub, sIdx) => (
+                          <li key={sIdx} className="leading-relaxed">
+                            <div className="flex items-start gap-2">
+                              <span className="text-amber-soft/80 font-mono text-[13px] mt-px select-none shrink-0 font-bold">–</span>
+                              <div className="flex-1 min-w-0 text-txt/90">
+                                <span>{renderInline(sub.content)}</span>
+                                {sub.formula && (
+                                  <div className="my-2 py-1.5 px-2.5 bg-ink2/80 rounded-lg border border-line text-center overflow-x-auto text-[14px]">
+                                    {renderInline(sub.formula)}
+                                  </div>
+                                )}
+                              </div>
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                </div>
+              </li>
+            ))}
           </ul>
         );
       }
@@ -117,6 +233,7 @@ export function renderContent(text: string): React.ReactNode {
   const flushAll = (key: string) => {
     flushParagraph(`${key}-p`);
     flushList(`${key}-l`);
+    flushTable(`${key}-t`);
     flushCallout(`${key}-c`);
   };
 
@@ -133,6 +250,7 @@ export function renderContent(text: string): React.ReactNode {
     if (trimmed.startsWith('>')) {
       flushParagraph(`line-${lineIdx}-p`);
       flushList(`line-${lineIdx}-l`);
+      flushTable(`line-${lineIdx}-t`);
       const cleanCallout = trimmed.replace(/^>\s?/, '').trim();
       if (cleanCallout) {
         currentCallout.push(cleanCallout);
@@ -147,6 +265,23 @@ export function renderContent(text: string): React.ReactNode {
       flushAll(`line-${lineIdx}`);
       elements.push(<hr key={`hr-${lineIdx}`} className="border-t border-line my-5" />);
       return;
+    }
+
+    // Markdown table row (| col1 | col2 |)
+    const isTableRow = trimmed.startsWith('|') && trimmed.endsWith('|') && trimmed.includes('|', 1);
+    if (isTableRow) {
+      flushParagraph(`line-${lineIdx}-p`);
+      flushList(`line-${lineIdx}-l`);
+      flushCallout(`line-${lineIdx}-c`);
+
+      const cells = trimmed
+        .slice(1, -1)
+        .split('|')
+        .map(c => c.trim());
+      currentTable.push(cells);
+      return;
+    } else {
+      flushTable(`line-${lineIdx}-t`);
     }
 
     // Level 2 Heading: ## ...
@@ -184,7 +319,12 @@ export function renderContent(text: string): React.ReactNode {
     if (trimmed.startsWith('\\[') && trimmed.endsWith('\\]')) {
       if (currentList && currentList.items.length > 0) {
         const lastItem = currentList.items[currentList.items.length - 1];
-        lastItem.formula = trimmed;
+        if (lastItem.subItems && lastItem.subItems.length > 0) {
+          const lastSub = lastItem.subItems[lastItem.subItems.length - 1];
+          lastSub.formula = trimmed;
+        } else {
+          lastItem.formula = trimmed;
+        }
       } else {
         flushAll(`line-${lineIdx}`);
         elements.push(
@@ -197,7 +337,7 @@ export function renderContent(text: string): React.ReactNode {
     }
 
     // Subheading ending in ':' (if short standalone title line)
-    if (trimmed.endsWith(':') && trimmed.length < 80 && !trimmed.startsWith('-') && !trimmed.startsWith('•') && !trimmed.match(/^\d+\./)) {
+    if (trimmed.endsWith(':') && trimmed.length < 80 && !trimmed.startsWith('-') && !trimmed.startsWith('•') && !trimmed.startsWith('*') && !trimmed.match(/^\d+\./)) {
       flushAll(`line-${lineIdx}`);
       elements.push(
         <h5 key={`subh-${lineIdx}`} className="text-[14.5px] font-semibold text-txt mt-3.5 mb-1.5 font-sans">
@@ -207,14 +347,27 @@ export function renderContent(text: string): React.ReactNode {
       return;
     }
 
-    // Bullet item (- or •)
+    // Bullet item (- or • or *)
     const isBullet = trimmed.startsWith('- ') || trimmed.startsWith('• ') || trimmed.startsWith('* ');
     if (isBullet) {
       flushParagraph(`line-${lineIdx}-p`);
+      flushTable(`line-${lineIdx}-t`);
+      const cleaned = trimmed.replace(/^[-•*]\s+/, '');
+      const leadingSpaces = line.match(/^\s*/)?.[0].length || 0;
+      const isSubItem = leadingSpaces >= 2;
+
+      if (isSubItem && currentList && currentList.items.length > 0) {
+        const parent = currentList.items[currentList.items.length - 1];
+        if (!parent.subItems) {
+          parent.subItems = [];
+        }
+        parent.subItems.push({ content: cleaned });
+        return;
+      }
+
       if (currentList && currentList.type !== 'ul') {
         flushList(`line-${lineIdx}-l`);
       }
-      const cleaned = trimmed.replace(/^[-•*]\s+/, '');
       if (!currentList) {
         currentList = { type: 'ul', items: [{ content: cleaned }] };
       } else {
@@ -227,11 +380,24 @@ export function renderContent(text: string): React.ReactNode {
     const numMatch = trimmed.match(/^(\d+)[\.\)]\s+(.*)/);
     if (numMatch && !trimmed.startsWith('##')) {
       flushParagraph(`line-${lineIdx}-p`);
+      flushTable(`line-${lineIdx}-t`);
+      const num = parseInt(numMatch[1]);
+      const content = numMatch[2];
+      const leadingSpaces = line.match(/^\s*/)?.[0].length || 0;
+      const isSubItem = leadingSpaces >= 2;
+
+      if (isSubItem && currentList && currentList.items.length > 0) {
+        const parent = currentList.items[currentList.items.length - 1];
+        if (!parent.subItems) {
+          parent.subItems = [];
+        }
+        parent.subItems.push({ content });
+        return;
+      }
+
       if (currentList && currentList.type !== 'ol') {
         flushList(`line-${lineIdx}-l`);
       }
-      const num = parseInt(numMatch[1]);
-      const content = numMatch[2];
       if (!currentList) {
         currentList = { type: 'ol', start: num, items: [{ content }] };
       } else {
@@ -243,7 +409,13 @@ export function renderContent(text: string): React.ReactNode {
     // If we're inside a list and the line continues the previous item
     if (currentList && currentList.items.length > 0) {
       const lastItem = currentList.items[currentList.items.length - 1];
-      lastItem.content += ' ' + trimmed;
+      const leadingSpaces = line.match(/^\s*/)?.[0].length || 0;
+      if (leadingSpaces >= 2 && lastItem.subItems && lastItem.subItems.length > 0) {
+        const lastSub = lastItem.subItems[lastItem.subItems.length - 1];
+        lastSub.content += ' ' + trimmed;
+      } else {
+        lastItem.content += ' ' + trimmed;
+      }
       return;
     }
 

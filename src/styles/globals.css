@@ -103,6 +103,13 @@
   mjx-container svg {
     display: inline !important;
   }
+
+  ul.list-disc > li::marker {
+    color: var(--amber);
+  }
+  ol.list-decimal > li::marker {
+    color: var(--amber);
+  }
 }
 
 /* ============================================================
