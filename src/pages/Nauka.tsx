@@ -68,6 +68,7 @@ export default function Nauka() {
   // Flashcards state
   const [cardIndex, setCardIndex] = useState<number>(0);
   const [isFlipped, setIsFlipped] = useState<boolean>(false);
+  const [flashcardHintLevel, setFlashcardHintLevel] = useState<number>(0);
 
   // Quiz state
   const [quizIndex, setQuizIndex] = useState<number>(0);
@@ -120,6 +121,7 @@ export default function Nauka() {
   useEffect(() => {
     setCardIndex(0);
     setIsFlipped(false);
+    setFlashcardHintLevel(0);
     setQuizIndex(0);
     setSelectedOption(null);
     setIsAnswerSubmitted(false);
@@ -132,7 +134,7 @@ export default function Nauka() {
   // Typeset math when changing card or quiz question
   useEffect(() => {
     triggerMathJax();
-  }, [cardIndex, isFlipped, quizIndex, mode, isAnswerSubmitted, filteredQuestions, triggerMathJax]);
+  }, [cardIndex, isFlipped, flashcardHintLevel, quizIndex, mode, isAnswerSubmitted, filteredQuestions, triggerMathJax]);
 
   const toggleShuffle = () => {
     setIsShuffled((prev) => {
@@ -175,12 +177,14 @@ export default function Nauka() {
   const nextCard = () => {
     if (filteredQuestions.length === 0) return;
     setIsFlipped(false);
+    setFlashcardHintLevel(0);
     setCardIndex((prev) => (prev + 1) % filteredQuestions.length);
   };
 
   const prevCard = () => {
     if (filteredQuestions.length === 0) return;
     setIsFlipped(false);
+    setFlashcardHintLevel(0);
     setCardIndex((prev) => (prev - 1 + filteredQuestions.length) % filteredQuestions.length);
   };
 
@@ -548,18 +552,18 @@ export default function Nauka() {
 
           {/* 3D FLASHCARD CONTAINER */}
           <div
-            className="relative w-full min-h-90 md:min-h-105 cursor-pointer select-none perspective-distant"
+            className="relative w-full min-h-95 md:min-h-110 cursor-pointer select-none perspective-1000"
             onClick={() => setIsFlipped((f) => !f)}
           >
             <div
-              className={`w-full h-full min-h-90 md:min-h-105 transition-transform duration-500 transform-style-3d relative rounded-2xl border ${
-                isFlipped ? 'rotate-y-180 border-amber/40 shadow-amber/10' : 'border-line shadow-lg'
-              } bg-panel p-6 md:p-8 flex flex-col justify-between`}
+              className={`w-full h-full min-h-95 md:min-h-110 transition-transform duration-500 transform-style-3d relative grid grid-cols-1 grid-rows-1 rounded-2xl ${
+                isFlipped ? 'rotate-y-180' : ''
+              }`}
             >
               {/* FRONT OF CARD */}
               <div
-                className={`w-full h-full flex flex-col justify-between transition-opacity duration-300 ${
-                  isFlipped ? 'hidden' : 'block'
+                className={`col-start-1 row-start-1 w-full h-full rounded-2xl border border-line bg-panel p-6 md:p-8 flex flex-col justify-between shadow-lg backface-hidden transition-all duration-300 ${
+                  isFlipped ? 'pointer-events-none opacity-0 delay-0' : 'pointer-events-auto opacity-100 delay-150'
                 }`}
               >
                 <div>
@@ -579,20 +583,75 @@ export default function Nauka() {
                     as="h2"
                     className="text-[20px] md:text-[25px] font-serif font-medium leading-relaxed text-txt mt-2"
                   />
+
+                  {/* PROMPT HINTS ACCESSIBLE BEFORE FLIP */}
+                  {currentCard.tips && currentCard.tips.length > 0 && (
+                    <div className="mt-5" onClick={(e) => e.stopPropagation()}>
+                      <div className="flex items-center gap-2">
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setFlashcardHintLevel((lvl) =>
+                              lvl < currentCard.tips!.length ? lvl + 1 : 0
+                            );
+                          }}
+                          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-amber/30 bg-amber/10 hover:bg-amber/20 text-amber text-xs font-mono font-bold transition-all cursor-pointer"
+                        >
+                          <span>💡</span>
+                          <span>
+                            {flashcardHintLevel === 0
+                              ? `Podpowiedź (1/${currentCard.tips.length})`
+                              : flashcardHintLevel < currentCard.tips.length
+                              ? `Kolejna podpowiedź (${flashcardHintLevel + 1}/${currentCard.tips.length})`
+                              : `Zwiń podpowiedzi (${flashcardHintLevel}/${currentCard.tips.length})`}
+                          </span>
+                        </button>
+                        {flashcardHintLevel > 0 && (
+                          <button
+                            type="button"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setFlashcardHintLevel(0);
+                            }}
+                            className="text-[11px] font-mono text-muted hover:text-txt px-2 py-1.5 rounded border border-line hover:border-muted/40 cursor-pointer transition-colors"
+                          >
+                            Zwiń
+                          </button>
+                        )}
+                      </div>
+
+                      {flashcardHintLevel > 0 && (
+                        <div className="mt-3 space-y-2">
+                          {currentCard.tips.slice(0, flashcardHintLevel).map((tip, idx) => (
+                            <div
+                              key={`${currentCard.id}-fhint-${idx}`}
+                              className="p-3 rounded-xl bg-ink2/90 border border-amber/25 text-[13px] text-txt flex items-start gap-2.5 shadow-sm animate-fadeIn"
+                            >
+                              <span className="font-mono text-[10px] text-amber font-bold shrink-0 bg-panel border border-amber/30 px-1.5 py-0.5 rounded mt-0.5">
+                                {idx + 1}/{currentCard.tips!.length}
+                              </span>
+                              <Latex content={tip} className="text-txt text-xs md:text-sm leading-relaxed" />
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  )}
                 </div>
 
                 <div className="mt-8 pt-4 border-t border-line/60 flex items-center justify-between text-muted text-xs font-mono">
                   <span className="text-amber-soft">
                     Kliknij kartę lub wciśnij spację, aby odsłonić odpowiedź
                   </span>
-                  <span>Obróć kartę</span>
+                  <span>Obróć kartę ↻</span>
                 </div>
               </div>
 
               {/* BACK OF CARD */}
               <div
-                className={`w-full h-full flex flex-col justify-between transition-opacity duration-300 rotate-y-180 ${
-                  isFlipped ? 'block' : 'hidden'
+                className={`col-start-1 row-start-1 w-full h-full rounded-2xl border border-amber/40 bg-panel p-6 md:p-8 flex flex-col justify-between shadow-lg shadow-amber/10 backface-hidden rotate-y-180 transition-all duration-300 ${
+                  isFlipped ? 'pointer-events-auto opacity-100 delay-150' : 'pointer-events-none opacity-0 delay-0'
                 }`}
               >
                 <div>
@@ -619,24 +678,6 @@ export default function Nauka() {
                       </li>
                     ))}
                   </ul>
-
-                  {currentCard.tips && (
-                    <div className="mt-4 p-3.5 rounded-xl bg-ink2/90 border border-line text-[13px] space-y-2">
-                      <strong className="font-mono text-[11px] uppercase tracking-wider block text-amber">
-                        Wskazówki egzaminacyjne (3 poziomy trudności):
-                      </strong>
-                      <div className="space-y-1.5">
-                        {currentCard.tips.map((t, idx) => (
-                          <div key={idx} className="flex items-start gap-2">
-                            <span className="font-mono text-[10px] text-amber font-bold mt-0.5 shrink-0 bg-panel border border-line px-1.5 py-0.2 rounded">
-                              {idx + 1}/3
-                            </span>
-                            <Latex content={t} className="text-txt leading-relaxed" />
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
                 </div>
 
                 {/* SELF EVALUATION BUTTONS */}

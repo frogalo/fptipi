@@ -41,6 +41,18 @@ export default function FloatingNav() {
   const sections = usePageSections();
   const sectionIds = useMemo(() => sections.map((s) => s.id), [sections]);
   const activeSectionId = useActiveSection(sectionIds);
+  const [isSectionsCollapsed, setIsSectionsCollapsed] = useState<boolean>(() => {
+    const saved = localStorage.getItem('floating_sections_collapsed');
+    return saved !== null ? saved === 'true' : false;
+  });
+
+  const toggleSectionsCollapsed = () => {
+    setIsSectionsCollapsed((prev) => {
+      const next = !prev;
+      localStorage.setItem('floating_sections_collapsed', String(next));
+      return next;
+    });
+  };
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -105,18 +117,41 @@ export default function FloatingNav() {
         </div>
 
         {sections.length > 0 && (
-          <nav className="floating-nav-sections" aria-label="Sekcje na tej stronie">
-            {sections.map((section) => (
-              <a
-                key={section.id}
-                href={`#${section.id}`}
-                className={`floating-nav-section-link${activeSectionId === section.id ? ' active' : ''}`}
-                title={section.fullLabel}
-              >
-                {section.label}
-              </a>
-            ))}
-          </nav>
+          <div className="hidden md:flex flex-col items-end gap-1.5 w-full pointer-events-auto">
+            <button
+              type="button"
+              onClick={toggleSectionsCollapsed}
+              className={`group flex items-center justify-between gap-2 px-2.5 py-1.5 rounded-lg border border-line/80 bg-panel/95 hover:bg-ink2 hover:border-amber/50 text-txt text-[11px] font-mono shadow-md backdrop-blur-md transition-all cursor-pointer select-none ${
+                isSectionsCollapsed ? 'w-auto' : 'w-full'
+              }`}
+              title={isSectionsCollapsed ? 'Rozwiń spis sekcji' : 'Zwiń spis sekcji'}
+            >
+              <div className="flex items-center gap-1.5">
+                <span className="text-amber text-xs">📑</span>
+                <span className="font-semibold text-muted group-hover:text-txt">
+                  Sekcje ({sections.length})
+                </span>
+              </div>
+              <span className="text-amber font-mono text-[11px] font-bold">
+                {isSectionsCollapsed ? 'Pokaż ▾' : 'Zwiń ▴'}
+              </span>
+            </button>
+
+            {!isSectionsCollapsed && (
+              <nav className="floating-nav-sections animate-fadeIn" aria-label="Sekcje na tej stronie">
+                {sections.map((section) => (
+                  <a
+                    key={section.id}
+                    href={`#${section.id}`}
+                    className={`floating-nav-section-link${activeSectionId === section.id ? ' active' : ''}`}
+                    title={section.fullLabel}
+                  >
+                    {section.label}
+                  </a>
+                ))}
+              </nav>
+            )}
+          </div>
         )}
 
         <div className={`floating-nav-menu ${isOpen ? 'open' : ''}`}>
