@@ -364,7 +364,7 @@ export default function Zadania2() {
 <h4>Minimalna moc lasera (\(P_&#123;S, 1&#125;\)):</h4>
 \[P_&#123;S, 1&#125; - A_&#123;\mathrm&#123;total&#125;, 1&#125; \ge P_R + P_m\]
 \[P_&#123;S, 1&#125; \ge -30\ \mathrm&#123;dBm&#125; + 3\ \mathrm&#123;dB&#125; + 33\ \mathrm&#123;dB&#125; = +6\ \mathrm&#123;dBm&#125;\]
-<p className="mb-[11px]">Przeliczając na miliwaty: \(P_&#123;S, 1&#125; \ge 10^&#123;0&#123;,&#125;6&#125; \approx 3&#123;,&#125;98\ \mathrm&#123;mW&#125;\).</p>
+<p className="mb-[11px]">Przeliczenie na miliwaty (bez kalkulatora): \(+6\ \mathrm&#123;dBm&#125; = 0\ \mathrm&#123;dBm&#125; + 2 \cdot 3\ \mathrm&#123;dB&#125; \implies 1\ \mathrm&#123;mW&#125; \cdot 2^2 = \mathbf&#123;4\ \mathrm&#123;mW&#125;&#125;\) (dokładnie \(10^&#123;0&#123;,&#125;6&#125; \approx 3&#123;,&#125;98\ \mathrm&#123;mW&#125;\)).</p>
 
 ---
 
@@ -386,7 +386,7 @@ export default function Zadania2() {
 <h4>4. Minimalna moc lasera (\(P_&#123;S, 2&#125;\)):</h4>
 \[P_&#123;S, 2&#125; - A_&#123;\mathrm&#123;total&#125;, 2&#125; \ge P_R + P_m\]
 \[P_&#123;S, 2&#125; \ge -30\ \mathrm&#123;dBm&#125; + 3\ \mathrm&#123;dB&#125; + 46&#123;,&#125;84\ \mathrm&#123;dB&#125; = +19&#123;,&#125;84\ \mathrm&#123;dBm&#125;\]
-<p className="mb-[11px]">Przeliczając na miliwaty: \(P_&#123;S, 2&#125; \ge 10^&#123;1&#123;,&#125;984&#125; \approx 96&#123;,&#125;4\ \mathrm&#123;mW&#125;\).</p>
+<p className="mb-[11px]">Przeliczenie na miliwaty (bez kalkulatora): \(+19&#123;,&#125;84\ \mathrm&#123;dBm&#125; \approx +20\ \mathrm&#123;dBm&#125; = \mathbf&#123;100\ \mathrm&#123;mW&#125;&#125;\) (dokładnie \(10^&#123;1&#123;,&#125;984&#125; \approx 96&#123;,&#125;4\ \mathrm&#123;mW&#125;\)).</p>
 
 <div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-green-dim/10 border-green-dim">
   <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">Porównanie Wariantów</span>
@@ -429,69 +429,84 @@ export default function Zadania2() {
   \[P_R\ \mathrm&#123;[dBm]&#125; = 10 \cdot \log_&#123;10&#125; \left( \frac&#123;P_&#123;\mathrm&#123;odb&#125;&#125;&#125;&#123;10^&#123;-3&#125;&#125; \right)\]
 </div>
 
+<div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-red/10 border-[#7d3a3a]">
+  <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-1">Pomoc Obliczeniowa bez kalkulatora (Reguła potęg 10)</span>
+  <p className="mb-2 text-sm font-semibold">Jak wyznaczyć czułość odbiornika w [dBm] w pamięci na egzaminie:</p>
+  <ul className="mb-1 ml-5 list-disc text-sm">
+    <li className="mb-1.5"><b>Energia fotonu w przybliżeniu:</b>
+      \(E_&#123;\mathrm&#123;fot&#125;&#125; = h \cdot f \approx 6&#123;,&#125;63 \cdot 10^&#123;-34&#125; \cdot 1&#123;,&#125;93 \cdot 10^&#123;14&#125; \approx 1&#123;,&#125;28 \cdot 10^&#123;-19&#125;\ \mathrm&#123;J&#125; \approx 10^&#123;-19&#125;\ \mathrm&#123;J&#125;\).
+    </li>
+    <li className="mb-1.5"><b>Moc dla \(B_0 = 10\ \mathrm&#123;Gb/s&#125; = 10^&#123;10&#125;\ \mathrm&#123;b/s&#125;\) i \(n_0 = 10\) fotonów:</b>
+      \[P_&#123;\mathrm&#123;odb&#125;&#125; \approx 10 \cdot 10^&#123;-19&#125;\ \mathrm&#123;J&#125; \cdot 10^&#123;10&#125;\ \mathrm&#123;s^&#123;-1&#125;&#125; = 10^&#123;-8&#125;\ \mathrm&#123;W&#125; = 10^&#123;-5&#125;\ \mathrm&#123;mW&#125;\]
+    </li>
+    <li className="mb-1.5"><b>Błyskawiczne dBm w pamięci:</b>
+      Moc odniesiona do \(1\ \mathrm&#123;mW&#125;\) wynosi \(10^&#123;-5&#125;\), co oznacza dokładnie:
+      \[10 \cdot \log_&#123;10&#125;(10^&#123;-5&#125;) = \mathbf&#123;-50\ \mathrm&#123;dBm&#125;&#125;\]
+      *(Dokładna wartość z uwzględnieniem czynnika 1,28 wynosi \(-48&#123;,&#125;9\ \mathrm&#123;dBm&#125; \approx -50\ \mathrm&#123;dBm&#125;\))*.
+    </li>
+    <li className="mb-1.5"><b>Zasada skali:</b> Każde 10-krotne zwiększenie liczby fotonów (\(10 \to 100 \to 1000\)) to po prostu dodanie **+10 dB**!</li>
+  </ul>
+</div>
+
 ---
 
-<h3 className="text-base text-amber-soft font-semibold mt-5 mb-2 font-mono tracking-wide">Obliczenia dla Przepływności \(B_0 = 1\ \mathrm&#123;Gb/s&#125; = 10^9\ \mathrm&#123;b/s&#125;\) (Dane z notatek):</h3>
-<p className="mb-[11px]">Dla tej przepływności wyniki idealnie pokrywają się z uproszczonymi wartościami w notatkach studentów:</p>
+<h3 className="text-base text-amber-soft font-semibold mt-5 mb-2 font-mono tracking-wide">Wariant Główny: Przepływność \(B_0 = 10\ \mathrm&#123;Gb/s&#125; = 10^&#123;10&#125;\ \mathrm&#123;b/s&#125;\) (Treść zadania):</h3>
 
 <ol type="a">
-  <li className="mb-1.5"><b>Dla \(n_0 = 10\) fotonów/bit:</b>
-    \[P_&#123;\mathrm&#123;odb&#125;&#125; = 10 \cdot 1&#123;,&#125;2815 \cdot 10^&#123;-19&#125; \cdot 10^9 = 1&#123;,&#125;2815 \cdot 10^&#123;-9&#125;\ \mathrm&#123;W&#125;\]
-    \[P_R = 10 \cdot \log_&#123;10&#125; \left( \frac&#123;1&#123;,&#125;2815 \cdot 10^&#123;-9&#125;&#125;&#123;10^&#123;-3&#125;&#125; \right) = 10 \cdot \log_&#123;10&#125;(1&#123;,&#125;2815 \cdot 10^&#123;-6&#125;) \approx -48&#123;,&#125;9\ \mathrm&#123;dBm&#125; \approx \mathbf&#123;-50\ \mathrm&#123;dBm&#125;&#125;\]
+  <li className="mb-1.5"><b>Dla \(n_0 = 10\) fotonów/bit (granica kwantowa detekcji):</b>
+    \[P_&#123;\mathrm&#123;odb&#125;&#125; = 10 \cdot 1&#123;,&#125;2815 \cdot 10^&#123;-19&#125; \cdot 10^&#123;10&#125; = 1&#123;,&#125;2815 \cdot 10^&#123;-8&#125;\ \mathrm&#123;W&#125; = 1&#123;,&#125;2815 \cdot 10^&#123;-5&#125;\ \mathrm&#123;mW&#125;\]
+    \[P_R = 10 \cdot \log_&#123;10&#125; \left( \frac&#123;1&#123;,&#125;2815 \cdot 10^&#123;-8&#125;&#125;&#123;10^&#123;-3&#125;&#125; \right) = 10 \cdot (-5 + \log_&#123;10&#125; 1&#123;,&#125;2815) \approx -48&#123;,&#125;9\ \mathrm&#123;dBm&#125; \approx \mathbf&#123;-50\ \mathrm&#123;dBm&#125;&#125;\]
   </li>
   <li className="mb-1.5"><b>Dla \(n_0 = 100\) fotonów/bit:</b>
-    \[P_&#123;\mathrm&#123;odb&#125;&#125; = 100 \cdot 1&#123;,&#125;2815 \cdot 10^&#123;-19&#125; \cdot 10^9 = 1&#123;,&#125;2815 \cdot 10^&#123;-8&#125;\ \mathrm&#123;W&#125;\]
-    \[P_R = 10 \cdot \log_&#123;10&#125; \left( \frac&#123;1&#123;,&#125;2815 \cdot 10^&#123;-8&#125;&#125;&#123;10^&#123;-3&#125;&#125; \right) \approx -38&#123;,&#125;9\ \mathrm&#123;dBm&#125; \approx \mathbf&#123;-40\ \mathrm&#123;dBm&#125;&#125;\]
+    \[P_&#123;\mathrm&#123;odb&#125;&#125; = 100 \cdot 1&#123;,&#125;2815 \cdot 10^&#123;-19&#125; \cdot 10^&#123;10&#125; = 1&#123;,&#125;2815 \cdot 10^&#123;-7&#125;\ \mathrm&#123;W&#125; = 1&#123;,&#125;2815 \cdot 10^&#123;-4&#125;\ \mathrm&#123;mW&#125;\]
+    \[P_R = -48&#123;,&#125;9\ \mathrm&#123;dBm&#125; + 10\ \mathrm&#123;dB&#125; \approx -38&#123;,&#125;9\ \mathrm&#123;dBm&#125; \approx \mathbf&#123;-40\ \mathrm&#123;dBm&#125;&#125;\]
   </li>
-  <li className="mb-1.5"><b>Dla \(n_0 = 1000\) fotonów/bit:</b>
-    \[P_&#123;\mathrm&#123;odb&#125;&#125; = 1000 \cdot 1&#123;,&#125;2815 \cdot 10^&#123;-19&#125; \cdot 10^9 = 1&#123;,&#125;2815 \cdot 10^&#123;-7&#125;\ \mathrm&#123;W&#125;\]
-    \[P_R = 10 \cdot \log_&#123;10&#125; \left( \frac&#123;1&#123;,&#125;2815 \cdot 10^&#123;-7&#125;&#125;&#123;10^&#123;-3&#125;&#125; \right) \approx -28&#123;,&#125;9\ \mathrm&#123;dBm&#125; \approx \mathbf&#123;-30\ \mathrm&#123;dBm&#125;&#125;\]
+  <li className="mb-1.5"><b>Dla \(n_0 = 1000\) fotonów/bit (poziom realnych odbiorników telekomunikacyjnych):</b>
+    \[P_&#123;\mathrm&#123;odb&#125;&#125; = 1000 \cdot 1&#123;,&#125;2815 \cdot 10^&#123;-19&#125; \cdot 10^&#123;10&#125; = 1&#123;,&#125;2815 \cdot 10^&#123;-6&#125;\ \mathrm&#123;W&#125; = 1&#123;,&#125;2815 \cdot 10^&#123;-3&#125;\ \mathrm&#123;mW&#125;\]
+    \[P_R = -38&#123;,&#125;9\ \mathrm&#123;dBm&#125; + 10\ \mathrm&#123;dB&#125; \approx -28&#123;,&#125;9\ \mathrm&#123;dBm&#125; \approx \mathbf&#123;-30\ \mathrm&#123;dBm&#125;&#125;\]
   </li>
 </ol>
 
 ---
 
-<h3 className="text-base text-amber-soft font-semibold mt-5 mb-2 font-mono tracking-wide">Obliczenia dla Przepływności \(B_0 = 10\ \mathrm&#123;Gb/s&#125; = 10^&#123;10&#125;\ \mathrm&#123;b/s&#125;\) (Treść zadania):</h3>
-<p className="mb-[11px]">Zwiększenie przepływności o jeden rząd wielkości (10-krotnie) skraca czas trwania pojedynczego bitu, co przy stałej liczbie fotonów na bit wymaga 10-krotnie większej średniej mocy docierającej (wzrost czułości o \(10\ \mathrm&#123;dB&#125;\)):</p>
+<h3 className="text-base text-amber-soft font-semibold mt-5 mb-2 font-mono tracking-wide">Wariant Porównawczy: Przepływność \(B_0 = 1\ \mathrm&#123;Gb/s&#125; = 10^9\ \mathrm&#123;b/s&#125;\):</h3>
+<p className="mb-[11px]">10-krotnie mniejsza przepływność oznacza 10-krotnie dłuższy czas trwania bitu. Przy tej samej liczbie fotonów na bit wymagana średnia moc jest 10-krotnie mniejsza (o <b>10 dB niższa</b>):</p>
 
 <ol type="a">
   <li className="mb-1.5"><b>Dla \(n_0 = 10\) fotonów/bit:</b>
-    \[P_&#123;\mathrm&#123;odb&#125;&#125; = 10 \cdot 1&#123;,&#125;2815 \cdot 10^&#123;-19&#125; \cdot 10^&#123;10&#125; = 1&#123;,&#125;2815 \cdot 10^&#123;-8&#125;\ \mathrm&#123;W&#125;\]
-    \[P_R = 10 \cdot \log_&#123;10&#125; \left( \frac&#123;1&#123;,&#125;2815 \cdot 10^&#123;-8&#125;&#125;&#123;10^&#123;-3&#125;&#125; \right) \approx \mathbf&#123;-39\ \mathrm&#123;dBm&#125;&#125;\]
+    \[P_&#123;\mathrm&#123;odb&#125;&#125; = 10 \cdot 1&#123;,&#125;2815 \cdot 10^&#123;-19&#125; \cdot 10^9 = 1&#123;,&#125;2815 \cdot 10^&#123;-9&#125;\ \mathrm&#123;W&#125; \implies P_R = -50\ \mathrm&#123;dBm&#125; - 10\ \mathrm&#123;dB&#125; \approx \mathbf&#123;-60\ \mathrm&#123;dBm&#125;&#125;\]
   </li>
   <li className="mb-1.5"><b>Dla \(n_0 = 100\) fotonów/bit:</b>
-    \[P_&#123;\mathrm&#123;odb&#125;&#125; = 100 \cdot 1&#123;,&#125;2815 \cdot 10^&#123;-19&#125; \cdot 10^&#123;10&#125; = 1&#123;,&#125;2815 \cdot 10^&#123;-7&#125;\ \mathrm&#123;W&#125;\]
-    \[P_R = 10 \cdot \log_&#123;10&#125; \left( \frac&#123;1&#123;,&#125;2815 \cdot 10^&#123;-7&#125;&#125;&#123;10^&#123;-3&#125;&#125; \right) \approx \mathbf&#123;-29\ \mathrm&#123;dBm&#125;&#125;\]
+    \[P_&#123;\mathrm&#123;odb&#125;&#125; = 100 \cdot 1&#123;,&#125;2815 \cdot 10^&#123;-19&#125; \cdot 10^9 = 1&#123;,&#125;2815 \cdot 10^&#123;-8&#125;\ \mathrm&#123;W&#125; \implies P_R = -40\ \mathrm&#123;dBm&#125; - 10\ \mathrm&#123;dB&#125; \approx \mathbf&#123;-50\ \mathrm&#123;dBm&#125;&#125;\]
   </li>
   <li className="mb-1.5"><b>Dla \(n_0 = 1000\) fotonów/bit:</b>
-    \[P_&#123;\mathrm&#123;odb&#125;&#125; = 1000 \cdot 1&#123;,&#125;2815 \cdot 10^&#123;-19&#125; \cdot 10^&#123;10&#125; = 1&#123;,&#125;2815 \cdot 10^&#123;-6&#125;\ \mathrm&#123;W&#125;\]
-    \[P_R = 10 \cdot \log_&#123;10&#125; \left( \frac&#123;1&#123;,&#125;2815 \cdot 10^&#123;-6&#125;&#125;&#123;10^&#123;-3&#125;&#125; \right) \approx \mathbf&#123;-19\ \mathrm&#123;dBm&#125;&#125;\]
+    \[P_&#123;\mathrm&#123;odb&#125;&#125; = 1000 \cdot 1&#123;,&#125;2815 \cdot 10^&#123;-19&#125; \cdot 10^9 = 1&#123;,&#125;2815 \cdot 10^&#123;-7&#125;\ \mathrm&#123;W&#125; \implies P_R = -30\ \mathrm&#123;dBm&#125; - 10\ \mathrm&#123;dB&#125; \approx \mathbf&#123;-40\ \mathrm&#123;dBm&#125;&#125;\]
   </li>
 </ol>
 
 <div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-green-dim/10 border-green-dim">
-  <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">Podsumowanie Czułości</span>
-  <p className="mb-[11px]">W zależności od przepływności minimalna czułość odbiornika wynosi:</p>
+  <span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">Podsumowanie Czułości w decybelach</span>
+  <p className="mb-[11px]">Zestawienie minimalnej czułości odbiornika:</p>
   <table className="w-full border-collapse my-3 text-[14.5px]">
     <tbody><tr>
       <th className="border border-line px-2.5 py-1.5 text-left font-mono text-[11.5px] text-amber-soft bg-ink2 tracking-wider">Liczba fotonów na bit (\(n_0\))</th>
+      <th className="border border-line px-2.5 py-1.5 text-left font-mono text-[11.5px] text-amber-soft bg-ink2 tracking-wider">Dla \(B_0 = 10\ \mathrm&#123;Gb/s&#125;\) (Treść zadania)</th>
       <th className="border border-line px-2.5 py-1.5 text-left font-mono text-[11.5px] text-amber-soft bg-ink2 tracking-wider">Dla \(B_0 = 1\ \mathrm&#123;Gb/s&#125;\)</th>
-      <th className="border border-line px-2.5 py-1.5 text-left font-mono text-[11.5px] text-amber-soft bg-ink2 tracking-wider">Dla \(B_0 = 10\ \mathrm&#123;Gb/s&#125;\)</th>
     </tr>
     <tr className="text-green">
       <td className="border border-line px-2.5 py-1.5 text-left"><b>10 fotonów</b> (limit kwantowy)</td>
-      <td className="border border-line px-2.5 py-1.5 text-left">ok. -50 dBm</td>
-      <td className="border border-line px-2.5 py-1.5 text-left">ok. -39 dBm</td>
+      <td className="border border-line px-2.5 py-1.5 text-left"><b>-50 dBm</b> (-48,9 dBm)</td>
+      <td className="border border-line px-2.5 py-1.5 text-left">-60 dBm (-58,9 dBm)</td>
     </tr>
     <tr>
       <td className="border border-line px-2.5 py-1.5 text-left"><b>100 fotonów</b></td>
-      <td className="border border-line px-2.5 py-1.5 text-left">ok. -40 dBm</td>
-      <td className="border border-line px-2.5 py-1.5 text-left">ok. -29 dBm</td>
+      <td className="border border-line px-2.5 py-1.5 text-left"><b>-40 dBm</b> (-38,9 dBm)</td>
+      <td className="border border-line px-2.5 py-1.5 text-left">-50 dBm (-48,9 dBm)</td>
     </tr>
     <tr>
-      <td className="border border-line px-2.5 py-1.5 text-left"><b>1000 fotonów</b> (szumy realne)</td>
-      <td className="border border-line px-2.5 py-1.5 text-left">ok. -30 dBm</td>
-      <td className="border border-line px-2.5 py-1.5 text-left">ok. -19 dBm</td>
+      <td className="border border-line px-2.5 py-1.5 text-left"><b>1000 fotonów</b> (praktyka inżynierska)</td>
+      <td className="border border-line px-2.5 py-1.5 text-left"><b>-30 dBm</b> (-28,9 dBm)</td>
+      <td className="border border-line px-2.5 py-1.5 text-left">-40 dBm (-38,9 dBm)</td>
     </tr>
   </tbody></table>
   <p className="mb-[11px]">Wniosek: <b>Wyższa szybkość transmisji (przepływność) wymaga czulszych odbiorników</b> (czyli o wyższej dopuszczalnej mocy, czyli mniej ujemnej w dBm), aby zachować tę samą liczbę fotonów na bit i uniknąć błędów.</p>
