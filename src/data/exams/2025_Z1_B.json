@@ -1,10 +1,10 @@
 {
-  "image": "2025_Z_B1.png",
+  "image": "egzamin_2025_Z_B1.png",
   "tasks": [
     {
       "number": 1,
       "question": "Omów budowę i zasadę działania tranzystorów bipolarnych (pamiętaj o charakterystykach, wykresach).",
-      "solution": "**Budowa tranzystora bipolarnego:**\nTranzystor bipolarny zbudowany jest z trzech warstw półprzewodnika o naprzemiennym typie przewodnictwa, tworzących strukturę **p-n-p** lub **n-p-n**. Posiada trzy elektrody wyprowadzone z poszczególnych warstw:\n- **Emiter (E)**: warstwa skrajna, bardzo silnie domieszkowana, której zadaniem jest emisja (wstrzykiwanie) nośników do bazy.\n- **Baza (B)**: warstwa środkowa, która jest **niezwykle cienka** i słabo domieszkowana. Służy do sterowania przepływem nośników.\n- **Kolektor (C)**: druga warstwa skrajna, stosunkowo szeroka i średnio domieszkowana, zbierająca nośniki przelatujące przez bazę.\n\n**Zasada działania (na przykładzie n-p-n):**\nAby tranzystor przewodził prąd, złącze baza-emiter (B-E) polaryzuje się w kierunku przewodzenia (napięcie włączające), a złącze baza-kolektor (B-C) w kierunku zaporowym. Otwarcie bariery B-E powoduje masowy wtrysk elektronów z emitera do bazy. Ponieważ baza jest bardzo cienka, większość z tych elektronów nie zdąży zrekombinować z tamtejszymi dziurami, tylko \"z rozpędu\" dyfunduje do krawędzi złącza kolektora. Tam, silne pole elektryczne polaryzacji zaporowej natychmiast wychwytuje te elektrony, tworząc bardzo duży prąd kolektora. Dzięki temu, operując znikomym prądem wejściowym bazy (\\( I_B \\)), kontrolujemy ogromny prąd wyjściowy kolektora (\\( I_C \\)).\n\n**Podstawowe wzory:**\n\\[ I_E = I_B + I_C \\]\n\\[ \\beta = \\frac{I_C}{I_B} \\]\ngdzie \\( \\beta \\) to współczynnik wzmocnienia prądowego.\n\n**Charakterystyki i wykresy:**\nNajważniejsza jest **charakterystyka wyjściowa**, czyli rodzina krzywych zależności prądu kolektora (\\( I_C \\)) od napięcia kolektor-emiter (\\( U_{CE} \\)) dla różnych, stałych prądów bazy (\\( I_B \\)).\nNa wykresie wyróżniamy obszary:\n1. **Nasycenia** (stromy początek wykresu) – szybki wzrost prądu, mały spadek napięcia.\n2. **Aktywny** (poziome wypłaszczenie krzywych) – prąd \\( I_C \\) zależy już tylko od prądu \\( I_B \\), a dalsze podnoszenie \\( U_{CE} \\) nie zwiększa zauważalnie przepływu.",
+      "solution": "**Budowa tranzystora bipolarnego:**\nTranzystor bipolarny zbudowany jest z trzech warstw półprzewodnika o naprzemiennym typie przewodnictwa, tworzących strukturę **p-n-p** lub **n-p-n**. Posiada trzy elektrody wyprowadzone z poszczególnych warstw:\n- **Emiter (E)**: warstwa skrajna, bardzo silnie domieszkowana, której zadaniem jest emisja (wstrzykiwanie) nośników do bazy.\n- **Baza (B)**: warstwa środkowa, która jest **niezwykle cienka** i słabo domieszkowana. Służy do sterowania przepływem nośników.\n- **Kolektor (C)**: druga warstwa skrajna, stosunkowo szeroka i średnio domieszkowana, zbierająca nośniki przelatujące przez bazę.\n\n**Zasada działania (na przykładzie n-p-n):**\nAby tranzystor przewodził prąd, złącze baza-emiter (B-E) polaryzuje się w kierunku przewodzenia (napięcie włączające), a złącze baza-kolektor (B-C) w kierunku zaporowym. Otwarcie bariery B-E powoduje masowy wtrysk elektronów z emitera do bazy. Ponieważ baza jest bardzo cienka, większość z tych elektronów nie zdąży zrekombinować z tamtejszymi dziurami, tylko \"z rozpędu\" dyfunduje do krawędzi złącza kolektora. Tam, silne pole elektryczne polaryzacji zaporowej natychmiast wychwytuje te elektrony, tworząc bardzo duży prąd kolektora. Dzięki temu, operując znikomym prądem wejściowym bazy (\\( I_B \\)), kontrolujemy ogromny prąd wyjściowy kolektora (\\( I_C \\)).\n\n**Podstawowe wzory:**\n\\[ I_E = I_B + I_C \\]\n\\[ \\beta = \\frac{I_C}{I_B} \\]\ngdzie \\( \\beta \\) to współczynnik wzmocnienia prądowego.\n\n**Charakterystyki i wykresy:**\n:::viz-bjt-characteristics\nNajważniejsza jest **charakterystyka wyjściowa**, czyli rodzina krzywych zależności prądu kolektora (\\( I_C \\)) od napięcia kolektor-emiter (\\( U_{CE} \\)) dla różnych, stałych prądów bazy (\\( I_B \\)).\nNa wykresie wyróżniamy obszary:\n1. **Nasycenia** (stromy początek wykresu) – szybki wzrost prądu, mały spadek napięcia.\n2. **Aktywny** (poziome wypłaszczenie krzywych) – prąd \\( I_C \\) zależy już tylko od prądu \\( I_B \\), a dalsze podnoszenie \\( U_{CE} \\) nie zwiększa zauważalnie przepływu.",
       "tips": [
         "Do zapamiętania: Tranzystor bipolarny sterowany jest prądem bazy I_B, a polowy napięciem bramki U_GS. Na charakterystyce wyjściowej krzywe w obszarze aktywnym są niemal całkowicie poziome – element działa jak idealne źródło prądowe I_C sterowane prądem I_B.",
         "Obliczenia bez kalkulatora (moc strat tranzystora): Moc cieplna wydzielana na tranzystorze wynosi w przybliżeniu P_tot ≈ U_CE · I_C. Jeśli w punkcie pracy U_CE = 10 V, a I_C = 20 mA = 0,02 A, to moc wynosi natychmiast P = 10 · 0,02 = 0,2 W = 200 mW."
@@ -17,12 +17,17 @@
       ],
       "charts": [
         {
-          "image": "TeoriaPamieciNosniki_img_1.jpeg",
+          "image": "bjt_symbole_schematy_diodowe_npn_pnp.jpeg",
           "alt": "Symbole graficzne i diodowe schematy zastępcze tranzystora",
-          "caption": "Rysunek 7.1. Symbole graficzne i diodowe schematy zastępcze a) tranzystor n–p–n i b) p–p–p."
+          "caption": "Rysunek 7.1. Symbole graficzne i diodowe schematy zastępcze a) tranzystor n–p–n i b) p–n–p."
         },
         {
-          "image": "TeoriaPamieciNosniki_img_3.jpeg",
+          "image": "bjt_rozklad_potencjalu_wanna_pnp_polaryzacje.jpeg",
+          "alt": "Charakterystyka potencjału w złączu p-n-p (wanna potencjału)",
+          "caption": "Rysunek 7.2. Charakterystyka potencjału w złączu p–n–p a) bez polaryzacji, b) po przyłożeniu napięcia UCE, c) złącze emiter–baza spolaryzowane w kierunku przewodzenia napięciem UBE."
+        },
+        {
+          "image": "bjt_charakterystyka_pradowo_napieciowa_ic_uce.jpeg",
           "alt": "Charakterystyka prądowo-napięciowa tranzystora",
           "caption": "Rysunek 7.3. Charakterystyka prądowo–napięciowa tranzystora."
         }

@@ -1,7 +1,7 @@
 {
   "images": [
-    "2026_L2_B1.png",
-    "2026_L2_B2.png"
+    "egzamin_2026_L2_B1.png",
+    "egzamin_2026_L2_B2.png"
   ],
   "tasks": [
     {
@@ -19,19 +19,19 @@
       ],
       "charts": [
         {
-          "image": "TeoriaPamieciNosniki_img_10.jpeg",
+          "image": "nosniki_plyta_cd_rw_przekroj_poprzeczny.jpeg",
           "alt": "Przekrój płyty CD-RW",
           "caption": "Rysunek 8.4. Przekrój poprzeczny przez płytę CD–RW (technologia zmiany fazy Phase Change).",
           "maxWidth": "600px"
         },
         {
-          "image": "TeoriaPamieciNosniki_img_11.jpeg",
+          "image": "nosniki_struktura_amorficzna_i_krystaliczna_faza.jpeg",
           "alt": "Struktura amorficzna i krystaliczna",
           "caption": "Rysunek 8.5. Struktura amorficzna (amorphous) o niskim odbiciu oraz krystaliczna (crystalline) o wysokim współczynniku odbicia światła.",
           "maxWidth": "440px"
         },
         {
-          "image": "TeoriaPamieciNosniki_img_13.jpeg",
+          "image": "nosniki_uklad_glowica_odczyt_zapis_cd.jpeg",
           "alt": "Układ do odczytu i zapisu na płytach optycznych",
           "caption": "Rysunek 8.7. Układ optyczny głowicy do odczytu i zapisu na płytach optycznych.",
           "maxWidth": "480px"
@@ -58,7 +58,7 @@
       ],
       "charts": [
         {
-          "image": "2026_L2_B2.png",
+          "image": "egzamin_2026_L2_B2.png",
           "alt": "Załącznik do zadania 1b – Wykres tłumienia ITU-R P.676-13",
           "caption": "Załącznik egzaminacyjny do zadania 1. b): Wykres tłumienia jednostkowego gazów atmosferycznych wg ITU-R P.676-13 z zaznaczoną żółtą kropką przy f ≈ 320–325 GHz.",
           "maxWidth": "720px"
@@ -87,7 +87,7 @@
     {
       "number": 3,
       "question": "3. Omów budowę i zasadę działania tranzystorów bipolarnych. Podaj charakterystyki, wzory i rysunki.\nProszę pamiętać o zamieszczeniu wzorów, charakterystyk i rysunków z opisami",
-      "solution": "## 1. Budowa tranzystora bipolarnego (BJT)\n\nTranzystor bipolarny składa się z trzech naprzemiennych warstw półprzewodnika tworzących dwa złącza p-n w konfiguracji **n-p-n** (najczęstszy) lub **p-n-p**:\n- **Emiter (E)**: Bardzo silnie domieszkowany; emituje nośniki większościowe do bazy.\n- **Baza (B)**: **Ekstremalnie cienka** (ułamki µm) i **bardzo słabo domieszkowana**; minimalizuje to rekombinację ładunków.\n- **Kolektor (C)**: Największy fizycznie, umiarkowanie domieszkowany; zbiera nośniki wstrzyknięte z emitera.\n\n---\n\n## 2. Zasada działania (dla tranzystora n-p-n w stanie aktywnym)\n\n### Warunki polaryzacji w stanie aktywnym:\n\n1. Złącze **emiter–baza (E-B)** spolaryzowane w **kierunku przewodzenia** (\\(U_{BE} \\approx 0,7\\ \\mathrm{V}\\)).\n2. Złącze **baza–kolektor (B-C)** spolaryzowane w **kierunku zaporowym** (\\(U_{CE} > U_{BE}\\)).\n\n### Przebieg zjawisk w złączach:\n\n1. **Wstrzykiwanie**: Obniżona bariera E-B powoduje masowy przepływ elektronów z emitera do bazy.\n2. **Dyfuzja przez bazę**: Baza jest bardzo cienka i słabo domieszkowana dziurami, dlatego zaledwie ok. **1% elektronów ulega rekombinacji** (tworząc znikomy prąd bazy \\(I_B\\)).\n3. **Ściąganie do kolektora**: Pozostałe **99% elektronów** dociera do złącza kolektorowego i zostaje błyskawicznie wciągnięte przez silne pole zaporowe kolektora, tworząc główny prąd kolektora \\(I_C\\).\n\n> **Istota wzmocnienia:**\n> Niewielki prąd sterujący bazy \\(I_B\\) kontroluje potężny prąd kolektora \\(I_C\\).\n\n---\n\n## 3. Zestawienie podstawowych wzorów\n\n1. **Bilans prądów (I prawo Kirchhoffa)**:\n\\[I_E = I_C + I_B\\]\n2. **Wzmocnienie prądowe w układzie OE (wspólnego emitera)**:\n\\[\\beta = h_{21E} = \\frac{I_C}{I_B} \\quad (\\text{typowo } 50\\text{–}300)\\]\n3. **Wzmocnienie prądowe w układzie OB (wspólnej bazy)**:\n\\[\\alpha = \\frac{I_C}{I_E} = \\frac{\\beta}{\\beta + 1} \\approx 0,98\\text{–}0,998\\]\n4. **Równanie prądu kolektora (Shockleya)**:\n\\[I_C \\approx I_S \\cdot \\exp\\left(\\frac{U_{BE}}{U_T}\\right) \\quad (U_T \\approx 26\\ \\mathrm{mV})\\]\n\n---\n\n## 4. Charakterystyki do narysowania na egzaminie\n\n### 1. Rozkład potencjału w złączu (wykres „wanny”)\n\n- Bez polaryzacji: wysokie bariery uniemożliwiające ruch ładunków.\n- Polaryzacja przewodzenia \\(U_{BE}\\): obniżenie progu od strony emitera.\n- Polaryzacja zaporowa \\(U_{CE}\\): stromy spadek potencjału ściągający ładunki do kolektora.\n\n### 2. Charakterystyka wyjściowa IC = f(UCE) przy IB = const\n\n- Rodzina płaskich krzywych dla kolejnych wartości \\(I_B\\).\n- **Obszar nasycenia** (\\(U_{CE} < 0,3\\ \\mathrm{V}\\)): prąd stromo rośnie od zera.\n- **Obszar aktywny (wzmacniający)**: linie są **niemal poziome** (prąd \\(I_C\\) zależy tylko od \\(I_B\\), a nie od \\(U_{CE}\\) – tranzystor działa jak sterowane źródło prądowe).\n- **Obszar zatkania** (\\(I_B = 0\\)): prąd \\(I_C \\approx 0\\).\n- **Obszar przebicia**: gwałtowny wzrost prądu przy przekroczeniu napięcia granicznego.",
+      "solution": "## 1. Budowa tranzystora bipolarnego (BJT)\n\nTranzystor bipolarny składa się z trzech naprzemiennych warstw półprzewodnika tworzących dwa złącza p-n w konfiguracji **n-p-n** (najczęstszy) lub **p-n-p**:\n- **Emiter (E)**: Bardzo silnie domieszkowany; emituje nośniki większościowe do bazy.\n- **Baza (B)**: **Ekstremalnie cienka** (ułamki µm) i **bardzo słabo domieszkowana**; minimalizuje to rekombinację ładunków.\n- **Kolektor (C)**: Największy fizycznie, umiarkowanie domieszkowany; zbiera nośniki wstrzyknięte z emitera.\n\n---\n\n## 2. Zasada działania (dla tranzystora n-p-n w stanie aktywnym)\n\n### Warunki polaryzacji w stanie aktywnym:\n\n1. Złącze **emiter–baza (E-B)** spolaryzowane w **kierunku przewodzenia** (\\(U_{BE} \\approx 0,7\\ \\mathrm{V}\\)).\n2. Złącze **baza–kolektor (B-C)** spolaryzowane w **kierunku zaporowym** (\\(U_{CE} > U_{BE}\\)).\n\n### Przebieg zjawisk w złączach:\n\n1. **Wstrzykiwanie**: Obniżona bariera E-B powoduje masowy przepływ elektronów z emitera do bazy.\n2. **Dyfuzja przez bazę**: Baza jest bardzo cienka i słabo domieszkowana dziurami, dlatego zaledwie ok. **1% elektronów ulega rekombinacji** (tworząc znikomy prąd bazy \\(I_B\\)).\n3. **Ściąganie do kolektora**: Pozostałe **99% elektronów** dociera do złącza kolektorowego i zostaje błyskawicznie wciągnięte przez silne pole zaporowe kolektora, tworząc główny prąd kolektora \\(I_C\\).\n\n> **Istota wzmocnienia:**\n> Niewielki prąd sterujący bazy \\(I_B\\) kontroluje potężny prąd kolektora \\(I_C\\).\n\n---\n\n## 3. Zestawienie podstawowych wzorów\n\n1. **Bilans prądów (I prawo Kirchhoffa)**:\n\\[I_E = I_C + I_B\\]\n2. **Wzmocnienie prądowe w układzie OE (wspólnego emitera)**:\n\\[\\beta = h_{21E} = \\frac{I_C}{I_B} \\quad (\\text{typowo } 50\\text{–}300)\\]\n3. **Wzmocnienie prądowe w układzie OB (wspólnej bazy)**:\n\\[\\alpha = \\frac{I_C}{I_E} = \\frac{\\beta}{\\beta + 1} \\approx 0,98\\text{–}0,998\\]\n4. **Równanie prądu kolektora (Shockleya)**:\n\\[I_C \\approx I_S \\cdot \\exp\\left(\\frac{U_{BE}}{U_T}\\right) \\quad (U_T \\approx 26\\ \\mathrm{mV})\\]\n\n---\n\n## 4. Charakterystyki do narysowania na egzaminie\n\n:::viz-bjt-characteristics\n\n### 1. Rozkład potencjału w złączu (wykres „wanny”)\n\n- Bez polaryzacji: wysokie bariery uniemożliwiające ruch ładunków.\n- Polaryzacja przewodzenia \\(U_{BE}\\): obniżenie progu od strony emitera.\n- Polaryzacja zaporowa \\(U_{CE}\\): stromy spadek potencjału ściągający ładunki do kolektora.\n\n### 2. Charakterystyka wyjściowa IC = f(UCE) przy IB = const\n\n- Rodzina płaskich krzywych dla kolejnych wartości \\(I_B\\).\n- **Obszar nasycenia** (\\(U_{CE} < 0,3\\ \\mathrm{V}\\)): prąd stromo rośnie od zera.\n- **Obszar aktywny (wzmacniający)**: linie są **niemal poziome** (prąd \\(I_C\\) zależy tylko od \\(I_B\\), a nie od \\(U_{CE}\\) – tranzystor działa jak sterowane źródło prądowe).\n- **Obszar zatkania** (\\(I_B = 0\\)): prąd \\(I_C \\approx 0\\).\n- **Obszar przebicia**: gwałtowny wzrost prądu przy przekroczeniu napięcia granicznego.",
       "tips": [
         "Do zapamiętania: Podczas rysowania charakterystyki wyjściowej pamiętaj o zaznaczeniu, że krzywe w obszarze aktywnym są niemal całkowicie poziome – tranzystor bipolarny zachowuje się w tym stanie jak źródło prądowe sterowane prądem bazy!",
         "Obliczenia bez kalkulatora (napięcie termiczne U_T): W temperaturze pokojowej U_T = kT/q ≈ 26 mV. Ze wzoru Shockleya I_C = I_S · exp(U_BE / U_T) wynika, że wzrost napięcia bazy o zaledwie 60 mV (ok. 2,3 · U_T) zwiększa prąd kolektora aż 10-krotnie!"
@@ -96,6 +96,23 @@
         {
           "label": "Pyt. 22 · Tranzystory bipolarne",
           "route": "/teoria/pamieci-nosniki#q22"
+        }
+      ],
+      "charts": [
+        {
+          "image": "bjt_symbole_schematy_diodowe_npn_pnp.jpeg",
+          "alt": "Symbole graficzne i diodowe schematy zastępcze tranzystora",
+          "caption": "Rysunek 7.1. Symbole graficzne i diodowe schematy zastępcze a) tranzystor n–p–n i b) p–n–p."
+        },
+        {
+          "image": "bjt_rozklad_potencjalu_wanna_pnp_polaryzacje.jpeg",
+          "alt": "Charakterystyka potencjału w złączu p-n-p (wanna potencjału)",
+          "caption": "Rysunek 7.2. Charakterystyka potencjału w złączu p–n–p a) bez polaryzacji, b) po przyłożeniu napięcia UCE, c) złącze emiter–baza spolaryzowane w kierunku przewodzenia napięciem UBE."
+        },
+        {
+          "image": "bjt_charakterystyka_pradowo_napieciowa_ic_uce.jpeg",
+          "alt": "Charakterystyka prądowo-napięciowa tranzystora",
+          "caption": "Rysunek 7.3. Charakterystyka prądowo–napięciowa tranzystora."
         }
       ]
     }

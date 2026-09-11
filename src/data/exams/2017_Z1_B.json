@@ -1,10 +1,10 @@
 {
-  "image": "2017_Z12_L12.png",
+  "image": "egzamin_2017_Z12_L12.png",
   "tasks": [
     {
       "number": 1,
       "question": "Omów budowę i zasadę działania tranzystorów bipolarnych.",
-      "solution": "Tranzystor bipolarny to element składający się z trzech naprzemiennych warstw półprzewodnika o różnym typie przewodnictwa, tworzących strukturę **NPN** lub **PNP**. Posiada trzy elektrody: **Emiter (E)**, **Baza (B)** i **Kolektor (C)**. Baza jest bardzo cienka względem pozostałych obszarów.\n\n**Zasada działania (na przykładzie NPN):**\nAby tranzystor przewodził w obszarze aktywnym, złącze Baza-Emiter musi być spolaryzowane w kierunku przewodzenia, a złącze Kolektor-Baza w kierunku zaporowym. Napięcie przyłożone do bazy i emitera obniża barierę potencjału, co powoduje silne wstrzykiwanie elektronów (nośników większościowych emitera) do obszaru bazy. Z racji tego, że baza jest niezwykle cienka i słabo domieszkowana, zaledwie ułamek z tych elektronów rekombinuje w bazie, tworząc niewielki prąd bazy \\( I_B \\).\n\nZdecydowana większość elektronów dociera do obszaru zubożonego złącza baza-kolektor, gdzie są natychmiast wychwytywane i przyspieszane przez silne pole elektryczne, co stanowi duży prąd kolektora \\( I_C \\). Prowadzi to do podstawowej zależności:\n\n\\[ I_C = \\beta \\cdot I_B \\]\n\ngdzie \\( \\beta \\) to współczynnik wzmocnienia prądowego tranzystora. Tranzystor pozwala zatem małym prądem bazy sterować dużym prądem w obwodzie kolektora.",
+      "solution": "Tranzystor bipolarny to element składający się z trzech naprzemiennych warstw półprzewodnika o różnym typie przewodnictwa, tworzących strukturę **NPN** lub **PNP**. Posiada trzy elektrody: **Emiter (E)**, **Baza (B)** i **Kolektor (C)**. Baza jest bardzo cienka względem pozostałych obszarów.\n\n**Zasada działania (na przykładzie NPN):**\nAby tranzystor przewodził w obszarze aktywnym, złącze Baza-Emiter musi być spolaryzowane w kierunku przewodzenia, a złącze Kolektor-Baza w kierunku zaporowym. Napięcie przyłożone do bazy i emitera obniża barierę potencjału, co powoduje silne wstrzykiwanie elektronów (nośników większościowych emitera) do obszaru bazy. Z racji tego, że baza jest niezwykle cienka i słabo domieszkowana, zaledwie ułamek z tych elektronów rekombinuje w bazie, tworząc niewielki prąd bazy \\( I_B \\).\n\nZdecydowana większość elektronów dociera do obszaru zubożonego złącza baza-kolektor, gdzie są natychmiast wychwytywane i przyspieszane przez silne pole elektryczne, co stanowi duży prąd kolektora \\( I_C \\). Prowadzi to do podstawowej zależności:\n\n\\[ I_C = \\beta \\cdot I_B \\]\n\ngdzie \\( \\beta \\) to współczynnik wzmocnienia prądowego tranzystora. Tranzystor pozwala zatem małym prądem bazy sterować dużym prądem w obwodzie kolektora.\n\n:::viz-bjt-characteristics",
       "tips": [
         "Do zapamiętania: Słowo 'bipolarny' oznacza, że w transporcie prądu udział biorą oba rodzaje nośników: nośniki większościowe emitera wstrzykiwane przez złącze B-E oraz nośniki mniejszościowe dyfundujące przez bazę.",
         "Obliczenia bez kalkulatora: Relacja współczynników wzmocnienia: α = β / (β + 1). Dla β = 100 masz α = 100 / 101 ≈ 0,99. Pamiętaj też o bilansie prądów w węźle: I_E = I_B + I_C. Jeśli I_B = 50 µA, a β = 100, to I_C = 50 µA · 100 = 5 mA!",
@@ -16,7 +16,23 @@
           "route": "/teoria/pamieci-nosniki#q22"
         }
       ],
-      "charts": []
+      "charts": [
+        {
+          "image": "bjt_symbole_schematy_diodowe_npn_pnp.jpeg",
+          "alt": "Symbole graficzne i diodowe schematy zastępcze tranzystora",
+          "caption": "Rysunek 7.1. Symbole graficzne i diodowe schematy zastępcze a) tranzystor n–p–n i b) p–n–p."
+        },
+        {
+          "image": "bjt_rozklad_potencjalu_wanna_pnp_polaryzacje.jpeg",
+          "alt": "Charakterystyka potencjału w złączu p-n-p (wanna potencjału)",
+          "caption": "Rysunek 7.2. Charakterystyka potencjału w złączu p–n–p a) bez polaryzacji, b) po przyłożeniu napięcia UCE, c) złącze emiter–baza spolaryzowane w kierunku przewodzenia napięciem UBE."
+        },
+        {
+          "image": "bjt_charakterystyka_pradowo_napieciowa_ic_uce.jpeg",
+          "alt": "Charakterystyka prądowo-napięciowa tranzystora",
+          "caption": "Rysunek 7.3. Charakterystyka prądowo–napięciowa tranzystora."
+        }
+      ]
     },
     {
       "number": 2,

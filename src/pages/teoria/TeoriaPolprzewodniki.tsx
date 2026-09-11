@@ -1,11 +1,11 @@
-import TeoriaPolprzewodniki_img_1 from '../../assets/TeoriaPolprzewodniki_img_1.png';
-import TeoriaPolprzewodniki_img_2 from '../../assets/TeoriaPolprzewodniki_img_2.png';
-import TeoriaPolprzewodniki_img_3 from '../../assets/TeoriaPolprzewodniki_img_3.png';
-import TeoriaPolprzewodniki_img_4 from '../../assets/TeoriaPolprzewodniki_img_4.png';
-import TeoriaPolprzewodniki_img_5 from '../../assets/TeoriaPolprzewodniki_img_5.png';
-import TeoriaPolprzewodniki_img_6 from '../../assets/TeoriaPolprzewodniki_img_6.png';
-import TeoriaPolprzewodniki_img_7 from '../../assets/TeoriaPolprzewodniki_img_7.png';
-import TeoriaPolprzewodniki_img_8 from '../../assets/TeoriaPolprzewodniki_img_8.png';
+import polprzewodniki_modele_pasmowe_metal_polprzewodnik_dielektryk from '../../assets/polprzewodniki_modele_pasmowe_metal_polprzewodnik_dielektryk.png';
+import polprzewodniki_rozklad_fermi_dirac_samoistny_n_p from '../../assets/polprzewodniki_rozklad_fermi_dirac_samoistny_n_p.png';
+import polprzewodniki_koncentracja_nosnikow_temperatura_krzem_n from '../../assets/polprzewodniki_koncentracja_nosnikow_temperatura_krzem_n.png';
+import polprzewodniki_generacja_rekombinacja_bezposrednia from '../../assets/polprzewodniki_generacja_rekombinacja_bezposrednia.png';
+import polprzewodniki_generacja_rekombinacja_posrednia_srh from '../../assets/polprzewodniki_generacja_rekombinacja_posrednia_srh.png';
+import polprzewodniki_konduktywnosc_temperatura from '../../assets/polprzewodniki_konduktywnosc_temperatura.png';
+import polprzewodniki_schemat_zlacza_pn from '../../assets/polprzewodniki_schemat_zlacza_pn.png';
+import polprzewodniki_charakterystyka_pradowo_napieciowa_diody from '../../assets/polprzewodniki_charakterystyka_pradowo_napieciowa_diody.png';
 import React, { useEffect } from 'react';
 import { PageHeader, QuestionSection, BlockFormula } from '../../components/TheoryComponents';
 import { Concept, Formula, Symbol, Explanation, Conclusion, BookAddition } from '../../components/MathBlocks';
@@ -65,7 +65,7 @@ export default function Teoria16() {
 
 <h3 className="text-base text-amber-soft font-semibold mt-5 mb-2 font-mono tracking-wide">Czym są półprzewodniki</h3>
 <p className="mb-[11px]"><b>Półprzewodniki to materiały, których przewodnictwo elektryczne jest zawarte w przedziale {String.raw`\(10^{-9}-10^{3}\,[\Omega^{-1}cm^{-1}]\)`}; zależy ono silnie od domieszkowania, temperatury czy napromieniowania.</b> Rezystywność półprzewodników jest <b>większa niż rezystywność metali</b> (przewodników), natomiast <b>mniejsza niż rezystywność dielektryków</b> (izolatorów). Ponadto <b>dominuje tu przewodnictwo elektronowe nad jonowym</b>. Przerwa energetyczna półprzewodników leży w większości przypadków pomiędzy wartościami <b>0&nbsp;eV i 3&nbsp;eV</b>, ale są to wartości umowne.</p>
-<figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={TeoriaPolprzewodniki_img_1} alt="Modele pasmowe"/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 6.1. Porównanie energetycznego modelu pasmowego dla a) metalu, b) półprzewodnika i c) dielektryka.</figcaption></figure>
+<figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={polprzewodniki_modele_pasmowe_metal_polprzewodnik_dielektryk} alt="Modele pasmowe"/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 6.1. Porównanie energetycznego modelu pasmowego dla a) metalu, b) półprzewodnika i c) dielektryka.</figcaption></figure>
 <p className="mb-[11px]">Odstęp oznaczony symbolem {String.raw`\(E_g\)`}, określający odległość pomiędzy wierzchołkiem pasma walencyjnego a dnem pasma przewodnictwa, nazywa się <b>przerwą energetyczną bądź pasmem zabronionym</b>. W temperaturze zera bezwzględnego pasmo walencyjne jest całkowicie obsadzone elektronami, a pasmo przewodnictwa jest całkowicie puste. Jeżeli nastąpi wzrost temperatury, część elektronów z pasma walencyjnego przechodzi do pasma przewodnictwa i pojawią się puste miejsca w paśmie walencyjnym, tzw. dziury. <b>Proces ten nazywa się generacją par elektron–dziura.</b> Do powstania nośników swobodnych ładunku koniecznym jest dostarczenie energii z zewnątrz. <b>Szerokość przerwy zabronionej jest równa wartości energii, jaką trzeba dostarczyć do sieci krystalicznej, żeby elektron został uwolniony z wiązania kowalencyjnego.</b> W przypadku metali przerwa zabroniona nie istnieje (pasmo walencyjne i przewodnictwa zachodzą wzajemnie na siebie), a w dielektrykach jest ona większa niż w półprzewodnikach.</p>
 
 <h3 className="text-base text-amber-soft font-semibold mt-5 mb-2 font-mono tracking-wide">Rodzaje półprzewodników</h3>
@@ -152,7 +152,7 @@ export default function Teoria16() {
 <Symbol symbol={String.raw`T`} desc="temperatura bezwzględna" />
 <p className=" text-[14px] text-muted -mt-1 mb-[14px]">gdzie <code className="font-mono text-txt text-[12.5px]">E<sub>F</sub></code> — energia Fermiego (poziom Fermiego).</p>
 <p className="mb-[11px]"><b>Poziom Fermiego to taki poziom energetyczny, dla którego prawdopodobieństwo zajęcia przez elektron wynosi 0,5.</b></p>
-<figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={TeoriaPolprzewodniki_img_2} alt="Rozkład Fermiego-Diraca"/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 6.2. Rozkład Fermiego–Diraca dla półprzewodnika a) samoistnego, b) typu n i c) typu p.</figcaption></figure>
+<figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={polprzewodniki_rozklad_fermi_dirac_samoistny_n_p} alt="Rozkład Fermiego-Diraca"/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 6.2. Rozkład Fermiego–Diraca dla półprzewodnika a) samoistnego, b) typu n i c) typu p.</figcaption></figure>
 <ul className="mb-3 ml-5 list-disc">
 <li className="mb-1.5">w półprzewodniku <b>samoistnym</b> (koncentracja dziur i elektronów taka sama) poziom Fermiego jest położony <b>dokładnie pośrodku pasma zabronionego</b>;</li>
 <li className="mb-1.5">w półprzewodniku <b>typu n</b> (więcej elektronów niż dziur) poziom Fermiego znajduje się <b>bliżej dna pasma przewodnictwa</b>;</li>
@@ -190,7 +190,7 @@ export default function Teoria16() {
 </Conclusion>
 
 <h3 className="text-base text-amber-soft font-semibold mt-5 mb-2 font-mono tracking-wide">Zależność koncentracji od temperatury (krzem typu n)</h3>
-<figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={TeoriaPolprzewodniki_img_3} alt="Koncentracja vs temperatura" style={{ "maxWidth": "380px" }}/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 6.3. Zależność koncentracji nośników w funkcji temperatury dla krzemu typu n.</figcaption></figure>
+<figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={polprzewodniki_koncentracja_nosnikow_temperatura_krzem_n} alt="Koncentracja vs temperatura" style={{ "maxWidth": "380px" }}/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 6.3. Zależność koncentracji nośników w funkcji temperatury dla krzemu typu n.</figcaption></figure>
 <ul className="mb-3 ml-5 list-disc">
 <li className="mb-1.5"><b>0–150 K:</b> koncentracja nośników szybko wzrasta — spowodowane <b>wzrostem liczby zjonizowanych atomów domieszki</b>;</li>
 <li className="mb-1.5"><b>150–450 K:</b> koncentracja nie zmienia się i utrzymuje na stałym poziomie, ponieważ <b>wszystkie atomy domieszki zostały już zjonizowane</b>;</li>
@@ -219,7 +219,7 @@ export default function Teoria16() {
 
 <h3 className="text-base text-amber-soft font-semibold mt-5 mb-2 font-mono tracking-wide">Generacja i rekombinacja bezpośrednia</h3>
 <p className="mb-[11px]">Najprostszym przypadkiem jest generacja i rekombinacja bezpośrednia, gdzie następują <b>bezpośrednie przejścia elektronów z pasma walencyjnego do pasma przewodnictwa i odwrotnie</b>.</p>
-<figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={TeoriaPolprzewodniki_img_4} alt="Generacja i rekombinacja bezpośrednia" style={{ "maxWidth": "380px" }}/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 6.5. Model generacji i rekombinacji bezpośredniej w półprzewodniku.</figcaption></figure>
+<figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={polprzewodniki_generacja_rekombinacja_bezposrednia} alt="Generacja i rekombinacja bezpośrednia" style={{ "maxWidth": "380px" }}/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 6.5. Model generacji i rekombinacji bezpośredniej w półprzewodniku.</figcaption></figure>
 <ul className="mb-3 ml-5 list-disc">
 <li className="mb-1.5">Żeby doszło do <b>generacji bezpośredniej</b> pary elektron–dziura, potrzebna jest <b>energia większa niż szerokość pasma zabronionego</b>. Bardzo mało prawdopodobne jest przejście przy dostarczeniu <b>energii cieplnej</b>, natomiast prawdopodobieństwo przejścia jest <b>praktycznie zawsze zapewnione podczas dostarczenia energii świetlnej</b>, której wartość jest o wiele większa.</li>
 <li className="mb-1.5">Przy <b>rekombinacji</b> (elektrony przechodzą z pasma przewodnictwa do pasma walencyjnego) <b>wydzielana jest energia w postaci promieniowania świetlnego lub cieplnego</b>. Przykładowo <b>w krzemie i germanie</b> mamy do czynienia z wydzielaniem energii <b>w postaci ciepła</b>, a <b>w arsenku galu — w postaci promieniowania świetlnego</b>.</li>
@@ -228,7 +228,7 @@ export default function Teoria16() {
 
 <h3 className="text-base text-amber-soft font-semibold mt-5 mb-2 font-mono tracking-wide">Generacja i rekombinacja pośrednia</h3>
 <p className="mb-[11px]">W niektórych półprzewodnikach mamy do czynienia z <b>generacją pośrednią</b>, gdzie elektron z pasma walencyjnego do pasma przewodnictwa dociera <b>pokonując dwa etapy</b> (przez centrum generacyjno-rekombinacyjne). W stosunku do rekombinacji bezpośredniej <b>wzrasta prawdopodobieństwo przejścia między pasmami. Ponadto zwiększa się szybkość generacji i rekombinacji, w związku z czym maleje czas życia nośników.</b></p>
-<figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={TeoriaPolprzewodniki_img_5} alt="Generacja i rekombinacja pośrednia" style={{ "maxWidth": "360px" }}/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 6.6. Model generacji i rekombinacji pośredniej w półprzewodniku.</figcaption></figure>
+<figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={polprzewodniki_generacja_rekombinacja_posrednia_srh} alt="Generacja i rekombinacja pośrednia" style={{ "maxWidth": "360px" }}/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 6.6. Model generacji i rekombinacji pośredniej w półprzewodniku.</figcaption></figure>
 <p className="mb-[11px]"><b>Pułapkowanie:</b> może wystąpić sytuacja, że elektron, który został schwytany z pasma przewodnictwa, z powrotem zostanie do niego wyemitowany — nie dojdzie do rekombinacji par elektron–dziura, i elektron będzie przetrzymywany w centrum generacyjno-rekombinacyjnym. Ten sam proces dotyczy dziur. Kiedy mamy do czynienia z takim przetrzymywaniem nośników, mówi się o ich <b>pułapkowaniu</b>.</p>
 
 <h3 className="text-base text-amber-soft font-semibold mt-5 mb-2 font-mono tracking-wide">Powrót do równowagi</h3>
@@ -262,7 +262,7 @@ export default function Teoria16() {
 <Symbol symbol={String.raw`\mu_e, \mu_h`} desc="ruchliwość elektronów oraz dziur" />
 <p className=" text-[14px] text-muted -mt-1 mb-[14px]">gdzie: <code className="font-mono text-txt text-[12.5px]">μ<sub>e</sub></code> — ruchliwość elektronów; <code className="font-mono text-txt text-[12.5px]">μ<sub>h</sub></code> — ruchliwość dziur.</p>
 <p className="mb-[11px]"><b>Konduktywność elektryczna półprzewodników bardzo szybko zmienia się z temperaturą</b>, co bezpośrednio wiąże się ze zmianami koncentracji nośników. W przypadku półprzewodników <b>samoistnych</b> zależność logarytmiczna konduktywności w funkcji odwrotności temperatury jest <b>liniowa</b>. W określonej temperaturze wartość konduktywności zależy od szerokości pasma zabronionego: <b>im szersze jest pasmo zabronione, tym mniejsza koncentracja nośników i w związku z tym mniejsza konduktywność.</b></p>
-<figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={TeoriaPolprzewodniki_img_6} alt="Konduktywność vs temperatura" style={{ "maxWidth": "300px" }}/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 6.4. Zależność konduktywności w funkcji temperatury.</figcaption></figure>
+<figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={polprzewodniki_konduktywnosc_temperatura} alt="Konduktywność vs temperatura" style={{ "maxWidth": "300px" }}/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 6.4. Zależność konduktywności w funkcji temperatury.</figcaption></figure>
 <p className="mb-[11px]">Dla półprzewodników <b>domieszkowanych</b> interpretacja wykresu jest taka sama jak wykresu koncentracji (Rys. 6.3): <b>linia 1</b> — obszar jonizacji domieszek; <b>zakres 2</b> — stała koncentracja nośników, czyli wszystkie domieszki są zjonizowane; <b>powyżej temperatury 450 K (linia 3)</b> — generacja samoistna.</p>
 </QuestionSection>
 
@@ -275,7 +275,7 @@ export default function Teoria16() {
 >
 
 <p className="mb-[11px]"><b>Złącze p–n to złącze pomiędzy półprzewodnikami niesamoistnymi o dwóch typach przewodnictwa p i n.</b></p>
-<figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={TeoriaPolprzewodniki_img_7} alt="Schemat złącza p-n"/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 6.7. Schemat złącza p–n.</figcaption></figure>
+<figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={polprzewodniki_schemat_zlacza_pn} alt="Schemat złącza p-n"/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 6.7. Schemat złącza p–n.</figcaption></figure>
 
 <h3 className="text-base text-amber-soft font-semibold mt-5 mb-2 font-mono tracking-wide">Powstanie warstwy zaporowej</h3>
 <p className="mb-[11px]">W półprzewodniku typu n <b>nośnikami większościowymi są elektrony</b> i donory pozostają unieruchomione w siatce krystalicznej. Podobnie w półprzewodniku typu p, gdzie <b>nośnikami większościowymi są dziury</b>, a atomy domieszek są akceptorami. Zarówno w typie n, jak i p występują <b>nośniki mniejszościowe</b>, których znak jest przeciwny do znaku nośników większościowych; ich koncentracja jest <b>dużo mniejsza</b> niż nośników większościowych. Przed zetknięciem obie warstwy są <b>obojętne elektrycznie</b> w obszarze o rozmiarach makroskopowych.</p>
@@ -287,7 +287,7 @@ export default function Teoria16() {
 
 <h3 className="text-base text-amber-soft font-semibold mt-5 mb-2 font-mono tracking-wide">Polaryzacja w kierunku zaporowym</h3>
 <p className="mb-[11px]">Ma miejsce, kiedy <b>polaryzacja zewnętrzna jest zgodna z biegunowością napięcia dyfuzyjnego</b>. Następuje <b>wzrost wartości bariery potencjału</b>, a równolegle <b>rośnie wartość ładunku przestrzennego, co powoduje wzrost szerokości warstwy zaporowej</b>. W związku z poszerzeniem się warstwy zaporowej <b>maleje prawdopodobieństwo przejścia przez nią nośników większościowych</b>. Zatem składowe <b>prądu dyfuzji nośników większościowych maleją do zera niezależnie od napięcia, pozostają jedynie składowe prądu unoszenia nośników mniejszościowych</b>. Stąd w złączu mamy jedynie <b>przepływ słabego stałego prądu</b> — lewa gałąź wykresu.</p>
-<figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={TeoriaPolprzewodniki_img_8} alt="Charakterystyka prądowo-napięciowa" style={{ "maxWidth": "320px" }}/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 6.8. Charakterystyka prądowo-napięciowa.</figcaption></figure>
+<figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={polprzewodniki_charakterystyka_pradowo_napieciowa_diody} alt="Charakterystyka prądowo-napięciowa" style={{ "maxWidth": "320px" }}/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 6.8. Charakterystyka prądowo-napięciowa.</figcaption></figure>
 
 <h3 className="text-base text-amber-soft font-semibold mt-5 mb-2 font-mono tracking-wide">Polaryzacja w kierunku przewodzenia</h3>
 <p className="mb-[11px]">Ma miejsce, kiedy <b>polaryzacja zewnętrzna jest przeciwna z biegunowością napięcia dyfuzyjnego</b>, co powoduje <b>spadek wartości bariery potencjału</b>, a równolegle <b>maleje wartość ładunku przestrzennego — szerokość warstwy zaporowej również maleje</b>. W związku ze zwężeniem się warstwy zaporowej <b>rośnie prawdopodobieństwo przejścia przez nią nośników większościowych</b>. Zatem składowe <b>prądu dyfuzji nośników większościowych wzrastają, a składowe prądu unoszenia nośników mniejszościowych pozostają na niezmienionym poziomie</b>. Prąd dyfuzji nośników większościowych jest znacznie większy niż prąd unoszenia nośników mniejszościowych. Stąd w złączu będzie <b>przepływał znaczny prąd od obszaru p do n</b> — prawa gałąź wykresu.</p>

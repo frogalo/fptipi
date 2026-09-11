@@ -20,7 +20,7 @@
     {
       "number": 2,
       "question": "Omów budowę i zasadę działania tranzystorów bipolarnych.",
-      "solution": "Budowa:\nTranzystor bipolarny składa się z dwóch bardzo blisko położonych złączy półprzewodnikowych układających się w strukturę **p-n** oraz **n-p**. Ma on trzy elektrody:\n- **Baza (B)** (z ang. base) – warstwa środkowa, musi być skrajnie cienka.\n- **Emiter (E)** (z ang. emitter) – warstwa bardzo mocno domieszkowana, której celem jest wstrzykiwanie nośników (elektronów w n-p-n) do bazy.\n- **Kolektor (C)** (z ang. collector) – warstwa szeroka, odbierająca nośniki ze spadzistej bariery bazy.\nTranzystor wykorzystuje przepływ dwóch rodzajów ładunków (dziury i elektrony stąd słowo bipolarny).\n\nZasada działania (dla n-p-n):\nStandardowym trybem pracy jest polaryzacja złącza B-E w kierunku przewodzenia, a C-B w zaporowym. Otwarcie pierwszej zapory (przyłożenie napięcia ułatwiającego, na bazę prąd \\(I_B\\)) powoduje potężne wstrzyknięcie elektronów z Emitera. Baza jest tak cienka i słabo naładowana swoimi głównymi nośnikami, że tylko drobny ułamek elektronów \"zdąży\" w niej zrekombinować. Przytłaczająca większość przelatuje na drugą stronę i wpada w pole złącza kolektora (działającego jak zjeżdżalnia/odkurzacz dla tych nośników), tworząc wysoki prąd \\(I_C\\). Dzięki temu manipulując bardzo cienkim prądem wejściowym do bazy, uzyskujemy olbrzymi proporkcjonalnie i potężny prąd na wyjściu kolektora, co pozwala tranzystorowi realizować funkcję klucza lub wzmacniacza sygnału.",
+      "solution": "Budowa:\nTranzystor bipolarny składa się z dwóch bardzo blisko położonych złączy półprzewodnikowych układających się w strukturę **p-n** oraz **n-p**. Ma on trzy elektrody:\n- **Baza (B)** (z ang. base) – warstwa środkowa, musi być skrajnie cienka.\n- **Emiter (E)** (z ang. emitter) – warstwa bardzo mocno domieszkowana, której celem jest wstrzykiwanie nośników (elektronów w n-p-n) do bazy.\n- **Kolektor (C)** (z ang. collector) – warstwa szeroka, odbierająca nośniki ze spadzistej bariery bazy.\nTranzystor wykorzystuje przepływ dwóch rodzajów ładunków (dziury i elektrony stąd słowo bipolarny).\n\nZasada działania (dla n-p-n):\nStandardowym trybem pracy jest polaryzacja złącza B-E w kierunku przewodzenia, a C-B w zaporowym. Otwarcie pierwszej zapory (przyłożenie napięcia ułatwiającego, na bazę prąd \\(I_B\\)) powoduje potężne wstrzyknięcie elektronów z Emitera. Baza jest tak cienka i słabo naładowana swoimi głównymi nośnikami, że tylko drobny ułamek elektronów \"zdąży\" w niej zrekombinować. Przytłaczająca większość przelatuje na drugą stronę i wpada w pole złącza kolektora (działającego jak zjeżdżalnia/odkurzacz dla tych nośników), tworząc wysoki prąd \\(I_C\\). Dzięki temu manipulując bardzo cienkim prądem wejściowym do bazy, uzyskujemy olbrzymi proporkcjonalnie i potężny prąd na wyjściu kolektora, co pozwala tranzystorowi realizować funkcję klucza lub wzmacniacza sygnału.\n\n:::viz-bjt-characteristics",
       "tips": [
         "Do zapamiętania: Skoncentruj się na 'grubości bazy'. To ona czyni ze złącza tranzystor, a nie dwie sklejone do siebie niezależne diody. Cały fenomen polega na tym, że nośniki przenikają przez nią z rozpędu dzięki dyfuzji, zanim zdążą zrekombinować.",
         "Obliczenia bez kalkulatora: Pamiętaj bilans prądów: I_E = I_B + I_C oraz relację wzmocnienia I_C = β · I_B. Dla prądu bazy I_B = 20 µA i wzmocnienia β = 150 liczysz w pamięci: 20 · 150 = 3000 µA = 3 mA (I_C = 3 mA, a I_E = 3,02 mA)."
@@ -31,7 +31,23 @@
           "route": "/teoria/pamieci-nosniki#q22"
         }
       ],
-      "charts": []
+      "charts": [
+        {
+          "image": "bjt_symbole_schematy_diodowe_npn_pnp.jpeg",
+          "alt": "Symbole graficzne i diodowe schematy zastępcze tranzystora",
+          "caption": "Rysunek 7.1. Symbole graficzne i diodowe schematy zastępcze a) tranzystor n–p–n i b) p–n–p."
+        },
+        {
+          "image": "bjt_rozklad_potencjalu_wanna_pnp_polaryzacje.jpeg",
+          "alt": "Charakterystyka potencjału w złączu p-n-p (wanna potencjału)",
+          "caption": "Rysunek 7.2. Charakterystyka potencjału w złączu p–n–p a) bez polaryzacji, b) po przyłożeniu napięcia UCE, c) złącze emiter–baza spolaryzowane w kierunku przewodzenia napięciem UBE."
+        },
+        {
+          "image": "bjt_charakterystyka_pradowo_napieciowa_ic_uce.jpeg",
+          "alt": "Charakterystyka prądowo-napięciowa tranzystora",
+          "caption": "Rysunek 7.3. Charakterystyka prądowo–napięciowa tranzystora."
+        }
+      ]
     }
   ]
 }

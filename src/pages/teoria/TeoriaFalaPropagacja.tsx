@@ -1,16 +1,16 @@
-import TeoriaFalaPropagacja_img_1 from '../../assets/TeoriaFalaPropagacja_img_1.png';
-import TeoriaFalaPropagacja_img_2 from '../../assets/TeoriaFalaPropagacja_img_2.png';
-import TeoriaFalaPropagacja_img_3 from '../../assets/TeoriaFalaPropagacja_img_3.png';
-import TeoriaFalaPropagacja_img_4 from '../../assets/TeoriaFalaPropagacja_img_4.png';
-import TeoriaFalaPropagacja_img_5 from '../../assets/TeoriaFalaPropagacja_img_5.png';
-import TeoriaFalaPropagacja_img_6 from '../../assets/TeoriaFalaPropagacja_img_6.png';
-import TeoriaFalaPropagacja_img_7 from '../../assets/TeoriaFalaPropagacja_img_7.png';
-import TeoriaFalaPropagacja_img_8 from '../../assets/TeoriaFalaPropagacja_img_8.png';
-import TeoriaFalaPropagacja_img_9 from '../../assets/TeoriaFalaPropagacja_img_9.png';
-import TeoriaFalaPropagacja_img_10 from '../../assets/TeoriaFalaPropagacja_img_10.png';
-import TeoriaFalaPropagacja_img_11 from '../../assets/TeoriaFalaPropagacja_img_11.png';
-import TeoriaFalaPropagacja_img_12 from '../../assets/TeoriaFalaPropagacja_img_12.png';
-import TeoriaFalaPropagacja_img_13 from '../../assets/TeoriaFalaPropagacja_img_13.png';
+import fala_rozklad_pola_tem_proznia from '../../assets/fala_rozklad_pola_tem_proznia.png';
+import propagacja_odbicie_fali_granica_osrodkow from '../../assets/propagacja_odbicie_fali_granica_osrodkow.png';
+import propagacja_zalamanie_fali_snellius from '../../assets/propagacja_zalamanie_fali_snellius.png';
+import propagacja_doswiadczenie_younga_schemat from '../../assets/propagacja_doswiadczenie_younga_schemat.png';
+import propagacja_interferencja_doswiadczenie_younga_prazki from '../../assets/propagacja_interferencja_doswiadczenie_younga_prazki.png';
+import propagacja_transmisja_bezposrednia_los from '../../assets/propagacja_transmisja_bezposrednia_los.png';
+import propagacja_ugiecie_wzdluz_krzywizny_ziemi from '../../assets/propagacja_ugiecie_wzdluz_krzywizny_ziemi.png';
+import propagacja_warstwy_atmosfery_ziemskiej from '../../assets/propagacja_warstwy_atmosfery_ziemskiej.png';
+import propagacja_odbicia_fal_radiowych_jonosfera from '../../assets/propagacja_odbicia_fal_radiowych_jonosfera.png';
+import propagacja_tlumienie_mikrofal_atmosfera_wysokosci from '../../assets/propagacja_tlumienie_mikrofal_atmosfera_wysokosci.png';
+import propagacja_pochlanianie_fal_warunki_atmosferyczne from '../../assets/propagacja_pochlanianie_fal_warunki_atmosferyczne.png';
+import propagacja_sygnalu_optycznego_wolna_przestrzen_fso from '../../assets/propagacja_sygnalu_optycznego_wolna_przestrzen_fso.png';
+import propagacja_strefa_fresnela_elipsoida from '../../assets/propagacja_strefa_fresnela_elipsoida.png';
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { PageHeader, QuestionSection, BlockFormula } from '../../components/TheoryComponents';
@@ -193,7 +193,7 @@ export default function Teoria1() {
 <Symbol symbol={String.raw`\mu_0`} desc="przenikalność magnetyczna próżni" />
 <Symbol symbol={String.raw`\varepsilon_0`} desc="przenikalność elektryczna próżni" />
 <p className="mb-[11px]"><b>Fala płaska jest falą typu TEM</b> — pole elektryczne i magnetyczne leży w płaszczyźnie prostopadłej do kierunku propagacji fali, czyli {String.raw`\(E_z=0\)`} i {String.raw`\(H_z=0\)`}. Wartości chwilowe wektorów pól tej fali są takie same w każdym punkcie płaszczyzny prostopadłej do kierunku rozchodzenia się fali.</p>
-<figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={TeoriaFalaPropagacja_img_1} alt="Fala TEM"/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 2.1. Rozkład pola elektromagnetycznego dla fali TEM w dielektryku bezstratnym (w próżni).</figcaption></figure>
+<figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={fala_rozklad_pola_tem_proznia} alt="Fala TEM"/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 2.1. Rozkład pola elektromagnetycznego dla fali TEM w dielektryku bezstratnym (w próżni).</figcaption></figure>
 <p className="mb-[11px]">Zachowanie się fali opisuje <b>współczynnik propagacji</b> {String.raw`\(\gamma=\alpha+j\beta\)`} (2.3.3), gdzie {String.raw`\(\alpha\)`} — stała tłumienia, {String.raw`\(\beta\)`} — stała fazowa zależna od ośrodka. Impedancja falowa charakteryzująca ośrodek: {String.raw`\(Z_f=\frac{E_T}{H_T}=\sqrt{\frac{j\omega\mu}{\sigma+j\omega\varepsilon}}\)`} (2.3.4). <b>Prędkość fazowa</b> (prędkość płaszczyzny stałej fazy): {String.raw`\(v_f=\frac{\omega}{\beta}\)`} (2.3.5), dla próżni {String.raw`\(v_f=c=\frac{1}{\sqrt{\varepsilon_0\mu_0}}\)`} (2.3.6); <b>prędkość grupowa</b> (prędkość poruszania się obwiedni): {String.raw`\(v_g=\frac{\partial\omega}{\partial\beta}\)`} (2.3.7).</p>
 <p className="mb-[11px]">Rozwiązania równań Maxwella mają różną postać w zależności od warunków brzegowych; istnieje nieskończenie wiele <b>modów</b> (mod — charakterystyczny rozkład pola elektromagnetycznego). Oprócz fali TEM istnieje: fala typu <b>TM</b> (zwana też E): {String.raw`\(E_z\neq 0,\ H_z=0\)`} — pole magnetyczne leży w płaszczyźnie prostopadłej do kierunku propagacji; fala typu <b>TE</b> (zwana też H): {String.raw`\(H_z\neq 0,\ E_z=0\)`} — pole elektryczne leży w płaszczyźnie prostopadłej do kierunku propagacji; oraz fala typu <b>EH</b>: {String.raw`\(E_z\neq 0,\ H_z\neq 0\)`}.</p>
 </BookAddition>
@@ -215,17 +215,17 @@ export default function Teoria1() {
 
 <h3 className="text-base text-amber-soft font-semibold mt-5 mb-2 font-mono tracking-wide">Odbicie</h3>
 <p className="mb-[11px]"><b>Odbicie</b> to zmiana kierunku rozchodzenia się fali występująca na granicy dwóch ośrodków o różnych współczynnikach załamania. <b>Światło pozostaje w ośrodku, w którym się propaguje.</b></p>
-<figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={TeoriaFalaPropagacja_img_2} alt="Odbicie" style={{ "maxWidth": "220px" }}/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 3.1. Odbicie fali na granicy dwóch ośrodków.</figcaption></figure>
+<figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={propagacja_odbicie_fali_granica_osrodkow} alt="Odbicie" style={{ "maxWidth": "220px" }}/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 3.1. Odbicie fali na granicy dwóch ośrodków.</figcaption></figure>
 
 <h3 className="text-base text-amber-soft font-semibold mt-5 mb-2 font-mono tracking-wide">Załamanie (refrakcja)</h3>
 <p className="mb-[11px]"><b>Załamanie</b> to zmiana kierunku rozchodzenia się fali związana ze zmianą prędkości po przejściu do innego ośrodka. <b>Następuje zmiana długości fali, zaś częstotliwość nie ulega zmianie.</b></p>
-<figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={TeoriaFalaPropagacja_img_3} alt="Załamanie" style={{ "maxWidth": "220px" }}/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 3.2. Załamanie fali na granicy dwóch ośrodków.</figcaption></figure>
+<figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={propagacja_zalamanie_fali_snellius} alt="Załamanie" style={{ "maxWidth": "220px" }}/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 3.2. Załamanie fali na granicy dwóch ośrodków.</figcaption></figure>
 
 <h3 className="text-base text-amber-soft font-semibold mt-5 mb-2 font-mono tracking-wide">Ugięcie (dyfrakcja)</h3>
 <p className="mb-[11px]"><b>Ugięcie</b> to zmiana kierunku rozchodzenia się fali, spowodowana występowaniem krawędzi przeszkody lub jej bliskością. Najwyraźniej występuje wtedy, kiedy <b>rozmiar przeszkody jest porównywalny z długością fali</b>. Po przejściu przez przeszkodę każdy punkt fali staje się nowym źródłem fali kulistej; fale te nakładają się, oddziałują między sobą, wskutek czego powstają obszary, gdzie następuje wzmocnienie bądź osłabienie fal (interferencja).</p>
 
 <h3 className="text-base text-amber-soft font-semibold mt-5 mb-2 font-mono tracking-wide">Interferencja — doświadczenie Younga</h3>
-<figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={TeoriaFalaPropagacja_img_4} alt="Doświadczenie Younga"/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 3.3. Schemat doświadczenia Younga.</figcaption></figure>
+<figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={propagacja_doswiadczenie_younga_schemat} alt="Doświadczenie Younga"/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 3.3. Schemat doświadczenia Younga.</figcaption></figure>
 <p className="mb-[11px]">W doświadczeniu Younga światło w postaci fali płaskiej pada na układ dwóch szczelin {String.raw`\(S_1\)`} i {String.raw`\(S_2\)`} w przesłonie {String.raw`\(P\)`}. Interesuje nas rezultat nałożenia się fal w punkcie {String.raw`\(A\)`} na ekranie {String.raw`\(E\)`} ustawionym za szczelinami. Promienie świetlne, które przeszły przez szczeliny, docierają do punktu {String.raw`\(A\)`}, ale drogi ich {String.raw`\(r_1\)`} i {String.raw`\(r_2\)`} nie są takie same. Jeśli więc faza fali świetlnej była w płaszczyźnie szczelin taka sama, to w punkcie {String.raw`\(A\)`} będzie różna wskutek różnicy dróg. Różnica dróg promieni od szczelin do punktu {String.raw`\(A\)`} równa jest odcinkowi {String.raw`\(S_2a\)`}, który równy jest {String.raw`\(d\cdot\sin\theta\)`}. <b>Jeśli różnica ta będzie równa całkowitej wielokrotności długości fali — nastąpi wzmocnienie; jeśli będzie równa połówkowej liczbie długości fal — nastąpi wygaszenie.</b> Warunek uzyskania maksimum i minimum natężenia fali wypadkowej:</p>
 <BlockFormula tag="(3.1.1) maksimum" tex={String.raw`d\cdot\sin\theta=n\cdot\lambda`} />
 <Symbol symbol={String.raw`d`} desc="szerokość szczeliny (lub odległość szczelin)" />
@@ -240,7 +240,7 @@ export default function Teoria1() {
 <Symbol symbol={String.raw`\lambda`} desc="długość fali" />
 <p className=" text-[14px] text-muted -mt-1 mb-[14px]">gdzie {String.raw`\(n=0,1,2,3,\ldots\)`}</p>
 <p className="mb-[11px]">Z powyższych wzorów wynika, że <b>im mniejsza jest odległość pomiędzy szczelinami, tym większa będzie wartość kąta</b>, dla którego wystąpi wzmocnienie (lub wygaszenie) i tym większa będzie różnica kątowa pomiędzy maksimami bądź minimami.</p>
-<figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={TeoriaFalaPropagacja_img_5} alt="Interferencja"/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 3.4. Ilustracja interferencji w doświadczeniu Younga dla dwóch różnych odległości pomiędzy szczelinami: a)&nbsp;mniejszej, b)&nbsp;większej.</figcaption></figure>
+<figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={propagacja_interferencja_doswiadczenie_younga_prazki} alt="Interferencja"/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 3.4. Ilustracja interferencji w doświadczeniu Younga dla dwóch różnych odległości pomiędzy szczelinami: a)&nbsp;mniejszej, b)&nbsp;większej.</figcaption></figure>
 
 <h3 className="text-base text-amber-soft font-semibold mt-5 mb-2 font-mono tracking-wide">Prawo załamania i kąt krytyczny</h3>
 <p className="mb-[11px]">Powyżej opisane zjawiska tłumaczą jedno z podstawowych praw optyki — <b>prawo załamania</b>, określające sposób zachowania się promienia na granicy dwóch ośrodków:</p>
@@ -272,7 +272,7 @@ export default function Teoria1() {
 
 <h3 className="text-base text-amber-soft font-semibold mt-5 mb-2 font-mono tracking-wide">Fale powierzchniowe</h3>
 <p className="mb-[11px]">Fale powierzchniowe mają dobry zasięg w takiej odległości, w której <b>Ziemia może być uznana za płaską</b> (zasięg dla fali powierzchniowej maleje wraz z długością fali). Odległość, na jaką propagują się fale powierzchniowe, zależy od częstotliwości.</p>
-<figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={TeoriaFalaPropagacja_img_6} alt="Bezpośrednia widoczność"/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 3.5. Transmisja przy bezpośredniej widoczności nadajnika i odbiornika.</figcaption></figure>
+<figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={propagacja_transmisja_bezposrednia_los} alt="Bezpośrednia widoczność"/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 3.5. Transmisja przy bezpośredniej widoczności nadajnika i odbiornika.</figcaption></figure>
 <p className="mb-[11px]">Ze względu na krzywiznę Ziemi przynajmniej jedna z anten — nadawcza lub odbiorcza — musi być umieszczona na pewnej wysokości. Można wyznaczyć <b>graniczną odległość bezpośredniej widoczności</b> pomiędzy nadajnikiem a odbiornikiem w zależności od wysokości anten:</p>
 <BlockFormula tag="(3.2.1)" tex={String.raw`d_0=\sqrt{2R_Z}\left(\sqrt{H_N}+\sqrt{H_O}\right)`} />
 <Symbol symbol={String.raw`d_0`} desc="graniczny zasięg bezpośredniej widoczności" />
@@ -281,16 +281,16 @@ export default function Teoria1() {
 <Symbol symbol={String.raw`H_O`} desc="wysokość anteny odbiorczej" />
 <p className=" text-[14px] text-muted -mt-1 mb-[14px]">gdzie: <code className="font-mono text-txt text-[12.5px]">R<sub>Z</sub></code> — promień Ziemi (przyjmujemy w przybliżeniu 6400&nbsp;km); <code className="font-mono text-txt text-[12.5px]">H<sub>N</sub></code> — wysokość anteny nadawczej; <code className="font-mono text-txt text-[12.5px]">H<sub>O</sub></code> — wysokość anteny odbiorczej.</p>
 <p className="mb-[11px]">Tak jest wtedy, kiedy teren jest „czysty” — bez zabudowań i wzniesień. Przed przystąpieniem do projektowania łącza radiowego należy wykonać <b>projekt hipsometryczny terenu</b>, który uwzględnia zarówno ukształtowanie naturalne terenu, jak i sztuczne przeszkody (np. budynki). Istnieje jeszcze możliwość transmisji z wykorzystaniem <b>ugięcia fali elektromagnetycznej wzdłuż krzywizny Ziemi</b>:</p>
-<figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={TeoriaFalaPropagacja_img_7} alt="Ugięcie wzdłuż krzywizny Ziemi"/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 3.7. Transmisja z wykorzystaniem ugięcia fali elektromagnetycznej wzdłuż krzywizny Ziemi.</figcaption></figure>
+<figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={propagacja_ugiecie_wzdluz_krzywizny_ziemi} alt="Ugięcie wzdłuż krzywizny Ziemi"/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 3.7. Transmisja z wykorzystaniem ugięcia fali elektromagnetycznej wzdłuż krzywizny Ziemi.</figcaption></figure>
 
 <h3 className="text-base text-amber-soft font-semibold mt-5 mb-2 font-mono tracking-wide">Budowa atmosfery — fale troposferyczne</h3>
 <p className="mb-[11px]">W przypadku rozchodzenia się fal radiowych decydujący wpływ na propagację ma budowa atmosfery oraz zjawiska fizyczne w niej zachodzące. Z punktu widzenia telekomunikacji dwie najważniejsze warstwy atmosfery to <b>troposfera i jonosfera</b>, pomiędzy którymi znajduje się <b>obojętna stratosfera</b>. Najbliżej Ziemi znajduje się troposfera; jej grubość zależy od szerokości geograficznej i pory roku — w strefie umiarkowanej latem ok. <b>13&nbsp;km</b>, zimą ok. <b>10&nbsp;km</b>; im bliżej równika, tym zasięg troposfery większy (na równiku 15–18&nbsp;km).</p>
-<figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={TeoriaFalaPropagacja_img_8} alt="Warstwy atmosfery"/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 3.8. Warstwy atmosfery.</figcaption></figure>
+<figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={propagacja_warstwy_atmosfery_ziemskiej} alt="Warstwy atmosfery"/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 3.8. Warstwy atmosfery.</figcaption></figure>
 <p className="mb-[11px]"><b>Fala troposferyczna dociera do odbiornika tylko dlatego, że załamuje się w tej warstwie.</b> W tej części atmosfery propagują się <b>fale ultrakrótkie</b>. Propagacja fal w troposferze jest mocno uzależniona od zjawisk meteorologicznych (szczegóły — pytanie 5); dominującym zjawiskiem pasożytniczym jest <b>refrakcja</b>.</p>
 
 <h3 className="text-base text-amber-soft font-semibold mt-5 mb-2 font-mono tracking-wide">Fale jonosferyczne</h3>
 <p className="mb-[11px]"><b>Jonosfera jest silnie zjonizowana przez promieniowanie słoneczne i kosmiczne.</b> Tu odbywa się transmisja fal długich, a przede wszystkim średnich i krótkich. <b>Fale odbijają się od tej warstwy i dzięki temu możliwa jest transmisja na duże odległości.</b> Fale radiowe o większej częstotliwości przenikają jonosferę nie odbijając się od niej — zjawisko to jest wykorzystywane w <b>transmisji satelitarnej</b>.</p>
-<figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={TeoriaFalaPropagacja_img_9} alt="Odbicia od jonosfery"/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 3.6. Transmisja fal radiowych z wykorzystaniem odbić od warstw jonosfery.</figcaption></figure>
+<figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={propagacja_odbicia_fal_radiowych_jonosfera} alt="Odbicia od jonosfery"/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 3.6. Transmisja fal radiowych z wykorzystaniem odbić od warstw jonosfery.</figcaption></figure>
 <p className="mb-[11px]">Warstwa jonosfery ulega okresowym zmianom — zmniejsza się i zwiększa promieniowanie jonizujące (różna wartość promieniowania słonecznego w dzień i w nocy). <b>Stąd wynika zmiana zasięgu fal w trakcie doby.</b></p>
 
 <BookAddition title="Kontekst — zastosowania pasm (str. 15)">
@@ -319,9 +319,9 @@ export default function Teoria1() {
 <li className="mb-1.5"><b>Wykazano, że największe tłumienie powodują opady.</b></li>
 </ul>
 <p className="mb-[11px]">Tłumienie wywołane absorpcją na cząsteczkach wody (głównie pary wodnej) i tlenu jest <b>pomijalne dla częstotliwości mniejszych niż 2&nbsp;GHz</b>. Dla częstotliwości wyższych wyraźnie następuje wzrost absorpcji, ponadto występują kolejne <b>maksima mające charakter rezonansowy</b>. Na rysunku czerwoną linią zaznaczono przebieg dla fal propagujących się na wysokości 4&nbsp;km, niebieską — na poziomie morza:</p>
-<figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={TeoriaFalaPropagacja_img_10} alt="Tłumienie mikrofal w atmosferze"/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 3.9. Tłumienie sygnałów mikrofalowych w atmosferze na różnych wysokościach.</figcaption></figure>
+<figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={propagacja_tlumienie_mikrofal_atmosfera_wysokosci} alt="Tłumienie mikrofal w atmosferze"/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 3.9. Tłumienie sygnałów mikrofalowych w atmosferze na różnych wysokościach.</figcaption></figure>
 <p className="mb-[11px]">Poniżej — wpływ różnych czynników atmosferycznych na zasięg fali w zależności od częstotliwości (długości fali):</p>
-<figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={TeoriaFalaPropagacja_img_11} alt="Pochłanianie a warunki atmosferyczne"/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 3.10. Wartość współczynnika pochłaniania fal dla różnych długości fal w zależności od warunków atmosferycznych.</figcaption></figure>
+<figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={propagacja_pochlanianie_fal_warunki_atmosferyczne} alt="Pochłanianie a warunki atmosferyczne"/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 3.10. Wartość współczynnika pochłaniania fal dla różnych długości fal w zależności od warunków atmosferycznych.</figcaption></figure>
 <p className="mb-[11px]"><b>Tłumienie i rozpraszanie zależą od długości fali świetlnej i czynników atmosferycznych.</b> Ponadto warstwa jonosfery ulega okresowym zmianom — zmniejsza się i zwiększa promieniowanie jonizujące (ponieważ różna jest wartość promieniowania słonecznego w dzień i w nocy). Stąd też wynika <b>zmiana zasięgu fal w trakcie doby</b>.</p>
 </QuestionSection>
 
@@ -339,7 +339,7 @@ export default function Teoria1() {
 
 <h3 className="text-base text-amber-soft font-semibold mt-5 mb-2 font-mono tracking-wide">Równanie transmisji mocy</h3>
 <p className="mb-[11px]">W wolnej przestrzeni fale radiowe rozchodzą się po liniach prostych. Wraz z odległością <b>natężenie pola elektrycznego fali zmniejsza się proporcjonalnie do odległości, a gęstość mocy — do jej kwadratu</b>. Moc odebrana przez odbiornik jest funkcją mocy nadajnika, odległości i długości fali oraz zysku energetycznego anteny nadawczej i odbiorczej.</p>
-<figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={TeoriaFalaPropagacja_img_12} alt="Propagacja nadajnik-odbiornik"/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 3.11. Propagacja sygnału optycznego w wolnej przestrzeni z nadajnika do odbiornika.</figcaption></figure>
+<figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={propagacja_sygnalu_optycznego_wolna_przestrzen_fso} alt="Propagacja nadajnik-odbiornik"/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 3.11. Propagacja sygnału optycznego w wolnej przestrzeni z nadajnika do odbiornika.</figcaption></figure>
 <p className="mb-[11px]">Dla fali kulistej i anteny izotropowej wysyłającej promieniowanie o mocy {String.raw`\(P_S\)`} i mającej wzmocnienie {String.raw`\(G_S\)`}, powierzchniowa gęstość mocy {String.raw`\(S\)`} w odległości {String.raw`\(R\)`} od anteny:</p>
 <BlockFormula tag="(3.4.1)" tex={String.raw`S=\frac{P_S\cdot G_S}{4\pi\cdot R^2}`} />
 <Symbol symbol={String.raw`S`} desc="powierzchniowa gęstość mocy" />
@@ -390,7 +390,7 @@ export default function Teoria1() {
 
 <h3 className="text-base text-amber-soft font-semibold mt-5 mb-2 font-mono tracking-wide">Strefa Fresnela</h3>
 <p className="mb-[11px]">Bardzo duży wpływ na propagację mają przeszkody — występuje wtedy zjawisko <b>dyfrakcji</b>, które można wyjaśnić korzystając z <b>zasady Huygensa</b>. Obszar propagowania energii wzdłuż linii łączącej nadajnik z odbiornikiem nazywa się <b>strefą Fresnela</b>. Jeżeli w obszarze nie byłoby przeszkód, to kształtem przypomina ona <b>elipsoidę obrotową</b> umieszczoną pomiędzy anteną nadawczą i odbiorczą. Kształt elipsoidy zależy od częstotliwości — <b>im jest ona wyższa, tym elipsoida staje się smuklejsza</b>.</p>
-<figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={TeoriaFalaPropagacja_img_13} alt="Strefa Fresnela"/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 3.12. Strefa Fresnela.</figcaption></figure>
+<figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={propagacja_strefa_fresnela_elipsoida} alt="Strefa Fresnela"/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 3.12. Strefa Fresnela.</figcaption></figure>
 <p className="mb-[11px]">Promień <i>n</i>-tej strefy Fresnela:</p>
 <BlockFormula tag="(3.4.8)" tex={String.raw`R_n=\sqrt{\frac{n\lambda d_1 d_2}{d_1+d_2}}`} />
 <Symbol symbol={String.raw`R_n`} desc="promień n-tej strefy Fresnela" />

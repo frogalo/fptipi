@@ -1,7 +1,7 @@
 {
   "images": [
-    "2026_L2_A1.png",
-    "2026_L2_A2.png"
+    "egzamin_2026_L2_A1.png",
+    "egzamin_2026_L2_A2.png"
   ],
   "tasks": [
     {
@@ -19,19 +19,19 @@
       ],
       "charts": [
         {
-          "image": "TeoriaPamieciNosniki_img_10.jpeg",
+          "image": "nosniki_plyta_cd_rw_przekroj_poprzeczny.jpeg",
           "alt": "Przekrój płyty CD-RW",
           "caption": "Rysunek 8.4. Przekrój poprzeczny przez płytę CD–RW (technologia zmiany fazy Phase Change).",
           "maxWidth": "600px"
         },
         {
-          "image": "TeoriaPamieciNosniki_img_11.jpeg",
+          "image": "nosniki_struktura_amorficzna_i_krystaliczna_faza.jpeg",
           "alt": "Struktura amorficzna i krystaliczna",
           "caption": "Rysunek 8.5. Struktura amorficzna (amorphous) o niskim odbiciu oraz krystaliczna (crystalline) o wysokim współczynniku odbicia światła.",
           "maxWidth": "440px"
         },
         {
-          "image": "TeoriaPamieciNosniki_img_13.jpeg",
+          "image": "nosniki_uklad_glowica_odczyt_zapis_cd.jpeg",
           "alt": "Układ do odczytu i zapisu na płytach optycznych",
           "caption": "Rysunek 8.7. Układ optyczny głowicy do odczytu i zapisu na płytach optycznych.",
           "maxWidth": "480px"
@@ -54,7 +54,7 @@
       ],
       "charts": [
         {
-          "image": "2026_L2_A2.png",
+          "image": "egzamin_2026_L2_A2.png",
           "alt": "Załącznik do zadania 1b – Wykres tłumienia ITU-R P.676-13",
           "caption": "Załącznik egzaminacyjny do zadania 1. b): Wykres tłumienia jednostkowego gazów atmosferycznych wg ITU-R P.676-13 z zaznaczoną żółtą kropką przy f ≈ 320–325 GHz.",
           "maxWidth": "720px"

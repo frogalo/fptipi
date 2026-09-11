@@ -1,4 +1,22 @@
 import React from 'react';
+import VisualPipelineDiagram from './visuals/VisualPipelineDiagram';
+import OpticalPowerBudgetVisualizer from './visuals/OpticalPowerBudgetVisualizer';
+import BjtCharacteristicsVisualizer from './visuals/BjtCharacteristicsVisualizer';
+import EyeDiagramVisualizer from './visuals/EyeDiagramVisualizer';
+import MosfetVisualizer from './visuals/MosfetVisualizer';
+import InteractiveVisualizerWrapper from './visuals/InteractiveVisualizerWrapper';
+
+/** Extracts pipeline schema like `[ A ] ---> [ B ]` from a line */
+export function extractPipeline(str: string): { pipeline: string; title?: string } | null {
+  const match = str.match(/(?:`?)((\[[^\]]+\]\s*(?:--->|-->|->)\s*)+\[[^\]]+\])(?:`?)/);
+  if (!match) return null;
+  const pipeline = match[1];
+  const before = str.substring(0, match.index).trim();
+  return {
+    pipeline,
+    title: before || undefined,
+  };
+}
 
 /** Renders inline **bold** markers and `code` markers within a plain-text string. */
 export function renderInline(text: string): React.ReactNode[] {
@@ -26,6 +44,8 @@ export function renderInline(text: string): React.ReactNode[] {
 interface ListItem {
   content: string;
   formula?: string;
+  pipeline?: string;
+  pipelineTitle?: string;
 }
 
 interface ListRootItem extends ListItem {
@@ -135,7 +155,21 @@ export function renderContent(text: string): React.ReactNode {
                       {num}.
                     </span>
                     <div className="flex-1 min-w-0">
-                      <span className="text-txt">{renderInline(item.content)}</span>
+                      {item.pipeline ? (
+                        <InteractiveVisualizerWrapper
+                          title={item.pipelineTitle || 'Schemat blokowy toru transmisyjnego'}
+                          subtitle="Wizualizacja sekwencji elementów toru"
+                          badge="SCHEMAT TORU"
+                          icon="pipeline"
+                          defaultOpen={false}
+                        >
+                          <VisualPipelineDiagram
+                            raw={item.pipeline}
+                          />
+                        </InteractiveVisualizerWrapper>
+                      ) : (
+                        <span className="text-txt">{renderInline(item.content)}</span>
+                      )}
                       {item.formula && (
                         <div className="my-2.5 py-2 px-3 bg-ink2/80 rounded-lg border border-line text-center overflow-x-auto text-[15px]">
                           {renderInline(item.formula)}
@@ -148,7 +182,21 @@ export function renderContent(text: string): React.ReactNode {
                               <div className="flex items-start gap-2">
                                 <span className="text-amber-soft/80 font-mono text-[13px] mt-px select-none shrink-0 font-bold">–</span>
                                 <div className="flex-1 min-w-0 text-txt/90">
-                                  <span>{renderInline(sub.content)}</span>
+                                  {sub.pipeline ? (
+                                    <InteractiveVisualizerWrapper
+                                      title={sub.pipelineTitle || 'Schemat blokowy toru transmisyjnego'}
+                                      subtitle="Wizualizacja sekwencji elementów toru"
+                                      badge="SCHEMAT TORU"
+                                      icon="pipeline"
+                                      defaultOpen={false}
+                                    >
+                                      <VisualPipelineDiagram
+                                        raw={sub.pipeline}
+                                      />
+                                    </InteractiveVisualizerWrapper>
+                                  ) : (
+                                    <span>{renderInline(sub.content)}</span>
+                                  )}
                                   {sub.formula && (
                                     <div className="my-2 py-1.5 px-2.5 bg-ink2/80 rounded-lg border border-line text-center overflow-x-auto text-[14px]">
                                       {renderInline(sub.formula)}
@@ -175,7 +223,21 @@ export function renderContent(text: string): React.ReactNode {
                 <div className="flex items-start gap-2.5">
                   <span className="inline-block w-2 h-2 rounded-full bg-amber/90 mt-[7.5px] shrink-0 shadow-sm shadow-amber/30" />
                   <div className="flex-1 min-w-0">
-                    <span className="text-txt">{renderInline(item.content)}</span>
+                    {item.pipeline ? (
+                      <InteractiveVisualizerWrapper
+                        title={item.pipelineTitle || 'Schemat blokowy toru transmisyjnego'}
+                        subtitle="Wizualizacja sekwencji elementów toru"
+                        badge="SCHEMAT TORU"
+                        icon="pipeline"
+                        defaultOpen={false}
+                      >
+                        <VisualPipelineDiagram
+                          raw={item.pipeline}
+                        />
+                      </InteractiveVisualizerWrapper>
+                    ) : (
+                      <span className="text-txt">{renderInline(item.content)}</span>
+                    )}
                     {item.formula && (
                       <div className="my-2.5 py-2 px-3 bg-ink2/80 rounded-lg border border-line text-center overflow-x-auto text-[15px]">
                         {renderInline(item.formula)}
@@ -188,7 +250,21 @@ export function renderContent(text: string): React.ReactNode {
                             <div className="flex items-start gap-2">
                               <span className="text-amber-soft/80 font-mono text-[13px] mt-px select-none shrink-0 font-bold">–</span>
                               <div className="flex-1 min-w-0 text-txt/90">
-                                <span>{renderInline(sub.content)}</span>
+                                {sub.pipeline ? (
+                                  <InteractiveVisualizerWrapper
+                                    title={sub.pipelineTitle || 'Schemat blokowy toru transmisyjnego'}
+                                    subtitle="Wizualizacja sekwencji elementów toru"
+                                    badge="SCHEMAT TORU"
+                                    icon="pipeline"
+                                    defaultOpen={false}
+                                  >
+                                    <VisualPipelineDiagram
+                                      raw={sub.pipeline}
+                                    />
+                                  </InteractiveVisualizerWrapper>
+                                ) : (
+                                  <span>{renderInline(sub.content)}</span>
+                                )}
                                 {sub.formula && (
                                   <div className="my-2 py-1.5 px-2.5 bg-ink2/80 rounded-lg border border-line text-center overflow-x-auto text-[14px]">
                                     {renderInline(sub.formula)}
@@ -344,6 +420,85 @@ export function renderContent(text: string): React.ReactNode {
       return;
     }
 
+    // Visual Block Directives (:::viz-...)
+    if (trimmed.startsWith(':::')) {
+      flushAll(`line-${lineIdx}`);
+      const tag = trimmed.replace(/^:::\s*/, '').replace(/\s*:::$/, '').trim();
+      if (tag === 'viz-optical-budget') {
+        elements.push(
+          <InteractiveVisualizerWrapper
+            key={`viz-opt-${lineIdx}`}
+            title="Rysunek 4.10. Moc w łączu w funkcji odległości"
+            subtitle="Wizualizacja budżetu mocy łącza optycznego ze schematem z podręcznika"
+            badge="BUDŻET MOCY P(z)"
+            icon="chart"
+            defaultOpen={false}
+          >
+            <OpticalPowerBudgetVisualizer />
+          </InteractiveVisualizerWrapper>
+        );
+      } else if (tag === 'viz-bjt-characteristics' || tag === 'viz-bjt') {
+        elements.push(
+          <InteractiveVisualizerWrapper
+            key={`viz-bjt-${lineIdx}`}
+            title="Tranzystor Bipolarny (BJT): Rysunki 7.2 i 7.3 z podręcznika"
+            subtitle="Interaktywna charakterystyka wyjściowa I-V oraz rozkład barier potencjału (wanna)"
+            badge="TRANZYSTOR BJT"
+            icon="circuit"
+            defaultOpen={false}
+          >
+            <BjtCharacteristicsVisualizer />
+          </InteractiveVisualizerWrapper>
+        );
+      } else if (tag === 'viz-mosfet') {
+        elements.push(
+          <InteractiveVisualizerWrapper
+            key={`viz-mosfet-${lineIdx}`}
+            title="Tranzystor Polowy MOSFET: Rysunki 7.4 – 7.8 z podręcznika"
+            subtitle="Interaktywny przekrój podłoża, indukcja kanału inwersyjnego oraz charakterystyka Id(Uds)"
+            badge="TRANZYSTOR MOSFET"
+            icon="circuit"
+            defaultOpen={false}
+          >
+            <MosfetVisualizer />
+          </InteractiveVisualizerWrapper>
+        );
+      } else if (tag === 'viz-eye-diagram' || tag === 'viz-eye') {
+        elements.push(
+          <InteractiveVisualizerWrapper
+            key={`viz-eye-${lineIdx}`}
+            title="Rysunek 5.4. Wykres oczkowy (Eye Diagram)"
+            subtitle="Interaktywna analiza parametrów jakości sygnału cyfrowego i zniekształceń"
+            badge="WYKRES OCZKOWY"
+            icon="eye"
+            defaultOpen={false}
+          >
+            <EyeDiagramVisualizer />
+          </InteractiveVisualizerWrapper>
+        );
+      }
+      return;
+    }
+
+    // Standalone pipeline diagram line
+    const standalonePipe = extractPipeline(trimmed);
+    if (standalonePipe && (trimmed.startsWith('`[') || trimmed.startsWith('[') || trimmed.includes('--->') || trimmed.includes('-->'))) {
+      flushAll(`line-${lineIdx}`);
+      elements.push(
+        <InteractiveVisualizerWrapper
+          key={`pipeline-${lineIdx}`}
+          title={standalonePipe.title || 'Schemat blokowy toru transmisyjnego'}
+          subtitle="Wizualizacja sekwencji elementów toru optycznego"
+          badge="SCHEMAT TORU"
+          icon="pipeline"
+          defaultOpen={false}
+        >
+          <VisualPipelineDiagram raw={standalonePipe.pipeline} />
+        </InteractiveVisualizerWrapper>
+      );
+      return;
+    }
+
     // Callout (> ...)
     if (trimmed.startsWith('>')) {
       flushParagraph(`line-${lineIdx}-p`);
@@ -452,22 +607,33 @@ export function renderContent(text: string): React.ReactNode {
       const leadingSpaces = line.match(/^\s*/)?.[0].length || 0;
       const isSubItem = leadingSpaces >= 2;
 
+      const pipe = extractPipeline(cleaned);
+
       if (isSubItem && currentList && currentList.items.length > 0) {
         const parent = currentList.items[currentList.items.length - 1];
         if (!parent.subItems) {
           parent.subItems = [];
         }
-        parent.subItems.push({ content: cleaned });
+        parent.subItems.push({
+          content: pipe?.title || cleaned,
+          pipeline: pipe?.pipeline,
+          pipelineTitle: pipe?.title,
+        });
         return;
       }
 
       if (currentList && currentList.type !== 'ul') {
         flushList(`line-${lineIdx}-l`);
       }
+      const itemData = {
+        content: pipe?.title || cleaned,
+        pipeline: pipe?.pipeline,
+        pipelineTitle: pipe?.title,
+      };
       if (!currentList) {
-        currentList = { type: 'ul', items: [{ content: cleaned }] };
+        currentList = { type: 'ul', items: [itemData] };
       } else {
-        currentList.items.push({ content: cleaned });
+        currentList.items.push(itemData);
       }
       return;
     }
@@ -506,6 +672,21 @@ export function renderContent(text: string): React.ReactNode {
     if (currentList && currentList.items.length > 0) {
       const lastItem = currentList.items[currentList.items.length - 1];
       const leadingSpaces = line.match(/^\s*/)?.[0].length || 0;
+
+      // Check if continuation line is a pipeline diagram
+      const contPipe = extractPipeline(trimmed);
+      if (contPipe) {
+        if (leadingSpaces >= 2 && lastItem.subItems && lastItem.subItems.length > 0) {
+          const lastSub = lastItem.subItems[lastItem.subItems.length - 1];
+          lastSub.pipeline = contPipe.pipeline;
+          lastSub.pipelineTitle = lastSub.content;
+        } else {
+          lastItem.pipeline = contPipe.pipeline;
+          lastItem.pipelineTitle = lastItem.content;
+        }
+        return;
+      }
+
       if (leadingSpaces >= 2 && lastItem.subItems && lastItem.subItems.length > 0) {
         const lastSub = lastItem.subItems[lastItem.subItems.length - 1];
         lastSub.content += ' ' + trimmed;
