@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { typesetMathJax } from '@/utils/mathjax';
 
 interface FormulaProps {
   tex: string;
@@ -91,21 +92,71 @@ export function BookAddition({ title, children }: BookAdditionProps) {
 interface TipProps {
   title?: React.ReactNode;
   badge?: string;
+  defaultOpen?: boolean;
   children: React.ReactNode;
 }
 
-export function Tip({ title = "Wskazówka egzaminacyjna", badge, children }: TipProps) {
+export function Tip({
+  title = "Wskazówka egzaminacyjna",
+  badge,
+  defaultOpen = false,
+  children,
+}: TipProps) {
+  const [isOpen, setIsOpen] = useState(defaultOpen);
+
+  const handleToggle = () => {
+    const next = !isOpen;
+    setIsOpen(next);
+    if (next) {
+      setTimeout(() => {
+        typesetMathJax();
+      }, 50);
+    }
+  };
+
   return (
-    <div className="rounded-[10px] px-4 py-[14px] my-[14px] border border-amber/30 bg-amber/10">
-      <div className="flex items-center justify-between gap-2 mb-2">
-        <span className="font-mono text-[11px] tracking-[0.14em] uppercase text-amber block">{title}</span>
-        {badge && (
-          <span className="font-mono text-[10px] uppercase px-2 py-0.5 rounded bg-amber/20 text-amber-soft border border-amber/30">
-            {badge}
+    <div className="rounded-[10px] my-2 border border-amber/30 bg-amber/10 overflow-hidden transition-all">
+      <button
+        type="button"
+        onClick={handleToggle}
+        className="w-full px-3.5 py-2.5 flex items-center justify-between gap-3 text-left hover:bg-amber/15 transition-colors cursor-pointer select-none"
+        aria-expanded={isOpen}
+      >
+        <div className="flex items-center gap-2 min-w-0">
+          <span className="text-amber text-xs shrink-0">💡</span>
+          <span className="font-mono text-[11px] tracking-[0.14em] uppercase text-amber font-semibold truncate">
+            {title}
           </span>
-        )}
-      </div>
-      <div className="text-[14.5px] text-muted leading-relaxed">{children}</div>
+          {badge && (
+            <span className="font-mono text-[9.5px] uppercase px-1.5 py-0.5 rounded bg-amber/20 text-amber-soft border border-amber/30 shrink-0">
+              {badge}
+            </span>
+          )}
+        </div>
+
+        <div className="flex items-center gap-1.5 shrink-0">
+          <span className="font-mono text-[11px] text-amber-soft hover:text-amber font-medium">
+            {isOpen ? 'Ukryj wskazówkę' : 'Pokaż wskazówkę'}
+          </span>
+          <svg
+            viewBox="0 0 24 24"
+            width="14"
+            height="14"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            fill="none"
+            className={`text-amber transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+          >
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </div>
+      </button>
+
+      {isOpen && (
+        <div className="px-4 pb-3.5 pt-1 text-[14.5px] text-txt/90 leading-relaxed border-t border-amber/20 animate-fadeIn">
+          {children}
+        </div>
+      )}
     </div>
   );
 }
