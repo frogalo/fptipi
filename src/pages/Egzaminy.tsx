@@ -6,6 +6,7 @@ import LazyImage from '@/components/LazyImage';
 import ExamSelector from '@/features/egzaminy/ExamSelector';
 import ExamEmptyState from '@/features/egzaminy/ExamEmptyState';
 import TaskCard, { Task } from '@/features/egzaminy/TaskCard';
+import { typesetMathJax } from '@/utils/mathjax';
 
 const examModules = import.meta.glob('@/data/exams/*.json');
 const assetModules = import.meta.glob('/src/assets/*.{png,jpg,jpeg}', { eager: true, import: 'default' }) as Record<string, string>;
@@ -51,6 +52,20 @@ export default function Egzaminy() {
   const [mathJaxLoading, setMathJaxLoading] = useState(true);
   const [groupData, setGroupData] = useState<any>(null);
   const [loadingData, setLoadingData] = useState(false);
+  const [allSolutionsVisible, setAllSolutionsVisible] = useState<boolean>(true);
+  const [taskVisibilityOverrides, setTaskVisibilityOverrides] = useState<Record<number, boolean>>({});
+
+
+  const toggleAllSolutions = () => {
+    const next = !allSolutionsVisible;
+    setAllSolutionsVisible(next);
+    setTaskVisibilityOverrides({});
+    if (next) {
+      setTimeout(() => {
+        typesetMathJax();
+      }, 50);
+    }
+  };
 
   const years = useMemo(() => Array.from(new Set(availableExams.map(e => e.year))).sort(), []);
   
@@ -92,6 +107,10 @@ export default function Egzaminy() {
   }, [selectedYear, selectedTerm]);
 
   const selectedGroup = groupParam && groups.includes(groupParam) ? groupParam : (groups[0] || 'B');
+
+  useEffect(() => {
+    setTaskVisibilityOverrides({});
+  }, [selectedYear, selectedTerm, selectedGroup]);
 
   const updateParams = (y: number, t: string, g: string) => {
     let targetTerm = t;
@@ -231,26 +250,70 @@ export default function Egzaminy() {
             );
           })()}
 
-          <div className="flex flex-wrap items-center gap-2 font-mono text-[11.5px] text-muted">
-            <span>Zadania:</span>
-            {groupData.tasks.map((task: Task) => (
-              <a
-                key={task.number}
-                href={`#task-${task.number}`}
-                className="text-amber-soft border border-line bg-panel px-3 py-1 rounded-full hover:border-amber transition-colors no-underline"
-              >
-                Zadanie {task.number}
-              </a>
-            ))}
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-line pb-3">
+            <div className="flex flex-wrap items-center gap-2 font-mono text-[11.5px] text-muted">
+              <span>Zadania:</span>
+              {groupData.tasks.map((task: Task) => (
+                <a
+                  key={task.number}
+                  href={`#task-${task.number}`}
+                  className="text-amber-soft border border-line bg-panel px-3 py-1 rounded-full hover:border-amber transition-colors no-underline"
+                >
+                  Zadanie {task.number}
+                </a>
+              ))}
+            </div>
+
+            <button
+              type="button"
+              onClick={toggleAllSolutions}
+              className={`font-mono text-[12px] px-3.5 py-1.5 rounded-lg border transition-all flex items-center gap-1.5 cursor-pointer select-none ${
+                allSolutionsVisible
+                  ? 'border-line hover:border-amber/50 bg-panel text-txt hover:text-amber'
+                  : 'border-amber bg-amber/20 text-amber hover:bg-amber hover:text-ink font-bold shadow-[0_2px_8px_rgba(244,165,42,0.2)]'
+              }`}
+              title={allSolutionsVisible ? 'Ukryj odpowiedzi we wszystkich zadaniach' : 'Pokaż odpowiedzi we wszystkich zadaniach'}
+            >
+              {allSolutionsVisible ? (
+                <>
+                  <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" strokeWidth="2" fill="none">
+                    <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                    <line x1="1" y1="1" x2="23" y2="23"></line>
+                  </svg>
+                  Ukryj wszystkie odpowiedzi
+                </>
+              ) : (
+                <>
+                  <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" strokeWidth="2" fill="none">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                  Pokaż wszystkie odpowiedzi
+                </>
+              )}
+            </button>
           </div>
 
-          {groupData.tasks.map((task: Task) => (
-            <TaskCard
-              key={task.number}
-              task={task}
-              assetModules={assetModules}
-            />
-          ))}
+          {groupData.tasks.map((task: Task) => {
+            const isVisible = taskVisibilityOverrides[task.number] !== undefined
+              ? taskVisibilityOverrides[task.number]
+              : allSolutionsVisible;
+
+            return (
+              <TaskCard
+                key={task.number}
+                task={task}
+                assetModules={assetModules}
+                isSolutionVisible={isVisible}
+                onToggleSolution={() => {
+                  setTaskVisibilityOverrides(prev => ({
+                    ...prev,
+                    [task.number]: !isVisible
+                  }));
+                }}
+              />
+            );
+          })}
         </div>
       ) : (
         <ExamEmptyState

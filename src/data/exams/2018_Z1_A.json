@@ -5,37 +5,50 @@
       "number": 1,
       "question": "Omów budowę i zasadę działania tranzystorów bipolarnych.",
       "solution": "Budowa:\nTranzystor bipolarny składa się z dwóch bardzo blisko położonych złączy półprzewodnikowych układających się w strukturę **p-n** oraz **n-p**. Ma on trzy elektrody:\n- **Baza (B)** (z ang. base) – cienka warstwa środkowa.\n- **Emiter (E)** (z ang. emitter) – silnie domieszkowana warstwa dostarczająca nośniki mniejszościowe do bazy.\n- **Kolektor (C)** (z ang. collector) – warstwa zbierająca nośniki wstrzykiwane z emitera do bazy.\nMożliwe są dwie konfiguracje: **n-p-n** oraz **p-n-p**.\n\nZasada działania (na przykładzie p-n-p):\nW stanie bez polaryzacji zewnętrznej dziury z emitera nie przenikają do kolektora z powodu barier potencjału. Jeżeli przyłożymy napięcie \\(U_{BE}\\) pomiędzy bazę a emiter (zmniejszające barierę w kierunku przewodzenia), dziury z emitera dostają się do bazy. Ze względu na fakt, że baza jest bardzo cienka, większość z nich przedostaje się przez złącze baza-kolektor do kolektora, tworząc prąd kolektora \\(I_C\\). Do zewnętrznego źródła wypływa z bazy jedynie niewielki prąd \\(I_B\\) konieczny do zrównoważenia procesów rekombinacji.\nDla prądów zachodzi zależność: \\(I_E = I_C + I_B\\).\nWspółczynnik wzmocnienia prądowego określa się wzorem: \\(\\beta = \\frac{I_C}{I_B}\\). W ten sposób tranzystor pozwala na sterowanie dużym prądem kolektora za pomocą małego prądu bazy.",
-      "tip": "Pamiętaj, że tranzystor bipolarny jest elementem sterowanym PRĄDEM (prądem bazy), w przeciwieństwie do polarnych sterowanych napięciem.",
+      "tips": [
+        "Do zapamiętania: Tranzystor bipolarny BJT jest sterowany PRĄDEM (prądem bazy I_B), w przeciwieństwie do tranzystorów polowych FET sterowanych NAPIĘCIEM (napięciem bramki U_GS).",
+        "Obliczenia bez kalkulatora: Bilans prądów to I_E = I_B + I_C oraz I_C = β · I_B. Jeśli prąd sterujący bazy I_B = 10 µA, a wzmocnienie β = 200, to prąd kolektora wynosi w pamięci I_C = 10 µA · 200 = 2000 µA = 2 mA (a I_E = 2,01 mA)."
+      ],
       "relatedLinks": [
         {
           "label": "Pyt. 22 · Tranzystory bipolarne",
           "route": "/teoria/pamieci-nosniki#q22"
         }
-      ]
+      ],
+      "charts": []
     },
     {
       "number": 2,
       "question": "Światłowody jedno– i wielomodowe, od czego zależy liczba modów, rodzaje modów i ich wzbudzanie.",
       "solution": "Liczba modów:\nLiczba modów mogących propagować się w światłowodzie zależy bezpośrednio od znormalizowanej częstotliwości (parametru \\(V\\)), wyrażonej wzorem:\n\\[V = \\frac{2\\pi a}{\\lambda} \\sqrt{n_1^2 - n_2^2}\\]\ngdzie: \\(a\\) – promień rdzenia, \\(\\lambda\\) – długość fali światła, \\(n_1, n_2\\) – współczynniki załamania rdzenia i płaszcza. Światłowód jest jednomodowy, gdy warunek narzuca \\(V < 2,405\\). Gdy wartość \\(V\\) jest większa, staje się wielomodowy, a liczba modów rośnie proporcjonalnie do \\(V^2\\).\n\nRodzaje modów:\n1. **Mody prowadzone (rdzeniowe)** – całkowicie uwięzione w rdzeniu w wyniku zjawiska całkowitego wewnętrznego odbicia, służą do transmisji.\n2. **Mody płaszcza** – przedostają się do płaszcza, zazwyczaj są bardzo silnie tłumione i szybko zanikają.\n3. **Mody promieniowania** – tracone bezpowrotnie, wypromieniowywane na zewnątrz struktury.\n\nWzbudzanie modów:\nAby prawidłowo wzbudzić mody prowadzone w rdzeniu, światło wpadające ze źródła musi trafić w tzw. stożek akceptacji. Kąt padania promienia świetlnego na płaskie czoło światłowodu nie może być większy niż graniczny kąt akceptacji, opisywany przez Aperturę Numeryczną (\\(NA = \\sqrt{n_1^2 - n_2^2}\\)). Światło podane pod większym kątem ucieknie w płaszcz jako mody promieniowania.",
-      "tip": "Wzbudzanie można sobie wyobrazić jako trafienie światłem lasera prosto do rury – jeśli poświecisz pod zbyt dużym skosem, światło zamiast lecieć środkiem, przebije od razu jej ściankę i zgaśnie.",
+      "tips": [
+        "Do zapamiętania: Magiczna stała jednomodowości: V < 2,405 (pierwsze zero funkcji Bessela J₀). Jeśli V < 2,405 światłowód jest jednomodowy (SMF). Jeśli V > 2,405 staje się wielomodowy (MMF).",
+        "Obliczenia bez kalkulatora (liczba modów): Dla światłowodu skokowego M ≈ V² / 2, a dla gradientowego M ≈ V² / 4! Jeśli V = 10, to V² = 100. W skokowym masz ok. 100/2 = 50 modów, a w gradientowym tylko 100/4 = 25 modów. Gradientowy ma 2-krotnie mniej modów i 100-krotnie mniejszą dyspersję modową!",
+        "Wskazówka do wzbudzania: Światło wprowadzamy w stożek akceptacji wyznaczony przez NA = sin(θ_a). Jeśli zaświecisz pod zbyt ostrym kątem (θ > θ_a), światło zamiast biec rdzeniem ucieknie w płaszcz jako mody promieniowania."
+      ],
       "relatedLinks": [
         {
           "label": "Pyt. 8 · Światłowody jedno- i wielomodowe",
           "route": "/teoria/swiatlowody#q8"
         }
-      ]
+      ],
+      "charts": []
     },
     {
       "number": 3,
       "question": "Koncentracja nośników w stanie nierównowagi termodynamicznej.",
       "solution": "Stan nierównowagi termodynamicznej występuje w półprzewodniku, gdy z zewnątrz dostarczymy mu dodatkową energię (np. oświetlimy materiał fotonami prądu, podłączymy napięcie do złącza p-n). Dochodzi wtedy do zachwiania naturalnego bilansu pomiędzy elektronami i dziurami.\n\nDwa główne zjawiska:\n- **Iniekcja**: Wstrzyknięcie lub wygenerowanie nadmiarowych nośników. Występuje np. pod wpływem światła lasera lub po spolaryzowaniu złącza p-n w kierunku przewodzenia. Koncentracja nośników staje się wyższa niż w równowadze.\n- **Ekstrakcja**: Wyssanie (usunięcie) nośników, co prowadzi do ich spadku poniżej poziomu równowagi (np. w złączu p-n spolaryzowanym zaporowo – tworzy się strefa zubożona).\n\nReakcja układu:\nNadmiarowe nośniki wygenerowane podczas iniekcji nie utrzymują się w nieskończoność. Układ dąży do powrotu do równowagi, a nośniki ulegają rekombinacji (bezpośredniej lub pośredniej). Szybkość wymierania nadmiaru ładunków po ustaniu bodźca określana jest przez parametr nazywany czasem życia nośników (\\(\\tau\\)).",
-      "tip": "W stanie nierównowagi pękają zasady termodynamiki statystycznej dla jednego poziomu Fermiego. Półprzewodnik musi posiłkować się dwoma quasi-poziomami Fermiego (osobno dla elektronów, osobno dla dziur).",
+      "tips": [
+        "Do zapamiętania: Dwa kluczowe pojęcia do podania: INIEKCJA (dodanie nośników nadmiarowych, n·p > n_i²) oraz EKSTRAKCJA (usunięcie nośników ze strefy, n·p < n_i²). Jeden poziom Fermiego E_F rozszczepia się na dwa quasi-poziomy E_Fn i E_Fp.",
+        "Obliczenia bez kalkulatora (dlaczego badamy nośniki mniejszościowe): W półprzewodniku typu N o n₀ = 10¹⁶ cm⁻³ i p₀ = 10⁴ cm⁻³, iniekcja Δn = Δp = 10¹² nośników zmienia elektrony o zaledwie 0,01% (niewykrywalne!), ale dziury mniejszościowe zwiększa aż 100 000 000 razy (ze 10⁴ do 10¹²)! To dlatego wszystkie zjawiska półprzewodnikowe mierzy się na nośnikach mniejszościowych."
+      ],
       "relatedLinks": [
         {
           "label": "Pyt. 18 · Stan nierównowagi termodynamicznej",
           "route": "/teoria/polprzewodniki#q18"
         }
-      ]
+      ],
+      "charts": []
     }
   ]
 }

@@ -89,13 +89,22 @@ export function BookAddition({ title, children }: BookAdditionProps) {
 }
 
 interface TipProps {
+  title?: React.ReactNode;
+  badge?: string;
   children: React.ReactNode;
 }
 
-export function Tip({ children }: TipProps) {
+export function Tip({ title = "Wskazówka egzaminacyjna", badge, children }: TipProps) {
   return (
     <div className="rounded-[10px] px-4 py-[14px] my-[14px] border border-amber/30 bg-amber/10">
-      <span className="font-mono text-[11px] tracking-[0.14em] uppercase text-amber block mb-2">Wskazówka egzaminacyjna</span>
+      <div className="flex items-center justify-between gap-2 mb-2">
+        <span className="font-mono text-[11px] tracking-[0.14em] uppercase text-amber block">{title}</span>
+        {badge && (
+          <span className="font-mono text-[10px] uppercase px-2 py-0.5 rounded bg-amber/20 text-amber-soft border border-amber/30">
+            {badge}
+          </span>
+        )}
+      </div>
       <div className="text-[14.5px] text-muted leading-relaxed">{children}</div>
     </div>
   );

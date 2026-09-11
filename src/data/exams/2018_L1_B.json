@@ -5,7 +5,11 @@
       "number": 1,
       "question": "Napisz i omów Równania Maxwella. Podaj warunki brzegowe dla pól na granicy ośrodków. W szczególności omów przypadek na granicy przewodnik–dielektryk.",
       "solution": "Równania Maxwella:\n1. **Prawo Faradaya** (\\(\\nabla \\times \\vec{E} = -\\frac{\\partial \\vec{B}}{\\partial t}\\)): Zmienne w czasie pole magnetyczne wytwarza wirowe pole elektryczne.\n2. **Prawo Ampere'a rozszerzone** (\\(\\nabla \\times \\vec{H} = \\vec{j} + \\frac{\\partial \\vec{D}}{\\partial t}\\)): Przepływający prąd oraz zmienne pole elektryczne stanowią źródło rotacyjnego pola magnetycznego.\n3. **Prawo Gaussa dla elektryczności** (\\(\\nabla \\cdot \\vec{D} = \\rho\\)): Ładunki elektryczne są źródłem lub ujściem linii pola elektrycznego.\n4. **Prawo Gaussa dla magnetyzmu** (\\(\\nabla \\cdot \\vec{B} = 0\\)): Pole magnetyczne nie ma źródła (monopole magnetyczne nie istnieją, linie pola zawsze są pętlami).\n\nWarunki brzegowe dla dowolnych pól na granicy dwóch ośrodków dielektrycznych:\n- Składowa **styczna** natężenia pola elektrycznego przechodzi w sposób ciągły (\\(E_{1t} = E_{2t}\\)).\n- Składowa **normalna** (prostopadła) indukcji elektrycznej jest ciągła (\\(D_{1n} = D_{2n}\\)), o ile na granicy nie ma swobodnego ładunku powierzchniowego.\n- Składowa **styczna** natężenia pola magnetycznego jest ciągła (\\(H_{1t} = H_{2t}\\)), o ile nie płynie powierzchniowy prąd.\n- Składowa **normalna** indukcji magnetycznej jest zawsze ciągła (\\(B_{1n} = B_{2n}\\)).\n\nPrzypadek specjalny (granica przewodnik idealny – dielektryk):\nWewnątrz idealnego przewodnika nie istnieje żadne pole elektromagnetyczne (\\(E=0\\), \\(B=0\\)). Konsekwencją tego na granicy jest to, że:\n1. Składowa styczna pola elektrycznego w dielektryku wynosi zero (\\(E_t = 0\\)). Linie pola E wnikają do przewodnika pod kątem prostym.\n2. Składowa normalna pola magnetycznego wynosi zero (\\(B_n = 0\\)). Pole magnetyczne ślizga się wzdłuż powierzchni, będąc do niej wyłącznie równoległym.\n3. Na powłoce gromadzą się ładunki powierzchniowe uwarunkowane wektorem (\\(D_n = \\rho_s\\)) oraz wzbudzone prądy powierzchniowe (\\(H_t = J_s\\)).",
-      "tip": "Warto pamiętać na chłopski rozum: w izolatorach pola falują w poprzek granicy, a przy idealnym metalu (przewodniku) fala uderzając odbija się – pole elektryczne ma węzeł na samej granicy i lgnie do niej ładunkiem.",
+      "tips": [
+        "Do zapamiętania: 4 równania Maxwella w pigułce: 1) Faraday (zmienne B rodzi rotację E, pamiętaj o minusie Lenza!), 2) Ampère-Maxwell (prąd j oraz prąd przesunięcia ∂D/∂t rodzą rotację H), 3) Gauss elektryczny (ładunek ρ jest źródłem D), 4) Gauss magnetyczny (∇·B = 0, brak monopoli magnetycznych).",
+        "Obliczenia bez kalkulatora i jednostki: Natężenia pól mają mianownik /m: E [V/m], H [A/m]. Indukcje mają mianownik /m²: D [C/m² = A·s/m²], B [T = Wb/m² = V·s/m²]. Gęstość prądu j to [A/m²], a ładunku objętościowego ρ to [C/m³]. Nigdy nie pomyl tych jednostek na kartce!",
+        "Pułapka egzaminacyjna (granica dielektryk-metal): W idealnym przewodniku E = 0 i B = 0. Dlatego linie pola E stykają się z metalem wyłącznie pod kątem 90° (E_t = 0), a linie pola B są do niego idealnie równoległe (B_n = 0)."
+      ],
       "relatedLinks": [
         {
           "label": "Pyt. 1 · Równania Maxwella",
@@ -15,19 +19,24 @@
           "label": "★ · Warunki brzegowe",
           "route": "/teoria/swiatlowody#qwb"
         }
-      ]
+      ],
+      "charts": []
     },
     {
       "number": 2,
       "question": "Omów zjawisko dyspersji we włóknach światłowodowych.",
       "solution": "Dyspersja to zjawisko destrukcyjne w optyce. Polega ono na poszerzaniu (rozmywaniu się) impulsów świetlnych w czasie, w miarę ich podróży wzdłuż światłowodu. Ponieważ jedynki stają się coraz szersze, przy dalekiej podróży zlewają się ze sobą, wywołując Intersymboliczną Interferencję (ISI). Dyspersja definiuje maksymalny limit przepustowości i zasięgu światłowodu.\n\nGłówne rodzaje dyspersji:\n\n1. **Dyspersja modowa**: Występuje TYLKO w światłowodach wielomodowych. Ponieważ promienie świetlne mogą podróżować przez rdzeń pod różnymi kątami (tworząc osobne mody), promienie odbijające się często od ścianek pokonują dłuższą odległość geometryczną i docierają do celu później, niż najkrótszy promień osiowy. Rozwiązaniem tego problemu jest budowa światłowodu o profilu gradientowym (który wyrównuje czasy fal), a eliminacją – zastosowanie światłowodu jednomodowego (SMF).\n\n2. **Dyspersja chromatyczna**: Zjawisko związane z faktem, że żadne źródło światła nie jest idealnie jednokolorowe (monochromatyczne), ale składa się z wiązki fal o różnej długości (określone szerokością widmową). Dzieli się na:\n- *Materiałową*: Szkło ma lekko inny współczynnik załamania dla innych długości światła. Dlatego czerwone i niebieskie fragmenty impulsu poruszają się z inną prędkością fazową w tym samym rdzeniu.\n- *Falowodową*: Wraz ze zmianą częstotliwości zmienia się promień plamki modowej (ilość fali wystającej do szybszego płaszcza). Dyspersję tę można modelować przez zmianę parametrów geometrycznych (np. kable DCF i przesunięcie punktu zerowej dyspersji dla pasma 1550 nm).\n\n3. **Polaryzacyjna dyspersja modowa (PMD)**: Wynika z faktu, że włókno nigdy nie jest idealnie cylindryczne (dwójłomność wywołana naprężeniami mechanicznymi kabla). Impuls ulega zniekształceniom dla odrębnych, ortogonalnych składowych polaryzacji. Psuje transmisję przy najbardziej zaawansowanych, rekordowych prędkościach wieleset Gigabitów na sekundę.",
-      "tip": "Mówiąc o dyspersji modowej – pomyśl o wyścigu po bieżni, mod osiowy biegnie po pierwszym, najkrótszym torze. Dyspersja chromatyczna – różne kolory (np. w tęczy) inaczej odbijają się w pryzmacie materiału.",
+      "tips": [
+        "Do zapamiętania: Modowa (biegacze po różnych torach bieżni – eliminacja: włókno jednomodowe SMF gdy V < 2,405). Chromatyczna (tęcza – różne barwy światła płyną z różną prędkością). PMD (spłaszczenie rdzenia – dwie ortogonalne polaryzacje rozbiegają się w czasie).",
+        "Obliczenia bez kalkulatora (poszerzenie a przepływność): Poszerzenie to Δτ = |D| · L · Δλ. Aby uniknąć nakładania się bitów (ISI), czas trwania bitu T_b musi spełniać T_b > 4 · Δτ, co daje przepływność B_max ≈ 1 / (4 · Δτ). Jeśli Δτ = 25 ps, to 4 · 25 ps = 100 ps = 10⁻¹⁰ s, czyli maksymalna prędkość wynosi dokładnie 1 / 10⁻¹⁰ = 10 Gb/s!"
+      ],
       "relatedLinks": [
         {
           "label": "Pyt. 10 · Dyspersja w światłowodach",
           "route": "/teoria/swiatlowody#q10"
         }
-      ]
+      ],
+      "charts": []
     }
   ]
 }

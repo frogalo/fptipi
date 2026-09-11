@@ -127,7 +127,6 @@ export default function FloatingNav() {
               title={isSectionsCollapsed ? 'Rozwiń spis sekcji' : 'Zwiń spis sekcji'}
             >
               <div className="flex items-center gap-1.5">
-                <span className="text-amber text-xs">📑</span>
                 <span className="font-semibold text-muted group-hover:text-txt">
                   Sekcje ({sections.length})
                 </span>
