@@ -38,6 +38,53 @@ interface ListState {
   items: ListRootItem[];
 }
 
+/** Renders a markdown table as an accessible, beautifully styled HTML table */
+export function renderTable(tableRows: string[][], key: string, isInsideCallout = false): React.ReactNode {
+  if (tableRows.length === 0) return null;
+  const headerRow = tableRows[0];
+  let bodyRows = tableRows.slice(1);
+  if (bodyRows.length > 0 && bodyRows[0].every(cell => /^[:\s-]+$/.test(cell))) {
+    bodyRows = bodyRows.slice(1);
+  }
+
+  const containerClasses = isInsideCallout
+    ? "my-3.5 overflow-x-auto rounded-xl border border-amber/30 bg-ink2/95 shadow-sm"
+    : "my-5 overflow-x-auto rounded-xl border border-line bg-panel2/50 shadow-sm";
+
+  return (
+    <div key={key} className={containerClasses}>
+      <table className="w-full text-left border-collapse text-[13.5px] sm:text-[14px]">
+        <thead>
+          <tr className="border-b border-line bg-ink/90">
+            {headerRow.map((cell, cIdx) => (
+              <th
+                key={cIdx}
+                className="py-2.5 px-3.5 font-mono text-[12px] font-bold uppercase tracking-wider text-amber border-r border-line/40 last:border-r-0"
+              >
+                {renderInline(cell)}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody className="divide-y divide-line/40 font-sans">
+          {bodyRows.map((row, rIdx) => (
+            <tr key={rIdx} className="hover:bg-amber/5 transition-colors">
+              {row.map((cell, cIdx) => (
+                <td
+                  key={cIdx}
+                  className="py-2.5 px-3.5 text-txt leading-relaxed border-r border-line/30 last:border-r-0"
+                >
+                  {renderInline(cell)}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
 /**
  * Converts a plain-text solution string into a rich, highly legible React node tree.
  * Line-by-line block parser with zero emojis and comfortable typography.
@@ -69,44 +116,7 @@ export function renderContent(text: string): React.ReactNode {
 
   const flushTable = (key: string) => {
     if (currentTable.length > 0) {
-      const headerRow = currentTable[0];
-      let bodyRows = currentTable.slice(1);
-      if (bodyRows.length > 0 && bodyRows[0].every(cell => /^[:\s-]+$/.test(cell))) {
-        bodyRows = bodyRows.slice(1);
-      }
-
-      elements.push(
-        <div key={key} className="my-5 overflow-x-auto rounded-xl border border-line bg-panel2/50 shadow-sm">
-          <table className="w-full text-left border-collapse text-[14px]">
-            <thead>
-              <tr className="border-b border-line bg-ink2/90">
-                {headerRow.map((cell, cIdx) => (
-                  <th
-                    key={cIdx}
-                    className="py-3 px-4 font-mono text-[12.5px] font-bold uppercase tracking-wider text-amber border-r border-line/40 last:border-r-0"
-                  >
-                    {renderInline(cell)}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-line/40 font-sans">
-              {bodyRows.map((row, rIdx) => (
-                <tr key={rIdx} className="hover:bg-amber/5 transition-colors">
-                  {row.map((cell, cIdx) => (
-                    <td
-                      key={cIdx}
-                      className="py-2.5 px-4 text-txt leading-relaxed border-r border-line/30 last:border-r-0"
-                    >
-                      {renderInline(cell)}
-                    </td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      );
+      elements.push(renderTable(currentTable, key, false));
       currentTable = [];
     }
   };
@@ -203,26 +213,114 @@ export function renderContent(text: string): React.ReactNode {
 
   const flushCallout = (key: string) => {
     if (currentCallout.length > 0) {
+      let titleNode: React.ReactNode = 'Ważne / Do zapamiętania';
+      let contentLines = currentCallout;
+
+      const firstLine = currentCallout[0].trim();
+      const isTitle =
+        firstLine.startsWith('💡') ||
+        (firstLine.startsWith('**') && firstLine.endsWith('**')) ||
+        /^(\*\*|💡).*?:?\s*$/.test(firstLine);
+
+      if (isTitle && contentLines.length > 1) {
+        const rawTitle = firstLine
+          .replace(/^💡\s*/, '')
+          .replace(/^\*\*/, '')
+          .replace(/\*\*:?$/, '')
+          .replace(/:$/, '')
+          .trim();
+
+        titleNode = (
+          <span className="flex items-center gap-1.5">
+            <span className="text-amber text-[13px]">💡</span>
+            <span>{rawTitle}</span>
+          </span>
+        );
+        contentLines = currentCallout.slice(1);
+      }
+
+      const calloutElements: React.ReactNode[] = [];
+      let tableRows: string[][] = [];
+      let paragraphLines: string[] = [];
+
+      const flushCalloutP = (cKey: string) => {
+        if (paragraphLines.length > 0) {
+          const text = paragraphLines.join(' ').trim();
+          if (text) {
+            calloutElements.push(
+              <p key={cKey} className="text-[14.5px] leading-relaxed">
+                {renderInline(text)}
+              </p>
+            );
+          }
+          paragraphLines = [];
+        }
+      };
+
+      const flushCalloutT = (cKey: string) => {
+        if (tableRows.length > 0) {
+          calloutElements.push(renderTable(tableRows, cKey, true));
+          tableRows = [];
+        }
+      };
+
+      contentLines.forEach((cLine, cIdx) => {
+        const trimmedLine = cLine.trim();
+        if (!trimmedLine) {
+          flushCalloutP(`${key}-p-${cIdx}`);
+          flushCalloutT(`${key}-t-${cIdx}`);
+          return;
+        }
+
+        const isTable = trimmedLine.startsWith('|') && trimmedLine.endsWith('|') && trimmedLine.includes('|', 1);
+        if (isTable) {
+          flushCalloutP(`${key}-p-${cIdx}`);
+          const cells = trimmedLine
+            .slice(1, -1)
+            .split('|')
+            .map(c => c.trim());
+          tableRows.push(cells);
+          return;
+        } else {
+          flushCalloutT(`${key}-t-${cIdx}`);
+        }
+
+        if (trimmedLine.startsWith('\\[') && trimmedLine.endsWith('\\]')) {
+          flushCalloutP(`${key}-p-${cIdx}`);
+          calloutElements.push(
+            <div key={`${key}-math-${cIdx}`} className="my-2.5 text-center overflow-x-auto text-[15px]">
+              {renderInline(trimmedLine)}
+            </div>
+          );
+          return;
+        }
+
+        if (trimmedLine.startsWith('- ') || trimmedLine.startsWith('* ')) {
+          flushCalloutP(`${key}-p-${cIdx}`);
+          calloutElements.push(
+            <div key={`${key}-li-${cIdx}`} className="flex items-start gap-2 text-[14px]">
+              <span className="text-amber-soft font-mono font-bold select-none shrink-0 mt-0.5">–</span>
+              <div className="flex-1 text-txt/95 leading-relaxed">
+                {renderInline(trimmedLine.slice(2))}
+              </div>
+            </div>
+          );
+          return;
+        }
+
+        paragraphLines.push(trimmedLine);
+      });
+
+      flushCalloutP(`${key}-p-end`);
+      flushCalloutT(`${key}-t-end`);
+
       elements.push(
         <div key={key} className="my-4 rounded-xl border border-amber/35 bg-amber/5 px-4 py-3.5 text-[14.5px] leading-relaxed">
-          <div className="text-[11px] font-mono uppercase tracking-wider text-amber font-semibold mb-2 pb-1 border-b border-amber/20">
-            Ważne / Do zapamiętania
+          <div className="text-[11.5px] font-mono uppercase tracking-wider text-amber font-semibold mb-2.5 pb-1 border-b border-amber/20">
+            {titleNode}
           </div>
-          <div className="space-y-1.5 text-txt font-sans">
-            {currentCallout.map((cLine, cIdx) => {
-              if (cLine.startsWith('\\[') && cLine.endsWith('\\]')) {
-                return (
-                  <div key={cIdx} className="my-2 text-center overflow-x-auto text-[15px]">
-                    {renderInline(cLine)}
-                  </div>
-                );
-              }
-              return (
-                <p key={cIdx} className="text-[14.5px] leading-relaxed">
-                  {renderInline(cLine)}
-                </p>
-              );
-            })}
+          <div className="space-y-2 text-txt font-sans">
+            {calloutElements}
           </div>
         </div>
       );
@@ -251,10 +349,8 @@ export function renderContent(text: string): React.ReactNode {
       flushParagraph(`line-${lineIdx}-p`);
       flushList(`line-${lineIdx}-l`);
       flushTable(`line-${lineIdx}-t`);
-      const cleanCallout = trimmed.replace(/^>\s?/, '').trim();
-      if (cleanCallout) {
-        currentCallout.push(cleanCallout);
-      }
+      const cleanCallout = trimmed.replace(/^>\s?/, '');
+      currentCallout.push(cleanCallout);
       return;
     } else {
       flushCallout(`line-${lineIdx}-c`);
