@@ -10,6 +10,7 @@ import React, { useEffect } from 'react';
 import { PageHeader, QuestionSection, BlockFormula } from '../../components/TheoryComponents';
 import { Concept, Formula, Symbol, Explanation, Conclusion, BookAddition } from '../../components/MathBlocks';
 import Footer from '../../components/Footer';
+import TheoryNavigation from '../../components/TheoryNavigation';
 
 export default function Teoria16() {
 
@@ -85,15 +86,13 @@ export default function Teoria16() {
 <BlockFormula tag="(6.1.1)" tex={String.raw`n=p=n_i`} />
 <Symbol symbol={String.raw`n, p`} desc="koncentracja elektronów oraz dziur w półprzewodniku samoistnym" />
 <Symbol symbol={String.raw`n_i`} desc="koncentracja samoistna nośników ładunku" />
-<p className=" text-[14px] text-muted -mt-1 mb-[14px]">gdzie: <code className="font-mono text-txt text-[12.5px]">n</code> — koncentracja elektronów; <code className="font-mono text-txt text-[12.5px]">p</code> — koncentracja dziur; <code className="font-mono text-txt text-[12.5px]">n<sub>i</sub></code> — koncentracja samoistna.</p>
 <BlockFormula tag="(6.1.2)" tex={String.raw`n_i=\frac{2(2\pi kT)^{3/2}}{h^3}(m_e^*m_h^*)^{3/4}e^{-E_g/2kT}`} />
 <Symbol symbol={String.raw`n_i`} desc="koncentracja samoistna nośników ładunku" />
-<Symbol symbol={String.raw`k`} desc="stała Boltzmanna" />
+<Symbol symbol={String.raw`k`} desc="stała Boltzmanna (1,38 · 10⁻²³ J/K = 8,62 · 10⁻⁵ eV/K)" />
 <Symbol symbol={String.raw`T`} desc="temperatura bezwzględna" />
-<Symbol symbol={String.raw`h`} desc="stała Plancka" />
+<Symbol symbol={String.raw`h`} desc="stała Plancka (6,62 · 10⁻³⁴ J·s = 4,136 · 10⁻¹⁵ eV·s)" />
 <Symbol symbol={String.raw`m_e^*, m_h^*`} desc="efektywne masy elektronu i dziury" />
 <Symbol symbol={String.raw`E_g`} desc="szerokość przerwy energetycznej (pasma zabronionego)" />
-<p className=" text-[14px] text-muted -mt-1 mb-[14px]">gdzie: <code className="font-mono text-txt text-[12.5px]">k</code> = 1,38·10⁻²³ [J/K] = 8,62·10⁻⁵ [eV/K] — stała Boltzmanna; <code className="font-mono text-txt text-[12.5px]">T</code> — temperatura; <code className="font-mono text-txt text-[12.5px]">h</code> = 6,62·10⁻³⁴ [J·s] = 4,136·10⁻¹⁵ [eV·s] — stała Plancka; <code className="font-mono text-txt text-[12.5px]">E<sub>g</sub></code> — szerokość pasma zabronionego; <code className="font-mono text-txt text-[12.5px]">m<sub>h</sub>*</code> — masa efektywna dziur; <code className="font-mono text-txt text-[12.5px]">m<sub>e</sub>*</code> — masa efektywna elektronów.</p>
 <Conclusion title="Wniosek z (6.1.2)">
 <p className="mb-[11px]">Koncentracja dziur <b>bardzo szybko wzrasta wraz ze wzrostem temperatury, natomiast maleje wraz ze wzrostem szerokości przerwy energetycznej</b>. Im temperatura wyższa, tym większa energia ruchu termicznego — rośnie prawdopodobieństwo przejścia elektronów z pasma walencyjnego do pasma przewodnictwa. Kiedy szerokość przerwy jest większa, mniej elektronów może ją pokonać, gdyż nie mają wystarczającej energii. <b>Reasumując: koncentracja samoistna wzrasta wraz z temperaturą, przy czym zmiany te są większe dla półprzewodników o większej przerwie energetycznej.</b></p>
 </Conclusion>
@@ -131,7 +130,6 @@ export default function Teoria16() {
 <Symbol symbol={String.raw`E_v`} desc="energia stropu pasma walencyjnego" />
 <Symbol symbol={String.raw`N(E)`} desc="gęstość stanów energetycznych w paśmie walencyjnym" />
 <Symbol symbol={String.raw`f_p(E)`} desc="rozkład prawdopodobieństwa nieobsadzenia stanu (zajęcia przez dziurę)" />
-<p className=" text-[14px] text-muted -mt-1 mb-[14px]">gdzie: <code className="font-mono text-txt text-[12.5px]">N(E)</code> — rozkład koncentracji poziomów energetycznych w funkcji energii; <code className="font-mono text-txt text-[12.5px]">f<sub>n</sub>(E)</code> — funkcja rozkładu prawdopodobieństwa zajęcia poziomu energetycznego E przez elektron; <code className="font-mono text-txt text-[12.5px]">f<sub>p</sub>(E)</code> — funkcja rozkładu prawdopodobieństwa zajęcia poziomu energetycznego E przez dziurę.</p>
 <p className="mb-[11px]">Wygodnym jest wprowadzenie pojęcia <b>efektywnej koncentracji stanów energetycznych</b> sprowadzonych odpowiednio do poziomu dna pasma przewodnictwa ({String.raw`\(N_c\)`}) i wierzchołka pasma walencyjnego ({String.raw`\(N_v\)`}):</p>
 <BlockFormula tag="(6.3.3)–(6.3.4)" tex={String.raw`n=N_c f_n(E_c),\qquad p=N_v f_p(E_v)`} />
 <Symbol symbol={String.raw`n, p`} desc="koncentracja elektronów / dziur" />
@@ -150,7 +148,6 @@ export default function Teoria16() {
 <Symbol symbol={String.raw`E_F`} desc="poziom Fermiego" />
 <Symbol symbol={String.raw`k`} desc="stała Boltzmanna" />
 <Symbol symbol={String.raw`T`} desc="temperatura bezwzględna" />
-<p className=" text-[14px] text-muted -mt-1 mb-[14px]">gdzie <code className="font-mono text-txt text-[12.5px]">E<sub>F</sub></code> — energia Fermiego (poziom Fermiego).</p>
 <p className="mb-[11px]"><b>Poziom Fermiego to taki poziom energetyczny, dla którego prawdopodobieństwo zajęcia przez elektron wynosi 0,5.</b></p>
 <figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={polprzewodniki_rozklad_fermi_dirac_samoistny_n_p} alt="Rozkład Fermiego-Diraca"/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 6.2. Rozkład Fermiego–Diraca dla półprzewodnika a) samoistnego, b) typu n i c) typu p.</figcaption></figure>
 <ul className="mb-3 ml-5 list-disc">
@@ -260,7 +257,6 @@ export default function Teoria16() {
 <Symbol symbol={String.raw`e`} desc="ładunek elementarny" />
 <Symbol symbol={String.raw`n, p`} desc="koncentracja elektronów oraz dziur" />
 <Symbol symbol={String.raw`\mu_e, \mu_h`} desc="ruchliwość elektronów oraz dziur" />
-<p className=" text-[14px] text-muted -mt-1 mb-[14px]">gdzie: <code className="font-mono text-txt text-[12.5px]">μ<sub>e</sub></code> — ruchliwość elektronów; <code className="font-mono text-txt text-[12.5px]">μ<sub>h</sub></code> — ruchliwość dziur.</p>
 <p className="mb-[11px]"><b>Konduktywność elektryczna półprzewodników bardzo szybko zmienia się z temperaturą</b>, co bezpośrednio wiąże się ze zmianami koncentracji nośników. W przypadku półprzewodników <b>samoistnych</b> zależność logarytmiczna konduktywności w funkcji odwrotności temperatury jest <b>liniowa</b>. W określonej temperaturze wartość konduktywności zależy od szerokości pasma zabronionego: <b>im szersze jest pasmo zabronione, tym mniejsza koncentracja nośników i w związku z tym mniejsza konduktywność.</b></p>
 <figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={polprzewodniki_konduktywnosc_temperatura} alt="Konduktywność vs temperatura" style={{ "maxWidth": "300px" }}/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 6.4. Zależność konduktywności w funkcji temperatury.</figcaption></figure>
 <p className="mb-[11px]">Dla półprzewodników <b>domieszkowanych</b> interpretacja wykresu jest taka sama jak wykresu koncentracji (Rys. 6.3): <b>linia 1</b> — obszar jonizacji domieszek; <b>zakres 2</b> — stała koncentracja nośników, czyli wszystkie domieszki są zjonizowane; <b>powyżej temperatury 450 K (linia 3)</b> — generacja samoistna.</p>
@@ -305,6 +301,8 @@ export default function Teoria16() {
 </tbody></table>
 </BookAddition>
 </QuestionSection>
+
+<TheoryNavigation />
 
 <Footer>Odpowiedzi cz. 4/5 (pytania 16–20) · Fizyka półprzewodników i złącze p–n</Footer>
 </div>

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Formula, Explanation, Symbol, Concept } from '../../components/MathBlocks';
 import Footer from '../../components/Footer';
+import TheoryNavigation from '../../components/TheoryNavigation';
 
 export default function TeoriaSciaga() {
 
@@ -925,6 +926,8 @@ export default function TeoriaSciaga() {
 </div>
 
 </div>
+
+<TheoryNavigation />
 
 <Footer>Ściąga egzaminacyjna · 28 pytań w pigułce (wzory, prawa i wykresy)</Footer>
 </div>

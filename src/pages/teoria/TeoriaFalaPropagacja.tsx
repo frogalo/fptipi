@@ -16,6 +16,7 @@ import { Link } from 'react-router-dom';
 import { PageHeader, QuestionSection, BlockFormula } from '../../components/TheoryComponents';
 import { Concept, Formula, Symbol, Explanation, Conclusion, BookAddition } from '../../components/MathBlocks';
 import Footer from '../../components/Footer';
+import TheoryNavigation from '../../components/TheoryNavigation';
 
 export default function Teoria1() {
 
@@ -154,9 +155,8 @@ export default function Teoria1() {
 
 <BlockFormula tag="(2.2.3)" tex={String.raw`\vec{j}=\sigma\vec{E}`} />
 <Symbol symbol={String.raw`\vec{j}`} desc="wektor gęstości prądu" />
-<Symbol symbol={String.raw`\sigma`} desc="konduktywność (przewodnictwo właściwe) ośrodka" />
+<Symbol symbol={String.raw`\sigma`} desc={String.raw`konduktywność (przewodnictwo właściwe) ośrodka \([\frac{1}{\Omega\cdot\mathrm{m}}]\)`} />
 <Symbol symbol={String.raw`\vec{E}`} desc="wektor natężenia pola elektrycznego" />
-<p className=" text-[14px] text-muted -mt-1 mb-[14px]">gdzie: {String.raw`\(\mu\)`}, {String.raw`\(\varepsilon\)`} i {String.raw`\(\sigma\)`} oznaczają parametry materiałowe ośrodka; <code className="font-mono text-txt text-[12.5px]">μ<sub>r</sub></code> — względna przenikalność magnetyczna (liczba bezwymiarowa); <code className="font-mono text-txt text-[12.5px]">ε<sub>r</sub></code> — względna przenikalność elektryczna (liczba bezwymiarowa); <code className="font-mono text-txt text-[12.5px]">σ</code> — konduktywność ośrodka {String.raw`\([\tfrac{1}{\Omega m}]\)`}.</p>
 
 <p className="mb-[11px]">Przenikalność elektryczna i konduktywność ośrodka charakteryzują <b>dielektryki</b>, a przenikalność magnetyczna — <b>magnetyki</b>. Przenikalność elektryczna to miara zdolności dielektryka do osłabiania zewnętrznego pola elektrycznego oraz miara zdolności do koncentracji energii pola elektrycznego.</p>
 
@@ -173,9 +173,8 @@ export default function Teoria1() {
 <h3 className="text-base text-amber-soft font-semibold mt-5 mb-2 font-mono tracking-wide">Prędkość światła i prędkość propagacji</h3>
 <BlockFormula tag="(2.2.4)" tex={String.raw`c=\frac{1}{\sqrt{\varepsilon_0\cdot\mu_0}}\approx 3\cdot 10^8\;\left[\frac{m}{s}\right]`} />
 <Symbol symbol={String.raw`c`} desc="prędkość światła w próżni" />
-<Symbol symbol={String.raw`\varepsilon_0`} desc="przenikalność elektryczna próżni" />
-<Symbol symbol={String.raw`\mu_0`} desc="przenikalność magnetyczna próżni" />
-<p className=" text-[14px] text-muted -mt-1 mb-[14px]">gdzie {String.raw`\(\varepsilon_0=\frac{10^{-9}}{36\pi}\,[\frac{F}{m}]\)`}; {String.raw`\(\mu_0=4\pi\cdot 10^{-7}\,[\frac{H}{m}]\)`}.</p>
+<Symbol symbol={String.raw`\varepsilon_0`} desc={String.raw`przenikalność elektryczna próżni (\(\varepsilon_0=\frac{10^{-9}}{36\pi}\ \left[\frac{\mathrm{F}}{\mathrm{m}}\right]\))`} />
+<Symbol symbol={String.raw`\mu_0`} desc={String.raw`przenikalność magnetyczna próżni (\(\mu_0=4\pi\cdot 10^{-7}\ \left[\frac{\mathrm{H}}{\mathrm{m}}\right]\))`} />
 <p className="mb-[11px]">Dla dowolnego ośrodka materialnego prędkość propagacji {String.raw`\(v_p\)`} jest <b>mniejsza</b> niż prędkość rozchodzenia się światła w próżni:</p>
 <BlockFormula tag="(2.2.5)–(2.2.7)" tex={String.raw`v_p=\frac{1}{\sqrt{\varepsilon_0\mu_0}\cdot\sqrt{\varepsilon_r\mu_r}}=\frac{c}{\sqrt{\varepsilon_r\mu_r}},\qquad n=\sqrt{\varepsilon_r\cdot\mu_r}\;\Rightarrow\; v_p=\frac{c}{n}`} />
 <Symbol symbol={String.raw`v_p`} desc="prędkość fazowa fali w ośrodku" />
@@ -236,9 +235,8 @@ export default function Teoria1() {
 <BlockFormula tag="(3.1.2) minimum" tex={String.raw`d\cdot\sin\theta=\left(n+\tfrac{1}{2}\right)\cdot\lambda`} />
 <Symbol symbol={String.raw`d`} desc="szerokość szczeliny" />
 <Symbol symbol={String.raw`\theta`} desc="kąt interferencji" />
-<Symbol symbol={String.raw`n`} desc="rząd widma" />
+<Symbol symbol={String.raw`n`} desc={String.raw`rząd widma (\(n=0,1,2,3,\ldots\))`} />
 <Symbol symbol={String.raw`\lambda`} desc="długość fali" />
-<p className=" text-[14px] text-muted -mt-1 mb-[14px]">gdzie {String.raw`\(n=0,1,2,3,\ldots\)`}</p>
 <p className="mb-[11px]">Z powyższych wzorów wynika, że <b>im mniejsza jest odległość pomiędzy szczelinami, tym większa będzie wartość kąta</b>, dla którego wystąpi wzmocnienie (lub wygaszenie) i tym większa będzie różnica kątowa pomiędzy maksimami bądź minimami.</p>
 <figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={propagacja_interferencja_doswiadczenie_younga_prazki} alt="Interferencja"/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 3.4. Ilustracja interferencji w doświadczeniu Younga dla dwóch różnych odległości pomiędzy szczelinami: a)&nbsp;mniejszej, b)&nbsp;większej.</figcaption></figure>
 
@@ -279,7 +277,6 @@ export default function Teoria1() {
 <Symbol symbol={String.raw`R_Z`} desc="promień kuli ziemskiej (~6400 km)" />
 <Symbol symbol={String.raw`H_N`} desc="wysokość anteny nadawczej" />
 <Symbol symbol={String.raw`H_O`} desc="wysokość anteny odbiorczej" />
-<p className=" text-[14px] text-muted -mt-1 mb-[14px]">gdzie: <code className="font-mono text-txt text-[12.5px]">R<sub>Z</sub></code> — promień Ziemi (przyjmujemy w przybliżeniu 6400&nbsp;km); <code className="font-mono text-txt text-[12.5px]">H<sub>N</sub></code> — wysokość anteny nadawczej; <code className="font-mono text-txt text-[12.5px]">H<sub>O</sub></code> — wysokość anteny odbiorczej.</p>
 <p className="mb-[11px]">Tak jest wtedy, kiedy teren jest „czysty” — bez zabudowań i wzniesień. Przed przystąpieniem do projektowania łącza radiowego należy wykonać <b>projekt hipsometryczny terenu</b>, który uwzględnia zarówno ukształtowanie naturalne terenu, jak i sztuczne przeszkody (np. budynki). Istnieje jeszcze możliwość transmisji z wykorzystaniem <b>ugięcia fali elektromagnetycznej wzdłuż krzywizny Ziemi</b>:</p>
 <figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={propagacja_ugiecie_wzdluz_krzywizny_ziemi} alt="Ugięcie wzdłuż krzywizny Ziemi"/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 3.7. Transmisja z wykorzystaniem ugięcia fali elektromagnetycznej wzdłuż krzywizny Ziemi.</figcaption></figure>
 
@@ -361,7 +358,6 @@ export default function Teoria1() {
 <Symbol symbol={String.raw`A_{ef}`} desc="powierzchnia skuteczna anteny odbiorczej" />
 <Symbol symbol={String.raw`\lambda`} desc="długość fali" />
 <Symbol symbol={String.raw`G_O`} desc="zysk kierunkowy anteny odbiorczej" />
-<p className=" text-[14px] text-muted -mt-1 mb-[14px]">gdzie <code className="font-mono text-txt text-[12.5px]">G<sub>O</sub></code> — wzmocnienie anteny odbiorczej, <code className="font-mono text-txt text-[12.5px]">λ</code> — długość fali.</p>
 <p className="mb-[11px]">Podstawiając (3.4.1) i (3.4.4) do (3.4.3) otrzymujemy <b>równanie transmisji mocy</b>:</p>
 <BlockFormula tag="(3.4.5)" tex={String.raw`P_O=P_S\frac{G_S G_O\lambda^2}{(4\pi\cdot R)^2}`} />
 <Symbol symbol={String.raw`P_O`} desc="moc odbierana przez antenę odbiorczą" />
@@ -396,8 +392,9 @@ export default function Teoria1() {
 <Symbol symbol={String.raw`R_n`} desc="promień n-tej strefy Fresnela" />
 <Symbol symbol={String.raw`n`} desc="numer strefy" />
 <Symbol symbol={String.raw`\lambda`} desc="długość fali" />
-<Symbol symbol={String.raw`d_1, d_2`} desc="odległość od nadajnika / odbiornika do przeszkody" />
-<p className=" text-[14px] text-muted -mt-1 mb-[14px]">gdzie: <code className="font-mono text-txt text-[12.5px]">d<sub>1</sub></code> — odległość od nadajnika; <code className="font-mono text-txt text-[12.5px]">d<sub>2</sub></code> — odległość od odbiornika; <code className="font-mono text-txt text-[12.5px]">D = d<sub>1</sub> + d<sub>2</sub></code> — odległość pomiędzy nadajnikiem a odbiornikiem.</p>
+<Symbol symbol={String.raw`d_1`} desc="odległość od nadajnika do przeszkody" />
+<Symbol symbol={String.raw`d_2`} desc="odległość od odbiornika do przeszkody" />
+<Symbol symbol={String.raw`D`} desc={String.raw`\(d_1 + d_2\) — odległość pomiędzy nadajnikiem a odbiornikiem`} />
 <p className="mb-[11px]">Największą wartość promień strefy Fresnela przyjmuje wtedy, kiedy {String.raw`\(d_1=d_2\)`}. Dla takiego przypadku promień pierwszej strefy Fresnela wynosi {String.raw`\(R_1=\frac{1}{2}\sqrt{\lambda D}\)`}. <b>Chcąc zapewnić niezawodne działanie łącza mikrofalowego, należy tak projektować system, aby cały obszar pierwszej strefy Fresnela był wolny od przeszkód.</b></p>
 
 <Conclusion title="Pełna odpowiedź w skrócie">
@@ -416,6 +413,8 @@ export default function Teoria1() {
 <p className="mb-[11px]">Uwaga: {String.raw`\(d_1=d_2\)`}, więc to przypadek maksymalnego promienia — kontrola: {String.raw`\(R_1=\frac{1}{2}\sqrt{\lambda D}=\frac{1}{2}\sqrt{0{,}1244\cdot 200}\approx 2{,}49\)`} m ✓</p>
 </BookAddition>
 </QuestionSection>
+
+<TheoryNavigation />
 
 <Footer>Odpowiedzi cz. 1/5 (pytania 1–6) · Fala elektromagnetyczna i propagacja</Footer>
 </div>

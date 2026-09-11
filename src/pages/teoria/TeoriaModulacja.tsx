@@ -9,6 +9,7 @@ import React, { useEffect } from 'react';
 import { PageHeader, QuestionSection, BlockFormula } from '../../components/TheoryComponents';
 import { Concept, Formula, Symbol, Explanation, Conclusion, BookAddition } from '../../components/MathBlocks';
 import Footer from '../../components/Footer';
+import TheoryNavigation from '../../components/TheoryNavigation';
 
 export default function Teoria13() {
 
@@ -72,7 +73,6 @@ export default function Teoria13() {
 <Symbol symbol={String.raw`BER`} desc="bitowa stopa błędu (Bit Error Rate)" />
 <Symbol symbol={String.raw`p_0`} desc="prawdopodobieństwo błędnego odebrania zera (odczytanego jako jedynka)" />
 <Symbol symbol={String.raw`p_1`} desc="prawdopodobieństwo błędnego odebrania jedynki (odczytanej jako zero)" />
-<p className=" text-[14px] text-muted -mt-1 mb-[14px]">gdzie: <code className="font-mono text-txt text-[12.5px]">p<sub>0</sub></code> — prawdopodobieństwo potraktowania „1" jako „0"; <code className="font-mono text-txt text-[12.5px]">p<sub>1</sub></code> — prawdopodobieństwo potraktowania „0" jako „1".</p>
 <p className="mb-[11px]"><b>Inna definicja</b> przedstawia współczynnik BER jako <b>stosunek błędnie przetransmitowanych bitów do wszystkich bitów, które wzięły udział w transmisji</b>. Maksymalna dopuszczalna wartość współczynnika BER nie jest taka sama dla wszystkich łącz — jej wartość określają specjalne normy, gdzie opisano parametry poszczególnych standardów. Wartość współczynnika <b>BER &lt; 10⁻¹² jest zgodna z zaleceniami zawartymi w normach ITU-T G.987.1</b> i oznacza, że transmisja może być uznana za poprawną, gdy nastąpi zaledwie jedno przekłamanie na jeden miliard przetransmitowanych bitów.</p>
 <div className="rounded-[10px] px-4 py-[14px] my-[14px] border bg-red/10 border-[#7d3a3a]"><span className="font-mono text-[11px] tracking-[0.14em] uppercase block mb-2">Drobna nieścisłość w podręczniku</span>
 <p className="mb-[11px]">Podręcznik pisze „jedno przekłamanie na jeden miliard bitów", ale 10⁻¹² to formalnie jedno przekłamanie na <b>bilion</b> (10¹²) bitów. Na egzaminie najbezpieczniej podać wzór i wartość BER&nbsp;&lt;&nbsp;10⁻¹² — liczba mówi sama za siebie.</p>
@@ -88,8 +88,7 @@ export default function Teoria13() {
 <BlockFormula tag="(5.3.2)" tex={String.raw`R_0=\frac{V'_{max}-V'_{min}}{V_{max}-V_{min}}`} />
 <Symbol symbol={String.raw`R_0`} desc="rozwartość wykresu oczkowego (Eye Opening Ratio)" />
 <Symbol symbol={String.raw`V'_{max}, V'_{min}`} desc="poziomy napięcia zniekształceń oka od góry i od dołu" />
-<Symbol symbol={String.raw`V_{max}, V_{min}`} desc="maksymalny i minimalny poziom napięcia sygnału (pełne otwarcie)" />
-gdzie {String.raw`\(V'_{max}\)`}, {String.raw`\(V_{max}\)`}, {String.raw`\(V'_{min}\)`} i {String.raw`\(V_{min}\)`} oznaczają tak jak opisano na rysunku;</li>
+<Symbol symbol={String.raw`V_{max}, V_{min}`} desc="maksymalny i minimalny poziom napięcia sygnału (pełne otwarcie)" /></li>
 <li className="mb-1.5"><b>margines szumowy</b> {String.raw`\(M_S\)`}:
 <BlockFormula tag="(5.3.3)" tex={String.raw`M_S=\frac{V_1}{V'_{max}}`} />
 <Symbol symbol={String.raw`M_S`} desc="margines szumowy (Noise Margin)" />
@@ -99,8 +98,7 @@ gdzie {String.raw`\(V'_{max}\)`}, {String.raw`\(V_{max}\)`}, {String.raw`\(V'_{m
 <li className="mb-1.5"><b>czas narastania sygnału</b> {String.raw`\(C_{NS}\)`}:
 <BlockFormula tag="(5.3.4)" tex={String.raw`C_{NS}=1{,}25\cdot T_{20-80}`} />
 <Symbol symbol={String.raw`C_{NS}`} desc="czas narastania (rise time) impulsu" />
-<Symbol symbol={String.raw`T_{20-80}`} desc="czas w jakim amplituda impulsu narasta od 20% do 80% wartości maksymalnej" />
-gdzie {String.raw`\(T_{20-80}\)`} — czas narastania sygnału od 20% do 80% jego maksymalnej wartości;</li>
+<Symbol symbol={String.raw`T_{20-80}`} desc="czas w jakim amplituda impulsu narasta od 20% do 80% wartości maksymalnej" /></li>
 <li className="mb-1.5"><b>zniekształcenie czasowe</b> {String.raw`\(\Delta T\)`} — obrazuje wymiar fluktuacji fazy sygnału;</li>
 <li className="mb-1.5"><b>współczynnik ekstynkcji</b> {String.raw`\(EX\)`} — obrazuje stosunek średniej wartości poziomu wysokiego sygnału do średniej wartości poziomu niskiego sygnału.</li>
 </ul>
@@ -113,7 +111,6 @@ gdzie {String.raw`\(T_{20-80}\)`} — czas narastania sygnału od 20% do 80% jeg
 <Symbol symbol={String.raw`\Gamma`} desc="efektywność widmowa modulacji w bit/s/Hz" />
 <Symbol symbol={String.raw`R_b`} desc="przepływność binarna (przepustowość kanału)" />
 <Symbol symbol={String.raw`B`} desc="szerokość pasma częstotliwości" />
-<p className=" text-[14px] text-muted -mt-1 mb-[14px]">gdzie: <code className="font-mono text-txt text-[12.5px]">R<sub>b</sub></code> — szybkość transmisji; <code className="font-mono text-txt text-[12.5px]">B</code> — szerokość pasma częstotliwości zajmowanego przez sygnał zmodulowany.</p>
 
 <BookAddition title="Kontekst do „kombinacji pytań” — czym jest modulacja (str. 36–38)">
 <p className="mb-[11px]"><b>Modulacja to zmiana parametrów jednego sygnału (fali) przez inny sygnał (falę).</b> Fala, która podlega zmianom, nazywa się <b>falą nośną</b>, natomiast ta, która na nią oddziałuje — <b>falą informacyjną</b>. Celem modulacji jest <b>dopasowanie sygnału zmodulowanego do parametrów toru transmisyjnego</b>. Fala zmodulowana jest końcowym efektem procesu modulacji fali nośnej przez falę modulującą i jest przesyłana od nadajnika do odbiornika. Zmodulowany sygnał jest <b>bardziej odporny na zakłócenia, przesłuchy</b>, a ponadto w tym samym paśmie można przesłać wiele informacji równocześnie.</p>
@@ -163,7 +160,6 @@ gdzie {String.raw`\(T_{20-80}\)`} — czas narastania sygnału od 20% do 80% jeg
 <Symbol symbol={String.raw`T_{mn}P_n`} desc="suma przesłuchów liniowych (liniowych interferencji międzykanałowych)" />
 <Symbol symbol={String.raw`K_{mnj}P_nP_j`} desc="suma przesłuchów nieliniowych (np. mieszania czterofalowego FWM)" />
 <Symbol symbol={String.raw`P_n, P_j`} desc="moce sygnałów w sąsiednich kanałach n i j" />
-<p className=" text-[14px] text-muted -mt-1 mb-[14px]">gdzie <code className="font-mono text-txt text-[12.5px]">P<sub>m</sub></code> — moc optyczna m-tego kanału.</p>
 <p className="mb-[11px]"><b>Drugi człon</b> równania opisuje <b>przesłuchy liniowe</b>, które są spowodowane małym odstępem między kanałami, wahaniami długości fali świetlnej, szerokością widmową filtrów. <b>Trzeci człon</b> opisuje <b>przesłuchy nieliniowe</b>. Chcąc zmniejszyć wpływ przesłuchów liniowych należy zwiększyć moc nadajnika, ale niestety <b>wraz z mocą wzrasta wpływ zjawisk nieliniowych</b>, takich jak <b>wymuszone rozpraszanie Ramana, wymuszone rozpraszanie Brillouina, skrośna modulacja fazy i mieszanie czterofalowe</b>.</p>
 
 <Conclusion title="Definicja + zastosowania w jednym zdaniu (na egzamin)">
@@ -182,13 +178,11 @@ gdzie {String.raw`\(T_{20-80}\)`} — czas narastania sygnału od 20% do 80% jeg
 <p className="mb-[11px]"><b>Mieszanie czterofalowe (FWM, ang. Four Wave Mixing) to zjawisko występujące podczas transmisji fali świetlnej o trzech różnych długościach, gdzie w wyniku interferencji generowane są kolejne fale o innych długościach:</b></p>
 <BlockFormula tag="(5.4.3)" tex={String.raw`f_{ijk}=f_i+f_j-f_k`} />
 <Symbol symbol={String.raw`f_{ijk}`} desc="częstotliwość nowo powstałej fali wtórnej (produktu nieliniowego FWM)" />
-<Symbol symbol={String.raw`f_i, f_j, f_k`} desc="częstotliwości fal wejściowych w sąsiednich kanałach WDM" />
-<p className=" text-[14px] text-muted -mt-1 mb-[14px]">gdzie {String.raw`\(i,j\neq k\)`}.</p>
+<Symbol symbol={String.raw`f_i, f_j, f_k`} desc={String.raw`częstotliwości fal wejściowych w sąsiednich kanałach WDM (\(i, j \neq k\))`} />
 <p className="mb-[11px]">Liczbę fal nowopowstałych {String.raw`\(L\)`} w wyniku zjawiska mieszania czterofalowego można wyznaczyć z zależności:</p>
 <BlockFormula tag="(5.4.4)" tex={String.raw`L=\frac{N^2(N-1)}{2}`} />
 <Symbol symbol={String.raw`L`} desc="liczba powstałych fal wtórnych (produktów nieliniowych FWM)" />
-<Symbol symbol={String.raw`N`} desc="liczba transmitowanych nośnych (kanałów)" />
-<p className=" text-[14px] text-muted -mt-1 mb-[14px]">gdzie <code className="font-mono text-txt text-[12.5px]">N</code> — liczba fal podstawowych.</p>
+<Symbol symbol={String.raw`N`} desc="liczba transmitowanych fal podstawowych (kanałów)" />
 <p className="mb-[11px]">Dla dwóch fal o bliskich częstotliwościach {String.raw`\(f_1\)`} i {String.raw`\(f_2\)`} w wyniku mieszania powstają dodatkowo <b>dwie składowe o częstotliwościach {String.raw`\(2f_1-f_2\)`} i {String.raw`\(2f_2-f_1\)`}</b>:</p>
 <figure className="my-4 mx-auto text-center bg-white rounded-[10px] p-[14px] border border-line max-w-[680px]"><img src={modulacja_mieszanie_czterofalowe_fwm} alt="Mieszanie czterofalowe" style={{ "maxWidth": "280px" }}/><figcaption className="font-mono text-[11px] text-[#555] mt-2 ">Rysunek 5.8. Mieszanie czterofalowe dla dwóch częstotliwości f₁ i f₂.</figcaption></figure>
 <p className="mb-[11px]">W tym przypadku łatwo jest odfiltrować nieużyteczne sygnały. Jednak przypadek, kiedy mamy do czynienia tylko z dwoma częstotliwościami, jest daleki od rzeczywistości. <b>Fale podstawowe, jak i wtórne rozchodzą się w tym samym kierunku, a moc fal wtórnych rośnie kosztem fal podstawowych.</b> Ponadto w zależności od tego, czy odległość między kanałami jest równa czy nie, fale te będą się częściowo pokrywały lub nie, co w efekcie końcowym będzie miało wpływ na jakość otrzymanego sygnału. Część fal podstawowych będzie miała mniejszą moc i dodatkowo powstaną nowe fale. <b>W efekcie pojawi się tłumienie i przesłuchy.</b></p>
@@ -212,6 +206,8 @@ gdzie {String.raw`\(T_{20-80}\)`} — czas narastania sygnału od 20% do 80% jeg
 <p className="mb-[11px]">Wniosek do szkicu wykresu: liczba nowopowstałych fal rośnie ~{String.raw`\(N^3\)`} — lawinowo z liczbą kanałów.</p>
 </BookAddition>
 </QuestionSection>
+
+<TheoryNavigation />
 
 <Footer>Odpowiedzi cz. 3/5 (pytania 13–15) · Modulacja, jakość transmisji i multipleksacja</Footer>
 </div>

@@ -24,6 +24,7 @@ import React, { useEffect } from 'react';
 import { PageHeader, QuestionSection, BlockFormula } from '../../components/TheoryComponents';
 import { Concept, Formula, Symbol, Explanation, Conclusion, BookAddition } from '../../components/MathBlocks';
 import Footer from '../../components/Footer';
+import TheoryNavigation from '../../components/TheoryNavigation';
 
 export default function Teoria21() {
 
@@ -401,6 +402,8 @@ export default function Teoria21() {
 <p className="mb-[11px]"><b>Zapis i odczyt informacji może być wykonywany z bardzo dużą gęstością, wynoszącą nawet do 100 GB/cm². Wartość ta graniczy z fizycznymi możliwościami zapisu informacji na nośnikach magnetycznych — powyżej niej napotyka się na problemy związane z wielkością domen, które stają się porównywalne z wielkością ścianek między nimi.</b></p>
 </Conclusion>
 </QuestionSection>
+
+<TheoryNavigation />
 
 <Footer>Odpowiedzi cz. 5/5 (pytania 21–28) · Pamięci i nośniki danych (półprzewodnikowe, optyczne, magnetyczne)</Footer>
 </div>
