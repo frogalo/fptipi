@@ -53,7 +53,7 @@ export default function Egzaminy() {
   const [groupData, setGroupData] = useState<any>(null);
   const [loadingData, setLoadingData] = useState(false);
   const [allSolutionsVisible, setAllSolutionsVisible] = useState<boolean>(true);
-  const [taskVisibilityOverrides, setTaskVisibilityOverrides] = useState<Record<number, boolean>>({});
+  const [taskVisibilityOverrides, setTaskVisibilityOverrides] = useState<Record<string | number, boolean>>({});
 
 
   const toggleAllSolutions = () => {

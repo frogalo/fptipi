@@ -26,7 +26,7 @@ export interface TaskTipObject {
 export type TaskTip = string | TaskTipObject;
 
 export interface Task {
-  number: number;
+  number: number | string;
   question: string;
   solution: string;
   tip?: string;

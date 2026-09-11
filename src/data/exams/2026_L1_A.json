@@ -1,44 +1,24 @@
 {
-  "image": "2026_L_A1.png",
+  "images": [
+    "2026_L_A1.png"
+  ],
   "tasks": [
     {
       "number": 1,
       "question": "Omów nośniki w stanie równowagi i nierównowagi termodynamicznej.",
-      "solution": "Stan równowagi termodynamicznej:\nJest to naturalny stan półprzewodnika, gdy nie działają na niego żadne zewnętrzne czynniki zaburzające (takie jak oświetlenie, pole elektryczne czy dodatkowe ogrzewanie). W półprzewodniku samoistnym liczba swobodnych elektronów (n) jest dokładnie równa liczbie dziur (p) i zależy wyłącznie od temperatury. Szansę znalezienia nośnika ładunku na danym poziomie energetycznym opisuje funkcja rozkładu prawdopodobieństwa Fermiego-Diraca, a kluczowym parametrem jest poziom Fermiego (\\(E_F\\)) – poziom o prawdopodobieństwie obsadzenia dokładnie 0,5. W czystym krzemie koncentracja mocno rośnie wraz ze wzrostem temperatury.\n\nStan nierównowagi termodynamicznej:\nWystępuje, gdy z zewnątrz dostarczymy energię (np. oświetlimy materiał fotonami, podłączymy napięcie do złącza p-n). Dochodzi wtedy do zachwiania bilansu:\n- **Iniekcja**: wstrzyknięcie nadmiarowych nośników (koncentracja przekracza stan równowagi, np. pod wpływem światła lasera lub w kierunku przewodzenia złącza).\n- **Ekstrakcja**: usunięcie nośników, co prowadzi do ich spadku (np. w złączu spolaryzowanym zaporowo).\nNadmiarowe nośniki nieustannie ulegają generacji oraz rekombinacji (bezpośredniej lub pośredniej przez specjalne centra w paśmie zabronionym), aby docelowo z powrotem osiągnąć stan równowagi. Czas, w jakim po wyłączeniu czynnika nadmiarowa ilość nośników spada o czynnik 'e', nazywa się czasem życia nośników.",
+      "solution": "1. Stan równowagi termodynamicznej:\nStan, w którym półprzewodnik znajduje się w stałej temperaturze i nie oddziałują na niego żadne bodźce zewnętrzne (światło, pole elektryczne, wstrzykiwanie ładunków).\n\n- **Poziom Fermiego (\\(E_F\\))**: Poziom energetyczny, dla którego prawdopodobieństwo obsadzenia przez elektron wynosi dokładnie 0,5 (rozkład Fermiego-Diraca). W materiale samoistnym leży pośrodku pasma zabronionego, w typie n przesuwa się w stronę pasma przewodnictwa, w typie p w stronę pasma walencyjnego.\n- **Prawo działania mas**: Iloczyn koncentracji elektronów i dziur w stanie równowagi jest wielkością stałą w danej temperaturze:\n\\[n\\cdot p = n_i^2 = \\mathrm{const}\\]\n- **Zależność od temperatury (dla krzemu typu n)**:\n  - Zakres niskich temperatur: jonizacja domieszek (koncentracja gwałtownie rośnie).\n  - Zakres temperatur pokojowych/pracy (150–450 K): nasycenie domieszek, koncentracja elektronów jest stała (\\(n\\approx N_D\\)).\n  - Zakres wysokich temperatur (>450 K): generacja samoistna, elektrony przeskakują całe pasmo zabronione, materiał traci właściwości domieszkowe.\n\n2. Stan nierównowagi termodynamicznej:\nStan wywołany działaniem czynników zewnętrznych (oświetlenie, pole elektryczne, przepływ prądu przez złącze).\n\n- Powstają nośniki nadmiarowe (\\(\\Delta n, \\Delta p\\)).\n- Prawo działania mas przestaje obowiązywać:\n  - **Iniekcja** (wstrzyknięcie nośników, np. fotogeneracja, polaryzacja w kierunku przewodzenia): \\(n\\cdot p > n_i^2\\).\n  - **Ekstrakcja** (odprowadzanie nośników, np. w warstwie zaporowej): \\(n\\cdot p < n_i^2\\).\n- **Quasi-poziomy Fermiego**: W stanie nierównowagi jeden wspólny poziom Fermiego traci rację bytu. Wprowadza się osobne quasi-poziomy: \\(F_n\\) dla elektronów i \\(F_p\\) dla dziur. Różnica między nimi jest miarą odchylenia układu od stanu równowagi.\n- **Rekombinacja**: Powrót do równowagi po wyłączeniu bodźca.\n  - *Bezpośrednia (pasmo-pasmo)*: typowa dla półprzewodników prostych (np. GaAs, diody LED, lasery), energia wydzielana w postaci fotonu.\n  - *Pośrednia (przez pułapki/centra rekombinacyjne)*: dominująca w krzemie (Si) i germanie (Ge), energia oddawana w postaci ciepła (fononów).\n- **Parametry kinetyczne**:\n  - Czas życia nośników mniejszościowych (\\(\\tau\\)) — czas, po którym nadmiarowa koncentracja spada \\(e\\)-krotnie.\n  - Droga dyfuzji (\\(L_D = \\sqrt{D\\cdot\\tau}\\)) — średnia odległość, jaką nośnik pokonuje przed rekombinacją.",
       "tips": [
-        "Do zapamiętania: Dwa przeciwstawne słowa-klucze w stanie nierównowagi: INIEKCJA (dodanie nośników) oraz EKSTRAKCJA (usunięcie nośników). W równowadze n·p = n_i² (jeden poziom Fermiego E_F), w nierównowadze n·p ≠ n_i² (rozszczepienie na dwa quasi-poziomy E_Fn i E_Fp).",
-        "Obliczenia bez kalkulatora (rozkład Fermiego-Diraca): f(E) = 1 / (1 + exp((E - E_F)/kT)). Dla poziomu Fermiego E = E_F wykładnik wynosi 0, a e⁰ = 1, stąd f(E_F) = 1 / (1 + 1) = 0,5 (dokładnie 50% prawdopodobieństwa obsadzenia stanu). W T = 0 K rozkład ma idealny kształt schodka (1 poniżej E_F, 0 powyżej)."
+        "Do zapamiętania: Równowaga = jeden poziom Fermiego E_F i n · p = n_i². Nierównowaga = rozszczepienie na dwa quasi-poziomy F_n i F_p oraz iniekcja (n · p > n_i²) lub ekstrakcja (n · p < n_i²).",
+        "Wzory i zależności (obliczenia w pamięci): Droga dyfuzji L_D = √(D · τ). Jeśli D = 25 cm²/s, a czas życia τ = 4 µs = 4 · 10⁻⁶ s, to pod pierwiastkiem masz 100 · 10⁻⁶ = 10⁻⁴, skąd L_D = 10⁻² cm = 100 µm! Zapamiętaj ten schemat do szybkich zadań."
       ],
       "relatedLinks": [
         {
-          "label": "Pyt. 17 · Stan równowagi termodynamicznej",
+          "label": "Pyt. 17 · Nośniki w stanie równowagi termodynamicznej",
           "route": "/teoria/polprzewodniki#q17"
         },
         {
-          "label": "Pyt. 18 · Stan nierównowagi termodynamicznej",
+          "label": "Pyt. 18 · Nośniki w stanie nierównowagi termodynamicznej",
           "route": "/teoria/polprzewodniki#q18"
-        }
-      ],
-      "charts": [
-        {
-          "image": "TeoriaPolprzewodniki_img_2.png",
-          "alt": "Rysunek 6.2. Rozkład Fermiego-Diraca",
-          "caption": "Rysunek 6.2. Rozkład Fermiego–Diraca dla półprzewodnika a) samoistnego, b) typu n i c) typu p."
-        },
-        {
-          "image": "TeoriaPolprzewodniki_img_3.png",
-          "alt": "Rysunek 6.3. Zależność koncentracji nośników w funkcji temperatury",
-          "caption": "Rysunek 6.3. Zależność koncentracji nośników w funkcji temperatury dla krzemu typu n."
-        },
-        {
-          "image": "TeoriaPolprzewodniki_img_4.png",
-          "alt": "Rysunek 6.5. Model generacji i rekombinacji bezpośredniej",
-          "caption": "Rysunek 6.5. Model generacji i rekombinacji bezpośredniej w półprzewodniku."
-        },
-        {
-          "image": "TeoriaPolprzewodniki_img_5.png",
-          "alt": "Rysunek 6.6. Model generacji i rekombinacji pośredniej",
-          "caption": "Rysunek 6.6. Model generacji i rekombinacji pośredniej w półprzewodniku."
         }
       ]
     },
@@ -58,18 +38,27 @@
       ]
     },
     {
-      "number": 3,
-      "question": "a) Zjawiska falowe, gdzie/jakie zaobserwowano podczas kursu, które są związane z częstotliwością, które z mocą.\nb) Budżet mocy dla czterech częstotliwości na symbolach, później podstawić wartości, co z tego wynika.",
-      "solution": "Część a) – Zjawiska falowe i ich powiązania:\n\n- **Odbicie**: Zachodzi, gdy fala trafia na barierę lub zmianę ośrodków i wraca. *W kursie:* Odpowiada za zjawisko Całkowitego Wewnętrznego Odbicia w rdzeniu światłowodu (główne zjawisko transmisji), stosowane również przy odczycie z płyt CD/DVD (odbicie od pitu i landu) oraz przy propagacji dalekosiężnych fal jonosferycznych.\n- **Załamanie (Refrakcja)**: Zmiana kierunku (ugięcie wiązki) spowodowane zmianą prędkości fali po przejściu do innego ośrodka. *W kursie:* Rozkład modów w światłowodzie gradientowym (fala zawraca do osi rdzenia płynnym ugięciem), powiększanie horyzontu dla fal troposferycznych.\n- **Dyfrakcja (Ugięcie)**: Zdolność fal do omijania przeszkód o wymiarach zbliżonych do długości fali. *W kursie:* Propagacja dalego zasięgu nad krzywizną Ziemi i wzgórzami, strefy Fresnela decydujące o widoczności radiowej i tłumieniu przeszkód (mocno zależne od **częstotliwości** – im niższa częstotliwość fali radiowej, tym sprawniej zagląda za przeszkodę).\n- **Interferencja**: Nakładanie się fal spójnych. *W kursie:* W układach WDM/DWDM powoduje powstawanie prążków **FWM (mieszania czterofalowego)**. FWM jest krytycznie zależne od **mocy** (duża moc silnie wzbudza nieliniowości) oraz **częstotliwości** (równy, bliski odstęp między częstotliwościami potęguje problem interferencji).\n\n---\n\nCzęść b) – Budżet mocy łącza WDM (symbolicznie i wnioski):\n\nKroki budowania budżetu na symbolach:\n1. Obliczenie długości włókna kompensującego z warunku zerowej dyspersji chromatycznej toru:\n\\[L_{SMF} \\cdot D_{SMF} + L_{DCF} \\cdot D_{DCF} = 0 \\implies L_{DCF} = -L_{SMF} \\frac{D_{SMF}}{D_{DCF}}\\]\n2. Zapisanie ogólnego równania na moc docierającą do odbiornika (\\(P_R\\)), uwzględniając moc nadajnika (\\(P_T\\)), tłumienności na odcinek (\\(\\alpha\\)) oraz sumę dodatkowych strat i marginesu (oznaczmy jako \\(L_{z/s/m}\\)):\n\\[P_R = P_T - \\alpha_{SMF} L_{SMF} - \\alpha_{DCF} L_{DCF} - L_{z/s/m}\\]\n3. Wyznaczenie symbolicznego wzoru na długość całego łącza \\(L_{SMF}\\):\n\\[L_{SMF} = \\frac{P_T - P_R - L_{z/s/m}}{\\alpha_{SMF} - \\alpha_{DCF} \\frac{D_{SMF}}{D_{DCF}}}\\]\n\n*(W miejsce powyższych zmiennych należy wstawić konkretne wartości liczbowe przypisane w treści zadania egzaminacyjnego do obliczenia ostatecznego dystansu).* \n\n**Wnioski dla układu na czterech częstotliwościach:**\nZastosowanie 4 kanałów laserowych sugeruje system zwielokrotnienia DWDM. Dominującym negatywnym zjawiskiem w takim systemie będzie mieszanie czterofalowe (FWM). Zgodnie ze wzorem dla \\(N=4\\) kanałów, powstanie gigantyczna liczba fal pasożytniczych wynosząca \\(N_{FWM} = N^2(N-1)/2 = 16 \\cdot 3 / 2 = 24\\). Fale te będą pożywiać się pierwotną mocą laserów (zmniejszając jakość i budżet mocy), co pociąga za sobą spadek stosunku sygnału do szumu (OSNR). Rozwiązaniem problemu byłoby zastosowanie włókien typu NZDSF (niezerowa dyspersja) zamiast wprowadzania perfekcyjnej i pełnej kompensacji na \\(0\\ \\mathrm{ps/(nm\\cdot km)}\\), ponieważ brak przesunięć dyspersyjnych promuje skrajną interferencję.",
+      "number": "3a",
+      "question": "3. a) Zjawiska falowe, gdzie/jakie zaobserwowano podczas kursu, które są związane z częstotliwością, które z mocą.",
+      "solution": "- **Odbicie**: Zachodzi, gdy fala trafia na barierę lub zmianę ośrodków i wraca. *W kursie:* Odpowiada za zjawisko Całkowitego Wewnętrznego Odbicia w rdzeniu światłowodu (główne zjawisko transmisji), stosowane również przy odczycie z płyt CD/DVD (odbicie od pitu i landu) oraz przy propagacji dalekosiężnych fal jonosferycznych.\n- **Załamanie (Refrakcja)**: Zmiana kierunku (ugięcie wiązki) spowodowane zmianą prędkości fali po przejściu do innego ośrodka. *W kursie:* Rozkład modów w światłowodzie gradientowym (fala zawraca do osi rdzenia płynnym ugięciem), powiększanie horyzontu dla fal troposferycznych.\n- **Dyfrakcja (Ugięcie)**: Zdolność fal do omijania przeszkód o wymiarach zbliżonych do długości fali. *W kursie:* Propagacja dalego zasięgu nad krzywizną Ziemi i wzgórzami, strefy Fresnela decydujące o widoczności radiowej i tłumieniu przeszkód (mocno zależne od **częstotliwości** – im niższa częstotliwość fali radiowej, tym sprawniej zagląda za przeszkodę).\n- **Interferencja**: Nakładanie się fal spójnych. *W kursie:* W układach WDM/DWDM powoduje powstawanie prążków **FWM (mieszania czterofalowego)**. FWM jest krytycznie zależne od **mocy** (duża moc silnie wzbudza nieliniowości) oraz **częstotliwości** (równy, bliski odstęp między częstotliwościami potęguje problem interferencji).",
       "tips": [
-        "Zjawiska liniowe (częstotliwość) vs nieliniowe (moc): Zależne od CZĘSTOTLIWOŚCI/fali to zjawiska liniowe: tłumienie Rayleigha (λ⁻⁴), absorpcja OH⁻, dyspersja materiałowa i modowa, strefy Fresnela. Zależne od MOCY to zjawiska nieliniowe: FWM, SPM, XPM, SRS, SBS oraz nasycenie/przesterowanie fotodiody.",
-        "Obliczenia bez kalkulatora (liczba pasożytów FWM dla N=4): Wzór N_FWM = N²(N - 1) / 2. Przy 4 kanałach: 4² · 3 / 2 = 16 · 3 / 2 = 24 pasożytnicze długości fal! Prążki FWM niszczą system podwójnie: kradną moc kanałom użytecznym i nakładają się na sąsiednie kanały jako szum."
+        "Zjawiska liniowe (częstotliwość) vs nieliniowe (moc): Zależne od CZĘSTOTLIWOŚCI/fali to zjawiska liniowe: tłumienie Rayleigha (λ⁻⁴), absorpcja OH⁻, dyspersja materiałowa i modowa, strefy Fresnela. Zależne od MOCY to zjawiska nieliniowe: FWM, SPM, XPM, SRS, SBS oraz nasycenie/przesterowanie fotodiody."
       ],
       "relatedLinks": [
         {
           "label": "Pyt. 3 · Zjawiska falowe (odbicie, załamanie, dyfrakcja, interferencja)",
           "route": "/teoria/fala-propagacja#q3"
-        },
+        }
+      ]
+    },
+    {
+      "number": "3b",
+      "question": "3. b) Budżet mocy dla czterech częstotliwości na symbolach, później podstawić wartości, co z tego wynika.",
+      "solution": "Kroki budowania budżetu na symbolach:\n1. Obliczenie długości włókna kompensującego z warunku zerowej dyspersji chromatycznej toru:\n\\[L_{SMF} \\cdot D_{SMF} + L_{DCF} \\cdot D_{DCF} = 0 \\implies L_{DCF} = -L_{SMF} \\frac{D_{SMF}}{D_{DCF}}\\]\n2. Zapisanie ogólnego równania na moc docierającą do odbiornika (\\(P_R\\)), uwzględniając moc nadajnika (\\(P_T\\)), tłumienności na odcinek (\\(\\alpha\\)) oraz sumę dodatkowych strat i marginesu (oznaczmy jako \\(L_{z/s/m}\\)):\n\\[P_R = P_T - \\alpha_{SMF} L_{SMF} - \\alpha_{DCF} L_{DCF} - L_{z/s/m}\\]\n3. Wyznaczenie symbolicznego wzoru na długość całego łącza \\(L_{SMF}\\):\n\\[L_{SMF} = \\frac{P_T - P_R - L_{z/s/m}}{\\alpha_{SMF} - \\alpha_{DCF} \\frac{D_{SMF}}{D_{DCF}}}\\]\n\n*(W miejsce powyższych zmiennych należy wstawić konkretne wartości liczbowe przypisane w treści zadania egzaminacyjnego do obliczenia ostatecznego dystansu).* \n\n**Wnioski dla układu na czterech częstotliwościach:**\nZastosowanie 4 kanałów laserowych sugeruje system zwielokrotnienia DWDM. Dominującym negatywnym zjawiskiem w takim systemie będzie mieszanie czterofalowe (FWM). Zgodnie ze wzorem dla \\(N=4\\) kanałów, powstanie gigantyczna liczba fal pasożytniczych wynosząca \\(N_{FWM} = N^2(N-1)/2 = 16 \\cdot 3 / 2 = 24\\). Fale te będą pożywiać się pierwotną mocą laserów (zmniejszając jakość i budżet mocy), co pociąga za sobą spadek stosunku sygnału do szumu (OSNR). Rozwiązaniem problemu byłoby zastosowanie włókien typu NZDSF (niezerowa dyspersja) zamiast wprowadzania perfekcyjnej i pełnej kompensacji na \\(0\\ \\mathrm{ps/(nm\\cdot km)}\\), ponieważ brak przesunięć dyspersyjnych promuje skrajną interferencję.",
+      "tips": [
+        "Obliczenia bez kalkulatora (liczba pasożytów FWM dla N=4): Wzór N_FWM = N²(N - 1) / 2. Przy 4 kanałach: 4² · 3 / 2 = 16 · 3 / 2 = 24 pasożytnicze długości fal! Prążki FWM niszczą system podwójnie: kradną moc kanałom użytecznym i nakładają się na sąsiednie kanały jako szum."
+      ],
+      "relatedLinks": [
         {
           "label": "Pyt. 12 · Budżet łącza telekomunikacyjnego",
           "route": "/teoria/swiatlowody#q12"
