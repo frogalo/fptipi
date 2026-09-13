@@ -1,0 +1,135 @@
+{
+  "image": "egzamin_2026_Wrzesien_B1.png",
+  "tasks": [
+    {
+      "number": "1a",
+      "question": "1. a) Magnetorezystancja. Opisać, na czym polega oraz czym różni się od gigantycznej magnetorezystancji (GMR) i kolosalnej magnetorezystancji. W jakich urządzeniach technicznych ona występuje?",
+      "solution": "## 1. Na czym polega zjawisko magnetorezystancji?\n\n**Magnetorezystancja** (magnetoopór, zjawisko Gaussa, klasyczna anizotropowa magnetorezystancja – **AMR**) to zjawisko fizyczne polegające na **zmianie rezystancji (oporu elektrycznego) materiału pod wpływem zewnętrznego pola magnetycznego**.\n\n### Mechanizm fizyczny zjawiska:\n- Gdy przez przewodnik lub półprzewodnik płynie prąd elektryczny w obecności zewnętrznego pola magnetycznego, na poruszające się elektrony działa **siła Lorentza**:\n\\[\\vec{F}_L = q (\\vec{v} \\times \\vec{B})\\]\n- Siła ta **zakrzywia tory ruchu elektronów**, zmuszając je do poruszania się po łukach lub trajektoriach spiralnych.\n- W rezultacie **efektywna droga**, jaką nośniki muszą przebyć pomiędzy kolejnymi zderzeniami z węzłami sieci krystalicznej, ulega wydłużeniu. Wzrasta prawdopodobieństwo rozproszenia elektronów, co makroskopowo objawia się **wzrostem rezystywności (oporu)** materiału.\n\n---\n\n## 2. Czym różni się magnetorezystancja od GMR i kolosalnej magnetorezystancji?\n\n| Cecha | Zwykła magnetorezystancja (AMR) | Gigantyczna magnetorezystancja (GMR) | Kolosalna magnetorezystancja (CMR / „Mega”) |\n| :--- | :--- | :--- | :--- |\n| **Struktura materiałowa** | Jednorodne metale ferromagnetyczne (np. permaloj Ni-Fe) lub półprzewodniki | Sztuczne **nanostruktury wielowarstwowe**: cienkie warstwy ferromagnetyczne przedzielone niemagnetycznym metalem (np. Cu) | Złożone **tlenki perowskitowe manganu** (manganiany, np. \\(\\mathrm{La}_{1-x}\\mathrm{Ca}_x\\mathrm{MnO}_3\\)) |\n| **Mechanizm fizyczny** | Zakrzywienie trajektorii przez siłę Lorentza i zależność rozpraszania od kąta między prądem a namagnesowaniem | **Spinowo zależne rozpraszanie elektronów** na granicach warstw (mechanizm kwantowy spinu) | Przejście fazowe metal–izolator sprzężone z oddziaływaniem podwójnej wymiany (double-exchange) i polaronami |\n| **Wielkość efektu (\\(\\Delta R / R\\))** | **Niewielka: zaledwie 1–3%** w temperaturze pokojowej | **Bardzo duża: 20–80%** (kilkadziesiąt procent!) | **Ekstremalna: 1000–100 000%** (spadek oporu o kilka rzędów wielkości!) |\n| **Wymagane pole magnetyczne** | Umiarkowane | **Bardzo słabe pola** (ogromna czułość na małe zmiany) | Bardzo silne pola magnetyczne (kilka Tesli, często w niskich temp.) |\n\n### Istota zjawiska GMR (Zawór spinowy – Nagroda Nobla 2007):\nStruktura składa się z dwóch warstw ferromagnetyka: **warstwy przypiętej (twardej)** o stałym namagnesowaniu oraz **warstwy swobodnej (miękkiej)**, która obraca się pod wpływem nawet najsłabszego zewnętrznego pola magnetycznego.\n- **Namagnesowanie równoległe**: Elektrony o spinie zgodnym z kierunkiem namagnesowania przechodzą przez obie warstwy niemal bez rozpraszania – **niski opór elektryczny (stan logiczny '0')**.\n- **Namagnesowanie antyrównoległe**: Wszystkie elektrony (niezależnie od zwrotu spinu) ulegają silnemu rozproszeniu w co najmniej jednej z warstw – **wysoki opór elektryczny (stan logiczny '1')**.\n\n---\n\n## 3. W jakich urządzeniach technicznych występuje magnetorezystancja?\n\n1. **Głowice odczytujące dysków twardych HDD (zawory spinowe GMR/TMR)**: Umożliwiły miniaturyzację domen magnetycznych na talerzach i skokowy wzrost gęstości zapisu danych powyżej 100 GB/cm².\n2. **Pamięci nieulotne MRAM (Magnetoresistive Random Access Memory)**: Komórki pamięci oparte na złączach magnetycznych MTJ, łączące szybkość pamięci SRAM z nieulotnością pamięci Flash.\n3. **Motoryzacja i transport (czujniki systemów bezpieczeństwa)**:\n   - Bezkontaktowe **czujniki prędkości obrotowej kół w systemach ABS / ESP / ASR**.\n   - Czujniki położenia wału korbowego i wałka rozrządu w silnikach spalinowych.\n4. **Elektronika użytkowa i przemysłowa**:\n   - **Kompasy elektroniczne (magnetometry)** w smartfonach, zegarkach i dronach.\n   - Izolowane galwanicznie **przetworniki prądu elektrycznego** mierzące pole magnetyczne wokół szyn prądowych.",
+      "tips": [
+        "Do zapamiętania: GMR w głowicach dysków twardych: równoległe namagnesowanie warstw to swobodny przepływ elektronów (mały opór), a antyrównoległe to silne rozpraszanie spinowe (duży opór). Nagrodę Nobla za GMR otrzymali w 2007 r. Albert Fert i Peter Grünberg.",
+        "Różnica skali: Klasyczna magnetorezystancja AMR zmienia opór o zaledwie 1–3%, Gigantyczna (GMR) o kilkadziesiąt procent (do 80%), a Kolosalna (CMR) o całe rzędy wielkości (tysiące procent)."
+      ],
+      "relatedLinks": [
+        {
+          "label": "Pyt. 28 · Magnetorezystancja",
+          "route": "/teoria/pamieci-nosniki#q28"
+        }
+      ],
+      "charts": [
+        {
+          "image": "magnetyczne_glowica_odczytujaca_gmr_schemat.jpeg",
+          "alt": "Schemat działania głowicy odczytującej GMR (zawór spinowy)",
+          "caption": "Rysunek 9.6. Schemat działania głowicy odczytującej GMR z dwiema warstwami magnetycznymi: miękką (swobodną) i twardą (zablokowaną)."
+        },
+        {
+          "image": "magnetyczne_dysk_twardy_hdd_wnetrze_budowa.jpeg",
+          "alt": "Budowa dysku twardego HDD z głowicą magnetooporową",
+          "caption": "Rysunek 9.1. Wnętrze dysku twardego HDD z widocznym ramieniem pozycjonera i nanometryczną głowicą magnetorezystywną."
+        }
+      ]
+    },
+    {
+      "number": "1b",
+      "question": "1. b) Zadanie z laserami przestrajalnymi: W łączu światłowodowym zastosowano lasery przestrajalne w zakresie od 1500 nm do 1550 nm. Kanały rozmieszczono co 12,5 GHz. Przepływność każdego kanału wynosi 100 Gb/s. Oblicz maksymalną liczbę kanałów oraz całkowitą przepustowość tego łącza. Co można powiedzieć o tym łączu? Jakie dominujące zjawiska w nim zachodzą? Czy i jak zmiana mocy wpłynie na działanie łącza?",
+      "solution": "### Dane z zadania:\n- Zakres długości fal roboczych: \\(\\lambda_{\\min} = 1500\\ \\mathrm{nm}\\), \\(\\lambda_{\\max} = 1550\\ \\mathrm{nm}\\)\n- Odstęp międzykanałowy w częstotliwości: \\(\\Delta f_{\\mathrm{ch}} = 12,5\\ \\mathrm{GHz} = 12,5 \\cdot 10^9\\ \\mathrm{Hz}\\)\n- Przepływność w pojedynczym kanale: \\(B_{\\mathrm{ch}} = 100\\ \\mathrm{Gb/s}\\)\n- Prędkość światła: \\(c = 3 \\cdot 10^8\\ \\mathrm{m/s}\\)\n\n---\n\n### Krok 1: Wyznaczenie częstotliwości granicznych pasma\n\nPrzeliczamy długości fal na częstotliwości optyczne:\n\\[f_{\\max} = \\frac{c}{\\lambda_{\\min}} = \\frac{3 \\cdot 10^8\\ \\mathrm{m/s}}{1500 \\cdot 10^{-9}\\ \\mathrm{m}} = 200\\ \\mathrm{THz} = 200\\ 000\\ \\mathrm{GHz}\\]\n\\[f_{\\min} = \\frac{c}{\\lambda_{\\max}} = \\frac{3 \\cdot 10^8\\ \\mathrm{m/s}}{1550 \\cdot 10^{-9}\\ \\mathrm{m}} = \\frac{300}{1,55} \\cdot 10^{12}\\ \\mathrm{Hz} \\approx 193,548\\ \\mathrm{THz} = 193\\ 548\\ \\mathrm{GHz}\\]\n\n---\n\n### Krok 2: Obliczenie dostępnej szerokości pasma częstotliwości (\\(\\Delta f_{\\mathrm{total}}\\))\n\n\\[\\Delta f_{\\mathrm{total}} = f_{\\max} - f_{\\min} = 200\\ 000\\ \\mathrm{GHz} - 193\\ 548\\ \\mathrm{GHz} = 6\\ 452\\ \\mathrm{GHz} = 6,452\\ \\mathrm{THz}\\]\n\n---\n\n### Krok 3: Wyznaczenie maksymalnej liczby kanałów (\\(N\\))\n\nLiczba przedziałów siatki częstotliwościowej:\n\\[n_{\\mathrm{przedzialow}} = \\left\\lfloor \\frac{\\Delta f_{\\mathrm{total}}}{\\Delta f_{\\mathrm{ch}}} \\right\\rfloor = \\left\\lfloor \\frac{6\\ 452}{12,5} \\right\\rfloor\\]\n\n> 💡 **Szybki rachunek bez kalkulatora (dzielenie przez 12,5):**\n> Dzielenie przez \\(12,5\\) to pomnożenie przez \\(8\\) i podzielenie przez \\(100\\):\n> \\[6\\ 452 \\cdot 8 = 51\\ 616 \\implies \\frac{51\\ 616}{100} = 516,16\\]\n\nLiczba kanałów przy umieszczeniu nośnych na obu krańcach pasma:\n\\[N = \\left\\lfloor \\frac{\\Delta f_{\\mathrm{total}}}{\\Delta f_{\\mathrm{ch}}} \\right\\rfloor + 1 = 516 + 1 = \\mathbf{517\\ \\mathrm{kanałów}}\\]\n*(W notatkach uproszczonych podawany bywa wynik ok. 516–520 kanałów).* \n\n---\n\n### Krok 4: Całkowita przepływność łącza (\\(R_{\\mathrm{total}}\\))\n\n\\[R_{\\mathrm{total}} = N \\cdot B_{\\mathrm{ch}} = 517 \\cdot 100\\ \\mathrm{Gb/s} = 51\\ 700\\ \\mathrm{Gb/s} = \\mathbf{51,7\\ \\mathrm{Tb/s}}\\]\n\n---\n\n### Krok 5: Ocena łącza i podanych parametrów\n\n1. **Standard Ultra-Dense WDM (U-DWDM)**: Odstęp \\(12,5\\ \\mathrm{GHz}\\) to **ekstremalny ścisk widmowy** (połowa najgęstszego komercyjnego rastra ITU-T 25 GHz!).\n2. **Ogromna pojemność transmisyjna**: Ponad \\(51\\ \\mathrm{Tb/s}\\) w jednym włóknie to poziom magistral szkieletowych najwyższej klasy.\n3. **Problem relacji widmo–przepływność (warunek Nyquista)**:\n   Standardowy sygnał binarny o przepływności \\(100\\ \\mathrm{Gb/s}\\) przy prostej modulacji dwustanowej (NRZ/OOK) zajmuje pasmo optyczne rzędu co najmniej **\\(100\\ \\mathrm{GHz}\\)**! Umieszczenie takiego sygnału w kanale o szerokości zaledwie \\(12,5\\ \\mathrm{GHz}\\) jest **fizycznie niemożliwe bez zastosowania zaawansowanej modulacji koherentnej wielopoziomowej (np. DP-16QAM lub DP-64QAM ze zwężaniem widma DSP)**.\n\n---\n\n### Krok 6: Dominujące zjawiska w tym łączu\n\n1. **Mieszanie czterofalowe (FWM – Four Wave Mixing) [ZJAWISKO KRYTYCZNE!]**:\n   Wzór na liczbę generowanych pasożytniczych fal nieliniowych dla \\(N\\) kanałów wynosi:\n   \\[L_{\\mathrm{FWM}} = \\frac{N^2 (N - 1)}{2}\\]\n   Dla \\(N = 517\\) liczba wygenerowanych produktów FWM wynosi:\n   \\[L_{\\mathrm{FWM}} \\approx \\frac{517^2 \\cdot 516}{2} \\approx \\mathbf{69\\ 000\\ 000\\ (69\\ \\text{milionów pasożytniczych fal!})}\\]\n   Przy równomiernym rastrze \\(12,5\\ \\mathrm{GHz}\\) te pasożytnicze prążki trafiają **dokładnie w częstotliwości sąsiednich kanałów transmisyjnych**, niszcząc stosunek OSNR.\n2. **Przesłuchy międzykanałowe (Linear & Non-linear Crosstalk)**: Nakładanie się widm przy odstępie 12,5 GHz.\n3. **Skrośna modulacja fazy (XPM)** oraz **samomodulacja fazy (SPM)**: Fluktuacje mocy w jednym kanale modulują fazę fal w kanałach sąsiednich.\n4. **Dyspersja chromatyczna**: Rozmywa impulsy w czasie, powodując interferencję międzysymbolową (ISI).\n\n---\n\n### Krok 7: Czy i jak zmiana mocy wpłynie na działanie łącza?\n\n- **Wpływ zwiększenia mocy laserów**: **KATASTROFALNY!** Zjawiska nieliniowe (FWM i XPM) zależą nieliniowo od mocy (proporcjonalnie do \\(P^2\\) i \\(P^3\\)). Zwiększenie mocy nawet o kilkanaście procent wywoła lawinowy wzrost szumów nieliniowych i doprowadzi do całkowitej utraty możliwości odebrania sygnału (drastyczny wzrost stopy błędów BER do 0,5).\n- **Wpływ zmniejszenia mocy laserów**: **BEZWZGLĘDNIE KONIECZNY**. Aby łącze o tak gęstym rastrze w ogóle mogło funkcjonować, moc laserów musi zostać zredukowana do bardzo niskiego poziomu (ok. 1 mW lub mniej na kanał), co skutecznie stłumi generację prążków FWM. Ograniczeniem od dołu jest jednak czułość fotodiody odbiornika (\\(P_R\\)) – moc po przejściu przez trasę musi przewyższać szum termiczny odbiornika.",
+      "tips": [
+        "Obliczenia bez kalkulatora (dzielenie przez 12,5): Pamiętaj prosty trik: dzielenie przez 12,5 to pomnożenie przez 8 i podzielenie przez 100! 6452 · 8 = 51 616, a 51 616 / 100 = 516,16. Po dodaniu 1 prążka krańcowego mamy 517 kanałów w kilka sekund!",
+        "Liczba fal FWM w pamięci: Przy N = 500 kanałów liczba fal FWM rośnie z sześcianem: N³ / 2 = 125 000 000 / 2 ≈ 62,5 miliona fal pasożytniczych! Przy równym rastrze fale te bezpośrednio uderzają w kanały nośne."
+      ],
+      "relatedLinks": [
+        {
+          "label": "Zad. 5.5.4 · Maksymalna liczba kanałów WDM",
+          "route": "/zadania#t4"
+        },
+        {
+          "label": "Zad. 5.5.5 · Liczba fal z mieszania czterofalowego (FWM)",
+          "route": "/zadania#t5"
+        },
+        {
+          "label": "Pyt. 12 · Budżet łącza telekomunikacyjnego",
+          "route": "/teoria/swiatlowody#q12"
+        }
+      ],
+      "charts": [
+        {
+          "image": "modulacja_mieszanie_czterofalowe_fwm.png",
+          "alt": "Zjawisko mieszania czterofalowego FWM w światłowodzie",
+          "caption": "Rysunek 5.11. Generacja pasożytniczych prążków mieszania czterofalowego (FWM) w kanale światłowodowym."
+        },
+        {
+          "image": "modulacja_podzial_trzeciego_okna_telekomunikacyjnego.png",
+          "alt": "Podział trzeciego okna telekomunikacyjnego",
+          "caption": "Pasmo transmisyjne 1500–1550 nm: obejmuje pasmo S (Short) oraz tradycyjne okno C (Conventional)."
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "question": "2. Dyspersja (definicja, rodzaje, wykresy). Kompensacja (sposoby, wykresy, powiązania).",
+      "solution": "## 1. Definicja dyspersji\n\n**Dyspersja** to zjawisko fizyczne polegające na **zależności prędkości rozchodzenia się fali (fazowej \\(v_f\\) i grupowej \\(v_g\\)) od jej częstotliwości (długości fali \\(\\lambda\\))**.\n- **Skutek w światłowodzie**: Składowe widmowe impulsu świetlnego docierają do końca toru w różnym czasie, co wywołuje **poszerzenie (rozmycie czasowe) impulsu** w funkcji przebytej odległości.\n- **Zagrożenie transmisyjne**: Rozmywające się impulsy zachodzą na sąsiednie szczeliny bitowe, wywołując **interferencję międzysymbolową (ISI)**, zamykanie się „oka” na wykresie oczkowym, wzrost stopy błędów (BER) oraz drastyczne ograniczenie zasięgu i przepustowości łącza.\n\n---\n\n## 2. Trzy główne rodzaje dyspersji we włóknach optycznych\n\n### 1. Dyspersja modowa (modalna) – występuje TYLKO w MMF\n- Występuje wyłącznie w światłowodach wielomodowych (MMF).\n- Poszczególne mody (promienie) biegną po różnych drogach geometrycznych pod różnymi kątami odbicia, przez co przebywają drogi o różnej długości i docierają do odbiornika w różnym czasie.\n- Rozmycie impulsu we włóknach o profilu skokowym: \\(\\sigma_\\tau \\approx \\frac{L}{c_1} \\Delta\\).\n- **We włóknach jednomodowych (SMF) dyspersja modowa w ogóle NIE WYSTĘPUJE** (propaguje się tylko jeden mod podstawowy \\(\\mathrm{HE}_{11}\\)).\n\n### 2. Dyspersja chromatyczna (\\(D_C\\)) – w każdym włóknie\nWynika z faktu, że żaden laser nie jest idealnie monochromatyczny – każdy impuls ma skończoną szerokość widmową \\(\\sigma_\\lambda\\). Poszczególne barwy (długości fal) poruszają się z różną prędkością grupową. Składa się z dwóch części:\n\\[D_C = D_\\lambda + D_W \\quad \\left[\\frac{\\mathrm{ps}}{\\mathrm{nm} \\cdot \\mathrm{km}}\\right]\\]\n1. **Dyspersja materiałowa (\\(D_\\lambda\\))**: Wynika z nieliniowej zależności współczynnika załamania kwarcu \\(n(\\lambda)\\) od długości fali (opisywanej równaniem Sellmeiera). W czystej krzemionce zeruje się przy \\(\\lambda \\approx 1270\\text{–}1310\\ \\mathrm{nm}\\).\n2. **Dyspersja falowodowa (\\(D_W\\))**: Wynika z geometrii falowodu – współczynnik propagacji zależy od stosunku średnicy rdzenia do długości fali, powodując, że część energii modu wnika w płaszcz o niższym współczynniku załamania.\n- Poszerzenie impulsu: \\(\\Delta \\tau = |D_C| \\cdot \\sigma_\\lambda \\cdot L\\ [\\mathrm{ps}]\\).\n\n### 3. Dyspersja polaryzacyjna (PMD – Polarization Mode Dispersion)\n- Wynika z mikroskopijnej eliptyczności rdzenia, nierównomiernych naprężeń mechanicznych lub zginania włókna (dwójłomność kwarcu).\n- Dwa ortogonalne stany polaryzacji modu podstawowego poruszają się z minimalnie różną prędkością, powodując opóźnienie grupy \\(\\mathrm{DGD}\\).\n- Rozmycie rośnie ze statystycznym pierwiastkiem odległości: \\(\\Delta \\tau_{\\mathrm{PMD}} = D_{\\mathrm{PMD}} \\cdot \\sqrt{L}\\).\n\n---\n\n## 3. Metody kompensacji dyspersji chromatycznej\n\n### Metoda 1: Włókno kompensujące dyspersję DCF (szpula kompensacyjna)\n- Włączenie do toru odcinka włókna o silnie ujemnym współczynniku dyspersji (\\(D_{\\mathrm{DCF}} \\approx -80\\text{ do }-100\\ \\mathrm{ps/(nm \\cdot km)}\\)).\n- **Warunek pełnej kompensacji**:\n\\[D_{\\mathrm{SMF}} \\cdot L_{\\mathrm{SMF}} + D_{\\mathrm{DCF}} \\cdot L_{\\mathrm{DCF}} = 0 \\implies L_{\\mathrm{DCF}} = -L_{\\mathrm{SMF}} \\frac{D_{\\mathrm{SMF}}}{D_{\\mathrm{DCF}}}\\]\n- **Zaleta**: Kompensacja szerokopasmowa (dla wielu kanałów WDM naraz).\n- **Wada**: Duże tłumienie (\\(\\alpha_{\\mathrm{DCF}} \\approx 0,5\\ \\mathrm{dB/km}\\)), wydłużenie toru optycznego i obciążenie budżetu mocy.\n\n### Metoda 2: Chirpowane światłowodowe siatki Bragga (CFBG)\n- Odcinek światłowodu z periodyczną zmianą współczynnika załamania o zmiennym skoku siatki (chirp). Fale krótsze odbijają się wcześniej, fale dłuższe wnikają głębiej, co idealnie odwraca opóźnienie dyspersyjne.\n- **Zalety**: Bardzo małe tłumienie wtrąceniowe (**1–2 dB**), kompaktowe wymiary, brak wydłużenia drogi optycznej.\n- **Wada**: Działa wąskopasmowo (dla pojedynczego kanału).\n\n### Metoda 3: Cyfrowe procesory sygnałowe DSP (EDC) w odbiornikach koherentnych\n- Zaawansowane filtry FIR kompensują dyspersję numerycznie w domenie elektrycznej po detekcji koherentnej.\n\n---\n\n## 4. Powiązania i KLUCZOWA ZALETA dyspersji (Obowiązkowy punkt na egzaminie!)\n\nDyspersja jest powszechnie traktowana jako zjawisko szkodliwe, jednak w optycznych systemach telekomunikacyjnych pełni **jedną absolutnie krytyczną rolę pozytywną**:\n\n> **ZALETA DYSPERSJI: TŁUMIENIE ZJAWISK NIELINIOWYCH (FWM – Four-Wave Mixing)**\n>\n> Gdyby dyspersja chromatyczna włókna wynosiła dokładnie zero (\\(D = 0\\)), wszystkie fale o różnych długościach w łączu WDM poruszałyby się z identyczną prędkością fazową. Zostałby wówczas idealnie spełniony warunek **dopasowania fazowego (phase matching)**.\n>\n> W takich warunkach zjawisko mieszania czterofalowego (FWM) zachodzi z maksymalną wydajnością, generując miliony pasożytniczych fal niszczących transmisję!\n>\n> **Wprowadzenie kontrolowanej, niezerowej dyspersji chromatycznej (jak we włóknach NZDSF o \\(D \\approx 4\\ \\mathrm{ps/(nm \\cdot km)}\\)) sprawia, że kanały poruszają się z różnymi prędkościami i szybko „rozjeżdżają się” w czasie (tzw. efekt walk-off). Uniemożliwia to koherentne oddziaływanie nieliniowe i skutecznie ratuje transmisję DWDM!**",
+      "tips": [
+        "Do zapamiętania na egzaminie: Pamiętaj, że dyspersja NIE jest wyłącznie zjawiskiem niepożądanym! Jej najważniejszą zaletą jest tłumienie mieszania czterofalowego (FWM) poprzez zniszczenie warunku dopasowania fazowego (efekt walk-off we włóknach NZDSF).",
+        "Obliczenia bez kalkulatora (bilans DCF): Dla łącza SMF o długości L = 50 km i dyspersji D = +16 ps/(nm·km), całkowita zgromadzona dyspersja wynosi 50 · 16 = 800 ps/nm. Szpula DCF o dyspersji D = -100 ps/(nm·km) musi mieć długość: 800 / 100 = 8 km!"
+      ],
+      "relatedLinks": [
+        {
+          "label": "Pyt. 10 · Dyspersja we włóknach",
+          "route": "/teoria/swiatlowody#q10"
+        },
+        {
+          "label": "Pyt. 11 · Kompensacja dyspersji",
+          "route": "/teoria/swiatlowody#q11"
+        }
+      ],
+      "charts": [
+        {
+          "image": "swiatlowody_dyspersja_materialowa_wspolczynnik_d.png",
+          "alt": "Zależność współczynnika dyspersji chromatycznej D od długości fali",
+          "caption": "Rysunek 4.4. Zależność współczynnika dyspersji chromatycznej D oraz jej składowych (materiałowej Dλ i falowodowej DW) od długości fali w światłowodzie krzemionkowym."
+        },
+        {
+          "image": "swiatlowody_dyspersja_poszerzanie_impulsu.png",
+          "alt": "Zjawisko poszerzania impulsu optycznego w dziedzinie czasu wzdłuż światłowodu",
+          "caption": "Rysunek 4.5. Poszerzanie impulsu optycznego w czasie w miarę propagacji wzdłuż światłowodu (rozmycie czasowe i zjawisko ISI)."
+        },
+        {
+          "image": "swiatlowody_dyspersja_polaryzacyjna_pmd.png",
+          "alt": "Dyspersja polaryzacyjna PMD i opóźnienie różnicowe DGD",
+          "caption": "Rysunek 4.6. Rozszczepienie modu na dwie ortogonalne składowe polaryzacyjne i powstawanie różnicowego opóźnienia grupowego DGD."
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "question": "3. Opisać tranzystor bipolarny (budowa, wykresy, symbole).",
+      "solution": "## 1. Budowa tranzystora bipolarnego (BJT)\n\nTranzystor bipolarny (BJT – Bipolar Junction Transistor) to trójwarstwowy element półprzewodnikowy złożony z dwóch złączy p-n ułożonych w konfiguracji **n-p-n** (najpopularniejszy) lub **p-n-p**.\n\nW strukturze wyróżnia się trzy elektrody o ściśle określonych właściwościach fizycznych:\n- **Emiter (E)**: Warstwa **bardzo silnie domieszkowana**. Służy do wstrzykiwania (emisji) nośników większościowych (elektronów w n-p-n, dziur w p-n-p) do obszaru bazy.\n- **Baza (B)**: Środkowa warstwa, która jest **ekstremalnie cienka** (od ułamka mikrometra do kilku mikrometrów) oraz **bardzo słabo domieszkowana**. Cienka geometria i mała koncentracja domieszek minimalizują rekombinację ładunków w bazie.\n- **Kolektor (C)**: Największa fizycznie warstwa o umiarkowanym domieszkowaniu. Służy do zbierania (kolekcjonowania) nośników wstrzykniętych z emitera, które przeniknęły przez bazę. Ze względu na wydzielanie ciepła ma największą powierzchnię styku.\n\n---\n\n## 2. Symbole graficzne i diodowe schematy zastępcze\n\n- **Tranzystor n-p-n**: Strzałka na elektrodzie emitera jest skierowana **na zewnątrz** (wskazuje techniczny kierunek prądu emitera wypływającego z tranzystora).\n- **Tranzystor p-n-p**: Strzałka na emiterze skierowana jest **do wewnątrz** (prąd wpływa do bazy).\n- **Model diodowy**: Dwa złącza p-n połączone wspólną elektrodą bazy (anodami w n-p-n, katodami w p-n-p).\n\n---\n\n## 3. Zasada działania (dla tranzystora n-p-n w stanie aktywnym normalnym)\n\nAby tranzystor pracował jako wzmacniacz liniowy w stanie aktywnym:\n1. Złącze **emiter–baza (E-B)** polaryzujemy w **kierunku przewodzenia** (\\(U_{BE} \\approx 0,6\\text{–}0,7\\ \\mathrm{V}\\) dla krzemu).\n2. Złącze **baza–kolektor (B-C)** polaryzujemy w **kierunku zaporowym** (\\(U_{CE} > U_{BE}\\)).\n\n### Przebieg zjawisk w złączach:\n1. **Wstrzykiwanie**: Obniżenie bariery potencjału na złączu E-B powoduje masową iniekcję elektronów z silnie domieszkowanego emitera do bazy.\n2. **Dyfuzja przez bazę**: Elektrony wędrują ruchem dyfuzyjnym przez bazę. Ponieważ baza jest skrajnie cienka i ma mało dziur, **zaledwie ok. 1% elektronów ulega rekombinacji**, tworząc znikomy prąd bazy \\(I_B\\).\n3. **Ściąganie do kolektora**: Pozostałe **ok. 99% elektronów** dociera do granicy zaporowo spolaryzowanego złącza kolektorowego i zostaje natychmiast wciągnięte przez silne pole elektryczne złącza B-C, tworząc główny prąd kolektora \\(I_C\\).\n\n> **Istota działania:**\n> Niewielki prąd wejściowy bazy \\(I_B\\) precyzyjnie kontroluje wielokrotnie większy prąd wyjściowy kolektora \\(I_C\\) – tranzystor działa jako **wzmacniacz prądowy sterowany prądowo**.\n\n---\n\n## 4. Podstawowe wzory i relacje prądowe\n\n1. **Bilans prądów (I prawo Kirchhoffa)**:\n\\[I_E = I_C + I_B\\]\n2. **Współczynnik wzmocnienia prądowego w układzie wspólnego emitera (OE)**:\n\\[\\beta = h_{21E} = \\frac{I_C}{I_B} \\quad (\\text{typowo od } 50\\text{ do } 300)\\]\n3. **Współczynnik wzmocnienia w układzie wspólnej bazy (OB)**:\n\\[\\alpha = h_{21B} = \\frac{I_C}{I_E} = \\frac{\\beta}{\\beta + 1} \\approx 0,98\\text{ do } 0,998\\]\n4. **Równanie prądu kolektora Shockleya**:\n\\[I_C = I_S \\cdot \\exp\\left(\\frac{U_{BE}}{U_T}\\right) \\quad (U_T = \\frac{kT}{q} \\approx 26\\ \\mathrm{mV}\\ \\text{w temp. pokojowej})\\]\n\n---\n\n## 5. Wykresy i charakterystyki tranzystora\n\n:::viz-bjt-characteristics\n\n### 1. Rozkład potencjału w złączu (wykres „wanny potencjału”)\n- Przedstawia barierę potencjału widzianą przez ładunki.\n- Spolaryzowanie złącza emiter–baza w kierunku przewodzenia obniża barierę potencjału (elektrony z łatwością przeskakują do bazy).\n- Polaryzacja zaporowa kolektora tworzy stromą „przepaść” potencjału, która natychmiast przechwytuje ładunki docierające do krawędzi bazy.\n\n### 2. Rodzina charakterystyk wyjściowych \\(I_C = f(U_{CE})\\) przy \\(I_B = \\mathrm{const}\\)\n- **Obszar nasycenia (\\(U_{CE} < 0,3\\ \\mathrm{V}\\))**: Oba złącza przewodzą, prąd kolektora gwałtownie narasta od zera.\n- **Obszar aktywny (wzmacniający)**: Krzywe stają się **niemal idealnie poziome**! Prąd \\(I_C\\) zależy wyłącznie od wartości prądu bazy \\(I_B\\) (\\(I_C = \\beta I_B\\)), a niemal nie zależy od napięcia \\(U_{CE}\\). Tranzystor zachowuje się jak idealne sterowane źródło prądowe.\n- **Obszar zatkania (odcięcia, \\(I_B = 0\\))**: Płynie jedynie znikomy prąd zerowy kolektora \\(I_{CEO}\\).\n- **Obszar przebicia**: Przy przekroczeniu napięcia granicznego \\(U_{CE,\\max}\\) następuje przebicie lawinowe złącza kolektorowego.",
+      "tips": [
+        "Do zapamiętania na wykresie: Podczas rysowania charakterystyki wyjściowej I_C(U_CE) pamiętaj, że linie prądu po szybkim wzroście stają się niemal idealnie poziome (obszar aktywny). W tym obszarze tranzystor działa jak idealne źródło prądowe I_C sterowane prądem bazy I_B.",
+        "Obliczenia bez kalkulatora (punkt pracy bazy): W stanie przewodzenia krzemowe złącze B-E ma zawsze spadek U_BE ≈ 0,7 V. Przy zasilaniu V_CC = 5 V przez rezystor bazy R_B = 100 kΩ prąd bazy wynosi w pamięci: I_B = (5 - 0,7) / 100k = 4,3 V / 100 kΩ = 43 µA. Przy β = 100 daje to natychmiast prąd kolektora I_C = 4,3 mA!"
+      ],
+      "relatedLinks": [
+        {
+          "label": "Pyt. 22 · Tranzystory bipolarne",
+          "route": "/teoria/pamieci-nosniki#q22"
+        }
+      ],
+      "charts": [
+        {
+          "image": "bjt_symbole_schematy_diodowe_npn_pnp.jpeg",
+          "alt": "Symbole graficzne i diodowe schematy zastępcze tranzystora bipolarnego",
+          "caption": "Rysunek 7.1. Symbole graficzne i diodowe schematy zastępcze: a) tranzystor n–p–n i b) p–n–p."
+        },
+        {
+          "image": "bjt_rozklad_potencjalu_wanna_pnp_polaryzacje.jpeg",
+          "alt": "Charakterystyka potencjału w złączu (wanna potencjału)",
+          "caption": "Rysunek 7.2. Rozkład potencjału w złączu przy polaryzacji aktywnej (obniżenie bariery emiter–baza i stromy spadek potencjału kolektora)."
+        },
+        {
+          "image": "bjt_charakterystyka_pradowo_napieciowa_ic_uce.jpeg",
+          "alt": "Rodzina charakterystyk prądowo-napięciowych wyjściowych IC = f(UCE)",
+          "caption": "Rysunek 7.3. Charakterystyka wyjściowa tranzystora bipolarnego: widoczny obszar nasycenia oraz poziome proste w obszarze aktywnym."
+        }
+      ]
+    }
+  ]
+}

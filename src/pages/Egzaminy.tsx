@@ -240,7 +240,9 @@ export default function Egzaminy() {
                       />
                       {validImages.length > 1 && (
                         <span className="font-mono text-[11px] text-muted mt-2">
-                          {idx === 0 ? 'Strona 1: Treść pytań' : 'Strona 2: Załącznik z wykresem ITU-R P.676-13'}
+                          {selectedTerm === 'L2'
+                            ? (idx === 0 ? 'Strona 1: Treść pytań' : 'Strona 2: Załącznik z wykresem ITU-R P.676-13')
+                            : `Część ${idx + 1} zapisków egzaminacyjnych`}
                         </span>
                       )}
                     </div>

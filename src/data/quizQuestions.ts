@@ -25,1497 +25,1778 @@ export const QUIZ_CATEGORIES = [
 ] as const;
 
 export const QUIZ_QUESTIONS: QuizQuestion[] = [
-  // ==========================================
-  // 1. FALE ELEKTROMAGNETYCZNE I PROPAGACJA
-  // ==========================================
   {
-    id: 'em-1',
-    category: 'fale_em',
-    categoryLabel: 'Fale i propagacja EM',
-    tier: 'tier1',
-    question: 'Jakie jest fizyczne znaczenie IV równania Maxwella: \\(\\nabla\\cdot\\vec{B} = 0\\)?',
-    options: [
-      'Pole magnetyczne jest bezźródłowe — linie pola są zawsze zamknięte i w przyrodzie nie istnieją swobodne ładunki magnetyczne (monopole).',
-      'Pole magnetyczne nie może ulegać zakrzywieniu w obecności przewodników prądu stałego.',
-      'Wektor indukcji magnetycznej B jest zawsze równy zeru w dielektryku idealnym.',
-      'Zmienne w czasie pole elektryczne nie może wywołać pola magnetycznego w próżni.'
+    "id": "em-maxwell-1",
+    "category": "fale_em",
+    "categoryLabel": "Fale i propagacja EM",
+    "tier": "tier1",
+    "question": "Wskaż poprawne sformułowanie I równania Maxwella (prawo indukcji Faradaya w postaci różniczkowej) oraz jego fizyczne znaczenie:",
+    "options": [
+      "\\(\\nabla\\times\\vec{E} = -\\frac{\\partial\\vec{B}}{\\partial t}\\) — zmienne w czasie pole magnetyczne wytwarza wirowe pole elektryczne; znak minus odzwierciedla regułę Lenza.",
+      "\\(\\nabla\\times\\vec{B} = -\\mu_0\\varepsilon_0 \\frac{\\partial\\vec{E}}{\\partial t}\\) — zmienne pole elektryczne niszczy pole magnetyczne w próżni.",
+      "\\(\\nabla\\cdot\\vec{E} = -\\frac{\\partial\\vec{B}}{\\partial t}\\) — dywergencja pola elektrycznego jest proporcjonalna do szybkości zaniku strumienia magnetycznego.",
+      "\\(\\nabla\\times\\vec{E} = +\\sigma \\vec{B}\\) — natężenie wirowego pola elektrycznego zależy wyłącznie od przewodności właściwej ośrodka."
     ],
-    correctIndex: 0,
-    explanation: 'Równanie Gaussa dla magnetyzmu (\\(\\nabla\\cdot\\vec{B} = 0\\)) orzeka, że dywergencja wektora indukcji magnetycznej jest tożsamościowo równa zero. Oznacza to brak ładunków magnetycznych (pojedynczych biegunów N lub S). Każdy magnes zawsze posiada parę biegunów, a linie pola magnetycznego zamykają się same na sobie.',
-    flashcardFront: 'Co fizycznie oznacza IV równanie Maxwella: \\(\\nabla\\cdot\\vec{B}=0\\)?',
-    flashcardBack: [
-      'Pole magnetyczne jest BEZŹRÓDŁOWE (brak monopoli magnetycznych).',
-      'Linie pola magnetycznego są ZAWSZE zamknięte (nie mają początku ani końca).',
-      'Magnes zawsze ma biegun N i S – przecięcie magnesu tworzy dwa mniejsze magnesy dwubiegunowe.'
+    "correctIndex": 0,
+    "explanation": "I równanie Maxwella to uogólnione prawo indukcji elektromagnetycznej Faradaya: rotacja wektora natężenia pola elektrycznego \\(\\vec{E}\\) jest równa minus pochodnej cząstkowej indukcji magnetycznej \\(\\vec{B}\\) po czasie (\\(\\nabla\\times\\vec{E} = -\\frac{\\partial\\vec{B}}{\\partial t}\\)). Oznacza to, że każde zmienne pole magnetyczne indukuje w przestrzeni pole elektryczne o charakterze wirowym. Znak minus wynika bezpośrednio z reguły przekory (Lenza).",
+    "flashcardFront": "I równanie Maxwella (Prawo indukcji Faradaya) — wzór i sens fizyczny:",
+    "flashcardBack": [
+      "Postać różniczkowa: \\(\\nabla\\times\\vec{E} = -\\frac{\\partial\\vec{B}}{\\partial t}\\)",
+      "Sens fizyczny: Zmienne w czasie pole magnetyczne wytwarza WIROWE pole elektryczne.",
+      "Znak minus: Reguła Lenza (pole indukowane przeciwdziała przyczynie, która je wywołała)."
     ],
-    tips: [
-      'Zwróć uwagę na operator dywergencji (\\(\\nabla\\cdot\\)). Przypomnij sobie, jaką cechę geometryczną pola opisuje dywergencja – czy chodzi o wirowość linii, czy o ich początki i końce?',
-      'Porównaj to równanie z prawem Gaussa dla elektrostatyki: \\(\\nabla\\cdot\\vec{D} = \\rho\\). Tam po prawej stronie występuje gęstość ładunku, a tutaj stoi zero.',
-      'Wartość zero oznacza, że linie tego pola nie mają ani punktu startowego, ani końcowego. Zastanów się, co to mówi o kształcie tych linii oraz czy w przyrodzie zaobserwowano kiedykolwiek pojedynczy, izolowany biegun magnetyczny.'
+    "tips": [
+      "Przypomnij sobie zjawisko powstawania prądu w pętli pod wpływem zbliżania magnesu.",
+      "Chodzi o pole wirowe (rotację) wywoływane przez zmianę innego pola w czasie.",
+      "Znak minus przed pochodną czasową reprezentuje regułę przekory (Lenza)."
     ],
-    tip: 'Przypomnij sobie pojęcie dywergencji wektora – opisuje ona źródłowość danego pola (czy pole wypływa z punktowych ładunków).',
-    relatedRoute: '/teoria/fala-propagacja#q1'
+    "tip": "I równanie Maxwella: rotacja pola E równa się ujemnej pochodnej indukcji B po czasie.",
+    "relatedRoute": "/teoria/fala-propagacja#q1"
   },
   {
-    id: 'em-2',
-    category: 'fale_em',
-    categoryLabel: 'Fale i propagacja EM',
-    tier: 'tier1',
-    question: 'Wskaż poprawne sformułowanie I równania Maxwella (prawo Faradaya w postaci różniczkowej):',
-    options: [
-      '\\(\\nabla\\times\\vec{E} = -\\frac{\\partial\\vec{B}}{\\partial t}\\)',
-      '\\(\\nabla\\times\\vec{B} = -\\mu_0 \\varepsilon_0 \\frac{\\partial\\vec{E}}{\\partial t}\\)',
-      '\\(\\nabla\\cdot\\vec{E} = -\\frac{\\partial\\vec{B}}{\\partial t}\\)',
-      '\\(\\nabla\\times\\vec{E} = +\\mu_0 \\vec{j}\\)'
+    "id": "em-maxwell-2",
+    "category": "fale_em",
+    "categoryLabel": "Fale i propagacja EM",
+    "tier": "tier1",
+    "question": "Czym jest prąd przesunięcia wprowadzony przez Maxwella w II równaniu (prawie Ampère'a-Maxwella): \\(\\nabla\\times\\vec{H} = \\vec{j} + \\frac{\\partial\\vec{D}}{\\partial t}\\)?",
+    "options": [
+      "Składnikiem \\(\\frac{\\partial\\vec{D}}{\\partial t}\\) opisującym, że zmienne pole elektryczne wytwarza wirowe pole magnetyczne nawet w próżni lub idealnym izolatorze bez ruchu swobodnych ładunków.",
+      "Prądem upływu stałego, który płynie przez niedoskonały dielektryk kondensatora pod wpływem napięcia stałego.",
+      "Prądem konwekcyjnym wynikającym z mechanicznego ruchu naładowanych cząstek w próżni.",
+      "Składową prądu przewodzenia płynącą wyłącznie w metalach ferromagnetycznych w obecności histerezy."
     ],
-    correctIndex: 0,
-    explanation: 'I równanie Maxwella to uogólnione prawo indukcji Faradaya: rotacja pola elektrycznego jest równa minus pochodnej czasowej indukcji magnetycznej. Znak minus wynika z reguły Lenza (prąd/pole indukowane przeciwdziała przyczynie, która je wywołała).',
-    flashcardFront: 'I równanie Maxwella (Prawo Faradaya) — postać różniczkowa i interpretacja:',
-    flashcardBack: [
-      'Wzór: \\(\\nabla\\times\\vec{E} = -\\frac{\\partial\\vec{B}}{\\partial t}\\)',
-      'Zmienne w czasie pole magnetyczne wytwarza WIROWE pole elektryczne.',
-      'Znak minus odzwierciedla regułę Lenza (przeciwdziałanie przyczynie indukcji).'
+    "correctIndex": 0,
+    "explanation": "W II równaniu Maxwella składnik \\(\\vec{j}_D = \\frac{\\partial\\vec{D}}{\\partial t}\\) to gęstość prądu przesunięcia. Maxwell zauważył, że zmienne pole elektryczne w dielektryku lub próżni wytwarza pole magnetyczne dokładnie tak samo, jak rzeczywisty przepływ ładunków elektrycznych (prąd przewodzenia \\(\\vec{j}\\)). Wprowadzenie tego członu zapewniło spełnienie zasady zachowania ładunku i przewidziało istnienie fal EM.",
+    "flashcardFront": "Czym jest prąd przesunięcia w II równaniu Maxwella?",
+    "flashcardBack": [
+      "Wzór: \\(\\vec{j}_D = \\frac{\\partial\\vec{D}}{\\partial t} = \\varepsilon \\frac{\\partial\\vec{E}}{\\partial t}\\)",
+      "Opisuje generowanie wirowego pola magnetycznego przez zmienne w czasie pole elektryczne.",
+      "Nie wymaga ruchu ładunków — płynie także w próżni i izolatorach (np. między okładkami kondensatora)."
     ],
-    tips: [
-      'Przypomnij sobie zjawisko powstawania prądu w pętli pod wpływem zbliżania lub oddalania magnesu (prawo Faradaya). Jak to zjawisko tłumaczy teoria pola?',
-      'Chodzi o pole, którego linie tworzą pętle (pole wirowe), indukowane przez zmiany innego pola w czasie. Zastanów się też nad regułą Lenza – prąd indukcyjny przeciwdziała przyczynie, która go wywołała.',
-      'Szukaj relacji, która wiąże rotację wektora pola elektrycznego z pochodną czasową drugiego pola, pamiętając o odpowiednim znaku wyrażającym regułę przekory.'
+    "tips": [
+      "Zastanów się, co „zamyka obwód” prądu zmiennego pomiędzy okładkami idealnego kondensatora.",
+      "Pomiędzy okładkami nie ma swobodnych elektronów, jest tylko zmienne pole elektryczne.",
+      "Prąd przesunięcia to pochodna czasowa indukcji elektrycznej D."
     ],
-    tip: 'I równanie Maxwella to prawo indukcji elektromagnetycznej Faradaya w postaci różniczkowej – opisuje powstawanie wirowego pola elektrycznego.',
-    relatedRoute: '/teoria/fala-propagacja#q1'
+    "tip": "Prąd przesunięcia to zmiana pola elektrycznego w czasie, która indukuje pole magnetyczne w próżni.",
+    "relatedRoute": "/teoria/fala-propagacja#q1"
   },
   {
-    id: 'em-3',
-    category: 'fale_em',
-    categoryLabel: 'Fale i propagacja EM',
-    tier: 'tier1',
-    question: 'Czym jest prąd przesunięcia wprowadzony przez Jamesa Clerka Maxwella w II równaniu?',
-    options: [
-      'Składnikiem \\(\\varepsilon \\frac{\\partial\\vec{E}}{\\partial t}\\) opisującym, że zmienne pole elektryczne wytwarza wirowe pole magnetyczne nawet w próżni i izolatorze.',
-      'Prądem unoszenia powstającym wyłącznie wskutek zderzeń swobodnych jonów w metalach.',
-      'Prądem upływu stałego płynącym przez rezystancję upływnościową dielektryka.',
-      'Ruchomym ładunkiem powierzchniowym zgromadzonym na okładkach kondensatora.'
+    "id": "em-maxwell-3",
+    "category": "fale_em",
+    "categoryLabel": "Fale i propagacja EM",
+    "tier": "tier1",
+    "question": "Jakie jest fizyczne znaczenie III równania Maxwella (prawo Gaussa dla elektryczności): \\(\\nabla\\cdot\\vec{D} = \\rho\\)?",
+    "options": [
+      "Źródłem pola indukcji elektrycznej są ładunki elektryczne — pole elektryczne jest polem źródłowym o liniach zaczynających się i kończących na ładunkach.",
+      "Pole elektryczne jest bezźródłowe i jego linie zawsze zamykają się same na sobie.",
+      "Gęstość ładunku swobodnego \\(\\rho\\) w próżni musi być zawsze równa zeru niezależnie od obecności elektronów.",
+      "Strumień indukcji magnetycznej przez dowolną zamkniętą powierzchnię jest proporcjonalny do objętościowej gęstości ładunku."
     ],
-    correctIndex: 0,
-    explanation: 'II równanie Maxwella brzmi \\(\\nabla\\times\\vec{B} = \\mu_0\\left(\\vec{j} + \\varepsilon_0\\frac{\\partial\\vec{E}}{\\partial t}\\right)\\). Człon \\(\\vec{j}_D = \\varepsilon_0\\frac{\\partial\\vec{E}}{\\partial t}\\) to gęstość prądu przesunięcia. To właśnie ten człon pozwolił przewidzieć istnienie samopodtrzymującej się fali elektromagnetycznej w próżni.',
-    flashcardFront: 'Co to jest prąd przesunięcia Maxwella i do czego posłużył?',
-    flashcardBack: [
-      'Wzór: \\(\\vec{j}_D = \\varepsilon_0 \\frac{\\partial\\vec{E}}{\\partial t}\\)',
-      'Występuje w dielektryku i w próżni, gdy pole elektryczne zmienia się w czasie.',
-      'Działa jak prąd przewodzenia: wytwarza wirowe pole magnetyczne.',
-      'Umożliwił zbilansowanie obwodu prądu przemiennego z kondensatorem i przewidzenie fal EM.'
+    "correctIndex": 0,
+    "explanation": "III równanie Maxwella (\\(\\nabla\\cdot\\vec{D} = \\rho\\)) stwierdza, że dywergencja wektora indukcji elektrycznej jest równa gęstości objętościowej ładunku swobodnego \\(\\rho\\). Oznacza to, że ładunki elektryczne (dodatnie i ujemne) są fizycznymi źródłami i ujściami linii pola elektrycznego.",
+    "flashcardFront": "III równanie Maxwella (Prawo Gaussa dla elektryczności) — sens fizyczny:",
+    "flashcardBack": [
+      "Wzór: \\(\\nabla\\cdot\\vec{D} = \\rho\\)",
+      "Pole elektryczne jest polem ŹRÓDŁOWYM (dywergencja niezerowa).",
+      "Skalarnym źródłem pola \\(\\vec{D}\\) są ładunki elektryczne (linie pola wypływają z ładunków dodatnich i zbiegają się na ujemnych)."
     ],
-    tips: [
-      'Rozważ ładowanie kondensatora w obwodzie prądu przemiennego. Pomiędzy jego okładkami znajduje się izolator lub próżnia – dlaczego wokół przestrzeni między okładkami pojawia się pole magnetyczne?',
-      'Maxwell zauważył asymetrię w równaniach: skoro zmieniające się pole magnetyczne wywołuje pole elektryczne, to symetryczna zależność powinna zachodzić również w drugą stronę.',
-      'Pojęcie to nie odnosi się do fizycznego transportu cząstek obdarzonych masą, lecz do samej dynamiki zmian pola elektrycznego w czasie.'
+    "tips": [
+      "Dywergencja opisuje, czy dane pole wypływa ze źródeł punktowych w przestrzeni.",
+      "Po prawej stronie stoi rho — objętościowa gęstość ładunku.",
+      "Oznacza to, że ładunki elektryczne stanowią początek i koniec linii pola."
     ],
-    tip: 'Zastanów się, jak prąd może „płynąć” przez idealny izolator lub próżnię wewnątrz kondensatora, gdzie nie ma swobodnych elektronów.',
-    relatedRoute: '/teoria/fala-propagacja#q1'
+    "tip": "Dywergencja pola D równa się gęstości ładunku rho: pole ma realne ładunkowe źródła.",
+    "relatedRoute": "/teoria/fala-propagacja#q1"
   },
   {
-    id: 'em-4',
-    category: 'fale_em',
-    categoryLabel: 'Fale i propagacja EM',
-    tier: 'tier1',
-    question: 'Wektor Poyntinga \\(\\vec{S} = \\vec{E} \\times \\vec{H}\\) określa:',
-    options: [
-      'Gęstość strumienia mocy fali elektromagnetycznej oraz kierunek jej propagacji, a jego jednostką jest \\(\\mathrm{W/m^2}\\).',
-      'Całkowitą energię zmagazynowaną w objętości dielektryka o jednostce dżul \\(\\mathrm{[J]}\\).',
-      'Siłę Lorentza działającą na ładunek punktowy poruszający się z prędkością światła.',
-      'Prędkość grupową paczki falowej w falowodzie prostokątnym o jednostce \\(\\mathrm{m/s}\\).'
+    "id": "em-maxwell-4",
+    "category": "fale_em",
+    "categoryLabel": "Fale i propagacja EM",
+    "tier": "tier1",
+    "question": "Jakie jest fizyczne znaczenie IV równania Maxwella: \\(\\nabla\\cdot\\vec{B} = 0\\)?",
+    "options": [
+      "Pole magnetyczne jest bezźródłowe — linie pola są zawsze zamknięte i w przyrodzie nie istnieją swobodne monopole magnetyczne.",
+      "Pole magnetyczne nie może ulegać zakrzywieniu w obecności przewodników prądu stałego.",
+      "Wektor indukcji magnetycznej B jest zawsze tożsamościowo równy zeru w dielektryku idealnym.",
+      "Zmienne w czasie pole elektryczne nie może wywołać pola magnetycznego w próżni."
     ],
-    correctIndex: 0,
-    explanation: 'Wektor Poyntinga \\(\\vec{S}\\) to iloczyn wektorowy natężenia pola elektrycznego \\(\\vec{E}\\) [V/m] i pola magnetycznego \\(\\vec{H}\\) [A/m]. Wymiar to \\(\\mathrm{V/m \\cdot A/m = W/m^2}\\). Wskazuje kierunek przepływu energii fali EM.',
-    flashcardFront: 'Wektor Poyntinga — wzór, jednostka i znaczenie fizyczne:',
-    flashcardBack: [
-      'Wzór: \\(\\vec{S} = \\vec{E} \\times \\vec{H}\\)',
-      'Jednostka: \\(\\mathrm{W/m^2}\\) (Wat na metr kwadratowy).',
-      'Znaczenie: Gęstość strumienia mocy przenoszonej przez falę EM oraz kierunek transportu energii.'
+    "correctIndex": 0,
+    "explanation": "Równanie Gaussa dla magnetyzmu (\\(\\nabla\\cdot\\vec{B} = 0\\)) orzeka, że dywergencja wektora indukcji magnetycznej jest zawsze równa zero. Oznacza to brak pojedynczych ładunków magnetycznych (monopoli). Każdy magnes posiada parę biegunów (N i S), a linie pola magnetycznego zawsze zamykają się same na sobie.",
+    "flashcardFront": "IV równanie Maxwella (Prawo Gaussa dla magnetyzmu) — sens fizyczny:",
+    "flashcardBack": [
+      "Wzór: \\(\\nabla\\cdot\\vec{B} = 0\\)",
+      "Pole magnetyczne jest BEZŹRÓDŁOWE (brak monopolów magnetycznych).",
+      "Linie pola magnetycznego są ZAWSZE zamknięte (nie mają ani początku, ani końca)."
     ],
-    tips: [
-      'Zwróć uwagę na jednostki obu wektorów składowych w układzie SI: natężenie pola elektrycznego wyraża się w woltach na metr, a pola magnetycznego w amperach na metr.',
-      'Przemnóż te jednostki: wolt pomnożony przez amper daje moc w watach. Zastanów się, jaki wymiar ma iloczyn \\([\\mathrm{V/m}] \\cdot [\\mathrm{A/m}]\\) i do czego w bilansie fali może odnosić się mianownik.',
-      'Kierunek tego wektora wyznacza iloczyn wektorowy \\(\\vec{E} \\times \\vec{H}\\). Wskazuje on kierunek transportu energii przez falę poprzeczną.'
+    "tips": [
+      "Zwróć uwagę na zero po prawej stronie dywergencji pola B.",
+      "Dywergencja równa zero oznacza, że linie nigdzie się nie zaczynają i nigdzie nie kończą.",
+      "W przyrodzie nie znaleziono pojedynczych biegunów magnetycznych (monopoli)."
     ],
-    tip: 'Przeanalizuj iloczyn wektorowy natężenia pola elektrycznego \(\vec{E}\) [V/m] i magnetycznego \(\vec{H}\) [A/m].',
-    relatedRoute: '/teoria/fala-propagacja#q1'
+    "tip": "Pole magnetyczne jest bezźródłowe: linie pola B są zamknięte, brak monopoli.",
+    "relatedRoute": "/teoria/fala-propagacja#q1"
   },
   {
-    id: 'em-5',
-    category: 'fale_em',
-    categoryLabel: 'Fale i propagacja EM',
-    tier: 'tier1',
-    question: 'Wskaż warunek kąta Brewstera (\\(\\theta_B\\)) i stan polaryzacji fali odbitej:',
-    options: [
-      '\\(\\tan\\theta_B = \\frac{n_2}{n_1}\\); promień odbity jest całkowicie spolaryzowany liniowo prostopadle do płaszczyzny padania.',
-      '\\(\\sin\\theta_B = \\frac{n_1}{n_2}\\); promień załamany jest całkowicie spolaryzowany kołowo.',
-      '\\(\\cos\\theta_B = n_1 \\cdot n_2\\); w dielektryku zanika składowa elektryczna fali.',
-      '\\(\\tan\\theta_B = \\frac{n_1}{n_2}\\); brak promienia załamanego wskutek całkowitego wewnętrznego odbicia.'
+    "id": "em-maxwell-units",
+    "category": "fale_em",
+    "categoryLabel": "Fale i propagacja EM",
+    "tier": "tier1",
+    "question": "Wskaż zestawienie poprawnych jednostek w układzie SI dla wielkości z równań Maxwella: \\(\\vec{E}, \\vec{H}, \\vec{D}, \\vec{B}, \\vec{j}, \\rho\\):",
+    "options": [
+      "\\(\\vec{E}\\ [\\mathrm{V/m}]\\), \\(\\vec{H}\\ [\\mathrm{A/m}]\\), \\(\\vec{D}\\ [\\mathrm{C/m^2}]\\), \\(\\vec{B}\\ [\\mathrm{T} = \\mathrm{Wb/m^2}]\\), \\(\\vec{j}\\ [\\mathrm{A/m^2}]\\), \\(\\rho\\ [\\mathrm{C/m^3}]\\)",
+      "\\(\\vec{E}\\ [\\mathrm{N/C}]\\), \\(\\vec{H}\\ [\\mathrm{T}]\\), \\(\\vec{D}\\ [\\mathrm{F/m}]\\), \\(\\vec{B}\\ [\\mathrm{A/m}]\\), \\(\\vec{j}\\ [\\mathrm{A}]\\), \\(\\rho\\ [\\mathrm{C}]\\)",
+      "\\(\\vec{E}\\ [\\mathrm{V}]\\), \\(\\vec{H}\\ [\\mathrm{A}]\\), \\(\\vec{D}\\ [\\mathrm{C/m}]\\), \\(\\vec{B}\\ [\\mathrm{G}]\\), \\(\\vec{j}\\ [\\mathrm{A/s}]\\), \\(\\rho\\ [\\mathrm{C/m^2}]\\)",
+      "\\(\\vec{E}\\ [\\mathrm{W/m^2}]\\), \\(\\vec{H}\\ [\\mathrm{V/m}]\\), \\(\\vec{D}\\ [\\mathrm{A\\cdot s}]\\), \\(\\vec{B}\\ [\\mathrm{H/m}]\\), \\(\\vec{j}\\ [\\mathrm{S/m}]\\), \\(\\rho\\ [\\mathrm{C/m^3}]\\)"
     ],
-    correctIndex: 0,
-    explanation: 'Dla kąta Brewstera zachodzi \\(\\tan\\theta_B = n_2/n_1\\). Promień odbity i załamany tworzą kąt prosty (90°). Wtedy fala spolaryzowana równolegle (p) wnika całkowicie w drugi ośrodek bez odbicia, więc promień odbity składa się wyłącznie z polaryzacji prostopadłej (s) — jest w 100% spolaryzowany liniowo.',
-    flashcardFront: 'Kąt Brewstera — wzór i efekt polaryzacji:',
-    flashcardBack: [
-      'Wzór: \\(\\tan\\theta_B = \\frac{n_2}{n_1}\\)',
-      'Kąt między promieniem odbitym a załamanym wynosi dokładnie 90°.',
-      'Promień odbity jest w 100% spolaryzowany liniowo (zanika składowa równoległa).',
-      'Zastosowanie: lasery, filtry polaryzacyjne, okulary polaryzacyjne.'
+    "correctIndex": 0,
+    "explanation": "Jednostki SI na egzaminie z równań Maxwella to absolutny wymóg: natężenie pola elektrycznego E w V/m, natężenie pola magnetycznego H w A/m, indukcja elektryczna D w C/m² (lub A·s/m²), indukcja magnetyczna B w teslach (T = Wb/m² = V·s/m²), gęstość prądu j w A/m², gęstość objętościowa ładunku rho w C/m³.",
+    "flashcardFront": "Jednostki wielkości w równaniach Maxwella (egzaminacyjny pewniak):",
+    "flashcardBack": [
+      "\\(\\vec{E}\\): V/m (natężenie pola elektrycznego)",
+      "\\(\\vec{H}\\): A/m (natężenie pola magnetycznego)",
+      "\\(\\vec{D}\\): \\(\\mathrm{C/m^2} = \\mathrm{A\\cdot s/m^2}\\) (indukcja elektryczna)",
+      "\\(\\vec{B}\\): \\(\\mathrm{T} = \\mathrm{Wb/m^2} = \\mathrm{V\\cdot s/m^2}\\) (indukcja magnetyczna)",
+      "\\(\\vec{j}\\): \\(\\mathrm{A/m^2}\\) (gęstość prądu), \\(\\rho\\): \\(\\mathrm{C/m^3}\\) (gęstość ładunku)"
     ],
-    tips: [
-      'Zjawisko to dotyczy światła padającego na granicę dwóch ośrodków przezroczystych pod specyficznym kątem, przy którym zachodzi selekcja składowych drgań fali.',
-      'Kluczową rolę odgrywa tu wzajemne geometryczne ułożenie promienia odbitego i załamanego w punkcie padania – tworzą one wówczas kąt prosty (90°).',
-      'Zastanów się, jaka funkcja trygonometryczna opisuje stosunek \\(n_2 / n_1\\) przy tym kącie i która składowa wektora pola elektrycznego (równoległa czy prostopadła do płaszczyzny padania) ulega wtedy całkowitemu załamaniu do drugiego ośrodka bez odbicia.'
+    "tips": [
+      "Pamiętaj: natężenia (E, H) mają w mianowniku metr (V/m, A/m).",
+      "Indukcje (D, B) to wielkości powierzchniowe — mają w mianowniku metr kwadratowy (C/m², Wb/m²).",
+      "Gęstość ładunku rho jest objętościowa — C/m³."
     ],
-    tip: 'Kąt Brewstera dotyczy zjawiska polaryzacji przez odbicie na granicy dwóch dielektryków.',
-    relatedRoute: '/teoria/fala-propagacja#q3'
+    "tip": "E [V/m], H [A/m], D [C/m²], B [T = Wb/m²], j [A/m²], rho [C/m³].",
+    "relatedRoute": "/teoria/fala-propagacja#q1"
   },
   {
-    id: 'em-6',
-    category: 'fale_em',
-    categoryLabel: 'Fale i propagacja EM',
-    tier: 'tier1',
-    question: 'Dlaczego w inżynierii radiowej do wyznaczania horyzontu radiowego stosuje się zastępczy promień Ziemi \\(R_z\' = \\frac{4}{3} R_z\\)?',
-    options: [
-      'Ze względu na zjawisko standardowej refrakcji w troposferze — spadek gęstości powietrza z wysokością powoduje uginanie toru fal radiowych w stronę Ziemi.',
-      'Z powodu eliptycznego kształtu globu ziemskiego na szerokościach geograficznych Europy.',
-      'Wynika to z obecności warstwy ozonowej, która przyspiesza falę o czynnik 1,33.',
-      'Ze względu na spadek przenikalności magnetycznej w wyższych partiach atmosfery.'
+    "id": "em-maxwell-conclusions",
+    "category": "fale_em",
+    "categoryLabel": "Fale i propagacja EM",
+    "tier": "tier1",
+    "question": "Jakie fundamentalne wnioski fizyczne wynikają bezpośrednio z układu równań Maxwella?",
+    "options": [
+      "Istnienie fali elektromagnetycznej rozchodzącej się z prędkością światła \\(v = 1/\\sqrt{\\varepsilon\\mu}\\), poprzeczność drgań \\(\\vec{E}\\perp\\vec{H}\\perp\\vec{v}\\), zgodność fazowa pól oraz zasada zachowania ładunku.",
+      "Możliwość całkowitego rozdzielenia pola elektrycznego i magnetycznego w falach o częstotliwości radiowej.",
+      "Konieczność istnienia materialnego eteru do przenoszenia zaburzeń pola w próżni.",
+      "Stałość ładunku elektrycznego tylko w ośrodkach o nieskończonej przenikalności magnetycznej."
     ],
-    correctIndex: 0,
-    explanation: 'W standardowej troposferze gęstość i współczynnik załamania powietrza maleją wraz z wysokością. W efekcie fala radiowa biegnąca w pobliżu powierzchni Ziemi ulega ciągłemu ugięciu w stronę gruntu. Matematycznie modeluje się to prostoliniowym biegiem fal przy powiększeniu promienia Ziemi o współczynnik k = 4/3.',
-    flashcardFront: 'Dlaczego horyzont radiowy jest większy od optycznego (model 4/3 R_Z)?',
-    flashcardBack: [
-      'W standardowej troposferze współczynnik załamania n maleje wraz z wysokością.',
-      'Promień radiowy ulega refrakcji (ugina się łukiem ku powierzchni Ziemi).',
-      'Fale „zaglądają” nieco za geometryczny horyzont optyczny.',
-      'Matematyczny model zastępczy: powiększenie promienia Ziemi do \\(R_z\' = \\frac{4}{3} R_z \\approx 8500\\ \\mathrm{km}\\).'
+    "correctIndex": 0,
+    "explanation": "Z równań Maxwella wynika, że zmienne pole elektryczne i magnetyczne wzajemnie się generują, tworząc samopodtrzymującą się falę EM. Fala ta w próżni porusza się z prędkością światła \\(c = 1/\\sqrt{\\varepsilon_0\\mu_0}\\). Wektory \\(\\vec{E}\\) i \\(\\vec{H}\\) drgają w tej samej fazie, są wzajemnie prostopadłe i prostopadłe do kierunku propagacji (fala poprzeczna). Z dywergencji II równania wynika także prawo zachowania ładunku: \\(\\nabla\\cdot\\vec{j} = -\\frac{\\partial\\rho}{\\partial t}\\).",
+    "flashcardFront": "Co wynika z równań Maxwella? (Wnioski egzaminacyjne)",
+    "flashcardBack": [
+      "Istnienie fali elektromagnetycznej w próżni i dielektrykach.",
+      "Prędkość fali: \\(v = 1/\\sqrt{\\varepsilon\\mu}\\) (w próżni \\(c = 1/\\sqrt{\\varepsilon_0\\mu_0} \\approx 3\\cdot 10^8\\ \\mathrm{m/s}\\)).",
+      "Fala jest POPRZECZNA: \\(\\vec{E}\\perp\\vec{H}\\perp\\vec{k}\\), drgania \\(\\vec{E}\\) i \\(\\vec{H}\\) są w tej samej fazie.",
+      "Prawo zachowania ładunku: \\(\\nabla\\cdot\\vec{j} = -\\partial\\rho/\\partial t\\)."
     ],
-    tips: [
-      'Pomyśl o strukturze pionowej dolnej warstwy atmosfery ziemskiej (troposfery). Co dzieje się z gęstością i temperaturą powietrza wraz ze wzrostem wysokości nad poziomem morza?',
-      'Zgodnie z prawem Snelliusa, gdy fala przechodzi przez warstwy o ciągle zmieniającym się współczynniku załamania, jej trajektoria nie jest idealną linią prostą.',
-      'Spadek współczynnika załamania powietrza z wysokością powoduje uginanie toru fali w stronę gęstszego ośrodka (ku powierzchni planety), co pozwala jej „sięgać” nieco dalej, niż wynikałoby z prostej geometrii kuli.'
+    "tips": [
+      "Połącz I i II równanie Maxwella, biorąc rotację z rotacji — otrzymasz równanie falowe.",
+      "Prędkość fali wynika z iloczynu przenikalności próżni.",
+      "Pola E i H nie mogą istnieć rozłącznie w stanach zmiennych w czasie."
     ],
-    tip: 'Zastanów się nad właściwościami atmosfery ziemskiej: gęstość i ciśnienie powietrza maleją wraz ze wzrostem wysokości.',
-    relatedRoute: '/teoria/fala-propagacja#q6'
+    "tip": "Z równań wynika istnienie fal EM, prędkość c = 1/√(ε0 μ0), poprzeczność fali i zachowanie ładunku.",
+    "relatedRoute": "/teoria/fala-propagacja#q1"
   },
   {
-    id: 'em-7',
-    category: 'fale_em',
-    categoryLabel: 'Fale i propagacja EM',
-    tier: 'tier2',
-    question: 'Który mechanizm odpowiada za dalekosiężną łączność radiową na falach krótkich (HF) na dystanse tysięcy kilometrów?',
-    options: [
-      'Wielokrotne odbicia fali przestrzennej od zjonizowanych warstw jonosfery (F1, F2) i powierzchni Ziemi.',
-      'Propagacja fali powierzchniowej wzdłuż warstwy dielektrycznej gleby bez tłumienia.',
-      'Zjawisko całkowitego wewnętrznego odbicia w troposferycznym kanale falowodowym.',
-      'Przenikanie fal przez rdzeń płynny Ziemi na drugą półkulę.'
+    "id": "em-mat-eq-1",
+    "category": "fale_em",
+    "categoryLabel": "Fale i propagacja EM",
+    "tier": "tier1",
+    "question": "Wskaż równania materiałowe (związki konstytutywne) oraz ich znaczenie fizyczne:",
+    "options": [
+      "\\(\\vec{D} = \\varepsilon\\vec{E}\\), \\(\\vec{B} = \\mu\\vec{H}\\), \\(\\vec{j} = \\sigma\\vec{E}\\) — opisują one reakcję rzeczywistego ośrodka materialnego (polaryzację, namagnesowanie i przewodzenie) na przyłożone pola.",
+      "\\(\\vec{E} = \\varepsilon\\vec{D}\\), \\(\\vec{H} = \\mu\\vec{B}\\), \\(\\vec{j} = \\rho\\vec{v}\\) — opisują niezmienniczość prędkości światła w ośrodkach z dyspersją.",
+      "\\(\\vec{D} = \\mu\\vec{E}\\), \\(\\vec{B} = \\varepsilon\\vec{H}\\), \\(\\vec{j} = \\sigma\\vec{B}\\) — wiążą siłę Lorentza z indukcją elektrostatyczną.",
+      "\\(\\nabla\\cdot\\vec{D} = \\varepsilon\\), \\(\\nabla\\times\\vec{B} = \\mu\\) — są to różniczkowe definicje stałych dielektrycznych i magnetycznych."
     ],
-    correctIndex: 0,
-    explanation: 'Fale krótkie (3–30 MHz) ulegają załamaniu i odbiciu w jonosferze (zwłaszcza w warstwie F o największej gęstości elektronowej). Odbita fala wraca na Ziemię, odbija się od gruntu i może wielokrotnie okrążać glob.',
-    flashcardFront: 'Mechanizm dalekosiężnej propagacji fal krótkich (HF):',
-    flashcardBack: [
-      'Fale jonosferyczne odbijają się od warstw jonosfery (głównie warstwa F) i od powierzchni Ziemi.',
-      'Jonizacja gazów wywołana jest promieniowaniem UV i rentgenowskim Słońca.',
-      'W nocy zanikają warstwy D i E (mniejsze tłumienie, lepszy zasięg HF).',
-      'Obszar pomiędzy strefą fali przyziemnej a powrotem fali jonosferycznej to tzw. strefa martwa (strefa ciszy).'
+    "correctIndex": 0,
+    "explanation": "Równania materiałowe wiążą wielkości polowe ze sobą poprzez parametry ośrodka: \\(\\vec{D} = \\varepsilon\\vec{E} = \\varepsilon_0 \\varepsilon_r \\vec{E}\\) (polaryzacja elektryczna dielektryka), \\(\\vec{B} = \\mu\\vec{H} = \\mu_0 \\mu_r \\vec{H}\\) (namagnesowanie ośrodka) oraz mikroskopowe prawo Ohma \\(\\vec{j} = \\sigma\\vec{E}\\) (przewodnictwo właściwe i ruch ładunków swobodnych). Zależność prędkości unoszenia od pola: \\(\\vec{v}_d = \\mu_n \\vec{E}\\).",
+    "flashcardFront": "Równania materiałowe (związki konstytutywne) — wzory i sens:",
+    "flashcardBack": [
+      "\\(\\vec{D} = \\varepsilon\\vec{E} = \\varepsilon_0 \\varepsilon_r \\vec{E}\\) (polaryzacja dielektryczna)",
+      "\\(\\vec{B} = \\mu\\vec{H} = \\mu_0 \\mu_r \\vec{H}\\) (namagnesowanie magnetyczne)",
+      "\\(\\vec{j} = \\sigma\\vec{E}\\) (mikroskopowe prawo Ohma)",
+      "Sens: Opisują makroskopową reakcję atomów i cząsteczek materiału na pole zewnętrzne."
     ],
-    tips: [
-      'Zastanów się, dlaczego fale w pasmach ultrakrótkich (np. UKF/VHF) docierają tylko do linii horyzontu, podczas gdy fale krótkie (HF) potrafią dotrzeć na drugi kontynent.',
-      'Ziemia jest otoczona na wysokości kilkuset kilometrów warstwą zjonizowanego gazu (plazmy), powstałą pod wpływem promieniowania słonecznego.',
-      'Fale o odpowiednio dobranej częstotliwości ulegają załamaniu i zawróceniu w tej naładowanej warstwie atmosfery ku powierzchni globu, mogąc wielokrotnie powtarzać ten cykl (tzw. skoki).'
+    "tips": [
+      "Pomyśl o stałych materiałowych: epsilon (przenikalność elektryczna), mi (magnetyczna), sigma (przewodność).",
+      "Wzory wiążą indukcje D i B z natężeniami E i H.",
+      "Prawo Ohma w postaci wektorowej: gęstość prądu j = sigma * E."
     ],
-    tip: 'Fale krótkie (pasmo HF: 3–30 MHz) potrafią okrążać Ziemię pomimo krzywizny globu.',
-    relatedRoute: '/teoria/fala-propagacja#q4'
+    "tip": "Równania materiałowe: D = ε E, B = μ H, j = σ E.",
+    "relatedRoute": "/teoria/fala-propagacja#q1"
   },
   {
-    id: 'em-8',
-    category: 'fale_em',
-    categoryLabel: 'Fale i propagacja EM',
-    tier: 'tier1',
-    question: 'Jak brzmią warunki brzegowe składowych pola elektromagnetycznego na granicy dwóch idealnych dielektryków (bez ładunków swobodnych)?',
-    options: [
-      'Składowe styczne \\(E_t\\) i \\(H_t\\) są ciągłe, a składowe normalne \\(D_n\\) i \\(B_n\\) są ciągłe.',
-      'Wszystkie składowe pola elektrycznego muszą spaść skokowo do zera.',
-      'Składowe normalne \\(E_n\\) są ciągłe, natomiast składowe styczne \\(E_t\\) rosną proporcjonalnie do współczynnika załamania.',
-      'Indukcja magnetyczna \\(B\\) przyjmuje wartość nieskończoną na granicy podziału.'
+    "id": "em-mat-eq-units",
+    "category": "fale_em",
+    "categoryLabel": "Fale i propagacja EM",
+    "tier": "tier1",
+    "question": "Wskaż jednostki parametrów występujących w równaniach materiałowych: \\(\\varepsilon, \\mu, \\sigma, \\mu_n\\):",
+    "options": [
+      "\\(\\varepsilon\\ [\\mathrm{F/m}]\\), \\(\\mu\\ [\\mathrm{H/m}]\\), \\(\\sigma\\ [\\mathrm{S/m}]\\), \\(\\mu_n\\ [\\mathrm{m^2/(V\\cdot s)}]\\)",
+      "\\(\\varepsilon\\ [\\mathrm{C/m}]\\), \\(\\mu\\ [\\mathrm{T/m}]\\), \\(\\sigma\\ [\\Omega\\cdot\\mathrm{m}]\\), \\(\\mu_n\\ [\\mathrm{m/s}]\\)",
+      "\\(\\varepsilon\\ [\\mathrm{F}]\\), \\(\\mu\\ [\\mathrm{H}]\\), \\(\\sigma\\ [\\mathrm{S}]\\), \\(\\mu_n\\ [\\mathrm{m^2/s}]\\)",
+      "\\(\\varepsilon\\ [\\mathrm{N/A^2}]\\), \\(\\mu\\ [\\mathrm{C^2/N}]\\), \\(\\sigma\\ [\\mathrm{V/A}]\\), \\(\\mu_n\\ [\\mathrm{cm^2/V}]\\)"
     ],
-    correctIndex: 0,
-    explanation: 'Na granicy dwóch dielektryków bez swobodnych ładunków i prądów: składowe styczne natężenia pola elektrycznego \\(E_{1t} = E_{2t}\\) oraz pola magnetycznego \\(H_{1t} = H_{2t}\\) są ciągłe. Składowe normalne indukcji \\(D_{1n} = D_{2n}\\) oraz \\(B_{1n} = B_{2n}\\) również są ciągłe.',
-    flashcardFront: 'Warunki brzegowe pola EM na granicy dwóch dielektryków:',
-    flashcardBack: [
-      'Składowe STYCZNE natężeń są ciągłe: \\(E_{1t} = E_{2t}\\), \\(H_{1t} = H_{2t}\\)',
-      'Składowe NORMALNE indukcji są ciągłe: \\(D_{1n} = D_{2n}\\), \\(B_{1n} = B_{2n}\\)',
-      'Z tego wynika prawo załamania Snella: \\(n_1 \\sin\\alpha = n_2 \\sin\\beta\\).'
+    "correctIndex": 0,
+    "explanation": "W układzie SI: przenikalność elektryczna \\(\\varepsilon\\) wyraża się w faradach na metr (F/m), przenikalność magnetyczna \\(\\mu\\) w henrach na metr (H/m), przewodność właściwa (konduktancja właściwa) \\(\\sigma\\) w simensach na metr (S/m), a ruchliwość nośników \\(\\mu_n\\) w \\(\\mathrm{m^2/(V\\cdot s)}\\) lub \\(\\mathrm{cm^2/(V\\cdot s)}\\).",
+    "flashcardFront": "Jednostki parametrów materiałowych (\\(\\varepsilon, \\mu, \\sigma, \\mu_n\\)):",
+    "flashcardBack": [
+      "\\(\\varepsilon\\): F/m (farad na metr — przenikalność elektryczna)",
+      "\\(\\mu\\): H/m (henr na metr — przenikalność magnetyczna)",
+      "\\(\\sigma\\): S/m (simens na metr — przewodność właściwa)",
+      "\\(\\mu_n\\): \\(\\mathrm{m^2/(V\\cdot s)}\\) (ruchliwość nośników ładunku)"
     ],
-    tips: [
-      'Warunki brzegowe wynikają z zastosowania twierdzenia Stokesa do małego prostokąta oraz twierdzenia Gaussa do małego walca na granicy rozdziału dwóch ciał.',
-      'Zastanów się, które wektory wiążą się z całkowaniem wzdłuż pętli (składowe wzdłuż powierzchni, czyli styczne), a które z całkowaniem po powierzchni zamkniętej (składowe prostopadłe do powierzchni, czyli normalne).',
-      'Dla idealnego dielektryka nie ma swobodnych prądów powierzchniowych ani ładunków powierzchniowych, co oznacza brak skoku wartości odpowiednich wielkości po obu stronach granicy.'
+    "tips": [
+      "Pojemność kondensatora to farady, indukcyjność cewki to henry — na metr długości ośrodka.",
+      "Odwrotność rezystywności [om·metr] to simens na metr [S/m].",
+      "Ruchliwość to prędkość [m/s] podzielona przez pole elektryczne [V/m]."
     ],
-    tip: 'Warunki brzegowe wynikają bezpośrednio z całkowania równań Maxwella na nieskończenie cienkiej powierzchni granicznej.',
-    relatedRoute: '/teoria/swiatlowody#q7'
-  },
-
-  // ==========================================
-  // 2. ŚWIATŁOWODY I TRANSMISJA OPTYCZNA
-  // ==========================================
-  {
-    id: 'opt-1',
-    category: 'swiatlowody',
-    categoryLabel: 'Światłowody i optyka',
-    tier: 'tier1',
-    question: 'Kiedy we włóknie światłowodowym o profilu skokowym prowadzony jest tylko jeden mod (światłowód jednomodowy SMF)?',
-    options: [
-      'Gdy znormalizowana częstotliwość falowodowa spełnia warunek: \\(V \\le 2{,}405\\).',
-      'Gdy współczynnik załamania rdzenia jest mniejszy od współczynnika załamania płaszcza: \\(n_1 < n_2\\).',
-      'Gdy średnica rdzenia wynosi dokładnie 50 lub 62,5 mikrometra.',
-      'Gdy długość fali lasera jest mniejsza od tzw. długości odcięcia: \\(\\lambda < \\lambda_c\\).'
-    ],
-    correctIndex: 0,
-    explanation: 'Liczba 2,405 to pierwsze zero funkcji Bessela rzędu zerowego \\(J_0(x)\\). Jeśli parametr \\(V = \\frac{2\\pi a}{\\lambda}\\sqrt{n_1^2 - n_2^2} \\le 2{,}405\\), to w falowodzie może propagować się wyłącznie podstawowy mod \\(HE_{11}\\) (światłowód jednomodowy).',
-    flashcardFront: 'Warunek jednomodowości światłowodu (parametr V):',
-    flashcardBack: [
-      'Wzór na parametr V: \\(V = \\frac{2\\pi a}{\\lambda}\\sqrt{n_1^2 - n_2^2} = \\frac{2\\pi a}{\\lambda} \\cdot NA\\)',
-      'Warunek jednomodowości: \\(V \\le 2{,}405\\)',
-      'Dla \\(V > 2{,}405\\) wzbudzają się mody wyższych rzędów (światłowód staje się wielomodowy).',
-      'Włókno jednomodowe SMF ma typowo średnicę rdzenia ok. 9 µm.'
-    ],
-    tips: [
-      'Zastanów się, od jakich parametrów falowodu zależy liczba możliwych do prowadzenia rozkładów pola (tzw. modów): średnica rdzenia, długość fali i współczynniki załamania.',
-      'W teorii światłowodów wielkości te łączy się w jeden bezwymiarowy parametr falowodowy (częstotliwość znormalizowaną), oznaczany tradycyjnie literą \\(V\\).',
-      'Dla modu podstawowego istnieje granica matematyczna (związana z pierwszym pierwiastkiem funkcji Bessela), poniżej której żaden wyższy mod nie ma prawa bytu w rdzeniu.'
-    ],
-    tip: 'Zastanów się, jaki bezwymiarowy parametr falowodowy (częstotliwość znormalizowana V) decyduje o liczbie prowadzonych modów.',
-    relatedRoute: '/teoria/swiatlowody#q8'
+    "tip": "ε [F/m], μ [H/m], σ [S/m], μn [m²/(V·s)].",
+    "relatedRoute": "/teoria/fala-propagacja#q1"
   },
   {
-    id: 'opt-2',
-    category: 'swiatlowody',
-    categoryLabel: 'Światłowody i optyka',
-    tier: 'tier1',
-    question: 'Apertura numeryczna (NA) światłowodu wyraża się wzorem i określa:',
-    options: [
-      '\\(NA = \\sqrt{n_1^2 - n_2^2} = \\sin\\theta_{max}\\); określa zdolność światłowodu do zbierania światła (maksymalny kąt wprowadzenia wiązki).',
-      '\\(NA = \\frac{n_1 - n_2}{n_1}\\); określa współczynnik tłumienia falowodowego na 1 km.',
-      '\\(NA = n_1 + n_2\\); określa maksymalną prędkość fazową fali optycznej.',
-      '\\(NA = \\sqrt{n_1 \\cdot n_2}\\); określa częstotliwość rezonansową siatki Bragga.'
+    "id": "em-boundary-diel",
+    "category": "fale_em",
+    "categoryLabel": "Fale i propagacja EM",
+    "tier": "tier1",
+    "question": "Jak brzmią warunki brzegowe pól na granicy dwóch idealnych dielektryków (bez ładunków swobodnych \\(\\rho_s = 0\\) i prądów powierzchniowych \\(j_s = 0\\))?",
+    "options": [
+      "Składowe styczne natężeń są ciągłe (\\(E_{1t} = E_{2t}, H_{1t} = H_{2t}\\)), a składowe normalne indukcji są ciągłe (\\(D_{1n} = D_{2n}, B_{1n} = B_{2n}\\)).",
+      "Wszystkie składowe wektora E są równe zeru, a składowe wektora B podwajają swoją wartość.",
+      "Składowe normalne natężeń są ciągłe (\\(E_{1n} = E_{2n}\\)), a składowe styczne ulegają skokowi o wartość \\(\\varepsilon_r\\).",
+      "Składowe styczne indukcji są ciągłe, a składowe normalne natężeń znikają tożsamościowo."
     ],
-    correctIndex: 0,
-    explanation: 'Apertura numeryczna \\(NA = \\sqrt{n_1^2 - n_2^2} = n_0 \\sin\\theta_{max}\\) (dla powietrza \\(n_0=1\\)). Jest miarą rozwarcia stożka akceptacji światła — promienie wpadające pod kątem większym niż \\(\\theta_{max}\\) nie doznają całkowitego wewnętrznego odbicia i uciekają do płaszcza.',
-    flashcardFront: 'Apertura numeryczna (NA) — wzór i znaczenie:',
-    flashcardBack: [
-      'Wzór: \\(NA = \\sqrt{n_1^2 - n_2^2} = \\sin\\theta_{max}\\)',
-      '\\(n_1\\) — współczynnik rdzenia, \\(n_2\\) — współczynnik płaszcza (zawsze \\(n_1 > n_2\\)).',
-      'Miarą zdolności do wprowadzania światła do rdzenia z powietrza.',
-      'Im większa NA, tym łatwiej wprowadzić światło ze źródła (szerszy stożek akceptacji).'
+    "correctIndex": 0,
+    "explanation": "Z twierdzenia Stokesa i praw rotacyjnych wynika ciągłość składowych stycznych natężeń: \\(E_{1t} = E_{2t}\\) oraz \\(H_{1t} = H_{2t}\\) (ponieważ \\(j_s = 0\\)). Z twierdzenia Gaussa wynika ciągłość składowych normalnych indukcji: \\(D_{1n} = D_{2n}\\) (ponieważ \\(\\rho_s = 0\\)) oraz bezwzględnie \\(B_{1n} = B_{2n}\\) (brak monopoli magnetycznych). Reguła mnemotechniczna: styczne = natężenia (E, H), normalne = indukcje (D, B).",
+    "flashcardFront": "Warunki brzegowe pól na granicy dielektryk — dielektryk:",
+    "flashcardBack": [
+      "Składowe STYCZNE natężeń są ciągłe: \\(E_{1t} = E_{2t}\\) oraz \\(H_{1t} = H_{2t}\\)",
+      "Składowe NORMALNE indukcji są ciągłe: \\(D_{1n} = D_{2n}\\) oraz \\(B_{1n} = B_{2n}\\)",
+      "Mnemotechnika: Styczne = Natężenia (E, H), Normalne = Indukcje (D, B)."
     ],
-    tips: [
-      'Pomyśl o zjawisku całkowitego wewnętrznego odbicia – światło musi wpaść do rdzenia pod odpowiednim kątem, aby po odbiciu od granicy z płaszczem nie uciekło na zewnątrz.',
-      'Wielkość ta określa „stożek akceptacji” światłowodu, a z trygonometrii wiąże się z sinusem maksymalnego kąta wlotowego promienia w powietrzu.',
-      'Zastanów się, jak ten warunek geometryczny zależy od kontrastu optycznego pomiędzy materiałem rdzenia a materiałem płaszcza.'
+    "tips": [
+      "Pomyśl o pętli Stokesa wzdłuż granicy — daje składowe styczne.",
+      "Pudełko Gaussa w poprzek granicy obejmuje składowe prostopadłe (normalne).",
+      "Styczne = litery E i H. Normalne = litery D i B."
     ],
-    tip: 'Apertura numeryczna opisuje stożek akceptacji światła wprowadzanego do rdzenia światłowodu.',
-    relatedRoute: '/teoria/swiatlowody#q7'
+    "tip": "Styczne natężenia ciągłe (E_t, H_t), normalne indukcje ciągłe (D_n, B_n).",
+    "relatedRoute": "/teoria/fala-propagacja#q3"
   },
   {
-    id: 'opt-3',
-    category: 'swiatlowody',
-    categoryLabel: 'Światłowody i optyka',
-    tier: 'tier1',
-    question: 'Jaka dyspersja jest CAŁKOWICIE nieobecna w światłowodzie jednomodowym (SMF)?',
-    options: [
-      'Dyspersja modowa (międzymodowa).',
-      'Dyspersja materiałowa.',
-      'Dyspersja falowodowa.',
-      'Dyspersja polaryzacyjna (PMD).'
+    "id": "em-boundary-conductor",
+    "category": "fale_em",
+    "categoryLabel": "Fale i propagacja EM",
+    "tier": "tier1",
+    "question": "Jakie warunki brzegowe panują na granicy dielektryka z idealnym przewodnikiem (\\(\\sigma \\to \\infty\\))?",
+    "options": [
+      "Wewnątrz przewodnika pola znikają; na granicy składowa styczna pola elektrycznego zeruje się (\\(E_t = 0\\)), a składowa normalna indukcji magnetycznej zeruje się (\\(B_n = 0\\)).",
+      "Składowa normalna pola elektrycznego musi być równa zeru (\\(E_n = 0\\)), a pole magnetyczne wnika bez przeszkód w głąb przewodnika.",
+      "Wszystkie składowe pola magnetycznego stają się prostopadłe do powierzchni przewodnika.",
+      "Indukcja elektryczna wewnątrz przewodnika rośnie do nieskończoności proporcjonalnie do konduktancji."
     ],
-    correctIndex: 0,
-    explanation: 'Dyspersja modowa wynika z różnicy dróg optycznych i prędkości grupowych pomiędzy różnymi modami prowadzonymi we włóknie wielomodowym (MMF). W światłowodzie jednomodowym prowadzony jest wyłącznie jeden mod podstawowy, więc dyspersja modowa nie występuje w ogóle.',
-    flashcardFront: 'Która dyspersja NIE występuje we włóknie jednomodowym?',
-    flashcardBack: [
-      'Brak dyspersji MODOWEJ (międzymodowej) — bo jest tylko jeden mod!',
-      'We włóknie SMF występuje natomiast dyspersja CHROMATYCZNA (materiałowa + falowodowa).',
-      'Występuje też dyspersja polaryzacyjna (PMD) z powodu nieidealnej kołowości rdzenia.',
-      'Dzięki brakowi dyspersji modowej włókna SMF osiągają gigantyczne zasięgi i pasma (Tb/s na setki km).'
+    "correctIndex": 0,
+    "explanation": "W idealnym przewodniku pole elektryczne i magnetyczne wewnątrz wynosi tożsamościowo zero (\\(E=0, B=0\\)). Z warunków ciągłości wynika, że na powierzchni granicznej: \\(E_t = 0\\) (linie pola elektrycznego padają ściśle PROSTOPADLE do metalu) oraz \\(B_n = 0\\) (linie indukcji magnetycznej układają się ściśle STYCZNIE do powierzchni). Składowe niezerowe to \\(D_n = \\rho_s\\) (ładunek powierzchniowy) oraz \\(H_t = j_s\\) (prąd powierzchniowy).",
+    "flashcardFront": "Warunki brzegowe: Dielektryk — Idealny Przewodnik (\\(\\sigma\\to\\infty\\)):",
+    "flashcardBack": [
+      "Wewnątrz idealnego przewodnika: \\(\\vec{E} = 0\\) oraz \\(\\vec{B} = 0\\)",
+      "Na powierzchni: \\(E_t = 0\\) (pole \\(\\vec{E}\\) jest ŚCIŚLE PROSTOPADŁE do powierzchni)",
+      "Na powierzchni: \\(B_n = 0\\) (pole \\(\\vec{B}\\) jest ŚCIŚLE STYCZNE do powierzchni)",
+      "Występują skoki: \\(D_n = \\rho_s\\) (ładunek powierzchniowy), \\(H_t = j_s\\) (prąd powierzchniowy)."
     ],
-    tips: [
-      'Dyspersja ogólnie oznacza rozmycie impulsu świetlnego w czasie w miarę pokonywania drogi wzdłuż włókna.',
-      'Zastanów się, jakie są przyczyny rozmycia: zależność prędkości od długości fali (materiałowa), struktura geometryczna falowodu (falowodowa) oraz podróżowanie światła wieloma różnymi ścieżkami.',
-      'Pomyśl o samej nazwie światłowodu: skoro we włóknie istnieje wyłącznie jedna dopuszczalna ścieżka propagacji rozkładu pola, to który rodzaj rozmycia nie ma tam fizycznej racji bytu?'
+    "tips": [
+      "Wewnątrz metalu ładunki natychmiast ekranują jakiekolwiek pole elektryczne.",
+      "Linie pola E muszą wchodzić w metal pod kątem prostym (brak składowej równoległej Et = 0).",
+      "Pole magnetyczne nie może przecinać powierzchni idealnego przewodnika (Bn = 0)."
     ],
-    tip: 'Pomyśl o definicji światłowodu jednomodowego (SMF) – w jego rdzeniu rozchodzi się tylko jeden mod falowy.',
-    relatedRoute: '/teoria/swiatlowody#q10'
+    "tip": "Na granicy idealnego przewodnika: E_t = 0 (pole E prostopadłe), B_n = 0 (pole B styczne).",
+    "relatedRoute": "/teoria/fala-propagacja#q3"
   },
   {
-    id: 'opt-4',
-    category: 'swiatlowody',
-    categoryLabel: 'Światłowody i optyka',
-    tier: 'tier1',
-    question: 'Dlaczego III okno telekomunikacyjne (1550 nm) jest preferowane do łączy dalekosiężnych?',
-    options: [
-      'Występuje tam globalne minimum tłumienności krzemionki (ok. 0,2 dB/km) oraz dostępne są optyczne wzmacniacze domieszkowane erbem (EDFA).',
-      'W tym oknie dyspersja chromatyczna standardowego włókna SMF wynosi dokładnie 0 ps/(nm·km).',
-      'Rozpraszanie Rayleigha osiąga w tym zakresie swoje lokalne maksimum, wzmacniając sygnał.',
-      'Promieniowanie 1550 nm jest całkowicie niewrażliwe na jakiekolwiek zgięcia kabla światłowodowego.'
+    "id": "em-poynting",
+    "category": "fale_em",
+    "categoryLabel": "Fale i propagacja EM",
+    "tier": "tier2",
+    "question": "Wektor Poyntinga \\(\\vec{S} = \\vec{E} \\times \\vec{H}\\) określa:",
+    "options": [
+      "Gęstość strumienia mocy fali elektromagnetycznej oraz kierunek jej propagacji, a jego jednostką w układzie SI jest \\(\\mathrm{W/m^2}\\).",
+      "Całkowitą energię zmagazynowaną w polu elektrostatycznym dielektryka o jednostce dżul [J].",
+      "Siłę działającą na jednostkowy ładunek poruszający się w polu magnetycznym o jednostce niuton [N].",
+      "Wektor polaryzacji dielektrycznej o jednostce kulomb na metr kwadratowy [C/m²]."
     ],
-    correctIndex: 0,
-    explanation: 'W oknie 1550 nm (pasmo C) tłumienie krzemionki \\(\\mathrm{SiO_2}\\) osiąga absolutne minimum \\(\\approx 0{,}18 - 0{,}2\\ \\mathrm{dB/km}\\). Ponadto w tym paśmie idealnie pracują optyczne wzmacniacze EDFA. (Uwaga: zerowa dyspersja standardowego włókna SMF-28 wypada w II oknie przy 1310 nm, a nie przy 1550 nm).',
-    flashcardFront: 'Cechy III okna telekomunikacyjnego (\\(\\lambda = 1550\\ \\mathrm{nm}\\)):',
-    flashcardBack: [
-      'Najmniejsze tłumienie liniowe włókna krzemionkowego: \\(\\alpha \\approx 0{,}2\\ \\mathrm{dB/km}\\).',
-      'Idealne pasmo pracy wzmacniaczy optycznych EDFA (1530–1565 nm).',
-      'Standardowe włókno SMF ma tu dodatnią dyspersję chromatyczną (\\(D \\approx +17\\ \\mathrm{ps/(nm\\cdot km)}\\)), co wymaga kompensacji na długich trasach.',
-      'Znakomite do systemów dalekosiężnych WDM/DWDM.'
+    "correctIndex": 0,
+    "explanation": "Iloczyn wektorowy \\(\\vec{S} = \\vec{E} \\times \\vec{H}\\) to wektor gęstości strumienia mocy promieniowania elektromagnetycznego. Wskazuje on kierunek przepływu energii fali, a jego wartość chwilowa lub średnia ma jednostkę wata na metr kwadratowy (\\(\\mathrm{[V/m] \\times [A/m] = [W/m^2]}\\)).",
+    "flashcardFront": "Wektor Poyntinga \\(\\vec{S} = \\vec{E} \\times \\vec{H}\\) — definicja i jednostka:",
+    "flashcardBack": [
+      "Wzór: \\(\\vec{S} = \\vec{E} \\times \\vec{H}\\)",
+      "Fizyczne znaczenie: Gęstość strumienia mocy fali EM oraz kierunek przepływu energii.",
+      "Jednostka SI: \\(\\mathrm{W/m^2}\\) ([V/m] × [A/m] = [W/m²])."
     ],
-    tips: [
-      'W telekomunikacji światłowodowej dalekiego zasięgu kluczowym problemem jest konieczność regeneracji sygnału – im rzadziej trzeba stawiać wzmacniacze, tym łącze jest tańsze i pewniejsze.',
-      'Przeanalizuj krzywą strat czystego szkła krzemionkowego (\\(\\mathrm{SiO_2}\\)) w funkcji długości fali w zakresie podczerwieni.',
-      'Przy 1310 nm minimalizuje się dyspersja chromatyczna, natomiast przy 1550 nm szkło krzemionkowe osiąga swoje absolutne minimum strat energii na jednostkę długości.'
+    "tips": [
+      "Zwróć uwagę na wymiary jednostek: wolty na metr razy ampery na metr.",
+      "Wolt razy amper to wat — moc.",
+      "Wat podzielony przez metr kwadratowy to powierzchniowa gęstość mocy."
     ],
-    tip: 'W telekomunikacji światłowodowej dalekiego zasięgu kluczowym parametrem jest minimalizacja strat mocy sygnału na kilometr.',
-    relatedRoute: '/teoria/swiatlowody#q9'
+    "tip": "S = E × H [W/m²] określa gęstość strumienia mocy i kierunek rozchodzenia się fali.",
+    "relatedRoute": "/teoria/fala-propagacja#q2"
   },
   {
-    id: 'opt-5',
-    category: 'swiatlowody',
-    categoryLabel: 'Światłowody i optyka',
-    tier: 'tier1',
-    question: 'Na czym polega kompensacja dyspersji chromatycznej za pomocą włókna DCF (Dispersion Compensating Fiber)?',
-    options: [
-      'Dołącza się odcinek włókna DCF o silnie ujemnym współczynniku dyspersji (np. -80 do -100 ps/(nm·km)), tak aby suma iloczynów \\(L_{SMF} D_{SMF} + L_{DCF} D_{DCF} = 0\\).',
-      'Włókno DCF podgrzewa impulsy laserowe, co przyspiesza składowe widmowe o dłuższej fali.',
-      'Włókno DCF całkowicie pochłania skrajne częstotliwości widma impulsu, zmniejszając szerokość pasma.',
-      'Zmienia się kierunek polaryzacji światła o 90 stopni co każdy kilometr linii.'
+    "id": "em-prop-modes",
+    "category": "fale_em",
+    "categoryLabel": "Fale i propagacja EM",
+    "tier": "tier1",
+    "question": "Omów mechanizmy propagacji fal powierzchniowych, troposferycznych i jonosferycznych oraz ich typowe zakresy:",
+    "options": [
+      "Powierzchniowe uginają się wzdłuż krzywizny Ziemi (LF/MF); troposferyczne rozchodzą się dzięki refrakcji i falowodom w troposferze (VHF/UHF); jonosferyczne odbijają się od jonosfery umożliwiając łączność dalekosiężną (HF 3–30 MHz).",
+      "Powierzchniowe przenikają przez jądro Ziemi; troposferyczne odbijają się od pasów Van Allena; jonosferyczne stosowane są wyłącznie w światłowodach kwarcowych.",
+      "Powierzchniowe wymagają polaryzacji poziomej w pasmie mikrofalowym; troposferyczne nie ulegają zjawisku refrakcji; jonosferyczne służą do łączności podwodnej.",
+      "Wszystkie trzy typy fal mają identyczny zasięg ograniczony geometrycznym horyzontem optycznym."
     ],
-    correctIndex: 0,
-    explanation: 'Standardowe włókno jednomodowe ma przy 1550 nm dyspersję \\(D_{SMF} \\approx +17\\ \\mathrm{ps/(nm\\cdot km)}\\) (czerwone składowe biegną szybciej niż niebieskie). Włókno DCF ma specjalnie zmodyfikowany profil z silnie ujemną dyspersją falowodową (\\(D_{DCF} \\approx -80\\ \\mathrm{ps/(nm\\cdot km)}\\)). Dobierając długość tak, by \\(D_1 L_1 + D_2 L_2 = 0\\), impuls odzyskuje pierwotną szerokość czasową.',
-    flashcardFront: 'Warunek kompensacji dyspersji chromatycznej włóknem DCF:',
-    flashcardBack: [
-      'Równanie kompensacji: \\(L_{SMF} \\cdot D_{SMF} + L_{DCF} \\cdot D_{DCF} = 0\\)',
-      'Wzór na długość włókna DCF: \\(L_{DCF} = -L_{SMF} \\frac{D_{SMF}}{D_{DCF}}\\)',
-      'Włókno DCF ma dużą UJEMNĄ dyspersję (np. \\(-80\\ \\mathrm{ps/(nm\\cdot km)}\\)).',
-      'Wada DCF: mały rdzeń i wyższa tłumienność (ok. \\(0{,}5\\ \\mathrm{dB/km}\\)), co obciąża budżet mocy.'
+    "correctIndex": 0,
+    "explanation": "Fale powierzchniowe (przyziemne) uginają się wzdłuż krzywizny Ziemi przy pionowej polaryzacji (pasma LF/MF); są silnie tłumione przez rezystywność gruntu (nad morzem zasięg jest wielokrotnie większy). Fale troposferyczne uginają się ku Ziemi dzięki gradientowi współczynnika załamania powietrza (standardowa refrakcja \\(R_z' = \\frac{4}{3}R_z\\) w VHF/UHF). Fale jonosferyczne (przestrzenne) odbijają się od zjonizowanych warstw jonosfery (D, E, F1, F2), zapewniając łączność na tysiące kilometrów w paśmie fal krótkich (HF 3–30 MHz).",
+    "flashcardFront": "Fale powierzchniowe, troposferyczne i jonosferyczne — porównanie:",
+    "flashcardBack": [
+      "Powierzchniowe (LF/MF): uginają się wzdłuż krzywizny Ziemi; wymagają polaryzacji pionowej; tłumione przez grunt (duży zasięg nad wodą).",
+      "Troposferyczne (VHF/UHF): uginanie w troposferze na skutek refrakcji (zastępczy promień Ziemi \\(R_z' = \\frac{4}{3}R_z\\)).",
+      "Jonosferyczne (HF 3–30 MHz): wielokrotne odbicia od warstw jonosfery i powierzchni Ziemi; łączność międzykontynentalna."
     ],
-    tips: [
-      'Podczas propagacji w standardowym włóknie jednomodowym poszczególne składowe widmowe impulsu poruszają się z nieco różnymi prędkościami, co powoduje „rozciąganie” bitów w czasie.',
-      'Współczynnik dyspersji chromatycznej standardowego włókna (SMF-28) w oknie 1550 nm ma określoną wartość dodatnią (ok. +17 ps/(nm·km)).',
-      'Aby przywrócić pierwotny kształt impulsu na końcu toru, trzeba przepuścić go przez odcinek ośrodka, który wprowadzi dokładnie przeciwny efekt opóźnienia składowych.'
+    "tips": [
+      "Fale krótkie (HF) kojarz z jonosferą i dalekimi zasięgami globalnymi.",
+      "Fale troposferyczne to telewizja naziemna i radio FM (VHF/UHF) z ugięciem refrakcyjnym 4/3 R_Z.",
+      "Fale długie i średnie (LF/MF) płyną przy samej ziemi jako fala powierzchniowa."
     ],
-    tip: 'Zastanów się, jak skompensować poszerzenie impulsu spowodowane dodatnią dyspersją chromatyczną standardowego włókna SMF-28.',
-    relatedRoute: '/teoria/swiatlowody#q11'
+    "tip": "Powierzchniowe (LF/MF, wzdłuż Ziemi), troposferyczne (VHF/UHF, refrakcja), jonosferyczne (HF, odbicia od jonosfery).",
+    "relatedRoute": "/teoria/fala-propagacja#q4"
   },
   {
-    id: 'opt-6',
-    category: 'swiatlowody',
-    categoryLabel: 'Światłowody i optyka',
-    tier: 'tier1',
-    question: 'W równaniu budżetu mocy łącza optycznego: \\(P_R = P_T - \\alpha L - \\sum A_z - \\sum A_s - M\\), czym jest składnik \\(M\\)?',
-    options: [
-      'Marginesem bezpieczeństwa (typowo 3–6 dB) uwzględniającym starzenie się komponentów, dryft temperatury i przyszłe naprawy (spawy remontowe).',
-      'Maksymalną mocą nieliniową Brillouina, powyżej której sygnał ulega rozproszeniu wstecznemu.',
-      'Liczbą modów prowadzonych przez złącza optyczne na trasie transmisji.',
-      'Współczynnikiem modulacji fazowej w nadajniku laserowym.'
+    "id": "em-prop-atmos-itur",
+    "category": "fale_em",
+    "categoryLabel": "Fale i propagacja EM",
+    "tier": "tier1",
+    "question": "Wskaż kluczowe zjawiska opisane na krzywej tłumienia atmosferycznego ITU-R P.676:",
+    "options": [
+      "Rezonansowe piki absorpcji cząsteczkowej pary wodnej \\(\\mathrm{H_2O}\\) (ok. 22,2 GHz i 183 GHz) oraz tlenu cząsteczkowego \\(\\mathrm{O_2}\\) (silny pik ok. 60 GHz); deszcz wywołuje drastyczny wzrost tłumienia powyżej 10 GHz.",
+      "Całkowity brak tłumienia sygnałów radiowych w oknie 60 GHz ze względu na zjawisko nadprzewodnictwa powietrza.",
+      "Liniowy spadek tłumienia wraz ze wzrostem częstotliwości aż do pasma promieniowania rentgenowskiego.",
+      "Absorpcja fal radiowych zachodzi wyłącznie na jonach azotu w temperaturze poniżej zera stopni Celsjusza."
     ],
-    correctIndex: 0,
-    explanation: 'Margines systemowy \\(M\\) (System Margin) projektuje się na poziomie od 3 do 6 dB. Gwarantuje on bezawaryjną pracę łącza przez planowany okres eksploatacji (np. 15–25 lat), kiedy laser traci sprawność (starzenie), rosną straty na złączach i pojawiają się dodatkowe spawy po awariach kabla.',
-    flashcardFront: 'Budżet mocy (Power Budget) — znaczenie marginesu bezpieczeństwa M:',
-    flashcardBack: [
-      'Wzór: \\(P_R = P_T - \\alpha L - N_z A_z - N_s A_s - M\\)',
-      '\\(M\\) — Margines systemowy (zazwyczaj 3 do 6 dB).',
-      'Zabezpiecza przed starzeniem lasera (spadek mocy), wahaniami temperatury oraz naprawami kabla (nowe spawy po zerwaniach).',
-      'Warunek poprawności łącza: moc na odbiorniku \\(P_R\\) musi być \\(\\ge\\) czułości odbiornika \\(P_{R,min}\\).'
+    "correctIndex": 0,
+    "explanation": "Wykres ITU-R P.676 przedstawia tłumienie właściwe gazów atmosferycznych [dB/km]. Kluczowe cechy to rezonansowe piki absorpcji molekularnej: dipolowy rezonans pary wodnej (H2O) przy 22,2 GHz oraz magnetyczny rezonans tlenu cząsteczkowego (O2) przy 60 GHz (ponad 15 dB/km). Z tego powodu pasmo 60 GHz stosuje się w łącznościach bliskiego zasięgu (np. WiGig). Dla f > 10 GHz dodatkowo decydujący wpływ ma deszcz (krople wody o rozmiarze rzędu długości fali rozpraszają i pochłaniają energię fali).",
+    "flashcardFront": "Tłumienie atmosferyczne (ITU-R P.676) — najważniejsze punkty:",
+    "flashcardBack": [
+      "Pik absorpcji pary wodnej (\\(\\mathrm{H_2O}\\)): ok. 22,2 GHz (oraz 183 GHz).",
+      "Pik absorpcji tlenu (\\(\\mathrm{O_2}\\)): ok. 60 GHz (silne tłumienie > 15 dB/km, bezpieczna łączność lokalna).",
+      "Wpływ opadów (deszcz, mgła): gwałtowny wzrost tłumienia dla częstotliwości powyżej 10 GHz (rozmiar kropel zbliżony do \\(\\lambda\\))."
     ],
-    tips: [
-      'Budżet mocy to rachunek zysków i strat mocy optycznej w torze transmisyjnym – pozwala inżynierowi ocenić, czy sygnał na drugim końcu włókna będzie czytelny.',
-      'Zastanów się, co dzieje się z mocą wyemitowaną przez nadajnik w miarę pokonywania kolejnych kilometrów kabla, złączy rozłączalnych i spawów stałych.',
-      'Równanie to wyznacza poziom mocy, jaki dociera na element odbiorczy (fotodiodę) po odliczeniu wszystkich tłumień i rezerwy eksploatacyjnej.'
+    "tips": [
+      "Przypomnij sobie dwa gazy odpowiedzialne za piki na wykresie: para wodna i tlen.",
+      "Para wodna pochłania przy ok. 22 GHz, a tlen tworzy wielki szczyt tłumienia przy 60 GHz.",
+      "Powyżej 10 GHz krople deszczu stają się porównywalne z długością fali."
     ],
-    tip: 'Budżet mocy (Power Budget) to bilans strat mocy optycznej od nadajnika (Tx) do odbiornika (Rx).',
-    relatedRoute: '/teoria/swiatlowody#q12'
+    "tip": "Pik H2O przy 22,2 GHz, pik O2 przy 60 GHz. Deszcz dominuje powyżej 10 GHz.",
+    "relatedRoute": "/teoria/fala-propagacja#q4"
   },
   {
-    id: 'opt-7',
-    category: 'swiatlowody',
-    categoryLabel: 'Światłowody i optyka',
-    tier: 'tier2',
-    question: 'Dlaczego światłowód o profilu gradientowym (Graded-Index) ma znacznie mniejszą dyspersję modową niż światłowód o profilu skokowym (Step-Index)?',
-    options: [
-      'Promienie biegnące dłuższym torem krzywoliniowym w strefach zewnętrznych poruszają się szybciej, ponieważ współczynnik załamania płynnie maleje w stronę płaszcza.',
-      'Światło w profilu gradientowym porusza się wyłącznie po linii prostej wzdłuż osi rdzenia.',
-      'Gradient domieszkowania całkowicie eliminuje odbicia promieni od granicy rdzeń-płaszcz.',
-      'W profilu gradientowym elektrony przewodnictwa ekranują fale o wyższych częstotliwościach.'
+    "id": "em-wave-phenomena",
+    "category": "fale_em",
+    "categoryLabel": "Fale i propagacja EM",
+    "tier": "tier2",
+    "question": "Czym różni się dyfrakcja od interferencji fali elektromagnetycznej?",
+    "options": [
+      "Dyfrakcja to ugięcie fali na przeszkodzie lub krawędzi o rozmiarach porównywalnych z długością fali (zasada Huygensa), a interferencja to nakładanie się spójnych fal dające przestrzenny rozkład wzmocnień i wygaszeń.",
+      "Dyfrakcja zachodzi wyłącznie w próżni, a interferencja wymaga obecności ośrodka nieliniowego o wysokiej mocy.",
+      "Dyfrakcja dotyczy tylko fal akustycznych, podczas gdy interferencja występuje wyłącznie w optyce kwantowej.",
+      "Dyfrakcja powoduje bezpowrotne pochłanianie energii fali, a interferencja podwaja całkowitą moc promieniowania."
     ],
-    correctIndex: 0,
-    explanation: 'W profilu gradientowym współczynnik załamania maleje z odległością od osi: \\(v(r) = c/n(r)\\). Mody wyższych rzędów wędrują dalej od osi (dłuższa droga geometryczna), ale przebywają tam w ośrodku o mniejszym współczynniku \\(n\\), więc poruszają się szybciej. W efekcie wszystkie mody docierają na koniec włókna niemal w tym samym czasie.',
-    flashcardFront: 'Zasada redukcji dyspersji modowej w światłowodzie gradientowym:',
-    flashcardBack: [
-      'Współczynnik załamania \\(n(r)\\) maleje parabolicznie od osi ku płaszczowi.',
-      'Prędkość fali wynosi \\(v = c/n\\) — na zewnątrz rdzenia światło porusza się SZYBCIEJ.',
-      'Promienie o dłuższej drodze (mody wyższe) nadrabiają czas większą prędkością!',
-      'Dyspersja modowa spada nawet 100-krotnie w porównaniu ze światłowodem skokowym.'
+    "correctIndex": 0,
+    "explanation": "Dyfrakcja to zjawisko ugięcia fali i jej wnikania w obszar cienia geometrycznego przy ominięciu przeszkody lub przejściu przez szczelinę o rozmiarze rzędu długości fali (wyjaśniane zasadą Huygensa-Fresnela). Interferencja to zjawisko nakładania się co najmniej dwóch fal spójnych (koherentnych), prowadzące do ich wzajemnego wzmocnienia (gdy różnica dróg wynosi \\(\\Delta s = m\\lambda\\)) lub wygaszenia (gdy \\(\\Delta s = (m + 1/2)\\lambda\\)).",
+    "flashcardFront": "Dyfrakcja vs Interferencja fal elektromagnetycznych:",
+    "flashcardBack": [
+      "Dyfrakcja: Ugięcie fali wokół krawędzi przeszkody lub przez szczelinę porównywalną z \\(\\lambda\\) (zasada Huygensa-Fresnela).",
+      "Interferencja: Nakładanie się fal spójnych (koherentnych).",
+      "Warunek wzmocnienia (konstruktywna): różnica dróg \\(\\Delta s = m\\lambda\\).",
+      "Warunek wygaszenia (destruktywna): różnica dróg \\(\\Delta s = (m + 1/2)\\lambda\\)."
     ],
-    tips: [
-      'W światłowodzie wielomodowym o profilu skokowym promienie biegnące po trajektoriach skośnych mają dłuższą drogę do przebycia niż promień osiowy, co prowadzi do rozmycia czasowego.',
-      'W profilu gradientowym współczynnik załamania światła nie jest stały, lecz płynnie maleje w miarę oddalania się od środka rdzenia w stronę płaszcza.',
-      'Przypomnij sobie wzór na prędkość fazową światła w ośrodku: \\(v = c / n\\). W którym obszarze rdzenia światło porusza się szybciej i jak to wpływa na czas przelotu promieni o dłuższych trajektoriach?'
+    "tips": [
+      "Ugięcie za róg budynku lub przeszkody to dyfrakcja.",
+      "Powstawanie prążków jasnych i ciemnych z dwóch szczelin to interferencja.",
+      "Interferencja wymaga fal koherentnych o stałej różnicy faz."
     ],
-    tip: 'W profilu gradientowym (Graded-Index) współczynnik załamania płynnie maleje od osi rdzenia ku płaszczowi.',
-    relatedRoute: '/teoria/swiatlowody#q8'
-  },
-
-  // ==========================================
-  // 3. MODULACJA, JAKOŚĆ SYGNAŁU I MULTIPLEKSACJA
-  // ==========================================
-  {
-    id: 'mod-1',
-    category: 'modulacja',
-    categoryLabel: 'Modulacja i multipleksacja',
-    tier: 'tier1',
-    question: 'Co na wykresie oka (Eye Diagram) reprezentuje pionowe rozwarcie oka (Eye Height)?',
-    options: [
-      'Margines odporności na szum (Noise Margin) — im większe rozwarcie pionowe, tym mniejsze prawdopodobieństwo błędnej decyzji detektora.',
-      'Maksymalny jitter fazowy zegara taktującego w odbiorniku.',
-      'Szybkość narastania zboczy impulsów wynikającą z pasma wzmacniacza.',
-      'Całkowitą liczbę bitów przesłanych w kanale telekomunikacyjnym.'
-    ],
-    correctIndex: 0,
-    explanation: 'Wysokość rozwarcia oka (Eye Height) odzwierciedla margines szumu: różnicę między poziomem sygnału dla jedynki logicznej a progiem decyzyjnym. Szerokość oka (Eye Width) odzwierciedla odporność na fluktuacje fazowe (jitter), a nachylenie zboczy określa wrażliwość na błędy synchronizacji czasowej.',
-    flashcardFront: 'Parametry wykresu oka (Eye Diagram) i ich interpretacja:',
-    flashcardBack: [
-      'PIONOWE rozwarcie oka: Margines odporności na szum (Noise Margin).',
-      'POZIOME rozwarcie oka: Margines odporności na jitter czasowy (timing jitter).',
-      'Grubość linii na górze/dole: Szum amplitudy i dyspersja.',
-      'Zamknięte oko: Brak możliwości bezbłędnego odczytu bitów (wysoki BER).'
-    ],
-    tips: [
-      'Wykres oka to obraz powstający na ekranie oscyloskopu poprzez nakładanie na siebie wielu kolejnych przebiegów bitowych sygnału cyfrowego.',
-      'Na osi pionowej oscyloskop mierzy napięcie (lub natężenie sygnału), a na osi poziomej upływ czasu.',
-      'Rozważ pionowy wymiar „otwarcia” wewnętrznego obszaru oka w punkcie optymalnej decyzji próbkującej: o czym informuje odległość między poziomem jedynki a zera w obecności zakłóceń?'
-    ],
-    tip: 'Wykres oka powstaje z nałożenia na siebie kolejnych przebiegów bitowych na ekranie oscyloskopu.',
-    relatedRoute: '/teoria/modulacja#q13'
+    "tip": "Dyfrakcja = ugięcie na przeszkodzie. Interferencja = nakładanie fal spójnych ze wzmocnieniem lub wygaszeniem.",
+    "relatedRoute": "/teoria/fala-propagacja#q2"
   },
   {
-    id: 'mod-2',
-    category: 'modulacja',
-    categoryLabel: 'Modulacja i multipleksacja',
-    tier: 'tier1',
-    question: 'Czym jest zjawisko mieszania czterofalowego (FWM - Four-Wave Mixing) w systemach DWDM?',
-    options: [
-      'Nieliniowym zjawiskiem trzeciego rzędu (\\(\\chi^{(3)}\\)), w którym oddziaływanie trzech fal o częstotliwościach \\(f_i, f_j, f_k\\) generuje nową pasożytniczą falę \\(f_{ijk} = f_i + f_j - f_k\\).',
-      'Czwórkowym kodowaniem bitów eliminującym zjawisko dyspersji polaryzacyjnej.',
-      'Odbiciem fali świetlnej od czterech kolejnych złącz mechanicznych w kasecie spawów.',
-      'Liniowym tłumieniem sygnału optycznego spowodowanym obecnością jonów hydroksylowych OH-.'
+    "id": "em-wave-freq-power",
+    "category": "fale_em",
+    "categoryLabel": "Fale i propagacja EM",
+    "tier": "tier2",
+    "question": "Wskaż poprawny podział zjawisk falowych obserwowanych w łączach na zależne od częstotliwości (liniowe) oraz zależne od mocy sygnału (nieliniowe):",
+    "options": [
+      "Zależne od częstotliwości: dyspersja chromatyczna, tłumienie molekularne i odcięcie modów falowodowych; zależne od mocy: mieszanie czterofalowe (FWM), automodulacja fazy (SPM) i modulacja skrośna (XPM).",
+      "Zależne od częstotliwości: wyłącznie zjawisko Kerra i prąd unoszenia; zależne od mocy: polaryzacja próżni i dywergencja Gaussa.",
+      "Zjawiska liniowe nie zależą od żadnego parametru, a zjawiska nieliniowe zależą wyłącznie od temperatury złącza.",
+      "Zależne od mocy: dyspersja chromatyczna i odbicie Fresnela; zależne od częstotliwości: mieszanie czterofalowe."
     ],
-    correctIndex: 0,
-    explanation: 'Mieszanie czterofalowe (FWM) to zjawisko nieliniowe zachodzące przy dużych gęstościach mocy optycznej w światłowodzie. Fale o różnych częstotliwościach interferują i modulują współczynnik załamania szkła (efekt Kerra), tworząc siatki refrakcyjne generujące nowe częstotliwości pasożytnicze, które zakłócają sąsiednie kanały DWDM.',
-    flashcardFront: 'Zjawisko mieszania czterofalowego (FWM) w łączach DWDM:',
-    flashcardBack: [
-      'Zjawisko nieliniowe trzeciego rzędu (zależne od mocy i nieliniowej podatności szkła).',
-      'Generacja fal pasożytniczych wg reguły: \\(f_{ijk} = f_i + f_j - f_k\\).',
-      'Liczba fal pasożytniczych dla \\(N\\) kanałów: \\(N_{FWM} = \\frac{N^2(N - 1)}{2}\\).',
-      'Najsilniej występuje przy RÓWNYCH odstępach kanałów i ZEROWEJ dyspersji chromatycznej.',
-      'Sposób walki: włókna NZDSF (z niezerową dyspersją) i nierównomierne odstępy siatki ITU.'
+    "correctIndex": 0,
+    "explanation": "W łączach telekomunikacyjnych zjawiska liniowe zależą od częstotliwości sygnału (i długości fali): dyspersja materiałowa, rozpraszanie Rayleigha (\\(\\propto 1/\\lambda^4\\)), absorpcja w oknach atmosferycznych oraz warunek jednomodowości \\(V(\\lambda)\\). Zjawiska nieliniowe pojawiają się przy wysokich gęstościach mocy optycznej (efekt Kerra): FWM (mieszanie czterofalowe), SPM (automodulacja fazy), XPM (modulacja skrośna) oraz rozpraszanie Ramana i Brillouina.",
+    "flashcardFront": "Zjawiska falowe: Zależne od częstotliwości vs zależne od mocy:",
+    "flashcardBack": [
+      "Zależne od CZĘSTOTLIWOŚCI (liniowe): Dyspersja chromatyczna, tłumienie Rayleigha (\\(1/\\lambda^4\\)), tłumienie atmosferyczne ITU-R, odcięcie modów.",
+      "Zależne od MOCY (nieliniowe, optyka nieliniowa): Mieszanie czterofalowe (FWM), automodulacja fazy (SPM), modulacja skrośna (XPM), rozpraszanie SBS/SRS.",
+      "Klucz: Nieliniowości gwałtownie rosną przy wzroście mocy lasera wejściowego!"
     ],
-    tips: [
-      'Zjawisko to zalicza się do efektów nieliniowych trzeciego rzędu (podatność nieliniowa szkła), które ujawniają się przy dużych mocach optycznych i gęstym upakowaniu fal.',
-      'Gdy w jednym włóknie propaguje się równolegle kilka nośnych o różnych częstotliwościach, zachodzi ich wzajemna intermodulacja.',
-      'Nazwa zjawiska wprost wskazuje liczbę fal biorących udział w oddziaływaniu: fale o częstotliwościach pierwotnych mieszają się, tworząc nowe prążki częstotliwościowe.'
+    "tips": [
+      "Pomyśl, co się dzieje, gdy zmieniasz kolor lasera (długość fali/częstotliwość) — zmienia się tłumienie i dyspersja.",
+      "Pomyśl, co się dzieje, gdy „podkręcasz” moc lasera z 1 mW do 40 mW — wchodzą nieliniowości FWM.",
+      "Zjawiska mocy to optyka nieliniowa (efekt Kerra)."
     ],
-    tip: 'FWM (Four-Wave Mixing) to nieliniowe zjawisko optyczne trzeciego rzędu zachodzące w światłowodach przy dużych gęstościach mocy.',
-    relatedRoute: '/teoria/modulacja#q15'
+    "tip": "Częstotliwość -> dyspersja, tłumienie, Rayleigh. Moc -> nieliniowości FWM, SPM, XPM.",
+    "relatedRoute": "/teoria/fala-propagacja#q2"
   },
   {
-    id: 'mod-3',
-    category: 'modulacja',
-    categoryLabel: 'Modulacja i multipleksacja',
-    tier: 'tier1',
-    question: 'Ile pasożytniczych częstotliwości FWM powstanie w łączu DWDM pracującym na \\(N = 4\\) kanałach laserowych przy równomiernym odstępie częstotliwości?',
-    options: [
-      '24',
-      '12',
-      '16',
-      '48'
+    "id": "opt-tir-na",
+    "category": "swiatlowody",
+    "categoryLabel": "Światłowody i optyka",
+    "tier": "tier1",
+    "question": "Jaki jest podstawowy warunek propagacji fali we włóknie światłowodowym oraz czym jest apertura numeryczna (NA)?",
+    "options": [
+      "Warunkiem jest całkowite wewnętrzne odbicie (TIR) na granicy rdzeń-płaszcz (\\(n_1 > n_2\\)); apertura numeryczna to \\(\\mathrm{NA} = \\sin\\theta_{acc} = \\sqrt{n_1^2 - n_2^2}\\) określająca zdolność włókna do wprowadzania światła z powietrza.",
+      "Warunkiem jest rezonans plazmowy w płaszczu przy \\(n_1 < n_2\\); NA to stosunek długości rdzenia do jego średnicy.",
+      "Warunkiem jest polaryzacja kołowa fali padającej; NA określa tłumienie w decybelach na kilometr.",
+      "Warunkiem jest idealne dopasowanie fazowe bez odbicia; NA to kąt Brewstera dla szkła kwarcowego."
     ],
-    correctIndex: 0,
-    explanation: 'Wzór na liczbę generowanych fal FWM wynosi: \\(N_{FWM} = \\frac{N^2(N - 1)}{2}\\). Dla \\(N = 4\\): \\(N_{FWM} = \\frac{4^2 \\cdot (4 - 1)}{2} = \\frac{16 \\cdot 3}{2} = \\frac{48}{2} = 24\\). Fale te odbierają moc kanałom użytecznym i nakładają się na nie jako zakłócenia.',
-    flashcardFront: 'Wzór na liczbę prążków FWM dla N kanałów DWDM:',
-    flashcardBack: [
-      'Wzór: \\(N_{FWM} = \\frac{N^2(N - 1)}{2}\\)',
-      'Dla \\(N=3\\) kanałów: \\(N_{FWM} = 3^2 \\cdot 2 / 2 = 9\\)',
-      'Dla \\(N=4\\) kanałów: \\(N_{FWM} = 16 \\cdot 3 / 2 = 24\\)',
-      'Dla \\(N=8\\) kanałów: \\(N_{FWM} = 64 \\cdot 7 / 2 = 224\\) fal pasożytniczych!'
+    "correctIndex": 0,
+    "explanation": "Światło jest prowadzone w rdzeniu dzięki zjawisku całkowitego wewnętrznego odbicia (TIR), które wymaga, aby współczynnik załamania rdzenia był większy niż płaszcza (\\(n_1 > n_2\\)). Kąt graniczny wynosi \\(\\sin\\theta_c = n_2/n_1\\). Apertura numeryczna \\(\\mathrm{NA} = \\sin\\theta_{acc} = \\sqrt{n_1^2 - n_2^2}\\) określa maksymalny kąt stożka akceptacji światła wpadającego z powietrza (\\(n_0=1\\)).",
+    "flashcardFront": "Warunek propagacji i apertura numeryczna (NA) światłowodu:",
+    "flashcardBack": [
+      "Całkowite wewnętrzne odbicie (TIR): Wymóg \\(n_1 > n_2\\) (rdzeń gęstszy optycznie niż płaszcz).",
+      "Kąt graniczny: \\(\\sin\\theta_c = n_2 / n_1\\).",
+      "Apertura numeryczna: \\(\\mathrm{NA} = \\sin\\theta_{acc} = \\sqrt{n_1^2 - n_2^2}\\).",
+      "Określa maksymalny kąt stożka wlotowego, pod jakim światło może być wprowadzone do rdzenia."
     ],
-    tips: [
-      'Zadanie wymaga zastosowania wzoru kombinatorycznego na liczbę produktów mieszania nieliniowego dla zadanego zestawu nośnych.',
-      'Dla \\(N\\) kanałów optycznych generowane są częstotliwości kombinacyjne postaci \\(f_{ijk} = f_i + f_j - f_k\\).',
-      'Zależność określająca łączną liczbę takich pasożytniczych produktów wynosi \\(M = \\frac{N^2 (N - 1)}{2}\\). Podstaw do niej liczbę kanałów z treści zadania.'
+    "tips": [
+      "Pomyśl o szkle i powietrzu: światło musi odbijać się wewnątrz gęstszego ośrodka.",
+      "Współczynnik załamania rdzenia n1 musi przewyższać n2 płaszcza.",
+      "Apertura numeryczna NA to pierwiastek z różnicy kwadratów współczynników załamania."
     ],
-    tip: 'Skorzystaj z kombinatorycznego wzoru na liczbę produktów mieszania czterofalowego dla \(N\) kanałów optycznych.',
-    relatedRoute: '/teoria/modulacja#q15'
+    "tip": "Warunek TIR: n1 > n2. Apertura numeryczna: NA = √(n1² - n2²) = sin(θ_acc).",
+    "relatedRoute": "/teoria/swiatlowody#q8"
   },
   {
-    id: 'mod-4',
-    category: 'modulacja',
-    categoryLabel: 'Modulacja i multipleksacja',
-    tier: 'tier2',
-    question: 'Czym różni się multipleksacja z podziałem czasu (TDM) od multipleksacji z podziałem częstotliwości/długości fali (FDM / WDM)?',
-    options: [
-      'W TDM każdy użytkownik otrzymuje całe pasmo transmisyjne na przydzielony krótki wycinek czasu (szczelinę czasową), a w FDM/WDM sygnały nadają ciągle na odrębnych częstotliwościach.',
-      'W TDM sygnały transmitowane są tylko w jedną stronę (simplex), a w FDM w dwie strony (duplex).',
-      'W TDM nośna optyczna modulowana jest amplitudowo, a w WDM wyłącznie kątowo.',
-      'W TDM nie jest wymagana żadna synchronizacja zegarowa pomiędzy nadajnikiem a odbiornikiem.'
+    "id": "opt-v-number",
+    "category": "swiatlowody",
+    "categoryLabel": "Światłowody i optyka",
+    "tier": "tier1",
+    "question": "Jak definiuje się znormalizowaną częstotliwość \\(V\\) oraz jaki jest warunek pracy włókna o profilu skokowym w reżimie jednomodowym?",
+    "options": [
+      "\\(V = \\frac{2\\pi a}{\\lambda}\\mathrm{NA} = \\frac{2\\pi a}{\\lambda}\\sqrt{n_1^2 - n_2^2}\\); włókno jest jednomodowe, gdy \\(V < 2,405\\) (propaguje wyłącznie mod podstawowy \\(\\mathrm{HE_{11}} / \\mathrm{LP_{01}}\\)).",
+      "\\(V = \\frac{\\lambda}{2\\pi a \\mathrm{NA}}\\); włókno jest jednomodowe, gdy \\(V > 2,405\\).",
+      "\\(V = 2\\pi a \\cdot (n_1 + n_2)\\); włókno jest jednomodowe dla \\(V = 0\\).",
+      "\\(V = \\frac{c}{\\lambda}\\); włókno jest jednomodowe przy częstotliwości powyżej 193 THz."
     ],
-    correctIndex: 0,
-    explanation: 'TDM (Time Division Multiplexing) dzieli oś czasu na szczeliny (time slots) powtarzające się w ramkach — każdy kanał ma całe pasmo, ale tylko przez ułamek sekundy. FDM/WDM (Frequency/Wavelength Division Multiplexing) dzieli pasmo częstotliwości na niezależne podkanały pracujące jednocześnie.',
-    flashcardFront: 'TDM vs FDM/WDM — kluczowa różnica architektoniczna:',
-    flashcardBack: [
-      'TDM (czas): Całe pasmo łącza dostępne dla danego kanału, ale tylko w przydzielonej szczelinie czasowej (time slot). Wymaga precyzyjnej synchronizacji zegarowej.',
-      'FDM/WDM (częstotliwość/fala): Równoległa, jednoczesna transmisja wielu sygnałów na różnych częstotliwościach fali nośnej.',
-      'WDM to w istocie FDM realizowany w dziedzinie fal optycznych (lasery o różnych \\(\\lambda\\)).'
+    "correctIndex": 0,
+    "explanation": "Znormalizowana częstotliwość (parametr V) określa właściwości falowodowe włókna: \\(V = \\frac{2\\pi a}{\\lambda}\\sqrt{n_1^2 - n_2^2}\\), gdzie \\(a\\) to promień rdzenia. Pierwszym pierwiastkiem funkcji Bessela \\(J_0(x)\\) jest liczba 2,405. Jeśli \\(V < 2,405\\), wszystkie wyższe mody są odcięte i propaguje wyłącznie jeden mod podstawowy \\(\\mathrm{HE_{11}}\\) (w ujęciu modów liniowo spolaryzowanych: \\(\\mathrm{LP_{01}}\\)).",
+    "flashcardFront": "Parametr \\(V\\) i warunek światłowodu jednomodowego (SMF):",
+    "flashcardBack": [
+      "Wzór na znormalizowaną częstotliwość: \\(V = \\frac{2\\pi a}{\\lambda}\\mathrm{NA} = \\frac{2\\pi a}{\\lambda}\\sqrt{n_1^2 - n_2^2}\\)",
+      "Warunek jednomodowości: \\(V < 2,405\\) (dla profilu skokowego).",
+      "Propaguje wyłącznie mod podstawowy: \\(\\mathrm{HE_{11}}\\) (czyli \\(\\mathrm{LP_{01}}\\)).",
+      "Dla \\(V \\ge 2,405\\) włókno staje się wielomodowe."
     ],
-    tips: [
-      'Pomyśl o różnych sposobach współdzielenia jednego fizycznego medium transmisyjnego (np. kabla miedzianego lub pasma radiowego) przez wielu użytkowników.',
-      'Jeden ze sposobów polega na przydzieleniu każdemu użytkownikowi innego pasma częstotliwości, a inny na udostępnieniu całego pasma, ale w ściśle określonych porcjach czasu.',
-      'Przeanalizuj rozwinięcie pierwszych liter w skrótach: litera „T” odnosi się do domeny czasowej, a „F” do domeny częstotliwościowej.'
+    "tips": [
+      "Liczba 2,405 to najważniejsza stała liczbowa optyki światłowodowej.",
+      "Jeśli V jest mniejsze niż 2,405 — światłowód prowadzi tylko jeden mod.",
+      "Promień rdzenia a w światłowodach jednomodowych ma tylko ok. 4–5 mikrometrów."
     ],
-    tip: 'Zwróć uwagę na litery w skrótach: TDM to Time Division, FDM to Frequency Division, a WDM to Wavelength Division.',
-    relatedRoute: '/teoria/modulacja#q14'
-  },
-
-  // ==========================================
-  // 4. PÓŁPRZEWODNIKI I ZŁĄCZE P-N
-  // ==========================================
-  {
-    id: 'semi-1',
-    category: 'polprzewodniki',
-    categoryLabel: 'Półprzewodniki i złącze p-n',
-    tier: 'tier1',
-    question: 'Czym charakteryzuje się domieszkowanie krzemu (Si) atomami pierwiastków z V grupy układu okresowego (np. fosfor P, arsen As)?',
-    options: [
-      'Powstaje półprzewodnik typu n, w którym domieszki są donorami dostarczającymi elektrony — nośnikami większościowymi są elektrony.',
-      'Powstaje półprzewodnik typu p, w którym domieszki są akceptorami wychwytującymi dziury.',
-      'Zmniejsza się przewodność elektryczna materiału do poziomu idealnego dielektryka.',
-      'Poziom Fermiego przesuwa się w stronę wierzchołka pasma walencyjnego.'
-    ],
-    correctIndex: 0,
-    explanation: 'Krzem jest czterowartościowy. Wprowadzenie atomu z V grupy (5 elektronów walencyjnych, np. P, As) sprawia, że 4 elektrony tworzą wiązania kowalencyjne, a 5. elektron łatwo odrywa się i trafia do pasma przewodnictwa. Taka domieszka to donor, a powstały materiał to półprzewodnik typu n (negative), gdzie elektrony są nośnikami większościowymi.',
-    flashcardFront: 'Domieszkowanie typu n vs typu p — reguła grup:',
-    flashcardBack: [
-      'Grupa V (P, As, Sb): DONORY \\(\\to\\) oddają 5. elektron \\(\\to\\) półprzewodnik TYPU N (nośniki większościowe: elektrony).',
-      'Grupa III (B, Al, Ga, In): AKCEPTORY \\(\\to\\) brakuje 1 elektronu (tworzy się dziura) \\(\\to\\) półprzewodnik TYPU P (nośniki większościowe: dziury).',
-      'W półprzewodniku typu n poziom Fermiego leży BLISKO pasma przewodnictwa (\\(E_c\\)).',
-      'W półprzewodniku typu p poziom Fermiego leży BLISKO pasma walencyjnego (\\(E_v\\)).'
-    ],
-    tips: [
-      'Krzem (Si) należy do IV grupy układu okresowego i posiada 4 elektrony walencyjne, którymi tworzy stabilną sieć krystaliczną.',
-      'Zastanów się, co stanie się w sieci krzemu, jeśli w miejsce atomu krzemu wstawi się domieszkę z grupy sąsiedniej, posiadającą 5 elektronów walencyjnych (np. fosfor lub arsen).',
-      'Cztery elektrony domieszki biorą udział w wiązaniach, a piąty elektron zostaje bardzo słabo związany z jądrem i z łatwością przechodzi do pasma przewodnictwa.'
-    ],
-    tip: 'Krzem (Si) jest pierwiastkiem IV grupy układu okresowego i posiada 4 elektrony walencyjne tworzące wiązania kowalencyjne.',
-    relatedRoute: '/teoria/polprzewodniki#q16'
+    "tip": "V = (2π a / λ) · NA. Warunek pracy jednomodowej: V < 2,405 (tylko mod LP01).",
+    "relatedRoute": "/teoria/swiatlowody#q9"
   },
   {
-    id: 'semi-2',
-    category: 'polprzewodniki',
-    categoryLabel: 'Półprzewodniki i złącze p-n',
-    tier: 'tier1',
-    question: 'W stanie równowagi termodynamicznej półprzewodnika poziom Fermiego (\\(E_F\\)) to poziom energetyczny, dla którego:',
-    options: [
-      'Prawdopodobieństwo obsadzenia przez elektron wg rozkładu Fermiego-Diraca wynosi dokładnie 0,5 (50%).',
-      'Wszystkie stany kwantowe są w 100% zapełnione dziurami.',
-      'Energia elektronów osiąga prędkość światła w krysztale.',
-      'Koncentracja nośników samoistnych spada skokowo do zera bez względu na temperaturę.'
+    "id": "opt-step-vs-grad",
+    "category": "swiatlowody",
+    "categoryLabel": "Światłowody i optyka",
+    "tier": "tier1",
+    "question": "Jak zmiana profilu współczynnika załamania ze skokowego na gradientowy wpływa na liczbę modów oraz szerokość impulsów?",
+    "options": [
+      "Liczba modów spada o połowę (ze skokowego \\(M \\approx V^2/2\\) na gradientowy \\(M \\approx V^2/4\\)), a poszerzenie impulsów maleje 100–1000 razy dzięki wyrównaniu czasów propagacji promieni biegnących różnymi torami.",
+      "Liczba modów wzrasta dwukrotnie, a poszerzenie impulsów rośnie proporcjonalnie do kwadratu promienia rdzenia.",
+      "Włókno staje się natychmiast światłowodem jednomodowym bez żadnej dyspersji chromatycznej.",
+      "Szerokość impulsów nie ulega zmianie, ponieważ prędkość światła w osi włókna jest stała."
     ],
-    correctIndex: 0,
-    explanation: 'Rozkład Fermiego-Diraca wyraża się wzorem \\(f(E) = \\frac{1}{1 + e^{(E - E_F)/kT}}\\). Gdy \\(E = E_F\\), mianownik wynosi \\(1 + e^0 = 2\\), a zatem \\(f(E_F) = 1/2 = 0{,}5\\). Poziom Fermiego to chemiczny potencjał elektronów.',
-    flashcardFront: 'Definicja poziomu Fermiego (\\(E_F\\)) i rozkład Fermiego-Diraca:',
-    flashcardBack: [
-      'Wzór Fermiego-Diraca: \\(f(E) = \\frac{1}{1 + \\exp\\left(\\frac{E - E_F}{kT}\\right)}\\)',
-      'Dla \\(E = E_F\\): prawdopodobieństwo obsadzenia stanu przez elektron wynosi DOKŁADNIE 0,5 (50%).',
-      'W temperaturze zera bezwzględnego (0 K): stany poniżej \\(E_F\\) są obsadzone (1), a powyżej są puste (0).',
-      'W półprzewodniku samoistnym \\(E_F\\) leży prawie dokładnie w połowie pasma wzbronionego.'
+    "correctIndex": 0,
+    "explanation": "We włóknie wielomodowym o profilu skokowym liczba modów wynosi \\(M \\approx V^2/2\\). W profilu paraboliczno-gradientowym (\\(\\alpha = 2\\)) wynosi \\(M \\approx V^2/4\\) (o połowę mniej). W profilu gradientowym współczynnik załamania maleje ku płaszczowi: promienie o dłuższej drodze poruszają się w ośrodku o mniejszym \\(n\\), czyli z większą prędkością (\\(v = c/n\\)). Czasy dotarcia wszystkich modów niemal się zrównują, co zmniejsza dyspersję modową z kilkudziesięciu ns/km do ułamków ns/km (redukcja 100–1000 razy!).",
+    "flashcardFront": "Zmiana profilu ze skokowego na gradientowy (pytanie egzaminacyjne):",
+    "flashcardBack": [
+      "Liczba modów: maleje o połowę (skokowy: \\(M \\approx V^2/2\\), gradientowy: \\(M \\approx V^2/4\\)).",
+      "Szerokość impulsu: poszerzenie międzymodowe spada 100–1000 razy!",
+      "Fizyczna przyczyna: Promienie biegnące dalej od osi poruszają się w ośrodku o mniejszym \\(n\\), czyli szybciej (\\(v=c/n\\)), co wyrównuje czasy propagacji wszystkich modów."
     ],
-    tips: [
-      'Poziom Fermiego (\\(E_F\\)) opisuje prawdopodobieństwo obsadzenia stanów kwantowych przez elektrony w funkcji energii.',
-      'W układzie termodynamicznym złożonym z różnych obszarów (np. złącze p-n bez zewnętrznego zasilania) cząstki mogą swobodnie przemieszczać się do momentu ustania przepływów.',
-      'Pomyśl o analogii z poziomem cieczy w połączonych naczyniach w stanie równowagi: jak musi zachowywać się potencjał elektrochemiczny w całym jednolitym układzie?'
+    "tips": [
+      "W profilu gradientowym szkło na zewnątrz jest „szybsze” optycznie (mniejsze n).",
+      "Promienie zakrzywiają się sinusoidalnie i docierają do końca w tym samym czasie co promień osiowy.",
+      "Wzory na liczbę modów: V²/2 w skokowym, V²/4 w gradientowym."
     ],
-    tip: 'Poziom Fermiego (\(E_F\)) reprezentuje potencjał elektrochemiczny elektronów w ciele stałym.',
-    relatedRoute: '/teoria/polprzewodniki#q17'
+    "tip": "Profil gradientowy: mody V²/4 (spadek o 50%), poszerzenie impulsu mniejsze 100-1000 razy.",
+    "relatedRoute": "/teoria/swiatlowody#q10"
   },
   {
-    id: 'semi-3',
-    category: 'polprzewodniki',
-    categoryLabel: 'Półprzewodniki i złącze p-n',
-    tier: 'tier1',
-    question: 'Czym różni się prąd unoszenia (dryfu) od prądu dyfuzji w półprzewodniku?',
-    options: [
-      'Prąd unoszenia jest wywołany działaniem zewnętrznego pola elektrycznego (\\(\\vec{E}\\)), a prąd dyfuzji wynika z niejednorodnego rozkładu koncentracji nośników (gradientu gęstości).',
-      'Prąd unoszenia przenoszą wyłącznie dziury, a prąd dyfuzji wyłącznie elektrony.',
-      'Prąd unoszenia występuje tylko przy oświetleniu laserem, a dyfuzja tylko w ciemności.',
-      'Prąd dyfuzji wymaga obecności zmiennego pola magnetycznego o częstotliwości gigahercowej.'
+    "id": "opt-attenuation-windows",
+    "category": "swiatlowody",
+    "categoryLabel": "Światłowody i optyka",
+    "tier": "tier1",
+    "question": "Wskaż trzy standardowe okna telekomunikacyjne w światłowodach kwarcowych i ich charakterystykę:",
+    "options": [
+      "I okno (850 nm, tłumienie ok. 2–3 dB/km); II okno (1310 nm, zerowa dyspersja materiałowa, tłumienie ok. 0,35 dB/km); III okno (1550 nm, globalne minimum tłumienia ok. 0,20 dB/km, pasmo wzmacniaczy EDFA).",
+      "I okno (400 nm, ultrafiolet); II okno (650 nm, laser czerwony); III okno (10600 nm, laser CO2).",
+      "I okno (1310 nm, minimum tłumienia); II okno (1550 nm, zerowa dyspersja); III okno (1625 nm, pomiary OTDR).",
+      "I okno (900 MHz, GSM); II okno (2,4 GHz, Wi-Fi); III okno (5 GHz, sieci radiowe)."
     ],
-    correctIndex: 0,
-    explanation: 'Gęstość prądu całkowitego to suma dryfu i dyfuzji: \\(J = J_{dryf} + J_{dyf}\\). Prąd dryfu \\(J_{dryf} = q(n\mu_n + p\mu_p)E\\) jest ruchem uporządkowanym pod wpływem siły Coulomba od pola \\(E\\). Prąd dyfuzji \\(J_{dyf} = q D_n \\frac{dn}{dx} - q D_p \\frac{dp}{dx}\\) wynika z przypadkowego ruchu cieplnego dążącego do wyrównania stężeń (z obszaru gęstszego do rzadszego).',
-    flashcardFront: 'Prąd dryfu (unoszenia) vs prąd dyfuzji:',
-    flashcardBack: [
-      'Prąd unoszenia (dryf): Napędzany POLEM ELEKTRYCZNYM \\(E\\). Nośniki poruszają się z prędkością dryfu \\(v = \\mu E\\).',
-      'Prąd dyfuzji: Napędzany GRADIENTEM KONCENTRACJI (\\(dn/dx\\)). Cząstki wędrują od stężenia wyższego do niższego.',
-      'W stanie równowagi na złączu p-n prąd dryfu i dyfuzji idealnie się znoszą (prąd wypadkowy = 0).'
+    "correctIndex": 0,
+    "explanation": "I okno (850 nm) stosowano w pierwszych sieciach GaAs z diodami LED (tłumienie 2–3 dB/km). II okno (1310 nm) charakteryzuje się naturalnie zerową dyspersją materiałową czystej krzemionki i niższym tłumieniem ok. 0,35 dB/km. III okno (1550 nm) oferuje bezwzględne minimum tłumienia szkła kwarcowego (ok. 0,18–0,20 dB/km) i pokrywa się z pasmem pracy optycznych wzmacniaczy domieszkowanych erbem (EDFA), co czyni je standardem dalekosiężnym.",
+    "flashcardFront": "Okna telekomunikacyjne w światłowodach krzemionkowych:",
+    "flashcardBack": [
+      "I okno: 850 nm — tłumienie 2–3 dB/km (wczesne sieci LAN, diody LED / VCSEL).",
+      "II okno: 1310 nm — tłumienie ok. 0,35 dB/km, ZEROWA dyspersja materiałowa krzemu.",
+      "III okno: 1550 nm — MINIMUM tłumienia (ok. 0,20 dB/km), pasmo wzmacniaczy EDFA (C-band, daleki zasięg)."
     ],
-    tips: [
-      'Prąd elektryczny w półprzewodniku jest sumą ruchów cząstek naładowanych wywołanych dwoma fundamentalnie różnymi przyczynami fizycznymi.',
-      'Jedna z przyczyn to siła elektrostatyczna wywierana na ładunek przez obecne w materiale pole elektryczne.',
-      'Druga przyczyna ma podłoże czysto statystyczne i wynika z chaotycznych drgań cieplnych cząstek dążących do wyrównania różnic w gęstości ich rozmieszczenia.'
+    "tips": [
+      "Zapamiętaj trzy długości fal: 850 nm, 1310 nm, 1550 nm.",
+      "1310 nm to zerowa dyspersja materiałowa krzemionki.",
+      "1550 nm to najmniejsze tłumienie na świecie (0,2 dB/km) i wzmacniacze EDFA."
     ],
-    tip: 'Pomyśl o dwóch różnych siłach napędowych powodujących ruch ładunków w ośrodku materialnym.',
-    relatedRoute: '/teoria/polprzewodniki#q19'
+    "tip": "850 nm (2-3 dB/km), 1310 nm (0,35 dB/km, D_mat=0), 1550 nm (0,20 dB/km, min. tłumienia, EDFA).",
+    "relatedRoute": "/teoria/swiatlowody#q11"
   },
   {
-    id: 'semi-4',
-    category: 'polprzewodniki',
-    categoryLabel: 'Półprzewodniki i złącze p-n',
-    tier: 'tier1',
-    question: 'Co dzieje się z warstwą zubożoną (ładunku przestrzennego) złącza p-n przy polaryzacji w kierunku przewodzenia (plus do p, minus do n)?',
-    options: [
-      'Zewnętrzne napięcie obniża barierę potencjału, warstwa zubożona ulega zwężeniu, a przez złącze płynie duży prąd dyfuzyjny nośników większościowych.',
-      'Warstwa zubożona gwałtownie się poszerza, blokując całkowicie przepływ jakichkolwiek ładunków.',
-      'Wzrasta pole elektryczne wewnątrz złącza, powodując natychmiastowe przebicie lawinowe.',
-      'Atomy domieszek opuszczają sieć krystaliczną i migrują w stronę elektrod zasilających.'
+    "id": "opt-attenuation-mechanisms",
+    "category": "swiatlowody",
+    "categoryLabel": "Światłowody i optyka",
+    "tier": "tier1",
+    "question": "Jakie mechanizmy fizyczne odpowiadają za tłumienie sygnału we włóknach światłowodowych?",
+    "options": [
+      "Rozpraszanie Rayleigha (\\(\\propto 1/\\lambda^4\\)), absorpcja własna materiału (UV elektronowa i IR oscylacyjna sieci Si-O) oraz absorpcja na zanieczyszczeniach (piki jonów \\(\\mathrm{OH^-}\\) ok. 1383 nm).",
+      "Zjawisko naskórkowości w szkle oraz prądy wirowe w rdzeniu kwarcowym.",
+      "Promieniowanie hamowania elektronów i rozpraszanie Comptona na płaszczu światłowodu.",
+      "Wyłącznie mechaniczne zginanie kabla przy układaniu w kanalizacji teletechnicznej."
     ],
-    correctIndex: 0,
-    explanation: 'Przyłożenie potencjału dodatniego do p i ujemnego do n przeciwdziała wbudowanemu polu elektrycznemu złącza. Bariera potencjału maleje z \\(V_{bi}\\) do \\(V_{bi} - U\\). Warstwa zubożona ulega znacznemu zwężeniu, co pozwala elektronom z n i dziurom z p na masową dyfuzję przez złącze (wykładniczy wzrost prądu wg równania Shockleya).',
-    flashcardFront: 'Zachowanie złącza p-n w kierunku przewodzenia vs zaporowym:',
-    flashcardBack: [
-      'PRZEWODZENIE (plus do p, minus do n):',
-      '• Bariera potencjału spada: \\(V_{bi} - U\\)',
-      '• Warstwa zubożona ZWĘŻA SIĘ',
-      '• Prąd rośnie wykładniczo (dyfuzja nośników większościowych).',
-      'ZAPOROWO (plus do n, minus do p):',
-      '• Bariera potencjału rośnie: \\(V_{bi} + U_R\\)',
-      '• Warstwa zubożona ROZSZERZA SIĘ',
-      '• Płynie tylko znikomy prąd wsteczny (unoszenie mniejszościowych).'
+    "correctIndex": 0,
+    "explanation": "Tłumienie we włóknie kwarcowym wynika z: 1. Rozpraszania Rayleigha na mikroskopowych fluktuacjach gęstości szkła (tłumienie maleje bardzo silnie z długością fali: \\(\\alpha_R \\propto \\lambda^{-4}\\)). 2. Absorpcji własnej szkła: w UV (przejścia elektronowe) i w dalekiej IR powyżej 1600 nm (drgania sieci krystalicznej cząsteczek Si-O). 3. Absorpcji domieszkowej: piki absorpcji jonów hydroksylowych OH- (tzw. water peak przy 1383 nm), redukowany we włóknach G.652.D.",
+    "flashcardFront": "Mechanizmy tłumienia we włóknach światłowodowych:",
+    "flashcardBack": [
+      "Rozpraszanie Rayleigha: fluktuacje gęstości szkła; zależność \\(\\alpha_R \\propto 1/\\lambda^4\\) (dominuje przy krótkich falach).",
+      "Absorpcja własna: w ultrafiolecie (UV, rezonans elektronowy) oraz w podczerwieni (IR, drgania cząsteczek \\(\\mathrm{SiO_2}\\)).",
+      "Zanieczyszczenia (jony \\(\\mathrm{OH^-}\\)): piki pochłaniania wody, zwłaszcza przy 1383 nm (water peak)."
     ],
-    tips: [
-      'W złączu p-n bez polaryzacji istnieje wbudowane pole elektryczne od nieruchomych zjonizowanych domieszek, które powstrzymuje dalszą dyfuzję nośników większościowych.',
-      'Zastanów się, jaki zwrot ma zewnętrzne napięcie przy polaryzacji zaporowej (plus do obszaru n, minus do obszaru p) względem tego wewnętrznego pola.',
-      'Dodatkowe pole w tym samym kierunku powoduje dalsze odciąganie swobodnych nośników od granicy metalurgicznej złącza.'
+    "tips": [
+      "Rozpraszanie Rayleigha tłumaczy też, dlaczego niebo jest niebieskie — zależy od 1/lambda^4.",
+      "Dla długich fal wkracza absorpcja sieci krzemionkowej w podczerwieni (IR).",
+      "Pomiędzy nimi jest pik resztek wody (jonów OH) przy 1383 nm."
     ],
-    tip: 'Zewnętrzne napięcie polaryzujące w kierunku zaporowym ma taki sam zwrot jak wewnętrzne pole elektryczne bariery potencjału.',
-    relatedRoute: '/teoria/polprzewodniki#q20'
+    "tip": "Tłumienie: Rayleigh (1/λ⁴), absorpcja UV/IR oraz piki jonów OH⁻ (water peak 1383 nm).",
+    "relatedRoute": "/teoria/swiatlowody#q11"
   },
   {
-    id: 'semi-5',
-    category: 'polprzewodniki',
-    categoryLabel: 'Półprzewodniki i złącze p-n',
-    tier: 'tier1',
-    question: 'Co oznaczają pojęcia „iniekcji” i „ekstrakcji” nośników w stanie nierównowagi termodynamicznej?',
-    options: [
-      'Iniekcja to wstrzyknięcie nadmiarowych nośników (np. światłem lub w kierunku przewodzenia), a ekstrakcja to ich odessanie poniżej stanu równowagi (np. polaryzacja zaporowa).',
-      'Iniekcja dotyczy wyłącznie krystalizacji krzemu, a ekstrakcja wyciągania kryształu metodą Czochralskiego.',
-      'Iniekcja to zamiana elektronów w fonony, a ekstrakcja to powstawanie polarytonów.',
-      'Iniekcja to przejście półprzewodnika w stan nadprzewodnictwa w niskich temperaturach.'
+    "id": "opt-dispersion-def",
+    "category": "swiatlowody",
+    "categoryLabel": "Światłowody i optyka",
+    "tier": "tier1",
+    "question": "Czym jest zjawisko dyspersji w światłowodzie i jakie są jego negatywne skutki w transmisji cyfrowej?",
+    "options": [
+      "Jest to zależność prędkości propagacji sygnału od długości fali lub modu; powoduje poszerzenie impulsu świetlnego w czasie, nakładanie się sąsiednich bitów (ISI) i ograniczenie przepływności oraz zasięgu.",
+      "Jest to zjawisko całkowitej utraty mocy sygnału w wyniku odbicia od czoła złącza światłowodowego.",
+      "Jest to proces samorzutnego powstawania nowych częstotliwości nośnych w szkle przy zerowej mocy.",
+      "Jest to przesunięcie fazowe wywołane wyłącznie przez efekt Dopplera w poruszającym się kablu."
     ],
-    correctIndex: 0,
-    explanation: 'Stan nierównowagi termodynamicznej wymuszony jest czynnikami zewnętrznymi. Iniekcja polega na wprowadzeniu dodatkowych nośników (koncentracja \\(n > n_0\\), np. oświetlenie światłem o energii \\(h\nu > E_g\\) generuje pary elektron-dziura). Ekstrakcja polega na zmniejszeniu stężenia poniżej poziomu równowagowego przez pole elektryczne złącza spolaryzowanego zaporowo.',
-    flashcardFront: 'Iniekcja vs Ekstrakcja nośników ładunku:',
-    flashcardBack: [
-      'Stan nierównowagi: \\(n \\cdot p \\neq n_i^2\\). Wprowadza się quasi-poziomy Fermiego (\\(F_n, F_p\\)).',
-      'INIEKCJA: Wprowadzenie nadmiarowych nośników (\\(\\Delta n > 0\\)). Źródła: oświetlenie fotonami, polaryzacja przewodzenia złącza.',
-      'EKSTRAKCJA: Usunięcie nośników przez pole elektryczne (\\(\\Delta n < 0\\)) poniżej stanu równowagi (np. złącze zaporowe).',
-      'Czas życia nośników (\\(\\tau\\)): czas, po którym nadmiarowa koncentracja spada \\(e\\)-krotnie w wyniku rekombinacji.'
+    "correctIndex": 0,
+    "explanation": "Dyspersja to zróżnicowanie prędkości propagacji poszczególnych składowych impulsu (falowych lub modowych). Skutkuje to poszerzaniem się impulsu w miarę pokonywania dystansu: \\(\\Delta\\tau = |D| \\cdot L \\cdot \\Delta\\lambda\\). W odbiorniku poszerzone impulsy nakładają się na siebie, co wywołuje interferencję międzysymbolową (ISI — Inter-Symbol Interference), zamyka wykres oka i drastycznie zwiększa stopę błędów (BER), ograniczając iloczyn przepływności i zasięgu (B·L).",
+    "flashcardFront": "Definicja i skutki dyspersji w światłowodzie:",
+    "flashcardBack": [
+      "Definicja: Zależność prędkości fali (modu) od długości fali lub drogi w rdzeniu.",
+      "Skutek bezpośredni: Poszerzenie impulsu optycznego w dziedzinie czasu (\\(\\Delta\\tau\\)).",
+      "Skutek telekomunikacyjny: Nakładanie się kolejnych bitów (ISI — interferencja międzysymbolowa), degradacja oka i ograniczenie przepływności łącza."
     ],
-    tips: [
-      'Procesy te opisują zachowanie nośników mniejszościowych przechodzących przez barierę potencjału złącza p-n.',
-      'Pomyśl o kierunkach: jeden proces polega na wtłaczaniu nośników w głąb obszaru, w którym są one mniejszością, a drugi na ich ściąganiu przez barierę.',
-      'Zastanów się, który z tych stanów odpowiada obniżeniu bariery potencjału (polaryzacja w kierunku przewodzenia), a który jej podwyższeniu.'
+    "tips": [
+      "Pomyśl o biegaczach: gdy jedni biegną szybciej, a drudzy wolniej, zwarta grupa rozciąga się w czasie.",
+      "Gdy impuls się rozciąga, „wylewa się” na sąsiednie bity (ISI).",
+      "Ogranicza to maksymalną szybkość przesyłania danych i zasięg."
     ],
-    tip: 'Pojęcia te opisują ruch nośników mniejszościowych przez barierę złącza p-n w stanach polaryzacji.',
-    relatedRoute: '/teoria/polprzewodniki#q18'
+    "tip": "Dyspersja to zależność prędkości od λ lub modu -> poszerzenie impulsu Δτ -> interferencja ISI.",
+    "relatedRoute": "/teoria/swiatlowody#q12"
   },
   {
-    id: 'semi-6',
-    category: 'polprzewodniki',
-    categoryLabel: 'Półprzewodniki i złącze p-n',
-    tier: 'tier2',
-    question: 'Czym różni się przebicie Zenera od przebicia lawinowego w złączu p-n?',
-    options: [
-      'Przebicie Zenera zachodzi w silnie domieszkowanych złączach o wąskiej warstwie zaporowej na skutek tunelowania kwantowego elektronów, a przebicie lawinowe w słabiej domieszkowanych złączach wskutek jonizacji zderzeniowej.',
-      'Przebicie Zenera prowadzi zawsze do stopienia krzemu, a przebicie lawinowe jest całkowicie odwracalne.',
-      'Przebicie Zenera występuje tylko przy napięciu powyżej 1000 V, a lawinowe przy 1 V.',
-      'Przebicie Zenera jest wywoływane falami radiowymi, a lawinowe promieniami gamma.'
+    "id": "opt-dispersion-types",
+    "category": "swiatlowody",
+    "categoryLabel": "Światłowody i optyka",
+    "tier": "tier1",
+    "question": "Wymień rodzaje dyspersji występujące w łączach światłowodowych i wskaż, która z nich NIE występuje w światłowodzie jednomodowym (SMF):",
+    "options": [
+      "Dyspersja modowa (międzymodowa), dyspersja chromatyczna (materiałowa + falowodowa) oraz dyspersja polaryzacyjna (PMD); we włóknie jednomodowym całkowicie BRAK dyspersji modowej.",
+      "Dyspersja jonosferyczna i dyfrakcyjna; we włóknie jednomodowym brak dyspersji chromatycznej.",
+      "Dyspersja Rayleigha i Fresnela; we włóknie jednomodowym brak dyspersji polaryzacyjnej PMD.",
+      "Dyspersja nieliniowa i akustyczna; we włóknie jednomodowym występuje wyłącznie dyspersja modowa."
     ],
-    correctIndex: 0,
-    explanation: 'Przebicie Zenera (niskie napięcia, typowo < 5 V) to kwantowe tunelowanie elektronów z pasma walencyjnego p wprost do pasma przewodnictwa n przez bardzo cienką barierę. Przebicie lawinowe (> 6–7 V) polega na tym, że nieliczne elektrony przyspieszane silnym polem zderzają się z atomami sieci i wybijają kolejne elektrony (efekt lawinowy).',
-    flashcardFront: 'Przebicie Zenera vs Przebicie Lawinowe w złączu p-n:',
-    flashcardBack: [
-      'Przebicie Zenera (< 5 V): Silnie domieszkowane złącze, wąska warstwa zubożona. Zjawisko KWANTOWEGO TUNELOWANIA elektronów przez barierę. Ujemny współczynnik temperaturowy.',
-      'Przebicie Lawinowe (> 7 V): Słabiej domieszkowane złącze, szersza warstwa. JONIZACJA ZDERZENIOWA (rozbijanie wiązań przez rozpędzone nośniki). Dodatni współczynnik temperaturowy.'
+    "correctIndex": 0,
+    "explanation": "Wyróżnia się: 1. Dyspersję modową (międzymodową) — wynika z różnych dróg geometrycznych poszczególnych modów; w światłowodzie jednomodowym (SMF) jest RÓWNA ZERO, bo istnieje tam tylko jeden mod! 2. Dyspersję chromatyczną — sumę materiałowej \\(D_{mat}\\) i falowodowej \\(D_{fal}\\), obecną we wszystkich włóknach. 3. Dyspersję polaryzacyjną (PMD) — wynikającą z dwójłomności i niesymetrii rdzenia.",
+    "flashcardFront": "Rodzaje dyspersji we włóknach światłowodowych:",
+    "flashcardBack": [
+      "1. Dyspersja MODOWA (międzymodowa): występuje TYLKO w MMF. W światłowodzie jednomodowym (SMF) wynosi ZERO!",
+      "2. Dyspersja CHROMATYCZNA: suma dyspersji materiałowej (\\(D_{mat}\\)) i falowodowej (\\(D_{fal}\\)).",
+      "3. Dyspersja POLARYZACYJNA (PMD): rozszczepienie modu na ortogonalne polaryzacje przez asymetrię rdzenia."
     ],
-    tips: [
-      'Oba mechanizmy prowadzą do gwałtownego wzrostu prądu przy polaryzacji zaporowej, ale zachodzą w zupełnie innych warunkach domieszkowania i przy innych grubościach złącza.',
-      'W bardzo wąskich barierach natężenie pola jest tak gigantyczne, że cząstki mogą pokonać barierę bez klasycznego przeskakiwania nad nią (zjawisko czysto kwantowe).',
-      'W szerszych barierach pojedynczy nośnik przyspieszony silnym polem zderza się z atomami sieci krystalicznej, wybijając kolejne elektrony w procesie kaskadowym.'
+    "tips": [
+      "Jeśli we włóknie jest tylko jeden mod, to mody nie mogą biec różnymi drogami.",
+      "Dlatego dyspersja modowa w SMF wynosi dokładnie zero.",
+      "Pozostaje dyspersja chromatyczna (kolorów) i polaryzacyjna (PMD)."
     ],
-    tip: 'Przebicie Zenera zachodzi w złączach silnie domieszkowanych przy wąskiej barierze, a lawinowe w słabiej domieszkowanych przy szerszej barierze.',
-    relatedRoute: '/teoria/polprzewodniki#q20'
-  },
-
-  // ==========================================
-  // 5. PAMIĘCI, DYSKI MAGNETYCZNE I GMR
-  // ==========================================
-  {
-    id: 'mem-1',
-    category: 'pamieci',
-    categoryLabel: 'Pamięci, dyski i GMR',
-    tier: 'tier1',
-    question: 'Na czym polega zjawisko Gigantycznej Magnetorezystancji (GMR - Giant Magnetoresistance)?',
-    options: [
-      'Na skokowej zmianie rezystancji elektrycznej struktury wielowarstwowej złożonej z warstw ferromagnetycznych przedzielonych niemagnetykiem, zależnej od wzajemnej orientacji magnetycznej (równoległa = mały opór, antyrównoległa = duży opór).',
-      'Na nagłym spadku oporności przewodnika do zera w temperaturze ciekłego helu.',
-      'Na powstawaniu napięcia Halla prostopadłego do kierunku przepływu prądu i pola magnetycznego.',
-      'Na zmianie częstotliwości drgań kryształu kwarcu pod wpływem zewnętrznego pola magnetycznego.'
-    ],
-    correctIndex: 0,
-    explanation: 'Struktura GMR składa się z dwóch warstw ferromagnetycznych (np. Fe, Co) przedzielonych ultracienką warstwą metalu niemagnetycznego (np. Cu). Gdy namagnesowania obu warstw są RÓWNOLEGŁE, elektrony o zgodnym spinie przechodzą niemal bez rozpraszania (mała rezystancja). Gdy namagnesowania są ANTYRÓWNOLEGŁE, wszystkie elektrony doznają silnego rozpraszania na złączach (duża rezystancja). Za odkrycie GMR przyznano Nagrodę Nobla w 2007 r. (Fert i Grünberg).',
-    flashcardFront: 'Gigantyczna Magnetorezystancja (GMR) — zasada i struktura:',
-    flashcardBack: [
-      'Struktura: kanapka Ferromagnetyk / Niemagnetyk / Ferromagnetyk (np. Fe/Cr/Fe lub Co/Cu/Co).',
-      'ORIENTACJA RÓWNOLEGŁA (\\(\\uparrow\\uparrow\\)): Słabe rozpraszanie spinowe \\(\\to\\) BARDZO MAŁY OPÓR.',
-      'ORIENTACJA ANTYRÓWNOLEGŁA (\\(\\uparrow\\downarrow\\)): Silne rozpraszanie spinowe obu stanów \\(\\to\\) BARDZO DUŻY OPÓR.',
-      'Zastosowanie: Głowice odczytu dysków HDD (przełom w gęstości zapisu na talerzach), czujniki pola.'
-    ],
-    tips: [
-      'Zjawisko to występuje w sztucznie wytworzonych nanostrukturach złożonych z naprzemiennych ultracienkich warstw ferromagnetycznych i niemagnetycznych przewodników.',
-      'Kluczową rolę odgrywa tu wewnętrzny moment pędu elektronów przewodnictwa (spin) oraz jego orientacja względem kierunku namagnesowania warstwy.',
-      'Zastanów się, jak zmienia się opór elektryczny takiego złącza, gdy kierunki namagnesowania obu warstw magnetycznych są zgodne ze sobą, a jak gdy są przeciwne.'
-    ],
-    tip: 'Zjawisko Gigantycznej Magnetorezystancji (Nobel 2007) zachodzi w strukturach wielowarstwowych: ferromagnetyk / metal niemagnetyczny / ferromagnetyk.',
-    relatedRoute: '/teoria/pamieci-nosniki#q28'
+    "tip": "Dyspersja modowa = 0 w SMF! Występuje tam tylko chromatyczna (D = D_mat + D_fal) i PMD.",
+    "relatedRoute": "/teoria/swiatlowody#q12"
   },
   {
-    id: 'mem-2',
-    category: 'pamieci',
-    categoryLabel: 'Pamięci, dyski i GMR',
-    tier: 'tier1',
-    question: 'Jaka jest kluczowa różnica funkcjonalna pomiędzy pamięcią Flash typu NAND a pamięcią Flash typu NOR?',
-    options: [
-      'Flash NAND ma komórki połączone szeregowo, oferuje dużą gęstość upakowania i zapis blokowy (stosowana w SSD/SD), podczas gdy NOR ma komórki równoległe, pozwala na swobodny dostęp losowy bajt po bajcie i wykonanie kodu w miejscu (XIP).',
-      'Flash NOR jest pamięcią ulotną tracącą dane po odłączeniu zasilania, a NAND jest pamięcią stałą.',
-      'Flash NAND stosuje zapis magnetyczny, a NOR zapis optyczny.',
-      'Flash NOR może być kasowana nieskończoną liczbę razy, podczas gdy NAND tylko jeden raz.'
+    "id": "opt-dispersion-mat-fal",
+    "category": "swiatlowody",
+    "categoryLabel": "Światłowody i optyka",
+    "tier": "tier1",
+    "question": "Czym różni się dyspersja materiałowa (\\(D_{mat}\\)) od falowodowej (\\(D_{fal}\\)) i dla jakiej długości fali zeruje się dyspersja materiałowa czystej krzemionki?",
+    "options": [
+      "Materiałowa wynika z zależności \\(n(\\lambda)\\) szkła i zeruje się naturalnie przy ok. 1310 nm; falowodowa wynika z geometrii rdzenia i ma przeciwny znak, co pozwala profilowaniem przesunąć punkt zerowej dyspersji na 1550 nm (włókna DSF).",
+      "Materiałowa zależy od promienia rdzenia i zeruje się przy 850 nm; falowodowa jest stałą uniwersalną próżni.",
+      "Obie dyspersje są zawsze dodatnie i zerują się wyłącznie w temperaturze zera bezwzględnego.",
+      "Materiałowa występuje tylko w obecności domieszek erbu, a falowodowa zeruje się przy 60 GHz."
     ],
-    correctIndex: 0,
-    explanation: 'W strukturze NOR komórki są połączone równolegle do linii bitów — zapewnia to szybki dostęp losowy (Random Access) do pojedynczego słowa, co pozwala procesorowi bezpośrednio wykonywać program (XIP - eXecute In Place, BIOS/firmware). W strukturze NAND komórki połączone są w łańcuchy szeregowe (mniejsza liczba styków) — daje to ogromną gęstość i niski koszt za gigabajt, ale dostęp jest sekwencyjny/stronicowy (dyski SSD, pendrive).',
-    flashcardFront: 'Flash NAND vs Flash NOR — porównanie:',
-    flashcardBack: [
-      'Flash NOR:',
-      '• Połączenie równoległe komórek,',
-      '• Swobodny dostęp losowy (bajtowy),',
-      '• Obsługa XIP (wykonywanie kodu wprost z Flash, np. BIOS, mikrokontrolery),',
-      '• Mniejsza gęstość, wyższy koszt.',
-      'Flash NAND:',
-      '• Połączenie szeregowe komórek w stringi,',
-      '• Dostęp blokowy/stronicowy (brak XIP),',
-      '• Ogromna gęstość upakowania, szybki zapis/kasowanie dużych bloków,',
-      '• Pamięć masowa: SSD, pendrive, karty SD, smartfony.'
+    "correctIndex": 0,
+    "explanation": "Całkowita dyspersja chromatyczna to \\(D = D_{mat} + D_{fal}\\). Dyspersja materiałowa wynika z nieliniowej zależności współczynnika załamania kwarcu od długości fali i zeruje się w krzemionce przy \\(\\lambda \\approx 1310\\ \\mathrm{nm}\\) (przy 1550 nm wynosi ok. +17 ps/(nm·km)). Dyspersja falowodowa wynika z faktu, że rozkład pola modu między rdzeniem a płaszczem zależy od \\(\\lambda\\); ma ona znak ujemny. Kształtując profil rdzenia, można zrównoważyć obie składowe przy 1550 nm (włókna DSF G.653 lub NZDSF G.655).",
+    "flashcardFront": "Dyspersja materiałowa vs falowodowa (egzaminacyjny pewniak):",
+    "flashcardBack": [
+      "Dyspersja materiałowa (\\(D_{mat}\\)): zależy od szkła (\\(n(\\lambda)\\)); zeruje się naturalnie w krzemie przy 1310 nm; przy 1550 nm wynosi ok. +17 ps/(nm·km).",
+      "Dyspersja falowodowa (\\(D_{fal}\\)): zależy od geometrii i profilu rdzenia; ma ujemny znak.",
+      "Włókna DSF / NZDSF: odpowiedni profil rdzenia zwiększa \\(|D_{fal}|\\), co kompensuje \\(D_{mat}\\) w oknie 1550 nm!"
     ],
-    tips: [
-      'Oba rodzaje pamięci półprzewodnikowej opierają się na tranzystorach z pływającą bramką, ale różnią się sposobem ich wzajemnego łączenia w matrycy komórek.',
-      'Jedno z rozwiązań łączy komórki w szeregowe łańcuchy (jak w bramce logicznej NAND), a drugie łączy je równolegle do linii bitów (jak w NOR).',
-      'Zastanów się, który układ pozwala na uzyskanie ogromnej gęstości zapisu i operacje na całych blokach danych (dyski masowe), a który zapewnia szybki dostęp do pojedynczych bajtów.'
+    "tips": [
+      "Krzem sam z siebie ma dyspersję zerową w II oknie (1310 nm).",
+      "W III oknie (1550 nm) dyspersja materiałowa wynosi ok. +17 ps/(nm·km).",
+      "Geometria falowodu wprowadza ujemną dyspersję falowodową."
     ],
-    tip: 'Pomyśl o sposobie połączenia komórek tranzystorowych w strukturze matrycy: szeregowo (NAND) lub równolegle (NOR).',
-    relatedRoute: '/teoria/pamieci-nosniki#q24'
+    "tip": "D_mat zeruje się przy 1310 nm. D_fal ma znak ujemny i zależy od profilu rdzenia.",
+    "relatedRoute": "/teoria/swiatlowody#q12"
   },
   {
-    id: 'mem-3',
-    category: 'pamieci',
-    categoryLabel: 'Pamięci, dyski i GMR',
-    tier: 'tier1',
-    question: 'W jaki sposób na standardowej płycie kompaktowej (CD-ROM) realizowane jest odczytywanie bitów 0 i 1 za pomocą lasera?',
-    options: [
-      'Wiązka lasera odbija się od rowków (land) i zagłębień (pit) o głębokości \\(\\lambda/4\\); przejście między pitem a landem wywołuje interferencję destruktywną (różnica dróg \\(\\lambda/2\\)) i spadek natężenia światła na fotodiodzie.',
-      'Laser podgrzewa pit do temperatury topnienia krzemu, co zmienia oporność płytki.',
-      'Każdy pit zawiera miniaturowy magnes, który obraca płaszczyznę polaryzacji przez efekt Faradaya.',
-      'Pity pochłaniają całe światło, a landy świecą własnym światłem fluorescencyjnym.'
+    "id": "opt-dispersion-compensation",
+    "category": "swiatlowody",
+    "categoryLabel": "Światłowody i optyka",
+    "tier": "tier1",
+    "question": "Wymień i opisz metody kompensacji dyspersji chromatycznej stosowane w telekomunikacji:",
+    "options": [
+      "Włókno kompensujące DCF (o dużej ujemnej dyspersji \\(D_{DCF} < 0\\), warunek: \\(D_{SMF}L_{SMF} + D_{DCF}L_{DCF} = 0\\)), chirpowana siatka Bragga (FBG) oraz kompensacja elektroniczna (EDC/DSP) w odbiornikach koherentnych.",
+      "Zwiększenie mocy laserów nadawczych powyżej 1 W oraz podgrzewanie kabli światłowodowych.",
+      "Zastąpienie światłowodów jednomodowych światłowodami wielomodowymi o profilu skokowym.",
+      "Stosowanie wyłącznie złączy mechanicznych zamiast spawów termicznych."
     ],
-    correctIndex: 0,
-    explanation: 'Głębokość pitu wynosi dokładnie \\(d = \\frac{\\lambda}{4 n}\\) (gdzie n to współczynnik załamania poliwęglanu). Promień odbity od dna pitu przebywa drogę o \\(2d = \\lambda / 2\\) dłuższą niż promień odbity od landu. Powstaje przesunięcie fazowe 180° i interferencja destruktywna — światło gaśnie na detektorze, co układ interpretuje jako zmianę logiczną (zbocze pitu to logiczna „1”).',
-    flashcardFront: 'Zasada odczytu płyty CD (pity i landy):',
-    flashcardBack: [
-      'Głębokość pitu wynosi \\(d = \\frac{\\lambda}{4 n}\\) (ćwierć długości fali w poliwęglanie).',
-      'Światło wpadające do pitu pokonuje drogę tam i z powrotem \\(\\Delta r = 2d = \\frac{\\lambda}{2}\\).',
-      'Różnica faz wynosi dokładnie 180° (\\(\\pi\\)) \\(\\to\\) INTERFERENCJA DESTRUKTYWNA.',
-      'Na krawędzi pitu światło gaśnie na fotodiodzie — detektor wykrywa zmianę (zbocze = 1 logiczna).'
+    "correctIndex": 0,
+    "explanation": "Główne metody kompensacji dyspersji to: 1. Włókno DCF (Dispersion Compensating Fiber) — odcinek światłowodu o wąskim rdzeniu i silnie ujemnej dyspersji (np. -80 do -100 ps/(nm·km)), który całkowicie znosi dodatnią dyspersję linii transmisyjnej SMF. 2. Chirpowana siatka Bragga (CFBG) — różne składowe spektralne odbijają się na różnych głębokościach siatki, odwracając opóźnienie falowe. 3. Elektroniczna kompensacja dyspersji (EDC) w procesorach DSP odbiorników koherentnych. 4. Włókna NZDSF o niskiej dyspersji.",
+    "flashcardFront": "Metody kompensacji dyspersji chromatycznej:",
+    "flashcardBack": [
+      "1. Włókno DCF: włókno o ujemnym \\(D_{DCF}\\) (np. -80 ps/(nm·km)); warunek: \\(D_{SMF}L_{SMF} + D_{DCF}L_{DCF} = 0\\).",
+      "2. Siatka Bragga o zmiennym skoku (Chirped FBG): odbija poszczególne barwy z różnym opóźnieniem.",
+      "3. Kompensacja elektroniczna EDC/DSP: cyfrowa filtracja sygnału w odbiornikach koherentnych.",
+      "4. Włókna NZDSF: włókna o fabrycznie zredukowanej dyspersji w oknie 1550 nm."
     ],
-    tips: [
-      'Płyta optyczna CD przechowuje dane w postaci mikroskopijnych wytłoczeń (tzw. pitów) na powierzchni odbijającej aluminium.',
-      'Światło lasera oświetla jednocześnie dno wgłębienia oraz otaczający je płaski obszar, po czym odbija się i trafia do fotodetektora.',
-      'Głębokość wgłębienia została tak dobrana, aby droga przebyta przez promień odbity od wgłębienia różniła się od drogi promienia z płaszczyzny o dokładnie połowę długości fali światła.'
+    "tips": [
+      "DCF to klasyczny światłowód „odwrotny” — ma ujemną dyspersję.",
+      "Siatka Bragga FBG to zwierciadło selektywne cofające opóźnione fale.",
+      "Nowoczesne systemy robią to cyfrowo w DSP (EDC)."
     ],
-    tip: 'Płyta CD posiada wytłoczone mikroskopijne wgłębienia (pity) i obszary płaskie (landy) odczytywane promieniem lasera podczerwonego (780 nm).',
-    relatedRoute: '/teoria/pamieci-nosniki#q25'
+    "tip": "Kompensacja: włókno DCF (D_SMF L_SMF + D_DCF L_DCF = 0), siatki FBG oraz cyfrowe EDC.",
+    "relatedRoute": "/teoria/swiatlowody#q12"
   },
   {
-    id: 'mem-4',
-    category: 'pamieci',
-    categoryLabel: 'Pamięci, dyski i GMR',
-    tier: 'tier2',
-    question: 'W dyskach magnetooptycznych (MO) proces zapisu i odczytu wykorzystuje zjawiska:',
-    options: [
-      'Zapis: nagrzanie warstwy laserem powyżej temperatury Curie (\\(T_c\\)) i zmiana orientacji domen polem magnetycznym; Odczyt: polarymetryczny magnetooptyczny efekt Kerra (MOKE).',
-      'Zapis: wytrawianie chemiczne kwasem solnym; Odczyt: skanowanie mikroskopem AFM.',
-      'Zapis: zjawisko tunelowania Zenera; Odczyt: pomiar siły Lorentza na igle gramofonowej.',
-      'Zapis: zmiana oporu GMR prądem 100 A; Odczyt: emisja promieniowania rentgenowskiego.'
+    "id": "opt-dispersion-pros-cons",
+    "category": "swiatlowody",
+    "categoryLabel": "Światłowody i optyka",
+    "tier": "tier1",
+    "question": "Jakie są wady i zalety występowania dyspersji w łączach telekomunikacyjnych (szczególnie DWDM)?",
+    "options": [
+      "Wada: poszerzenie impulsów i zniekształcenia ISI ograniczające zasięg i przepływność; kluczowa ZALETA: mała niezerowa dyspersja niszczy synchronizm fazowy i radykalnie tłumi groźne mieszanie czterofalowe (FWM).",
+      "Wada: całkowity zanik mocy optycznej; zaleta: samorzutne powielanie liczby kanałów bez dodatkowych laserów.",
+      "Wada: nadmierne nagrzewanie się płaszcza kabla; zaleta: automatyczne chłodzenie laserów nadawczych.",
+      "Dyspersja ma wyłącznie wady i w systemach DWDM dąży się do idealnego zera dyspersji w każdym kanale."
     ],
-    correctIndex: 0,
-    explanation: 'Dysk MO łączy technikę magnetyczną i optyczną. Przy temperaturze pokojowej koercja materiału jest ogromna (zapis niemożliwy). Przy zapisie laser podgrzewa punktowo domenę powyżej temperatury Curie \\(T_c\\) (koercja spada do zera), a zewnętrzna cewka ustawia namagnesowanie. Przy odczycie zimny laser o małej mocy pada na dysk — polaryzacja odbitego światła skręca się o ułamek stopnia w lewo lub w prawo w zależności od wektora magnetycznego (efekt Kerra).',
-    flashcardFront: 'Dyski magnetooptyczne (MO) — zapis i odczyt:',
-    flashcardBack: [
-      'ZAPIS (termomagnetyczny):',
-      '• Laser podgrzewa punktowo nośnik powyżej temperatury Curie (\\(T_c\\)),',
-      '• Materiał traci ferromagnetyzm \\(\\to\\) cewka magnetyczna z łatwością polaryzuje domenę.',
-      'ODCZYT (optyczny):',
-      '• Słaby spolaryzowany promień lasera odbija się od warstwy magnetycznej,',
-      '• Magnetooptyczny EFEKT KERRA: płaszczyzna polaryzacji skręca się w lewo lub prawo zależnie od kierunku namagnesowania domeny.'
+    "correctIndex": 0,
+    "explanation": "Wada dyspersji to zniekształcenia międzysymbolowe (ISI) i konieczność stosowania kosztownej kompensacji. Niezwykle ważną ZALETĄ dyspersji w systemach wielofalowych (DWDM) jest zapobieganie zjawiskom nieliniowym! Przy zerowej dyspersji (D = 0) fale o różnych częstotliwościach poruszają się z tą samą prędkością fazową, co zapewnia idealny synchronizm fazowy i maksymalną generację pasożytniczych produktów mieszania czterofalowego (FWM). Niewielka niezerowa dyspersja (np. we włóknach NZDSF G.655) tłumi FWM i ratuje transmisję DWDM.",
+    "flashcardFront": "Wady i zalety dyspersji w telekomunikacji (zagadnienie egzaminacyjne):",
+    "flashcardBack": [
+      "WADA: Poszerzenie impulsów w czasie (\\(\\Delta\\tau = |D|L\\Delta\\lambda\\)), interferencja międzysymbolowa (ISI), ograniczenie zasięgu i przepływności.",
+      "ZALETA: Mała niezerowa dyspersja (włókna NZDSF) uniemożliwia dopasowanie fazowe fal i DRATYCZNIE TŁUMI nieliniowe mieszanie czterofalowe (FWM) w łączach DWDM!",
+      "Gdyby D = 0, FWM zniszczyłoby gęstą transmisję DWDM."
     ],
-    tips: [
-      'Pamięci magnetooptyczne łączą mechanizmy termiczne realizowane wiązką lasera ze zjawiskami ferromagnetycznymi.',
-      'Materiały magnetyczne w temperaturze pokojowej wykazują bardzo dużą koercję (trudno zmienić ich namagnesowanie), ale powyżej pewnej temperatury charakterystycznej koercja spada do zera.',
-      'Odczyt danych nie wymaga już podgrzewania, lecz wykorzystuje subtelną zmianę płaszczyzny polaryzacji światła lasera odbitego od namagnesowanego ośrodka.'
+    "tips": [
+      "Wada jest oczywista: rozmycie bitów i interferencja ISI.",
+      "Zastanów się nad zaletą: co by się stało w DWDM przy D=0?",
+      "Przy D=0 fale biegną razem w fazie, co maksymalizuje niszczące mieszanie czterofalowe (FWM)."
     ],
-    tip: 'Dyski MO łączą technologię laserową z magnetyczną, umożliwiając wielokrotny zapis.',
-    relatedRoute: '/teoria/pamieci-nosniki#q26'
+    "tip": "Wada: ISI i ograniczenie zasięgu. Zaleta: mała niezerowa dyspersja (NZDSF) tłumi nieliniowości FWM w DWDM!",
+    "relatedRoute": "/teoria/swiatlowody#q12"
   },
   {
-    id: 'mem-5',
-    category: 'pamieci',
-    categoryLabel: 'Pamięci, dyski i GMR',
-    tier: 'tier1',
-    question: 'W tranzystorze polowym MOSFET z kanałem wzbogacanym (indukowanym) typu n, przepływ prądu dren-źródło staje się możliwy, gdy:',
-    options: [
-      'Napięcie bramka-źródło przekroczy progowe napięcie dodatnie (\\(V_{GS} > V_{th}\\)), co wywołuje inwersję ładunku pod bramką i utworzenie kanału n.',
-      'Napięcie bramka-źródło jest silnie ujemne, co wypycha elektrony z podłoża.',
-      'Prąd stały bazy zacznie zasilać złącze emiterowe jak w BJT.',
-      'Temperatura struktury spadnie poniżej zera bezwzględnego.'
+    "id": "opt-pmd",
+    "category": "swiatlowody",
+    "categoryLabel": "Światłowody i optyka",
+    "tier": "tier2",
+    "question": "Na czym polega zjawisko dyspersji polaryzacyjnej (PMD) we włóknach jednomodowych i jak zależy od długości łącza?",
+    "options": [
+      "Wynika z mikro-asymetrii rdzenia wywołującej dwójłomność i rozszczepienie modu na dwie prostopadłe polaryzacje biegnące z różną prędkością; poszerzenie rośnie proporcjonalnie do pierwiastka długości: \\(\\Delta\\tau_{PMD} = D_{PMD} \\sqrt{L}\\).",
+      "Wynika z obrotu polaryzacji w polu grawitacyjnym i rośnie z kwadratem długości \\(L^2\\).",
+      "Jest to zjawisko modulacji polaryzacji przez fale radiowe i zanika całkowicie przy długościach powyżej 10 km.",
+      "Polega na absorpcji polaryzacji kołowej w płaszczu światłowodu i zależy liniowo od mocy lasera."
     ],
-    correctIndex: 0,
-    explanation: 'Tranzystor MOSFET z kanałem indukowanym typu n bez polaryzacji nie posiada przewodzącego kanału między drenem a źródłem (dwa zaporowe złącza p-n). Przyłożenie dodatniego napięcia bramki \\(V_{GS} > V_{th}\\) odpycha dziury z podłoża p i przyciąga elektrony pod izolator \\(\\mathrm{SiO_2}\\), tworząc tzw. warstwę inwersyjną (indukowany kanał typu n łączący źródło z drenem).',
-    flashcardFront: 'MOSFET z kanałem wzbogacanym typu n — zasada włączania:',
-    flashcardBack: [
-      'Normalnie wyłączony (Normally OFF) — brak kanału przy \\(V_{GS} = 0\\).',
-      'Przyłożenie dodatniego napięcia bramki \\(V_{GS} > V_{th}\\) (napięcie progowe).',
-      'Pole elektryczne przyciąga elektrony z podłoża pod tlenek bramki \\(\\mathrm{SiO_2}\\).',
-      'Powstaje warstwa INWERSYJNA (kanał typu n) łączący źródło z drenem \\(\\to\\) prąd \\(I_D\\) zaczyna płynąć.',
-      'Bramka pobiera znikomy prąd stały (ogromna rezystancja wejściowa dzięki dielektrykowi).'
+    "correctIndex": 0,
+    "explanation": "Idealne włókno jednomodowe ma symetrię kołową. W rzeczywistości naprężenia mechaniczne i nieidealna kołowość rdzenia wprowadzają przypadkową dwójłomność (różne współczynniki załamania dla dwóch ortogonalnych osi polaryzacji). Mod podstawowy rozdziela się na dwie składowe poruszające się z różnymi prędkościami. Ze względu na losowe sprzęganie modów wzdłuż trasy, średnie opóźnienie rośnie z pierwiastkiem długości: \\(\\Delta\\tau = D_{PMD} \\sqrt{L}\\) (jednostka współczynnika: \\(\\mathrm{ps/\\sqrt{km}}\\)).",
+    "flashcardFront": "Dyspersja polaryzacyjna (PMD) — istota i wzór:",
+    "flashcardBack": [
+      "Przyczyna: Nieidealna kołowość rdzenia i naprężenia mechaniczne (przypadkowa dwójłomność).",
+      "Skutek: Dwa ortogonalne stany polaryzacji modu podstawowego poruszają się z różnymi prędkościami.",
+      "Zależność od długości: \\(\\Delta\\tau_{PMD} = D_{PMD} \\sqrt{L}\\) (rośnie z PIERWIASTKIEM długości!).",
+      "Jednostka współczynnika: \\(\\mathrm{ps/\\sqrt{km}}\\)."
     ],
-    tips: [
-      'Pomyśl o strukturze tranzystora MOSFET: metalowa bramka oddzielona cienkim dielektrykiem (tlenkiem krzemu) od podłoża półprzewodnikowego.',
-      'Słowo „wzbogacany” (indukowany) oznacza, że w stanie bez przyłożonego napięcia bramki pomiędzy źródłem a drenem nie ma fizycznej ścieżki przewodzącej.',
-      'Zastanów się, jaki znak musi mieć napięcie przyłożone do bramki, aby przyciągnąć do powierzchni podłoża elektrony i wytworzyć tzw. warstwę inwersyjną.'
+    "tips": [
+      "PMD dotyczy polaryzacji światła w pozornie jednomodowym włóknie.",
+      "Z powodu braku idealnej kołowości rdzeń ma oś szybką i oś wolną.",
+      "Pamiętaj o pierwiastku: opóźnienie rośnie z pierwiastkiem z długości kabla (ps/√km)."
     ],
-    tip: 'Tranzystor z kanałem wzbogacanym przy zerowym napięciu bramki (\(V_{GS} = 0\)) jest normalnie ZAMKNIĘTY (nie przewodzi prądu).',
-    relatedRoute: '/teoria/pamieci-nosniki#q23'
-  },
-
-  // ==========================================
-  // 6. WZORY, REGUŁY KCIUKA I ZADANIA OBLICZENIOWE
-  // ==========================================
-  {
-    id: 'math-1',
-    category: 'zadania_wzory',
-    categoryLabel: 'Wzory i reguły kciuka',
-    tier: 'tier1',
-    question: 'Jeżeli moc sygnału wzrosła o \\(+3\\ \\mathrm{dB}\\), to oznacza, że moc ta:',
-    options: [
-      'Wzrosła w przybliżeniu 2-krotnie (\\(\\times 2\\)).',
-      'Wzrosła 3-krotnie (\\(\\times 3\\)).',
-      'Wzrosła 10-krotnie (\\(\\times 10\\)).',
-      'Wzrosła o 3 waty.'
-    ],
-    correctIndex: 0,
-    explanation: 'Z definicji decybela mocy: \\(\\Delta P_{[dB]} = 10 \\log_{10}(P_2 / P_1)\\). Jeśli \\(P_2 / P_1 = 2\\), to \\(10 \\log_{10}(2) \\approx 10 \\cdot 0{,}30103 \\approx 3{,}01\\ \\mathrm{dB} \\approx +3\\ \\mathrm{dB}\\). Odpowiednio: spadek o \\(-3\\ \\mathrm{dB}\\) oznacza spadek mocy o połowę (\\(\\div 2\\)).',
-    flashcardFront: 'Złote reguły kciuka decybeli (dB):',
-    flashcardBack: [
-      '\\(+3\\ \\mathrm{dB} \\approx \\times 2\\) (podwojenie mocy)',
-      '\\(-3\\ \\mathrm{dB} \\approx \\div 2\\) (spadek mocy o połowę)',
-      '\\(+10\\ \\mathrm{dB} \\approx \\times 10\\) (10-krotny wzrost mocy)',
-      '\\(-10\\ \\mathrm{dB} \\approx \\div 10\\) (spadek mocy do 1/10)',
-      '\\(+20\\ \\mathrm{dB} \\approx \\times 100\\)',
-      '\\(+30\\ \\mathrm{dB} \\approx \\times 1000\\)'
-    ],
-    tips: [
-      'Pamiętaj, że decybel (dB) jest miarą logarytmiczną stosunku dwóch mocy: \\(\\Delta P = 10 \\log_{10}(P_2 / P_1)\\).',
-      'Zastanów się, jaka wartość ilorazu \\(P_2 / P_1\\) daje po zlogarytmowaniu podstawą 10 wartość bliską 0,3.',
-      'Ponieważ \\(\\log_{10}(2) \\approx 0{,}301\\), pomnożenie wyniku przez 10 daje w przybliżeniu wartość z treści zadania.'
-    ],
-    tip: 'Wzór na zmianę mocy w decybelach wynosi: \(\Delta P [\mathrm{dB}] = 10 \log_{10}(P_2 / P_1)\).',
-    relatedRoute: '/teoria/sciaga'
+    "tip": "PMD wynika z dwójłomności rdzenia: Δτ = D_PMD · √L [ps/√km].",
+    "relatedRoute": "/teoria/swiatlowody#q12"
   },
   {
-    id: 'math-2',
-    category: 'zadania_wzory',
-    categoryLabel: 'Wzory i reguły kciuka',
-    tier: 'tier1',
-    question: 'Ile w miliwatach lub watach wynosi moc \\(0\\ \\mathrm{dBm}\\) oraz \\(30\\ \\mathrm{dBm}\\)?',
-    options: [
-      '\\(0\\ \\mathrm{dBm} = 1\\ \\mathrm{mW}\\), a \\(30\\ \\mathrm{dBm} = 1\\ \\mathrm{W}\\) (1000 mW).',
-      '\\(0\\ \\mathrm{dBm} = 0\\ \\mathrm{mW}\\), a \\(30\\ \\mathrm{dBm} = 30\\ \\mathrm{mW}\\).',
-      '\\(0\\ \\mathrm{dBm} = 1\\ \\mathrm{W}\\), a \\(30\\ \\mathrm{dBm} = 30\\ \\mathrm{kW}\\).',
-      '\\(0\\ \\mathrm{dBm} = -1\\ \\mathrm{mW}\\), a \\(30\\ \\mathrm{dBm} = 3\\ \\mathrm{mW}\\).'
+    "id": "mod-multiplex-def",
+    "category": "modulacja",
+    "categoryLabel": "Modulacja i multipleksacja",
+    "tier": "tier1",
+    "question": "Czym jest multipleksacja, do czego służy oraz jakie są jej podstawowe rodzaje?",
+    "options": [
+      "Jest to metoda łączenia wielu niezależnych strumieni sygnałów w jedno wspólne medium transmisyjne; rodzaje: TDM (czas), FDM (częstotliwość), WDM/CWDM/DWDM (długość fali), SDM (przestrzeń) i CDM (kod).",
+      "Jest to technika modulacji amplitudy polegająca na całkowitym tłumieniu fali nośnej.",
+      "Jest to proces zamiany sygnału optycznego na sygnał akustyczny w przetwornikach piezoelektrycznych.",
+      "Jest to podwajanie napięcia zasilania w regeneratorach międzystacyjnych."
     ],
-    correctIndex: 0,
-    explanation: 'Skala dBm to poziom mocy odniesiony do 1 miliwata (1 mW): \\(P_{[dBm]} = 10 \\log_{10}(P / 1\\ \\mathrm{mW})\\). Stąd \\(10 \\log_{10}(1) = 0\\ \\mathrm{dBm} = 1\\ \\mathrm{mW}\\). Dodając \\(+30\\ \\mathrm{dB}\\) (trzykrotnie \\(+10\\ \\mathrm{dB}\\), czyli \\(10 \\times 10 \\times 10 = 1000\\)), otrzymujemy \\(1000\\ \\mathrm{mW} = 1\\ \\mathrm{W} = 30\\ \\mathrm{dBm}\\).',
-    flashcardFront: 'Przeliczniki skali dBm na mW i W:',
-    flashcardBack: [
-      '\\(0\\ \\mathrm{dBm} = 1\\ \\mathrm{mW}\\)',
-      '\\(10\\ \\mathrm{dBm} = 10\\ \\mathrm{mW}\\)',
-      '\\(20\\ \\mathrm{dBm} = 100\\ \\mathrm{mW}\\)',
-      '\\(30\\ \\mathrm{dBm} = 1000\\ \\mathrm{mW} = 1\\ \\mathrm{W}\\)',
-      '\\(-10\\ \\mathrm{dBm} = 0{,}1\\ \\mathrm{mW} = 100\\ \\mu\\mathrm{W}\\)',
-      '\\(-30\\ \\mathrm{dBm} = 0{,}001\\ \\mathrm{mW} = 1\\ \\mu\\mathrm{W}\\)'
+    "correctIndex": 0,
+    "explanation": "Multipleksacja polega na jednoczesnym przesyłaniu wielu kanałów informacyjnych przez jedno fizyczne łącze transmisyjne (kabel miedziany, światłowód, łącze radiowe), co maksymalizuje wykorzystanie pasma i minimalizuje koszty infrastruktury. Główne techniki to: TDM (Time-Division Multiplexing — przydział szczelin czasowych), FDM (Frequency-Division — przydział pasm częstotliwości), WDM/DWDM (Wavelength-Division — zwielokrotnienie falowe w optyce), CDM (kodowe) oraz SDM (wielordzeniowe lub wielomodowe).",
+    "flashcardFront": "Co to jest multipleksacja, do czego służy i jakie są rodzaje?",
+    "flashcardBack": [
+      "Definicja: Łączenie wielu kanałów w jedno medium transmisyjne w celu optymalnego wykorzystania pasma.",
+      "TDM: Zwielokrotnienie w dziedzinie CZASU (szczeliny czasowe).",
+      "FDM: Zwielokrotnienie w dziedzinie CZĘSTOTLIWOŚCI (osobne pasma radiowe).",
+      "WDM / DWDM / CWDM: Zwielokrotnienie w dziedzinie DŁUGOŚCI FALI (optyczne kanały świetlne).",
+      "SDM / CDM: Zwielokrotnienie przestrzenne (Spatial) / kodowe (Code)."
     ],
-    tips: [
-      'Jednostka dBm oznacza poziom mocy odniesiony do 1 miliwata (\\(1\\ \\mathrm{mW} = 10^{-3}\\ \\mathrm{W}\\)).',
-      'Z definicji poziom \\(0\\ \\mathrm{dBm}\\) oznacza sytuację, w której moc mierzona jest równa mocy odniesienia.',
-      'Zauważ, że wzrost o każde \\(+10\\ \\mathrm{dB}\\) oznacza 10-krotny wzrost mocy w watach. Co oznacza więc wzrost o \\(+30\\ \\mathrm{dB}\\) względem poziomu odniesienia?'
+    "tips": [
+      "Multipleksacja pozwala puścić setki rozmów telefonicznych lub strumieni wideo jednym kablem.",
+      "Można dzielić czas (TDM), częstotliwość (FDM) lub barwę światła (WDM).",
+      "W łączach światłowodowych dominuje technika WDM / DWDM."
     ],
-    tip: 'Decybelomiliwat (\(\mathrm{dBm}\)) to poziom mocy odniesiony do 1 miliwata: \(P [\mathrm{dBm}] = 10 \log_{10}(P [\mathrm{mW}] / 1\ \mathrm{mW})\).',
-    relatedRoute: '/teoria/sciaga'
+    "tip": "Multipleksacja to łączenie kanałów: TDM (czas), FDM (częstotliwość), WDM/DWDM (długość fali), CDM (kod).",
+    "relatedRoute": "/teoria/modulacja-multipleksacja#q14"
   },
   {
-    id: 'math-3',
-    category: 'zadania_wzory',
-    categoryLabel: 'Wzory i reguły kciuka',
-    tier: 'tier1',
-    question: 'Zgodnie z regułą Carsona, szerokość pasma \\(B\\) sygnału zmodulowanego częstotliwościowo (FM) wynosi:',
-    options: [
-      '\\(B = 2(\\Delta f + f_m)\\), gdzie \\(\\Delta f\\) to dewiacja częstotliwości, a \\(f_m\\) to maksymalna częstotliwość sygnału modulującego.',
-      '\\(B = \\Delta f - f_m\\).',
-      '\\(B = 2 \\cdot f_m\\) bez względu na amplitudę dewiacji częstotliwości.',
-      '\\(B = \\frac{\\Delta f^2}{2 f_m}\\).'
+    "id": "mod-dwdm-problems",
+    "category": "modulacja",
+    "categoryLabel": "Modulacja i multipleksacja",
+    "tier": "tier1",
+    "question": "Wymień główne problemy fizyczne występujące w łączach gęstego zwielokrotnienia falowego (DWDM):",
+    "options": [
+      "Nieliniowe mieszanie czterofalowe (FWM), modulacja skrośna (XPM), automodulacja fazy (SPM), przesłuchy międzykanałowe (crosstalk), niestabilność temperaturowa laserów (dryft falowy) oraz nierównomierne wzmocnienie EDFA.",
+      "Zjawisko naskórkowości w dielektryku, korozja wtyków optycznych i promieniowanie rentgenowskie.",
+      "Brak możliwości stosowania wzmacniaczy optycznych oraz konieczność zamiany światła na prąd stały w każdym węźle.",
+      "Ucieczka elektronów z rdzenia światłowodu do atmosfery przy dużych prędkościach transmisji."
     ],
-    correctIndex: 0,
-    explanation: 'Reguła Carsona określa pasmo zawierające około 98% całkowitej mocy sygnału FM: \\(B = 2(\\Delta f + f_m) = 2 f_m (1 + \\beta)\\), gdzie \\(\\beta = \\Delta f / f_m\\) to wskaźnik modulacji. Dla małych \\(\\beta\\) (wąskopasmowe NBFM) \\(B \\approx 2 f_m\\) jak w AM, a dla dużych \\(\\beta\\) (szerokopasmowe WBFM) \\(B \\approx 2 \\Delta f\\).',
-    flashcardFront: 'Reguła Carsona na pasmo sygnału FM:',
-    flashcardBack: [
-      'Wzór: \\(B = 2(\\Delta f + f_m) = 2 f_m (1 + \\beta)\\)',
-      '\\(\\Delta f\\) — dewiacja częstotliwości (maksymalne odchylenie od nośnej),',
-      '\\(f_m\\) — najwyższa częstotliwość w sygnale informacyjnym,',
-      '\\(\\beta = \\frac{\\Delta f}{f_m}\\) — wskaźnik modulacji FM.',
-      'Pasmo FM jest ZAWSZE szersze niż pasmo modulacji AM (które wynosi po prostu \\(2 f_m\\)).'
+    "correctIndex": 0,
+    "explanation": "W systemach DWDM (odstępy między kanałami rzędu 100 GHz, 50 GHz, 25 GHz lub 12,5 GHz) kluczowymi problemami są: 1. Nieliniowości optyczne (efekt Kerra): FWM (generacja pasożytniczych fal nakładających się na kanały), SPM i XPM (poszerzenie widma). 2. Przesłuchy optyczne (crosstalk) między bliskimi kanałami. 3. Nierównomierny profil wzmocnienia wzmacniaczy EDFA (konieczność spłaszczania pasma). 4. Wrażliwość laserów DFB na wahania temperatury (dryft długości fali rzędu 0,1 nm/°C wymaga chłodzenia TEC).",
+    "flashcardFront": "Problemy występujące w łączach DWDM (egzaminacyjny pewniak):",
+    "flashcardBack": [
+      "Zjawiska nieliniowe (efekt Kerra): Mieszanie czterofalowe (FWM), modulacja skrośna (XPM), automodulacja fazy (SPM).",
+      "Przesłuchy międzykanałowe (inter-channel crosstalk).",
+      "Nierównomierne wzmocnienie wzmacniaczy EDFA w pasmie C (konieczność stosowania filtrów GFF).",
+      "Dryft termiczny laserów nadawczych: zmiana temperatury o 1°C przesuwa długość fali o ok. 0,1 nm (wymaga modułów Peltiera TEC)."
     ],
-    tips: [
-      'Reguła ta określa pasmo częstotliwościowe sygnału z modulacją kątową (częstotliwościową FM lub fazową PM).',
-      'Widmo sygnału FM teoretycznie składa się z nieskończonej liczby prążków bocznych, ale w praktyce inżynierskiej pomija się prążki o znikomej energii.',
-      'Pasmo to zależy od dwóch składowych: maksymalnego odchylenia częstotliwości od nośnej oraz od najwyższej częstotliwości w sygnale źródłowym, a w formule występuje współczynnik symetrii dla obu wstęg.'
+    "tips": [
+      "Przy gęsto upakowanych kanałach światła wchodzą nieliniowości szkła: FWM, SPM, XPM.",
+      "Wzmacniacz EDFA nie wzmacnia wszystkich kolorów jednakowo.",
+      "Lasery muszą być precyzyjnie chłodzone, żeby nie najeżdżały na sąsiednie kanały."
     ],
-    tip: 'Reguła Carsona określa praktyczne pasmo częstotliwościowe sygnału z modulacją kątową (FM / PM).',
-    relatedRoute: '/zadania/3'
+    "tip": "Problemy DWDM: FWM, SPM, XPM, przesłuchy, nierówne wzmocnienie EDFA i dryft termiczny laserów.",
+    "relatedRoute": "/teoria/modulacja-multipleksacja#q15"
   },
   {
-    id: 'math-4',
-    category: 'zadania_wzory',
-    categoryLabel: 'Wzory i reguły kciuka',
-    tier: 'tier1',
-    question: 'Wzór Shannona-Hartleya na maksymalną teoretyczną przepustowość (pojemność informacyjną) kanału z szumem gaussowskim ma postać:',
-    options: [
-      '\\(C = B \\log_2\\left(1 + \\frac{S}{N}\\right)\\) [b/s]',
-      '\\(C = 2 B \\log_{10}(S \\cdot N)\\)',
-      '\\(C = \\frac{B}{1 + S/N}\\)',
-      '\\(C = B \\cdot \\sqrt{\\frac{S}{N}}\\)'
+    "id": "mod-dwdm-mitigation",
+    "category": "modulacja",
+    "categoryLabel": "Modulacja i multipleksacja",
+    "tier": "tier1",
+    "question": "W jaki sposób ogranicza się zjawiska nieliniowe (zwłaszcza FWM) oraz inne problemy w łączach DWDM?",
+    "options": [
+      "Stosowanie włókien o małej niezerowej dyspersji (NZDSF), nierównomiernych odstępów międzykanałowych (Unequal Channel Spacing), filtrów spłaszczających wzmocnienie (GFF) oraz stabilizacji termoelektrycznej (TEC).",
+      "Zwiększanie mocy optycznej każdego kanału powyżej 100 mW oraz stosowanie idealnego zera dyspersji (D = 0).",
+      "Całkowite wyłączenie wzmacniaczy EDFA i przejście na kable miedziane.",
+      "Stosowanie wyłącznie profilu skokowego o bardzo dużej średnicy rdzenia."
     ],
-    correctIndex: 0,
-    explanation: 'Twierdzenie Shannona wyznacza granicę pojemności kanału (Channel Capacity): \\(C = B \\log_2(1 + SNR)\\), gdzie \\(B\\) to pasmo [Hz], a \\(S/N\\) to stosunek mocy sygnału do szumu (liczbowy, NIE w decybelach!). Jeśli stosunek szumu rośnie do nieskończoności (SNR -> 0), przepustowość spada do 0.',
-    flashcardFront: 'Wzór Shannona-Hartleya na pojemność kanału C:',
-    flashcardBack: [
-      'Wzór: \\(C = B \\log_2\\left(1 + \\frac{S}{N}\\right)\\) w bitach na sekundę [b/s].',
-      '\\(B\\) — szerokość pasma kanału w hercach [Hz],',
-      '\\(S/N\\) — stosunek sygnału do szumu jako ILORAZ MOCY (nie w dB! Jeśli podane w dB, trzeba zamienić: \\(S/N = 10^{SNR_{dB}/10}\\)).',
-      'Żaden kod korekcyjny nie pozwoli przesłać więcej danych bez błędów niż wynosi granica Shannona.'
+    "correctIndex": 0,
+    "explanation": "Ograniczanie problemów w DWDM: 1. Zastosowanie włókien NZDSF (ITU-T G.655) z małą, niezerową dyspersją chromatyczną (niszczy synchronizm fazowy fal FWM). 2. Nierówne odstępy kanałowe — produkty mieszania FWM wpadają w puste szczeliny międzykanałowe, nie zakłócając danych. 3. Filtry wyrównujące wzmocnienie GFF (Gain Flattening Filters) w EDFA. 4. Precyzyjne sterowniki termoelektryczne (moduły Peltiera TEC) stabilizujące lasery z dokładnością do 0,01°C. 5. Ograniczenie mocy wejściowej na kanał poniżej progu nieliniowości.",
+    "flashcardFront": "Jak ograniczyć problemy w łączach DWDM?",
+    "flashcardBack": [
+      "Włókna NZDSF: Mała niezerowa dyspersja uniemożliwia dopasowanie fazowe FWM.",
+      "Nierównomierne odstępy (Unequal Spacing): Produkty FWM wpadają w puste przerwy między kanałami.",
+      "Filtry GFF (Gain Flattening Filters): Wyrównują pasmo wzmocnienia wzmacniaczy EDFA.",
+      "Stabilizacja termoelektryczna (TEC / moduły Peltiera): Utrzymują stałą długość fali laserów DFB.",
+      "Optymalizacja mocy: Ograniczenie mocy na kanał poniżej progu nieliniowości."
     ],
-    tips: [
-      'Twierdzenie to opisuje graniczną ilość informacji, jaką można bezbłędnie przesłać w kanale telekomunikacyjnym w obecności szumu białego o rozkładzie gaussowskim.',
-      'Przepustowość jest wprost proporcjonalna do dostępnej szerokości pasma kanału (\\(B\\)).',
-      'Liczba poziomów możliwych do rozróżnienia zależy od stosunku mocy sygnału do szumu (\\(S/N\\)), a przejście z poziomów na bity wymaga zastosowania logarytmu o podstawie dwójkowej.'
+    "tips": [
+      "Nierówne odstępy sprawiają, że fałszywe częstotliwości nie trafiają w kanały transmisyjne.",
+      "Włókno NZDSF ma specjalnie dobraną małą dyspersję, aby rozsynchronizować fale FWM.",
+      "Moduły Peltiera (TEC) zapobiegają pływaniu termicznemu laserów."
     ],
-    tip: 'Twierdzenie Shannona-Hartleya wyznacza absolutną teoretyczną granicę przepustowości kanału z szumem białym.',
-    relatedRoute: '/zadania/3'
+    "tip": "Ograniczanie w DWDM: włókna NZDSF, nierównomierny raster kanałowy, filtry GFF i stabilizacja TEC.",
+    "relatedRoute": "/teoria/modulacja-multipleksacja#q15"
   },
   {
-    id: 'math-5',
-    category: 'zadania_wzory',
-    categoryLabel: 'Wzory i reguły kciuka',
-    tier: 'tier2',
-    question: 'Wzór na promień pierwszej strefy Fresnela w punkcie odległym o \\(d_1\\) od nadajnika i \\(d_2\\) od odbiornika to:',
-    options: [
-      '\\(r_1 = \\sqrt{\\frac{\\lambda \\cdot d_1 \\cdot d_2}{d_1 + d_2}}\\)',
-      '\\(r_1 = \\frac{\\lambda (d_1 + d_2)}{d_1 \\cdot d_2}\\)',
-      '\\(r_1 = \\sqrt{\\lambda \\cdot (d_1 + d_2)}\\)',
-      '\\(r_1 = 2 \\lambda \\sqrt{d_1 \\cdot d_2}\\)'
+    "id": "mod-fwm-nature",
+    "category": "modulacja",
+    "categoryLabel": "Modulacja i multipleksacja",
+    "tier": "tier1",
+    "question": "Na czym polega zjawisko mieszania czterofalowego (FWM — Four-Wave Mixing) w systemach DWDM?",
+    "options": [
+      "Trzy fale optyczne o częstotliwościach \\(f_i, f_j, f_k\\) oddziałują nieliniowo poprzez podatność \\(\\chi^{(3)}\\) kwarcu, generując czwartą częstotliwość pasożytniczą \\(f_{ijk} = f_i + f_j - f_k\\), która w regularnej siatce trafia wprost w kanał danych.",
+      "Cztery lasery zderzają się ze sobą w sprzęgaczu, zamieniając całą energię w promieniowanie cieplne.",
+      "Jest to zjawisko odbicia fali od czterech kolejnych złączy mechanicznych w torze optycznym.",
+      "Jest to proces poczwórnego wzmocnienia sygnału we wzmacniaczach ramanowskich."
     ],
-    correctIndex: 0,
-    explanation: 'Promień n-tej strefy Fresnela dany jest wzorem \\(r_n = \\sqrt{\\frac{n \\lambda d_1 d_2}{d_1 + d_2}}\\). Dla \\(n=1\\) mamy \\(r_1 = \\sqrt{\\frac{\\lambda d_1 d_2}{D}}\\). Aby transmisja w przestrzeni była zbliżona do warunków wolnej przestrzeni, co najmniej 60% promienia I strefy Fresnela musi być wolne od jakichkolwiek przeszkód terenowych.',
-    flashcardFront: 'Promień I strefy Fresnela — wzór i reguła 60%:',
-    flashcardBack: [
-      'Wzór: \\(r_1 = \\sqrt{\\frac{\\lambda d_1 d_2}{d_1 + d_2}}\\)',
-      'Maksimum promienia wypada w połowie trasy: \\(r_{1,max} = \\frac{1}{2}\\sqrt{\\lambda D}\\).',
-      'Reguła czystości strefy: Aby nie było tłumienia dyfrakcyjnego od przeszkód, co najmniej 60% promienia I strefy Fresnela musi być wolne od drzew, budynków i wzgórz.'
+    "correctIndex": 0,
+    "explanation": "FWM to nieliniowe zjawisko parametryczne trzeciego rzędu (efekt Kerra). Gdy w jednym włóknie propaguje się wiele fal optycznych, oddziałują one ze sobą, generując nowe składowe częstotliwościowe: \\(f_{ijk} = f_i + f_j - f_k\\). Dla N kanałów liczba produktów FWM wynosi \\(N^2(N-1)/2\\). Przy równomiernym rastrze ITU produkty FWM nakładają się dokładnie na sąsiednie kanały transmisyjne, wywołując nieodwracalne zniekształcenia i przesłuchy.",
+    "flashcardFront": "Zjawisko mieszania czterofalowego (FWM):",
+    "flashcardBack": [
+      "Istota: Trzy fale o częstotliwościach \\(f_i, f_j, f_k\\) generują czwartą falę pasożytniczą: \\(f_{ijk} = f_i + f_j - f_k\\).",
+      "Skutek w DWDM: Jeśli odstępy są równe, nowe częstotliwości nakładają się bezpośrednio na kanały transmisyjne!",
+      "Warunek wystąpienia: Duża gęstość mocy laserów, mały odstęp międzykanałowy i bliska zeru dyspersja chromatyczna (dopasowanie fazowe)."
     ],
-    tips: [
-      'Strefy Fresnela to obszary wokół osi łączącej antenę nadawczą i odbiorczą, w których obecność przeszkód powoduje interferencję fal.',
-      'Pierwsza strefa odpowiada geometrycznemu miejscu punktów, dla których różnica dróg promienia ugiętego i bezpośredniego nie przekracza połowy długości fali (\\(\\lambda / 2\\)).',
-      'Zastanów się nad symetrią: promień strefy jest największy dokładnie w połowie trasy i zależy od iloczynu odległości \\(d_1 \\cdot d_2\\) podzielonego przez ich sumę.'
+    "tips": [
+      "FWM = Four-Wave Mixing (mieszanie czterofalowe). Trzy fale generują czwartą.",
+      "Wzór na nową częstotliwość: f_ijk = f_i + f_j - f_k.",
+      "Przy równej siatce produkt FWM ląduje dokładnie w innym kanale danych!"
     ],
-    tip: 'Pierwsza strefa Fresnela to elipsoida obrotowa o promieniu zależnym od odległości od nadajnika (\(d_1\)), odbiornika (\(d_2\)) i długości fali \(\lambda\).',
-    relatedRoute: '/zadania/1'
+    "tip": "FWM: f_ijk = f_i + f_j - f_k. Pasożytnicze fale trafiają w kanały przy równej siatce DWDM.",
+    "relatedRoute": "/teoria/modulacja-multipleksacja#q15"
   },
   {
-    id: 'math-6',
-    category: 'zadania_wzory',
-    categoryLabel: 'Wzory i reguły kciuka',
-    tier: 'tier1',
-    question: 'Jak obliczyć graniczną odległość bezpośredniej widoczności (horyzont radiowy) przy wysokościach anten \\(H_N\\) i \\(H_O\\)?',
-    options: [
-      '\\(d_0 = \\sqrt{2 R_Z} \\left(\\sqrt{H_N} + \\sqrt{H_O}\\right) \\approx 3{,}57 \\left(\\sqrt{H_N} + \\sqrt{H_O}\\right)\\) [km] (lub 4,12 przy uwzględnieniu refrakcji 4/3 R).',
-      '\\(d_0 = R_Z \\cdot (H_N + H_O)\\)',
-      '\\(d_0 = \\sqrt{R_Z \\cdot H_N \\cdot H_O}\\)',
-      '\\(d_0 = 2 \\pi R_Z \\frac{H_N}{H_O}\\)'
+    "id": "mod-quality-methods",
+    "category": "modulacja",
+    "categoryLabel": "Modulacja i multipleksacja",
+    "tier": "tier1",
+    "question": "Wymień i opisz metody mierzenia jakości zastosowanej modulacji cyfrowej:",
+    "options": [
+      "Wykres konstelacji (diagram I-Q), wielkość wektora błędu (EVM), stopa błędów binarnych (BER), współczynnik błędów modulacji (MER) oraz wykres oka (Eye Diagram).",
+      "Pomiar masy falowodu, ciśnienia statycznego gazu w tubie oraz test twardości opony kabla.",
+      "Wyłącznie pomiar napięcia stałego zasilacza buforowego stacji bazowej.",
+      "Badanie promieniowania rentgenowskiego diody laserowej metodą scyntylacyjną."
     ],
-    correctIndex: 0,
-    explanation: 'Odległość widoczności horyzontalnej wynika z twierdzenia Pitagorasa dla trójkąta stycznego do kuli ziemskiej: \\(d_1 = \\sqrt{(R+H)^2 - R^2} \\approx \\sqrt{2 R H}\\). Suma zasięgów obu anten to \\(d_0 = \\sqrt{2 R_Z}(\\sqrt{H_N} + \\sqrt{H_O})\\). Jeśli podstawimy promień w kilometrach, a wysokości w metrach: współczynnik wynosi ok. 3,57 dla geometrycznego i ok. 4,12 dla radiowego (przy 4/3 R).',
-    flashcardFront: 'Wzór na zasięg bezpośredniej widoczności anten (horyzont):',
-    flashcardBack: [
-      'Wzór ścisły: \\(d_0 = \\sqrt{2 R_Z}(\\sqrt{H_N} + \\sqrt{H_O})\\)',
-      'Dla wysokości anten w metrach i zasięgu w km:',
-      '• Horyzont geometryczny: \\(d_0 \\approx 3{,}57 \\cdot (\\sqrt{H_N} + \\sqrt{H_O})\\) [km]',
-      '• Horyzont radiowy (refrakcja standardowa 4/3 R): \\(d_{rad} \\approx 4{,}12 \\cdot (\\sqrt{H_N} + \\sqrt{H_O})\\) [km].'
+    "correctIndex": 0,
+    "explanation": "Do oceny jakości modulacji cyfrowej stosuje się: 1. Wykres konstelacji — prezentacja punktów symboli na płaszczyźnie zespolonej I-Q. 2. EVM (Error Vector Magnitude) — wektor błędu między idealnym a zmierzonym symbolem (w % lub dB). 3. BER (Bit Error Rate) — stosunek błędnie odebranych bitów do wszystkich bitów. 4. Wykres oka (Eye Diagram) — nakładanie się przebiegów bitowych na oscyloskopie. 5. MER / SNR — stosunek sygnału do szumu.",
+    "flashcardFront": "Sposoby mierzenia jakości modulacji cyfrowej (egzamin):",
+    "flashcardBack": [
+      "Wykres konstelacji (I-Q Diagram): Rozkład punktów symboli na płaszczyźnie fazowej.",
+      "EVM (Error Vector Magnitude): Odległość wektorowa między punktem zmierzonym a idealnym.",
+      "BER (Bit Error Rate): Stopa błędów bitowych (np. \\(10^{-9}\\) lub \\(10^{-12}\\)).",
+      "Wykres oka (Eye Diagram): Wizualizacja jakości przebiegu czasowego, marginesu szumu i jittera."
     ],
-    tips: [
-      'Zadanie dotyczy wyznaczenia odległości wzajemnej widoczności optycznej anten z uwzględnieniem krzywizny globu i zjawiska standardowej refrakcji.',
-      'Zależność geometryczna wiąże odległość z twierdzeniem Pitagorasa, co prowadzi do zależności pierwiastkowej od wysokości zawieszenia masztów.',
-      'W inżynierii radiowej stosuje się prosty współczynnik liczbowy (ok. 4,12), przez który mnoży się sumę pierwiastków z wysokości anten wyrażonych w metrach.'
+    "tips": [
+      "Konstelacja I-Q pokazuje punkty symboli.",
+      "EVM mierzy, jak daleko zmierzony punkt leży od idealnego punktu konstelacji.",
+      "Wykres oka i stopa BER dają pełny obraz jakości sygnału."
     ],
-    tip: 'Horyzont radiowy uwzględnia krzywiznę kuli ziemskiej oraz ugięcie fal w troposferze (zastępczy promień Ziemi \(4/3 R_z\)).',
-    relatedRoute: '/zadania/1'
+    "tip": "Pomiary jakości: Diagram konstelacji I-Q, EVM, BER, MER oraz Wykres oka (Eye Diagram).",
+    "relatedRoute": "/teoria/modulacja-multipleksacja#q16"
   },
   {
-    id: 'math-7',
-    category: 'zadania_wzory',
-    categoryLabel: 'Wzory i reguły kciuka',
-    tier: 'tier2',
-    question: 'Ile w przybliżeniu wynosi liczba modów prowadzonych \\(M\\) we włóknie światłowodowym wielomodowym o profilu skokowym (Step-Index) o znormalizowanej częstotliwości \\(V\\)?',
-    options: [
-      '\\(M \\approx \\frac{V^2}{2}\\) (dla profilu gradientowego \\(M \\approx \\frac{V^2}{4}\\)).',
-      '\\(M \\approx 2 V\\).',
-      '\\(M \\approx \\sqrt{V}\\).',
-      '\\(M \\approx V^3\\).'
+    "id": "mod-eye-diagram",
+    "category": "modulacja",
+    "categoryLabel": "Modulacja i multipleksacja",
+    "tier": "tier1",
+    "question": "Wskaż poprawną interpretację parametrów wykresu oka (Eye Diagram):",
+    "options": [
+      "Pionowe rozwarcie oka określa margines odporności na szum; poziome rozwarcie określa margines na błędy synchronizacji (jitter); zamknięcie oka sygnalizuje silną interferencję międzysymbolową (ISI).",
+      "Wysokość oka określa wyłącznie napięcie sieci elektroenergetycznej, a szerokość oznacza długość geograficzną kabla.",
+      "Im bardziej oko jest zamknięte, tym wyższa jakość modulacji i mniejsza liczba błędów.",
+      "Grubość wiązki na szczycie oka reprezentuje moc promieniowania mikrofalowego stacji bazowej."
     ],
-    correctIndex: 0,
-    explanation: 'Dla włókna skokowego liczba modów jest proporcjonalna do kwadratu parametru V i wynosi \\(M \\approx V^2 / 2\\). We włóknie gradientowym o profilu parabolicznym (alfa = 2) liczba modów jest o połowę mniejsza i wynosi \\(M \\approx V^2 / 4\\).',
-    flashcardFront: 'Liczba modów prowadzonych we włóknie skokowym i gradientowym:',
-    flashcardBack: [
-      'Włókno o profilu skokowym (Step-Index): \\(M \\approx \\frac{V^2}{2}\\)',
-      'Włókno o profilu gradientowym (Graded-Index): \\(M \\approx \\frac{V^2}{4}\\)',
-      'Profil gradientowy prowadzi 2 razy mniej modów, ale drastycznie redukuje ich rozmycie czasowe (dyspersję modową).'
+    "correctIndex": 0,
+    "explanation": "Wykres oka (Eye Diagram) powstaje przez nakładanie kolejnych okresów sygnału cyfrowego na oscyloskopie. Pionowa wysokość oka (Eye Height) w punkcie próbkowania wyznacza margines odporności na szum. Pozioma szerokość oka (Eye Width) reprezentuje przedział czasu wolny od błędów taktowania (odporność na timing jitter). Grubość przecięć osi czasu obrazuje jitter fazowy. Zamknięcie „oka” oznacza degradację sygnału przez dyspersję i silną interferencję międzysymbolową (ISI).",
+    "flashcardFront": "Interpretacja wykresu oka (Eye Diagram):",
+    "flashcardBack": [
+      "Pionowe rozwarcie oka (Eye Height): Margines odporności na szum (Noise Margin).",
+      "Poziome rozwarcie oka (Eye Width): Margines na jitter taktowania (Timing Jitter).",
+      "Grubość linii na przecięciu zera: Jitter fazowy.",
+      "Zamknięcie oka: Zniekształcenia impulsów, silna interferencja ISI i drastyczny wzrost BER."
     ],
-    tips: [
-      'W światłowodzie o profilu skokowym liczba dozwolonych konfiguracji przestrzennych pola (modów) zależy od częstotliwości znormalizowanej falowodu (\\(V\\)).',
-      'Dla dużych wartości parametru \\(V\\) (znacznie powyżej progu jednomodowości) liczba modów rośnie z kwadratem tego parametru.',
-      'Pamiętaj, że każdy mod przestrzenny może występować w dwóch prostopadłych stanach polaryzacji, co wiąże się ze współczynnikiem ułamkowym w formule aproksymacyjnej.'
+    "tips": [
+      "Im bardziej „otwarte” oko, tym lepszy i czystszy sygnał.",
+      "Wysokość (pion) = napięcie = margines na szum.",
+      "Szerokość (poziom) = czas = margines na jitter i błędy zegara."
     ],
-    tip: 'Liczba modów prowadzonych zależy od częstotliwości znormalizowanej falowodu \(V\).',
-    relatedRoute: '/teoria/swiatlowody#q8'
+    "tip": "Oko: rozwarcie pionowe = margines szumu, rozwarcie poziome = margines jittera, zamknięcie = ISI.",
+    "relatedRoute": "/teoria/modulacja-multipleksacja#q16"
   },
   {
-    id: 'math-8',
-    category: 'zadania_wzory',
-    categoryLabel: 'Wzory i reguły kciuka',
-    tier: 'tier1',
-    question: 'Impedancja falowa próżni \\(\\eta_0\\) (stosunek natężenia pola elektrycznego do magnetycznego \\(E/H\\) w fali płaskiej) wynosi w przybliżeniu:',
-    options: [
-      '\\(\\eta_0 = \\sqrt{\\frac{\\mu_0}{\\varepsilon_0}} \\approx 120\\pi \\approx 377\\ \\Omega\\)',
-      '\\(\\eta_0 = 50\\ \\Omega\\)',
-      '\\(\\eta_0 = 75\\ \\Omega\\)',
-      '\\(\\eta_0 = 1\\ \\Omega\\)'
+    "id": "mod-evm-constellation",
+    "category": "modulacja",
+    "categoryLabel": "Modulacja i multipleksacja",
+    "tier": "tier1",
+    "question": "Czym jest wskaźnik EVM (Error Vector Magnitude) oraz o czym świadczy charakter zniekształceń na wykresie konstelacji?",
+    "options": [
+      "EVM to znormalizowana wartość wektora błędu między zmierzonym a idealnym punktem konstelacji; rozmycie punktów w kołowe obłoki świadczy o szumie gaussowskim (AWGN), a rozciągnięcie po łuku sygnalizuje szum fazowy oscylatora.",
+      "EVM to stosunek liczby fotonów do elektronów w fotodiodzie lawinowej.",
+      "Wskaźnik EVM mierzy wyłącznie straty mocy na złączach światłowodowych w decybelach.",
+      "Obrót całej konstelacji oznacza obecność zanieczyszczeń jonami OH w kablu."
     ],
-    correctIndex: 0,
-    explanation: 'Impedancja falowa próżni \\(\\eta_0 = \\sqrt{\\mu_0 / \\varepsilon_0} = \\sqrt{4\pi \\cdot 10^{-7} / (8{,}854 \\cdot 10^{-12})} \\approx 376{,}73\\ \\Omega \\approx 120\\pi \\approx 377\\ \\Omega\\). Wiąże ona amplitudy pól: \\(E = \\eta_0 H\\).',
-    flashcardFront: 'Impedancja falowa próżni \\(\\eta_0\\) — wzór i wartość:',
-    flashcardBack: [
-      'Wzór: \\(\\eta_0 = \\sqrt{\\frac{\\mu_0}{\\varepsilon_0}} = \\frac{E}{H}\\)',
-      'Wartość liczbowa: \\(\\eta_0 \\approx 120\\pi \\approx 377\\ \\Omega\\)',
-      'W dielektryku o przenikalności \\(\\varepsilon_r\\): \\(\\eta = \\frac{\\eta_0}{\\sqrt{\\varepsilon_r}} = \\frac{377}{\\sqrt{\\varepsilon_r}}\\ \\Omega\\).'
+    "correctIndex": 0,
+    "explanation": "Wektor błędu (Error Vector) to wektor różnicy pomiędzy punktem idealnym (referencyjnym dla danego stanu modulacji QAM/PSK) a punktem rzeczywiście odebranym w przestrzeni I-Q. EVM to stosunek wartości skutecznej wektora błędu do amplitudy symbolu maksymalnego lub średniego (wyrażany w % lub dB). Kształt chmur punktów pozwala diagnozować problem: rozmycie symetryczne to szum termiczny (AWGN), rozmycie wzdłuż okręgu to szum fazowy, a ściskanie punktów zewnętrznych to nieliniowość wzmacniacza (kompresja nasycenia).",
+    "flashcardFront": "EVM (Error Vector Magnitude) i diagram konstelacji:",
+    "flashcardBack": [
+      "EVM: Wektorowa różnica między odebranym symbolem a punktem idealnym na płaszczyźnie I-Q.",
+      "Kołowe obłoki punktów wokół stanu idealnego: Szum gaussowski (AWGN / szum termiczny).",
+      "Punkty rozciągnięte wzdłuż łuku: Szum fazowy (drżenie fazy oscylatora lokalnego).",
+      "Kompresja zewnętrznych punktów: Nieliniowość nasycenia wzmacniacza mocy."
     ],
-    tips: [
-      'Impedancja falowa ośrodka bezstratnego jest zdefiniowana jako pierwiastek ze stosunku przenikalności magnetycznej do elektrycznej: \\(\\sqrt{\\mu / \\varepsilon}\\).',
-      'W próżni wielkość ta wiąże ze sobą chwilową wartość natężenia pola elektrycznego \\(E\\) [V/m] i magnetycznego \\(H\\) [A/m].',
-      'Zastanów się nad stałymi fizycznymi: prędkość światła \\(c = 1/\\sqrt{\\varepsilon_0 \\mu_0}\\) oraz \\(\\mu_0 = 4\\pi \\cdot 10^{-7}\\ \\mathrm{H/m}\\). Wynik liczbowy wyraża się w omach i jest rzędu kilkuset.'
+    "tips": [
+      "EVM mierzy jak bardzo rzeczywisty punkt chybił celu (punktu idealnego).",
+      "Kształt „chmury” punktów zdradza rodzaj uszkodzenia w torze odbiorczym.",
+      "Szum fazowy skręca punkty po łuku okręgu."
     ],
-    tip: 'Impedancja falowa próżni (opór falowy) wynika ze stosunku stałych materiałowych próżni: \(\eta_0 = \sqrt{\mu_0 / \varepsilon_0}\).',
-    relatedRoute: '/teoria/fala-propagacja#q1'
-  },
-  // Additional comprehensive exam questions
-  {
-    id: 'em-9',
-    category: 'fale_em',
-    categoryLabel: 'Fale i propagacja EM',
-    tier: 'tier1',
-    question: 'Wskaż równania materiałowe wiążące natężenia pól \\(\\vec{E}, \\vec{H}\\) z indukcjami \\(\\vec{D}, \\vec{B}\\) oraz gęstością prądu \\(\\vec{j}\\):',
-    options: [
-      '\\(\\vec{D} = \\varepsilon \\vec{E},\\quad \\vec{B} = \\mu \\vec{H},\\quad \\vec{j} = \\sigma \\vec{E}\\)',
-      '\\(\\vec{D} = \\mu \\vec{E},\\quad \\vec{B} = \\varepsilon \\vec{H},\\quad \\vec{j} = \\frac{\\vec{E}}{\\sigma}\\)',
-      '\\(\\vec{E} = \\varepsilon \\vec{D},\\quad \\vec{H} = \\mu \\vec{B},\\quad \\vec{j} = \\nabla \\times \\vec{E}\\)',
-      '\\(\\vec{D} = \\varepsilon_0 \\vec{B},\\quad \\vec{B} = \\mu_0 \\vec{D},\\quad \\vec{j} = \\rho \\vec{v}\\)'
-    ],
-    correctIndex: 0,
-    explanation: 'Równania materiałowe opisują reakcję ośrodka na pole: \\(\\vec{D} = \\varepsilon\\vec{E} = \\varepsilon_0 \\varepsilon_r \\vec{E}\\) (polaryzacja elektryczna), \\(\\vec{B} = \\mu\\vec{H} = \\mu_0 \\mu_r \\vec{H}\\) (namagnesowanie) oraz różniczkowe prawo Ohma \\(\\vec{j} = \\sigma \\vec{E}\\) (przewodnictwo właściwe).',
-    flashcardFront: 'Równania materiałowe (związki konstytutywne) pola EM:',
-    flashcardBack: [
-      '\\(\\vec{D} = \\varepsilon \\vec{E} = \\varepsilon_0 \\varepsilon_r \\vec{E}\\) (indukcja elektryczna)',
-      '\\(\\vec{B} = \\mu \\vec{H} = \\mu_0 \\mu_r \\vec{H}\\) (indukcja magnetyczna)',
-      '\\(\\vec{j} = \\sigma \\vec{E}\\) (różniczkowe prawo Ohma)',
-      'Natężenia \\(\\vec{E}, \\vec{H}\\) to ŹRÓDŁO (przyczyna), a indukcje \\(\\vec{D}, \\vec{B}\\) to EFEKT (reakcja materii).'
-    ],
-    tips: [
-      'Równania Maxwella operują czterema wektorami: natężeniami (\\(\\vec{E}, \\vec{H}\\)) oraz indukcjami (\\(\\vec{D}, \\vec{B}\\)). Równania materiałowe stanowią „most” łączący te wielkości z właściwościami samego środowiska.',
-      'Zastanów się, jakie stałe charakteryzują podatność dielektryczną, magnetyczną oraz zdolność materiału do przewodzenia ładunków.',
-      'Zwróć uwagę na proporcjonalność: pole \\(\\vec{D}\\) wiąże się ze zjawiskiem polaryzacji dielektryka, \\(\\vec{B}\\) z namagnesowaniem, a gęstość prądu \\(\\vec{J}\\) z prawem Ohma w ujęciu lokalnym.'
-    ],
-    tip: 'Równania materiałowe wiążą natężenia pól (E, H) z indukcjami (D, B) i gęstością prądu przewodzenia (J) poprzez parametry ośrodka.',
-    relatedRoute: '/teoria/fala-propagacja#q2'
+    "tip": "EVM to odległość punktu zmierzonego od idealnego. Koło = szum termiczny, łuk = szum fazowy.",
+    "relatedRoute": "/teoria/modulacja-multipleksacja#q16"
   },
   {
-    id: 'em-10',
-    category: 'fale_em',
-    categoryLabel: 'Fale i propagacja EM',
-    tier: 'tier2',
-    question: 'W jaki sposób deszcz i mgła wpływają na propagację fal radiowych w pasmach mikrofalowych (zwłaszcza powyżej 10 GHz)?',
-    options: [
-      'Krople deszczu o rozmiarach zbliżonych do długości fali silnie rozpraszają i pochłaniają energię fali (tłumienie rośnie drastycznie z częstotliwością).',
-      'Deszcz tworzy idealny falowód atmosferyczny, który podwaja zasięg anten mikrofalowych.',
-      'Mgła przyspiesza falę radiową o 50%, zmniejszając opóźnienie propagacyjne.',
-      'Krople wody odwracają zwrot wektora Poyntinga w stronę nadajnika bez strat energii.'
+    "id": "semi-eq-mass-action",
+    "category": "polprzewodniki",
+    "categoryLabel": "Półprzewodniki i złącze p-n",
+    "tier": "tier1",
+    "question": "Jakie warunki charakteryzują koncentrację nośników w stanie równowagi termodynamicznej półprzewodnika?",
+    "options": [
+      "Brak zewnętrznych bodźców (oświetlenia, napięcia), w całej strukturze obowiązuje jeden wspólny poziom Fermiego \\(E_F\\) oraz spełnione jest prawo działania mas: \\(n_0 \\cdot p_0 = n_i^2\\).",
+      "Koncentracja elektronów i dziur jest zawsze równa zeru w temperaturze pokojowej.",
+      "Iloczyn koncentracji nośników zależy liniowo od przyłożonego zewnętrznego napięcia stałego.",
+      "Poziom Fermiego rozszczepia się na nieskończenie wiele poziomów Landaua."
     ],
-    correctIndex: 0,
-    explanation: 'Dla częstotliwości powyżej 10 GHz długość fali staje się porównywalna z rozmiarem kropel deszczu (milimetry). Zachodzi silne rozpraszanie Mie oraz absorpcja dielektryczna przez cząsteczki wody, co może powodować tłumienie rzędu kilkunastu dB/km i zrywać łącza radioliniowe.',
-    flashcardFront: 'Wpływ opadów atmosferycznych (deszcz, mgła) na fale radiowe:',
-    flashcardBack: [
-      'Dla \\(f < 3\\ \\mathrm{GHz}\\): wpływ deszczu i mgły jest niemal pomijalny.',
-      'Dla \\(f > 10\\ \\mathrm{GHz}\\) (mikrofale, 5G, radiolinie): silne tłumienie przez absorpcję i rozpraszanie Mie na kroplach deszczu.',
-      'Dodatkowo cząsteczki tlenu (pik przy 60 GHz) i pary wodnej (pik przy 22 GHz) wykazują silną absorpcję rezonansową.',
-      'Wymaga projektowania tzw. marginesu na zaniki deszczowe (rain fade margin).'
+    "correctIndex": 0,
+    "explanation": "W stanie równowagi termodynamicznej półprzewodnik nie jest poddany działaniu czynników zewnętrznych (światła, wstrzykiwania ładunków, pól elektrycznych). W całym krysztale lub złączu ustala się jeden stały poziom Fermiego \\(E_F\\), a tempo generacji cieplnej równoważy się z tempem rekombinacji. Obowiązuje wówczas fundamentalne prawo działania mas: iloczyn koncentracji równowagowych elektronów i dziur jest stały i zależy wyłącznie od temperatury i szerokości przerwy zabronionej: \\(n_0 \\cdot p_0 = n_i^2(T)\\).",
+    "flashcardFront": "Koncentracja nośników w stanie RÓWNOWAGI termodynamicznej:",
+    "flashcardBack": [
+      "Prawo działania mas: \\(n_0 \\cdot p_0 = n_i^2\\) (iloczyn jest stały w danej temperaturze!).",
+      "Poziom Fermiego: Istnieje JEDEN wspólny poziom Fermiego \\(E_F\\) w całym układzie.",
+      "Brak zaburzeń: Szybkość generacji cieplnej jest ściśle równa szybkości rekombinacji."
     ],
-    tips: [
-      'Pomyśl o relacji między długością fali a rozmiarem przeszkód w ośrodku. Dla częstotliwości rzędu 10–30 GHz długość fali wynosi od kilku centymetrów do milimetrów.',
-      'Cząsteczki wody w kroplach deszczu i chmurach mają średnice zbliżone do długości takich fal, co powoduje silne oddziaływanie fal z cząstkami.',
-      'Zastanów się, czy woda pochłania i rozprasza energię fali, czy może polepsza jej rozchodzenie się – jak to wpływa na zasięg łączy radiowych w czasie ulewy?'
+    "tips": [
+      "Równowaga termodynamiczna oznacza brak zewnętrznych baterii i brak oświetlenia.",
+      "Pamiętaj o prawie działania mas: iloczyn n razy p wynosi zawsze n_i do kwadratu.",
+      "Poziom Fermiego jest jeden i idealnie płaski."
     ],
-    tip: 'Zwróć uwagę na długość fali radiowej przy częstotliwościach powyżej 10 GHz (fale centymetrowe i milimetrowe).',
-    relatedRoute: '/teoria/fala-propagacja#q5'
+    "tip": "Stan równowagi: n0 · p0 = ni², jeden wspólny poziom Fermiego EF w całej strukturze.",
+    "relatedRoute": "/teoria/polprzewodniki#q18"
   },
   {
-    id: 'semi-7',
-    category: 'polprzewodniki',
-    categoryLabel: 'Półprzewodniki i złącze p-n',
-    tier: 'tier1',
-    question: 'Równanie Einsteina wiążące współczynnik dyfuzji \\(D\\) i ruchliwość nośników \\(\\mu\\) ma postać:',
-    options: [
-      '\\(\\frac{D}{\\mu} = \\frac{k T}{q} = V_T\\) (napięcie termiczne, ok. 26 mV w 300 K)',
-      '\\(\\frac{D}{\\mu} = \\frac{q}{k T}\\)',
-      '\\(D \\cdot \\mu = k T q\\)',
-      '\\(\\frac{D}{\\mu} = \\sqrt{k T}\\)'
+    "id": "semi-eq-doping",
+    "category": "polprzewodniki",
+    "categoryLabel": "Półprzewodniki i złącze p-n",
+    "tier": "tier1",
+    "question": "W półprzewodniku typu n domieszkowanym donorami o koncentracji \\(N_D\\) w stanie równowagi termodynamicznej koncentracje nośników wynoszą w przybliżeniu:",
+    "options": [
+      "\\(n_0 \\approx N_D\\) (nośniki większościowe) oraz \\(p_0 \\approx \\frac{n_i^2}{N_D}\\) (nośniki mniejszościowe).",
+      "\\(n_0 = p_0 = n_i\\) niezależnie od koncentracji wprowadzonych donorów.",
+      "\\(n_0 \\approx \\frac{n_i^2}{N_D}\\) oraz \\(p_0 \\approx N_D\\).",
+      "\\(n_0 \\approx N_D^2\\) oraz \\(p_0 = 0\\)."
     ],
-    correctIndex: 0,
-    explanation: 'Relacja Einsteina \\(D_n / \\mu_n = D_p / \\mu_p = kT/q = V_T\\) łączy przypadkowy ruch cieplny cząstek (dyfuzja) z ich uporządkowanym ruchem w polu elektrycznym (ruchliwość/dryf). Napięcie termiczne \\(V_T = kT/q\\) w temperaturze pokojowej (300 K) wynosi ok. 25,9 mV (przyjmuje się 26 mV).',
-    flashcardFront: 'Relacja Einsteina (dyfuzja a ruchliwość):',
-    flashcardBack: [
-      'Wzór: \\(\\frac{D}{\\mu} = \\frac{kT}{q} = V_T\\)',
-      '\\(D\\) — współczynnik dyfuzji \\([\\mathrm{m^2/s}]\\), \\(\\mu\\) — ruchliwość nośników \\([\\mathrm{m^2/(V\\cdot s)}]\\).',
-      '\\(V_T = \\frac{kT}{q} \\approx 26\\ \\mathrm{mV}\\) w temperaturze pokojowej (300 K).',
-      'Łączy zjawiska transportu dyfuzyjnego i unoszenia w polu elektrycznym.'
+    "correctIndex": 0,
+    "explanation": "W temperaturze pokojowej niemal wszystkie atomy domieszek donorowych (np. fosforu lub arsenu w krzemie) są zjonizowane. Dlatego koncentracja elektronów swobodnych (nośników większościowych) jest w przybliżeniu równa koncentracji donorów: \\(n_0 \\approx N_D\\). Z prawa działania mas \\(n_0 \\cdot p_0 = n_i^2\\) natychmiast wynika koncentracja dziur (nośników mniejszościowych): \\(p_0 \\approx n_i^2 / N_D\\).",
+    "flashcardFront": "Koncentracja nośników w domieszkowanym krzemie (typ n):",
+    "flashcardBack": [
+      "Nośniki większościowe (elektrony): \\(n_0 \\approx N_D\\) (pełna jonizacja donorów w 300 K).",
+      "Nośniki mniejszościowe (dziury): \\(p_0 \\approx \\frac{n_i^2}{N_D}\\).",
+      "Im silniejsze domieszkowanie donorami, tym mniejsza koncentracja nośników mniejszościowych!"
     ],
-    tips: [
-      'Równanie to łączy zdolność nośników do przemieszczania się w polu elektrycznym (ruchliwość \\(\\mu\\)) z ich tendencją do wyrównywania stężeń (współczynnik dyfuzji \\(D\\)).',
-      'W stanie równowagi termodynamicznej prąd unoszenia i prąd dyfuzji muszą się dokładnie równoważyć.',
-      'Pomyśl, jaka wielkość fizyczna (związana z iloczynem stałej Boltzmanna i temperatury) determinuje średnią energię kinetyczną cząstek w zjawiskach termicznych.'
+    "tips": [
+      "Donory (V grupa) oddają elektrony, więc elektronów jest tyle, ile domieszek N_D.",
+      "Dziur jest bardzo mało — wyznaczasz je dzieląc n_i² przez N_D.",
+      "Iloczyn elektronów i dziur zawsze musi dać n_i²."
     ],
-    tip: 'Zależność Einsteina wiąże ze sobą dwa pozornie niezależne zjawiska transportu ładunków w półprzewodniku: dyfuzję i unoszenie w polu.',
-    relatedRoute: '/teoria/polprzewodniki#q19'
+    "tip": "Półprzewodnik typu n: n0 ≈ ND, p0 ≈ ni² / ND.",
+    "relatedRoute": "/teoria/polprzewodniki#q18"
   },
   {
-    id: 'mem-6',
-    category: 'pamieci',
-    categoryLabel: 'Pamięci, dyski i GMR',
-    tier: 'tier1',
-    question: 'W komórce pamięci Flash z pływającą bramką (Floating Gate), w jaki sposób elektrony są wprowadzane na izolowaną bramkę podczas zapisu?',
-    options: [
-      'Przez tunelowanie kwantowe Fowlera-Nordheima (FN) lub iniekcję gorących elektronów (CHE) przez cienką warstwę tlenku tunelowego.',
-      'Poprzez bezpośredni styk mechaniczny miniaturowej igły platynowej.',
-      'Za pomocą promieniowania rentgenowskiego skupianego mikrosoczewką.',
-      'Wskutek nagrzania bramki prądem zwarciowym do temperatury 1000 stopni Celsjusza.'
+    "id": "semi-non-eq-generation",
+    "category": "polprzewodniki",
+    "categoryLabel": "Półprzewodniki i złącze p-n",
+    "tier": "tier1",
+    "question": "Co definiuje stan NIERÓWNOWAGI termodynamicznej w półprzewodniku i jakie czynniki go wywołują?",
+    "options": [
+      "Działanie czynników zewnętrznych (oświetlenie \\(h\\nu \\ge E_g\\), iniekcja nośników przez złącze p-n, silne pole elektryczne), co prowadzi do wygenerowania nadmiarowych nośników ładunku: \\(n = n_0 + \\Delta n\\), \\(p = p_0 + \\Delta p\\).",
+      "Schłodzenie próbki do temperatury zera bezwzględnego w całkowitej ciemności.",
+      "Idealna kompensacja donorów przez akceptory dająca czysty półprzewodnik samoistny.",
+      "Mechaniczne zgniecenie kryształu bez przepływu prądu i bez światła."
     ],
-    correctIndex: 0,
-    explanation: 'Pływająca bramka (Floating Gate) jest całkowicie otoczona dielektrykiem (SiO2). Zapis polega na przyłożeniu wysokiego napięcia (np. 15–20 V) do bramki sterującej, co wywołuje zjawisko tunelowania Fowlera-Nordheima (elektrony przebijają się kwantowo przez barierę potencjału tlenku) lub iniekcję gorących elektronów w pobliżu drenu. Uwięziony ładunek przesuwa napięcie progowe tranzystora.',
-    flashcardFront: 'Zapis w pamięci Flash (Floating Gate) — mechanizmy fizyczne:',
-    flashcardBack: [
-      'Bramka pływająca jest odizolowana warstwą tlenku krzemu \\(\\mathrm{SiO_2}\\).',
-      'ZAPIS / PROGRAMOWANIE:',
-      '• Tunelowanie Fowlera-Nordheima (FN) pod wpływem silnego pola elektrycznego (\\(\\sim 10\\ \\mathrm{MV/cm}\\)).',
-      '• Iniekcja gorących elektronów (CHE — Channel Hot Electron injection).',
-      'Uwięzione elektrony na pływającej bramce podwyższają napięcie progowe \\(V_{th}\\) tranzystora.',
-      'Trwałość komórki jest ograniczona degradacją tlenku tunelowego przy cyklach zapisu/kasowania.'
+    "correctIndex": 0,
+    "explanation": "Stan nierównowagi termodynamicznej zachodzi pod wpływem zewnętrznego dopływu energii: oświetlenia fotonami o energii przewyższającej przerwę zabronioną (generacja fotonowa), polaryzacji złącza p-n w kierunku przewodzenia (iniekcja nośników mniejszościowych) lub uderzeniowej jonizacji w silnym polu elektrycznym. Powstają wówczas nośniki nadmiarowe \\(\\Delta n\\) i \\(\\Delta p\\), zwiększając całkowite koncentracje ponad stan równowagi.",
+    "flashcardFront": "Stan NIERÓWNOWAGI termodynamicznej w półprzewodniku:",
+    "flashcardBack": [
+      "Przyczyny: Zewnętrzne wymuszenia — oświetlenie (\\(h\\nu \\ge E_g\\)), iniekcja ładunku na złączu, silne pole elektryczne.",
+      "Efekt: Generacja NADMIAROWYCH nośników ładunku: \\(n = n_0 + \\Delta n\\) oraz \\(p = p_0 + \\Delta p\\).",
+      "Równowaga zostaje zaburzona — tempo generacji przewyższa tempo rekombinacji cieplnej."
     ],
-    tips: [
-      'W komórkach pamięci Flash ładunek musi zostać wprowadzony na odizolowaną elektrycznie wyspę polikrzemową (pływającą bramkę) przez warstwę dielektryka.',
-      'Ponieważ dielektryk stanowi barierę potencjału, w warunkach normalnych elektrony nie mogą przez niego przepływać.',
-      'Przeniesienie ładunku wymaga wymuszenia przepływu elektronów za pomocą bardzo silnego pola elektrycznego wywołującego przejście przez barierę lub nadanie elektronom wysokiej energii kinetycznej.'
+    "tips": [
+      "Pomyśl o oświetleniu baterii słonecznej lub diody LED — to stan nierównowagi.",
+      "Pojawiają się dodatkowe nośniki nadmiarowe Delta n i Delta p.",
+      "Całkowita liczba nośników to suma stanu równowagi i nadmiaru."
     ],
-    tip: 'W komórkach Floating Gate ładunek elektryczny musi pokonać barierę potencjału dielektryka (tlenku tunelowego SiO2).',
-    relatedRoute: '/teoria/pamieci-nosniki#q24'
+    "tip": "Nierównowaga: wymuszenie zewnętrzne (światło, iniekcja) -> nadmiar nośników n = n0 + Δn, p = p0 + Δp.",
+    "relatedRoute": "/teoria/polprzewodniki#q19"
   },
   {
-    id: 'math-9',
-    category: 'zadania_wzory',
-    categoryLabel: 'Wzory i reguły kciuka',
-    tier: 'tier1',
-    question: 'Jaka jest prędkość fali elektromagnetycznej \\(v\\) w niemagnetycznym dielektryku o względnej przenikalności elektrycznej \\(\\varepsilon_r = 4\\)?',
-    options: [
-      '\\(1{,}5 \\cdot 10^8\\ \\mathrm{m/s}\\) (połowa prędkości światła w próżni \\(c/2\\)).',
-      '\\(3 \\cdot 10^8\\ \\mathrm{m/s}\\) (dokładnie prędkość światła w próżni).',
-      '\\(0{,}75 \\cdot 10^8\\ \\mathrm{m/s}\\) (jedna czwarta prędkości światła).',
-      '\\(6 \\cdot 10^8\\ \\mathrm{m/s}\\) (dwa razy szybciej niż w próżni).'
+    "id": "semi-non-eq-violation",
+    "category": "polprzewodniki",
+    "categoryLabel": "Półprzewodniki i złącze p-n",
+    "tier": "tier1",
+    "question": "Co dzieje się z prawem działania mas oraz poziomem Fermiego w stanie nierównowagi termodynamicznej?",
+    "options": [
+      "Prawo działania mas przestaje obowiązywać (\\(n \\cdot p \\neq n_i^2\\), ściślej \\(n \\cdot p > n_i^2\\)), a jeden wspólny poziom Fermiego rozszczepia się na dwa quasi-poziomy Fermiego: \\(E_{Fn}\\) dla elektronów i \\(E_{Fp}\\) dla dziur.",
+      "Prawo działania mas zachowuje ważność, a poziom Fermiego przesuwa się poza pasmo przewodnictwa.",
+      "Iloczyn \\(n \\cdot p\\) spada natychmiast do zera, a quasi-poziomy Fermiego łączą się z pasmem walencyjnym.",
+      "Poziom Fermiego pozostaje nienaruszony, ponieważ opisuje wyłącznie stany kwantowe sieci krystalicznej."
     ],
-    correctIndex: 0,
-    explanation: 'Współczynnik załamania dielektryka to \\(n = \\sqrt{\\varepsilon_r \\mu_r} = \\sqrt{4 \\cdot 1} = 2\\). Prędkość fazowa fali wynosi \\(v = c / n = (3 \\cdot 10^8\\ \\mathrm{m/s}) / 2 = 1{,}5 \\cdot 10^8\\ \\mathrm{m/s}\\).',
-    flashcardFront: 'Prędkość fali EM w dielektryku — wzór i zależność:',
-    flashcardBack: [
-      'Wzór: \\(v = \\frac{c}{\\sqrt{\\varepsilon_r \\mu_r}} = \\frac{c}{n}\\)',
-      'Współczynnik załamania: \\(n = \\sqrt{\\varepsilon_r \\mu_r}\\) (dla dielektryków niemagnetycznych \\(n = \\sqrt{\\varepsilon_r}\\)).',
-      'Dla \\(\\varepsilon_r = 4\\): \\(n = \\sqrt{4} = 2 \\implies v = c / 2 = 1{,}5 \\cdot 10^8\\ \\mathrm{m/s}\\).',
-      'Długość fali w ośrodku również skraca się: \\(\\lambda = \\lambda_0 / n\\), natomiast częstotliwość \\(f\\) pozostaje STAŁA!'
+    "correctIndex": 0,
+    "explanation": "To kluczowe zagadnienie egzaminacyjne: w stanie nierównowagi termodynamicznej iloczyn koncentracji przewyższa wartość równowagową (\\(n \\cdot p > n_i^2\\)), więc prawo działania mas pęka! Ponieważ układ nie jest w równowadze, nie można opisać obsadzenia stanów jednym poziomem Fermiego. Wprowadza się dwa quasi-poziomy Fermiego: \\(E_{Fn}\\) dla elektronów i \\(E_{Fp}\\) dla dziur. Różnica ich energii odpowiada przyłożonemu napięciu lub energii wzbudzenia: \\(E_{Fn} - E_{Fp} = q U\\).",
+    "flashcardFront": "Prawo działania mas i quasi-poziomy Fermiego w nierównowadze:",
+    "flashcardBack": [
+      "Załamanie prawa działania mas: \\(n \\cdot p \\neq n_i^2\\) (ściślej \\(n \\cdot p > n_i^2\\)!).",
+      "Rozszczepienie poziomu Fermiego: Jeden poziom \\(E_F\\) pęka na DWA quasi-poziomy Fermiego:",
+      "— \\(E_{Fn}\\) (dla elektronów w paśmie przewodnictwa)",
+      "— \\(E_{Fp}\\) (dla dziur w paśmie walencyjnym)."
     ],
-    tips: [
-      'Prędkość rozchodzenia się fali elektromagnetycznej zależy od parametrów materiałowych ośrodka, w którym fala propaguje.',
-      'W próżni prędkość fali wynosi \\(c\\), natomiast w dielektryku materiałowym ulega spowolnieniu pod wpływem oddziaływania z ładunkami ośrodka.',
-      'Dla ośrodków niemagnetycznych (gdzie \\(\\mu_r \\approx 1\\)) stopień spowolnienia fali wiąże się wprost ze względną przenikalnością elektryczną \\(\\varepsilon_r\\) lub współczynnikiem załamania \\(n\\).'
+    "tips": [
+      "W stanie nierównowagi n · p NIE RÓWNA SIĘ n_i²!",
+      "Jeden poziom Fermiego zastępują DWA quasi-poziomy Fermiego (dla elektronów i dziur).",
+      "To ulubione pytanie sprawdzające zrozumienie fizyki półprzewodników."
     ],
-    tip: 'Prędkość fali elektromagnetycznej w próżni wynosi \(c \approx 300\ 000\ \mathrm{km/s}\).',
-    relatedRoute: '/teoria/fala-propagacja#q2'
+    "tip": "W nierównowadze: n · p ≠ ni² oraz rozszczepienie na dwa quasi-poziomy Fermiego EFn i EFp.",
+    "relatedRoute": "/teoria/polprzewodniki#q19"
   },
   {
-    id: 'semi-8',
-    category: 'polprzewodniki',
-    categoryLabel: 'Półprzewodniki i złącze p-n',
-    tier: 'tier1',
-    question: 'W stanie równowagi termodynamicznej półprzewodnika, iloczyn koncentracji elektronów i dziur (prawo działania mas) wynosi:',
-    options: [
-      '\\(n \\cdot p = n_i^2\\) i zależy wyłącznie od temperatury oraz materiału, niezależnie od stopnia domieszkowania.',
-      '\\(n \\cdot p = N_D + N_A\\) i rośnie proporcjonalnie do napięcia polaryzacji.',
-      '\\(n \\cdot p = 0\\), ponieważ nośniki przeciwnego znaku natychmiast znoszą się do zera.',
-      '\\(n \\cdot p = \\frac{1}{k T}\\) i maleje wraz ze wzrostem temperatury.'
+    "id": "semi-recombination-lifetime",
+    "category": "polprzewodniki",
+    "categoryLabel": "Półprzewodniki i złącze p-n",
+    "tier": "tier1",
+    "question": "W jaki sposób zanikają nadmiarowe nośniki ładunku po nagłym wyłączeniu zewnętrznego źródła wzbudzenia?",
+    "options": [
+      "Rekombinują wykładniczo w czasie zgodnie ze wzorem \\(\\Delta n(t) = \\Delta n(0) e^{-t/\\tau}\\), gdzie \\(\\tau\\) to czas życia nośników nadmiarowych (czas, po którym ich koncentracja spada ok. 2,72-krotnie do ~37%).",
+      "Znikają natychmiastowo w czasie 0 sekund na skutek działania siły Lorentza.",
+      "Zanikają liniowo ze stałą prędkością dryfu niezależnie od koncentracji początkowej.",
+      "Przekształcają się w fotony rentgenowskie o nieskończonym czasie życia."
     ],
-    correctIndex: 0,
-    explanation: 'Prawo działania mas w półprzewodniku orzeka, że w stanie równowagi iloczyn stężenia elektronów swobodnych i dziur jest stałą wartością równą kwadratowi koncentracji samoistnej: \\(n \\cdot p = n_i^2(T)\\). Jeśli domieszkujemy materiał donorami (np. \\(n = N_D = 10^{16}\\ \\mathrm{cm^{-3}}\\)), to stężenie dziur drastycznie spada do \\(p = n_i^2 / N_D\\).',
-    flashcardFront: 'Prawo działania mas w półprzewodniku (stan równowagi):',
-    flashcardBack: [
-      'Wzór: \\(n \\cdot p = n_i^2(T)\\)',
-      '\\(n_i\\) to koncentracja nośników w półprzewodniku samoistnym (dla krzemu w 300 K: \\(n_i \\approx 1{,}5 \\cdot 10^{10}\\ \\mathrm{cm^{-3}}\\)).',
-      'Iloczyn zależy SILNIE od temperatury (wykładniczo), ale NIE zależy od poziomu domieszkowania.',
-      'Zwiększenie koncentracji elektronów (typ n) automatycznie dusi koncentrację dziur mniejszościowych.'
+    "correctIndex": 0,
+    "explanation": "Po usunięciu źródła wzbudzenia (np. zgaszeniu oświetlenia) generacja nadmiarowa ustaje, a proces rekombinacji dąży do przywrócenia równowagi termodynamicznej. Dla niskich poziomów iniekcji spadek nośników nadmiarowych ma charakter czysto wykładniczy: \\(\\Delta n(t) = \\Delta n(0) e^{-t/\\tau}\\). Stała czasowa \\(\\tau\\) to czas życia nośników nadmiarowych — czas, po którym nadmiar maleje \\(e\\)-krotnie (do ok. 36,8% wartości początkowej).",
+    "flashcardFront": "Zanik nośników nadmiarowych (relaksacja do stanu równowagi):",
+    "flashcardBack": [
+      "Równanie zaniku: \\(\\Delta n(t) = \\Delta n(0) \\cdot e^{-t/\\tau}\\)",
+      "Czas życia nośników nadmiarowych (\\(\\tau\\)): Czas, po którym nadmiar nośników spada \\(e\\)-krotnie (do ok. 37% wartości początkowej).",
+      "Mechanizm: Rekombinacja elektronów i dziur (promienista lub bezpromienista przez pułapki Shockleya-Reada-Halla)."
     ],
-    tips: [
-      'Rozważ stan czystego półprzewodnika samoistnego w określonej temperaturze, gdzie stężenie elektronów i dziur jest sobie równe (\\(n_i\\)).',
-      'Wprowadzenie domieszek donorowych dramatycznie zwiększa liczbę elektronów, co jednocześnie drastycznie podnosi prawdopodobieństwo ich rekombinacji z dziurami.',
-      'Prawo to orzeka, że przy ustalonej temperaturze iloczyn koncentracji nośników obu znaków w równowadze pozostaje wielkością niezmienną.'
+    "tips": [
+      "Zanik jest wykładniczy — jak rozładowanie kondensatora przez rezystor.",
+      "Wzór to Delta n(0) razy exp(-t / tau).",
+      "Tau to czas życia nośników nadmiarowych."
     ],
-    tip: 'Prawo działania mas (Mass Action Law) orzeka, że w stanie równowagi termodynamicznej tempo generacji termicznej par elektron-dziura równa się tempu ich rekombinacji.',
-    relatedRoute: '/teoria/polprzewodniki#q17'
+    "tip": "Zanik wykładniczy: Δn(t) = Δn(0) · exp(-t/τ), gdzie τ to czas życia nośników nadmiarowych.",
+    "relatedRoute": "/teoria/polprzewodniki#q19"
   },
   {
-    id: 'mem-7',
-    category: 'pamieci',
-    categoryLabel: 'Pamięci, dyski i GMR',
-    tier: 'tier1',
-    question: 'W tranzystorze bipolarnym (BJT) typu npn pracującym w normalnym stanie aktywnym (wzmacniającym):',
-    options: [
-      'Złącze emiter-baza jest spolaryzowane w kierunku przewodzenia, a złącze baza-kolektor w kierunku zaporowym; prąd kolektora wynosi \\(I_C = \\beta I_B\\).',
-      'Oba złącza (E-B oraz B-C) są spolaryzowane w kierunku przewodzenia (stan nasycenia).',
-      'Złącze emiter-baza jest spolaryzowane zaporowo, a kolektor-baza w przewodzenia.',
-      'Tranzystor nie przewodzi żadnego prądu dopóki napięcie kolektora nie przekroczy 100 V.'
+    "id": "semi-bjt-structure",
+    "category": "polprzewodniki",
+    "categoryLabel": "Półprzewodniki i złącze p-n",
+    "tier": "tier1",
+    "question": "Opisz budowę tranzystora bipolarnego (BJT) i wskaż kluczowe warunki technologiczne konieczne do jego poprawnego działania:",
+    "options": [
+      "Trzy naprzemienne warstwy półprzewodnika (NPN lub PNP) tworzące elektrody: Emiter (E), Baza (B), Kolektor (C); warunkiem koniecznym jest bardzo silne domieszkowanie emitera względem bazy (\\(N_E \\gg N_B\\)) oraz grubość bazy fizycznie znacznie mniejsza od drogi dyfuzji nośników (\\(W_B \\ll L_n\\)).",
+      "Dwie identyczne warstwy metalu rozdzielone grubą warstwą tlenku krzemu SiO2.",
+      "Baza musi być silniej domieszkowana i znacznie grubsza od emitera i kolektora.",
+      "Pojedyncze złącze p-n z trzema wyprowadzeniami omowymi dołączonymi w tym samym punkcie."
     ],
-    correctIndex: 0,
-    explanation: 'W stanie aktywnym normalnym złącze emiter-baza (EBJ) polaryzuje się w kierunku przewodzenia (ok. 0,7 V dla Si), dzięki czemu elektrony są wstrzykiwane z emitera do cienkiej bazy. Złącze kolektor-baza (CBJ) polaryzuje się zaporowo, więc pole elektryczne natychmiast „wciąga” elektrony dyfundujące przez bazę do kolektora. Prąd kolektora jest niemal równy prądowi emitera (\\(I_C \\approx I_E\\)) i sterowany prądem bazy \\(I_C = \\beta I_B\\).',
-    flashcardFront: 'Warunki polaryzacji BJT w aktywnym obszarze pracy:',
-    flashcardBack: [
-      'Emiter–Baza (EBJ): W KIERUNKU PRZEWODZENIA (\\(V_{BE} \\approx 0{,}7\\ \\mathrm{V}\\)).',
-      'Kolektor–Baza (CBJ): W KIERUNKU ZAPOROWYM (\\(V_{BC} < 0\\)).',
-      'Współczynnik wzmocnienia prądowego: \\(\\beta = \\frac{I_C}{I_B}\\) (zazwyczaj 50–300).',
-      'Baza musi być fizycznie BARDZO CIENKA i słabo domieszkowana, aby większość elektronów z emitera dotarła do kolektora bez rekombinacji w bazie.'
+    "correctIndex": 0,
+    "explanation": "Tranzystor bipolarny składa się z dwóch złączy p-n w konfiguracji NPN lub PNP z elektrodami: Emiter (E), Baza (B) i Kolektor (C). Aby tranzystor działał z wysokim wzmocnieniem: 1. Emiter musi być bardzo silnie domieszkowany względem bazy (\\(N_E \\gg N_B\\)), co zapewnia wysoką wydajność iniekcji. 2. Baza musi być fizycznie skrajnie cienka — jej szerokość \\(W_B\\) musi być dużo mniejsza od drogi dyfuzji nośników mniejszościowych (\\(W_B \\ll L_n\\)), aby nośniki wstrzyknięte z emitera nie zrekombinowały w bazie, lecz dotarły do kolektora.",
+    "flashcardFront": "Budowa tranzystora bipolarnego (BJT) — warunki technologiczne:",
+    "flashcardBack": [
+      "Struktura: NPN lub PNP; 3 elektrody: Emiter (E), Baza (B), Kolektor (C).",
+      "Warunek 1: Emiter jest SILNIE domieszkowany względem bazy (\\(N_E \\gg N_B\\)) — wysoka wydajność iniekcji.",
+      "Warunek 2: Baza jest BARDZO CIENKA (\\(W_B \\ll L_n\\)) — szerokość bazy jest dużo mniejsza od drogi dyfuzji nośników, by uniknąć rekombinacji w bazie!"
     ],
-    tips: [
-      'Tranzystor bipolarny npn składa się z dwóch przeciwstawnych złączy p-n: złącza emiter-baza oraz złącza baza-kolektor.',
-      'W aktywnym stanie wzmacniającym elektrony muszą być efektywnie emitowane do cienkiej bazy, a następnie przechwytywane przez obszar kolektora.',
-      'Zastanów się, jakie znaki potencjałów na poszczególnych elektrodach zapewnią jednoczesne obniżenie bariery emiterowej i skuteczne ściąganie nośników w stronę kolektora.'
+    "tips": [
+      "Baza musi być tak cienka, aby elektrony przeleciały przez nią bez zderzenia i rekombinacji.",
+      "Emiter musi mieć mnóstwo nośników (silne domieszkowanie), aby wstrzykiwać je do bazy.",
+      "Trzy elektrody to E (emiter), B (baza), C (kolektor)."
     ],
-    tip: 'W normalnym aktywnym stanie pracy tranzystora bipolarnego npn elektrony muszą być wstrzykiwane z emitera i przepływać do kolektora.',
-    relatedRoute: '/teoria/pamieci-nosniki#q22'
+    "tip": "BJT: N_E >> N_B (silnie domieszkowany emiter) oraz W_B << L_n (bardzo wąska baza).",
+    "relatedRoute": "/teoria/polprzewodniki#q22"
   },
   {
-    id: 'mem-8',
-    category: 'pamieci',
-    categoryLabel: 'Pamięci, dyski i GMR',
-    tier: 'tier1',
-    question: 'Czym różni się pamięć statyczna SRAM od pamięci dynamicznej DRAM?',
-    options: [
-      'SRAM oparta jest na bistabilnym przerzutniku (np. 6 tranzystorów), jest bardzo szybka i nie wymaga odświeżania; DRAM oparta jest na 1 tranzystorze i kondensatorze, ma dużą gęstość, ale wymaga cyklicznego odświeżania ładunku (refresh).',
-      'SRAM traci dane po zaniku zasilania, a DRAM zachowuje dane wiecznie bez zasilania.',
-      'SRAM stosowana jest w dyskach twardych, a DRAM na taśmach magnetycznych.',
-      'SRAM wymaga chłodzenia ciekłym azotem, a DRAM działa w temperaturze do 500 °C.'
+    "id": "semi-bjt-active-mode",
+    "category": "polprzewodniki",
+    "categoryLabel": "Półprzewodniki i złącze p-n",
+    "tier": "tier1",
+    "question": "Jak działa tranzystor bipolarny NPN w normalnym stanie aktywnym?",
+    "options": [
+      "Złącze B-E jest spolaryzowane w kierunku przewodzenia, a złącze B-C w kierunku zaporowym; nośniki większościowe z emitera są wstrzykiwane do bazy, dyfundują przez nią z minimalną rekombinacją i są wciągane przez pole elektryczne zaporowego złącza kolektora.",
+      "Oba złącza są spolaryzowane w kierunku zaporowym, a prąd płynie dzięki przebiciu Zenera.",
+      "Prąd płynie wyłącznie w obwodzie bazy, a złącze kolektora służy jedynie jako ekran uziemiający.",
+      "Pole magnetyczne cewki wstrzykuje elektrony bezpośrednio z bazy do emitera."
     ],
-    correctIndex: 0,
-    explanation: 'Komórka SRAM (Static RAM, komórka 6T) przechowuje bit w przerzutniku bistabilnym — tak długo jak jest zasilanie, stan jest trwały bez konieczności odświeżania. Jest niesłychanie szybka (ułamki nanosekund), ale zajmuje dużą powierzchnię krzemu (pamięci podręczne cache CPU). Komórka DRAM (1T1C) magazynuje ładunek w mikrokondensatorze — z powodu upływności ładunek ucieka w ciągu milisekund, dlatego kontroler musi cyklicznie odczytywać i doładowywać komórki (odświeżanie DRAM).',
-    flashcardFront: 'SRAM vs DRAM — kluczowe różnice komórek:',
-    flashcardBack: [
-      'SRAM (Static RAM):',
-      '• Komórka: 4 lub 6 tranzystorów (przerzutnik bistabilny).',
-      '• Bardzo szybka (czas dostępu < 1 ns), brak odświeżania.',
-      '• Mała gęstość, droższa \\(\\to\\) Pamięci podręczne Cache L1/L2/L3.',
-      'DRAM (Dynamic RAM):',
-      '• Komórka: 1 tranzystor + 1 kondensator (1T1C).',
-      '• Kondensator ulega rozładowaniu \\(\\to\\) WYMAGA CYKLICZNEGO ODŚWIEŻANIA (Refresh).',
-      '• Gigantyczna gęstość upakowania i tani gigabajt \\(\\to\\) Pamięć operacyjna RAM w PC.'
+    "correctIndex": 0,
+    "explanation": "W stanie aktywnym normalnym tranzystora NPN: złącze Baza-Emiter ma polaryzację przewodzącą (\\(U_{BE} \\approx 0,7\\ \\mathrm{V}\\)), co obniża barierę potencjału i powoduje masową iniekcję elektronów z emitera do bazy. W bazie elektrony stają się nośnikami mniejszościowymi i dyfundują ku złączu B-C. Ponieważ złącze Kolektor-Baza jest spolaryzowane zaporowo (\\(U_{CB} > 0\\)), panuje tam silne pole elektryczne skierowane od kolektora do bazy, które natychmiast „zasysa” i przyspiesza elektrony docierające do krawędzi obszaru zubożonego, tworząc prąd kolektora \\(I_C\\).",
+    "flashcardFront": "Zasada działania tranzystora bipolarnego w stanie aktywnym:",
+    "flashcardBack": [
+      "Polaryzacja: Złącze B-E w kierunku PRZEWODZENIA, złącze B-C w kierunku ZAPOROWYM.",
+      "Iniekcja: Emiter wstrzykuje elektrony do bazy.",
+      "Dyfuzja: Elektrony dyfundują przez ultracienką bazę (rekombinuje zaledwie ok. 1% tworząc prąd \\(I_B\\)).",
+      "Ekstrakcja: Silne pole zaporowego złącza B-C przechwytuje elektrony do kolektora (duży prąd \\(I_C = \\beta I_B\\))."
     ],
-    tips: [
-      'Różnica między tymi pamięciami tkwi w konstrukcji pojedynczej komórki elementarnej przechowującej jeden bit informacji.',
-      'Jedna z nich przechowuje ładunek na mikroskopijnej pojemności pasożytniczej, z której ładunek nieuchronnie ucieka na skutek prądów upływu.',
-      'Druga z nich wykorzystuje stabilny układ bistabilny zbudowany z kilku połączonych krzyżowo tranzystorów, który nie wymaga okresowego odtwarzania stanu.'
+    "tips": [
+      "Pamiętaj: B-E przewodzi (otwarte), B-C jest zaporowe (wciąga elektrony).",
+      "Baza jest cienka, więc 99% elektronów przelatuje prosto do kolektora.",
+      "Mały prąd bazy steruje dużym prądem kolektora."
     ],
-    tip: 'Pomyśl o konstrukcji elementarnej komórki: ile tranzystorów i kondensatorów zawiera komórka SRAM, a ile DRAM.',
-    relatedRoute: '/teoria/pamieci-nosniki#q21'
+    "tip": "Stan aktywny: złącze B-E przewodzi, B-C zaporowe. Iniekcja z emitera, dyfuzja przez bazę, wychwyt do kolektora.",
+    "relatedRoute": "/teoria/polprzewodniki#q22"
   },
   {
-    id: 'opt-8',
-    category: 'swiatlowody',
-    categoryLabel: 'Światłowody i optyka',
-    tier: 'tier1',
-    question: 'Jak zależy tłumienie spowodowane rozpraszaniem Rayleigha we włóknach optycznych od długości fali \\(\\lambda\\)?',
-    options: [
-      'Jest odwrotnie proporcjonalne do czwartej potęgi długości fali: \\(\\alpha_R \\propto \\frac{1}{\\lambda^4}\\).',
-      'Rośnie liniowo wraz z długością fali: \\(\\alpha_R \\propto \\lambda\\).',
-      'Jest całkowicie niezależne od długości fali światła.',
-      'Jest odwrotnie proporcjonalne do pierwiastka z długości fali: \\(\\alpha_R \\propto \\frac{1}{\\sqrt{\\lambda}}\\).'
+    "id": "semi-bjt-current-equations",
+    "category": "polprzewodniki",
+    "categoryLabel": "Półprzewodniki i złącze p-n",
+    "tier": "tier1",
+    "question": "Wskaż fundamentalne równania prądowe i relacje współczynników wzmocnienia w tranzystorze bipolarnym:",
+    "options": [
+      "\\(I_E = I_B + I_C\\), \\(I_C = \\beta I_B\\) oraz \\(\\alpha = \\frac{I_C}{I_E} = \\frac{\\beta}{\\beta + 1}\\) (dla \\(\\beta = 100\\) mamy \\(\\alpha \\approx 0,99\\)).",
+      "\\(I_B = I_E + I_C\\), \\(I_C = \\alpha I_B\\) oraz \\(\\beta = \\alpha / (\\alpha + 1)\\).",
+      "\\(I_C = I_B \\cdot I_E\\) oraz \\(\\beta = 1 - \\alpha\\).",
+      "\\(I_E = \\beta I_C\\) oraz \\(\\alpha = \\beta \\cdot (\\beta - 1)\\)."
     ],
-    correctIndex: 0,
-    explanation: 'Rozpraszanie Rayleigha wynika z mikroskopijnych fluktuacji gęstości krzemionki zamrożonych podczas stygnięcia włókna. Zgodnie z prawem Rayleigha natężenie rozpraszania zależy od \\(\\lambda^{-4}\\). Z tego powodu tłumienie w oknie 850 nm wynosi ok. 2–3 dB/km, w 1310 nm ok. 0,35 dB/km, a w 1550 nm spada do ok. 0,2 dB/km.',
-    flashcardFront: 'Zależność rozpraszania Rayleigha od długości fali:',
-    flashcardBack: [
-      'Prawo Rayleigha: \\(\\alpha_R \\propto \\frac{1}{\\lambda^4}\\)',
-      'Dwukrotne zwiększenie długości fali zmniejsza rozpraszanie aż \\(2^4 = 16\\)-krotnie!',
-      'Wyjaśnia, dlaczego okna o dłuższej fali (1310 nm i 1550 nm) mają drastycznie mniejsze tłumienie niż I okno (850 nm).',
-      'To samo zjawisko odpowiada za niebieski kolor nieba za dnia i czerwony o zachodzie słońca.'
+    "correctIndex": 0,
+    "explanation": "Z I prawa Kirchhoffa dla węzła tranzystora wynika bilans prądów: \\(I_E = I_B + I_C\\). Współczynnik wzmocnienia prądowego w układzie ze wspólnym emiterem to \\(\\beta = I_C / I_B\\) (typowo 50–300). Współczynnik zwarciowy w układzie ze wspólną bazą to \\(\\alpha = I_C / I_E\\). Zależność między nimi: \\(\\alpha = \\frac{\\beta}{\\beta + 1}\\) oraz \\(\\beta = \\frac{\\alpha}{1 - \\alpha}\\). Dla \\(\\beta = 100\\): \\(\\alpha = 100 / 101 \\approx 0,99\\).",
+    "flashcardFront": "Równania prądowe i współczynniki tranzystora bipolarnego:",
+    "flashcardBack": [
+      "Bilans prądów w węźle: \\(I_E = I_B + I_C\\)",
+      "Wzmocnienie prądowe (układ OE): \\(I_C = \\beta I_B\\)",
+      "Współczynnik transmisji emitera (układ OB): \\(\\alpha = \\frac{I_C}{I_E} = \\frac{\\beta}{\\beta + 1}\\)",
+      "Przykładowe wartości: Jeśli \\(\\beta = 100\\), to \\(\\alpha = 100/101 \\approx 0,99\\)."
     ],
-    tips: [
-      'Zjawisko to wynika z mikroskopijnych, zamrożonych w strukturze szkła fluktuacji gęstości krzemionki, których wymiary są znacznie mniejsze od długości fali.',
-      'Jest to ten sam mechanizm fizyczny, który odpowiada za błękitną barwę ziemskiego nieba w słoneczny dzień.',
-      'Zastanów się, w jaki sposób rozpraszanie fal na bardzo małych cząstkach zależy od długości fali – jest to niezwykle stroma funkcja potęgowa.'
+    "tips": [
+      "Prąd emitera to suma prądu bazy i prądu kolektora: I_E = I_B + I_C.",
+      "I_C = beta * I_B. Jeśli beta = 100, prąd kolektora jest 100 razy większy od prądu bazy.",
+      "Alfa jest zawsze ciut mniejsza od 1: alfa = beta / (beta + 1)."
     ],
-    tip: 'Rozpraszanie Rayleigha wynika z mikroskopijnych niejednorodności gęstości szkła w procesie wytapiania światłowodu.',
-    relatedRoute: '/teoria/swiatlowody#q9'
+    "tip": "I_E = I_B + I_C, I_C = β I_B, α = β / (β + 1) ≈ 0,99.",
+    "relatedRoute": "/teoria/polprzewodniki#q22"
   },
   {
-    id: 'opt-9',
-    category: 'swiatlowody',
-    categoryLabel: 'Światłowody i optyka',
-    tier: 'tier1',
-    question: 'Światłowodowa siatka Bragga (FBG - Fiber Bragg Grating) działa jak filtr odbiciowy dla fali o długości spełniającej warunek:',
-    options: [
-      '\\(\\lambda_B = 2 n_{eff} \\Lambda\\), gdzie \\(n_{eff}\\) to efektywny współczynnik załamania, a \\(\\Lambda\\) to okres siatki.',
-      '\\(\\lambda_B = \\frac{n_{eff}}{2 \\Lambda}\\).',
-      '\\(\\lambda_B = n_1 - n_2\\).',
-      '\\(\\lambda_B = \\Lambda^2 \\cdot c\\).'
+    "id": "semi-bjt-characteristics",
+    "category": "polprzewodniki",
+    "categoryLabel": "Półprzewodniki i złącze p-n",
+    "tier": "tier1",
+    "question": "Opisz charakterystykę wyjściową \\(I_C(U_{CE})\\) tranzystora bipolarnego w układzie OE:",
+    "options": [
+      "Składa się z trzech obszarów: nasycenia (stromy wzrost \\(I_C\\) od 0 do ok. 0,2 V), obszaru aktywnego (płaskie, równoległe poziome linie o nieznacznym nachyleniu wynikającym z efektu Early’ego) oraz obszaru przebicia lawinowego.",
+      "Jest idealną parabolą symetryczną względem zera woltów.",
+      "Charakteryzuje się ujemną rezystancją dynamiczną w całym zakresie pracy.",
+      "Prąd kolektora rośnie liniowo z napięciem kolektora zgodnie z prostym prawem Ohma."
     ],
-    correctIndex: 0,
-    explanation: 'Siatka FBG to periodyczna zmiana współczynnika załamania rdzenia wytworzona promieniowaniem UV. Odbija ona selektywnie wąskie pasmo światła o długości \\(\\lambda_B = 2 n_{eff} \\Lambda\\) (warunek interferencji konstruktywnej fal odbitych od kolejnych prążków), przepuszczając wszystkie pozostałe długości fali.',
-    flashcardFront: 'Światłowodowa siatka Bragga (FBG) — zasada i warunek odbicia:',
-    flashcardBack: [
-      'Warunek Bragga: \\(\\lambda_B = 2 n_{eff} \\Lambda\\)',
-      '\\(\\Lambda\\) — okres modulacji współczynnika załamania w rdzeniu.',
-      'Działa jak selektywne lustro: odbija wąską wstęgę \\(\\lambda_B\\), przepuszcza całą resztę.',
-      'Zastosowanie:',
-      '• Filtry i multipleksery w systemach WDM,',
-      '• Kompensatory dyspersji (siatki chirpowane o zmiennym okresie),',
-      '• Światłowodowe czujniki naprężeń i temperatury.'
+    "correctIndex": 0,
+    "explanation": "Na charakterystyce wyjściowej \\(I_C = f(U_{CE})\\) przy parametrze \\(I_B = \\mathrm{const}\\) wyróżniamy: 1. Stan nasycenia (\\(U_{CE} < 0,2-0,3\\ \\mathrm{V}\\)) — oba złącza przewodzą, prąd gwałtownie narasta. 2. Stan aktywny normalny (\\(U_{CE} > 0,3\\ \\mathrm{V}\\)) — złącze B-C jest zaporowe, prąd \\(I_C\\) jest niemal stały i zależy wyłącznie od prądu bazy (\\(I_C = \\beta I_B\\)). Słabe nachylenie linii wynika ze zjawiska modulacji szerokości bazy (efekt Early’ego). 3. Obszar przebicia przy przekroczeniu dopuszczalnego napięcia \\(U_{CE\\,max}\\).",
+    "flashcardFront": "Charakterystyka wyjściowa \\(I_C(U_{CE})\\) tranzystora bipolarnego:",
+    "flashcardBack": [
+      "Obszar nasycenia (\\(U_{CE} < 0,2\\ \\mathrm{V}\\)): stromy wzrost prądu, oba złącza spolaryzowane w kierunku przewodzenia.",
+      "Obszar aktywny (pracy wzmacniającej): prąd \\(I_C\\) niemal nie zależy od \\(U_{CE}\\) (płaskie linie \\(I_C = \\beta I_B\\)).",
+      "Efekt Early’ego: lekkie nachylenie linii w stanie aktywnym spowodowane zawężaniem bazy przy wzroście \\(U_{CE}\\).",
+      "Obszar przebicia: gwałtowny lawinowy wzrost prądu przy dużych napięciach."
     ],
-    tips: [
-      'Wyobraź sobie odcinek rdzenia światłowodu, w którym za pomocą lasera UV wytworzono periodyczną, prążkową strukturę o zmiennym współczynniku załamania.',
-      'Fale o różnych długościach odbijają się od kolejnych prążków. Dla jednej specyficznej długości fali odbicia te sumują się w fazie (interferencja konstruktywna).',
-      'Element ten zachowuje się jak wybiórcze zwierciadło: jedną ściśle określoną długość fali zawraca, a wszystkie pozostałe przepuszcza bez przeszkód.'
+    "tips": [
+      "Wyobraź sobie rodzinę poziomych linii — każda dla większego prądu bazy I_B.",
+      "Na początku przy U_CE bliskim zera jest wąski obszar nasycenia.",
+      "Delikatne nachylenie prostych w obszarze aktywnym to efekt Early'ego."
     ],
-    tip: 'Światłowodowa siatka Bragga to okresowa zmiana współczynnika załamania w rdzeniu światłowodu.',
-    relatedRoute: '/teoria/swiatlowody#q11'
+    "tip": "Wyjściowa IC(UCE): strome nasycenie (<0,2V), poziome linie aktywne (IC = β IB, efekt Early'ego) i przebicie.",
+    "relatedRoute": "/teoria/polprzewodniki#q22"
   },
   {
-    id: 'opt-10',
-    category: 'swiatlowody',
-    categoryLabel: 'Światłowody i optyka',
-    tier: 'tier2',
-    question: 'Zjawisko dyspersji polaryzacyjnej (PMD) we włóknach optycznych:',
-    options: [
-      'Wynika z przypadkowej asymetrii geometrycznej i naprężeń w rdzeniu (dwójłomność), przez co dwie ortogonalne składowe polaryzacji biegną z różnymi prędkościami.',
-      'Występuje wyłącznie wtedy, gdy do światłowodu wprowadzimy promień lasera o mocy powyżej 100 W.',
-      'Może być w 100% skompensowane zwykłym odcinkiem włókna DCF bez względu na temperaturę.',
-      'Zwiększa szerokość pasma światłowodu o współczynnik 2.'
+    "id": "semi-bjt-name-origin",
+    "category": "polprzewodniki",
+    "categoryLabel": "Półprzewodniki i złącze p-n",
+    "tier": "tier1",
+    "question": "Dlaczego tranzystor bipolarny nazywa się „bipolarny” (BJT)?",
+    "options": [
+      "Ponieważ w przewodzeniu prądu biorą udział oba rodzaje nośników ładunku: nośniki większościowe emitera stają się nośnikami mniejszościowymi dyfundującymi przez bazę.",
+      "Ponieważ posiada dokładnie dwa bieguny magnetyczne N i S.",
+      "Ponieważ może pracować wyłącznie przy napięciu zasilania o dwóch symetrycznych polaryzacjach (+15 V i -15 V).",
+      "Ponieważ do jego budowy wymagane są dwa identyczne kryształy dielektryczne."
     ],
-    correctIndex: 0,
-    explanation: 'W rzeczywistym włóknie rdzeń nie jest idealnie kołowy, a w szkle występują naprężenia mechaniczne. Wywołuje to dwójłomność (birefringence): fale o polaryzacji pionowej i poziomej poruszają się z minimalnie różnymi prędkościami. Różnica czasowa (DGD - Differential Group Delay) rośnie proporcjonalnie do pierwiastka z długości łącza (\\(\\Delta \\tau \\propto \\sqrt{L}\\)) i ma charakter losowy zależny od temperatury.',
-    flashcardFront: 'Dyspersja polaryzacyjna (PMD) — geneza i cechy:',
-    flashcardBack: [
-      'Przyczyna: Nieidealna kołowość rdzenia i naprężenia mechaniczne \\(\\to\\) DWÓJŁOMNOŚĆ.',
-      'Dwie składowe polaryzacji (oś szybka i wolna) rozchodzą się z różną prędkością grupową.',
-      'Opóźnienie międzypolaryzacyjne: \\(\\Delta \\tau_{PMD} = D_{PMD} \\sqrt{L}\\) (rośnie z PIERWIASTKIEM długości!).',
-      'Ma charakter STATYSTYCZNY i fluktuuje w czasie pod wpływem drgań kabla i zmian temperatury.',
-      'Staje się barierą przy przepływnościach 10 Gb/s, 40 Gb/s, 100 Gb/s na długich trasach.'
+    "correctIndex": 0,
+    "explanation": "Termin „bipolarny” (BJT — Bipolar Junction Transistor) odnosi się do faktu, że w zjawisku transportu prądu w tym elemencie uczestniczą nośniki OBYDWU znaków: elektrony oraz dziury. Na przykład w tranzystorze NPN nośniki większościowe emitera (elektrony) są wstrzykiwane do bazy, w której stają się nośnikami mniejszościowymi i dyfundują do kolektora, podczas gdy prąd bazy tworzą nośniki większościowe bazy (dziury). W tranzystorach polowych (FET) prąd przenoszą wyłącznie nośniki jednego rodzaju (stąd nazwa „unipolarne”).",
+    "flashcardFront": "Dlaczego tranzystor bipolarny nazywa się „bipolarny”?",
+    "flashcardBack": [
+      "Fizyczne uzasadnienie: W transporcie prądu biorą udział OBA rodzaje nośników ładunku (elektrony i dziury).",
+      "W tranzystorze NPN: elektrony (większościowe w emiterze) stają się nośnikami mniejszościowymi w bazie.",
+      "Dla kontrastu: tranzystor polowy (FET) jest UNIPOLARNY — prąd w kanale płynie tylko za pośrednictwem jednego rodzaju nośników!"
     ],
-    tips: [
-      'W rzeczywistym włóknie rdzeń nigdy nie ma idealnie idealnego, symetrycznego przekroju poprzecznego na całej długości trasy (występują naprężenia i mikroskopijna eliptyczność).',
-      'Mod podstawowy światła można rozłożyć na dwie ortogonalne składowe polaryzacji pola elektrycznego.',
-      'Zastanów się, co się dzieje, gdy z powodu niesymetrii rdzenia jedna z tych składowych porusza się minimalnie szybciej niż druga i jak wpływa to na czas trwania impulsu przy bardzo wysokich przepływnościach.'
+    "tips": [
+      "Bipolarny = dwa znaki nośników (elektrony i dziury).",
+      "Nośniki większościowe z emitera stają się mniejszościowymi w bazie.",
+      "Tranzystor polowy dla odmiany jest unipolarny."
     ],
-    tip: 'Zjawisko dyspersji polaryzacyjnej (PMD) wiąże się z brakiem idealnej symetrii kołowej rdzenia włókna światłowodowego.',
-    relatedRoute: '/teoria/swiatlowody#q10'
+    "tip": "Bipolarny = prąd przenoszą oba rodzaje nośników (większościowe emitera stają się mniejszościowymi w bazie).",
+    "relatedRoute": "/teoria/polprzewodniki#q22"
   },
   {
-    id: 'math-10',
-    category: 'zadania_wzory',
-    categoryLabel: 'Wzory i reguły kciuka',
-    tier: 'tier1',
-    question: 'Oblicz maksymalny zasięg łącza optycznego: moc nadajnika \\(P_T = 0\\ \\mathrm{dBm}\\), czułość odbiornika \\(P_{R,min} = -28\\ \\mathrm{dBm}\\), tłumienie kabla \\(\\alpha = 0{,}25\\ \\mathrm{dB/km}\\), łączne straty na złączach i spawach \\(L_{straty} = 3\\ \\mathrm{dB}\\), margines \\(M = 5\\ \\mathrm{dB}\\).',
-    options: [
-      '\\(80\\ \\mathrm{km}\\)',
-      '\\(112\\ \\mathrm{km}\\)',
-      '\\(40\\ \\mathrm{km}\\)',
-      '\\(25\\ \\mathrm{km}\\)'
+    "id": "semi-fet-principle",
+    "category": "polprzewodniki",
+    "categoryLabel": "Półprzewodniki i złącze p-n",
+    "tier": "tier1",
+    "question": "Na czym polega zasada działania tranzystora polowego (FET / MOSFET)?",
+    "options": [
+      "Jest to element unipolarny, w którym przepływ prądu w kanale między źródłem (S) a drenem (D) jest sterowany polem elektrycznym wywołanym napięciem przyłożonym do bramki (G).",
+      "Jest to element sterowany wyłącznie prądem bazy wstrzykiwanym do obszaru zubożonego.",
+      "Działa na zasadzie emisji termoelektronowej z rozżarzonego włókna katody do anody.",
+      "Prąd w kanale jest modulowany wyłącznie przez zewnętrzne pole magnetyczne cewki sterującej."
     ],
-    correctIndex: 0,
-    explanation: 'Równanie budżetu mocy: \\(P_T - P_{R,min} = \\alpha L + L_{straty} + M\\). Dostępna dynamika: \\(0 - (-28) = 28\\ \\mathrm{dB}\\). Odejmujemy złącza i margines: \\(28 - 3 - 5 = 20\\ \\mathrm{dB}\\). Dopuszczalne tłumienie włókna to 20 dB. Długość: \\(L = 20\\ \\mathrm{dB} / (0{,}25\\ \\mathrm{dB/km}) = 20 \\cdot 4 = 80\\ \\mathrm{km}\\).',
-    flashcardFront: 'Zadanie z budżetu mocy łącza — algorytm obliczeń:',
-    flashcardBack: [
-      '1. Oblicz budżet całkowity (dynamikę): \\(A_{tot} = P_T - P_{R,min}\\).',
-      '2. Odejmij straty stałe: złącza, spawy i margines bezpieczeństwa \\(M\\): \\(A_{włókna} = A_{tot} - \\sum A_z - M\\).',
-      '3. Wyznacz zasięg: \\(L = \\frac{A_{włókna}}{\\alpha}\\).',
-      'Przykład: dynamika 28 dB, straty stałe 8 dB \\(\\to\\) zostaje 20 dB. Przy 0,25 dB/km zasięg wynosi dokładnie 80 km.'
+    "correctIndex": 0,
+    "explanation": "Tranzystor polowy (FET — Field-Effect Transistor) to element unipolarny, w którym prąd płynie za pośrednictwem nośników tylko jednego rodzaju (większościowych w kanale). Elektrody to: Źródło (Source — S), Dren (Drain — D) i Bramka (Gate — G). Napięcie przyłożone do izolowanej bramki \\(U_{GS}\\) wytwarza pole elektryczne wnikające w półprzewodnik, które moduluje szerokość obszaru zubożonego lub indukuje kanał inwersyjny, regulując rezystancję i prąd drenu \\(I_D\\).",
+    "flashcardFront": "Zasada działania tranzystora polowego (FET / MOSFET):",
+    "flashcardBack": [
+      "Typ elementu: UNIPOLARNY (prąd płynie tylko za pośrednictwem jednego rodzaju nośników).",
+      "Elektrody: Źródło (Source), Dren (Drain), Bramka (Gate).",
+      "Sterowanie: Napięciem bramki \\(U_{GS}\\) — pole elektryczne reguluje szerokość/przewodność kanału przewodzącego."
     ],
-    tips: [
-      'Zastosuj zasadę bilansu budżetu mocy: całkowity dozwolony spadek mocy optycznej to różnica między mocą nadawaną a czułością odbiornika.',
-      'Od całkowitej dostępnej puli decybeli należy w pierwszej kolejności odliczyć wymagany margines bezpieczeństwa eksploatacyjnego.',
-      'Pozostałą rezerwę tłumienia dzieli się przez tłumienność jednostkową kabla światłowodowego wyrażoną w dB/km, co bezpośrednio daje maksymalny zasięg w kilometrach.'
+    "tips": [
+      "Field-Effect = efekt polowy (sterowanie polem elektrycznym).",
+      "Prąd płynie od źródła (Source) do drenu (Drain).",
+      "Bramka (Gate) steruje prądem za pomocą napięcia U_GS."
     ],
-    tip: 'Zastosuj wzór bilansu mocy optycznej: \(P_T - P_R = \alpha \cdot L_{max} + \text{margines}\).',
-    relatedRoute: '/zadania/2'
+    "tip": "Tranzystor polowy jest unipolarny — napięcie bramki U_GS steruje polem elektrycznym w kanale S-D.",
+    "relatedRoute": "/teoria/polprzewodniki#q21"
+  },
+  {
+    "id": "semi-fet-vs-bjt-advantages",
+    "category": "polprzewodniki",
+    "categoryLabel": "Półprzewodniki i złącze p-n",
+    "tier": "tier1",
+    "question": "W jakich aspektach tranzystory polowe (FET/MOSFET) mają zdecydowaną przewagę nad tranzystorami bipolarnymi (BJT)?",
+    "options": [
+      "Sterowanie beznapięciowe/beznapływowe (prąd bramki \\(I_G \\approx 0\\)), gigantyczna rezystancja wejściowa (\\(10^9 - 10^{14}\\ \\Omega\\)), mniejsze szumy własne, brak wtórnego przebicia termicznego i symetria źródło-dren.",
+      "Mają znacznie większy prąd bazy i wymagają ciągłego chłodzenia ciekłym azotem.",
+      "Przewodzą prąd wyłącznie przy zasilaniu napięciem zmiennym o wysokiej częstotliwości.",
+      "Są całkowicie odporne na wyładowania elektrostatyczne (ESD) w przeciwieństwie do BJT."
+    ],
+    "correctIndex": 0,
+    "explanation": "Główne zalety tranzystorów polowych nad bipolarnymi: 1. Sterowanie napięciowe — izolowana bramka nie pobiera prądu w stanie ustalonym (\\(I_G \\approx 0\\)), co eliminuje obciążenie źródła sygnału. 2. Ogromna rezystancja wejściowa (\\(10^9 - 10^{14}\\ \\Omega\\) w MOSFET). 3. Niższy poziom szumów (brak szumu śrutowego prądu bazy i rekombinacji). 4. Dodatni współczynnik temperaturowy rezystancji kanału — przy nagrzewaniu prąd maleje, co chroni przed przebiciem termicznym. 5. Symetria kanału pozwala na pracę jako dwukierunkowy klucz analogowy.",
+    "flashcardFront": "Gdzie tranzystory polowe (FET) mają przewagę nad bipolarnymi (BJT)?",
+    "flashcardBack": [
+      "Sterowanie napięciowe: Zerowy pobór prądu przez bramkę w stanie ustalonym (\\(I_G \\approx 0\\)).",
+      "Olbrzymia rezystancja wejściowa: \\(10^9 - 10^{14}\\ \\Omega\\) (brak obciążania źródła sygnału).",
+      "Niższe szumy własne: brak fluktuacji rekombinacji nośników mniejszościowych.",
+      "Brak wtórnego przebicia termicznego: ujemne sprzężenie temperaturowe.",
+      "Symetria struktury: możliwość pracy jako dwukierunkowy łącznik sygnałów analogowych."
+    ],
+    "tips": [
+      "BJT steruje się prądem, a FET steruje się napięciem.",
+      "Bramka MOSFET-u jest odizolowana tlenkiem SiO2, więc ma gigantyczną rezystancję wejściową.",
+      "Brak prądu bramki oznacza brak strat mocy w sterowaniu."
+    ],
+    "tip": "Przewaga FET: sterowanie napięciowe (IG ≈ 0), gigantyczna rezystancja (10⁹-10¹⁴ Ω), mniejsze szumy.",
+    "relatedRoute": "/teoria/polprzewodniki#q21"
+  },
+  {
+    "id": "mem-opt-disc-principle",
+    "category": "pamieci",
+    "categoryLabel": "Pamięci, dyski i GMR",
+    "tier": "tier1",
+    "question": "Na jakiej zasadzie optycznej opiera się odczyt danych z płyt kompaktowych (CD, DVD, Blu-Ray)?",
+    "options": [
+      "Na zjawisku interferencji destruktywnej: dno zagłębienia (pitu) ma głębokość \\(h = \\frac{\\lambda}{4n}\\), dzięki czemu promień odbity od pitu i landu przebywa różnicę dróg \\(\\frac{\\lambda}{2n}\\) (przesunięcie w fazie o \\(\\pi\\)) i wygasza się na fotodiodzie.",
+      "Na pomiarze przewodności elektrycznej wytłoczonych ścieżek za pomocą miniaturowej igły.",
+      "Na zjawisku polaryzacji kołowej światła w warstwie ciekłokrystalicznej.",
+      "Na zliczaniu fotonów emitowanych w wyniku zjawiska fotoluminescencji kropel poliwęglanu."
+    ],
+    "correctIndex": 0,
+    "explanation": "Informacja na płycie wytłoczona jest w postaci zagłębień (pitów) i pól płaskich (landów). Światło lasera o długości fali w próżni \\(\\lambda\\) pada przez podłoże z poliwęglanu o współczynniku załamania \\(n \\approx 1,55\\). Głębokość pitu dobiera się ściśle jako \\(h = \\frac{\\lambda}{4n}\\). Promień odbity od dna pitu pokonuje drogę dłuższą o \\(2h = \\frac{\\lambda}{2n}\\), czyli dokładnie o pół fali w materiale. Następuje interferencja wygaszająca (destruktywna) — fotodioda odnotowuje spadek natężenia światła na krawędzi pitu.",
+    "flashcardFront": "Zasada odczytu płyt optycznych (CD / DVD / Blu-Ray):",
+    "flashcardBack": [
+      "Głębokość pitu: \\(h = \\frac{\\lambda}{4n}\\) (gdzie \\(n\\) to współczynnik załamania poliwęglanu).",
+      "Różnica dróg promieni: \\(\\Delta s = 2h = \\frac{\\lambda}{2n}\\) (dokładnie pół fali w materiale!).",
+      "Zjawisko: INTERFERENCJA DESTRUKTYWNA (przesunięcie fazowe o \\(\\pi = 180^\\circ\\)).",
+      "Detekcja: Fotodioda widzi zaciemnienie (spadek natężenia odbitego światła) na styku pitu i landu."
+    ],
+    "tips": [
+      "Promień musi pokonać głębokość pitu dwa razy: w dół i w górę.",
+      "Dlatego głębokość to lambda / (4n), aby różnica dróg wyniosła lambda / (2n).",
+      "Różnica drogi o pół fali daje wygaszenie światła (interferencję destruktywną)."
+    ],
+    "tip": "Odczyt dysków: głębokość pitu h = λ/(4n) -> różnica dróg λ/(2n) -> interferencja destruktywna (faza π).",
+    "relatedRoute": "/teoria/pamieci-nosniki#q24"
+  },
+  {
+    "id": "mem-opt-disc-specs",
+    "category": "pamieci",
+    "categoryLabel": "Pamięci, dyski i GMR",
+    "tier": "tier1",
+    "question": "Zestaw parametry lasera (długość fali \\(\\lambda\\) i apertura numeryczna NA) dla nośników CD, DVD i Blu-Ray:",
+    "options": [
+      "CD: \\(\\lambda = 780\\ \\mathrm{nm}\\) (podczerwień), \\(\\mathrm{NA} = 0,45\\); DVD: \\(\\lambda = 650\\ \\mathrm{nm}\\) (czerwony), \\(\\mathrm{NA} = 0,60\\); Blu-Ray: \\(\\lambda = 405\\ \\mathrm{nm}\\) (niebiesko-fioletowy), \\(\\mathrm{NA} = 0,85\\).",
+      "CD: 1550 nm, NA = 0,1; DVD: 1310 nm, NA = 0,2; Blu-Ray: 850 nm, NA = 0,3.",
+      "CD: 650 nm, NA = 0,85; DVD: 780 nm, NA = 0,60; Blu-Ray: 1064 nm, NA = 0,45.",
+      "Wszystkie trzy nośniki używają identycznego lasera helowo-neonowego o długości 632,8 nm."
+    ],
+    "correctIndex": 0,
+    "explanation": "Średnica plamki skupionej wiązki lasera ograniczona dyfrakcją wynosi w przybliżeniu \\(d \\approx \\frac{\\lambda}{\\mathrm{NA}}\\). Wzrost gęstości zapisu od CD (700 MB) przez DVD (4,7 GB) do Blu-Ray (25 GB) osiągnięto przez skrócenie długości fali oraz zwiększenie apertury obiektywu: CD (780 nm podczerwień, NA=0,45, plamka ~1,7 μm), DVD (650 nm czerwony, NA=0,60, plamka ~1,0 μm) oraz Blu-Ray (405 nm fioletowo-niebieski, NA=0,85, plamka ~0,48 μm).",
+    "flashcardFront": "Ewolucja płyt optycznych: CD -> DVD -> Blu-Ray (parametry):",
+    "flashcardBack": [
+      "CD: \\(\\lambda = 780\\ \\mathrm{nm}\\) (podczerwień), \\(\\mathrm{NA} = 0,45\\) -> pojemność 700 MB.",
+      "DVD: \\(\\lambda = 650\\ \\mathrm{nm}\\) (czerwony), \\(\\mathrm{NA} = 0,60\\) -> pojemność 4,7 GB.",
+      "Blu-Ray: \\(\\lambda = 405\\ \\mathrm{nm}\\) (fioletowo-niebieski), \\(\\mathrm{NA} = 0,85\\) -> pojemność 25 GB.",
+      "Zasada: Rozmiar plamki \\(d \\approx \\lambda / \\mathrm{NA}\\) maleje, co pozwala na gęstsze upakowanie pitów."
+    ],
+    "tips": [
+      "CD: podczerwień 780 nm.",
+      "DVD: czerwony 650 nm.",
+      "Blu-Ray: niebiesko-fioletowy 405 nm o największej aperturze NA=0,85."
+    ],
+    "tip": "CD (780 nm, NA=0,45), DVD (650 nm, NA=0,60), BD (405 nm, NA=0,85). Średnica plamki d ≈ λ/NA.",
+    "relatedRoute": "/teoria/pamieci-nosniki#q24"
+  },
+  {
+    "id": "mem-opt-disc-recording",
+    "category": "pamieci",
+    "categoryLabel": "Pamięci, dyski i GMR",
+    "tier": "tier1",
+    "question": "W jaki sposób realizowany jest zapis informacji na dyskach optycznych w wersji tłoczonej (ROM) oraz wielokrotnego zapisu (RW)?",
+    "options": [
+      "W płytach ROM stosuje się tłoczenie mechaniczne matrycą niklową w prasie wtryskowej; w płytach wielokrotnego zapisu (RW) laser podgrzewa warstwę stopu chalkogenidkowego, zmieniając odwracalnie jej fazę między krystaliczną (odbijającą) a amorficzną (rozpraszającą).",
+      "W płytach ROM bity wycina się diamentowym rylcem; w płytach RW dane zapisuje się magnetycznie głowicą indukcyjną.",
+      "Płyty ROM są naświetlane promieniami gamma; płyty RW wykorzystują mikroskopijne pęcherzyki powietrza w poliwęglanie.",
+      "Zapis na wszystkich płytach optycznych polega wyłącznie na trwałym przepaleniu otworów na wylot płyty."
+    ],
+    "correctIndex": 0,
+    "explanation": "Płyty seryjne (CD-ROM, DVD-Video, BD-ROM) produkuje się masowo metodą formowania wtryskowego z poliwęglanu przy użyciu precyzyjnej metalowej matrycy niklowej (stamper), która mechanicznie odciska pity. Z kolei dyski do nagrywania wielokrotnego (CD-RW, DVD-RW, BD-RE) wykorzystują zjawisko przemiany fazowej (Phase-Change): warstwa rejestrująca ze stopu pierwiastków chalkogenidkowych (np. GeSbTe) pod wpływem impulsu laserowego topi się i szybko stygnie, stając się amorficzna (ciemna, małe odbicie), a po słabszym podgrzaniu ulega rekrystalizacji (faza krystaliczna, jasna, duże odbicie).",
+    "flashcardFront": "Zapis danych na płytach optycznych (ROM vs R / RW):",
+    "flashcardBack": [
+      "Płyty ROM (tłoczone): Mechaniczne wytłaczanie pitów w poliwęglanie z metalowej matrycy niklowej (wtryskarka).",
+      "Płyty jednokrotnego zapisu (R): Laser trwale niszczy/odbarwia warstwę barwnika organicznego (Dye).",
+      "Płyty wielokrotnego zapisu (RW / RE): Laser zmienia fazę stopu pierwiastków chalkogenidkowych (GeSbTe): faza amorficzna (rozprasza światło) <-> faza krystaliczna (odbija światło)."
+    ],
+    "tips": [
+      "Płyty w tłoczni są odciskane mechanicznie z metalowej matrycy (jak płyty winylowe).",
+      "Płyty RW wykorzystują zmianę fazy krystaliczna/amorficzna (Phase Change).",
+      "Faza amorficzna słabiej odbija światło niż faza krystaliczna."
+    ],
+    "tip": "Zapis ROM: tłoczenie wtryskowe matrycą. Zapis RW: odwracalna zmiana fazy (krystaliczna / amorficzna).",
+    "relatedRoute": "/teoria/pamieci-nosniki#q24"
+  },
+  {
+    "id": "mem-mr-definition",
+    "category": "pamieci",
+    "categoryLabel": "Pamięci, dyski i GMR",
+    "tier": "tier1",
+    "question": "Podaj definicję zjawiska magnetorezystancji (MR / AMR) oraz wskaż jego fizyczną przyczynę:",
+    "options": [
+      "Jest to zjawisko zmiany rezystancji elektrycznej materiału pod wpływem zewnętrznego pola magnetycznego, wywołane zakrzywianiem torów elektronów przez siłę Lorentza i anizotropią rozpraszania w ferromagnetykach.",
+      "Jest to proces samorzutnego powstawania pola elektrycznego w dielektryku bez obecności ładunku.",
+      "Jest to zjawisko całkowitego zaniku oporu w metalach w temperaturze powyżej 100 stopni Celsjusza.",
+      "Jest to zależność indukcji magnetycznej od prądu przesunięcia w próżni."
+    ],
+    "correctIndex": 0,
+    "explanation": "Magnetorezystancja (MR) to zmiana oporu elektrycznego przewodnika lub półprzewodnika pod wpływem zewnętrznego pola magnetycznego. Klasyczna anizotropowa magnetorezystancja (AMR) wynika z działania siły Lorentza na poruszające się elektrony oraz asymetrii rozpraszania elektronów przewodnictwa na orbitalach ferromagnetyka w zależności od kąta między wektorem prądu a wektorem namagnesowania. Efekt ten w metalach wynosi zwykle od kilku promili do kilku procent.",
+    "flashcardFront": "Definicja zjawiska magnetorezystancji (MR / AMR):",
+    "flashcardBack": [
+      "Definicja: Zmiana rezystancji elektrycznej przewodnika/ferromagnetyka pod wpływem zewnętrznego pola magnetycznego.",
+      "Fizyczna przyczyna: Siła Lorentza zakrzywiająca tory elektronów oraz zależność rozpraszania od orientacji namagnesowania w ferromagnetyku.",
+      "Rząd wielkości (zwykła MR): Zmiana rezystancji rzędu 1–3%."
+    ],
+    "tips": [
+      "Magneto + rezystancja = opór zależny od pola magnetycznego.",
+      "Pole magnetyczne zakrzywia tory nośników prądu przez siłę Lorentza.",
+      "W klasycznej AMR zmiana oporu wynosi zaledwie 1–3%."
+    ],
+    "tip": "Magnetorezystancja: zmiana oporu materiału pod wpływem zewnętrznego pola magnetycznego (siła Lorentza).",
+    "relatedRoute": "/teoria/pamieci-nosniki#q23"
+  },
+  {
+    "id": "mem-gmr-physics",
+    "category": "pamieci",
+    "categoryLabel": "Pamięci, dyski i GMR",
+    "tier": "tier1",
+    "question": "Na czym polega zjawisko Gigantycznej Magnetorezystancji (GMR — Giant Magnetoresistance)?",
+    "options": [
+      "Na kwantowym rozpraszaniu elektronów zależnym od ich spinu w strukturach wielowarstwowych złożonych z naprzemiennych nanowarstw ferromagnetyka i niemagnetyka (np. Fe/Cr/Fe): antyrównoległe namagnesowanie daje wysoki opór, a równoległe — niski.",
+      "Na rozszerzalności cieplnej ferrytów pod wpływem prądu zmiennego o częstotliwości radiowej.",
+      "Na zjawisku Halla w złączach p-n z arsenku galu.",
+      "Na tłumieniu fal akustycznych w cienkich warstwach złota naniesionych na krzem."
+    ],
+    "correctIndex": 0,
+    "explanation": "Zjawisko GMR (Nagroda Nobla 2007 dla Alberta Ferta i Petera Grünberga) występuje w strukturach złożonych z ultracienkich warstw ferromagnetycznych (np. żelazo, kobalt) przedzielonych warstwą metalu niemagnetycznego (np. chrom, miedź) o grubości rzędu 1 nm. Wynika ono z faktu, że prawdopodobieństwo rozproszenia elektronu zależy od relacji między zwrotem jego spinu a kierunkiem namagnesowania warstwy magnetycznej. Zmiana oporu w GMR osiąga kilkadziesiąt procent (20–80%).",
+    "flashcardFront": "Gigantyczna Magnetorezystancja (GMR) — istota fizyczna:",
+    "flashcardBack": [
+      "Struktura: Nanowarstwy ferromagnetyk / niemagnetyk / ferromagnetyk (np. Fe/Cr/Fe).",
+      "Zjawisko: Kwantowe rozpraszanie elektronów zależne od ich SPINU (spin-dependent scattering).",
+      "Skala zjawiska: Spadek rezystancji sięgający 20–80% (kilkadziesiąt razy silniejszy niż klasyczna AMR!)."
+    ],
+    "tips": [
+      "GMR = Giant Magnetoresistance (Nobel 2007 Fert & Grünberg).",
+      "Wielowarstwowe struktury metaliczne ferromagnetyk / chrom / ferromagnetyk.",
+      "Kluczowy mechanizm: rozpraszanie elektronów zależne od ich SPINU."
+    ],
+    "tip": "GMR: nanostruktury ferromagnetyk/niemagnetyk/ferromagnetyk, rozpraszanie zależne od spinu (efekt 20-80%).",
+    "relatedRoute": "/teoria/pamieci-nosniki#q23"
+  },
+  {
+    "id": "mem-gmr-resistance-states",
+    "category": "pamieci",
+    "categoryLabel": "Pamięci, dyski i GMR",
+    "tier": "tier1",
+    "question": "Wskaż stany rezystancji struktury GMR w zależności od wzajemnego zwrotu namagnesowania warstw ferromagnetycznych:",
+    "options": [
+      "Namagnesowanie antyrównoległe (↑↓): elektrony obu spinów są silnie rozpraszane -> DUŻY OPÓR (\\(R_{max}\\)); namagnesowanie równoległe (↑↑): elektrony o zgodnym spinie przechodzą bez rozpraszania -> MAŁY OPÓR (\\(R_{min}\\)).",
+      "Namagnesowanie antyrównoległe daje zerowy opór (nadprzewodnictwo), a równoległe daje przerwę w obwodzie.",
+      "Rezystancja jest stała i nie zależy od zwrotu wektora namagnesowania.",
+      "Namagnesowanie równoległe powoduje zablokowanie przepływu prądu przez zjawisko tunelowe."
+    ],
+    "correctIndex": 0,
+    "explanation": "Prąd elektryczny w modelu dwuprądowym przenoszony jest przez dwa niezależne kanały: elektrony ze spinem „w górę” i „w dół”. Gdy namagnesowanie warstw jest antyrównoległe (\\(\\uparrow\\downarrow\\)), elektrony o spinie w górę rozpraszają się w drugiej warstwie, a o spinie w dół w pierwszej — oba kanały mają wysoki opór, dając rezystancję maksymalną \\(R_{max}\\). Pod wpływem zewnętrznego pola namagnesowania stają się równoległe (\\(\\uparrow\\uparrow\\)) — elektrony o spinie zgodnym z polem przechodzą przez obie warstwy niemal bez przeszkód, tworząc ścieżkę o małym oporze \\(R_{min}\\).",
+    "flashcardFront": "Stany rezystancji w złączu GMR (antyrównoległe vs równoległe):",
+    "flashcardBack": [
+      "Namagnesowanie ANTYRÓWNOLEGŁE (\\(\\uparrow\\downarrow\\)): DUŻY OPÓR (\\(R_{max}\\)) — elektrony obu spinów napotykają silne rozpraszanie w jednej z warstw.",
+      "Namagnesowanie RÓWNOLEGŁE (\\(\\uparrow\\uparrow\\)): MAŁY OPÓR (\\(R_{min}\\)) — elektrony o spinie zgodnym z namagnesowaniem płyną swobodnie bez rozpraszania.",
+      "Zewnętrzne pole magnetyczne przestawia stan z \\(\\uparrow\\downarrow\\) na \\(\\uparrow\\uparrow\\), wywołując gwałtowny spadek oporu."
+    ],
+    "tips": [
+      "Antyrównoległe namagnesowanie (przeciwne) = zator dla obu spinów = duży opór.",
+      "Równoległe namagnesowanie (zgodne) = autostrada dla jednego ze spinów = mały opór.",
+      "Pole magnetyczne wyrównuje spiny i zmniejsza opór."
+    ],
+    "tip": "GMR: namagnesowanie antyrównoległe (↑↓) = duży opór R_max; równoległe (↑↑) = mały opór R_min.",
+    "relatedRoute": "/teoria/pamieci-nosniki#q23"
+  },
+  {
+    "id": "mem-cmr-comparison",
+    "category": "pamieci",
+    "categoryLabel": "Pamięci, dyski i GMR",
+    "tier": "tier1",
+    "question": "Czym różni się kolosalna magnetorezystancja (CMR) od gigantycznej magnetorezystancji (GMR)?",
+    "options": [
+      "GMR zachodzi w nanostrukturach wielowarstwowych metali (zmiana oporu do 80%), a CMR zachodzi w tlenkach manganu ze strukturą perowskitu (manganity) i wykazuje zmianę rezystancji o rzędy wielkości (tysiące procent) w silnych polach i niskich temperaturach.",
+      "GMR występuje tylko w gazach szlachetnych, a CMR w przewodnikach miedzianych.",
+      "CMR wymaga prądu o natężeniu tysięcy amperów, a GMR działa wyłącznie beznapięciowo.",
+      "Oba zjawiska są fizycznie tożsame i oznaczają ten sam efekt w krzemie domieszkowanym borem."
+    ],
+    "correctIndex": 0,
+    "explanation": "Kolosalna magnetorezystancja (CMR — Colossal Magnetoresistance) to zjawisko obserwowane w tlenkach metali przejściowych o strukturze perowskitu (np. manganitach \\(\\mathrm{La_{1-x}Ca_xMnO_3}\\)). Zmiana oporu w CMR jest rzędu setek i tysięcy procent (wielokrotne rzędy wielkości!), jednak wymaga bardzo silnych pól magnetycznych (rzędu kilku tesli) oraz niskich temperatur, co ogranicza jej bezpośrednie zastosowanie użytkowe w porównaniu z GMR, która doskonale działa w temperaturze pokojowej.",
+    "flashcardFront": "Kolosalna (CMR) vs Gigantyczna Magnetorezystancja (GMR):",
+    "flashcardBack": [
+      "GMR (Gigantyczna): Wielowarstwowe nanostruktury metaliczne (Fe/Cr/Fe); zmiana oporu do 80%; działa w temperaturze pokojowej.",
+      "CMR (Kolosalna): Tlenki manganu o strukturze perowskitu (manganity); zmiana oporu o rzędy wielkości (tysiące procent!).",
+      "Wada CMR: Wymaga bardzo silnych pól magnetycznych i temperatur kriogenicznych."
+    ],
+    "tips": [
+      "GMR = warstwy metaliczne (Nobel 2007), działa w temperaturze pokojowej.",
+      "CMR = perowskity / manganity, efekt gigantyczny (tysiące procent), ale wymaga wielkich pól i mrożenia.",
+      "Pamiętaj słowo klucz dla CMR: perowskity / tlenki manganu."
+    ],
+    "tip": "GMR: nanostruktury metaliczne Fe/Cr/Fe (do 80%). CMR: perowskity / manganity (tysiące procent w niskich temp.).",
+    "relatedRoute": "/teoria/pamieci-nosniki#q23"
+  },
+  {
+    "id": "mem-gmr-devices",
+    "category": "pamieci",
+    "categoryLabel": "Pamięci, dyski i GMR",
+    "tier": "tier1",
+    "question": "W jakich urządzeniach technicznych zjawisko magnetorezystancji (GMR / AMR) znajduje powszechne zastosowanie?",
+    "options": [
+      "W odczytowych głowicach dysków twardych (HDD), nieulotnych pamięciach magnetycznych (MRAM) oraz precyzyjnych czujnikach pola magnetycznego i prędkości obrotowej kół (np. ABS w motoryzacji).",
+      "W kineskopach telewizyjnych CRT oraz pamięciach taśmowych ze zwojami ferrytowymi.",
+      "W ekranach ciekłokrystalicznych i panelach fotowoltaicznych jako warstwa antyrefleksyjna.",
+      "W zasilaczach impulsowych do stabilizacji napięcia zmiennego 230 V."
+    ],
+    "correctIndex": 0,
+    "explanation": "Wprowadzenie głowic odczytowych z zaworami spinowymi GMR przez firmę IBM pod koniec lat 90. umożliwiło tysiąckrotny wzrost gęstości zapisu danych na talerzach dysków HDD. Inne kluczowe zastosowania to magnetyczne pamięci RAM (MRAM — łączące szybkość SRAM z nieulotnością pamięci flash), biosensory magnetyczne oraz precyzyjne czujniki kąta i prędkości obrotowej w układach ABS/ESP w motoryzacji.",
+    "flashcardFront": "Zastosowania zjawiska magnetorezystancji (GMR / AMR):",
+    "flashcardBack": [
+      "Głowice odczytowe dysków HDD: Zastosowanie zaworów spinowych GMR umożliwiło rewolucyjny wzrost gęstości zapisu na talerzach.",
+      "Pamięci MRAM (Magnetic RAM): Szybkie, nieulotne pamięci operacyjne o nieograniczonej liczbie cykli zapisu.",
+      "Czujniki motoryzacyjne: Czujniki prędkości obrotowej kół w systemach ABS, położenia wału korbowego.",
+      "Sensory prądu i biosensory magnetyczne."
+    ],
+    "tips": [
+      "Główny sukces rynkowy GMR to głowice dysków twardych HDD.",
+      "Drugie zastosowanie to magnetyczne kości pamięci MRAM.",
+      "W motoryzacji czujniki magnetyczne mierzą obroty koła w ABS."
+    ],
+    "tip": "Zastosowanie GMR: głowice dysków twardych HDD, pamięci MRAM, czujniki pola i prędkości kół (ABS).",
+    "relatedRoute": "/teoria/pamieci-nosniki#q23"
+  },
+  {
+    "id": "math-db-rules",
+    "category": "zadania_wzory",
+    "categoryLabel": "Wzory i reguły kciuka",
+    "tier": "tier1",
+    "question": "Jeżeli moc sygnału w torze telekomunikacyjnym wzrosła o +3 dB, to moc ta uległa:",
+    "options": [
+      "2-krotnemu wzrostowi (podwojeniu); natomiast spadek mocy 16-krotny odpowiada tłumieniu dokładnie 12 dB.",
+      "3-krotnemu wzrostowi; a spadek 16-krotny odpowiada tłumieniu 16 dB.",
+      "10-krotnemu wzrostowi; a spadek 16-krotny to 4 dB.",
+      "Zmniejszeniu o połowę z powodu strat rozproszenia."
+    ],
+    "correctIndex": 0,
+    "explanation": "Z definicji decybela: \\(\\Delta P [\\mathrm{dB}] = 10 \\log_{10}(P_2 / P_1)\\). Ponieważ \\(\\log_{10}(2) \\approx 0,301\\), to \\(10 \\log_{10}(2) \\approx 3\\ \\mathrm{dB}\\) (wzrost 2-krotny). Podobnie: spadek 16-krotny to \\(16 = 2^4\\), a w decybelach: \\(4 \\times 3\\ \\mathrm{dB} = 12\\ \\mathrm{dB}\\) (dokładnie \\(10 \\log_{10}(16) = 12,04\\ \\mathrm{dB}\\)). Wzrost 10-krotny to dokładnie \\(+10\\ \\mathrm{dB}\\).",
+    "flashcardFront": "Reguły kciuka decybeli (dB) bez kalkulatora:",
+    "flashcardBack": [
+      "\\(\\+3\\ \\mathrm{dB}\\) = 2-krotny wzrost mocy (\\(\\times 2\\)).",
+      "\\(\\-3\\ \\mathrm{dB}\\) = 2-krotny spadek mocy (połowa mocy, \\(\\times 0,5\\)).",
+      "\\(\\+10\\ \\mathrm{dB}\\) = 10-krotny wzrost mocy (\\(\\times 10\\)).",
+      "Spadek 16-krotny = \\(2^4\\) -> \\(4 \\times (-3\\ \\mathrm{dB}) = -12\\ \\mathrm{dB}\\)!"
+    ],
+    "tips": [
+      "Zapamiętaj na całe życie: 3 dB to podwojenie mocy.",
+      "16 razy mniej to (2 * 2 * 2 * 2) razy mniej.",
+      "Cztery podwojenia: 4 razy 3 dB = 12 dB."
+    ],
+    "tip": "+3 dB = moc × 2. 16 razy mniej = -12 dB (ponieważ 16 = 2⁴, a 4 · 3 dB = 12 dB).",
+    "relatedRoute": "/egzaminy/2025_Wrzesien_A"
+  },
+  {
+    "id": "math-dbm-conversions",
+    "category": "zadania_wzory",
+    "categoryLabel": "Wzory i reguły kciuka",
+    "tier": "tier1",
+    "question": "Ile w miliwatach lub watach wynoszą odpowiednio moce: 0 dBm, 16 dBm, 19 dBm oraz 30 dBm?",
+    "options": [
+      "\\(0\\ \\mathrm{dBm} = 1\\ \\mathrm{mW}\\), \\(16\\ \\mathrm{dBm} \\approx 40\\ \\mathrm{mW}\\), \\(19\\ \\mathrm{dBm} \\approx 80\\ \\mathrm{mW}\\), \\(30\\ \\mathrm{dBm} = 1000\\ \\mathrm{mW} = 1\\ \\mathrm{W}\\).",
+      "\\(0\\ \\mathrm{dBm} = 0\\ \\mathrm{mW}\\), \\(16\\ \\mathrm{dBm} = 16\\ \\mathrm{mW}\\), \\(19\\ \\mathrm{dBm} = 19\\ \\mathrm{mW}\\), \\(30\\ \\mathrm{dBm} = 30\\ \\mathrm{W}\\).",
+      "\\(0\\ \\mathrm{dBm} = 10\\ \\mathrm{mW}\\), \\(16\\ \\mathrm{dBm} = 160\\ \\mathrm{mW}\\), \\(19\\ \\mathrm{dBm} = 190\\ \\mathrm{mW}\\), \\(30\\ \\mathrm{dBm} = 300\\ \\mathrm{mW}\\).",
+      "\\(0\\ \\mathrm{dBm} = -1\\ \\mathrm{mW}\\), \\(16\\ \\mathrm{dBm} = 4\\ \\mathrm{mW}\\), \\(19\\ \\mathrm{dBm} = 8\\ \\mathrm{mW}\\), \\(30\\ \\mathrm{dBm} = 3\\ \\mathrm{kW}\\)."
+    ],
+    "correctIndex": 0,
+    "explanation": "Jednostka dBm odnosi się do poziomu 1 mW: \\(P[\\mathrm{dBm}] = 10 \\log_{10}(P[\\mathrm{mW}])\\). Zatem \\(0\\ \\mathrm{dBm} = 1\\ \\mathrm{mW}\\). Dla 40 mW: \\(40 = 10 \\times 2 \\times 2\\), czyli \\(10\\ \\mathrm{dB} + 3\\ \\mathrm{dB} + 3\\ \\mathrm{dB} = 16\\ \\mathrm{dBm}\\). Dla 80 mW: to dwukrotność 40 mW, czyli \\(16\\ \\mathrm{dBm} + 3\\ \\mathrm{dB} = 19\\ \\mathrm{dBm}\\). Dla 1 W (1000 mW): \\(10 \\log_{10}(1000) = 30\\ \\mathrm{dBm}\\).",
+    "flashcardFront": "Przeliczanie mW na dBm bez kalkulatora (egzaminacyjne pewniaki):",
+    "flashcardBack": [
+      "\\(0\\ \\mathrm{dBm} = 1\\ \\mathrm{mW}\\)",
+      "\\(10\\ \\mathrm{dBm} = 10\\ \\mathrm{mW}\\)",
+      "\\(16\\ \\mathrm{dBm} \\approx 40\\ \\mathrm{mW}\\) (bo 10 mW + 3 dB + 3 dB = 40 mW)",
+      "\\(19\\ \\mathrm{dBm} \\approx 80\\ \\mathrm{mW}\\) (bo 40 mW + 3 dB = 80 mW)",
+      "\\(30\\ \\mathrm{dBm} = 1000\\ \\mathrm{mW} = 1\\ \\mathrm{W}\\)"
+    ],
+    "tips": [
+      "Poziom 0 dBm to dokładnie 1 miliwat (mW).",
+      "40 mW to 10 mW razy 2 razy 2, czyli 10 dBm + 3 dB + 3 dB = 16 dBm.",
+      "80 mW to jeszcze jedno podwojenie (+3 dB) = 19 dBm."
+    ],
+    "tip": "0 dBm = 1 mW; 16 dBm ≈ 40 mW; 19 dBm ≈ 80 mW; 30 dBm = 1 W.",
+    "relatedRoute": "/egzaminy/2026_L1_B"
+  },
+  {
+    "id": "math-optical-budget-exam",
+    "category": "zadania_wzory",
+    "categoryLabel": "Wzory i reguły kciuka",
+    "tier": "tier1",
+    "question": "Zadanie egzaminacyjne: Moc nadajnika wynosi 7 dBm, czułość odbiornika jest 16 razy mniejsza niż moc nadajnika. Tłumienie złącza wynosi 1 dB, a tłumienie światłowodu 0,2 dB/km. Jaki jest maksymalny zasięg łącza?",
+    "options": [
+      "\\(L = 55\\ \\mathrm{km}\\) (czułość odbiornika wynosi \\(-5\\ \\mathrm{dBm}\\), dostępny bilans tłumienia to 12 dB, po odliczeniu złącza zostaje 11 dB, co przy 0,2 dB/km daje 55 km).",
+      "\\(L = 30\\ \\mathrm{km}\\) (czułość wynosi 0 dBm, tłumienie złącza pochłania połowę mocy).",
+      "\\(L = 110\\ \\mathrm{km}\\) (obliczone przy założeniu zerowych strat na złączach).",
+      "\\(L = 7\\ \\mathrm{km}\\) (zasięg ograniczony dyspersją modową w III oknie)."
+    ],
+    "correctIndex": 0,
+    "explanation": "Krok po kroku: 1. Moc nadajnika \\(P_T = +7\\ \\mathrm{dBm}\\). 2. Czułość odbiornika jest 16 razy mniejsza: spadek 16-krotny to \\(10 \\log_{10}(16) = 12\\ \\mathrm{dB}\\). Zatem czułość wynosi \\(P_R = 7\\ \\mathrm{dBm} - 12\\ \\mathrm{dB} = -5\\ \\mathrm{dBm}\\). 3. Całkowity dostępny margines tłumienia: \\(P_T - P_R = 7 - (-5) = 12\\ \\mathrm{dB}\\). 4. Równanie budżetu: \\(12\\ \\mathrm{dB} = \\alpha \\cdot L + A_{zlacza} = 0,2 \\cdot L + 1\\ \\mathrm{dB}\\). 5. \\(0,2 \\cdot L = 11\\ \\mathrm{dB} \\implies L = 11 / 0,2 = 55\\ \\mathrm{km}\\).",
+    "flashcardFront": "Zadanie z egzaminu 2025: Budżet mocy z czułością 16 razy mniejszą:",
+    "flashcardBack": [
+      "Dane: \\(P_T = +7\\ \\mathrm{dBm}\\), czułość 16× mniejsza, \\(A_{conn} = 1\\ \\mathrm{dB}\\), \\(\\alpha = 0,2\\ \\mathrm{dB/km}\\).",
+      "Krok 1: 16 razy mniej w decybelach to \\(12\\ \\mathrm{dB}\\).",
+      "Krok 2: Czułość \\(P_R = 7 - 12 = -5\\ \\mathrm{dBm}\\). Margines mocy: \\(\\Delta P = 12\\ \\mathrm{dB}\\).",
+      "Krok 3: Budżet tłumienia na światłowód: \\(12\\ \\mathrm{dB} - 1\\ \\mathrm{dB} = 11\\ \\mathrm{dB}\\).",
+      "Krok 4: Zasięg: \\(L = 11 / 0,2 = 55\\ \\mathrm{km}\\)!"
+    ],
+    "tips": [
+      "16 razy mniejsza czułość oznacza odjęcie 12 dB (ponieważ 2^4 = 16).",
+      "7 dBm minus 12 dB daje czułość równą -5 dBm. Margines to 12 dB.",
+      "Odejmij 1 dB złącza (zostaje 11 dB) i podziel przez 0,2 dB/km -> 55 km."
+    ],
+    "tip": "16× mniejsza = 12 dB różnicy. (12 dB - 1 dB złącza) / 0,2 dB/km = 11 / 0,2 = 55 km.",
+    "relatedRoute": "/egzaminy/2025_Wrzesien_A"
+  },
+  {
+    "id": "math-dcf-range-calc",
+    "category": "zadania_wzory",
+    "categoryLabel": "Wzory i reguły kciuka",
+    "tier": "tier1",
+    "question": "W jaki sposób wyznacza się maksymalny zasięg łącza \\(L_{SMF}\\) z budżetu mocy przy pełnej kompensacji dyspersji światłowodem DCF?",
+    "options": [
+      "Z warunku kompensacji \\(L_{DCF} = L_{SMF} \\frac{|D_{SMF}|}{|D_{DCF}|}\\); całkowite tłumienie wynosi \\(A_{tot} = L_{SMF} (\\alpha_{SMF} + \\alpha_{DCF} \\frac{|D_{SMF}|}{|D_{DCF}|})\\), skąd wyznacza się \\(L_{SMF} = \\frac{P_T - P_R}{\\alpha_{SMF} + \\alpha_{DCF} \\frac{|D_{SMF}|}{|D_{DCF}|}}\\).",
+      "Długość DCF dodaje się wprost do zasięgu geograficznego \\(L = L_{SMF} + L_{DCF}\\).",
+      "Włókno DCF nie wprowadza żadnego tłumienia mocy i nie wpływa na budżet mocy.",
+      "Zasięg zależy wyłącznie od mocy lasera pomnożonej przez współczynnik dyspersji DCF."
+    ],
+    "correctIndex": 0,
+    "explanation": "Na egzaminie (np. 2026 L1 B) należy zauważyć dwie rzeczy: 1. Kompensacja dyspersji wymaga zerowania sumarycznej dyspersji: \\(D_{SMF} L_{SMF} + D_{DCF} L_{DCF} = 0\\), skąd długość włókna kompensującego to \\(L_{DCF} = L_{SMF} \\frac{D_{SMF}}{|D_{DCF}|}\\). 2. Włókno DCF jest zwinięte w kasecie w stacji — NIE wydłuża zasięgu geograficznego łącza, ale wprowadza realne tłumienie optyczne \\(\\alpha_{DCF} L_{DCF}\\)! Całkowite tłumienie to \\(L_{SMF} (\\alpha_{SMF} + \\alpha_{DCF} \\frac{D_{SMF}}{|D_{DCF}|})\\).",
+    "flashcardFront": "Kompensacja dyspersji włóknem DCF w budżecie mocy (wzory na symbolach):",
+    "flashcardBack": [
+      "Warunek zerowania dyspersji: \\(D_{SMF} L_{SMF} + D_{DCF} L_{DCF} = 0\\) -> \\(L_{DCF} = L_{SMF} \\frac{|D_{SMF}|}{|D_{DCF}|}\\).",
+      "Ważna uwaga egzaminacyjna: Włókno DCF NIE wpływa na odległość geograficzną (rośnie tylko droga optyczna w stacji).",
+      "Całkowite tłumienie: \\(A_{tot} = \\alpha_{SMF} L_{SMF} + \\alpha_{DCF} L_{DCF} = L_{SMF} \\left(\\alpha_{SMF} + \\alpha_{DCF} \\frac{|D_{SMF}|}{|D_{DCF}|}\\right)\\).",
+      "Maksymalny zasięg: \\(L_{SMF} = \\frac{P_T - P_{R\\,min}}{\\alpha_{SMF} + \\alpha_{DCF} \\frac{|D_{SMF}|}{|D_{DCF}|}}\\)."
+    ],
+    "tips": [
+      "Najpierw napisz bilans dyspersji: D_SMF * L_SMF + D_DCF * L_DCF = 0.",
+      "Wyznacz L_DCF = L_SMF * (|D_SMF| / |D_DCF|).",
+      "Wstaw L_DCF do wzoru na całkowite tłumienie optyczne."
+    ],
+    "tip": "L_DCF = L_SMF · (|D_SMF| / |D_DCF|). Zasięg L_SMF = (P_T - P_R) / (α_SMF + α_DCF · |D_SMF| / |D_DCF|).",
+    "relatedRoute": "/egzaminy/2026_L1_B"
+  },
+  {
+    "id": "math-tunable-channels-count",
+    "category": "zadania_wzory",
+    "categoryLabel": "Wzory i reguły kciuka",
+    "tier": "tier1",
+    "question": "W łączu zastosowano lasery przestrajalne w zakresie od 1500 nm do 1550 nm. Kanały rozmieszczono z odstępem 25 GHz, a przepływność wynosi 100 Mb/s na kanał. Ile wynosi maksymalna liczba kanałów i całkowita przepustowość?",
+    "options": [
+      "Szerokość pasma to ok. 6450 GHz; liczba kanałów \\(N = \\frac{6450}{25} = 258\\) kanałów, a całkowita przepustowość wynosi \\(258 \\times 100\\ \\mathrm{Mb/s} = 25,8\\ \\mathrm{Gb/s}\\).",
+      "Liczba kanałów to dokładnie 50 kanałów, a przepustowość wynosi 5 Gb/s.",
+      "Liczba kanałów to 25 kanałów, a przepustowość wynosi 2,5 Gb/s.",
+      "Szerokość pasma wynosi 50 GHz, co pozwala na zmieszczenie 2 kanałów o przepustowości 200 Mb/s."
+    ],
+    "correctIndex": 0,
+    "explanation": "Przeliczenie zakresu 1500–1550 nm na częstotliwości: \\(f_1 = \\frac{c}{\\lambda_1} = \\frac{3\\cdot 10^8}{1,55\\cdot 10^{-6}} \\approx 193,55\\ \\mathrm{THz}\\), \\(f_2 = \\frac{c}{\\lambda_2} = \\frac{3\\cdot 10^8}{1,50\\cdot 10^{-6}} = 200,00\\ \\mathrm{THz}\\). Całkowite dostępne pasmo optyczne: \\(\\Delta f = 200,00 - 193,55 = 6,45\\ \\mathrm{THz} = 6450\\ \\mathrm{GHz}\\). Liczba kanałów przy rastrze 25 GHz: \\(N = 6450 / 25 = 258\\) kanałów. Całkowita przepustowość: \\(B_{tot} = 258 \\times 100\\ \\mathrm{Mb/s} = 25800\\ \\mathrm{Mb/s} = 25,8\\ \\mathrm{Gb/s}\\). (Dla rastra 12,5 GHz byłoby 516 kanałów i 51,6 Gb/s).",
+    "flashcardFront": "Zadanie z laserami przestrajalnymi (zakres 1500–1550 nm):",
+    "flashcardBack": [
+      "Pasmo częstotliwości: \\(\\Delta f = \\frac{c}{1500\\ \\mathrm{nm}} - \\frac{c}{1550\\ \\mathrm{nm}} \\approx 200,0\\ \\mathrm{THz} - 193,55\\ \\mathrm{THz} \\approx 6450\\ \\mathrm{GHz}\\).",
+      "Liczba kanałów przy rastrze 25 GHz: \\(N = 6450 / 25 = 258\\) kanałów.",
+      "Liczba kanałów przy rastrze 12,5 GHz: \\(N = 6450 / 12,5 = 516\\) kanałów.",
+      "Całkowita przepustowość: \\(B_{tot} = N \\cdot B_{ch}\\) (np. \\(258 \\cdot 100\\ \\mathrm{Mb/s} = 25,8\\ \\mathrm{Gb/s}\\))."
+    ],
+    "tips": [
+      "Pamiętaj: zakres 1500–1550 nm to pasmo częstotliwości ok. 6,45 THz (czyli 6450 GHz).",
+      "Podziel dostępne gigaherce przez odstęp międzykanałowy (25 GHz lub 12,5 GHz).",
+      "Pomnóż liczbę kanałów przez przepływność jednego kanału."
+    ],
+    "tip": "Δf ≈ 6450 GHz. Liczba kanałów = 6450 / odstęp. Dla 25 GHz -> 258 kanałów, B_tot = 25,8 Gb/s.",
+    "relatedRoute": "/egzaminy/2025_Z1_B"
+  },
+  {
+    "id": "math-tunable-nonlinear-exam",
+    "category": "zadania_wzory",
+    "categoryLabel": "Wzory i reguły kciuka",
+    "tier": "tier1",
+    "question": "W łączu z laserami przestrajalnymi moc każdego lasera wynosi aż 40 mW, a odstęp wynosi 25 GHz (lub 12,5 GHz). Jakie zjawisko tu DOMINUJE i jak zmiana mocy wpłynie na działanie łącza?",
+    "options": [
+      "Dominują szkodliwe zjawiska nieliniowe, zwłaszcza mieszanie czterofalowe (FWM); dalsze zwiększenie mocy spowoduje katastrofalny wzrost zakłóceń nieliniowych i degradację transmisji.",
+      "Dominuje tłumienie liniowe; zwiększenie mocy do 1 W jest zalecane i całkowicie wyeliminuje szumy.",
+      "Dominuje rozpraszanie Rayleigha; zmiana mocy lasera nie ma żadnego wpływu na jakość sygnału.",
+      "Dominuje interferencja międzymodowa w rdzeniu światłowodu jednomodowego."
+    ],
+    "correctIndex": 0,
+    "explanation": "Moc 40 mW (+16 dBm) na pojedynczy kanał to potężna moc w technice światłowodowej (standardowo stosuje się moce rzędu 0 dBm = 1 mW). Przy tak ogromnej gęstości optycznej i gęstym rastrze kanałów (25 GHz lub 12,5 GHz) dominują zjawiska nieliniowe klastra Kerra: FWM (mieszanie czterofalowe), SPM i XPM. Zwiększenie mocy nie poprawi zasięgu, lecz drastycznie pogorszy parametry łącza, ponieważ moc generowanych produktów FWM rośnie z sześcianem mocy optycznej (\\(P_{FWM} \\propto P^3\\))!",
+    "flashcardFront": "Łącze z laserami przestrajalnymi 40 mW: dominujące zjawiska i wpływ mocy:",
+    "flashcardBack": [
+      "Dominujące zjawiska: Nieliniowości światłowodowe — Mieszanie czterofalowe (FWM), modulacja skrośna (XPM), automodulacja fazy (SPM).",
+      "Ocena parametrów: Moc 40 mW (+16 dBm) to bardzo duża wartość (zwykle stosuje się 1–2 mW).",
+      "Wpływ zwiększenia mocy: Katastrofalne pogorszenie jakości transmisji — produkty FWM rosną proporcjonalnie do \\(P^3\\)!",
+      "Wniosek inżynierski: Należy obniżyć moc kanałów lub zastosować włókna NZDSF i nierównomierny raster kanałowy."
+    ],
+    "tips": [
+      "Moc 40 mW na kanał w światłowodzie to olbrzymia wartość (typowo stosuje się 1 mW).",
+      "Przy dużej mocy i małym odstępie częstotliwości natychmiast uaktywnia się FWM.",
+      "Zwiększenie mocy tylko pogorszy sprawę, bo FWM rośnie z sześcianem mocy!"
+    ],
+    "tip": "Przy 40 mW i gęstej siatce dominuje FWM! Zwiększenie mocy pogarsza działanie (P_FWM ∝ P³).",
+    "relatedRoute": "/egzaminy/2025_Z1_B"
+  },
+  {
+    "id": "math-itu-20ghz-exam",
+    "category": "zadania_wzory",
+    "categoryLabel": "Wzory i reguły kciuka",
+    "tier": "tier1",
+    "question": "Zadanie egzaminacyjne z wykresem ITU-R P.676: Dla częstotliwości 20 GHz oblicz długość fali \\(\\lambda\\) oraz oszacuj tłumienie fali w atmosferze na odległości d = 1 m:",
+    "options": [
+      "Długość fali wynosi \\(\\lambda = 1,5\\ \\mathrm{cm}\\) (\\(0,015\\ \\mathrm{m}\\)); tłumienie gazów na dystansie 1 m wynosi poniżej 0,001 dB — jest całkowicie pomijalne.",
+      "Długość fali wynosi \\(\\lambda = 15\\ \\mathrm{m}\\); tłumienie wynosi 20 dB.",
+      "Długość fali wynosi \\(\\lambda = 1,5\\ \\mathrm{mm}\\); tłumienie na 1 m pochłania całą moc 80 mW.",
+      "Długość fali wynosi \\(\\lambda = 60\\ \\mathrm{cm}\\); strata mocy wynosi dokładnie 3 dB."
+    ],
+    "correctIndex": 0,
+    "explanation": "1. Długość fali: \\(\\lambda = \\frac{c}{f} = \\frac{3\\cdot 10^8\\ \\mathrm{m/s}}{20\\cdot 10^9\\ \\mathrm{Hz}} = 0,015\\ \\mathrm{m} = 1,5\\ \\mathrm{cm}\\). 2. Z wykresu ITU-R P.676 tłumienie właściwe powietrza przy 20 GHz wynosi ok. \\(\\gamma \\approx 0,06 - 0,18\\ \\mathrm{dB/km}\\). 3. Na odległości \\(d = 1\\ \\mathrm{m} = 0,001\\ \\mathrm{km}\\) tłumienie wynosi: \\(A = \\gamma \\cdot 0,001 \\approx 0,0001\\ \\mathrm{dB}\\). Tłumienie w gazach atmosferycznych na dystansie 1 metra jest z fizycznego i inżynierskiego punktu widzenia całkowicie pomijalne (moc nie ulega zauważalnemu spadkowi).",
+    "flashcardFront": "Zadanie z wykresem ITU-R P.676 dla 20 GHz i dystansu 1 m:",
+    "flashcardBack": [
+      "Długość fali: \\(\\lambda = c / f = (3\\cdot 10^8) / (20\\cdot 10^9) = 0,015\\ \\mathrm{m} = 1,5\\ \\mathrm{cm}\\).",
+      "Odczyt z wykresu ITU-R P.676: Tłumienie jednostkowe gazów to ułamki dB na KILOMETR (ok. 0,1 dB/km).",
+      "Tłumienie na drodze 1 m: \\(A = 0,1\\ \\mathrm{dB/km} \\times 0,001\\ \\mathrm{km} = 0,0001\\ \\mathrm{dB}\\).",
+      "Wniosek inżynierski: Tłumienie atmosferyczne na dystansie 1 m jest absolutnie zaniedbywalne."
+    ],
+    "tips": [
+      "Długość fali: 300 000 km/s podziel przez 20 GHz = 0,015 m = 1,5 cm.",
+      "Wykres ITU-R podaje tłumienie na KILOMETR.",
+      "Na dystansie 1 metra strata w powietrzu wynosi ułamki tysięcznych decybela — moc dociera niemal nienaruszona."
+    ],
+    "tip": "f = 20 GHz -> λ = c/f = 1,5 cm. Tłumienie na 1 m wynosi < 0,0002 dB (pomijalne).",
+    "relatedRoute": "/egzaminy/2026_L2_A"
+  },
+  {
+    "id": "math-fresnel-radius",
+    "category": "zadania_wzory",
+    "categoryLabel": "Wzory i reguły kciuka",
+    "tier": "tier1",
+    "question": "Jak brzmi wzór na promień pierwszej strefy Fresnela oraz jaki warunek prześwitu musi być spełniony dla poprawnego działania łącza radiowego?",
+    "options": [
+      "\\(r_1 = \\sqrt{\\frac{\\lambda d_1 d_2}{d_1 + d_2}}\\); w obszarze bezpośredniej widoczności przynajmniej 60% promienia pierwszej strefy Fresnela musi być wolne od jakichkolwiek przeszkód terenowych.",
+      "\\(r_1 = \\frac{\\lambda (d_1 + d_2)}{d_1 d_2}\\); przeszkody mogą zasłaniać do 95% strefy.",
+      "\\(r_1 = 2\\pi \\\\sqrt{\\lambda \\\\cdot d}\\); strefa Fresnela dotyczy wyłącznie światłowodów wielomodowych.",
+      "\\(r_1 = \\sqrt{\\lambda}\\); wystarczy widoczność optyczna wierzchołków anten bez względu na przeszkody."
+    ],
+    "correctIndex": 0,
+    "explanation": "Promień n-tej strefy Fresnela w punkcie odległym o \\(d_1\\) od nadajnika i \\(d_2\\) od odbiornika wyraża się wzorem: \\(r_n = \\sqrt{\\frac{n \\lambda d_1 d_2}{d_1 + d_2}}\\). Dla pierwszej strefy (\\(n=1\\)) różnica dróg fali ugiętej i bezpośredniej wynosi \\(\\lambda/2\\). Aby uniknąć degradacji sygnału wskutek dyfrakcji i interferencji destruktywnej, strefa widoczności radiowej (clearance) wymaga, aby co najmniej 60% promienia pierwszej strefy Fresnela (\\(0,6 r_1\\)) było wolne od przeszkód (drzew, budynków, wzniesień terenu).",
+    "flashcardFront": "Promień I strefy Fresnela i warunek prześwitu radiowego:",
+    "flashcardBack": [
+      "Wzór na promień: \\(r_1 = \\sqrt{\\frac{\\lambda d_1 d_2}{d_1 + d_2}}\\) (w połowie dystansu \\(r_{1\\,max} = \\frac{1}{2}\\sqrt{\\lambda D}\\)).",
+      "Warunek inżynierski: Przynajmniej 60% promienia pierwszej strefy Fresnela (\\(0,6 r_1\\)) musi być wolne od przeszkód terenowych!",
+      "Gdy przeszkoda wchodzi w strefę Fresnela, pojawia się silne tłumienie dyfrakcyjne mimo widoczności optycznej."
+    ],
+    "tips": [
+      "Strefa Fresnela to elipsoida obrotowa wokół osi anten.",
+      "Wzór pod pierwiastkiem: lambda * d1 * d2 / (d1 + d2).",
+      "Zasada inżynierska: min. 60% promienia wolne od drzew i budynków."
+    ],
+    "tip": "r1 = √(λ d1 d2 / (d1 + d2)). Wymóg prześwitu: min. 60% promienia r1 wolne od przeszkód.",
+    "relatedRoute": "/egzaminy/2018_Z1_B"
+  },
+  {
+    "id": "math-chromatic-broadening",
+    "category": "zadania_wzory",
+    "categoryLabel": "Wzory i reguły kciuka",
+    "tier": "tier1",
+    "question": "Oblicz poszerzenie impulsu \\(\\Delta\\tau\\) spowodowane dyspersją chromatyczną dla linii o długości L = 50 km, lasera o szerokości widmowej \\(\\Delta\\lambda = 2\\ \\mathrm{nm}\\) i włókna o współczynniku \\(D = 17\\ \\mathrm{ps/(nm\\cdot km)}\\):",
+    "options": [
+      "\\(\\Delta\\tau = |D| \\cdot L \\cdot \\Delta\\lambda = 17 \\times 50 \\times 2 = 1700\\ \\mathrm{ps} = 1,7\\ \\mathrm{ns}\\).",
+      "\\(\\Delta\\tau = 17 / (50 \\times 2) = 0,17\\ \\mathrm{ps}\\).",
+      "\\(\\Delta\\tau = 17 \\times 50 / 2 = 425\\ \\mathrm{ps}\\).",
+      "\\(\\Delta\\tau = 34\\ \\mathrm{ns}\\) na skutek odbić od płaszcza światłowodu."
+    ],
+    "correctIndex": 0,
+    "explanation": "Poszerzenie impulsu w dyspersji chromatycznej oblicza się wprost ze wzoru: \\(\\Delta\\tau = |D| \\cdot L \\cdot \\Delta\\lambda\\). Podstawiając dane bez użycia kalkulatora: najpierw mnożymy długość przez szerokość widma: \\(50\\ \\mathrm{km} \\times 2\\ \\mathrm{nm} = 100\\ \\mathrm{km\\cdot nm}\\). Następnie mnożymy przez współczynnik dyspersji: \\(100 \\times 17\\ \\mathrm{ps/(nm\\cdot km)} = 1700\\ \\mathrm{ps} = 1,7\\ \\mathrm{ns}\\).",
+    "flashcardFront": "Obliczanie poszerzenia impulsu w dyspersji chromatycznej:",
+    "flashcardBack": [
+      "Wzór: \\(\\Delta\\tau = |D| \\cdot L \\cdot \\Delta\\lambda\\)",
+      "Jednostki: \\([\\mathrm{ps}] = [\\mathrm{ps/(nm\\cdot km)}] \\times [\\mathrm{km}] \\times [\\mathrm{nm}]\\).",
+      "Przykład egzaminacyjny: \\(L = 50\\ \\mathrm{km}\\), \\(\\Delta\\lambda = 2\\ \\mathrm{nm}\\), \\(D = 17\\ \\mathrm{ps/(nm\\cdot km)}\\):",
+      "Obliczenie: \\(17 \\cdot 50 \\cdot 2 = 17 \\cdot 100 = 1700\\ \\mathrm{ps} = 1,7\\ \\mathrm{ns}\\)!"
+    ],
+    "tips": [
+      "Wzór to iloczyn trzech wielkości: D razy L razy Delta lambda.",
+      "Mnożenie w pamięci: 50 razy 2 to 100.",
+      "100 razy 17 to 1700 pikosekund, czyli 1,7 nanosekundy."
+    ],
+    "tip": "Δτ = |D| · L · Δλ. Dla D=17, L=50, Δλ=2: Δτ = 17 · 100 = 1700 ps = 1,7 ns.",
+    "relatedRoute": "/egzaminy/2017_Z1_B"
   }
 ];
-
