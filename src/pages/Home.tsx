@@ -387,100 +387,90 @@ export default function Home() {
         {/* Trzy karty: Centrum Nauki, Ściąga oraz Wejście do Archiwum */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-5">
           
-          {/* Karta Centrum Nauki (NOWOŚĆ) */}
-          <div className="rounded-2xl p-5 sm:p-6 flex flex-col justify-between transition-all duration-300 border-2 border-amber/70 bg-linear-to-br from-panel to-ink2 hover:border-amber shadow-lg shadow-amber/5 hover:scale-[1.01]">
+          {/* Karta Centrum Nauki */}
+          <Link
+            to="/nauka"
+            className="group relative rounded-2xl p-5 sm:p-6 flex flex-col justify-between transition-all duration-300 border border-line/80 hover:border-amber/80 bg-linear-to-br from-panel via-panel to-ink2/70 hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.35),0_0_24px_rgba(245,158,11,0.12)] focus:outline-none focus-visible:ring-2 focus-visible:ring-amber"
+          >
             <div>
-              <div className="flex items-center justify-between gap-2 mb-2">
+              <div className="flex items-center justify-between gap-2 mb-3">
                 <span className="font-mono font-bold text-ink bg-amber rounded-md px-2.5 py-1 text-xs uppercase tracking-wider">
-                  Nowość
+                  Fiszki & Test
                 </span>
-                <span className="font-mono text-xs text-green font-bold">Fiszki & Test</span>
+                <span className="font-mono text-xs text-muted">Baza 60+ pytań</span>
               </div>
-              <h2 className="text-lg sm:text-xl font-bold text-txt mb-2 leading-snug">
+              <h2 className="text-lg sm:text-xl font-bold text-txt group-hover:text-amber transition-colors mb-4 leading-snug">
                 Fiszki i Test ABCD
               </h2>
-              <p className="text-sm sm:text-[15px] text-muted leading-relaxed mb-4">
-                Interaktywny system sprawdzania wiedzy: obracane karty 3D, quiz wyboru z realistycznymi pułapkami, kołem 50:50 i natychmiastowym wyjaśnieniem.
-              </p>
             </div>
-            <div className="pt-3 border-t border-line/50 flex items-center justify-between">
-              <span className="text-xs text-amber font-mono">Baza 60+ zagadnień</span>
-              <Link
-                to="/nauka"
-                className="font-mono text-xs sm:text-sm bg-amber text-ink px-3 py-1.5 rounded-lg font-bold hover:brightness-110 flex items-center gap-1 transition-all"
-              >
-                Uruchom test &rarr;
-              </Link>
+            <div className="pt-3.5 border-t border-line/50 flex items-center justify-between">
+              <span className="text-xs text-muted font-mono">Karty 3D · Test ABCD</span>
+              <span className="font-mono text-xs sm:text-sm bg-amber/10 text-amber border border-amber/30 px-3 py-1.5 rounded-lg font-bold group-hover:bg-amber group-hover:text-ink flex items-center gap-1.5 transition-all shadow-xs">
+                Uruchom test
+                <span className="transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
+              </span>
             </div>
-          </div>
+          </Link>
           
           {/* Karta Ściągi */}
-          <div
+          <Link
+            to="/teoria/sciaga"
             id="sciaga"
-            className={`rounded-[16px] p-5 sm:p-6 flex flex-col justify-between transition-all duration-500 scroll-mt-10 ${
+            className={`group relative rounded-2xl p-5 sm:p-6 flex flex-col justify-between transition-all duration-500 scroll-mt-10 bg-linear-to-br from-panel via-panel to-ink2/70 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber ${
               highlightedSection === 'sciaga'
-                ? 'border-2 border-amber ring-4 ring-amber/30 bg-ink2/80 shadow-[0_0_40px_rgba(245,158,11,0.35)] scale-[1.01]'
-                : 'border border-line bg-panel hover:border-amber'
+                ? 'border-2 border-amber ring-4 ring-amber/30 bg-ink2/80 shadow-[0_0_40px_rgba(245,158,11,0.35)] -translate-y-1'
+                : 'border border-line/80 hover:border-amber/80 hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.35),0_0_24px_rgba(245,158,11,0.12)]'
             }`}
           >
             <div>
-              <div className="flex items-center justify-between gap-2 mb-2">
+              <div className="flex items-center justify-between gap-2 mb-3">
                 <span className="font-mono font-bold text-ink bg-amber rounded-md px-2.5 py-1 text-xs uppercase tracking-wider">
                   Keypointy
                 </span>
                 <span className="font-mono text-xs text-muted">28 zagadnień</span>
               </div>
-              <h2 className="text-lg sm:text-xl font-bold text-txt mb-2 leading-snug">
+              <h2 className="text-lg sm:text-xl font-bold text-txt group-hover:text-amber transition-colors mb-4 leading-snug">
                 Ściąga egzaminacyjna — 28 pytań w pigułce
               </h2>
-              <p className="text-sm sm:text-[15px] text-muted leading-relaxed mb-4">
-                Zestawienie definicji, praw fizycznych, kluczowych równań i wykresów do natychmiastowej powtórki przed salą egzaminacyjną.
-              </p>
             </div>
-            <div className="pt-3 border-t border-line/50 flex items-center justify-between">
+            <div className="pt-3.5 border-t border-line/50 flex items-center justify-between">
               <span className="text-xs text-muted font-mono">Wzory · Prawa · Wykresy</span>
-              <Link
-                to="/teoria/sciaga"
-                className="font-mono text-xs sm:text-sm text-amber font-semibold hover:text-amber-soft hover:underline flex items-center gap-1"
-              >
-                Otwórz całą ściągę &rarr;
-              </Link>
+              <span className="font-mono text-xs sm:text-sm bg-amber/10 text-amber border border-amber/30 px-3 py-1.5 rounded-lg font-bold group-hover:bg-amber group-hover:text-ink flex items-center gap-1.5 transition-all shadow-xs">
+                Otwórz całą ściągę
+                <span className="transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
+              </span>
             </div>
-          </div>
+          </Link>
 
           {/* Karta Wejścia do Archiwum */}
-          <div
+          <Link
+            to="/egzaminy"
             id="archiwum"
-            className={`rounded-[16px] p-5 sm:p-6 flex flex-col justify-between transition-all duration-500 scroll-mt-10 ${
+            className={`group relative rounded-2xl p-5 sm:p-6 flex flex-col justify-between transition-all duration-500 scroll-mt-10 bg-linear-to-br from-panel via-panel to-ink2/70 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber ${
               highlightedSection === 'archiwum'
-                ? 'border-2 border-amber ring-4 ring-amber/30 bg-ink2/80 shadow-[0_0_40px_rgba(245,158,11,0.35)] scale-[1.01]'
-                : 'border border-line bg-panel hover:border-amber'
+                ? 'border-2 border-amber ring-4 ring-amber/30 bg-ink2/80 shadow-[0_0_40px_rgba(245,158,11,0.35)] -translate-y-1'
+                : 'border border-line/80 hover:border-amber/80 hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.35),0_0_24px_rgba(245,158,11,0.12)]'
             }`}
           >
             <div>
-              <div className="flex items-center justify-between gap-2 mb-2">
+              <div className="flex items-center justify-between gap-2 mb-3">
                 <span className="font-mono font-bold text-ink bg-amber rounded-md px-2.5 py-1 text-xs uppercase tracking-wider">
                   Archiwum
                 </span>
                 <span className="font-mono text-xs text-muted">14 terminów</span>
               </div>
-              <h2 className="text-lg sm:text-xl font-bold text-txt mb-2 leading-snug">
+              <h2 className="text-lg sm:text-xl font-bold text-txt group-hover:text-amber transition-colors mb-4 leading-snug">
                 Przeglądarka arkuszy egzaminacyjnych
               </h2>
-              <p className="text-sm sm:text-[15px] text-muted leading-relaxed mb-4">
-                Oryginalne zadania z kolokwiów i egzaminów pisemnych z terminów zimowych, letnich i poprawkowych wraz z modelowymi rozwiązaniami.
-              </p>
             </div>
-            <div className="pt-3 border-t border-line/50 flex items-center justify-between">
+            <div className="pt-3.5 border-t border-line/50 flex items-center justify-between">
               <span className="text-xs text-muted font-mono">Zimowa · Letnia · Wrzesień</span>
-              <Link
-                to="/egzaminy"
-                className="font-mono text-xs sm:text-sm text-amber font-semibold hover:text-amber-soft hover:underline flex items-center gap-1"
-              >
-                Przejdź do archiwum &rarr;
-              </Link>
+              <span className="font-mono text-xs sm:text-sm bg-amber/10 text-amber border border-amber/30 px-3 py-1.5 rounded-lg font-bold group-hover:bg-amber group-hover:text-ink flex items-center gap-1.5 transition-all shadow-xs">
+                Przejdź do archiwum
+                <span className="transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
+              </span>
             </div>
-          </div>
+          </Link>
         </div>
 
         {/* Matryca szybkiego wyboru arkuszy */}
